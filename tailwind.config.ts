@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      screens: {
+        'nav': '960px',
+      },
       fontFamily: {
         display: ["'Barlow Condensed'", "sans-serif"],
         body: ["'Barlow'", "sans-serif"],

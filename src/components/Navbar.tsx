@@ -78,7 +78,7 @@ export default function Navbar() {
       </Link>
 
       {/* Desktop Nav */}
-      <ul className="hidden lg:flex gap-0 list-none">
+      <ul className="hidden nav:flex gap-0 list-none">
         <NavDropdown label="Residential Concrete" items={residentialLinks} />
         <NavDropdown label="Commercial Concrete" items={commercialLinks} />
         <NavDropdown label="Service Areas" items={areaLinks} />
@@ -87,7 +87,7 @@ export default function Navbar() {
       </ul>
 
       {/* Desktop CTA */}
-      <div className="hidden lg:flex items-center gap-5 flex-shrink-0">
+      <div className="hidden nav:flex items-center gap-5 flex-shrink-0">
         <div className="flex flex-col items-end">
           <span className="text-[0.56rem] tracking-[0.14em] uppercase text-muted-text">Free Estimate</span>
           <a href="tel:4052470027" className="font-display text-lg font-extrabold text-orange no-underline leading-tight">(405) 247-0027</a>
@@ -98,7 +98,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile: phone + hamburger */}
-      <div className="flex lg:hidden items-center gap-2">
+      <div className="flex nav:hidden items-center gap-2">
         <a href="tel:4052470027" className="bg-orange text-white px-3 py-2 font-display text-[0.72rem] font-extrabold tracking-[0.06em] uppercase no-underline whitespace-nowrap">
           📞 Call
         </a>
@@ -109,7 +109,7 @@ export default function Navbar() {
 
       {/* Mobile menu overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 top-[56px] bg-darker/98 backdrop-blur-xl lg:hidden z-[99] overflow-y-auto overscroll-contain" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
+        <div className="fixed inset-0 top-[56px] bg-darker/98 backdrop-blur-xl nav:hidden z-[99] overflow-y-auto overscroll-contain" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
           <div className="p-5 pb-24 space-y-0">
             {/* Accordion sections for touch */}
             <MobileAccordion label="Residential Concrete" isOpen={openSection === "residential"} onToggle={() => toggleSection("residential")}>
