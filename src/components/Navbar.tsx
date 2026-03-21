@@ -121,16 +121,17 @@ function NavDropdown({ label, items }: { label: string; items: { to: string; lab
           className="bg-stone"
           style={{ border: "1px solid hsl(var(--concrete) / 0.08)", borderTop: "2px solid hsl(var(--orange))" }}
         >
-        {items.map((item, i) => (
-          <Link
-            key={item.to}
-            to={item.to}
-            className="block px-4 py-2.5 text-[0.76rem] text-muted-text no-underline transition-colors hover:text-concrete hover:bg-concrete/[0.04]"
-            style={{ borderBottom: i < items.length - 1 ? "1px solid hsl(var(--concrete) / 0.08)" : "none" }}
-          >
-            {item.label}
-          </Link>
-        ))}
+          {items.map((item, i) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className="block px-4 py-2.5 text-[0.76rem] text-muted-text no-underline transition-colors hover:text-concrete hover:bg-concrete/[0.04]"
+              style={{ borderBottom: i < items.length - 1 ? "1px solid hsl(var(--concrete) / 0.08)" : "none" }}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
       </div>
     </li>
   );
