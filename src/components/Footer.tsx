@@ -10,7 +10,7 @@ export default function Footer() {
         <div>
           <div className="text-[0.6rem] tracking-[0.14em] uppercase text-muted-text font-semibold mb-1">Contact Redwood Construction directly</div>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="mailto:info@myconcreteestimate.com" className="text-orange text-sm font-medium no-underline hover:underline">info@myconcreteestimate.com</a>
+            <a href="mailto:jesus.f@myconcreteestimate.com" className="text-orange text-sm font-medium no-underline hover:underline">jesus.f@myconcreteestimate.com</a>
             <a href="tel:4052470027" className="text-orange text-sm font-medium no-underline hover:underline">(405) 247-0027</a>
           </div>
         </div>
