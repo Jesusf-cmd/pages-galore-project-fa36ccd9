@@ -109,7 +109,7 @@ export default function Navbar() {
 
       {/* Mobile menu overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 top-[56px] bg-darker/98 backdrop-blur-xl lg:hidden z-[99] overflow-y-auto overscroll-contain" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
+        <div className="fixed inset-0 top-[56px] bg-darker/98 backdrop-blur-xl nav:hidden z-[99] overflow-y-auto overscroll-contain" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
           <div className="p-5 pb-24 space-y-0">
             {/* Accordion sections for touch */}
             <MobileAccordion label="Residential Concrete" isOpen={openSection === "residential"} onToggle={() => toggleSection("residential")}>
