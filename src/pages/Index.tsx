@@ -273,33 +273,33 @@ function EstimateForm() {
       )}
 
       {step === 3 && (
-        <div className="p-5">
+        <div className="p-4 md:p-5">
           <div className="mb-3">
             <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Your Name</label>
-            <input value={name} onChange={e => setName(e.target.value)} placeholder="Full name" className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+            <input value={name} onChange={e => setName(e.target.value)} placeholder="Full name" className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
           </div>
           <div className="mb-3">
             <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Phone</label>
-            <input value={phone} onChange={e => setPhone(e.target.value)} placeholder="(405) 000-0000" className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+            <input value={phone} onChange={e => setPhone(e.target.value)} placeholder="(405) 000-0000" type="tel" className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
           </div>
           <div className="mb-3">
             <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Email</label>
-            <input value={email} onChange={e => setEmail(e.target.value)} placeholder="email@example.com" className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+            <input value={email} onChange={e => setEmail(e.target.value)} placeholder="email@example.com" type="email" className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
           </div>
           <div className="mb-4">
             <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Project Details</label>
-            <textarea value={details} onChange={e => setDetails(e.target.value)} placeholder="Tell us about your project..." rows={3} className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none resize-y" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+            <textarea value={details} onChange={e => setDetails(e.target.value)} placeholder="Tell us about your project..." rows={3} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none resize-y min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
           </div>
           {error && (
-            <div className="bg-red-900/20 text-red-400 text-sm p-3 mb-4" style={{ border: "1px solid hsl(0 60% 40% / 0.3)" }}>{error}</div>
+            <div className="bg-destructive/20 text-destructive text-sm p-3 mb-4" style={{ border: "1px solid hsl(0 60% 40% / 0.3)" }}>{error}</div>
           )}
           <div className="bg-concrete/[0.03] p-3 mb-4 text-center" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div className="font-display text-xl font-black text-orange">${range.low.toLocaleString()} – ${range.high.toLocaleString()}</div>
             <div className="text-[0.65rem] text-muted-text">{sqft} sq ft · {projectType}</div>
           </div>
-          <div className="flex gap-2">
-            <button onClick={() => setStep(2)} className="btn-outline text-sm py-3 flex-1">← Back</button>
-            <button onClick={handleSubmit} disabled={submitting} className="btn-primary text-sm py-3 flex-1 disabled:opacity-50 disabled:cursor-not-allowed">
+          <div className="flex flex-col sm:flex-row gap-2">
+            <button onClick={() => setStep(2)} className="btn-outline text-sm py-3.5 min-h-[48px] flex-1 w-full sm:w-auto">← Back</button>
+            <button onClick={handleSubmit} disabled={submitting} className="btn-primary text-sm py-3.5 min-h-[48px] flex-1 w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed">
               {submitting ? "Submitting..." : "Submit Estimate Request →"}
             </button>
           </div>
