@@ -7,7 +7,7 @@ import { useSEO } from "@/hooks/useSEO";
 
 const SPENCER_VIDEO = "https://img1.wsimg.com/blobby/go/e58b3d42-c6ef-4001-afe8-1a0cde6bd652/video/copy_AD0EB7AC-6471-4D2C-9970-C121B31EB011.mp4";
 const KIDDIE_VIDEO = "https://img1.wsimg.com/blobby/go/e58b3d42-c6ef-4001-afe8-1a0cde6bd652/video/Kiddie%20academy%20MP4.mp4";
-const KIDDIE_YOUTUBE = "https://www.youtube.com/embed/6eXyTL8-2_A?rel=0&showinfo=0&autoplay=0&loop=0&controls=1";
+
 
 const otherProjects = [
   { title: "Driveway Replacement", location: "Edmond, OK", desc: "Full tear-out of cracked original driveway, 4\" reinforced pour with #3 rebar, broom finish.", size: "24×40", time: "2 days" },
@@ -111,9 +111,9 @@ export default function OurProjects() {
                 </div>
               </div>
             </div>
-            <div className="bg-darker relative overflow-hidden order-1 lg:order-2 flex flex-col gap-px">
+            <div className="bg-darker relative overflow-hidden order-1 lg:order-2">
               <video
-                className="w-full object-cover min-h-[280px] flex-1"
+                className="w-full h-full object-cover min-h-[320px]"
                 controls
                 preload="metadata"
                 playsInline
@@ -121,16 +121,6 @@ export default function OurProjects() {
                 <source src={KIDDIE_VIDEO} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src={KIDDIE_YOUTUBE}
-                  title="Kiddie Academy Concrete Project Timelapse"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
             </div>
           </div>
         </section>
