@@ -98,7 +98,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile: phone + hamburger */}
-      <div className="flex lg:hidden items-center gap-2">
+      <div className="flex nav:hidden items-center gap-2">
         <a href="tel:4052470027" className="bg-orange text-white px-3 py-2 font-display text-[0.72rem] font-extrabold tracking-[0.06em] uppercase no-underline whitespace-nowrap">
           📞 Call
         </a>
