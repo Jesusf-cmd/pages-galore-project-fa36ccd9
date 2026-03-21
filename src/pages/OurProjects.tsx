@@ -111,9 +111,9 @@ export default function OurProjects() {
                 </div>
               </div>
             </div>
-            <div className="bg-darker relative overflow-hidden order-1 lg:order-2 flex flex-col gap-px">
+            <div className="bg-darker relative overflow-hidden order-1 lg:order-2">
               <video
-                className="w-full object-cover min-h-[280px] flex-1"
+                className="w-full h-full object-cover min-h-[320px]"
                 controls
                 preload="metadata"
                 playsInline
@@ -121,16 +121,6 @@ export default function OurProjects() {
                 <source src={KIDDIE_VIDEO} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src={KIDDIE_YOUTUBE}
-                  title="Kiddie Academy Concrete Project Timelapse"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
             </div>
           </div>
         </section>
