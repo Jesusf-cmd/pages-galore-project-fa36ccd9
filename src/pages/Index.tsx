@@ -431,6 +431,9 @@ function RecentProjectsSection() {
         <div className="section-eye">Our work</div>
         <h2 className="mb-3">Recent Projects<br/><em className="h2-accent">Across the Metro.</em></h2>
         <p className="prose-muted mb-8">Real jobs for real Oklahoma homeowners and businesses. Every project — from <Link to="/concrete-driveways" className="text-orange no-underline">concrete driveways</Link> to <Link to="/stamped-concrete" className="text-orange no-underline">stamped patios</Link> — backed by the Redwood Construction guarantee.</p>
+        <div className="mb-6 overflow-hidden" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+          <img src={newDrivewayImg} alt="Completed concrete driveway project in Edmond, Oklahoma by Redwood Construction" className="w-full h-[280px] md:h-[360px] object-cover" />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
           {projects.map((p, i) => (
             <div key={i} className="bg-darker p-6">
