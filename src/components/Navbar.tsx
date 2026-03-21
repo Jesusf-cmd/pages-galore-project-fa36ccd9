@@ -78,7 +78,7 @@ export default function Navbar() {
       </Link>
 
       {/* Desktop Nav */}
-      <ul className="hidden lg:flex gap-0 list-none">
+      <ul className="hidden nav:flex gap-0 list-none">
         <NavDropdown label="Residential Concrete" items={residentialLinks} />
         <NavDropdown label="Commercial Concrete" items={commercialLinks} />
         <NavDropdown label="Service Areas" items={areaLinks} />
@@ -87,7 +87,7 @@ export default function Navbar() {
       </ul>
 
       {/* Desktop CTA */}
-      <div className="hidden lg:flex items-center gap-5 flex-shrink-0">
+      <div className="hidden nav:flex items-center gap-5 flex-shrink-0">
         <div className="flex flex-col items-end">
           <span className="text-[0.56rem] tracking-[0.14em] uppercase text-muted-text">Free Estimate</span>
           <a href="tel:4052470027" className="font-display text-lg font-extrabold text-orange no-underline leading-tight">(405) 247-0027</a>
