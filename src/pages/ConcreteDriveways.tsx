@@ -3,6 +3,8 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function ConcreteDriveways() {
   return (
     <ServicePage
+      metaTitle="Concrete Driveways Oklahoma City | $6-$10/sq ft | Free Estimate"
+      metaDescription="Licensed concrete driveway contractors in Oklahoma City. 4,000 PSI mix, rebar reinforcement, built for OKC clay soil. $5,760–$9,600 typical. Call (405) 247-0027."
       eyebrow="OKC Metro · Driveway Contractors · Licensed & Insured"
       title="Concrete Driveways"
       titleAccent="Oklahoma City."

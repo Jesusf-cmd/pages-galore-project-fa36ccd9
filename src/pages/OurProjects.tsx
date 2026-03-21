@@ -3,6 +3,7 @@ import TrustBar from "@/components/TrustBar";
 import FinalCTA from "@/components/FinalCTA";
 import ServicesFooterGrid from "@/components/ServicesFooterGrid";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
+import { useSEO } from "@/hooks/useSEO";
 
 const projects = [
   { title: "Driveway Replacement", location: "Edmond, OK", desc: "Full tear-out of cracked original driveway, 4\" reinforced pour with #3 rebar, broom finish.", size: "24×40", time: "2 days" },
@@ -17,6 +18,11 @@ const projects = [
 ];
 
 export default function OurProjects() {
+  useSEO({
+    title: "Our Concrete Projects | OKC Metro Gallery | MyConcreteEstimate",
+    description: "View completed concrete projects across Oklahoma City metro. Driveways, patios, foundations, retaining walls & more by Redwood Construction LLC.",
+  });
+
   return (
     <main>
       <section className="page-hero">

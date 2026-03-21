@@ -3,6 +3,8 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function ConcretePatioOKC() {
   return (
     <ServicePage
+      metaTitle="Concrete Patio Contractors OKC | Patios Built Right | Free Estimate"
+      metaDescription="Concrete patio contractors in Oklahoma City. Broom, smooth & stamped finishes. Properly graded for drainage. $6–$22/sq ft. Call (405) 247-0027."
       eyebrow="OKC Metro · Patio Contractors · Licensed & Insured"
       title="Concrete Patio"
       titleAccent="Contractors OKC."

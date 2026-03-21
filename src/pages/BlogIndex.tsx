@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import FinalCTA from "@/components/FinalCTA";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
+import { useSEO } from "@/hooks/useSEO";
 
 const posts = [
   { slug: "why-concrete-driveways-crack-oklahoma", title: "Why Concrete Driveways Crack in Oklahoma", date: "March 15, 2026", time: "7 min read", excerpt: "Five real causes — clay soil, base prep failures, missing reinforcement — and how to prevent them." },
@@ -11,6 +12,11 @@ const posts = [
 ];
 
 export default function BlogIndex() {
+  useSEO({
+    title: "Concrete Blog | OKC Tips & Guides | MyConcreteEstimate",
+    description: "Expert tips on concrete driveways, slabs, foundations & stamped concrete in Oklahoma City. Cost guides, maintenance advice, and more.",
+  });
+
   return (
     <main>
       <section className="page-hero">

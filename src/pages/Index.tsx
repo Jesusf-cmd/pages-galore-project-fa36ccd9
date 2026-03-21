@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
+import { useSEO } from "@/hooks/useSEO";
+import { supabase } from "@/integrations/supabase/client";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import ServicesFooterGrid from "@/components/ServicesFooterGrid";
@@ -17,6 +19,11 @@ const homeFAQ = [
 ];
 
 export default function Index() {
+  useSEO({
+    title: "Oklahoma City Concrete Contractors | Free Estimate | MyConcreteEstimate",
+    description: "Licensed Oklahoma City concrete contractors. Driveways, patios, slabs, foundations & stamped concrete. Free estimates. Call (405) 247-0027. Powered by Redwood Construction LLC.",
+  });
+
   return (
     <main>
       <HeroSection />
@@ -112,6 +119,8 @@ function EstimateForm() {
   const [email, setEmail] = useState("");
   const [details, setDetails] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const sqft = length * width;
   const getRange = () => {
@@ -133,6 +142,38 @@ function EstimateForm() {
     { id: "wall", name: "Retaining Wall", sub: "Structural walls for slopes" },
   ];
 
+  const handleSubmit = async () => {
+    if (!name.trim() || !phone.trim() || !email.trim()) {
+      setError("Please fill in your name, phone, and email.");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    setError("");
+    setSubmitting(true);
+
+    try {
+      const { error: fnError } = await supabase.functions.invoke("submit-estimate", {
+        body: {
+          name, phone, email, projectType, finishType: finish,
+          length, width, sqft,
+          estimateLow: range.low, estimateHigh: range.high,
+          details,
+        },
+      });
+
+      if (fnError) throw fnError;
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Submission error:", err);
+      setError("Something went wrong. Please call us at (405) 247-0027.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   if (submitted) {
     return (
       <div className="bg-stone" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}>
@@ -141,7 +182,8 @@ function EstimateForm() {
         </div>
         <div className="p-6 text-center">
           <div className="text-4xl mb-4">✅</div>
-          <h3 className="text-concrete mb-2">Thank You!</h3>
+          <h3 className="text-concrete mb-2">Thank You, {name}!</h3>
+          <p className="text-muted-text text-sm mb-3">Your estimate request for <strong className="text-concrete">{sqft} sq ft</strong> of {projectType} work (<strong className="text-orange">${range.low.toLocaleString()} – ${range.high.toLocaleString()}</strong>) has been received.</p>
           <p className="text-muted-text text-sm">We'll respond within one business day with a detailed estimate. Or call us now at <a href="tel:4052470027" className="text-orange font-bold no-underline">(405) 247-0027</a>.</p>
         </div>
       </div>
@@ -179,9 +221,7 @@ function EstimateForm() {
         <div className="p-5">
           <div className="grid grid-cols-2 gap-3 mb-3">
             <div>
-              <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
-                {projectType === "wall" ? "Length (ft)" : "Length (ft)"}
-              </label>
+              <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Length (ft)</label>
               <input type="number" value={length} onChange={e => setLength(+e.target.value)} min={1} className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none transition-colors focus:border-orange" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
             </div>
             <div>
@@ -233,13 +273,18 @@ function EstimateForm() {
             <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Project Details</label>
             <textarea value={details} onChange={e => setDetails(e.target.value)} placeholder="Tell us about your project..." rows={3} className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none resize-y" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
           </div>
+          {error && (
+            <div className="bg-red-900/20 text-red-400 text-sm p-3 mb-4" style={{ border: "1px solid hsl(0 60% 40% / 0.3)" }}>{error}</div>
+          )}
           <div className="bg-concrete/[0.03] p-3 mb-4 text-center" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div className="font-display text-xl font-black text-orange">${range.low.toLocaleString()} – ${range.high.toLocaleString()}</div>
             <div className="text-[0.65rem] text-muted-text">{sqft} sq ft · {projectType}</div>
           </div>
           <div className="flex gap-2">
             <button onClick={() => setStep(2)} className="btn-outline text-sm py-3 flex-1">← Back</button>
-            <button onClick={() => setSubmitted(true)} className="btn-primary text-sm py-3 flex-1">Submit Estimate Request →</button>
+            <button onClick={handleSubmit} disabled={submitting} className="btn-primary text-sm py-3 flex-1 disabled:opacity-50 disabled:cursor-not-allowed">
+              {submitting ? "Submitting..." : "Submit Estimate Request →"}
+            </button>
           </div>
         </div>
       )}

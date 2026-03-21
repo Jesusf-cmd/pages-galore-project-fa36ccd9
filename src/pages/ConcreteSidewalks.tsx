@@ -3,6 +3,8 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function ConcreteSidewalks() {
   return (
     <ServicePage
+      metaTitle="Concrete Sidewalks Oklahoma City | New & Replacement | Free Estimate"
+      metaDescription="Concrete sidewalk contractors in Oklahoma City. New construction, replacements, ADA-compliant. $6–$10/sq ft. Call (405) 247-0027."
       eyebrow="OKC Metro · Sidewalk Contractors · Licensed & Insured"
       title="Concrete Sidewalks"
       titleAccent="Oklahoma City."

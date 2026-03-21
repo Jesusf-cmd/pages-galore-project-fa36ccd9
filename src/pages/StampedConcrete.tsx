@@ -3,6 +3,8 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function StampedConcrete() {
   return (
     <ServicePage
+      metaTitle="Stamped Concrete Oklahoma City | Custom Patterns | Free Estimate"
+      metaDescription="Stamped concrete contractors in Oklahoma City. Custom patterns, colors & sealers for patios, pool decks, driveways. $15–$22/sq ft. Call (405) 247-0027."
       eyebrow="OKC Metro · Decorative Concrete · Licensed & Insured"
       title="Stamped Concrete"
       titleAccent="Oklahoma City."

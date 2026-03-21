@@ -3,6 +3,8 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function ConcreteFoundations() {
   return (
     <ServicePage
+      metaTitle="Concrete Foundations Oklahoma City | Slab-on-Grade | Free Estimate"
+      metaDescription="Foundation contractors in Oklahoma City. Slab-on-grade, stem walls, grade beams built for OKC expansive clay soil. $9–$14/sq ft. Call (405) 247-0027."
       eyebrow="OKC Metro · Foundation Contractors · Licensed & Insured"
       title="Concrete Foundations"
       titleAccent="Oklahoma City."

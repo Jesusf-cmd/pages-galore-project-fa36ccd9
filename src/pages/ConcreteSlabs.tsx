@@ -3,6 +3,8 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function ConcreteSlabs() {
   return (
     <ServicePage
+      metaTitle="Concrete Slabs Oklahoma City | Patios & Garage Floors | Free Estimate"
+      metaDescription="Concrete slab contractors in Oklahoma City. Patio slabs, garage floors, shop slabs. $6–$10/sq ft. Built for OKC clay soil. Call (405) 247-0027."
       eyebrow="OKC Metro · Slab Contractors · Licensed & Insured"
       title="Concrete Slabs"
       titleAccent="Oklahoma City."
