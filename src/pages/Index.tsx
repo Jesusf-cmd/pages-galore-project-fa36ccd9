@@ -113,7 +113,7 @@ function HeroSection() {
           </div>
         </div>
       </div>
-      <div id="estimate" className="pt-4 lg:pt-0">
+      <div id="estimate" className="pt-4 lg:pt-0 relative z-[2]">
         <div className="bg-stone p-5" style={{ border: "1px solid hsl(var(--concrete) / 0.1)", borderBottom: "none" }}>
           <p className="text-[0.78rem] text-muted-text leading-[1.7] font-light">
             The <strong className="text-concrete">concrete cost in Oklahoma City</strong> typically runs <strong className="text-concrete">$6–$10 per sq ft</strong> for a standard driveway or patio slab, and $9–$14 for foundation work. Use the estimator below for an instant price.
