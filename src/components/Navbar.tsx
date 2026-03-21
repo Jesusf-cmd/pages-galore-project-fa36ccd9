@@ -116,20 +116,22 @@ function NavDropdown({ label, items }: { label: string; items: { to: string; lab
       <span className="block cursor-pointer text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors group-hover:text-concrete select-none">
         {label} ▾
       </span>
-      <div
-        className="absolute top-[calc(100%+8px)] left-0 min-w-[210px] bg-stone opacity-0 pointer-events-none translate-y-1.5 transition-all duration-150 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 z-[200]"
-        style={{ border: "1px solid hsl(var(--concrete) / 0.08)", borderTop: "2px solid hsl(var(--orange))" }}
-      >
-        {items.map((item, i) => (
-          <Link
-            key={item.to}
-            to={item.to}
-            className="block px-4 py-2.5 text-[0.76rem] text-muted-text no-underline transition-colors hover:text-concrete hover:bg-concrete/[0.04]"
-            style={{ borderBottom: i < items.length - 1 ? "1px solid hsl(var(--concrete) / 0.08)" : "none" }}
-          >
-            {item.label}
-          </Link>
-        ))}
+      <div className="absolute top-full left-0 min-w-[210px] pt-2 z-[200] opacity-0 pointer-events-none translate-y-1.5 transition-all duration-150 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0">
+        <div
+          className="bg-stone"
+          style={{ border: "1px solid hsl(var(--concrete) / 0.08)", borderTop: "2px solid hsl(var(--orange))" }}
+        >
+          {items.map((item, i) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className="block px-4 py-2.5 text-[0.76rem] text-muted-text no-underline transition-colors hover:text-concrete hover:bg-concrete/[0.04]"
+              style={{ borderBottom: i < items.length - 1 ? "1px solid hsl(var(--concrete) / 0.08)" : "none" }}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
       </div>
     </li>
   );
