@@ -412,6 +412,7 @@ function WhyUsSection() {
             </div>
           ))}
         </div>
+        </div>
       </section>
     </ScrollReveal>
   );
