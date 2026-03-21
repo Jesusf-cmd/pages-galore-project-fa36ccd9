@@ -1,4 +1,7 @@
 import { useState } from "react";
+import commercialFoundationImg from "@/assets/commercial-concrete-foundation-okc.jpg";
+import newDrivewayImg from "@/assets/new-driveway.jpg";
+import tiedRebarImg from "@/assets/tied-rebar.jpg";
 import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
 import { useSEO } from "@/hooks/useSEO";
