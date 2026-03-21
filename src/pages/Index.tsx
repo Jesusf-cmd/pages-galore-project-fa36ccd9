@@ -68,54 +68,54 @@ export default function Index() {
 
 function HeroSection() {
   return (
-    <section className="min-h-screen grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-12 px-4 md:px-12 pt-32 pb-16 relative overflow-hidden" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
+    <section className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-6 lg:gap-12 px-4 md:px-12 pt-20 pb-8 md:pt-32 md:pb-16 lg:min-h-screen relative overflow-hidden" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img src={commercialFoundationImg} alt="" className="w-full h-full object-cover opacity-[0.55]" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(var(--darker) / 0.85) 30%, hsl(var(--darker) / 0.4) 100%)" }} />
       </div>
       <div className="hero-glow" style={{ zIndex: 1 }} />
-      <div className="page-hero relative z-[2]" style={{ padding: 0, border: "none" }}>
+      <div className="relative z-[2]" style={{ padding: 0, border: "none" }}>
         <div>
-          <span className="eyebrow mb-5 block">OKC Metro · Licensed & Insured · Locally Owned</span>
-          <h1 className="mb-6" style={{ fontSize: "clamp(3.2rem, 5.5vw, 6rem)" }}>
+          <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">OKC Metro · Licensed & Insured · Locally Owned</span>
+          <h1 className="mb-4 md:mb-6" style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)", lineHeight: 0.92 }}>
             Oklahoma City<br />
             Concrete Contractors<br />
             <span className="text-orange block">Done Right.</span>
           </h1>
-          <p className="text-base text-muted-text max-w-[460px] mb-7 leading-[1.78] font-light">
+          <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-5 md:mb-7 leading-[1.7] font-light">
             <Link to="/concrete-driveways" className="text-concrete font-medium no-underline">Driveways</Link>, patios, <Link to="/concrete-slabs" className="text-concrete font-medium no-underline">slabs</Link>, and <Link to="/concrete-foundations" className="text-concrete font-medium no-underline">foundations</Link> built for <strong className="text-concrete font-medium">Oklahoma's clay soil and weather</strong>. Locally owned and operated by Redwood Construction LLC — not a franchise, not a call center.
           </p>
-          <div className="flex flex-wrap gap-1.5 mb-8">
+          <div className="flex flex-wrap gap-1.5 mb-5 md:mb-8">
             {["Oklahoma City", "Edmond", "Norman", "Mustang", "Moore", "Yukon"].map(city => (
-              <span key={city} className="text-[0.66rem] tracking-[0.1em] uppercase py-1 px-3 text-orange font-semibold" style={{ border: "1px solid hsl(var(--orange) / 0.4)", background: "hsl(var(--orange) / 0.05)" }}>
+              <span key={city} className="text-[0.6rem] md:text-[0.66rem] tracking-[0.1em] uppercase py-1 px-2.5 md:px-3 text-orange font-semibold" style={{ border: "1px solid hsl(var(--orange) / 0.4)", background: "hsl(var(--orange) / 0.05)" }}>
                 {city}
               </span>
             ))}
           </div>
-          <div className="flex gap-4 flex-wrap mb-10">
-            <a href="#estimate" className="btn-primary">Get My Free Estimate →</a>
-            <a href="tel:4052470027" className="btn-outline">📞 (405) 247-0027</a>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 md:mb-10">
+            <a href="#estimate" className="btn-primary text-center w-full sm:w-auto">Get My Free Estimate →</a>
+            <a href="tel:4052470027" className="btn-outline text-center w-full sm:w-auto">📞 (405) 247-0027</a>
           </div>
-          <div className="flex gap-10 pt-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
+          <div className="flex gap-6 md:gap-10 pt-6 md:pt-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div>
-              <div className="font-display text-3xl font-black text-concrete leading-none">500<span className="text-orange">+</span></div>
-              <div className="text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">OKC metro projects</div>
+              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">500<span className="text-orange">+</span></div>
+              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">OKC metro projects</div>
             </div>
             <div>
-              <div className="font-display text-3xl font-black text-concrete leading-none">4.9<span className="text-orange">★</span></div>
-              <div className="text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Google rating</div>
+              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">4.9<span className="text-orange">★</span></div>
+              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Google rating</div>
             </div>
             <div>
-              <div className="font-display text-3xl font-black text-concrete leading-none">24<span className="text-orange">hr</span></div>
-              <div className="text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Estimate turnaround</div>
+              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">24<span className="text-orange">hr</span></div>
+              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Estimate turnaround</div>
             </div>
           </div>
         </div>
       </div>
-      <div id="estimate" className="pt-4 lg:pt-0 relative z-[2]">
-        <div className="bg-stone p-5" style={{ border: "1px solid hsl(var(--concrete) / 0.1)", borderBottom: "none" }}>
-          <p className="text-[0.78rem] text-muted-text leading-[1.7] font-light">
+      <div id="estimate" className="pt-2 lg:pt-0 relative z-[2]">
+        <div className="bg-stone p-4 md:p-5" style={{ border: "1px solid hsl(var(--concrete) / 0.1)", borderBottom: "none" }}>
+          <p className="text-[0.75rem] md:text-[0.78rem] text-muted-text leading-[1.7] font-light">
             The <strong className="text-concrete">concrete cost in Oklahoma City</strong> typically runs <strong className="text-concrete">$6–$10 per sq ft</strong> for a standard driveway or patio slab, and $9–$14 for foundation work. Use the estimator below for an instant price.
           </p>
         </div>

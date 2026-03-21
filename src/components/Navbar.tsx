@@ -35,10 +35,12 @@ const areaLinks = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openSection, setOpenSection] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
     setMobileOpen(false);
+    setOpenSection(null);
   }, [location]);
 
   useEffect(() => {
@@ -46,6 +48,20 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
+  const toggleSection = (section: string) => {
+    setOpenSection(prev => prev === section ? null : section);
+  };
 
   return (
     <nav
@@ -55,8 +71,8 @@ export default function Navbar() {
       style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}
     >
       <Link to="/" className="flex flex-col gap-0.5">
-        <img src={LOGO_URL} alt="Redwood Construction LLC — Concrete Contractors Oklahoma City" className="h-[50px] w-auto object-contain" loading="eager" />
-        <span className="text-[0.58rem] tracking-[0.14em] uppercase text-muted-text font-medium">
+        <img src={LOGO_URL} alt="Redwood Construction LLC — Concrete Contractors Oklahoma City" className="h-[40px] md:h-[50px] w-auto object-contain" loading="eager" />
+        <span className="hidden sm:block text-[0.58rem] tracking-[0.14em] uppercase text-muted-text font-medium">
           Powered by <span className="text-orange">Redwood Construction LLC</span>
         </span>
       </Link>
@@ -70,7 +86,8 @@ export default function Navbar() {
         <li><Link to="/blog" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete">Blog</Link></li>
       </ul>
 
-      <div className="hidden md:flex items-center gap-5 flex-shrink-0">
+      {/* Desktop CTA */}
+      <div className="hidden lg:flex items-center gap-5 flex-shrink-0">
         <div className="flex flex-col items-end">
           <span className="text-[0.56rem] tracking-[0.14em] uppercase text-muted-text">Free Estimate</span>
           <a href="tel:4052470027" className="font-display text-lg font-extrabold text-orange no-underline leading-tight">(405) 247-0027</a>
@@ -80,33 +97,59 @@ export default function Navbar() {
         </Link>
       </div>
 
-      {/* Mobile toggle */}
-      <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden text-concrete p-2" aria-label="Toggle menu">
-        {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
+      {/* Mobile: phone + hamburger */}
+      <div className="flex lg:hidden items-center gap-2">
+        <a href="tel:4052470027" className="bg-orange text-white px-3 py-2 font-display text-[0.72rem] font-extrabold tracking-[0.06em] uppercase no-underline whitespace-nowrap">
+          📞 Call
+        </a>
+        <button onClick={() => setMobileOpen(!mobileOpen)} className="text-concrete p-2 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Toggle menu">
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu overlay */}
       {mobileOpen && (
-        <div className="absolute top-full left-0 right-0 bg-darker/98 backdrop-blur-xl lg:hidden max-h-[80vh] overflow-y-auto" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
-          <div className="p-4 space-y-1">
-            <div className="text-[0.65rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Residential Concrete</div>
-            {residentialLinks.map(l => <Link key={l.to} to={l.to} className="block py-1.5 text-sm text-muted-text hover:text-concrete no-underline">{l.label}</Link>)}
-            <div className="text-[0.65rem] tracking-[0.14em] uppercase text-orange font-bold mt-4 mb-2">Commercial Concrete</div>
-            {commercialLinks.map(l => <Link key={l.to} to={l.to} className="block py-1.5 text-sm text-muted-text hover:text-concrete no-underline">{l.label}</Link>)}
-            <div className="text-[0.65rem] tracking-[0.14em] uppercase text-orange font-bold mt-4 mb-2">Service Areas</div>
-            {areaLinks.map(l => <Link key={l.to} to={l.to} className="block py-1.5 text-sm text-muted-text hover:text-concrete no-underline">{l.label}</Link>)}
-            <div className="pt-4 space-y-2">
-              <Link to="/our-projects" className="block py-1.5 text-sm text-concrete font-medium no-underline uppercase tracking-wider">Our Work</Link>
-              <Link to="/blog" className="block py-1.5 text-sm text-concrete font-medium no-underline uppercase tracking-wider">Blog</Link>
-            </div>
-            <div className="pt-4 flex flex-col gap-3">
-              <a href="tel:4052470027" className="btn-primary text-center text-sm py-3">📞 (405) 247-0027</a>
-              <Link to="/#estimate" className="btn-outline text-center text-sm py-3">Get Free Estimate →</Link>
+        <div className="fixed inset-0 top-[56px] bg-darker/98 backdrop-blur-xl lg:hidden z-[99] overflow-y-auto overscroll-contain" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
+          <div className="p-5 pb-24 space-y-0">
+            {/* Accordion sections for touch */}
+            <MobileAccordion label="Residential Concrete" isOpen={openSection === "residential"} onToggle={() => toggleSection("residential")}>
+              {residentialLinks.map(l => <Link key={l.to} to={l.to} className="block py-3 px-4 text-[0.9rem] text-muted-text active:text-concrete active:bg-concrete/[0.04] no-underline">{l.label}</Link>)}
+            </MobileAccordion>
+            <MobileAccordion label="Commercial Concrete" isOpen={openSection === "commercial"} onToggle={() => toggleSection("commercial")}>
+              {commercialLinks.map(l => <Link key={l.to} to={l.to} className="block py-3 px-4 text-[0.9rem] text-muted-text active:text-concrete active:bg-concrete/[0.04] no-underline">{l.label}</Link>)}
+            </MobileAccordion>
+            <MobileAccordion label="Service Areas" isOpen={openSection === "areas"} onToggle={() => toggleSection("areas")}>
+              {areaLinks.map(l => <Link key={l.to} to={l.to} className="block py-3 px-4 text-[0.9rem] text-muted-text active:text-concrete active:bg-concrete/[0.04] no-underline">{l.label}</Link>)}
+            </MobileAccordion>
+            <Link to="/our-projects" className="block py-4 text-[0.9rem] text-concrete font-medium no-underline uppercase tracking-wider" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>Our Work</Link>
+            <Link to="/blog" className="block py-4 text-[0.9rem] text-concrete font-medium no-underline uppercase tracking-wider" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>Blog</Link>
+
+            {/* Sticky-feeling CTA block */}
+            <div className="pt-6 flex flex-col gap-3">
+              <a href="tel:4052470027" className="btn-primary text-center text-base py-4 w-full">📞 (405) 247-0027</a>
+              <Link to="/#estimate" className="btn-outline text-center text-base py-4 w-full">Get Free Estimate →</Link>
             </div>
           </div>
         </div>
       )}
     </nav>
+  );
+}
+
+function MobileAccordion({ label, isOpen, onToggle, children }: { label: string; isOpen: boolean; onToggle: () => void; children: React.ReactNode }) {
+  return (
+    <div style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
+      <button
+        onClick={onToggle}
+        className="w-full flex justify-between items-center py-4 text-left cursor-pointer bg-transparent border-none min-h-[48px]"
+      >
+        <span className="text-[0.72rem] tracking-[0.14em] uppercase text-orange font-bold">{label}</span>
+        <span className={`text-muted-text text-sm transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}>▾</span>
+      </button>
+      <div className={`overflow-hidden transition-all duration-200 ${isOpen ? "max-h-[500px] pb-2" : "max-h-0"}`}>
+        {children}
+      </div>
+    </div>
   );
 }
 
