@@ -109,23 +109,39 @@ export default function Navbar() {
 
       {/* Mobile menu overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 top-[56px] bg-darker/98 backdrop-blur-xl nav:hidden z-[99] overflow-y-auto overscroll-contain" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
-          <div className="p-5 pb-24 space-y-0">
-            {/* Accordion sections for touch */}
+        <div
+          className="fixed inset-0 top-[56px] nav:hidden z-[200] overflow-y-auto overscroll-contain"
+          style={{
+            background: "hsl(var(--darker))",
+            borderTop: "2px solid hsl(var(--orange))",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.6)",
+          }}
+        >
+          <div className="p-6 pb-28 space-y-0">
             <MobileAccordion label="Residential Concrete" isOpen={openSection === "residential"} onToggle={() => toggleSection("residential")}>
-              {residentialLinks.map(l => <Link key={l.to} to={l.to} className="block py-3 px-4 text-[0.9rem] text-muted-text active:text-concrete active:bg-concrete/[0.04] no-underline">{l.label}</Link>)}
+              {residentialLinks.map(l => (
+                <Link key={l.to} to={l.to} className="block py-3.5 px-5 text-[0.95rem] leading-[1.6] font-normal text-concrete/90 active:text-white active:bg-orange/10 no-underline w-full">
+                  {l.label}
+                </Link>
+              ))}
             </MobileAccordion>
             <MobileAccordion label="Commercial Concrete" isOpen={openSection === "commercial"} onToggle={() => toggleSection("commercial")}>
-              {commercialLinks.map(l => <Link key={l.to} to={l.to} className="block py-3 px-4 text-[0.9rem] text-muted-text active:text-concrete active:bg-concrete/[0.04] no-underline">{l.label}</Link>)}
+              {commercialLinks.map(l => (
+                <Link key={l.to} to={l.to} className="block py-3.5 px-5 text-[0.95rem] leading-[1.6] font-normal text-concrete/90 active:text-white active:bg-orange/10 no-underline w-full">
+                  {l.label}
+                </Link>
+              ))}
             </MobileAccordion>
             <MobileAccordion label="Service Areas" isOpen={openSection === "areas"} onToggle={() => toggleSection("areas")}>
-              {areaLinks.map(l => <Link key={l.to} to={l.to} className="block py-3 px-4 text-[0.9rem] text-muted-text active:text-concrete active:bg-concrete/[0.04] no-underline">{l.label}</Link>)}
+              {areaLinks.map(l => (
+                <Link key={l.to} to={l.to} className="block py-3.5 px-5 text-[0.95rem] leading-[1.6] font-normal text-concrete/90 active:text-white active:bg-orange/10 no-underline w-full">
+                  {l.label}
+                </Link>
+              ))}
             </MobileAccordion>
-            <Link to="/our-projects" className="block py-4 text-[0.9rem] text-concrete font-medium no-underline uppercase tracking-wider" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>Our Work</Link>
-            <Link to="/blog" className="block py-4 text-[0.9rem] text-concrete font-medium no-underline uppercase tracking-wider" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>Blog</Link>
-
-            {/* Sticky-feeling CTA block */}
-            <div className="pt-6 flex flex-col gap-3">
+            <Link to="/our-projects" className="block py-5 text-[0.95rem] leading-[1.6] text-concrete font-medium no-underline uppercase tracking-wider w-full" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.12)" }}>Our Work</Link>
+            <Link to="/blog" className="block py-5 text-[0.95rem] leading-[1.6] text-concrete font-medium no-underline uppercase tracking-wider w-full" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.12)" }}>Blog</Link>
+            <div className="pt-8 flex flex-col gap-3">
               <a href="tel:4052470027" className="btn-primary text-center text-base py-4 w-full">📞 (405) 247-0027</a>
               <Link to="/#estimate" className="btn-outline text-center text-base py-4 w-full">Get Free Estimate →</Link>
             </div>
@@ -138,15 +154,15 @@ export default function Navbar() {
 
 function MobileAccordion({ label, isOpen, onToggle, children }: { label: string; isOpen: boolean; onToggle: () => void; children: React.ReactNode }) {
   return (
-    <div style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
+    <div style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.12)" }}>
       <button
         onClick={onToggle}
-        className="w-full flex justify-between items-center py-4 text-left cursor-pointer bg-transparent border-none min-h-[48px]"
+        className="w-full flex justify-between items-center py-5 text-left cursor-pointer bg-transparent border-none min-h-[52px]"
       >
-        <span className="text-[0.72rem] tracking-[0.14em] uppercase text-orange font-bold">{label}</span>
-        <span className={`text-muted-text text-sm transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}>▾</span>
+        <span className="text-[0.78rem] tracking-[0.14em] uppercase text-orange font-bold">{label}</span>
+        <span className={`text-concrete/60 text-sm transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}>▾</span>
       </button>
-      <div className={`overflow-hidden transition-all duration-200 ${isOpen ? "max-h-[500px] pb-2" : "max-h-0"}`}>
+      <div className={`overflow-hidden transition-all duration-200 ${isOpen ? "max-h-[600px] pb-3" : "max-h-0"}`} style={{ background: "hsl(var(--stone))" }}>
         {children}
       </div>
     </div>
