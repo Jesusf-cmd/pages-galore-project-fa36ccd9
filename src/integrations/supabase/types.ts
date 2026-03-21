@@ -14,7 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      estimate_submissions: {
+        Row: {
+          created_at: string
+          details: string | null
+          email: string
+          estimate_high: number
+          estimate_low: number
+          finish_type: string | null
+          id: string
+          length_ft: number
+          name: string
+          phone: string
+          project_type: string
+          square_feet: number
+          width_ft: number
+        }
+        Insert: {
+          created_at?: string
+          details?: string | null
+          email: string
+          estimate_high: number
+          estimate_low: number
+          finish_type?: string | null
+          id?: string
+          length_ft: number
+          name: string
+          phone: string
+          project_type: string
+          square_feet: number
+          width_ft: number
+        }
+        Update: {
+          created_at?: string
+          details?: string | null
+          email?: string
+          estimate_high?: number
+          estimate_low?: number
+          finish_type?: string | null
+          id?: string
+          length_ft?: number
+          name?: string
+          phone?: string
+          project_type?: string
+          square_feet?: number
+          width_ft?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
