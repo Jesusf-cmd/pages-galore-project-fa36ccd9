@@ -19,6 +19,11 @@ const homeFAQ = [
 ];
 
 export default function Index() {
+  useSEO({
+    title: "Oklahoma City Concrete Contractors | Free Estimate | MyConcreteEstimate",
+    description: "Licensed Oklahoma City concrete contractors. Driveways, patios, slabs, foundations & stamped concrete. Free estimates. Call (405) 247-0027. Powered by Redwood Construction LLC.",
+  });
+
   return (
     <main>
       <HeroSection />
