@@ -325,10 +325,10 @@ function AboutSection() {
           <p className="prose-muted mb-8">
             Whether you're a homeowner in Edmond trying to replace a heaved driveway, a property owner in Norman needing a new <Link to="/concrete-slabs" className="text-orange no-underline">patio slab</Link>, or a business in Yukon looking for <strong>concrete slab contractors near you</strong> for a commercial pour — we cover the full OKC metro. Our crews work in <strong>Oklahoma City, Edmond, Norman, Mustang, Moore, and Yukon</strong> on a daily basis. We know the soil conditions zip code to zip code, and we've repaired enough failed work from other contractors to know exactly what not to do. If you want a straight quote from a crew that will show up when they say and pour it the way it's supposed to be poured, use the form above or call us directly. We respond to every estimate request within one business day.
           </p>
-          <div className="flex gap-4 flex-wrap">
-            <Link to="/concrete-driveways" className="btn-primary text-[0.82rem] py-3 px-6">Driveway Contractors →</Link>
-            <Link to="/concrete-slabs" className="btn-outline text-[0.82rem] py-3 px-6">Concrete Slabs →</Link>
-            <Link to="/concrete-foundations" className="btn-outline text-[0.82rem] py-3 px-6">Foundations →</Link>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <Link to="/concrete-driveways" className="btn-primary text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Driveway Contractors →</Link>
+            <Link to="/concrete-slabs" className="btn-outline text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Concrete Slabs →</Link>
+            <Link to="/concrete-foundations" className="btn-outline text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Foundations →</Link>
           </div>
         </div>
       </section>
