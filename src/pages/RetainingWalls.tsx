@@ -3,6 +3,8 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function RetainingWalls() {
   return (
     <ServicePage
+      metaTitle="Retaining Walls Oklahoma City | Concrete & Block | Free Estimate"
+      metaDescription="Retaining wall contractors in Oklahoma City. Poured concrete, CMU block, interlocking walls. $25–$45/linear ft. Call (405) 247-0027."
       eyebrow="OKC Metro · Retaining Wall Contractors · Licensed & Insured"
       title="Retaining Walls"
       titleAccent="Oklahoma City."

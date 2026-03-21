@@ -3,6 +3,8 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function ParkingLotConcrete() {
   return (
     <ServicePage
+      metaTitle="Parking Lot Concrete OKC | Commercial Contractors | Free Estimate"
+      metaDescription="Commercial concrete parking lot contractors in Oklahoma City. New construction, resurfacing, ADA compliant. $7–$12/sq ft. Call (405) 247-0027."
       eyebrow="OKC Metro · Commercial Concrete · Licensed & Insured"
       title="Parking Lot"
       titleAccent="Concrete OKC."

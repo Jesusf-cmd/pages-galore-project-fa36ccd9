@@ -3,6 +3,8 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function CurbGutter() {
   return (
     <ServicePage
+      metaTitle="Curb & Gutter Contractors Oklahoma City | Commercial & Residential"
+      metaDescription="Curb and gutter contractors in Oklahoma City. New construction, replacement, city-spec work. $18–$30/linear ft. Call (405) 247-0027."
       eyebrow="OKC Metro · Curb & Gutter Contractors · Licensed & Insured"
       title="Curb & Gutter"
       titleAccent="Oklahoma City."
