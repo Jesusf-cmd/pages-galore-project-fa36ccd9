@@ -6,6 +6,7 @@ import ServicesFooterGrid from "@/components/ServicesFooterGrid";
 import CityGrid from "@/components/CityGrid";
 import ProcessSteps from "@/components/ProcessSteps";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
+import { useSEO } from "@/hooks/useSEO";
 
 interface ServicePageProps {
   eyebrow: string;
@@ -27,7 +28,11 @@ interface ServicePageProps {
   metaDescription?: string;
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, sections, faq }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, sections, faq, metaTitle, metaDescription }: ServicePageProps) {
+  useSEO({
+    title: metaTitle || `${title} ${titleAccent} | MyConcreteEstimate`,
+    description: metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155),
+  });
   const processSteps = [
     { title: "Site prep & excavation", description: "We start by marking the area, calling 811 for utility locates, and excavating to the correct depth for your soil conditions. Problem soil gets flagged before the pour, not after." },
     { title: "Base compaction", description: "We install a compacted aggregate base — minimum 4 inches on standard OKC residential work, 6 inches on problem clay. This is the single biggest factor in whether your slab lasts 5 years or 40." },
