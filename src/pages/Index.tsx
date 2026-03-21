@@ -215,14 +215,14 @@ function EstimateForm() {
       </div>
 
       {step === 1 && (
-        <div className="p-5">
+        <div className="p-4 md:p-5">
           <div className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold mb-2.5">Select project type</div>
-          <div className="grid grid-cols-2 gap-2 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
             {types.map(t => (
               <button
                 key={t.id}
                 onClick={() => setProjectType(t.id)}
-                className={`text-left p-3 transition-colors cursor-pointer ${projectType === t.id ? "bg-orange/10 border-orange" : "bg-concrete/[0.03] border-concrete/10"}`}
+                className={`text-left p-3 md:p-3 transition-colors cursor-pointer min-h-[48px] ${projectType === t.id ? "bg-orange/10 border-orange" : "bg-concrete/[0.03] border-concrete/10"}`}
                 style={{ border: `1px solid hsl(var(--${projectType === t.id ? "orange" : "concrete"}) / ${projectType === t.id ? "0.5" : "0.1"})` }}
               >
                 <div className="font-display text-xs font-extrabold uppercase tracking-[0.04em] text-concrete">{t.name}</div>
@@ -230,7 +230,7 @@ function EstimateForm() {
               </button>
             ))}
           </div>
-          <button onClick={() => setStep(2)} className="btn-primary w-full text-sm py-3">Next: Enter Dimensions →</button>
+          <button onClick={() => setStep(2)} className="btn-primary w-full text-sm py-3.5 min-h-[48px]">Next: Enter Dimensions →</button>
         </div>
       )}
 
