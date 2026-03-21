@@ -31,6 +31,23 @@ export default function Index() {
       <AboutSection />
       <ServicesSection />
       <WhyUsSection />
+      <RecentProjectsSection />
+      <GoogleReviewsSection />
+      <ScrollReveal>
+        <section className="section-padding">
+          <div className="section-eye">Service areas</div>
+          <h2 className="mb-3">We Come To<br/><em className="h2-accent">You.</em></h2>
+          <p className="prose-muted mb-6">Redwood Construction LLC serves the greater Oklahoma City metro. Click your city for local info and area-specific services.</p>
+          <CityGrid />
+          <p className="prose-muted mt-8 text-[0.82rem]">
+            <strong className="text-concrete">Why local expertise matters for Oklahoma concrete:</strong> Oklahoma's expansive clay soil is among the most challenging in the country for flatwork. A crew that knows the OKC metro — our frost lines, drainage patterns, and soil behavior — will build you a <Link to="/concrete-slabs" className="text-orange no-underline">slab</Link> or <Link to="/concrete-foundations" className="text-orange no-underline">foundation</Link> that lasts decades. Redwood Construction has seen what happens when contractors cut corners on Oklahoma clay. We don't do it.
+          </p>
+          <p className="text-[0.78rem] text-muted-text mt-4">
+            <strong className="text-concrete">OKC metro zip codes we serve:</strong> 73003, 73012, 73013, 73034 (Edmond) · 73025, 73099 (Yukon/Mustang) · 73069, 73071, 73072 (Norman) · 73160 (Moore) · 73107, 73109, 73112, 73118, 73120, 73127, 73132, 73142, 73159, 73162 (OKC) and surrounding areas.
+          </p>
+        </section>
+      </ScrollReveal>
+      <ServiceAreasDetailSection />
       <ScrollReveal>
         <section className="section-padding">
           <FAQ
@@ -39,14 +56,6 @@ export default function Index() {
             title='Common Questions About<br/><em class="h2-accent">Concrete in Oklahoma City.</em>'
             subtitle="Straight answers from a crew that's poured concrete across the OKC metro for years."
           />
-        </section>
-      </ScrollReveal>
-      <ScrollReveal>
-        <section className="section-padding">
-          <div className="section-eye">Service Areas We Cover</div>
-          <h2 className="mb-3">Concrete Services Across<br/><em className="h2-accent">the OKC Metro.</em></h2>
-          <p className="prose-muted mb-6">Our concrete contractors cover Oklahoma City and surrounding communities. Same crew, same standards, every city.</p>
-          <CityGrid />
         </section>
       </ScrollReveal>
       <FinalCTA />
