@@ -4,7 +4,7 @@ export default function CommercialConcreteSlabs() {
   return (
     <ServicePage
       metaTitle="Commercial Concrete Slabs OKC | Warehouse & Retail Floors | Free Estimate"
-      metaDescription="Commercial concrete slab contractors in Oklahoma City. Warehouse floors, retail pads, equipment slabs. 5-6\" thick, 4,000 PSI. Call (405) 247-0027."
+      metaDescription="Commercial concrete slab contractors in Oklahoma City. Warehouse floors, retail pads, equipment slabs. 4,000 PSI. Call (405) 247-0027."
       eyebrow="OKC Metro · Commercial Concrete · Licensed & Insured"
       title="Commercial"
       titleAccent="Concrete Slabs."
