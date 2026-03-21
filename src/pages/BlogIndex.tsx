@@ -12,6 +12,11 @@ const posts = [
 ];
 
 export default function BlogIndex() {
+  useSEO({
+    title: "Concrete Blog | OKC Tips & Guides | MyConcreteEstimate",
+    description: "Expert tips on concrete driveways, slabs, foundations & stamped concrete in Oklahoma City. Cost guides, maintenance advice, and more.",
+  });
+
   return (
     <main>
       <section className="page-hero">
