@@ -68,54 +68,54 @@ export default function Index() {
 
 function HeroSection() {
   return (
-    <section className="min-h-screen grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-12 px-4 md:px-12 pt-32 pb-16 relative overflow-hidden" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
+    <section className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-6 lg:gap-12 px-4 md:px-12 pt-20 pb-8 md:pt-32 md:pb-16 lg:min-h-screen relative overflow-hidden" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img src={commercialFoundationImg} alt="" className="w-full h-full object-cover opacity-[0.55]" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(var(--darker) / 0.85) 30%, hsl(var(--darker) / 0.4) 100%)" }} />
       </div>
       <div className="hero-glow" style={{ zIndex: 1 }} />
-      <div className="page-hero relative z-[2]" style={{ padding: 0, border: "none" }}>
+      <div className="relative z-[2]" style={{ padding: 0, border: "none" }}>
         <div>
-          <span className="eyebrow mb-5 block">OKC Metro · Licensed & Insured · Locally Owned</span>
-          <h1 className="mb-6" style={{ fontSize: "clamp(3.2rem, 5.5vw, 6rem)" }}>
+          <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">OKC Metro · Licensed & Insured · Locally Owned</span>
+          <h1 className="mb-4 md:mb-6" style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)", lineHeight: 0.92 }}>
             Oklahoma City<br />
             Concrete Contractors<br />
             <span className="text-orange block">Done Right.</span>
           </h1>
-          <p className="text-base text-muted-text max-w-[460px] mb-7 leading-[1.78] font-light">
+          <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-5 md:mb-7 leading-[1.7] font-light">
             <Link to="/concrete-driveways" className="text-concrete font-medium no-underline">Driveways</Link>, patios, <Link to="/concrete-slabs" className="text-concrete font-medium no-underline">slabs</Link>, and <Link to="/concrete-foundations" className="text-concrete font-medium no-underline">foundations</Link> built for <strong className="text-concrete font-medium">Oklahoma's clay soil and weather</strong>. Locally owned and operated by Redwood Construction LLC — not a franchise, not a call center.
           </p>
-          <div className="flex flex-wrap gap-1.5 mb-8">
+          <div className="flex flex-wrap gap-1.5 mb-5 md:mb-8">
             {["Oklahoma City", "Edmond", "Norman", "Mustang", "Moore", "Yukon"].map(city => (
-              <span key={city} className="text-[0.66rem] tracking-[0.1em] uppercase py-1 px-3 text-orange font-semibold" style={{ border: "1px solid hsl(var(--orange) / 0.4)", background: "hsl(var(--orange) / 0.05)" }}>
+              <span key={city} className="text-[0.6rem] md:text-[0.66rem] tracking-[0.1em] uppercase py-1 px-2.5 md:px-3 text-orange font-semibold" style={{ border: "1px solid hsl(var(--orange) / 0.4)", background: "hsl(var(--orange) / 0.05)" }}>
                 {city}
               </span>
             ))}
           </div>
-          <div className="flex gap-4 flex-wrap mb-10">
-            <a href="#estimate" className="btn-primary">Get My Free Estimate →</a>
-            <a href="tel:4052470027" className="btn-outline">📞 (405) 247-0027</a>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 md:mb-10">
+            <a href="#estimate" className="btn-primary text-center w-full sm:w-auto">Get My Free Estimate →</a>
+            <a href="tel:4052470027" className="btn-outline text-center w-full sm:w-auto">📞 (405) 247-0027</a>
           </div>
-          <div className="flex gap-10 pt-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
+          <div className="flex gap-6 md:gap-10 pt-6 md:pt-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div>
-              <div className="font-display text-3xl font-black text-concrete leading-none">500<span className="text-orange">+</span></div>
-              <div className="text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">OKC metro projects</div>
+              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">500<span className="text-orange">+</span></div>
+              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">OKC metro projects</div>
             </div>
             <div>
-              <div className="font-display text-3xl font-black text-concrete leading-none">4.9<span className="text-orange">★</span></div>
-              <div className="text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Google rating</div>
+              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">4.9<span className="text-orange">★</span></div>
+              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Google rating</div>
             </div>
             <div>
-              <div className="font-display text-3xl font-black text-concrete leading-none">24<span className="text-orange">hr</span></div>
-              <div className="text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Estimate turnaround</div>
+              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">24<span className="text-orange">hr</span></div>
+              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Estimate turnaround</div>
             </div>
           </div>
         </div>
       </div>
-      <div id="estimate" className="pt-4 lg:pt-0 relative z-[2]">
-        <div className="bg-stone p-5" style={{ border: "1px solid hsl(var(--concrete) / 0.1)", borderBottom: "none" }}>
-          <p className="text-[0.78rem] text-muted-text leading-[1.7] font-light">
+      <div id="estimate" className="pt-2 lg:pt-0 relative z-[2]">
+        <div className="bg-stone p-4 md:p-5" style={{ border: "1px solid hsl(var(--concrete) / 0.1)", borderBottom: "none" }}>
+          <p className="text-[0.75rem] md:text-[0.78rem] text-muted-text leading-[1.7] font-light">
             The <strong className="text-concrete">concrete cost in Oklahoma City</strong> typically runs <strong className="text-concrete">$6–$10 per sq ft</strong> for a standard driveway or patio slab, and $9–$14 for foundation work. Use the estimator below for an instant price.
           </p>
         </div>
@@ -215,14 +215,14 @@ function EstimateForm() {
       </div>
 
       {step === 1 && (
-        <div className="p-5">
+        <div className="p-4 md:p-5">
           <div className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold mb-2.5">Select project type</div>
-          <div className="grid grid-cols-2 gap-2 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
             {types.map(t => (
               <button
                 key={t.id}
                 onClick={() => setProjectType(t.id)}
-                className={`text-left p-3 transition-colors cursor-pointer ${projectType === t.id ? "bg-orange/10 border-orange" : "bg-concrete/[0.03] border-concrete/10"}`}
+                className={`text-left p-3 md:p-3 transition-colors cursor-pointer min-h-[48px] ${projectType === t.id ? "bg-orange/10 border-orange" : "bg-concrete/[0.03] border-concrete/10"}`}
                 style={{ border: `1px solid hsl(var(--${projectType === t.id ? "orange" : "concrete"}) / ${projectType === t.id ? "0.5" : "0.1"})` }}
               >
                 <div className="font-display text-xs font-extrabold uppercase tracking-[0.04em] text-concrete">{t.name}</div>
@@ -230,28 +230,28 @@ function EstimateForm() {
               </button>
             ))}
           </div>
-          <button onClick={() => setStep(2)} className="btn-primary w-full text-sm py-3">Next: Enter Dimensions →</button>
+          <button onClick={() => setStep(2)} className="btn-primary w-full text-sm py-3.5 min-h-[48px]">Next: Enter Dimensions →</button>
         </div>
       )}
 
       {step === 2 && (
-        <div className="p-5">
+        <div className="p-4 md:p-5">
           <div className="grid grid-cols-2 gap-3 mb-3">
             <div>
               <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Length (ft)</label>
-              <input type="number" value={length} onChange={e => setLength(+e.target.value)} min={1} className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none transition-colors focus:border-orange" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+              <input type="number" value={length} onChange={e => setLength(+e.target.value)} min={1} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none transition-colors focus:border-orange min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
             </div>
             <div>
               <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
                 {projectType === "wall" ? "Height (ft)" : "Width (ft)"}
               </label>
-              <input type="number" value={width} onChange={e => setWidth(+e.target.value)} min={1} className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none transition-colors focus:border-orange" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+              <input type="number" value={width} onChange={e => setWidth(+e.target.value)} min={1} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none transition-colors focus:border-orange min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
             </div>
           </div>
           {projectType !== "wall" && (
             <div className="mb-3">
               <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Finish type</label>
-              <select value={finish} onChange={e => setFinish(e.target.value)} className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none cursor-pointer" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}>
+              <select value={finish} onChange={e => setFinish(e.target.value)} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none cursor-pointer min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}>
                 <option value="broom" className="bg-stone text-concrete">Broom finish — standard</option>
                 <option value="brushed" className="bg-stone text-concrete">Brushed / smooth</option>
                 <option value="stamped" className="bg-stone text-concrete">Stamped / decorative</option>
@@ -260,46 +260,46 @@ function EstimateForm() {
           )}
           <div className="bg-concrete/[0.03] p-4 mt-4 mb-4" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div className="text-[0.6rem] tracking-[0.14em] uppercase text-muted-text font-bold mb-2">Estimated Range</div>
-            <div className="font-display text-3xl font-black text-orange leading-none">
+            <div className="font-display text-2xl md:text-3xl font-black text-orange leading-none">
               ${range.low.toLocaleString()} – ${range.high.toLocaleString()}
             </div>
             <div className="text-[0.7rem] text-muted-text mt-1">{sqft} sq ft · ${range.perFtLow}–${range.perFtHigh}/sq ft installed</div>
           </div>
-          <div className="flex gap-2">
-            <button onClick={() => setStep(1)} className="btn-outline text-sm py-3 flex-1">← Back</button>
-            <button onClick={() => setStep(3)} className="btn-primary text-sm py-3 flex-1">Next: Your Info →</button>
+          <div className="flex flex-col sm:flex-row gap-2">
+            <button onClick={() => setStep(1)} className="btn-outline text-sm py-3.5 min-h-[48px] flex-1 w-full sm:w-auto">← Back</button>
+            <button onClick={() => setStep(3)} className="btn-primary text-sm py-3.5 min-h-[48px] flex-1 w-full sm:w-auto">Next: Your Info →</button>
           </div>
         </div>
       )}
 
       {step === 3 && (
-        <div className="p-5">
+        <div className="p-4 md:p-5">
           <div className="mb-3">
             <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Your Name</label>
-            <input value={name} onChange={e => setName(e.target.value)} placeholder="Full name" className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+            <input value={name} onChange={e => setName(e.target.value)} placeholder="Full name" className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
           </div>
           <div className="mb-3">
             <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Phone</label>
-            <input value={phone} onChange={e => setPhone(e.target.value)} placeholder="(405) 000-0000" className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+            <input value={phone} onChange={e => setPhone(e.target.value)} placeholder="(405) 000-0000" type="tel" className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
           </div>
           <div className="mb-3">
             <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Email</label>
-            <input value={email} onChange={e => setEmail(e.target.value)} placeholder="email@example.com" className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+            <input value={email} onChange={e => setEmail(e.target.value)} placeholder="email@example.com" type="email" className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
           </div>
           <div className="mb-4">
             <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Project Details</label>
-            <textarea value={details} onChange={e => setDetails(e.target.value)} placeholder="Tell us about your project..." rows={3} className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none resize-y" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+            <textarea value={details} onChange={e => setDetails(e.target.value)} placeholder="Tell us about your project..." rows={3} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none resize-y min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
           </div>
           {error && (
-            <div className="bg-red-900/20 text-red-400 text-sm p-3 mb-4" style={{ border: "1px solid hsl(0 60% 40% / 0.3)" }}>{error}</div>
+            <div className="bg-destructive/20 text-destructive text-sm p-3 mb-4" style={{ border: "1px solid hsl(0 60% 40% / 0.3)" }}>{error}</div>
           )}
           <div className="bg-concrete/[0.03] p-3 mb-4 text-center" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div className="font-display text-xl font-black text-orange">${range.low.toLocaleString()} – ${range.high.toLocaleString()}</div>
             <div className="text-[0.65rem] text-muted-text">{sqft} sq ft · {projectType}</div>
           </div>
-          <div className="flex gap-2">
-            <button onClick={() => setStep(2)} className="btn-outline text-sm py-3 flex-1">← Back</button>
-            <button onClick={handleSubmit} disabled={submitting} className="btn-primary text-sm py-3 flex-1 disabled:opacity-50 disabled:cursor-not-allowed">
+          <div className="flex flex-col sm:flex-row gap-2">
+            <button onClick={() => setStep(2)} className="btn-outline text-sm py-3.5 min-h-[48px] flex-1 w-full sm:w-auto">← Back</button>
+            <button onClick={handleSubmit} disabled={submitting} className="btn-primary text-sm py-3.5 min-h-[48px] flex-1 w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed">
               {submitting ? "Submitting..." : "Submit Estimate Request →"}
             </button>
           </div>
@@ -325,10 +325,10 @@ function AboutSection() {
           <p className="prose-muted mb-8">
             Whether you're a homeowner in Edmond trying to replace a heaved driveway, a property owner in Norman needing a new <Link to="/concrete-slabs" className="text-orange no-underline">patio slab</Link>, or a business in Yukon looking for <strong>concrete slab contractors near you</strong> for a commercial pour — we cover the full OKC metro. Our crews work in <strong>Oklahoma City, Edmond, Norman, Mustang, Moore, and Yukon</strong> on a daily basis. We know the soil conditions zip code to zip code, and we've repaired enough failed work from other contractors to know exactly what not to do. If you want a straight quote from a crew that will show up when they say and pour it the way it's supposed to be poured, use the form above or call us directly. We respond to every estimate request within one business day.
           </p>
-          <div className="flex gap-4 flex-wrap">
-            <Link to="/concrete-driveways" className="btn-primary text-[0.82rem] py-3 px-6">Driveway Contractors →</Link>
-            <Link to="/concrete-slabs" className="btn-outline text-[0.82rem] py-3 px-6">Concrete Slabs →</Link>
-            <Link to="/concrete-foundations" className="btn-outline text-[0.82rem] py-3 px-6">Foundations →</Link>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <Link to="/concrete-driveways" className="btn-primary text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Driveway Contractors →</Link>
+            <Link to="/concrete-slabs" className="btn-outline text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Concrete Slabs →</Link>
+            <Link to="/concrete-foundations" className="btn-outline text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Foundations →</Link>
           </div>
         </div>
       </section>
