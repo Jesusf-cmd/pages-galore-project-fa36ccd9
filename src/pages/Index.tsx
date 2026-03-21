@@ -71,8 +71,8 @@ function HeroSection() {
     <section className="min-h-screen grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-12 px-4 md:px-12 pt-32 pb-16 relative overflow-hidden" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img src={commercialFoundationImg} alt="" className="w-full h-full object-cover opacity-[0.07]" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(var(--darker)) 45%, hsl(var(--darker) / 0.85) 100%)" }} />
+        <img src={commercialFoundationImg} alt="" className="w-full h-full object-cover opacity-[0.25]" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(var(--darker) / 0.92) 40%, hsl(var(--darker) / 0.7) 100%)" }} />
       </div>
       <div className="hero-glow" style={{ zIndex: 1 }} />
       <div className="page-hero relative z-[2]" style={{ padding: 0, border: "none" }}>
