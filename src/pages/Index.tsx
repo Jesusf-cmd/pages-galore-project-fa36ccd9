@@ -1,4 +1,7 @@
 import { useState } from "react";
+import commercialFoundationImg from "@/assets/commercial-concrete-foundation-okc.jpg";
+import newDrivewayImg from "@/assets/new-driveway.jpg";
+import tiedRebarImg from "@/assets/tied-rebar.jpg";
 import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
 import { useSEO } from "@/hooks/useSEO";
@@ -66,8 +69,13 @@ export default function Index() {
 function HeroSection() {
   return (
     <section className="min-h-screen grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-12 px-4 md:px-12 pt-32 pb-16 relative overflow-hidden" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
-      <div className="hero-glow" />
-      <div className="page-hero" style={{ padding: 0, border: "none" }}>
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <img src={commercialFoundationImg} alt="" className="w-full h-full object-cover opacity-[0.07]" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(var(--darker)) 45%, hsl(var(--darker) / 0.85) 100%)" }} />
+      </div>
+      <div className="hero-glow" style={{ zIndex: 1 }} />
+      <div className="page-hero relative z-[2]" style={{ padding: 0, border: "none" }}>
         <div>
           <span className="eyebrow mb-5 block">OKC Metro · Licensed & Insured · Locally Owned</span>
           <h1 className="mb-6" style={{ fontSize: "clamp(3.2rem, 5.5vw, 6rem)" }}>
@@ -105,7 +113,7 @@ function HeroSection() {
           </div>
         </div>
       </div>
-      <div id="estimate" className="pt-4 lg:pt-0">
+      <div id="estimate" className="pt-4 lg:pt-0 relative z-[2]">
         <div className="bg-stone p-5" style={{ border: "1px solid hsl(var(--concrete) / 0.1)", borderBottom: "none" }}>
           <p className="text-[0.78rem] text-muted-text leading-[1.7] font-light">
             The <strong className="text-concrete">concrete cost in Oklahoma City</strong> typically runs <strong className="text-concrete">$6–$10 per sq ft</strong> for a standard driveway or patio slab, and $9–$14 for foundation work. Use the estimator below for an instant price.
@@ -386,7 +394,12 @@ function WhyUsSection() {
 
   return (
     <ScrollReveal>
-      <section className="section-padding section-alt">
+      <section className="section-padding section-alt relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={tiedRebarImg} alt="" className="w-full h-full object-cover opacity-[0.04]" />
+          <div className="absolute inset-0 bg-stone" style={{ opacity: 0.92 }} />
+        </div>
+        <div className="relative z-[1]">
         <div className="section-eye">Why Redwood Construction</div>
         <h2 className="mb-3">Local Crew.<br/><em className="h2-accent">Real Results.</em></h2>
         <p className="prose-muted mb-8">We're not a national franchise. Redwood Construction LLC is a locally owned OKC business — and we know exactly what Oklahoma soil, weather, and homeowners actually need for <Link to="/concrete-driveways" className="text-orange no-underline">driveways</Link>, <Link to="/concrete-slabs" className="text-orange no-underline">slabs</Link>, and <Link to="/concrete-foundations" className="text-orange no-underline">foundations</Link> that last.</p>
@@ -398,6 +411,7 @@ function WhyUsSection() {
               <p className="text-[0.78rem] text-muted-text leading-relaxed">{r.desc}</p>
             </div>
           ))}
+        </div>
         </div>
       </section>
     </ScrollReveal>
@@ -417,6 +431,9 @@ function RecentProjectsSection() {
         <div className="section-eye">Our work</div>
         <h2 className="mb-3">Recent Projects<br/><em className="h2-accent">Across the Metro.</em></h2>
         <p className="prose-muted mb-8">Real jobs for real Oklahoma homeowners and businesses. Every project — from <Link to="/concrete-driveways" className="text-orange no-underline">concrete driveways</Link> to <Link to="/stamped-concrete" className="text-orange no-underline">stamped patios</Link> — backed by the Redwood Construction guarantee.</p>
+        <div className="mb-6 overflow-hidden" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+          <img src={newDrivewayImg} alt="Completed concrete driveway project in Edmond, Oklahoma by Redwood Construction" className="w-full h-[280px] md:h-[360px] object-cover" />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
           {projects.map((p, i) => (
             <div key={i} className="bg-darker p-6">
