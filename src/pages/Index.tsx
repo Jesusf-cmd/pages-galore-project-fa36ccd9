@@ -235,23 +235,23 @@ function EstimateForm() {
       )}
 
       {step === 2 && (
-        <div className="p-5">
+        <div className="p-4 md:p-5">
           <div className="grid grid-cols-2 gap-3 mb-3">
             <div>
               <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Length (ft)</label>
-              <input type="number" value={length} onChange={e => setLength(+e.target.value)} min={1} className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none transition-colors focus:border-orange" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+              <input type="number" value={length} onChange={e => setLength(+e.target.value)} min={1} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none transition-colors focus:border-orange min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
             </div>
             <div>
               <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
                 {projectType === "wall" ? "Height (ft)" : "Width (ft)"}
               </label>
-              <input type="number" value={width} onChange={e => setWidth(+e.target.value)} min={1} className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none transition-colors focus:border-orange" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+              <input type="number" value={width} onChange={e => setWidth(+e.target.value)} min={1} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none transition-colors focus:border-orange min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
             </div>
           </div>
           {projectType !== "wall" && (
             <div className="mb-3">
               <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Finish type</label>
-              <select value={finish} onChange={e => setFinish(e.target.value)} className="w-full bg-concrete/[0.05] px-3 py-2.5 text-concrete font-body text-sm outline-none cursor-pointer" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}>
+              <select value={finish} onChange={e => setFinish(e.target.value)} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none cursor-pointer min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}>
                 <option value="broom" className="bg-stone text-concrete">Broom finish — standard</option>
                 <option value="brushed" className="bg-stone text-concrete">Brushed / smooth</option>
                 <option value="stamped" className="bg-stone text-concrete">Stamped / decorative</option>
@@ -260,14 +260,14 @@ function EstimateForm() {
           )}
           <div className="bg-concrete/[0.03] p-4 mt-4 mb-4" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div className="text-[0.6rem] tracking-[0.14em] uppercase text-muted-text font-bold mb-2">Estimated Range</div>
-            <div className="font-display text-3xl font-black text-orange leading-none">
+            <div className="font-display text-2xl md:text-3xl font-black text-orange leading-none">
               ${range.low.toLocaleString()} – ${range.high.toLocaleString()}
             </div>
             <div className="text-[0.7rem] text-muted-text mt-1">{sqft} sq ft · ${range.perFtLow}–${range.perFtHigh}/sq ft installed</div>
           </div>
-          <div className="flex gap-2">
-            <button onClick={() => setStep(1)} className="btn-outline text-sm py-3 flex-1">← Back</button>
-            <button onClick={() => setStep(3)} className="btn-primary text-sm py-3 flex-1">Next: Your Info →</button>
+          <div className="flex flex-col sm:flex-row gap-2">
+            <button onClick={() => setStep(1)} className="btn-outline text-sm py-3.5 min-h-[48px] flex-1 w-full sm:w-auto">← Back</button>
+            <button onClick={() => setStep(3)} className="btn-primary text-sm py-3.5 min-h-[48px] flex-1 w-full sm:w-auto">Next: Your Info →</button>
           </div>
         </div>
       )}
