@@ -5,7 +5,11 @@ import ServicesFooterGrid from "@/components/ServicesFooterGrid";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
 
-const projects = [
+const SPENCER_VIDEO = "https://img1.wsimg.com/blobby/go/e58b3d42-c6ef-4001-afe8-1a0cde6bd652/video/copy_AD0EB7AC-6471-4D2C-9970-C121B31EB011.mp4";
+const KIDDIE_VIDEO = "https://img1.wsimg.com/blobby/go/e58b3d42-c6ef-4001-afe8-1a0cde6bd652/video/Kiddie%20academy%20MP4.mp4";
+const KIDDIE_YOUTUBE = "https://www.youtube.com/embed/6eXyTL8-2_A?rel=0&showinfo=0&autoplay=0&loop=0&controls=1";
+
+const otherProjects = [
   { title: "Driveway Replacement", location: "Edmond, OK", desc: "Full tear-out of cracked original driveway, 4\" reinforced pour with #3 rebar, broom finish.", size: "24×40", time: "2 days" },
   { title: "Stamped Concrete Patio", location: "Norman, OK", desc: "Ashlar slate pattern, custom charcoal release, matte sealer. Covered extension.", size: "580 sq ft", time: "3 days" },
   { title: "Commercial Parking Lot", location: "Yukon, OK", desc: "5\" commercial concrete parking lot for retail strip. Graded for drainage, rebar reinforced.", size: "4,200 sq ft", time: "5 days" },
@@ -39,11 +43,106 @@ export default function OurProjects() {
 
       <ScrollReveal>
         <section className="section-padding">
-          <div className="section-eye">Recent Projects</div>
-          <h2 className="mb-4">Work We've Done Across<br/><em className="h2-accent">the OKC Metro.</em></h2>
+          <div className="section-eye">Featured Projects</div>
+          <h2 className="mb-4">Watch Our Work<br/><em className="h2-accent">In Action.</em></h2>
+          <p className="prose-muted mb-10">Two of our proudest commercial concrete projects — with video so you can see the quality for yourself.</p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08] mb-8" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+            <div className="bg-darker relative overflow-hidden">
+              <video
+                className="w-full h-full object-cover min-h-[320px]"
+                controls
+                preload="metadata"
+                playsInline
+                poster=""
+              >
+                <source src={SPENCER_VIDEO} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="bg-stone p-8 lg:p-10 flex flex-col justify-center">
+              <div className="text-[0.6rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Commercial · Spencer, Oklahoma</div>
+              <h3 className="font-display text-[clamp(1.4rem,2.5vw,2rem)] font-black uppercase leading-[1.05] mb-4">
+                Star Spencer<br/>High School
+              </h3>
+              <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-5">
+                We installed new concrete stairs and sidewalks with ADA-compliant ramps at Star Spencer High School. This project required precision grading, proper reinforcement, and compliance with ADA accessibility standards — all completed on schedule for the school district.
+              </p>
+              <div className="flex gap-8 pt-4" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">ADA</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Compliant ramps</div>
+                </div>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Stairs</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">& Sidewalks</div>
+                </div>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Public</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">School project</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+            <div className="bg-stone p-8 lg:p-10 flex flex-col justify-center order-2 lg:order-1">
+              <div className="text-[0.6rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Commercial · Oklahoma City, OK</div>
+              <h3 className="font-display text-[clamp(1.4rem,2.5vw,2rem)] font-black uppercase leading-[1.05] mb-4">
+                Kiddie Academy<br/>Foundation & Parking Lot
+              </h3>
+              <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-3">
+                This commercial concrete project for Kiddie Academy in Oklahoma City included foundation work and parking lot construction from start to finish. Our team handled site preparation, grading, formwork, reinforcement installation, and concrete placement to ensure a durable, long-lasting structure.
+              </p>
+              <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-5">
+                Proper drainage and slope were carefully planned to prevent water buildup and protect the integrity of the concrete over time.
+              </p>
+              <div className="text-[0.72rem] text-muted-text mb-5">
+                📍 <strong className="text-concrete">3100 NW 150th St, Oklahoma City, OK 73134</strong>
+              </div>
+              <div className="flex gap-8 pt-4" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Foundation</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Commercial pour</div>
+                </div>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Parking</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Lot concrete</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-darker relative overflow-hidden order-1 lg:order-2 flex flex-col gap-px">
+              <video
+                className="w-full object-cover min-h-[280px] flex-1"
+                controls
+                preload="metadata"
+                playsInline
+              >
+                <source src={KIDDIE_VIDEO} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src={KIDDIE_YOUTUBE}
+                  title="Kiddie Academy Concrete Project Timelapse"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <section className="section-padding section-alt">
+          <div className="section-eye">More Projects</div>
+          <h2 className="mb-4">Work Across<br/><em className="h2-accent">the OKC Metro.</em></h2>
           <p className="prose-muted mb-8">Every project below was completed by our own crew — no subcontractors.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-            {projects.map((p, i) => (
+            {otherProjects.map((p, i) => (
               <div key={i} className="bg-stone p-6">
                 <div className="font-display text-base font-extrabold uppercase tracking-[0.04em] mb-1">{p.title}</div>
                 <div className="text-[0.66rem] text-orange tracking-[0.1em] uppercase font-bold mb-3">{p.location}</div>
@@ -59,7 +158,7 @@ export default function OurProjects() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <section className="section-padding section-alt">
+        <section className="section-padding">
           <div className="section-eye">Our Concrete Services</div>
           <h2 className="mb-4">Every Concrete Service<br/><em className="h2-accent">OKC Homeowners Need.</em></h2>
           <ServicesFooterGrid />
