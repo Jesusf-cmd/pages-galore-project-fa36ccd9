@@ -357,7 +357,7 @@ function ServicesSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-concrete/[0.08] mt-px" style={{ border: "1px solid hsl(var(--concrete) / 0.08)", borderTop: "none" }}>
           {[
             { tag: "Commercial", name: "Parking Lot Concrete", to: "/parking-lot-concrete" },
-            { tag: "Commercial", name: "Curb & Gutter", to: "/curb-gutter" },
+            { tag: "Commercial", name: "Curb & Gutter", to: "/curb-and-gutter" },
             { tag: "Res & Commercial", name: "Concrete Repair", to: "/#estimate" },
             { tag: "Not sure?", name: "Get a Free Quote →", to: "/#estimate", highlight: true },
           ].map((c, i) => (
