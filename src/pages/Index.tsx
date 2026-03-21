@@ -69,8 +69,13 @@ export default function Index() {
 function HeroSection() {
   return (
     <section className="min-h-screen grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-12 px-4 md:px-12 pt-32 pb-16 relative overflow-hidden" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
-      <div className="hero-glow" />
-      <div className="page-hero" style={{ padding: 0, border: "none" }}>
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <img src={commercialFoundationImg} alt="" className="w-full h-full object-cover opacity-[0.07]" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(var(--darker)) 45%, hsl(var(--darker) / 0.85) 100%)" }} />
+      </div>
+      <div className="hero-glow" style={{ zIndex: 1 }} />
+      <div className="page-hero relative z-[2]" style={{ padding: 0, border: "none" }}>
         <div>
           <span className="eyebrow mb-5 block">OKC Metro · Licensed & Insured · Locally Owned</span>
           <h1 className="mb-6" style={{ fontSize: "clamp(3.2rem, 5.5vw, 6rem)" }}>
