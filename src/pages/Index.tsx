@@ -394,7 +394,12 @@ function WhyUsSection() {
 
   return (
     <ScrollReveal>
-      <section className="section-padding section-alt">
+      <section className="section-padding section-alt relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={tiedRebarImg} alt="" className="w-full h-full object-cover opacity-[0.04]" />
+          <div className="absolute inset-0 bg-stone" style={{ opacity: 0.92 }} />
+        </div>
+        <div className="relative z-[1]">
         <div className="section-eye">Why Redwood Construction</div>
         <h2 className="mb-3">Local Crew.<br/><em className="h2-accent">Real Results.</em></h2>
         <p className="prose-muted mb-8">We're not a national franchise. Redwood Construction LLC is a locally owned OKC business — and we know exactly what Oklahoma soil, weather, and homeowners actually need for <Link to="/concrete-driveways" className="text-orange no-underline">driveways</Link>, <Link to="/concrete-slabs" className="text-orange no-underline">slabs</Link>, and <Link to="/concrete-foundations" className="text-orange no-underline">foundations</Link> that last.</p>
