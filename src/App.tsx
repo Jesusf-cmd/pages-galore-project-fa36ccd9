@@ -13,7 +13,9 @@ import ConcretePatioOKC from "./pages/ConcretePatioOKC";
 import ConcreteSidewalks from "./pages/ConcreteSidewalks";
 import RetainingWalls from "./pages/RetainingWalls";
 import CurbGutter from "./pages/CurbGutter";
+import CurbAndGutter from "./pages/CurbAndGutter";
 import ParkingLotConcrete from "./pages/ParkingLotConcrete";
+import CommercialConcreteSlabs from "./pages/CommercialConcreteSlabs";
 import CityPage from "./pages/CityPage";
 import OurProjects from "./pages/OurProjects";
 import BlogIndex from "./pages/BlogIndex";
@@ -38,6 +40,7 @@ const App = () => (
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
+            {/* Residential Concrete */}
             <Route path="/concrete-driveways" element={<ConcreteDriveways />} />
             <Route path="/concrete-slabs" element={<ConcreteSlabs />} />
             <Route path="/stamped-concrete" element={<StampedConcrete />} />
@@ -45,8 +48,12 @@ const App = () => (
             <Route path="/concrete-patio-okc" element={<ConcretePatioOKC />} />
             <Route path="/concrete-sidewalks" element={<ConcreteSidewalks />} />
             <Route path="/retaining-walls" element={<RetainingWalls />} />
-            <Route path="/curb-gutter" element={<CurbGutter />} />
+            {/* Commercial Concrete */}
             <Route path="/parking-lot-concrete" element={<ParkingLotConcrete />} />
+            <Route path="/curb-and-gutter" element={<CurbAndGutter />} />
+            <Route path="/curb-gutter" element={<CurbGutter />} />
+            <Route path="/commercial-concrete-slabs" element={<CommercialConcreteSlabs />} />
+            {/* Service Areas */}
             <Route path="/oklahoma-city-concrete" element={<CityPage slug="oklahoma-city" />} />
             <Route path="/edmond-concrete" element={<CityPage slug="edmond" />} />
             <Route path="/norman-ok-concrete" element={<CityPage slug="norman" />} />
@@ -55,6 +62,7 @@ const App = () => (
             <Route path="/moore-oklahoma-concrete" element={<CityPage slug="moore" />} />
             <Route path="/midwest-city-oklahoma-concrete" element={<CityPage slug="midwest-city" />} />
             <Route path="/del-city-oklahoma-concrete" element={<CityPage slug="del-city" />} />
+            {/* Other */}
             <Route path="/our-projects" element={<OurProjects />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

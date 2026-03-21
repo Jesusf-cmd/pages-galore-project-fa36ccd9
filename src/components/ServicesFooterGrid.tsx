@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
 
 const services = [
-  { tag: "Residential & Comm", name: "Concrete Driveways", to: "/concrete-driveways" },
-  { tag: "Residential & Comm", name: "Concrete Slabs & Patios", to: "/concrete-slabs" },
+  { tag: "Residential", name: "Concrete Driveways", to: "/concrete-driveways" },
+  { tag: "Residential", name: "Concrete Slabs & Patios", to: "/concrete-slabs" },
   { tag: "Decorative", name: "Stamped Concrete", to: "/stamped-concrete" },
+  { tag: "Residential", name: "Concrete Patio OKC", to: "/concrete-patio-okc" },
   { tag: "Structural", name: "Concrete Foundations", to: "/concrete-foundations" },
-  { tag: "Outdoor", name: "Concrete Patio OKC", to: "/concrete-patio-okc" },
-  { tag: "Structural", name: "Retaining Walls", to: "/retaining-walls" },
   { tag: "Residential", name: "Concrete Sidewalks", to: "/concrete-sidewalks" },
+  { tag: "Structural", name: "Retaining Walls", to: "/retaining-walls" },
   { tag: "Commercial", name: "Parking Lot Concrete", to: "/parking-lot-concrete" },
+  { tag: "Commercial", name: "Curb & Gutter", to: "/curb-and-gutter" },
+  { tag: "Commercial", name: "Commercial Slabs", to: "/commercial-concrete-slabs" },
 ];
 
 export default function ServicesFooterGrid() {
