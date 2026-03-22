@@ -15,7 +15,7 @@ export default function ConcreteSidewalks() {
           title: "Safe, Clean &",
           titleAccent: "Built to Code.",
           content: [
-            "<strong>Concrete sidewalk contractors in Oklahoma City</strong> — Redwood Construction handles new construction, replacement, and city right-of-way sidewalks with proper base prep and ADA-compliant options.",
+            "<strong>Concrete sidewalk contractors in Oklahoma City</strong> — Redwood Construction handles new construction, replacement, and city right-of-way sidewalks with proper base prep and ADA-compliant options. Our sidewalk work builds on the same <a href='/concrete-foundations'>foundation expertise</a> we bring to every project.",
             "We handle city-required sidewalk repairs, new construction in subdivisions, and private walkway projects. Every sidewalk is broom-finished for traction and properly jointed. Our sidewalk work complements our <a href='/concrete-driveways'>driveway</a> and <a href='/concrete-patio-okc'>patio</a> services for complete residential concrete projects.",
           ],
         },
@@ -35,7 +35,7 @@ export default function ConcreteSidewalks() {
           titleAccent: "Contractors in OKC.",
           content: [
             "Redwood Construction handles sidewalk projects of all sizes — from a single walkway panel to full subdivision installations. We understand Oklahoma City's specific requirements for right-of-way work and ADA accessibility.",
-            "Our 4.9-star Google rating and BBB A+ accreditation come from consistently delivering quality work on time and on budget. We also offer <a href='/curb-and-gutter'>curb and gutter</a> installation and <a href='/parking-lot-concrete'>commercial concrete</a> for complete site work.",
+            "Our 4.9-star Google rating and BBB A+ accreditation come from consistently delivering quality work on time and on budget. We also offer <a href='/curb-and-gutter'>curb and gutter</a> installation, <a href='/concrete-slabs'>concrete slab construction</a>, and <a href='/parking-lot-concrete'>commercial concrete</a> for complete site work.",
           ],
         },
         {

@@ -139,6 +139,9 @@ export default function BlogPost() {
               ))}
             </div>
           ))}
+          <div className="mt-10 mb-8">
+            <p className="prose-muted">Looking for a contractor? Redwood Construction handles <Link to="/concrete-driveways" className="text-orange no-underline">concrete driveway installation</Link>, <Link to="/concrete-slabs" className="text-orange no-underline">patio and garage slab construction</Link>, <Link to="/stamped-concrete" className="text-orange no-underline">stamped decorative concrete</Link>, and <Link to="/concrete-foundations" className="text-orange no-underline">foundation work</Link> across the <Link to="/oklahoma-city-concrete" className="text-orange no-underline">Oklahoma City metro</Link>.</p>
+          </div>
           <div className="flex gap-4 flex-wrap mt-12 pt-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <Link to="/blog" className="btn-outline text-sm">← All Articles</Link>
             <Link to="/#estimate" className="btn-primary text-sm">Get Free Estimate →</Link>

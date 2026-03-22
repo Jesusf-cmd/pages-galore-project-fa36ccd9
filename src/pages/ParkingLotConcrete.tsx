@@ -40,7 +40,7 @@ export default function ParkingLotConcrete() {
           titleAccent: "Lot Experts.",
           content: [
             "Redwood Construction has completed commercial parking lot projects across Oklahoma City — see our <a href='/our-projects'>project gallery</a> for examples including our Kiddie Academy project. We understand the specific requirements of commercial concrete: ADA compliance, drainage engineering, and durability under heavy traffic.",
-            "Our BBB A+ rating and 4.9-star Google reviews reflect consistent quality on commercial and <a href='/concrete-driveways'>residential</a> projects alike.",
+            "Our BBB A+ rating and 4.9-star Google reviews reflect consistent quality on commercial and <a href='/concrete-driveways'>residential driveway</a> projects alike. We also handle <a href='/concrete-foundations'>concrete foundation work</a> for commercial and residential buildings across Oklahoma City.",
           ],
         },
       ]}
