@@ -81,9 +81,6 @@ export default function Navbar() {
             className="h-[40px] md:h-[50px] w-auto object-contain"
             loading="eager"
           />
-          <span className="hidden sm:block text-[0.58rem] tracking-[0.14em] uppercase text-muted-text font-medium">
-            Powered by <span className="text-orange">Redwood Construction LLC</span>
-          </span>
         </Link>
 
         <ul className="hidden nav:flex gap-0 list-none">
