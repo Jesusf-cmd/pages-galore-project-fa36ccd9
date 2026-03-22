@@ -23,8 +23,8 @@ const homeFAQ = [
 
 export default function Index() {
   useSEO({
-    title: "Oklahoma City Concrete Contractors | Redwood Construction LLC",
-    description: "Licensed concrete contractors in Oklahoma City. Driveways, patios, slabs, foundations, and stamped concrete. Locally owned. Free estimates. Call (405) 247-0027.",
+    title: "Concrete Contractor in Oklahoma City | Free Estimates | Redwood Construction",
+    description: "Licensed Oklahoma City concrete contractor. Driveways, foundations, slabs, sidewalks, and commercial concrete in OKC, Edmond, and Norman. Call 405-247-0027 for a free estimate.",
   });
 
   return (
@@ -77,14 +77,20 @@ function HeroSection() {
       <div className="hero-glow" style={{ zIndex: 1 }} />
       <div className="relative z-[2]" style={{ padding: 0, border: "none" }}>
         <div>
-          <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">OKC Metro · Licensed & Insured · Locally Owned</span>
+          <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">Oklahoma City Concrete Contractor · Licensed & Insured · Locally Owned</span>
           <h1 className="mb-4 md:mb-6" style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)", lineHeight: 0.92 }}>
+            Concrete Contractor in<br />
             Oklahoma City<br />
-            Concrete Contractors<br />
-            <span className="text-orange block">Done Right.</span>
+            <span className="text-orange block">Free Estimates.</span>
           </h1>
-          <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-5 md:mb-7 leading-[1.7] font-light">
-            <Link to="/concrete-driveways" className="text-concrete font-medium no-underline">Driveways</Link>, patios, <Link to="/concrete-slabs" className="text-concrete font-medium no-underline">slabs</Link>, and <Link to="/concrete-foundations" className="text-concrete font-medium no-underline">foundations</Link> built for <strong className="text-concrete font-medium">Oklahoma's clay soil and weather</strong>. Locally owned and operated by Redwood Construction LLC — not a franchise, not a call center.
+          <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-3 md:mb-4 leading-[1.7] font-light">
+            Redwood Construction LLC specializes in concrete <Link to="/concrete-driveways" className="text-concrete font-medium no-underline">driveways</Link>, <Link to="/concrete-foundations" className="text-concrete font-medium no-underline">foundations</Link>, <Link to="/concrete-slabs" className="text-concrete font-medium no-underline">slabs</Link>, <Link to="/concrete-sidewalks" className="text-concrete font-medium no-underline">sidewalks</Link>, and <Link to="/commercial-concrete-slabs" className="text-concrete font-medium no-underline">commercial concrete work</Link> in Oklahoma City and surrounding areas.
+          </p>
+          <p className="text-sm md:text-base text-concrete max-w-[460px] mb-3 md:mb-4 leading-[1.7] font-medium">
+            Built to last. Clean, professional finishes. Residential and commercial projects.
+          </p>
+          <p className="text-sm md:text-base max-w-[460px] mb-5 md:mb-7 leading-[1.7] font-light">
+            <a href="tel:4052470027" className="text-orange font-bold no-underline">Call 405-247-0027</a> for a fast, free estimate. Proudly serving concrete services in OKC, including <Link to="/edmond-concrete" className="text-concrete font-medium no-underline">Edmond</Link> and <Link to="/norman-ok-concrete" className="text-concrete font-medium no-underline">Norman concrete services</Link>.
           </p>
           <div className="flex flex-wrap gap-1.5 mb-5 md:mb-8">
             {["Oklahoma City", "Edmond", "Norman", "Mustang", "Moore", "Yukon"].map(city => (
