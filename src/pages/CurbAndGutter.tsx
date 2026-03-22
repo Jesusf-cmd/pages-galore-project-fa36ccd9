@@ -16,7 +16,7 @@ export default function CurbAndGutter() {
           titleAccent: "Residential Curb.",
           content: [
             "<strong>Curb and gutter contractors in Oklahoma City</strong> — Redwood Construction handles new construction, replacement, and repair of concrete curb and gutter across the OKC metro.",
-            "We pour standard barrier curb, mountable curb, valley gutter, and combination curb and gutter sections to city specifications. Our curb work integrates with <a href='/parking-lot-concrete'>parking lot</a> and <a href='/concrete-sidewalks'>sidewalk</a> projects for complete commercial site work.",
+            "We pour standard barrier curb, mountable curb, valley gutter, and combination curb and gutter sections to city specifications. Our curb work integrates with <a href='/parking-lot-concrete'>parking lot</a>, <a href='/concrete-sidewalks'>sidewalk</a>, and <a href='/concrete-driveways'>driveway</a> projects for complete commercial and residential site work.",
           ],
           stats: [
             { value: "$18–30", label: "Per linear ft" },
