@@ -79,18 +79,16 @@ function HeroSection() {
         <div>
           <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">Oklahoma City Concrete Contractor · Licensed & Insured · Locally Owned</span>
           <h1 className="mb-4 md:mb-6" style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)", lineHeight: 0.92 }}>
-            Concrete Contractor in<br />
-            Oklahoma City<br />
-            <span className="text-orange block">Free Estimates.</span>
+            Concrete Contractor in Oklahoma City | Free Estimates
           </h1>
           <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-3 md:mb-4 leading-[1.7] font-light">
-            Redwood Construction LLC specializes in concrete <Link to="/concrete-driveways" className="text-concrete font-medium no-underline">driveways</Link>, <Link to="/concrete-foundations" className="text-concrete font-medium no-underline">foundations</Link>, <Link to="/concrete-slabs" className="text-concrete font-medium no-underline">slabs</Link>, <Link to="/concrete-sidewalks" className="text-concrete font-medium no-underline">sidewalks</Link>, and <Link to="/commercial-concrete-slabs" className="text-concrete font-medium no-underline">commercial concrete work</Link> in Oklahoma City and surrounding areas.
+            Oklahoma City concrete contractor specializing in driveways, foundations, slabs, sidewalks, and commercial concrete services in OKC, Edmond, and Norman.
           </p>
           <p className="text-sm md:text-base text-concrete max-w-[460px] mb-3 md:mb-4 leading-[1.7] font-medium">
-            Built to last. Clean, professional finishes. Residential and commercial projects.
+            Built to last. Clean, professional finishes. Residential and commercial concrete work.
           </p>
           <p className="text-sm md:text-base max-w-[460px] mb-5 md:mb-7 leading-[1.7] font-light">
-            <a href="tel:4052470027" className="text-orange font-bold no-underline">Call 405-247-0027</a> for a fast, free estimate. Proudly serving concrete services in OKC, including <Link to="/edmond-concrete" className="text-concrete font-medium no-underline">Edmond</Link> and <Link to="/norman-ok-concrete" className="text-concrete font-medium no-underline">Norman concrete services</Link>.
+            <a href="tel:4052470027" className="text-orange font-bold no-underline">Call 405-247-0027</a> for a fast, free estimate.
           </p>
           <div className="flex flex-wrap gap-1.5 mb-5 md:mb-8">
             {["Oklahoma City", "Edmond", "Norman", "Mustang", "Moore", "Yukon"].map(city => (
