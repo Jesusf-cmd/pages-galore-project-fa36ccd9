@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Layout from "@/components/Layout";
@@ -12,7 +12,6 @@ import ConcreteFoundations from "./pages/ConcreteFoundations";
 import ConcretePatioOKC from "./pages/ConcretePatioOKC";
 import ConcreteSidewalks from "./pages/ConcreteSidewalks";
 import RetainingWalls from "./pages/RetainingWalls";
-import CurbGutter from "./pages/CurbGutter";
 import CurbAndGutter from "./pages/CurbAndGutter";
 import ParkingLotConcrete from "./pages/ParkingLotConcrete";
 import CommercialConcreteSlabs from "./pages/CommercialConcreteSlabs";
@@ -51,7 +50,7 @@ const App = () => (
             {/* Commercial Concrete */}
             <Route path="/parking-lot-concrete" element={<ParkingLotConcrete />} />
             <Route path="/curb-and-gutter" element={<CurbAndGutter />} />
-            <Route path="/curb-gutter" element={<CurbGutter />} />
+            <Route path="/curb-gutter" element={<Navigate to="/curb-and-gutter" replace />} />
             <Route path="/commercial-concrete-slabs" element={<CommercialConcreteSlabs />} />
             {/* Service Areas */}
             <Route path="/oklahoma-city-concrete" element={<CityPage slug="oklahoma-city" />} />
