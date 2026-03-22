@@ -32,7 +32,7 @@ export default function OurProjects() {
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">OKC Metro · Real Projects · Real Results</span>
         <h1 className="max-w-[820px] mb-5">Our Concrete Work<br/><span className="text-orange">Across Oklahoma.</span></h1>
-        <p className="prose-muted max-w-[680px] mb-8">Real jobs for <strong>Oklahoma City homeowners and businesses</strong> — driveways, patios, stamped concrete, foundations, and commercial pours.</p>
+        <p className="prose-muted max-w-[680px] mb-8">Real jobs for <strong>Oklahoma City homeowners and businesses</strong> — <Link to="/concrete-driveways" className="text-orange no-underline">concrete driveways</Link>, <Link to="/concrete-patio-okc" className="text-orange no-underline">patios</Link>, <Link to="/stamped-concrete" className="text-orange no-underline">stamped concrete</Link>, foundations, and commercial pours.</p>
         <div className="flex gap-4 flex-wrap">
           <Link to="/#estimate" className="btn-primary">Get Your Free Estimate →</Link>
           <a href="tel:4052470027" className="btn-outline">📞 (405) 247-0027</a>
