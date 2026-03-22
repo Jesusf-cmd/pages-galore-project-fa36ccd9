@@ -82,7 +82,7 @@ function HeroSection() {
             Concrete Contractor in Oklahoma City, OK | Driveways, Patios & Foundations
           </h1>
           <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-3 md:mb-4 leading-[1.7] font-light">
-            Oklahoma City concrete contractor specializing in driveways, foundations, slabs, sidewalks, and commercial concrete services in OKC, Edmond, and Norman.
+            We are a trusted concrete contractor in Oklahoma City, OK specializing in concrete driveways, patios, foundations, slabs, sidewalks, and commercial concrete services in OKC, Edmond, and Norman.
           </p>
           <p className="text-sm md:text-base text-concrete max-w-[460px] mb-3 md:mb-4 leading-[1.7] font-medium">
             Built to last. Clean, professional finishes. Residential and commercial concrete work.
