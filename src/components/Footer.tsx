@@ -20,7 +20,7 @@ export default function Footer() {
           <img src={LOGO_URL} alt="Redwood Construction LLC" className="h-9 opacity-70" />
         </div>
         <p className="text-[0.74rem] text-muted-text text-center">
-          © {new Date().getFullYear()} Redwood Construction LLC — Oklahoma City Concrete Contractors. All rights reserved.
+          © {new Date().getFullYear()} Redwood Construction LLC. All rights reserved.
         </p>
         <div className="flex gap-6 justify-center md:justify-end flex-wrap">
           <Link to="/concrete-driveways" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Driveways</Link>
