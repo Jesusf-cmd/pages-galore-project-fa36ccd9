@@ -1,4 +1,7 @@
 import { useParams, Link } from "react-router-dom";
+import { useSEO } from "@/hooks/useSEO";
+import FinalCTA from "@/components/FinalCTA";
+import { ScrollReveal } from "@/hooks/useScrollReveal";
 import FinalCTA from "@/components/FinalCTA";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 

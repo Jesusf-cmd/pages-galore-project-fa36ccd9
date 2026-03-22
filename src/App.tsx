@@ -50,7 +50,7 @@ const App = () => (
             {/* Commercial Concrete */}
             <Route path="/parking-lot-concrete" element={<ParkingLotConcrete />} />
             <Route path="/curb-and-gutter" element={<CurbAndGutter />} />
-            <Route path="/curb-gutter" element={<CurbGutter />} />
+            <Route path="/curb-gutter" element={<Navigate to="/curb-and-gutter" replace />} />
             <Route path="/commercial-concrete-slabs" element={<CommercialConcreteSlabs />} />
             {/* Service Areas */}
             <Route path="/oklahoma-city-concrete" element={<CityPage slug="oklahoma-city" />} />
