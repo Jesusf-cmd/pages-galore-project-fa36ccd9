@@ -91,7 +91,7 @@ export default function OurProjects() {
                 Kiddie Academy<br/>Foundation & Parking Lot
               </h3>
               <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-3">
-                This commercial concrete project for Kiddie Academy in Oklahoma City included foundation work and parking lot construction from start to finish. Our team handled site preparation, grading, formwork, reinforcement installation, and concrete placement to ensure a durable, long-lasting structure.
+                This commercial concrete project for Kiddie Academy in Oklahoma City included <Link to="/concrete-foundations" className="text-orange no-underline">foundation work</Link> and <Link to="/parking-lot-concrete" className="text-orange no-underline">parking lot construction</Link> from start to finish. Our team handled site preparation, grading, formwork, reinforcement installation, and concrete placement to ensure a durable, long-lasting structure.
               </p>
               <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-5">
                 Proper drainage and slope were carefully planned to prevent water buildup and protect the integrity of the concrete over time.

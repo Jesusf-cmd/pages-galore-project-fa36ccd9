@@ -22,7 +22,7 @@ export default function BlogIndex() {
       <section className="page-hero">
         <span className="eyebrow mb-5 block">OKC Concrete Blog</span>
         <h1 className="mb-4">Concrete Tips &<br/><em className="text-orange">Local OKC Guides.</em></h1>
-        <p className="prose-muted max-w-[560px]">Straight talk about concrete in Oklahoma City — pricing, specifications, soil conditions, and what actually makes concrete last.</p>
+        <p className="prose-muted max-w-[560px]">Straight talk about concrete in Oklahoma City — pricing, specifications, soil conditions, and what actually makes <Link to="/concrete-driveways" className="text-orange no-underline">concrete driveways</Link>, <Link to="/concrete-slabs" className="text-orange no-underline">slabs</Link>, and <Link to="/concrete-foundations" className="text-orange no-underline">foundations</Link> last.</p>
       </section>
 
       <ScrollReveal>

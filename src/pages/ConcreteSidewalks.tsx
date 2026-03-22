@@ -35,7 +35,7 @@ export default function ConcreteSidewalks() {
           titleAccent: "Contractors in OKC.",
           content: [
             "Redwood Construction handles sidewalk projects of all sizes — from a single walkway panel to full subdivision installations. We understand Oklahoma City's specific requirements for right-of-way work and ADA accessibility.",
-            "Our 4.9-star Google rating and BBB A+ accreditation come from consistently delivering quality work on time and on budget. We also offer <a href='/curb-and-gutter'>curb and gutter</a> installation and <a href='/parking-lot-concrete'>commercial concrete</a> for complete site work.",
+            "Our 4.9-star Google rating and BBB A+ accreditation come from consistently delivering quality work on time and on budget. We also offer <a href='/curb-and-gutter'>curb and gutter</a> installation, <a href='/concrete-slabs'>concrete slab construction</a>, and <a href='/parking-lot-concrete'>commercial concrete</a> for complete site work.",
           ],
         },
         {

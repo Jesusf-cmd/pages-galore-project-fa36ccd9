@@ -58,7 +58,7 @@ export default function ConcreteSlabs() {
           titleAccent: "You Can Trust.",
           content: [
             "Redwood Construction LLC is a locally owned concrete company serving the OKC metro. We're not a franchise or a call center — our crew lives and works in Oklahoma City, and we understand the specific soil and weather challenges that affect every pour.",
-            "With a 4.9-star Google rating, BBB A+ accreditation, and over 500 completed projects, we've earned the trust of homeowners across <a href='/edmond-concrete'>Edmond</a>, <a href='/norman-ok-concrete'>Norman</a>, <a href='/moore-oklahoma-concrete'>Moore</a>, and the greater OKC metro.",
+            "With a 4.9-star Google rating, BBB A+ accreditation, and over 500 completed projects, we've earned the trust of homeowners across <a href='/edmond-concrete'>Edmond</a>, <a href='/norman-ok-concrete'>Norman</a>, <a href='/moore-oklahoma-concrete'>Moore</a>, and the greater OKC metro. We also pour <a href='/parking-lot-concrete'>commercial parking lots</a> and <a href='/concrete-foundations'>concrete foundations</a> with the same crew and standards.",
           ],
         },
       ]}

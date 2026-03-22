@@ -60,7 +60,7 @@ export default function ConcreteDriveways() {
           titleAccent: "A Lasting Driveway.",
           content: [
             "We use 4,000 PSI ready-mix concrete from Oklahoma City batch plants on all residential driveways. Rebar (#3 at 18\" spacing or #4 at 24\") is specified based on load and site conditions.",
-            "Aggregate base is Class A crushed limestone, compacted in lifts to 95% standard proctor density. Curing compound is applied immediately after finishing. For related structural work, see our <a href='/concrete-foundations'>foundation services</a> and <a href='/retaining-walls'>retaining wall installation</a>.",
+            "Aggregate base is Class A crushed limestone, compacted in lifts to 95% standard proctor density. Curing compound is applied immediately after finishing. For related structural work, see our <a href='/concrete-foundations'>foundation services</a>, <a href='/retaining-walls'>retaining wall installation</a>, and <a href='/concrete-sidewalks'>concrete sidewalk construction</a>.",
           ],
         },
       ]}

@@ -40,7 +40,7 @@ export default function CommercialConcreteSlabs() {
           titleAccent: "You Can Count On.",
           content: [
             "Redwood Construction has completed commercial concrete projects across Oklahoma City — from small retail pads to large warehouse floors. Our experience with commercial specifications, ADA compliance, and coordination with general contractors sets us apart.",
-            "We're licensed, bonded, and insured with BBB A+ accreditation. Our crew handles the complexity of commercial work — tight schedules, coordination with other trades, and specifications that demand precision. See our <a href='/our-projects'>project gallery</a> for examples of our commercial work.",
+            "We're licensed, bonded, and insured with BBB A+ accreditation. Our crew handles the complexity of commercial work — tight schedules, coordination with other trades, and specifications that demand precision. We also serve residential clients with <a href='/concrete-driveways'>driveway installation</a> and <a href='/concrete-slabs'>patio slab construction</a>. See our <a href='/our-projects'>project gallery</a> for examples of our commercial work.",
           ],
         },
         {

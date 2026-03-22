@@ -40,7 +40,7 @@ export default function CurbAndGutter() {
           titleAccent: "Contractors.",
           content: [
             "Redwood Construction understands the specific curb and gutter specifications for Oklahoma City and surrounding municipalities. We coordinate with city inspectors, engineers, and general contractors to ensure every project passes inspection.",
-            "Our 4.9-star Google rating and BBB A+ accreditation reflect our commitment to quality on every project — from residential curb replacements to large commercial installations. See our <a href='/commercial-concrete-slabs'>commercial concrete services</a> for related work.",
+            "Our 4.9-star Google rating and BBB A+ accreditation reflect our commitment to quality on every project — from residential curb replacements to large commercial installations. See our <a href='/commercial-concrete-slabs'>commercial concrete services</a> and <a href='/concrete-foundations'>concrete foundation work</a> for related projects.",
           ],
         },
       ]}
