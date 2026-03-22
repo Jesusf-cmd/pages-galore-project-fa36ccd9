@@ -30,7 +30,7 @@ interface ServicePageProps {
 
 export default function ServicePage({ eyebrow, title, titleAccent, description, sections, faq, metaTitle, metaDescription }: ServicePageProps) {
   useSEO({
-    title: metaTitle || `${title} ${titleAccent} | MyConcreteEstimate`,
+    title: metaTitle || `${title} ${titleAccent.replace('.', '')} | Redwood Construction LLC`,
     description: metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155),
   });
   const processSteps = [

@@ -3,8 +3,8 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function CommercialConcreteSlabs() {
   return (
     <ServicePage
-      metaTitle="Commercial Concrete Slabs OKC | Warehouse & Retail Floors | Free Estimate"
-      metaDescription="Commercial concrete slab contractors in Oklahoma City. Warehouse floors, retail pads, equipment slabs. 4,000 PSI. Call (405) 247-0027."
+      metaTitle="Commercial Concrete Slabs in Oklahoma City | Redwood Construction LLC"
+      metaDescription="Commercial concrete slab contractors in Oklahoma City. Warehouse floors, retail pads, and industrial slabs with 4,000+ PSI concrete. Free commercial estimate."
       eyebrow="OKC Metro · Commercial Concrete · Licensed & Insured"
       title="Commercial"
       titleAccent="Concrete Slabs."
@@ -16,12 +16,31 @@ export default function CommercialConcreteSlabs() {
           titleAccent: "Commercial Use.",
           content: [
             "<strong>Commercial concrete slab contractors in Oklahoma City</strong> — Redwood Construction pours warehouse floors, retail pads, equipment slabs, and industrial concrete across the OKC metro. Commercial slabs require thicker pours, higher PSI concrete, and engineered reinforcement to handle forklift traffic, heavy equipment, and sustained loads.",
-            "Every commercial slab starts with a proper site assessment, soil testing when needed, and a pour plan that accounts for joint spacing, drainage, and load requirements specific to your operation.",
+            "Every commercial slab starts with a proper site assessment, soil testing when needed, and a pour plan that accounts for joint spacing, drainage, and load requirements specific to your operation. We also handle <a href='/parking-lot-concrete'>commercial parking lots</a> and <a href='/curb-and-gutter'>curb and gutter</a> installation.",
           ],
           stats: [
             { value: "5–8\"", label: "Slab thickness" },
             { value: "4,000+", label: "PSI concrete" },
             { value: "ADA", label: "Compliant" },
+          ],
+        },
+        {
+          eyebrow: "Our Commercial Process",
+          title: "Engineered for",
+          titleAccent: "Your Operation.",
+          content: [
+            "Commercial concrete requires a different approach than residential work. We coordinate with general contractors, site engineers, and building inspectors to ensure every pour meets specifications and passes inspection.",
+            "Our commercial process includes detailed site prep with engineered subgrade compaction, reinforcement per structural plans, proper joint layout for large-format slabs, and coordination of concrete delivery for continuous pours. We use 4,000 PSI minimum on all commercial work — higher mixes are specified for heavy industrial applications.",
+            "We serve commercial clients across the <a href='/oklahoma-city-concrete'>Oklahoma City metro</a> including retail, industrial, and institutional projects.",
+          ],
+        },
+        {
+          eyebrow: "Why Choose Redwood",
+          title: "Commercial Concrete",
+          titleAccent: "You Can Count On.",
+          content: [
+            "Redwood Construction has completed commercial concrete projects across Oklahoma City — from small retail pads to large warehouse floors. Our experience with commercial specifications, ADA compliance, and coordination with general contractors sets us apart.",
+            "We're licensed, bonded, and insured with BBB A+ accreditation. Our crew handles the complexity of commercial work — tight schedules, coordination with other trades, and specifications that demand precision. See our <a href='/our-projects'>project gallery</a> for examples of our commercial work.",
           ],
         },
         {
@@ -47,6 +66,7 @@ export default function CommercialConcreteSlabs() {
         { question: "How thick should a commercial concrete slab be?", answer: "Most commercial slabs require 5–6 inches minimum. Warehouse floors with forklift traffic or heavy equipment may require 6–8 inches with engineered rebar schedules." },
         { question: "What PSI concrete do you use for commercial work?", answer: "We specify 4,000 PSI minimum for commercial slabs. Higher PSI mixes are used for heavy industrial applications." },
         { question: "Do you handle large commercial pours?", answer: "Yes — we handle commercial pours from small retail pads to large warehouse floors. We coordinate with general contractors, site engineers, and building inspectors." },
+        { question: "Can you pour commercial concrete year-round in Oklahoma?", answer: "Yes — with proper cold-weather or hot-weather protocols. We adjust mix designs, curing methods, and scheduling to ensure quality in all seasons." },
       ]}
     />
   );

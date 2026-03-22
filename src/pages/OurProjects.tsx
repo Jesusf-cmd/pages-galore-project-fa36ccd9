@@ -22,8 +22,8 @@ const otherProjects = [
 
 export default function OurProjects() {
   useSEO({
-    title: "Our Concrete Projects | OKC Metro Gallery | MyConcreteEstimate",
-    description: "View completed concrete projects across Oklahoma City metro. Driveways, patios, foundations, retaining walls & more by Redwood Construction LLC.",
+    title: "Our Concrete Projects in Oklahoma City | Redwood Construction LLC",
+    description: "Browse completed concrete projects across the OKC metro. Driveways, patios, foundations, commercial pours, and retaining walls by Redwood Construction LLC.",
   });
 
   return (

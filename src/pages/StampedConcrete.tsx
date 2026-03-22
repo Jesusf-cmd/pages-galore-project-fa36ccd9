@@ -3,8 +3,8 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function StampedConcrete() {
   return (
     <ServicePage
-      metaTitle="Stamped Concrete Oklahoma City | Custom Patterns | Free Estimate"
-      metaDescription="Stamped concrete contractors in Oklahoma City. Custom patterns, colors & sealers for patios, pool decks, driveways. $15–$22/sq ft. Call (405) 247-0027."
+      metaTitle="Stamped Concrete in Oklahoma City | Redwood Construction LLC"
+      metaDescription="Stamped concrete contractors in Oklahoma City. Custom patterns, integral color, and professional sealers for patios, pool decks, and driveways. Free estimate."
       eyebrow="OKC Metro · Decorative Concrete · Licensed & Insured"
       title="Stamped Concrete"
       titleAccent="Oklahoma City."
@@ -16,7 +16,7 @@ export default function StampedConcrete() {
           titleAccent: "& Colors.",
           content: [
             "<strong>Stamped concrete in Oklahoma City</strong> gives you the look of natural stone, brick, or slate at a fraction of the cost. We offer ashlar slate, random flagstone, herringbone brick, running bond, cobblestone, and wood plank patterns.",
-            "Every stamped project includes integral color, color hardener, release agent, and a high-solids acrylic sealer. Colors are selected on-site with physical samples — not guessed from a screen.",
+            "Every stamped project includes integral color, color hardener, release agent, and a high-solids acrylic sealer. Colors are selected on-site with physical samples — not guessed from a screen. Stamped concrete pairs perfectly with a standard <a href='/concrete-patio-okc'>broom-finish patio</a> or <a href='/concrete-driveways'>driveway</a> for a mixed-finish look.",
           ],
           stats: [
             { value: "$15–22", label: "Per sq ft installed" },
@@ -25,12 +25,31 @@ export default function StampedConcrete() {
           ],
         },
         {
+          eyebrow: "Our Stamped Process",
+          title: "How We Create",
+          titleAccent: "Decorative Concrete.",
+          content: [
+            "Stamped concrete requires more skill and timing than standard flatwork. Our crew has the experience to handle the tight window between pour and stamp — getting the pattern crisp without compromising the concrete's structural integrity.",
+            "We start with the same rigorous base prep as any slab — compacted aggregate, proper reinforcement, and 4,000 PSI concrete. Integral color is added at the batch plant. Color hardener is broadcast on the surface, followed by release agent. Stamps are placed and pressed while the concrete is at the right consistency.",
+            "After curing, we wash the surface, apply a high-solids acrylic sealer, and do a final walkthrough. The result is a surface that looks like natural stone but performs like concrete. We serve the entire <a href='/oklahoma-city-concrete'>OKC metro area</a>.",
+          ],
+        },
+        {
+          eyebrow: "Why Choose Redwood",
+          title: "Decorative Concrete",
+          titleAccent: "Done Right.",
+          content: [
+            "Stamped concrete is only as good as the crew placing it. Timing, pattern alignment, color consistency, and proper sealing all require experienced hands. Redwood Construction has completed hundreds of stamped projects across Oklahoma City, <a href='/edmond-concrete'>Edmond</a>, and <a href='/norman-ok-concrete'>Norman</a>.",
+            "We provide physical color samples on-site so you see exactly what you're getting. Our 4.9-star Google rating and BBB A+ accreditation reflect the quality of our decorative work. Every stamped project includes a written maintenance guide for resealing.",
+          ],
+        },
+        {
           eyebrow: "Stamped Concrete Pricing",
           title: "What Stamped",
           titleAccent: "Concrete Costs.",
           alt: true,
           content: [
-            "<strong>Stamped concrete in Oklahoma City</strong> runs $15–$22 per sq ft installed. A 400 sq ft stamped patio costs roughly $6,000–$8,800.",
+            "<strong>Stamped concrete in Oklahoma City</strong> runs $15–$22 per sq ft installed. A 400 sq ft stamped patio costs roughly $6,000–$8,800. For comparison, standard <a href='/concrete-slabs'>broom-finish slabs</a> run $6–$10/sq ft.",
           ],
           table: {
             headers: ["Service", "Typical Size", "Price Range", "Notes"],

@@ -3,8 +3,8 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function CurbAndGutter() {
   return (
     <ServicePage
-      metaTitle="Curb & Gutter Contractors Oklahoma City | Commercial & Residential"
-      metaDescription="Curb and gutter contractors in Oklahoma City. New construction, replacement, city-spec work. $18–$30/linear ft. Call (405) 247-0027."
+      metaTitle="Curb and Gutter Contractors in Oklahoma City | Redwood Construction LLC"
+      metaDescription="Curb and gutter installation in Oklahoma City. New construction, replacement, and city-spec curb work for residential and commercial projects. Free estimate."
       eyebrow="OKC Metro · Curb & Gutter Contractors · Licensed & Insured"
       title="Curb & Gutter"
       titleAccent="Oklahoma City."
@@ -16,12 +16,31 @@ export default function CurbAndGutter() {
           titleAccent: "Residential Curb.",
           content: [
             "<strong>Curb and gutter contractors in Oklahoma City</strong> — Redwood Construction handles new construction, replacement, and repair of concrete curb and gutter across the OKC metro.",
-            "We pour standard barrier curb, mountable curb, valley gutter, and combination curb and gutter sections to city specifications.",
+            "We pour standard barrier curb, mountable curb, valley gutter, and combination curb and gutter sections to city specifications. Our curb work integrates with <a href='/parking-lot-concrete'>parking lot</a> and <a href='/concrete-sidewalks'>sidewalk</a> projects for complete commercial site work.",
           ],
           stats: [
             { value: "$18–30", label: "Per linear ft" },
             { value: "City", label: "Spec compliant" },
             { value: "24hr", label: "Estimate response" },
+          ],
+        },
+        {
+          eyebrow: "Our Curb Process",
+          title: "Precision Curb",
+          titleAccent: "Installation.",
+          content: [
+            "Curb and gutter work demands precision — proper grade for drainage, consistent profile, and compliance with city specifications. Our crew uses steel forms and laser-guided grade checks to ensure every section meets specifications.",
+            "We handle both slip-form and traditional formed curb work depending on project requirements. Every installation includes proper subgrade compaction, adequate curing, and clean joint work.",
+            "We serve residential and commercial clients across the <a href='/oklahoma-city-concrete'>Oklahoma City metro</a> including subdivisions, commercial developments, and municipal projects.",
+          ],
+        },
+        {
+          eyebrow: "Why Choose Redwood",
+          title: "Experienced Curb",
+          titleAccent: "Contractors.",
+          content: [
+            "Redwood Construction understands the specific curb and gutter specifications for Oklahoma City and surrounding municipalities. We coordinate with city inspectors, engineers, and general contractors to ensure every project passes inspection.",
+            "Our 4.9-star Google rating and BBB A+ accreditation reflect our commitment to quality on every project — from residential curb replacements to large commercial installations. See our <a href='/commercial-concrete-slabs'>commercial concrete services</a> for related work.",
           ],
         },
       ]}

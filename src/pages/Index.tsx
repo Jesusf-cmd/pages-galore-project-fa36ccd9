@@ -23,8 +23,8 @@ const homeFAQ = [
 
 export default function Index() {
   useSEO({
-    title: "Oklahoma City Concrete Contractors | Free Estimate | MyConcreteEstimate",
-    description: "Licensed Oklahoma City concrete contractors. Driveways, patios, slabs, foundations & stamped concrete. Free estimates. Call (405) 247-0027. Powered by Redwood Construction LLC.",
+    title: "Oklahoma City Concrete Contractors | Redwood Construction LLC",
+    description: "Licensed concrete contractors in Oklahoma City. Driveways, patios, slabs, foundations, and stamped concrete. Locally owned. Free estimates. Call (405) 247-0027.",
   });
 
   return (
@@ -71,7 +71,7 @@ function HeroSection() {
     <section className="grid grid-cols-1 nav:grid-cols-[1.15fr_0.85fr] gap-6 nav:gap-12 px-4 md:px-12 pt-20 pb-8 md:pt-32 md:pb-16 nav:min-h-screen relative overflow-hidden" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img src={commercialFoundationImg} alt="" className="w-full h-full object-cover opacity-[0.55]" />
+        <img src={commercialFoundationImg} alt="Commercial concrete foundation project in Oklahoma City by Redwood Construction" className="w-full h-full object-cover opacity-[0.55]" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(var(--darker) / 0.85) 30%, hsl(var(--darker) / 0.4) 100%)" }} />
       </div>
       <div className="hero-glow" style={{ zIndex: 1 }} />
@@ -396,7 +396,7 @@ function WhyUsSection() {
     <ScrollReveal>
       <section className="section-padding section-alt relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={tiedRebarImg} alt="" className="w-full h-full object-cover opacity-[0.04]" />
+          <img src={tiedRebarImg} alt="Tied rebar reinforcement for concrete slab in Oklahoma City" className="w-full h-full object-cover opacity-[0.04]" />
           <div className="absolute inset-0 bg-stone" style={{ opacity: 0.92 }} />
         </div>
         <div className="relative z-[1]">
