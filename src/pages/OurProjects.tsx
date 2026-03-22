@@ -65,7 +65,7 @@ export default function OurProjects() {
                 Star Spencer<br/>High School
               </h3>
               <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-5">
-                We installed new concrete stairs and sidewalks with ADA-compliant ramps at Star Spencer High School. This project required precision grading, proper reinforcement, and compliance with ADA accessibility standards — all completed on schedule for the school district.
+                We installed new concrete stairs and <Link to="/concrete-sidewalks" className="text-orange no-underline">sidewalks with ADA-compliant ramps</Link> at Star Spencer High School. This project required precision grading, proper reinforcement, and compliance with ADA accessibility standards — all completed on schedule for the school district.
               </p>
               <div className="flex gap-8 pt-4" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
                 <div>
