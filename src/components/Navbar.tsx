@@ -65,8 +65,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[100] flex justify-between items-center px-4 md:px-12 py-3 transition-all duration-200 ${
-        scrolled ? "bg-darker/98 backdrop-blur-xl" : "bg-darker/96 backdrop-blur-md"
+      className={`fixed top-0 left-0 right-0 flex justify-between items-center px-4 md:px-12 py-3 transition-all duration-200 ${
+        mobileOpen
+          ? "z-[320] bg-darker backdrop-blur-sm"
+          : `z-[100] ${scrolled ? "bg-darker/98 backdrop-blur-xl" : "bg-darker/96 backdrop-blur-md"}`
       }`}
       style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}
     >
@@ -110,37 +112,38 @@ export default function Navbar() {
       {/* Mobile menu overlay */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 top-[56px] nav:hidden z-[200] overflow-y-auto overscroll-contain"
+          className="fixed inset-0 nav:hidden z-[310] overflow-y-auto overscroll-contain bg-darker backdrop-blur-sm shadow-2xl animate-in slide-in-from-right-6 duration-300"
           style={{
-            background: "hsl(var(--darker))",
-            borderTop: "2px solid hsl(var(--orange))",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.6)",
+            borderLeft: "1px solid hsl(var(--concrete) / 0.08)",
+            boxShadow: "0 20px 56px hsl(var(--darker) / 0.55)",
           }}
         >
-          <div className="p-6 pb-28 space-y-0">
-            <MobileAccordion label="Residential Concrete" isOpen={openSection === "residential"} onToggle={() => toggleSection("residential")}>
-              {residentialLinks.map(l => (
-                <Link key={l.to} to={l.to} className="block py-3.5 px-5 text-[0.95rem] leading-[1.6] font-normal text-concrete/90 active:text-white active:bg-orange/10 no-underline w-full">
-                  {l.label}
-                </Link>
-              ))}
-            </MobileAccordion>
-            <MobileAccordion label="Commercial Concrete" isOpen={openSection === "commercial"} onToggle={() => toggleSection("commercial")}>
-              {commercialLinks.map(l => (
-                <Link key={l.to} to={l.to} className="block py-3.5 px-5 text-[0.95rem] leading-[1.6] font-normal text-concrete/90 active:text-white active:bg-orange/10 no-underline w-full">
-                  {l.label}
-                </Link>
-              ))}
-            </MobileAccordion>
-            <MobileAccordion label="Service Areas" isOpen={openSection === "areas"} onToggle={() => toggleSection("areas")}>
-              {areaLinks.map(l => (
-                <Link key={l.to} to={l.to} className="block py-3.5 px-5 text-[0.95rem] leading-[1.6] font-normal text-concrete/90 active:text-white active:bg-orange/10 no-underline w-full">
-                  {l.label}
-                </Link>
-              ))}
-            </MobileAccordion>
-            <Link to="/our-projects" className="block py-5 text-[0.95rem] leading-[1.6] text-concrete font-medium no-underline uppercase tracking-wider w-full" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.12)" }}>Our Work</Link>
-            <Link to="/blog" className="block py-5 text-[0.95rem] leading-[1.6] text-concrete font-medium no-underline uppercase tracking-wider w-full" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.12)" }}>Blog</Link>
+          <div className="min-h-full px-6 pb-24 pt-24">
+            <div className="space-y-2">
+              <MobileAccordion label="Residential Concrete" isOpen={openSection === "residential"} onToggle={() => toggleSection("residential")}>
+                {residentialLinks.map(l => (
+                  <Link key={l.to} to={l.to} className="block w-full px-5 py-4 text-[1rem] leading-7 font-medium text-concrete no-underline transition-colors active:bg-concrete/10">
+                    {l.label}
+                  </Link>
+                ))}
+              </MobileAccordion>
+              <MobileAccordion label="Commercial Concrete" isOpen={openSection === "commercial"} onToggle={() => toggleSection("commercial")}>
+                {commercialLinks.map(l => (
+                  <Link key={l.to} to={l.to} className="block w-full px-5 py-4 text-[1rem] leading-7 font-medium text-concrete no-underline transition-colors active:bg-concrete/10">
+                    {l.label}
+                  </Link>
+                ))}
+              </MobileAccordion>
+              <MobileAccordion label="Service Areas" isOpen={openSection === "areas"} onToggle={() => toggleSection("areas")}>
+                {areaLinks.map(l => (
+                  <Link key={l.to} to={l.to} className="block w-full px-5 py-4 text-[1rem] leading-7 font-medium text-concrete no-underline transition-colors active:bg-concrete/10">
+                    {l.label}
+                  </Link>
+                ))}
+              </MobileAccordion>
+              <Link to="/our-projects" className="block w-full px-1 py-5 text-[1rem] leading-7 text-concrete font-semibold no-underline uppercase tracking-[0.08em]" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.12)" }}>Our Work</Link>
+              <Link to="/blog" className="block w-full px-1 py-5 text-[1rem] leading-7 text-concrete font-semibold no-underline uppercase tracking-[0.08em]" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.12)" }}>Blog</Link>
+            </div>
             <div className="pt-8 flex flex-col gap-3">
               <a href="tel:4052470027" className="btn-primary text-center text-base py-4 w-full">📞 (405) 247-0027</a>
               <Link to="/#estimate" className="btn-outline text-center text-base py-4 w-full">Get Free Estimate →</Link>
@@ -157,12 +160,12 @@ function MobileAccordion({ label, isOpen, onToggle, children }: { label: string;
     <div style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.12)" }}>
       <button
         onClick={onToggle}
-        className="w-full flex justify-between items-center py-5 text-left cursor-pointer bg-transparent border-none min-h-[52px]"
+        className="w-full flex justify-between items-center px-1 py-5 text-left cursor-pointer bg-transparent border-none min-h-[60px]"
       >
-        <span className="text-[0.78rem] tracking-[0.14em] uppercase text-orange font-bold">{label}</span>
-        <span className={`text-concrete/60 text-sm transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}>▾</span>
+        <span className="text-[0.84rem] tracking-[0.12em] uppercase text-concrete font-semibold leading-6">{label}</span>
+        <span className={`text-concrete/80 text-sm transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}>▾</span>
       </button>
-      <div className={`overflow-hidden transition-all duration-200 ${isOpen ? "max-h-[600px] pb-3" : "max-h-0"}`} style={{ background: "hsl(var(--stone))" }}>
+      <div className={`overflow-hidden bg-darker transition-all duration-200 ${isOpen ? "max-h-[640px] pb-3" : "max-h-0"}`}>
         {children}
       </div>
     </div>
