@@ -78,8 +78,8 @@ function HeroSection() {
       <div className="relative z-[2]" style={{ padding: 0, border: "none" }}>
         <div>
           <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">Oklahoma City Concrete Contractor · Licensed & Insured · Locally Owned</span>
-          <h1 className="mb-4 md:mb-6" style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)", lineHeight: 0.92 }}>
-            Concrete Contractor in Oklahoma City | Free Estimates
+          <h1 className="mb-4 md:mb-6" style={{ fontSize: "clamp(1.9rem, 5vw, 5.2rem)", lineHeight: 1.0 }}>
+            Concrete Contractor in Oklahoma City, OK | Driveways, Patios & Foundations
           </h1>
           <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-3 md:mb-4 leading-[1.7] font-light">
             Oklahoma City concrete contractor specializing in driveways, foundations, slabs, sidewalks, and commercial concrete services in OKC, Edmond, and Norman.
