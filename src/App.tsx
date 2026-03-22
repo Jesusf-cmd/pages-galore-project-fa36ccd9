@@ -12,7 +12,6 @@ import ConcreteFoundations from "./pages/ConcreteFoundations";
 import ConcretePatioOKC from "./pages/ConcretePatioOKC";
 import ConcreteSidewalks from "./pages/ConcreteSidewalks";
 import RetainingWalls from "./pages/RetainingWalls";
-import CurbGutter from "./pages/CurbGutter";
 import CurbAndGutter from "./pages/CurbAndGutter";
 import ParkingLotConcrete from "./pages/ParkingLotConcrete";
 import CommercialConcreteSlabs from "./pages/CommercialConcreteSlabs";
