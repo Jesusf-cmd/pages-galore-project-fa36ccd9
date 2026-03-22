@@ -22,8 +22,8 @@ interface CityPageProps {
 
 export default function CityPageTemplate({ city, county, description, localContent, servicesContent, table, faq, zipCodes, nearbyLinks }: CityPageProps) {
   useSEO({
-    title: `${city} Concrete Contractors | Free Estimate | MyConcreteEstimate`,
-    description: `Licensed concrete contractors in ${city}, Oklahoma. Driveways, patios, slabs, foundations. Free estimates. Call (405) 247-0027.`,
+    title: `Concrete Contractor in ${city} OK | Redwood Construction LLC`,
+    description: `Professional concrete contractor in ${city}, Oklahoma. Driveways, patios, slabs, and foundations built for local soil conditions. Call for a free estimate.`,
   });
   const processSteps = [
     { title: "Site prep & excavation", description: "We start by marking the area, calling 811 for utility locates, and excavating to the correct depth for your soil conditions." },

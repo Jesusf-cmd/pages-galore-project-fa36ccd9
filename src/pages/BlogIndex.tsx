@@ -13,8 +13,8 @@ const posts = [
 
 export default function BlogIndex() {
   useSEO({
-    title: "Concrete Blog | OKC Tips & Guides | MyConcreteEstimate",
-    description: "Expert tips on concrete driveways, slabs, foundations & stamped concrete in Oklahoma City. Cost guides, maintenance advice, and more.",
+    title: "Concrete Tips & Guides for Oklahoma City | Redwood Construction LLC",
+    description: "Expert concrete guides for Oklahoma City homeowners. Pricing, specifications, soil tips, and maintenance advice from Redwood Construction LLC.",
   });
 
   return (
