@@ -3,69 +3,54 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function ConcreteFoundations() {
   return (
     <ServicePage
-      metaTitle="Concrete Foundations in Oklahoma City | Redwood Construction LLC"
-      metaDescription="Expert concrete foundation contractors in Oklahoma City. Slab-on-grade, stem walls, and grade beams engineered for OKC clay soil. Call for a free estimate."
+      metaTitle="Concrete Foundation Contractor in Oklahoma City | Redwood Construction LLC"
+      metaDescription="Concrete foundation contractor in Oklahoma City for residential and commercial projects. Call Redwood Construction LLC for reliable foundation work and free estimates."
       eyebrow="OKC Metro · Foundation Contractors · Licensed & Insured"
-      title="Concrete Foundations"
+      title="Concrete Foundation Contractor in"
       titleAccent="Oklahoma City."
-      description='Slab-on-grade, stem walls, grade beams — built for Oklahoma&apos;s expansive clay soil. Licensed & insured. Free estimate.'
+      description='Redwood Construction LLC provides concrete foundation services in Oklahoma City for residential and commercial projects. We install foundations with a focus on proper preparation, dependable workmanship, and long-term structural performance.'
       sections={[
         {
-          eyebrow: "Foundation Contractors OKC",
-          title: "Built for Oklahoma",
-          titleAccent: "Soil & Code.",
+          eyebrow: "Foundation Services",
+          title: "Foundation Services in",
+          titleAccent: "Oklahoma City.",
           content: [
-            "<strong>Concrete foundation contractors in Oklahoma City</strong> need to understand expansive clay soil. Redwood Construction pours residential and commercial foundations with proper site prep, engineered rebar schedules, and concrete specifications that meet or exceed local code.",
-            "We handle slab-on-grade, stem wall, and grade beam construction. Every foundation starts with a site assessment and soil evaluation. Our foundation work pairs with our <a href='/concrete-driveways'>driveway</a> and <a href='/concrete-slabs'>slab</a> services for complete residential concrete packages.",
-          ],
-          stats: [
-            { value: "$9–14", label: "Per sq ft installed" },
-            { value: "4,000+", label: "PSI concrete" },
-            { value: "24hr", label: "Estimate response" },
+            "We provide concrete foundation work for homes, additions, shops, commercial buildings, and other structures in Oklahoma City and surrounding areas. Our team handles layout, excavation coordination, forming, reinforcement, and concrete placement with attention to quality and site conditions.",
+            "In addition to foundation work, we also offer <a href='/concrete-driveways'>concrete driveway installation in Oklahoma City</a> and <a href='/concrete-slabs'>concrete slab installation in Oklahoma City</a> for residential and commercial properties.",
           ],
         },
         {
-          eyebrow: "Our Foundation Process",
-          title: "How We Pour",
-          titleAccent: "Foundations in OKC.",
+          eyebrow: "Our Process",
+          title: "Our Foundation",
+          titleAccent: "Construction Process.",
           content: [
-            "Foundation work in Oklahoma demands precision. Our process starts with a detailed site assessment — we evaluate soil conditions, check for proper drainage, and coordinate with builders and engineers on specifications.",
-            "We excavate to engineered depth, compact the subgrade, install reinforcement per the engineered schedule, and set forms to precise grade. Ready-mix concrete is placed at 4,000 PSI minimum with proper vibration to eliminate voids.",
-            "After the pour, we apply curing compound and monitor conditions. Every foundation is inspected before backfill. We serve homeowners and builders across the <a href='/oklahoma-city-concrete'>OKC metro</a> including <a href='/edmond-concrete'>Edmond</a>, <a href='/norman-ok-concrete'>Norman</a>, and surrounding areas.",
+            "Foundation work starts with proper planning, site prep, and layout. From there, we install forms, reinforcement, and concrete based on the project requirements. We focus on accuracy, elevation control, and a clean finished result so the foundation is ready for the next phase of construction.",
+            "As a trusted <a href='/'>concrete contractor in Oklahoma City</a>, we bring the same reliable process to every foundation project we take on.",
           ],
         },
         {
-          eyebrow: "Why Choose Redwood",
-          title: "Trust & Experience",
-          titleAccent: "On Every Pour.",
+          eyebrow: "Why Redwood",
+          title: "Why Choose Redwood Construction LLC",
+          titleAccent: "for Foundation Work.",
           content: [
-            "Foundation work is the most critical concrete you'll ever pour — it supports everything above it. That's why homeowners and builders across Oklahoma City trust Redwood Construction for their foundation projects.",
-            "We coordinate with general contractors, structural engineers, and architects. Our crew understands local building codes, soil reports, and the specific requirements of Oklahoma's challenging ground conditions. With BBB A+ accreditation and 500+ completed projects, we deliver foundations that perform for decades.",
+            "Foundation work has to be done right the first time. Redwood Construction LLC focuses on dependable scheduling, clear communication, and solid concrete workmanship. We understand the importance of structural support, proper forming, and a foundation that meets the needs of the project.",
+            "From residential foundations to projects managed by our <a href='/commercial-concrete-slabs'>commercial concrete contractors in Oklahoma City</a>, we deliver consistent quality on every job.",
           ],
         },
         {
           eyebrow: "Foundation Pricing",
-          title: "What Foundations",
-          titleAccent: "Cost in OKC.",
+          title: "Cost of Concrete Foundations in",
+          titleAccent: "Oklahoma City.",
           alt: true,
           content: [
-            "<strong>Foundation work in Oklahoma City</strong> runs $9–$14 per square foot for slab-on-grade construction. Stem wall and grade beam foundations cost more due to additional forming and reinforcement. For <a href='/commercial-concrete-slabs'>commercial foundation projects</a>, contact us for custom pricing.",
+            "Foundation pricing depends on project size, depth, reinforcement, site access, excavation conditions, and concrete volume. We provide straightforward estimates so owners and contractors can understand the scope and pricing before work begins. Our goal is to deliver strong foundation work at a competitive price.",
           ],
-          table: {
-            headers: ["Service", "Typical Size", "Price Range", "Notes"],
-            rows: [
-              ["Slab-on-grade", "1,200 sq ft", "<strong>$10,800–$16,800</strong>", "Monolithic pour"],
-              ["Stem wall foundation", "1,200 sq ft", "<strong>$14,400–$21,600</strong>", "More forming work"],
-              ["Garage foundation", "576 sq ft", "<strong>$5,184–$8,064</strong>", "Thickened edge"],
-            ],
-          },
         },
       ]}
       faq={[
-        { question: "How much does a concrete foundation cost in OKC?", answer: "Foundation work runs $9–$14 per square foot in Oklahoma City. A 1,200 sq ft slab-on-grade costs $10,800–$16,800." },
-        { question: "What type of foundation is best for Oklahoma clay?", answer: "Slab-on-grade with properly compacted base and rebar reinforcement is standard for most residential construction. On severe clay, post-tension or deeper bases may be recommended." },
-        { question: "Do you coordinate with builders and engineers?", answer: "Yes — we work with general contractors, structural engineers, and architects on residential and commercial foundation projects." },
-        { question: "How long does foundation work take?", answer: "Most residential foundations are poured in a single day after site prep is complete. Total project time including excavation, forming, and curing is typically 5–7 days." },
+        { question: "What types of foundations do you install?", answer: "We handle concrete foundation work for residential and commercial projects, including building pads, structural slabs, and related concrete support work depending on project scope." },
+        { question: "Do you work on both small and large projects?", answer: "Yes. We can handle residential foundation jobs as well as larger commercial concrete foundation projects." },
+        { question: "Do you serve areas outside Oklahoma City?", answer: "Yes. We also serve nearby areas including Edmond and Norman depending on the project." },
       ]}
     />
   );
