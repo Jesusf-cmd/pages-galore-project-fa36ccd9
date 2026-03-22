@@ -396,7 +396,7 @@ function WhyUsSection() {
     <ScrollReveal>
       <section className="section-padding section-alt relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={tiedRebarImg} alt="" className="w-full h-full object-cover opacity-[0.04]" />
+          <img src={tiedRebarImg} alt="Tied rebar reinforcement for concrete slab in Oklahoma City" className="w-full h-full object-cover opacity-[0.04]" />
           <div className="absolute inset-0 bg-stone" style={{ opacity: 0.92 }} />
         </div>
         <div className="relative z-[1]">
