@@ -15,7 +15,7 @@ export default function ConcreteSidewalks() {
           title: "Safe, Clean &",
           titleAccent: "Built to Code.",
           content: [
-            "<strong>Concrete sidewalk contractors in Oklahoma City</strong> — Redwood Construction handles new construction, replacement, and city right-of-way sidewalks with proper base prep and ADA-compliant options.",
+            "<strong>Concrete sidewalk contractors in Oklahoma City</strong> — Redwood Construction handles new construction, replacement, and city right-of-way sidewalks with proper base prep and ADA-compliant options. Our sidewalk work builds on the same <a href='/concrete-foundations'>foundation expertise</a> we bring to every project.",
             "We handle city-required sidewalk repairs, new construction in subdivisions, and private walkway projects. Every sidewalk is broom-finished for traction and properly jointed. Our sidewalk work complements our <a href='/concrete-driveways'>driveway</a> and <a href='/concrete-patio-okc'>patio</a> services for complete residential concrete projects.",
           ],
         },
