@@ -3,12 +3,12 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function ConcreteDriveways() {
   return (
     <ServicePage
-      metaTitle="Concrete Driveways Oklahoma City | $6-$10/sq ft | Free Estimate"
-      metaDescription="Licensed concrete driveway contractors in Oklahoma City. 4,000 PSI mix, rebar reinforcement, built for OKC clay soil. $5,760–$9,600 typical. Call (405) 247-0027."
+      metaTitle="Concrete Driveways in Oklahoma City | Redwood Construction LLC"
+      metaDescription="Durable concrete driveways in Oklahoma City. Reinforced for OKC clay soil with 4,000 PSI mix. Residential driveway installation and replacement. Free estimate."
       eyebrow="OKC Metro · Driveway Contractors · Licensed & Insured"
       title="Concrete Driveways"
       titleAccent="Oklahoma City."
-      description='New installs and full replacements for <strong>Oklahoma City homeowners</strong> — reinforced for OKC clay soil, 4,000 PSI mix, sealed on every pour. <strong>Driveway contractors OKC</strong> you can trust. <a href="tel:4052470027">(405) 247-0027</a>.'
+      description='New installs and full replacements for <strong>Oklahoma City homeowners</strong> — reinforced for OKC clay soil, 4,000 PSI mix, sealed on every pour. <a href="tel:4052470027">(405) 247-0027</a>.'
       sections={[
         {
           eyebrow: "Why OKC Driveways Fail",
@@ -16,12 +16,22 @@ export default function ConcreteDriveways() {
           titleAccent: "Cheap Driveways.",
           content: [
             "Oklahoma City sits on some of the most expansive clay soil in the country — and most <strong>concrete driveway contractors OKC</strong> don't build for it. When clay swells with rain and contracts during drought, a driveway without proper base prep and reinforcement will crack, heave, and fail within a few years.",
-            "Redwood Construction is a <strong>concrete company in OKC</strong> that builds for Oklahoma conditions. Every driveway starts with proper excavation, compacted aggregate base, rebar at mid-slab depth, 4,000 PSI concrete, and control joints cut on time.",
+            "Redwood Construction is a <strong>concrete company in OKC</strong> that builds for Oklahoma conditions. Every driveway starts with proper excavation, compacted aggregate base, rebar at mid-slab depth, 4,000 PSI concrete, and control joints cut on time. We also handle <a href='/concrete-slabs'>patio slabs</a> and <a href='/concrete-foundations'>foundation work</a> with the same standards.",
           ],
           stats: [
             { value: "4,000", label: "PSI min mix" },
             { value: "4–6\"", label: "Slab thickness" },
             { value: "30+yr", label: "Expected life" },
+          ],
+        },
+        {
+          eyebrow: "Professional Driveway Services",
+          title: "Why Choose Redwood",
+          titleAccent: "Construction LLC.",
+          content: [
+            "When you hire Redwood Construction for your <strong>concrete driveway in Oklahoma City</strong>, you get a locally owned company that understands the unique challenges of building on Oklahoma soil. We don't subcontract — our own crew handles every project from excavation to final sealing.",
+            "We've completed over 500 concrete projects across the OKC metro, including driveways in <a href='/edmond-concrete'>Edmond</a>, <a href='/norman-ok-concrete'>Norman</a>, <a href='/mustang-oklahoma-concrete'>Mustang</a>, and <a href='/moore-oklahoma-concrete'>Moore</a>. Every job gets the same attention: site assessment, soil evaluation, engineered base prep, and a written quote that doesn't change.",
+            "Our BBB A+ rating and 4.9-star Google reviews come from doing the work right — proper base compaction, correct rebar placement, 4,000 PSI concrete, and control joints cut within 24 hours. We respond to every estimate request within one business day.",
           ],
         },
         {
@@ -31,6 +41,7 @@ export default function ConcreteDriveways() {
           alt: true,
           content: [
             "The <strong>cost of a concrete driveway in Oklahoma City</strong> in 2026 runs $6–$10 per square foot installed — including base prep, concrete, rebar, finishing, and control joints. Tear-out of existing pavement adds $1–$2/sq ft. A typical 24×40 ft driveway runs <strong>$5,760–$9,600</strong>.",
+            "Pricing varies based on soil conditions, site access, thickness requirements, and finish type. <a href='/stamped-concrete'>Stamped concrete driveways</a> cost $15–$22/sq ft for premium pattern and color work.",
           ],
           table: {
             headers: ["Service", "Typical Size", "Price Range", "Notes"],
@@ -49,7 +60,7 @@ export default function ConcreteDriveways() {
           titleAccent: "A Lasting Driveway.",
           content: [
             "We use 4,000 PSI ready-mix concrete from Oklahoma City batch plants on all residential driveways. Rebar (#3 at 18\" spacing or #4 at 24\") is specified based on load and site conditions.",
-            "Aggregate base is Class A crushed limestone, compacted in lifts to 95% standard proctor density. Curing compound is applied immediately after finishing.",
+            "Aggregate base is Class A crushed limestone, compacted in lifts to 95% standard proctor density. Curing compound is applied immediately after finishing. For related structural work, see our <a href='/concrete-foundations'>foundation services</a> and <a href='/retaining-walls'>retaining wall installation</a>.",
           ],
         },
       ]}

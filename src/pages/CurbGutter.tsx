@@ -3,8 +3,8 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function CurbGutter() {
   return (
     <ServicePage
-      metaTitle="Curb & Gutter Contractors Oklahoma City | Commercial & Residential"
-      metaDescription="Curb and gutter contractors in Oklahoma City. New construction, replacement, city-spec work. $18–$30/linear ft. Call (405) 247-0027."
+      metaTitle="Curb & Gutter Installation in OKC | Redwood Construction LLC"
+      metaDescription="Professional curb and gutter services in Oklahoma City. Barrier curb, mountable curb, and valley gutter poured to city specs. $18–$30/linear ft. Call today."
       eyebrow="OKC Metro · Curb & Gutter Contractors · Licensed & Insured"
       title="Curb & Gutter"
       titleAccent="Oklahoma City."
@@ -16,7 +16,7 @@ export default function CurbGutter() {
           titleAccent: "Residential Curb.",
           content: [
             "<strong>Curb and gutter contractors in Oklahoma City</strong> — Redwood Construction handles new construction, replacement, and repair of concrete curb and gutter across the OKC metro.",
-            "We pour standard barrier curb, mountable curb, valley gutter, and combination curb and gutter sections to city specifications.",
+            "We pour standard barrier curb, mountable curb, valley gutter, and combination curb and gutter sections to city specifications. See our <a href='/curb-and-gutter'>main curb and gutter page</a> for full details and pricing.",
           ],
         },
       ]}
