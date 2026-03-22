@@ -16,7 +16,7 @@ export default function CommercialConcreteSlabs() {
           titleAccent: "Commercial Use.",
           content: [
             "<strong>Commercial concrete slab contractors in Oklahoma City</strong> — Redwood Construction pours warehouse floors, retail pads, equipment slabs, and industrial concrete across the OKC metro. Commercial slabs require thicker pours, higher PSI concrete, and engineered reinforcement to handle forklift traffic, heavy equipment, and sustained loads.",
-            "Every commercial slab starts with a proper site assessment, soil testing when needed, and a pour plan that accounts for joint spacing, drainage, and load requirements specific to your operation. We also handle <a href='/parking-lot-concrete'>commercial parking lots</a> and <a href='/curb-and-gutter'>curb and gutter</a> installation.",
+            "Every commercial slab starts with a proper site assessment, soil testing when needed, and a pour plan that accounts for joint spacing, drainage, and load requirements specific to your operation. We also handle <a href='/parking-lot-concrete'>commercial parking lots</a>, <a href='/curb-and-gutter'>curb and gutter</a> installation, and <a href='/concrete-foundations'>commercial foundation work</a>.",
           ],
           stats: [
             { value: "5–8\"", label: "Slab thickness" },
