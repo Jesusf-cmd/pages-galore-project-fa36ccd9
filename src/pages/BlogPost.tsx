@@ -67,9 +67,38 @@ const blogPosts: Record<string, { title: string; date: string; time: string; tag
   },
 };
 
+const blogSEO: Record<string, { title: string; description: string }> = {
+  "why-concrete-driveways-crack-oklahoma": {
+    title: "Why Concrete Driveways Crack in Oklahoma | Redwood Construction LLC",
+    description: "Five real reasons concrete driveways crack in Oklahoma — clay soil, bad base prep, missing rebar — and how to prevent every one of them.",
+  },
+  "cost-of-concrete-oklahoma-city-2026": {
+    title: "Cost of Concrete in Oklahoma City 2026 | Redwood Construction LLC",
+    description: "Updated 2026 concrete pricing for Oklahoma City. Per square foot rates, typical project costs, and what drives price in the OKC market.",
+  },
+  "rebar-vs-wire-mesh-concrete-slabs": {
+    title: "Rebar vs Wire Mesh for Concrete Slabs | Redwood Construction LLC",
+    description: "Rebar vs wire mesh for concrete slabs in Oklahoma. Which your project actually needs on OKC clay soil — and why the choice matters long-term.",
+  },
+  "how-thick-should-driveway-be-oklahoma": {
+    title: "How Thick Should a Driveway Be in Oklahoma | Redwood Construction LLC",
+    description: "How thick should a concrete driveway be in Oklahoma? 4 inches is standard — but not always right. Learn when you need 5–6 inches instead.",
+  },
+  "best-time-of-year-to-pour-concrete-okc": {
+    title: "Best Time to Pour Concrete in OKC | Redwood Construction LLC",
+    description: "Best time to pour concrete in Oklahoma City. Fall is ideal, but experienced OKC contractors work year-round with the right protocols.",
+  },
+};
+
 export default function BlogPost() {
   const { slug } = useParams();
   const post = blogPosts[slug || ""];
+  const seo = blogSEO[slug || ""];
+
+  useSEO({
+    title: seo?.title || `${post?.title || "Blog"} | Redwood Construction LLC`,
+    description: seo?.description || post?.deck || "Concrete tips and guides from Redwood Construction LLC in Oklahoma City.",
+  });
 
   if (!post) {
     return (
