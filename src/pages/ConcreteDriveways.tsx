@@ -59,6 +59,17 @@ export default function ConcreteDriveways() {
             "If your existing concrete in Oklahoma City is showing cracks, settlement, or surface scaling, the cause is almost always one of these three issues — not the concrete itself. Call Redwood Construction LLC at (405) 247-0027 for an honest assessment. We'll tell you whether it needs repair or full replacement, and why.",
           ],
         },
+        {
+          eyebrow: "Oklahoma City Concrete Expertise",
+          title: "What Sets Our Concrete Work Apart",
+          titleAccent: "in Oklahoma City.",
+          content: [
+            "Every concrete project in Oklahoma City faces the same adversary: Permian red clay. This soil is among the most expansive in the country — it swells when wet and contracts when dry, creating lateral and upward pressure on any concrete surface above it. Contractors who don't account for this build driveways and slabs that crack within a few years. Our crew has poured concrete across every part of the OKC metro and knows exactly how each neighborhood's soil behaves.",
+            "Our process is the same on every job: 811 utility locate before any excavation, subgrade assessment and compaction, minimum 4-inch compacted aggregate base (6 inches on high-shrink lots), rebar on chairs at mid-slab depth tied at every intersection, 4,000 PSI minimum ready-mix from a local Oklahoma City batch plant, control joints cut to 1/4 slab depth within 24 hours, and curing compound applied before we leave the site. That sequence is non-negotiable on every project — residential or commercial.",
+            "We also grade every pour for drainage. Oklahoma City gets significant rainfall, and concrete sloped flat or toward a structure keeps clay soil constantly saturated — which accelerates the swell-shrink cycle and destroys the base over time. Proper drainage is what separates a slab that lasts 5 years from one that lasts 40.",
+            "Redwood Construction LLC is locally owned — not a franchise, not a call center dispatching subcontractors. When you call (405) 247-0027, you're talking to the people who will be on your property. Our 4.9-star Google rating and 80+ verified reviews come from homeowners across Oklahoma City, Edmond, Norman, Moore, Yukon, and Mustang who got exactly what they were quoted.",
+          ],
+        },
       ]}
       faq={[
         { question: "How long does a concrete driveway last?", answer: "A properly installed concrete driveway can last for decades when built on a solid base with proper drainage and routine maintenance." },
