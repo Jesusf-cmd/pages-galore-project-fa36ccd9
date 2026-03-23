@@ -117,6 +117,12 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         <section className="section-padding">
           <div className="section-eye">Service Areas We Cover</div>
           <h2 className="mb-4">Concrete Services Across<br/><em className="h2-accent">the OKC Metro.</em></h2>
+          <p className="prose-muted mb-3">
+            Redwood Construction LLC provides concrete services throughout Oklahoma City and the surrounding metro area. We serve <a href="/oklahoma-city-concrete" className="text-orange no-underline">Oklahoma City</a>, <a href="/edmond-concrete" className="text-orange no-underline">Edmond</a>, <a href="/norman-ok-concrete" className="text-orange no-underline">Norman</a>, <a href="/moore-oklahoma-concrete" className="text-orange no-underline">Moore</a>, <a href="/yukon-oklahoma-concrete" className="text-orange no-underline">Yukon</a>, <a href="/mustang-oklahoma-concrete" className="text-orange no-underline">Mustang</a>, <a href="/midwest-city-oklahoma-concrete" className="text-orange no-underline">Midwest City</a>, and <a href="/del-city-oklahoma-concrete" className="text-orange no-underline">Del City</a> — same crew, same standards, same free estimate process on every job across the metro.
+          </p>
+          <p className="text-[0.78rem] text-muted-text mb-6">
+            <strong className="text-concrete">OKC metro zip codes served:</strong> 73003, 73012, 73013, 73034 (Edmond) · 73025, 73099 (Yukon/Mustang) · 73069, 73071, 73072 (Norman) · 73160 (Moore) · 73110, 73130 (Midwest City) · 73107, 73109, 73112, 73118, 73120, 73127, 73132, 73142, 73159, 73162 (OKC) and surrounding areas.
+          </p>
           <CityGrid />
         </section>
       </ScrollReveal>
