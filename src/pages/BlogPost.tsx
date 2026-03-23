@@ -38,7 +38,7 @@ const blogPosts: Record<string, { title: string; date: string; time: string; tag
     sections: [
       { heading: "What Wire Mesh Actually Does", content: ["Wire mesh (welded wire fabric) controls minor shrinkage cracking and holds pieces together if a slab does crack. It does not add significant structural strength."] },
       { heading: "What Rebar Does That Wire Mesh Doesn't", content: ["Rebar provides tensile strength — the ability to resist bending forces. On Oklahoma's expansive clay, this is critical because the soil actively pushes up against slabs."] },
-      { heading: "Oklahoma Clay Soil: Why the Choice Matters More Here", content: ["In a state with stable soil, wire mesh might be adequate for a patio. In Oklahoma, where clay swells and contracts dramatically, rebar is the right call for any slab that needs to last."] },
+      { heading: "Oklahoma Clay Soil: Why the Choice Matters More Here", content: ["In a state with stable soil, wire mesh might be adequate for a patio. In Oklahoma, where clay swells and contracts dramatically, rebar is the right call for any <a href='/concrete-slabs' class='text-orange no-underline'>concrete slab in OKC</a> that needs to last. This applies equally to <a href='/concrete-driveways' class='text-orange no-underline'>concrete driveways</a>, <a href='/concrete-foundations' class='text-orange no-underline'>foundations</a>, and <a href='/concrete-patio-okc' class='text-orange no-underline'>patio slabs</a> across the Oklahoma City metro."] },
       { heading: "The Cost Difference", content: ["Rebar adds $0.50–$1.50 per sq ft over wire mesh. On a 400 sq ft patio, that's $200–$600. Over a 30-year lifespan, it's the cheapest insurance you can buy."] },
     ],
   },
