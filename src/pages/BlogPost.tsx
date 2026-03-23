@@ -11,11 +11,11 @@ const blogPosts: Record<string, { title: string; date: string; time: string; tag
     deck: "Five real causes — and how Redwood Construction builds driveways in Oklahoma City that don't.",
     sections: [
       { heading: "The Real Culprit: Oklahoma Clay Soil", content: ["Oklahoma City sits on some of the most expansive clay soil in the country. When it rains, the clay absorbs water and expands. When drought hits, it contracts. A concrete driveway goes through this cycle multiple times every year. Concrete doesn't flex — when clay pushes up unevenly, it creates tension and cracks."] },
-      { heading: "Cause #1: Inadequate Base Preparation", content: ["This is the most common cause. Proper base prep means excavating to the right depth, compacting the native subgrade, and installing 4–6 inches of compacted aggregate base. A lot of contractors cut corners here because it takes time and equipment."] },
-      { heading: "Cause #2: Missing or Poorly Placed Reinforcement", content: ["On Oklahoma clay, rebar is the right call for driveways — placed at mid-depth in the slab on chairs, not lying on the ground. Wire mesh alone doesn't provide enough tensile strength to resist soil movement."] },
+      { heading: "Cause #1: Inadequate Base Preparation", content: ["This is the most common cause of <a href='/concrete-driveways' class='text-orange no-underline'>concrete driveway</a> failure in Oklahoma City. Proper base prep means excavating to the right depth, compacting the native subgrade, and installing 4–6 inches of compacted aggregate base. A lot of contractors cut corners here because it takes time and equipment."] },
+      { heading: "Cause #2: Missing or Poorly Placed Reinforcement", content: ["On Oklahoma clay, rebar is the right call for driveways — placed at mid-depth in the slab on chairs, not lying on the ground. Wire mesh alone doesn't provide enough tensile strength to resist soil movement. For more on reinforcement, see our <a href='/concrete-slabs' class='text-orange no-underline'>concrete slab installation</a> page."] },
       { heading: "Cause #3: Missing or Wrong Control Joints", content: ["Control joints need to be cut to the right depth (minimum 1/4 of slab thickness) and spaced correctly — typically 8–12 feet apart. They need to be cut within the first 24 hours."] },
       { heading: "Cause #4: Wrong Concrete Mix", content: ["For residential driveways in Oklahoma, 4,000 PSI is the appropriate minimum. Adding extra water reduces strength and increases shrinkage."] },
-      { heading: "Cause #5: Drainage Problems", content: ["Water accelerates everything that makes Oklahoma clay problematic. A driveway graded flat or toward the house keeps soil saturated, increasing swell-shrink cycles."] },
+      { heading: "Cause #5: Drainage Problems", content: ["Water accelerates everything that makes Oklahoma clay problematic. A driveway graded flat or toward the house keeps soil saturated, increasing swell-shrink cycles. Every <a href='/concrete-patio-okc' class='text-orange no-underline'>concrete patio</a> and <a href='/concrete-foundations' class='text-orange no-underline'>foundation</a> we pour in OKC is graded for drainage."] },
     ],
   },
   "cost-of-concrete-oklahoma-city-2026": {
@@ -26,7 +26,7 @@ const blogPosts: Record<string, { title: string; date: string; time: string; tag
     sections: [
       { heading: "The Short Answer: $6–$10 Per Square Foot", content: ["Standard residential concrete in OKC — driveways, patios, garage slabs — runs $6–$10 per square foot installed. Foundation work runs $9–$14. Stamped concrete runs $15–$22."] },
       { heading: "What Makes Concrete More Expensive in OKC", content: ["Deep excavation on problem clay, tight truck access requiring a pump, upgrade to 4,000 PSI mix, stamped finishes, and slope that requires more forming work all push prices higher."] },
-      { heading: "Typical Project Costs in Oklahoma City (2026)", content: ["Standard driveway (24×40): $5,760–$9,600. Patio slab (20×20): $2,400–$4,000. Stamped patio (400 sq ft): $6,000–$8,800. Foundation (1,200 sq ft): $10,800–$16,800."] },
+      { heading: "Typical Project Costs in Oklahoma City (2026)", content: ["Standard <a href='/concrete-driveways' class='text-orange no-underline'>driveway installation</a> in Oklahoma City (24×40): $5,760–$9,600. <a href='/concrete-patio-okc' class='text-orange no-underline'>Patio slab OKC</a> (20×20): $2,400–$4,000. <a href='/stamped-concrete' class='text-orange no-underline'>Stamped patio</a> (400 sq ft): $6,000–$8,800. <a href='/concrete-foundations' class='text-orange no-underline'>Foundation work</a> in OKC (1,200 sq ft): $10,800–$16,800."] },
       { heading: "Getting an Accurate Quote", content: ["Phone estimates aren't reliable for concrete. Every project needs a site visit to assess soil conditions, access, grade, and scope. We provide free on-site estimates within one business day."] },
     ],
   },
@@ -38,7 +38,7 @@ const blogPosts: Record<string, { title: string; date: string; time: string; tag
     sections: [
       { heading: "What Wire Mesh Actually Does", content: ["Wire mesh (welded wire fabric) controls minor shrinkage cracking and holds pieces together if a slab does crack. It does not add significant structural strength."] },
       { heading: "What Rebar Does That Wire Mesh Doesn't", content: ["Rebar provides tensile strength — the ability to resist bending forces. On Oklahoma's expansive clay, this is critical because the soil actively pushes up against slabs."] },
-      { heading: "Oklahoma Clay Soil: Why the Choice Matters More Here", content: ["In a state with stable soil, wire mesh might be adequate for a patio. In Oklahoma, where clay swells and contracts dramatically, rebar is the right call for any slab that needs to last."] },
+      { heading: "Oklahoma Clay Soil: Why the Choice Matters More Here", content: ["In a state with stable soil, wire mesh might be adequate for a patio. In Oklahoma, where clay swells and contracts dramatically, rebar is the right call for any <a href='/concrete-slabs' class='text-orange no-underline'>concrete slab in OKC</a> that needs to last. This applies equally to <a href='/concrete-driveways' class='text-orange no-underline'>concrete driveways</a>, <a href='/concrete-foundations' class='text-orange no-underline'>foundations</a>, and <a href='/concrete-patio-okc' class='text-orange no-underline'>patio slabs</a> across the Oklahoma City metro."] },
       { heading: "The Cost Difference", content: ["Rebar adds $0.50–$1.50 per sq ft over wire mesh. On a 400 sq ft patio, that's $200–$600. Over a 30-year lifespan, it's the cheapest insurance you can buy."] },
     ],
   },
@@ -48,9 +48,9 @@ const blogPosts: Record<string, { title: string; date: string; time: string; tag
     tags: ["Driveway Thickness", "Oklahoma", "Concrete Specs"],
     deck: "Four inches is the standard — but not always the right answer. Here's how to spec your driveway correctly for Oklahoma conditions.",
     sections: [
-      { heading: "The Standard: 4 Inches for Passenger Vehicles", content: ["4 inches of concrete on a properly prepared base is adequate for standard passenger vehicles — cars, minivans, and light SUVs."] },
+      { heading: "The Standard: 4 Inches for Passenger Vehicles", content: ["4 inches of <a href='/concrete-driveways' class='text-orange no-underline'>concrete driveway</a> on a properly prepared base is adequate for standard passenger vehicles — cars, minivans, and light SUVs."] },
       { heading: "When You Need More: 5 to 6 Inches", content: ["Heavy trucks, RVs, boat trailers, and commercial vehicles require 5–6 inches. On high shrink-swell clay, we sometimes recommend 5 inches even for standard use."] },
-      { heading: "The Base Matters as Much as the Thickness", content: ["A 6-inch slab on uncompacted soil will fail faster than a 4-inch slab on properly prepared aggregate base. Base prep is the single most important factor."] },
+      { heading: "The Base Matters as Much as the Thickness", content: ["A 6-inch slab on uncompacted soil will fail faster than a 4-inch slab on properly prepared aggregate base. Base prep is the single most important factor. Our <a href='/concrete-slabs' class='text-orange no-underline'>concrete slab contractors in OKC</a> always begin with a thorough base prep assessment — it matters more than the slab thickness."] },
     ],
   },
   "best-time-of-year-to-pour-concrete-okc": {
@@ -59,7 +59,7 @@ const blogPosts: Record<string, { title: string; date: string; time: string; tag
     tags: ["Concrete Timing", "OKC Weather", "Pour Season"],
     deck: "Fall is the ideal window. But experienced concrete contractors in Oklahoma City work year-round — with the right protocols.",
     sections: [
-      { heading: "The Ideal Window: October Through April", content: ["Fall and spring offer the best temperatures for concrete curing in Oklahoma — moderate heat, manageable humidity, and minimal freeze risk."] },
+      { heading: "The Ideal Window: October Through April", content: ["Fall and spring offer the best temperatures for new <a href='/concrete-driveways' class='text-orange no-underline'>driveway installation</a> in Oklahoma City, <a href='/concrete-patio-okc' class='text-orange no-underline'>patio concrete pours</a>, and <a href='/concrete-foundations' class='text-orange no-underline'>foundation pours</a> — moderate heat, manageable humidity, and minimal freeze risk."] },
       { heading: "Summer Concrete in OKC: It Can Be Done", content: ["Oklahoma summers regularly exceed 100°F. We adjust by pouring early morning, using evaporation retarders, and applying curing compound immediately."] },
       { heading: "Winter Concrete: The Cold Weather Rules", content: ["Below 40°F, concrete curing slows dramatically. We use heated water, insulated blankets, and monitor slab temperatures to ensure proper strength development."] },
       { heading: "Spring Storm Season: The Underrated Risk", content: ["March through May brings heavy rain that can wash out fresh concrete or saturate subgrade. Scheduling flexibility and weather monitoring are essential."] },
@@ -135,7 +135,7 @@ export default function BlogPost() {
             <div key={i} className="mb-10">
               <h2 className="mb-4 text-xl" dangerouslySetInnerHTML={{ __html: section.heading.replace(/:\s*(.+)$/, ': <em class="h2-accent">$1</em>') }} />
               {section.content.map((p, j) => (
-                <p key={j} className="prose-muted mb-4">{p}</p>
+                <p key={j} className="prose-muted mb-4" dangerouslySetInnerHTML={{ __html: p }} />
               ))}
             </div>
           ))}
