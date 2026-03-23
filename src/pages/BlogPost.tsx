@@ -59,7 +59,7 @@ const blogPosts: Record<string, { title: string; date: string; time: string; tag
     tags: ["Concrete Timing", "OKC Weather", "Pour Season"],
     deck: "Fall is the ideal window. But experienced concrete contractors in Oklahoma City work year-round — with the right protocols.",
     sections: [
-      { heading: "The Ideal Window: October Through April", content: ["Fall and spring offer the best temperatures for concrete curing in Oklahoma — moderate heat, manageable humidity, and minimal freeze risk."] },
+      { heading: "The Ideal Window: October Through April", content: ["Fall and spring offer the best temperatures for new <a href='/concrete-driveways' class='text-orange no-underline'>driveway installation</a> in Oklahoma City, <a href='/concrete-patio-okc' class='text-orange no-underline'>patio concrete pours</a>, and <a href='/concrete-foundations' class='text-orange no-underline'>foundation pours</a> — moderate heat, manageable humidity, and minimal freeze risk."] },
       { heading: "Summer Concrete in OKC: It Can Be Done", content: ["Oklahoma summers regularly exceed 100°F. We adjust by pouring early morning, using evaporation retarders, and applying curing compound immediately."] },
       { heading: "Winter Concrete: The Cold Weather Rules", content: ["Below 40°F, concrete curing slows dramatically. We use heated water, insulated blankets, and monitor slab temperatures to ensure proper strength development."] },
       { heading: "Spring Storm Season: The Underrated Risk", content: ["March through May brings heavy rain that can wash out fresh concrete or saturate subgrade. Scheduling flexibility and weather monitoring are essential."] },
