@@ -526,7 +526,7 @@ function GoogleReviewsSection() {
                 </div>
                 <div className="text-orange text-xs mb-2">★★★★★</div>
                 <p className="text-[0.78rem] text-muted-text leading-relaxed mb-2">"{r.text}"</p>
-                <div className="text-[0.6rem] text-muted-text">{r.ago} · {r.project}</div>
+                <div className="text-[0.6rem] text-muted-text">{r.project}</div>
               </div>
             ))}
           </div>
