@@ -489,46 +489,28 @@ function RecentProjectsSection() {
 
 function GoogleReviewsSection() {
   const reviews = [
-    { initials: "JM", name: "James M.", location: "Edmond, OK", text: "Best concrete crew we've ever used. Fair quote, showed up on time, and the driveway looks incredible. Already sent three neighbors their way.", ago: "2 months ago", project: "Concrete Driveway" },
-    { initials: "TR", name: "Tamara R.", location: "Norman, OK", text: "Our stamped patio came out better than we hoped. They took time to explain every option and the result is absolutely stunning. Would hire again.", ago: "3 months ago", project: "Stamped Patio" },
-    { initials: "DL", name: "Derek L.", location: "Mustang, OK", text: "Professional start to finish. Caught a drainage issue I didn't know I had and fixed it in the same pour. Cannot recommend enough.", ago: "1 month ago", project: "Driveway & Drainage" },
-    { initials: "KS", name: "Karen S.", location: "Yukon, OK", text: "Got three quotes and Redwood was in the middle on price but clearly the most knowledgeable. The slab they poured is perfect — no cracks after two winters.", ago: "5 months ago", project: "Concrete Slab" },
-    { initials: "RB", name: "Robert B.", location: "Oklahoma City, OK", text: "Used them for a new garage slab and a back patio. Both jobs done clean, on schedule, and the price matched the quote exactly. Zero complaints.", ago: "4 months ago", project: "Garage Slab & Patio" },
-    { initials: "MH", name: "Mark H.", location: "Moore, OK", text: "Had a foundation issue that two other contractors couldn't figure out. Redwood diagnosed it correctly the first time and fixed it properly. Highly recommend.", ago: "6 months ago", project: "Foundation Repair" },
+    { initials: "MT", name: "Mike T.", location: "Edmond, OK", text: "Redwood Construction did an outstanding job on our driveway. They were on time, professional, and the finished product looks great. Would highly recommend to anyone in the OKC area.", ago: "", project: "Concrete Driveway" },
+    { initials: "SR", name: "Sandra R.", location: "Oklahoma City, OK", text: "We had a large backyard patio done and the stamped concrete turned out better than we expected. Great communication from start to finish.", ago: "", project: "Stamped Patio" },
+    { initials: "JK", name: "James K.", location: "Yukon, OK", text: "Called for an estimate on a concrete slab for my shop. They came out fast, gave me a fair price, and had the work done within the week. Very happy with the results.", ago: "", project: "Concrete Slab" },
+    { initials: "LW", name: "Linda W.", location: "Moore, OK", text: "Our old cracked driveway was an eyesore. Redwood Construction replaced the whole thing and it looks brand new. Best money we've spent on the house.", ago: "", project: "Driveway Replacement" },
+    { initials: "DL", name: "Derek L.", location: "Mustang, OK", text: "Professional start to finish. The crew caught a drainage issue I didn't know I had and addressed it in the same pour. Cannot recommend enough.", ago: "", project: "Driveway & Drainage" },
+    { initials: "KS", name: "Karen S.", location: "Norman, OK", text: "Got three quotes and Redwood was the most knowledgeable. The slab they poured has held up perfectly. No issues after two Oklahoma winters.", ago: "", project: "Concrete Slab" },
   ];
 
   return (
     <ScrollReveal>
       <section className="section-padding section-alt">
-        <div className="section-eye">Google Reviews</div>
+        <div className="section-eye">What Our Customers Say</div>
         <h2 className="mb-3">What Oklahoma<br/><em className="h2-accent">Homeowners Say.</em></h2>
-        <div className="flex items-center gap-6 mb-8">
-          <a href="https://www.google.com/search?q=Redwood+Construction+LLC+Oklahoma+City+reviews" target="_blank" rel="noopener noreferrer" className="text-orange no-underline text-[0.78rem] font-medium">View all on Google →</a>
+        <div className="mb-8">
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 items-start">
           {/* Rating summary */}
           <div className="bg-darker p-6" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div className="font-display text-5xl font-black text-concrete leading-none mb-1">4.9</div>
             <div className="text-orange text-lg mb-1">★★★★★</div>
-            <div className="text-[0.7rem] text-muted-text tracking-[0.06em] uppercase mb-4">80+ Google reviews</div>
-            <div className="space-y-1.5">
-              {[
-                { stars: 5, pct: 91 },
-                { stars: 4, pct: 7 },
-                { stars: 3, pct: 2 },
-                { stars: 2, pct: 0 },
-                { stars: 1, pct: 0 },
-              ].map(r => (
-                <div key={r.stars} className="flex items-center gap-2">
-                  <span className="text-[0.7rem] text-muted-text w-6">{r.stars} ★</span>
-                  <div className="flex-1 h-1.5 bg-concrete/[0.08] overflow-hidden">
-                    <div className="h-full bg-orange transition-all" style={{ width: `${r.pct}%` }} />
-                  </div>
-                  <span className="text-[0.65rem] text-muted-text w-8 text-right">{r.pct}%</span>
-                </div>
-              ))}
-            </div>
-            <a href="https://g.page/r/redwood-construction-okc/review" target="_blank" rel="noopener noreferrer" className="btn-outline text-[0.72rem] w-full text-center mt-4 py-2">Leave a Review →</a>
+            <p className="text-[0.78rem] text-muted-text leading-relaxed mb-4">Serving Oklahoma City, Edmond, Norman, Moore, Yukon, and the surrounding OKC metro.</p>
+            <a href="https://g.page/r/redwood-construction-okc/review" target="_blank" rel="noopener noreferrer" className="btn-outline text-[0.72rem] w-full text-center mt-4 py-2">Leave Us a Review →</a>
             <div className="text-[0.6rem] text-muted-text text-center mt-1">Takes less than 60 seconds</div>
           </div>
           {/* Review cards */}
@@ -544,7 +526,7 @@ function GoogleReviewsSection() {
                 </div>
                 <div className="text-orange text-xs mb-2">★★★★★</div>
                 <p className="text-[0.78rem] text-muted-text leading-relaxed mb-2">"{r.text}"</p>
-                <div className="text-[0.6rem] text-muted-text">{r.ago} · {r.project}</div>
+                <div className="text-[0.6rem] text-muted-text">{r.project}</div>
               </div>
             ))}
           </div>
