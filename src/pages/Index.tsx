@@ -265,13 +265,13 @@ function EstimateForm() {
           <div className="grid grid-cols-2 gap-3 mb-3">
             <div>
               <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Length (ft)</label>
-              <input type="number" value={length} onChange={e => setLength(+e.target.value)} min={1} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none transition-colors focus:border-orange min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+              <input type="number" value={length === 0 ? "" : length} onChange={e => setLength(e.target.value === "" ? 0 : +e.target.value)} onFocus={e => e.target.select()} placeholder="Enter feet" min={1} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none transition-colors focus:border-orange min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
             </div>
             <div>
               <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
                 {projectType === "wall" ? "Height (ft)" : "Width (ft)"}
               </label>
-              <input type="number" value={width} onChange={e => setWidth(+e.target.value)} min={1} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none transition-colors focus:border-orange min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+              <input type="number" value={width === 0 ? "" : width} onChange={e => setWidth(e.target.value === "" ? 0 : +e.target.value)} onFocus={e => e.target.select()} placeholder="Enter feet" min={1} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none transition-colors focus:border-orange min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
             </div>
           </div>
           {projectType !== "wall" && (
