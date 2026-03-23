@@ -26,7 +26,7 @@ const blogPosts: Record<string, { title: string; date: string; time: string; tag
     sections: [
       { heading: "The Short Answer: $6–$10 Per Square Foot", content: ["Standard residential concrete in OKC — driveways, patios, garage slabs — runs $6–$10 per square foot installed. Foundation work runs $9–$14. Stamped concrete runs $15–$22."] },
       { heading: "What Makes Concrete More Expensive in OKC", content: ["Deep excavation on problem clay, tight truck access requiring a pump, upgrade to 4,000 PSI mix, stamped finishes, and slope that requires more forming work all push prices higher."] },
-      { heading: "Typical Project Costs in Oklahoma City (2026)", content: ["Standard driveway (24×40): $5,760–$9,600. Patio slab (20×20): $2,400–$4,000. Stamped patio (400 sq ft): $6,000–$8,800. Foundation (1,200 sq ft): $10,800–$16,800."] },
+      { heading: "Typical Project Costs in Oklahoma City (2026)", content: ["Standard <a href='/concrete-driveways' class='text-orange no-underline'>driveway installation</a> in Oklahoma City (24×40): $5,760–$9,600. <a href='/concrete-patio-okc' class='text-orange no-underline'>Patio slab OKC</a> (20×20): $2,400–$4,000. <a href='/stamped-concrete' class='text-orange no-underline'>Stamped patio</a> (400 sq ft): $6,000–$8,800. <a href='/concrete-foundations' class='text-orange no-underline'>Foundation work</a> in OKC (1,200 sq ft): $10,800–$16,800."] },
       { heading: "Getting an Accurate Quote", content: ["Phone estimates aren't reliable for concrete. Every project needs a site visit to assess soil conditions, access, grade, and scope. We provide free on-site estimates within one business day."] },
     ],
   },
