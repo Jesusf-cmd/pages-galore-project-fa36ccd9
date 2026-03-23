@@ -2,7 +2,7 @@ export default function TrustBar() {
   const items = [
     { icon: "🛡", title: "Licensed & Insured", sub: "Oklahoma contractor" },
     { icon: "🏗", title: "500+ Projects", sub: "Completed OKC metro" },
-    { icon: "⭐", title: "4.9 Star Rating", sub: "80+ Google reviews" },
+    { icon: "⭐", title: "4.9 Star Rating", sub: "Verified customer reviews" },
     { icon: "⚡", title: "Free Estimates", sub: "Response in 24 hours" },
   ];
 

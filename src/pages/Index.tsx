@@ -412,7 +412,7 @@ function WhyUsSection() {
     { icon: "📋", title: "Free on-site estimates", desc: "No ballpark guesses over the phone. We come to your property and give you an accurate price before any work starts." },
     { icon: "🛡", title: "Licensed, bonded & insured", desc: "Fully licensed in Oklahoma with active liability insurance. Your property and investment are protected on every job." },
     { icon: "✅", title: "No surprise pricing — ever", desc: "The price we quote is the price you pay. No change orders, no hidden fees, no upsells once our crew shows up." },
-    { icon: "⭐", title: "4.9 Star Google Rating", desc: "Verified reviews from real homeowners across OKC, Edmond, Norman, Mustang, Moore, and Yukon." },
+    { icon: "⭐", title: "4.9 Star Customer Rating", desc: "Highly rated by homeowners across OKC, Edmond, Norman, Mustang, Moore, and Yukon for quality concrete work and honest pricing." },
     { icon: "🏆", title: "BBB Accredited Business", desc: "A+ rating with the Better Business Bureau. Verified, ethical, and committed to doing right by every customer." },
     { icon: "🌡", title: "Oklahoma Clay Soil Experts", desc: "Every pour accounts for local soil movement, frost lines, and drainage — because Oklahoma clay is unforgiving." },
     { icon: "⚡", title: "24-Hour Estimate Response", desc: "Submit your project and hear back within one business day. No waiting weeks just to get a quote." },
