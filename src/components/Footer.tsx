@@ -15,20 +15,49 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
         <div>
-          <img src={LOGO_URL} alt="Redwood Construction LLC" className="h-9 opacity-70" />
+          <img src={LOGO_URL} alt="Redwood Construction LLC — Oklahoma City Concrete Contractor" className="h-9 opacity-70 mb-3" />
+          <p className="text-[0.74rem] text-muted-text">Oklahoma City's concrete contractor. Licensed &amp; insured in Oklahoma.</p>
+          <p className="text-[0.74rem] text-muted-text mt-2">© {new Date().getFullYear()} Redwood Construction LLC. All rights reserved.</p>
         </div>
-        <p className="text-[0.74rem] text-muted-text text-center">
-          © {new Date().getFullYear()} Redwood Construction LLC. All rights reserved.
-        </p>
-        <div className="flex gap-6 justify-center md:justify-end flex-wrap">
-          <Link to="/concrete-driveways" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Driveways</Link>
-          <Link to="/concrete-slabs" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Slabs</Link>
-          <Link to="/stamped-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Stamped</Link>
-          <Link to="/parking-lot-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Commercial</Link>
-          <Link to="/blog" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Blog</Link>
-          <Link to="/our-projects" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Our Work</Link>
+        <div>
+          <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3">Concrete Services</div>
+          <div className="flex flex-col gap-1.5">
+            <Link to="/concrete-driveways" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Driveways OKC</Link>
+            <Link to="/concrete-slabs" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Slabs Oklahoma City</Link>
+            <Link to="/concrete-patio-okc" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Patios OKC</Link>
+            <Link to="/stamped-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Stamped Concrete Oklahoma City</Link>
+            <Link to="/concrete-foundations" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Foundations OKC</Link>
+            <Link to="/concrete-sidewalks" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Sidewalks OKC</Link>
+            <Link to="/retaining-walls" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Retaining Walls OKC</Link>
+            <Link to="/parking-lot-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Parking Lot Concrete OKC</Link>
+            <Link to="/curb-and-gutter" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Curb &amp; Gutter OKC</Link>
+            <Link to="/commercial-concrete-slabs" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Commercial Concrete Slabs</Link>
+          </div>
+        </div>
+        <div>
+          <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3">Service Areas</div>
+          <div className="flex flex-col gap-1.5">
+            <Link to="/oklahoma-city-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Oklahoma City</Link>
+            <Link to="/edmond-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Edmond OK</Link>
+            <Link to="/norman-ok-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Norman OK</Link>
+            <Link to="/yukon-oklahoma-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Yukon OK</Link>
+            <Link to="/mustang-oklahoma-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Mustang OK</Link>
+            <Link to="/moore-oklahoma-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Moore OK</Link>
+            <Link to="/midwest-city-oklahoma-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Midwest City</Link>
+            <Link to="/del-city-oklahoma-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Del City OK</Link>
+          </div>
+        </div>
+        <div>
+          <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3">Company</div>
+          <div className="flex flex-col gap-1.5">
+            <Link to="/our-projects" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Our Work</Link>
+            <Link to="/blog" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Tips Blog</Link>
+            <span className="text-[0.74rem] text-muted-text">Workmanship Warranty</span>
+            <a href="tel:4052470027" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">(405) 247-0027</a>
+            <a href="mailto:jesus.f@myconcreteestimate.com" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">jesus.f@myconcreteestimate.com</a>
+          </div>
         </div>
       </div>
     </footer>
