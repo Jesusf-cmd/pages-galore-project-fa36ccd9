@@ -9,11 +9,13 @@ const cityData: Record<string, {
   localDetails: string;
   soilNote: string;
   faq: { question: string; answer: string }[];
+  metaDescription: string;
 }> = {
   "oklahoma-city": {
     city: "Oklahoma City",
     county: "Oklahoma County",
     zips: "73107, 73109, 73112, 73118, 73120, 73127",
+    metaDescription: "Concrete contractor in Oklahoma City, OK — Redwood Construction LLC. Driveways, slabs, foundations & patios built for OKC's expansive Permian clay. 500+ metro projects. Free estimate: (405) 247-0027.",
     intro: [
       "Redwood Construction LLC is headquartered in the Oklahoma City metro, giving us firsthand knowledge of the soil conditions, drainage challenges, and building codes that affect every concrete project in the area. From the historic neighborhoods near Capitol Hill to the growing developments in northwest OKC, we've poured concrete across every part of this city.",
       "Oklahoma City's expansive Permian red clay is among the most challenging soil types for concrete work in the entire country. This clay swells dramatically during wet seasons and contracts during Oklahoma's intense summer droughts, creating a cycle of movement that destroys improperly built concrete. Our crews understand this at a granular level — we adjust base depth, reinforcement, and drainage for each zip code we serve.",
@@ -34,6 +36,7 @@ const cityData: Record<string, {
     city: "Edmond",
     county: "Oklahoma County",
     zips: "73003, 73012, 73013, 73025, 73034",
+    metaDescription: "Concrete contractor in Edmond, OK — driveways, patios, slabs & foundations for Deer Creek, Coffee Creek, and all of Oklahoma County. Redwood Construction LLC. Call (405) 247-0027.",
     intro: [
       "Edmond is one of the fastest-growing cities in the OKC metro, with new residential construction booming in areas like Deer Creek, Coffee Creek, and along the 15th Street corridor. Redwood Construction has been pouring concrete for Edmond homeowners and builders since our earliest days — we know the neighborhoods, the soil variations, and the local expectations.",
       "Edmond's soil conditions vary significantly by location. The western sections near Piedmont feature heavier clay with higher swell potential, while the eastern areas closer to I-35 have more mixed soil profiles. We adjust our base prep and reinforcement recommendations based on the specific lot — not a one-size-fits-all approach.",
@@ -53,6 +56,7 @@ const cityData: Record<string, {
     city: "Norman",
     county: "Cleveland County",
     zips: "73019, 73026, 73069, 73071, 73072",
+    metaDescription: "Concrete contractor in Norman, OK serving Cleveland County. Driveways, patios, slabs & retaining walls built for Norman's soil and drainage conditions. Redwood Construction LLC. (405) 247-0027.",
     intro: [
       "Norman, home to the University of Oklahoma, presents unique concrete challenges due to its location in Cleveland County. The soil profile in Norman differs from central Oklahoma City — it includes both heavy red clay in the western sections and lighter sandy-clay mix near the Canadian River corridor in the east.",
       "Redwood Construction has completed numerous projects in Norman, from driveway replacements in established neighborhoods near Main Street to new construction foundations in the growing communities along 24th Avenue NW. Norman's weather exposure is slightly different from OKC — the city catches more direct storm paths, making proper drainage grading critical on every pour.",
@@ -72,6 +76,7 @@ const cityData: Record<string, {
     city: "Yukon",
     county: "Canadian County",
     zips: "73036, 73099",
+    metaDescription: "Concrete contractor in Yukon, OK — driveways, slabs, patios & commercial concrete in Canadian County. Transitional clay soil experts. Redwood Construction LLC. (405) 247-0027.",
     intro: [
       "Yukon sits in Canadian County on the western edge of the OKC metro, where the soil transitions from Oklahoma County's red clay to the slightly sandier profiles found further west. This transition zone creates unique concrete challenges — the soil can behave differently across a single property.",
       "Redwood Construction serves Yukon homeowners and businesses with the same standards and crew we use across the entire metro. We've completed driveways, patios, commercial slabs, and foundation work throughout Yukon — including projects near the downtown district and in the newer developments along SH-66.",
@@ -91,6 +96,7 @@ const cityData: Record<string, {
     city: "Mustang",
     county: "Canadian County",
     zips: "73064",
+    metaDescription: "Concrete contractor in Mustang, OK. Driveways, patios, slabs & foundations for Mustang homeowners and new construction subdivisions. Redwood Construction LLC. Call (405) 247-0027.",
     intro: [
       "Mustang has experienced significant residential growth over the past decade, with new subdivisions expanding south and west of the city center. Redwood Construction serves Mustang homeowners with driveways, patios, foundations, and decorative concrete — bringing the same quality we deliver across the OKC metro.",
       "Like neighboring Yukon, Mustang's Canadian County soil is transitional between the heavy red clay of central OKC and the sandier profiles further west. Our crew evaluates each Mustang property individually — adjusting base depth and reinforcement based on actual soil conditions, not assumptions.",
@@ -110,6 +116,7 @@ const cityData: Record<string, {
     city: "Moore",
     county: "Cleveland County",
     zips: "73160, 73170",
+    metaDescription: "Concrete contractor in Moore, OK — driveways, foundations & storm damage concrete replacement in Cleveland County. Redwood Construction LLC. Free estimate: (405) 247-0027.",
     intro: [
       "Moore, located in Cleveland County just south of Oklahoma City, is known for its strong residential communities and, unfortunately, its exposure to severe weather. The tornado activity in Moore has led to significant rebuilding over the years — and Redwood Construction has been part of that recovery, pouring foundations and flatwork for homeowners rebuilding after storms.",
       "Moore's soil conditions are consistent with the broader Cleveland County profile — moderate to heavy clay that requires proper base preparation on every concrete project. The city's flat terrain means drainage grading is especially important — without proper slope, water pools on slabs and against foundations.",
@@ -129,6 +136,7 @@ const cityData: Record<string, {
     city: "Midwest City",
     county: "Oklahoma County",
     zips: "73110, 73130",
+    metaDescription: "Concrete contractor in Midwest City, OK. Driveway replacement, patio slabs & sidewalk repair in eastern Oklahoma County. Redwood Construction LLC. Call (405) 247-0027.",
     intro: [
       "Midwest City, located adjacent to Tinker Air Force Base in eastern Oklahoma County, has a well-established residential base with many homes built in the mid-20th century. This means a significant portion of our Midwest City work involves replacing aging driveways, patios, and sidewalks that have reached the end of their service life.",
       "The soil in eastern Oklahoma County tends to be slightly less aggressive than the central OKC red clay, but still contains enough expansive minerals to require proper base preparation. Midwest City's older neighborhoods often have mature trees with root systems that can affect concrete work — our crew identifies and addresses these issues during the site assessment.",
@@ -148,6 +156,7 @@ const cityData: Record<string, {
     city: "Del City",
     county: "Oklahoma County",
     zips: "73115, 73135",
+    metaDescription: "Concrete contractor in Del City, OK — driveway replacement, patio slabs & sidewalk repair for Del City homeowners. Redwood Construction LLC. Call (405) 247-0027.",
     intro: [
       "Del City is a tightly-knit community in southeastern Oklahoma County, bordered by Midwest City and south Oklahoma City. Like its neighbors, Del City has an established housing stock that frequently needs concrete replacement — driveways, sidewalks, and patios that were originally poured decades ago.",
       "Redwood Construction serves Del City homeowners with affordable, quality concrete work. The soil conditions in this part of Oklahoma County are moderate clay — manageable with proper base prep but still requiring attention to drainage and reinforcement. Our crew treats every Del City project with the same standards we apply across the entire OKC metro.",
@@ -188,6 +197,7 @@ export default function CityPage({ slug }: { slug: string }) {
         ],
       }}
       faq={data.faq}
+      metaDescription={data.metaDescription}
     />
   );
 }
