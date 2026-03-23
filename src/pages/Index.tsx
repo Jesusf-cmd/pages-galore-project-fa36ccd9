@@ -500,10 +500,9 @@ function GoogleReviewsSection() {
   return (
     <ScrollReveal>
       <section className="section-padding section-alt">
-        <div className="section-eye">Google Reviews</div>
+        <div className="section-eye">What Our Customers Say</div>
         <h2 className="mb-3">What Oklahoma<br/><em className="h2-accent">Homeowners Say.</em></h2>
-        <div className="flex items-center gap-6 mb-8">
-          <a href="https://www.google.com/search?q=Redwood+Construction+LLC+Oklahoma+City+reviews" target="_blank" rel="noopener noreferrer" className="text-orange no-underline text-[0.78rem] font-medium">View all on Google →</a>
+        <div className="mb-8">
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 items-start">
           {/* Rating summary */}
