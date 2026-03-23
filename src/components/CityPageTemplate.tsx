@@ -18,12 +18,13 @@ interface CityPageProps {
   faq: { question: string; answer: string }[];
   zipCodes?: string;
   nearbyLinks?: { name: string; to: string }[];
+  metaDescription?: string;
 }
 
-export default function CityPageTemplate({ city, county, description, localContent, servicesContent, table, faq, zipCodes, nearbyLinks }: CityPageProps) {
+export default function CityPageTemplate({ city, county, description, localContent, servicesContent, table, faq, zipCodes, nearbyLinks, metaDescription }: CityPageProps) {
   useSEO({
     title: `Concrete Contractor in ${city} OK | Redwood Construction LLC`,
-    description: `Professional concrete contractor in ${city}, Oklahoma. Driveways, patios, slabs, and foundations built for local soil conditions. Call for a free estimate.`,
+    description: metaDescription || `Professional concrete contractor in ${city}, Oklahoma. Driveways, patios, slabs, and foundations built for local soil conditions. Call for a free estimate.`,
   });
   const processSteps = [
     { title: "Site prep & excavation", description: "We start by marking the area, calling 811 for utility locates, and excavating to the correct depth for your soil conditions." },

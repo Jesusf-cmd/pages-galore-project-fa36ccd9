@@ -197,6 +197,7 @@ export default function CityPage({ slug }: { slug: string }) {
         ],
       }}
       faq={data.faq}
+      metaDescription={data.metaDescription}
     />
   );
 }
