@@ -48,9 +48,9 @@ const blogPosts: Record<string, { title: string; date: string; time: string; tag
     tags: ["Driveway Thickness", "Oklahoma", "Concrete Specs"],
     deck: "Four inches is the standard — but not always the right answer. Here's how to spec your driveway correctly for Oklahoma conditions.",
     sections: [
-      { heading: "The Standard: 4 Inches for Passenger Vehicles", content: ["4 inches of concrete on a properly prepared base is adequate for standard passenger vehicles — cars, minivans, and light SUVs."] },
+      { heading: "The Standard: 4 Inches for Passenger Vehicles", content: ["4 inches of <a href='/concrete-driveways' class='text-orange no-underline'>concrete driveway</a> on a properly prepared base is adequate for standard passenger vehicles — cars, minivans, and light SUVs."] },
       { heading: "When You Need More: 5 to 6 Inches", content: ["Heavy trucks, RVs, boat trailers, and commercial vehicles require 5–6 inches. On high shrink-swell clay, we sometimes recommend 5 inches even for standard use."] },
-      { heading: "The Base Matters as Much as the Thickness", content: ["A 6-inch slab on uncompacted soil will fail faster than a 4-inch slab on properly prepared aggregate base. Base prep is the single most important factor."] },
+      { heading: "The Base Matters as Much as the Thickness", content: ["A 6-inch slab on uncompacted soil will fail faster than a 4-inch slab on properly prepared aggregate base. Base prep is the single most important factor. Our <a href='/concrete-slabs' class='text-orange no-underline'>concrete slab contractors in OKC</a> always begin with a thorough base prep assessment — it matters more than the slab thickness."] },
     ],
   },
   "best-time-of-year-to-pour-concrete-okc": {
