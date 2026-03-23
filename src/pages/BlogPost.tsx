@@ -135,7 +135,7 @@ export default function BlogPost() {
             <div key={i} className="mb-10">
               <h2 className="mb-4 text-xl" dangerouslySetInnerHTML={{ __html: section.heading.replace(/:\s*(.+)$/, ': <em class="h2-accent">$1</em>') }} />
               {section.content.map((p, j) => (
-                <p key={j} className="prose-muted mb-4">{p}</p>
+                <p key={j} className="prose-muted mb-4" dangerouslySetInnerHTML={{ __html: p }} />
               ))}
             </div>
           ))}
