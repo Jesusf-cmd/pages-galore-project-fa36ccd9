@@ -136,6 +136,7 @@ const cityData: Record<string, {
     city: "Midwest City",
     county: "Oklahoma County",
     zips: "73110, 73130",
+    metaDescription: "Concrete contractor in Midwest City, OK. Driveway replacement, patio slabs & sidewalk repair in eastern Oklahoma County. Redwood Construction LLC. Call (405) 247-0027.",
     intro: [
       "Midwest City, located adjacent to Tinker Air Force Base in eastern Oklahoma County, has a well-established residential base with many homes built in the mid-20th century. This means a significant portion of our Midwest City work involves replacing aging driveways, patios, and sidewalks that have reached the end of their service life.",
       "The soil in eastern Oklahoma County tends to be slightly less aggressive than the central OKC red clay, but still contains enough expansive minerals to require proper base preparation. Midwest City's older neighborhoods often have mature trees with root systems that can affect concrete work — our crew identifies and addresses these issues during the site assessment.",
