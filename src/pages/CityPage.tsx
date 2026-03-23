@@ -56,6 +56,7 @@ const cityData: Record<string, {
     city: "Norman",
     county: "Cleveland County",
     zips: "73019, 73026, 73069, 73071, 73072",
+    metaDescription: "Concrete contractor in Norman, OK serving Cleveland County. Driveways, patios, slabs & retaining walls built for Norman's soil and drainage conditions. Redwood Construction LLC. (405) 247-0027.",
     intro: [
       "Norman, home to the University of Oklahoma, presents unique concrete challenges due to its location in Cleveland County. The soil profile in Norman differs from central Oklahoma City — it includes both heavy red clay in the western sections and lighter sandy-clay mix near the Canadian River corridor in the east.",
       "Redwood Construction has completed numerous projects in Norman, from driveway replacements in established neighborhoods near Main Street to new construction foundations in the growing communities along 24th Avenue NW. Norman's weather exposure is slightly different from OKC — the city catches more direct storm paths, making proper drainage grading critical on every pour.",
