@@ -156,6 +156,7 @@ const cityData: Record<string, {
     city: "Del City",
     county: "Oklahoma County",
     zips: "73115, 73135",
+    metaDescription: "Concrete contractor in Del City, OK — driveway replacement, patio slabs & sidewalk repair for Del City homeowners. Redwood Construction LLC. Call (405) 247-0027.",
     intro: [
       "Del City is a tightly-knit community in southeastern Oklahoma County, bordered by Midwest City and south Oklahoma City. Like its neighbors, Del City has an established housing stock that frequently needs concrete replacement — driveways, sidewalks, and patios that were originally poured decades ago.",
       "Redwood Construction serves Del City homeowners with affordable, quality concrete work. The soil conditions in this part of Oklahoma County are moderate clay — manageable with proper base prep but still requiring attention to drainage and reinforcement. Our crew treats every Del City project with the same standards we apply across the entire OKC metro.",
