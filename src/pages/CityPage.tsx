@@ -76,6 +76,7 @@ const cityData: Record<string, {
     city: "Yukon",
     county: "Canadian County",
     zips: "73036, 73099",
+    metaDescription: "Concrete contractor in Yukon, OK — driveways, slabs, patios & commercial concrete in Canadian County. Transitional clay soil experts. Redwood Construction LLC. (405) 247-0027.",
     intro: [
       "Yukon sits in Canadian County on the western edge of the OKC metro, where the soil transitions from Oklahoma County's red clay to the slightly sandier profiles found further west. This transition zone creates unique concrete challenges — the soil can behave differently across a single property.",
       "Redwood Construction serves Yukon homeowners and businesses with the same standards and crew we use across the entire metro. We've completed driveways, patios, commercial slabs, and foundation work throughout Yukon — including projects near the downtown district and in the newer developments along SH-66.",
