@@ -509,25 +509,8 @@ function GoogleReviewsSection() {
           <div className="bg-darker p-6" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div className="font-display text-5xl font-black text-concrete leading-none mb-1">4.9</div>
             <div className="text-orange text-lg mb-1">★★★★★</div>
-            <div className="text-[0.7rem] text-muted-text tracking-[0.06em] uppercase mb-4">80+ Google reviews</div>
-            <div className="space-y-1.5">
-              {[
-                { stars: 5, pct: 91 },
-                { stars: 4, pct: 7 },
-                { stars: 3, pct: 2 },
-                { stars: 2, pct: 0 },
-                { stars: 1, pct: 0 },
-              ].map(r => (
-                <div key={r.stars} className="flex items-center gap-2">
-                  <span className="text-[0.7rem] text-muted-text w-6">{r.stars} ★</span>
-                  <div className="flex-1 h-1.5 bg-concrete/[0.08] overflow-hidden">
-                    <div className="h-full bg-orange transition-all" style={{ width: `${r.pct}%` }} />
-                  </div>
-                  <span className="text-[0.65rem] text-muted-text w-8 text-right">{r.pct}%</span>
-                </div>
-              ))}
-            </div>
-            <a href="https://g.page/r/redwood-construction-okc/review" target="_blank" rel="noopener noreferrer" className="btn-outline text-[0.72rem] w-full text-center mt-4 py-2">Leave a Review →</a>
+            <p className="text-[0.78rem] text-muted-text leading-relaxed mb-4">Serving Oklahoma City, Edmond, Norman, Moore, Yukon, and the surrounding OKC metro.</p>
+            <a href="https://g.page/r/redwood-construction-okc/review" target="_blank" rel="noopener noreferrer" className="btn-outline text-[0.72rem] w-full text-center mt-4 py-2">Leave Us a Review →</a>
             <div className="text-[0.6rem] text-muted-text text-center mt-1">Takes less than 60 seconds</div>
           </div>
           {/* Review cards */}
