@@ -343,12 +343,12 @@ function AboutSection() {
 
 function ServicesSection() {
   const services = [
-    { num: "01", name: "Concrete Driveways", desc: "New installs and full replacements. Reinforced for Oklahoma's freeze-thaw cycles and clay soil movement.", to: "/concrete-driveways" },
-    { num: "02", name: "Patios & Slabs", desc: "Custom concrete patios with smooth, broom, or stamped finishes. Properly graded for Oklahoma weather.", to: "/concrete-slabs" },
-    { num: "03", name: "Stamped Concrete", desc: "Flagstone, brick, or slate patterns at a fraction of the cost. Custom colors and sealed finishes.", to: "/stamped-concrete" },
-    { num: "04", name: "Concrete Foundations", desc: "Residential and commercial foundation pours. Site prep, forming, reinforcing to local code.", to: "/concrete-foundations" },
-    { num: "05", name: "Sidewalks & Walkways", desc: "New construction and replacement sidewalks with proper base prep and ADA-compliant options.", to: "/concrete-sidewalks" },
-    { num: "06", name: "Retaining Walls", desc: "Durable concrete walls for slopes, erosion control — engineered for Oklahoma's heavy clay soil.", to: "/retaining-walls" },
+    { num: "01", name: "Concrete Driveways Oklahoma City", desc: "New installation, replacement, and repair of concrete driveways across OKC. Proper thickness, correct mix for Oklahoma weather, and drainage grading on every job.", to: "/concrete-driveways" },
+    { num: "02", name: "Concrete Patios OKC", desc: "Custom concrete patios for Oklahoma City backyards. Standard finish, exposed aggregate, or decorative stamped designs — built to survive Oklahoma's heat and freeze cycles.", to: "/concrete-slabs" },
+    { num: "03", name: "Stamped Concrete Oklahoma City", desc: "Decorative stamped concrete that looks like stone, brick, or slate. Popular for driveways, patios, and pool decks throughout the OKC metro area.", to: "/stamped-concrete" },
+    { num: "04", name: "Concrete Slabs & Foundations OKC", desc: "Garage floors, shop slabs, shed pads, and building foundations across Oklahoma City. Reinforced and graded for Oklahoma's clay soil.", to: "/concrete-foundations" },
+    { num: "05", name: "Concrete Repair Oklahoma City", desc: "Crack repair, leveling, and restoration for driveways, sidewalks, and patios across OKC. We identify the root cause before we fix the surface.", to: "/concrete-sidewalks" },
+    { num: "06", name: "Commercial Concrete OKC", desc: "Parking lots, warehouse floors, loading docks, and commercial slabs for Oklahoma City businesses. We meet commercial specs and pull all required permits.", to: "/retaining-walls" },
   ];
 
   return (
