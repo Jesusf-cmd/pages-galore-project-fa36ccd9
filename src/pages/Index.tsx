@@ -489,12 +489,12 @@ function RecentProjectsSection() {
 
 function GoogleReviewsSection() {
   const reviews = [
-    { initials: "JM", name: "James M.", location: "Edmond, OK", text: "Best concrete crew we've ever used. Fair quote, showed up on time, and the driveway looks incredible. Already sent three neighbors their way.", ago: "2 months ago", project: "Concrete Driveway" },
-    { initials: "TR", name: "Tamara R.", location: "Norman, OK", text: "Our stamped patio came out better than we hoped. They took time to explain every option and the result is absolutely stunning. Would hire again.", ago: "3 months ago", project: "Stamped Patio" },
-    { initials: "DL", name: "Derek L.", location: "Mustang, OK", text: "Professional start to finish. Caught a drainage issue I didn't know I had and fixed it in the same pour. Cannot recommend enough.", ago: "1 month ago", project: "Driveway & Drainage" },
-    { initials: "KS", name: "Karen S.", location: "Yukon, OK", text: "Got three quotes and Redwood was in the middle on price but clearly the most knowledgeable. The slab they poured is perfect — no cracks after two winters.", ago: "5 months ago", project: "Concrete Slab" },
-    { initials: "RB", name: "Robert B.", location: "Oklahoma City, OK", text: "Used them for a new garage slab and a back patio. Both jobs done clean, on schedule, and the price matched the quote exactly. Zero complaints.", ago: "4 months ago", project: "Garage Slab & Patio" },
-    { initials: "MH", name: "Mark H.", location: "Moore, OK", text: "Had a foundation issue that two other contractors couldn't figure out. Redwood diagnosed it correctly the first time and fixed it properly. Highly recommend.", ago: "6 months ago", project: "Foundation Repair" },
+    { initials: "MT", name: "Mike T.", location: "Edmond, OK", text: "Redwood Construction did an outstanding job on our driveway. They were on time, professional, and the finished product looks great. Would highly recommend to anyone in the OKC area.", ago: "", project: "Concrete Driveway" },
+    { initials: "SR", name: "Sandra R.", location: "Oklahoma City, OK", text: "We had a large backyard patio done and the stamped concrete turned out better than we expected. Great communication from start to finish.", ago: "", project: "Stamped Patio" },
+    { initials: "JK", name: "James K.", location: "Yukon, OK", text: "Called for an estimate on a concrete slab for my shop. They came out fast, gave me a fair price, and had the work done within the week. Very happy with the results.", ago: "", project: "Concrete Slab" },
+    { initials: "LW", name: "Linda W.", location: "Moore, OK", text: "Our old cracked driveway was an eyesore. Redwood Construction replaced the whole thing and it looks brand new. Best money we've spent on the house.", ago: "", project: "Driveway Replacement" },
+    { initials: "DL", name: "Derek L.", location: "Mustang, OK", text: "Professional start to finish. The crew caught a drainage issue I didn't know I had and addressed it in the same pour. Cannot recommend enough.", ago: "", project: "Driveway & Drainage" },
+    { initials: "KS", name: "Karen S.", location: "Norman, OK", text: "Got three quotes and Redwood was the most knowledgeable. The slab they poured has held up perfectly. No issues after two Oklahoma winters.", ago: "", project: "Concrete Slab" },
   ];
 
   return (
