@@ -130,7 +130,7 @@ function HeroSection() {
             </div>
             <div>
               <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">4.9<span className="text-orange">★</span></div>
-              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Google rating</div>
+              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Customer rating</div>
             </div>
             <div>
               <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">24<span className="text-orange">hr</span></div>
