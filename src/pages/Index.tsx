@@ -68,6 +68,27 @@ export default function Index() {
           />
         </section>
       </ScrollReveal>
+      <ScrollReveal>
+        <section className="section-padding">
+          <div className="section-eye">Service Area</div>
+          <h2 className="mb-3">Serving All of<br/><em className="h2-accent">Oklahoma City Metro.</em></h2>
+          <div className="mb-6 overflow-hidden" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d208938.08060392047!2d-97.6532644!3d35.4675602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b21453f69b2571%3A0xd20ac77e5ebd2c3a!2sRedwood%20Construction%20LLC!5e0!3m2!1sen!2sus!4v1718300000000!5m2!1sen!2sus"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Redwood Construction LLC service area map — Oklahoma City concrete contractor"
+            />
+          </div>
+          <p className="prose-muted">
+            Redwood Construction LLC provides concrete services throughout Oklahoma City and the surrounding metro. We serve Edmond, Norman, Moore, Yukon, Mustang, Midwest City, Del City, and all surrounding OKC communities.
+          </p>
+        </section>
+      </ScrollReveal>
       <FinalCTA />
     </main>
   );
