@@ -101,6 +101,41 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
 
       <ScrollReveal>
         <section className="section-padding">
+          <div className="section-eye">Oklahoma Concrete Challenges</div>
+          <h2 className="mb-4">Common Concrete Problems<br/><em className="h2-accent">in Oklahoma City.</em></h2>
+          <p className="prose-muted mb-5">Oklahoma City sits on Permian red clay — some of the most expansive soil in the United States. This clay absorbs moisture and swells during wet seasons, then contracts sharply during Oklahoma's summer droughts, shifting several inches in a single year. Concrete that isn't engineered for this movement will crack, heave, and fail long before its time.</p>
+          <p className="prose-muted mb-5">The most common concrete failures we see across OKC share the same three root causes: inadequate base preparation, missing or improperly placed rebar reinforcement, and poor drainage grading. A contractor who doesn't understand Oklahoma clay will pour a slab that starts cracking within two or three years — and often blames it on the weather.</p>
+          <p className="prose-muted mb-5">Proper base prep means excavating to the correct depth, compacting the native subgrade, and installing a minimum 4-inch compacted aggregate base — 6 inches on known problem clay lots. Rebar placed on chairs at mid-slab depth provides the tensile strength to resist soil movement. Control joints cut within 24 hours guide where the concrete relieves stress, preventing random surface cracking. Drainage grading moves water away from your structure and reduces the swell-shrink cycle that destroys improperly built concrete.</p>
+          <p className="prose-muted mb-5">If your existing concrete in Oklahoma City shows cracking, settlement, or scaling, the cause is almost always one of these three issues — not the concrete itself. Redwood Construction LLC provides honest assessments: we'll tell you whether it needs repair or full replacement, and exactly why.</p>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <section className="section-padding section-alt">
+          <div className="section-eye">Why it matters</div>
+          <h2 className="mb-4">Why Hire a Professional<br/><em className="h2-accent">Concrete Contractor in OKC.</em></h2>
+          <p className="prose-muted mb-5">Oklahoma's soil conditions make concrete work harder than almost anywhere else in the country. A contractor who follows generic national specs — without adjusting for OKC's clay soil, frost lines, and drainage patterns — will deliver work that looks right on day one and fails within a few years. The cost of redoing a driveway or patio far exceeds the cost of doing it right the first time.</p>
+          <p className="prose-muted mb-5">Redwood Construction LLC is fully licensed and insured in the state of Oklahoma. We pull all required permits, follow Oklahoma City building codes, and coordinate with inspectors when required. Our crew handles every project from first dig to final walkthrough — no subcontractors, no handoffs to an unknown crew.</p>
+          <p className="prose-muted mb-5">Every quote we give is written and itemized — labor, materials, and demolition listed separately. The price we quote is the price you pay. We don't show up and add change orders. We don't start work without your written approval. And if something is wrong with our workmanship, we come back and make it right.</p>
+          <p className="prose-muted mb-5">Our 4.9-star Google rating and BBB A+ accreditation come from 500+ completed projects across Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City — all delivered by the same crew, to the same standards, every time.</p>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <section className="section-padding">
+          <div className="section-eye">Free estimate</div>
+          <h2 className="mb-4">Get a Free Concrete Estimate<br/><em className="h2-accent">in Oklahoma City.</em></h2>
+          <p className="prose-muted mb-5">Redwood Construction LLC provides free, written, on-site estimates for all concrete work across Oklahoma City and the surrounding metro. We visit your property, assess the soil conditions and drainage, measure the area, and give you an itemized price — all at no cost and no obligation. Most estimates are completed within 24 hours of your site visit.</p>
+          <p className="prose-muted mb-5">We serve homeowners and businesses throughout Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City. If you're in the OKC metro, we come to you.</p>
+          <div className="flex gap-4 flex-wrap">
+            <a href="tel:4052470027" className="btn-primary">📞 Call (405) 247-0027</a>
+            <Link to="/#estimate" className="btn-outline">Email for Estimate</Link>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <section className="section-padding">
           <FAQ items={faq} eyebrow="FAQ" title='Common Questions<br/><em class="h2-accent">From OKC Homeowners.</em>' />
         </section>
       </ScrollReveal>
