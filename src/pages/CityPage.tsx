@@ -36,6 +36,7 @@ const cityData: Record<string, {
     city: "Edmond",
     county: "Oklahoma County",
     zips: "73003, 73012, 73013, 73025, 73034",
+    metaDescription: "Concrete contractor in Edmond, OK — driveways, patios, slabs & foundations for Deer Creek, Coffee Creek, and all of Oklahoma County. Redwood Construction LLC. Call (405) 247-0027.",
     intro: [
       "Edmond is one of the fastest-growing cities in the OKC metro, with new residential construction booming in areas like Deer Creek, Coffee Creek, and along the 15th Street corridor. Redwood Construction has been pouring concrete for Edmond homeowners and builders since our earliest days — we know the neighborhoods, the soil variations, and the local expectations.",
       "Edmond's soil conditions vary significantly by location. The western sections near Piedmont feature heavier clay with higher swell potential, while the eastern areas closer to I-35 have more mixed soil profiles. We adjust our base prep and reinforcement recommendations based on the specific lot — not a one-size-fits-all approach.",
