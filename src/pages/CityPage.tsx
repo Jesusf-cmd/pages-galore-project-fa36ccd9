@@ -116,6 +116,7 @@ const cityData: Record<string, {
     city: "Moore",
     county: "Cleveland County",
     zips: "73160, 73170",
+    metaDescription: "Concrete contractor in Moore, OK — driveways, foundations & storm damage concrete replacement in Cleveland County. Redwood Construction LLC. Free estimate: (405) 247-0027.",
     intro: [
       "Moore, located in Cleveland County just south of Oklahoma City, is known for its strong residential communities and, unfortunately, its exposure to severe weather. The tornado activity in Moore has led to significant rebuilding over the years — and Redwood Construction has been part of that recovery, pouring foundations and flatwork for homeowners rebuilding after storms.",
       "Moore's soil conditions are consistent with the broader Cleveland County profile — moderate to heavy clay that requires proper base preparation on every concrete project. The city's flat terrain means drainage grading is especially important — without proper slope, water pools on slabs and against foundations.",
