@@ -86,16 +86,10 @@ function HeroSection() {
         <div>
           <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">Oklahoma City Concrete Contractor · Licensed & Insured · Locally Owned</span>
           <h1 className="mb-4 md:mb-6" style={{ fontSize: "clamp(1.9rem, 5vw, 5.2rem)", lineHeight: 1.0 }}>
-            Concrete Contractor in Oklahoma City, OK | Driveways, Patios & Foundations
+            Oklahoma City's Concrete Contractors — Driveways, Patios & More
           </h1>
-          <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-3 md:mb-4 leading-[1.7] font-light">
-            We are a trusted concrete contractor in Oklahoma City, OK specializing in concrete driveways, patios, foundations, slabs, sidewalks, and commercial concrete services in OKC, Edmond, and Norman.
-          </p>
-          <p className="text-sm md:text-base text-concrete max-w-[460px] mb-3 md:mb-4 leading-[1.7] font-medium">
-            Built to last. Clean, professional finishes. Residential and commercial concrete work.
-          </p>
-          <p className="text-sm md:text-base max-w-[460px] mb-5 md:mb-7 leading-[1.7] font-light">
-            <a href="tel:4052470027" className="text-orange font-bold no-underline">Call 405-247-0027</a> for a fast, free estimate.
+          <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-5 md:mb-7 leading-[1.7] font-light">
+            Redwood Construction LLC installs and repairs concrete driveways, patios, slabs, and stamped concrete across Oklahoma City and the surrounding metro. Licensed, insured, and built for Oklahoma weather. Call (405) 247-0027 for a free estimate.
           </p>
           <div className="flex flex-wrap gap-1.5 mb-5 md:mb-8">
             {["Oklahoma City", "Edmond", "Norman", "Mustang", "Moore", "Yukon"].map(city => (
@@ -105,7 +99,7 @@ function HeroSection() {
             ))}
           </div>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 md:mb-10">
-            <a href="#estimate" className="btn-primary text-center w-full sm:w-auto">Get My Free Estimate →</a>
+            <a href="#estimate" className="btn-primary text-center w-full sm:w-auto">Get Your Free OKC Estimate →</a>
             <a href="tel:4052470027" className="btn-outline text-center w-full sm:w-auto">📞 (405) 247-0027</a>
           </div>
           <div className="flex gap-6 md:gap-10 pt-6 md:pt-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
