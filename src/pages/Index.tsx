@@ -23,8 +23,15 @@ const homeFAQ = [
 
 export default function Index() {
   useSEO({
-    title: "Concrete Contractor in Oklahoma City | Free Estimates | Redwood Construction",
-    description: "Licensed Oklahoma City concrete contractor. Driveways, foundations, slabs, sidewalks, and commercial concrete in OKC, Edmond, and Norman. Call 405-247-0027 for a free estimate.",
+    title: "Concrete Contractors Oklahoma City | Redwood Construction LLC | Free Estimates",
+    description: "Oklahoma City's concrete contractor for driveways, patios, slabs & more. Licensed & insured. Serving OKC metro. Call (405) 247-0027 for a free estimate.",
+    canonical: "https://myconcreteestimate.com/",
+    og: {
+      title: "Concrete Contractors Oklahoma City | Redwood Construction LLC",
+      description: "Oklahoma City's concrete contractor for driveways, patios & slabs. Free estimates. Call (405) 247-0027.",
+      type: "website",
+      url: "https://myconcreteestimate.com/",
+    },
   });
 
   return (
