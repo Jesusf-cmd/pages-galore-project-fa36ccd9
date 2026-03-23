@@ -9,11 +9,13 @@ const cityData: Record<string, {
   localDetails: string;
   soilNote: string;
   faq: { question: string; answer: string }[];
+  metaDescription: string;
 }> = {
   "oklahoma-city": {
     city: "Oklahoma City",
     county: "Oklahoma County",
     zips: "73107, 73109, 73112, 73118, 73120, 73127",
+    metaDescription: "Concrete contractor in Oklahoma City, OK — Redwood Construction LLC. Driveways, slabs, foundations & patios built for OKC's expansive Permian clay. 500+ metro projects. Free estimate: (405) 247-0027.",
     intro: [
       "Redwood Construction LLC is headquartered in the Oklahoma City metro, giving us firsthand knowledge of the soil conditions, drainage challenges, and building codes that affect every concrete project in the area. From the historic neighborhoods near Capitol Hill to the growing developments in northwest OKC, we've poured concrete across every part of this city.",
       "Oklahoma City's expansive Permian red clay is among the most challenging soil types for concrete work in the entire country. This clay swells dramatically during wet seasons and contracts during Oklahoma's intense summer droughts, creating a cycle of movement that destroys improperly built concrete. Our crews understand this at a granular level — we adjust base depth, reinforcement, and drainage for each zip code we serve.",
