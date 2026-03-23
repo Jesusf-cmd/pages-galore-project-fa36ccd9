@@ -96,6 +96,7 @@ const cityData: Record<string, {
     city: "Mustang",
     county: "Canadian County",
     zips: "73064",
+    metaDescription: "Concrete contractor in Mustang, OK. Driveways, patios, slabs & foundations for Mustang homeowners and new construction subdivisions. Redwood Construction LLC. Call (405) 247-0027.",
     intro: [
       "Mustang has experienced significant residential growth over the past decade, with new subdivisions expanding south and west of the city center. Redwood Construction serves Mustang homeowners with driveways, patios, foundations, and decorative concrete — bringing the same quality we deliver across the OKC metro.",
       "Like neighboring Yukon, Mustang's Canadian County soil is transitional between the heavy red clay of central OKC and the sandier profiles further west. Our crew evaluates each Mustang property individually — adjusting base depth and reinforcement based on actual soil conditions, not assumptions.",
