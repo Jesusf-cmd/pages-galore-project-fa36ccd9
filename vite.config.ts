@@ -2,6 +2,7 @@ import { defineConfig, Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import { prerenderPlugin } from "./scripts/vite-prerender-plugin";
 
 function xmlContentType(): Plugin {
   return {
@@ -26,7 +27,7 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react(), xmlContentType(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [react(), xmlContentType(), prerenderPlugin(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
