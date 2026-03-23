@@ -68,6 +68,27 @@ export default function Index() {
           />
         </section>
       </ScrollReveal>
+      <ScrollReveal>
+        <section className="section-padding">
+          <div className="section-eye">Service Area</div>
+          <h2 className="mb-3">Serving All of<br/><em className="h2-accent">Oklahoma City Metro.</em></h2>
+          <div className="mb-6 overflow-hidden" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d208938.08060392047!2d-97.6532644!3d35.4675602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b21453f69b2571%3A0xd20ac77e5ebd2c3a!2sRedwood%20Construction%20LLC!5e0!3m2!1sen!2sus!4v1718300000000!5m2!1sen!2sus"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Redwood Construction LLC service area map — Oklahoma City concrete contractor"
+            />
+          </div>
+          <p className="prose-muted">
+            Redwood Construction LLC provides concrete services throughout Oklahoma City and the surrounding metro. We serve Edmond, Norman, Moore, Yukon, Mustang, Midwest City, Del City, and all surrounding OKC communities.
+          </p>
+        </section>
+      </ScrollReveal>
       <FinalCTA />
     </main>
   );
@@ -78,7 +99,7 @@ function HeroSection() {
     <section className="grid grid-cols-1 nav:grid-cols-[1.15fr_0.85fr] gap-6 nav:gap-12 px-4 md:px-12 pt-20 pb-8 md:pt-32 md:pb-16 nav:min-h-screen relative overflow-hidden" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img src={commercialFoundationImg} alt="Commercial concrete foundation project in Oklahoma City by Redwood Construction" className="w-full h-full object-cover opacity-[0.55]" />
+        <img src={commercialFoundationImg} alt="Commercial concrete foundation project in Oklahoma City by Redwood Construction LLC" className="w-full h-full object-cover opacity-[0.55]" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(var(--darker) / 0.85) 30%, hsl(var(--darker) / 0.4) 100%)" }} />
       </div>
       <div className="hero-glow" style={{ zIndex: 1 }} />
@@ -401,7 +422,7 @@ function WhyUsSection() {
     <ScrollReveal>
       <section className="section-padding section-alt relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={tiedRebarImg} alt="Tied rebar reinforcement for concrete slab in Oklahoma City" className="w-full h-full object-cover opacity-[0.04]" />
+          <img src={tiedRebarImg} alt="Tied rebar reinforcement for concrete slab in Oklahoma City by Redwood Construction LLC" className="w-full h-full object-cover opacity-[0.04]" />
           <div className="absolute inset-0 bg-stone" style={{ opacity: 0.92 }} />
         </div>
         <div className="relative z-[1]">
@@ -437,7 +458,7 @@ function RecentProjectsSection() {
         <h2 className="mb-3">Recent Projects<br/><em className="h2-accent">Across the Metro.</em></h2>
         <p className="prose-muted mb-8">Real jobs for real Oklahoma homeowners and businesses. Every project — from <Link to="/concrete-driveways" className="text-orange no-underline">concrete driveways</Link> to <Link to="/stamped-concrete" className="text-orange no-underline">stamped patios</Link> — backed by the Redwood Construction guarantee.</p>
         <div className="mb-6 overflow-hidden" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-          <img src={newDrivewayImg} alt="Completed concrete driveway project in Edmond, Oklahoma by Redwood Construction" className="w-full h-[280px] md:h-[360px] object-cover" />
+          <img src={newDrivewayImg} alt="Completed concrete driveway project in Edmond Oklahoma by Redwood Construction LLC" className="w-full h-[280px] md:h-[360px] object-cover" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
           {projects.map((p, i) => (
