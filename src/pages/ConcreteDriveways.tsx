@@ -87,6 +87,7 @@ export default function ConcreteDriveways() {
           infoBlock: "Not sure what size you need? We measure your property during the free estimate and recommend the right dimensions based on your vehicles, garage layout, and available space. There's no guesswork — you'll get a clear plan before any work begins.",
         },
         {
+          eyebrow: "Oklahoma Concrete Challenges",
           title: "Common Concrete Problems",
           titleAccent: "in Oklahoma City.",
           alt: true,
