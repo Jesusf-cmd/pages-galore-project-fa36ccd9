@@ -68,7 +68,25 @@ export default function ConcreteDriveways() {
           infoBlock: "For most Oklahoma City homeowners, concrete is the better long-term investment — especially given our clay soil conditions and summer heat. Call <a href='tel:4052470027'>(405) 247-0027</a> to discuss the best option for your property.",
         },
         {
-          eyebrow: "Oklahoma Concrete Challenges",
+          eyebrow: "Driveway Sizing",
+          title: "What Size Should",
+          titleAccent: "My Driveway Be?",
+          content: [
+            "Driveway size affects both the usability of your property and the total project cost. Here are standard sizing guidelines we follow on every project:",
+          ],
+          table: {
+            headers: ["Driveway Type", "Recommended Size"],
+            rows: [
+              ["Single-car driveway", "10–12 ft wide × 18–20 ft long (min. per vehicle)"],
+              ["Double-car driveway", "20–24 ft wide × 18–20 ft long"],
+              ["Three-car / wide driveway", "30+ ft wide"],
+              ["Turnaround or apron", "Add 10–12 ft of extra depth to allow turning without backing into the street"],
+              ["Typical residential total", "400–800 sq ft depending on layout"],
+            ],
+          },
+          infoBlock: "Not sure what size you need? We measure your property during the free estimate and recommend the right dimensions based on your vehicles, garage layout, and available space. There's no guesswork — you'll get a clear plan before any work begins.",
+        },
+        {
           title: "Common Concrete Problems",
           titleAccent: "in Oklahoma City.",
           alt: true,
