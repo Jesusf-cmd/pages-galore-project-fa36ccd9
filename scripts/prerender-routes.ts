@@ -24,9 +24,9 @@ export const routes: PrerenderRoute[] = [
   },
   {
     path: "/concrete-driveways",
-    title: "Concrete Driveway Contractor in Oklahoma City | Redwood Construction LLC",
-    description: "Concrete driveway contractor in Oklahoma City offering new installation, replacement, and residential concrete services. Call Redwood Construction LLC for a free estimate.",
-    h1: "Concrete Driveway Contractor in Oklahoma City",
+    title: "Concrete Driveways Oklahoma City | Redwood Construction LLC",
+    description: "Professional concrete driveway installation in Oklahoma City. Licensed & insured. Broom finish, stamped, and reinforced driveways. Free estimates — call (405) 247-0027.",
+    h1: "Concrete Driveway Installation in Oklahoma City, OK",
     content: "Redwood Construction LLC provides professional concrete driveway installation in Oklahoma City and surrounding areas. We build durable, clean, long-lasting driveways for homeowners, builders, and property owners who need dependable concrete work done right. Our process starts with site evaluation, grading, and preparation of the subgrade. We then install the required forms, reinforcement, and concrete placement based on the needs of the project. Call (405) 247-0027 for a free estimate.",
   },
   {
