@@ -47,6 +47,26 @@ export default function ConcreteDriveways() {
           ],
         },
         {
+          eyebrow: "Concrete vs Asphalt",
+          title: "Concrete vs Asphalt Driveways in Oklahoma —",
+          titleAccent: "Which Is Better?",
+          content: [
+            "One of the most common questions we get is whether concrete or asphalt is the better choice for an Oklahoma driveway. Both materials work, but they perform very differently in Oklahoma's climate and soil conditions. Here's how they compare:",
+          ],
+          table: {
+            headers: ["Feature", "Concrete", "Asphalt"],
+            rows: [
+              ["Lifespan", "30–50 years", "15–25 years"],
+              ["Performance in Oklahoma heat", "Excellent — does not soften", "Can soften and rut in extreme heat"],
+              ["Oklahoma clay soil performance", "Better — rigid slab resists soil movement", "More flexible but more prone to cracking"],
+              ["Maintenance", "Seal every 3–5 years", "Reseal every 1–2 years"],
+              ["Upfront cost", "Higher", "Lower"],
+              ["Long-term value", "Higher — less replacement cost", "Lower — more frequent repairs"],
+              ["Appearance options", "Broom, stamped, stained, colored", "Limited — black only"],
+            ],
+          },
+          infoBlock: "For most Oklahoma City homeowners, concrete is the better long-term investment — especially given our clay soil conditions and summer heat. Call <a href='tel:4052470027'>(405) 247-0027</a> to discuss the best option for your property.",
+        },
           eyebrow: "Oklahoma Concrete Challenges",
           title: "Common Concrete Problems",
           titleAccent: "in Oklahoma City.",
