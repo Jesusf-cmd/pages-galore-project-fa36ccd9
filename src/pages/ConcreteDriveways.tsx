@@ -67,6 +67,7 @@ export default function ConcreteDriveways() {
           },
           infoBlock: "For most Oklahoma City homeowners, concrete is the better long-term investment — especially given our clay soil conditions and summer heat. Call <a href='tel:4052470027'>(405) 247-0027</a> to discuss the best option for your property.",
         },
+        {
           eyebrow: "Oklahoma Concrete Challenges",
           title: "Common Concrete Problems",
           titleAccent: "in Oklahoma City.",
