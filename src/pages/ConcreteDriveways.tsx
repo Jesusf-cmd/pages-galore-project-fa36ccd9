@@ -3,11 +3,11 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function ConcreteDriveways() {
   return (
     <ServicePage
-      metaTitle="Concrete Driveway Contractor in Oklahoma City | Redwood Construction LLC"
-      metaDescription="Concrete driveway contractor in Oklahoma City offering new installation, replacement, and residential concrete services. Call Redwood Construction LLC for a free estimate."
+      metaTitle="Concrete Driveways Oklahoma City | Redwood Construction LLC"
+      metaDescription="Professional concrete driveway installation in Oklahoma City. Licensed & insured. Broom finish, stamped, and reinforced driveways. Free estimates — call (405) 247-0027."
       eyebrow="OKC Metro · Driveway Contractors · Licensed & Insured"
-      title="Concrete Driveway Contractor in"
-      titleAccent="Oklahoma City."
+      title="Concrete Driveway Installation in"
+      titleAccent="Oklahoma City, OK."
       description='Redwood Construction LLC provides professional concrete driveway installation in Oklahoma City and surrounding areas. We build durable, clean, long-lasting driveways for homeowners, builders, and property owners who need dependable concrete work done right.'
       sections={[
         {
