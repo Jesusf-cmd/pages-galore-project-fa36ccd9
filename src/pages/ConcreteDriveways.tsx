@@ -127,6 +127,9 @@ export default function ConcreteDriveways() {
         { question: "How long does a concrete driveway last?", answer: "A properly installed concrete driveway can last for decades when built on a solid base with proper drainage and routine maintenance." },
         { question: "Do you replace old cracked driveways?", answer: "Yes. We remove and replace damaged driveways and can also expand or reconfigure existing driveway layouts." },
         { question: "Do you serve areas outside Oklahoma City?", answer: "Yes. We also serve surrounding areas including Edmond and Norman depending on the project." },
+        { question: "How long does a concrete driveway last in Oklahoma?", answer: "A properly installed concrete driveway in Oklahoma typically lasts 30–50 years. Lifespan depends on installation quality, reinforcement, soil preparation, and maintenance. Driveways built without proper base preparation or reinforcement in Oklahoma's clay soil tend to crack and fail much sooner — which is why we don't skip those steps." },
+        { question: "Can you pour concrete in Oklahoma summer heat?", answer: "Yes — but it has to be done correctly. In extreme heat, concrete can cure too fast, which weakens the slab. We schedule pours during cooler parts of the day when needed, use evaporation retarder, and apply curing compound on every project to ensure proper strength. Don't let any contractor skip the curing step in Oklahoma summers." },
+        { question: "Do you offer concrete driveway repairs in Oklahoma City?", answer: "Yes. We handle crack repair, concrete resurfacing, and partial replacement for existing driveways. If your driveway is cracked, uneven, or showing wear, we can evaluate whether repair or full replacement is the better value. Call (405) 247-0027 for a free assessment." },
       ]}
     />
   );
