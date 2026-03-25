@@ -13,6 +13,35 @@
     <meta name="ICBM" content="35.4676, -97.5164" />
     <link rel="canonical" href="https://myconcreteestimate.com/" />
 
+    <!-- Preconnect to Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload critical font files -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500&display=swap" as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" />
+
+    <!-- Critical inline styles to prevent FOUC -->
+    <style>
+      html, body {
+        background: hsl(30 7% 7%);
+        color: hsl(30 15% 89%);
+        font-family: 'Barlow', sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        margin: 0;
+      }
+      h1, h2, h3 {
+        font-family: 'Barlow Condensed', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+      }
+      h1 { font-size: clamp(2.8rem, 5vw, 5.5rem); font-weight: 900; line-height: 0.92; }
+      h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 800; line-height: 1.0; }
+      h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 700; line-height: 1.15; }
+    </style>
+
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Concrete Contractors Oklahoma City | Redwood Construction LLC" />
     <meta property="og:description" content="Oklahoma City's concrete contractor for driveways, patios & slabs. Free estimates. Call (405) 247-0027." />
