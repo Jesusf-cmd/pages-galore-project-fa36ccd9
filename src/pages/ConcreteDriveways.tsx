@@ -33,7 +33,8 @@ export default function ConcreteDriveways() {
           title: "Why Homeowners Choose",
           titleAccent: "Redwood Construction LLC.",
           content: [
-            "Homeowners choose Redwood Construction LLC because we provide straightforward communication, dependable workmanship, and clean concrete finishes. We understand that a driveway is one of the most visible parts of a property, so we focus on quality installation, proper drainage, and a finished product that adds value and curb appeal.",
+            "Homeowners choose Redwood Construction LLC because we deliver dependable concrete work with no shortcuts and no surprises:",
+            "• Licensed and insured concrete contractor serving OKC metro<br/>• Rebar reinforcement included on every residential driveway<br/>• Proper base prep and compaction on every job — no shortcuts<br/>• Free written estimates with exact measurements and clear pricing<br/>• Oklahoma clay soil expertise — we build for local conditions<br/>• Scheduling within days, not weeks<br/>• Serving <a href='/oklahoma-city-concrete'>Oklahoma City</a>, <a href='/edmond-concrete'>Edmond</a>, <a href='/norman-ok-concrete'>Norman</a>, <a href='/moore-oklahoma-concrete'>Moore</a>, <a href='/yukon-oklahoma-concrete'>Yukon</a>, and <a href='/mustang-oklahoma-concrete'>Mustang</a>",
             "From residential driveways to large-scale projects handled by our <a href='/commercial-concrete-slabs'>commercial concrete contractors in Oklahoma City</a>, we deliver consistent quality across every job.",
           ],
         },
@@ -45,6 +46,7 @@ export default function ConcreteDriveways() {
           content: [
             "Concrete driveway cost in Oklahoma City depends on size, thickness, site access, demolition needs, reinforcement, and finish requirements. We provide clear estimates so property owners understand the scope of work before the project starts. Whether you need a standard residential driveway or a larger custom layout, we can provide a competitive quote.",
           ],
+          infoBlock: "Ready for a free driveway estimate? Call <a href='tel:4052470027'>(405) 247-0027</a> or <a href='/#estimate'>contact us online</a> — we'll measure your project and give you a clear price with no pressure.",
         },
         {
           eyebrow: "Concrete vs Asphalt",
