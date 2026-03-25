@@ -45,7 +45,17 @@ export default function ConcreteDriveways() {
           alt: true,
           content: [
             "Concrete driveway cost in Oklahoma City depends on size, thickness, site access, demolition needs, reinforcement, and finish requirements. We provide clear estimates so property owners understand the scope of work before the project starts. Whether you need a standard residential driveway or a larger custom layout, we can provide a competitive quote.",
+            "Prices above are typical ranges for Oklahoma City metro projects. Final cost depends on site access, soil conditions, and finish. Call <a href='tel:4052470027'>(405) 247-0027</a> for a free written estimate with exact measurements.",
           ],
+          table: {
+            headers: ["Driveway Type", "Price Per Sq Ft", "Example: 600 sq ft"],
+            rows: [
+              ["Basic broom finish", "$6 – $8", "$3,600 – $4,800"],
+              ["Reinforced with rebar", "$8 – $10", "$4,800 – $6,000"],
+              ["Stamped / decorative", "$10 – $14", "$6,000 – $8,400"],
+              ["Demolition of old driveway", "$1 – $2 / sq ft", "Add to above"],
+            ],
+          },
           infoBlock: "Ready for a free driveway estimate? Call <a href='tel:4052470027'>(405) 247-0027</a> or <a href='/#estimate'>contact us online</a> — we'll measure your project and give you a clear price with no pressure.",
         },
         {
