@@ -110,6 +110,18 @@ export default function ConcreteDriveways() {
             "Redwood Construction LLC is locally owned — not a franchise, not a call center dispatching subcontractors. When you call (405) 247-0027, you're talking to the people who will be on your property. Our 4.9-star Google rating and 80+ verified reviews come from homeowners across Oklahoma City, Edmond, Norman, Moore, Yukon, and Mustang who got exactly what they were quoted.",
           ],
         },
+        {
+          eyebrow: "Permits & Codes",
+          title: "Do You Need a Permit for a Concrete Driveway in",
+          titleAccent: "Oklahoma City?",
+          alt: true,
+          content: [
+            "In most cases, yes — Oklahoma City requires a permit for new driveway construction or significant replacement. Permit requirements vary depending on the scope of work, property location, and whether the driveway connects to a public street or alley.",
+            "The good news: Redwood Construction LLC handles permit coordination as part of our process. We'll let you know exactly what's required before we start and make sure your project is fully compliant with city codes.",
+            "If you're in <a href='/edmond-concrete'>Edmond</a>, <a href='/norman-ok-concrete'>Norman</a>, <a href='/moore-oklahoma-concrete'>Moore</a>, or surrounding areas, permit requirements may differ — we're familiar with local codes across the OKC metro and will guide you through the process.",
+            "Call <a href='tel:4052470027'>(405) 247-0027</a> if you have questions about permits before your project starts.",
+          ],
+        },
       ]}
       faq={[
         { question: "How long does a concrete driveway last?", answer: "A properly installed concrete driveway can last for decades when built on a solid base with proper drainage and routine maintenance." },
