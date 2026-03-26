@@ -32,7 +32,7 @@ export default function OurProjects() {
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">OKC Metro · Real Projects · Real Results</span>
         <h1 className="max-w-[820px] mb-5">Our Concrete Work<br/><span className="text-orange">Across Oklahoma.</span></h1>
-        <p className="prose-muted max-w-[680px] mb-8">Real jobs for <strong>Oklahoma City homeowners and businesses</strong> — <Link to="/concrete-driveways" className="text-orange no-underline">concrete driveways</Link>, <Link to="/concrete-patio-okc" className="text-orange no-underline">patios</Link>, <Link to="/stamped-concrete" className="text-orange no-underline">stamped concrete</Link>, foundations, and commercial pours.</p>
+        <p className="prose-muted max-w-[680px] mb-8">Real jobs for <strong>Oklahoma City homeowners and businesses</strong> — <Link to="/driveways-oklahoma-city" className="text-orange no-underline">concrete driveways</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">patios</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">stamped concrete</Link>, foundations, and commercial pours.</p>
         <div className="flex gap-4 flex-wrap">
           <Link to="/#estimate" className="btn-primary">Get Your Free Estimate →</Link>
           <a href="tel:4052470027" className="btn-outline">📞 (405) 247-0027</a>
@@ -65,7 +65,7 @@ export default function OurProjects() {
                 Star Spencer<br/>High School
               </h3>
               <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-5">
-                We installed new concrete stairs and <Link to="/concrete-sidewalks" className="text-orange no-underline">sidewalks with ADA-compliant ramps</Link> at Star Spencer High School. This project required precision grading, proper reinforcement, and compliance with ADA accessibility standards — all completed on schedule for the school district.
+                We installed new concrete stairs and <Link to="/sidewalks-oklahoma-city" className="text-orange no-underline">sidewalks with ADA-compliant ramps</Link> at Star Spencer High School. This project required precision grading, proper reinforcement, and compliance with ADA accessibility standards — all completed on schedule for the school district.
               </p>
               <div className="flex gap-8 pt-4" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
                 <div>
@@ -91,7 +91,7 @@ export default function OurProjects() {
                 Kiddie Academy<br/>Foundation & Parking Lot
               </h3>
               <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-3">
-                This commercial concrete project for Kiddie Academy in Oklahoma City included <Link to="/concrete-foundations" className="text-orange no-underline">foundation work</Link> and <Link to="/parking-lot-concrete" className="text-orange no-underline">parking lot construction</Link> from start to finish. Our team handled site preparation, grading, formwork, reinforcement installation, and concrete placement to ensure a durable, long-lasting structure.
+                This commercial concrete project for Kiddie Academy in Oklahoma City included <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundation work</Link> and <Link to="/commercial-concrete-oklahoma-city" className="text-orange no-underline">parking lot construction</Link> from start to finish. Our team handled site preparation, grading, formwork, reinforcement installation, and concrete placement to ensure a durable, long-lasting structure.
               </p>
               <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-5">
                 Proper drainage and slope were carefully planned to prevent water buildup and protect the integrity of the concrete over time.
