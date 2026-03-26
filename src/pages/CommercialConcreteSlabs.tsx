@@ -16,7 +16,7 @@ export default function CommercialConcreteSlabs() {
           titleAccent: "Commercial Use.",
           content: [
             "<strong>Commercial concrete slab contractors in Oklahoma City</strong> — Redwood Construction pours warehouse floors, retail pads, equipment slabs, and industrial concrete across the OKC metro. Commercial slabs require thicker pours, higher PSI concrete, and engineered reinforcement to handle forklift traffic, heavy equipment, and sustained loads.",
-            "Every commercial slab starts with a proper site assessment, soil testing when needed, and a pour plan that accounts for joint spacing, drainage, and load requirements specific to your operation. We also handle <a href='/parking-lot-concrete'>commercial parking lots</a>, <a href='/curb-and-gutter'>curb and gutter</a> installation, and <a href='/concrete-foundations'>commercial foundation work</a>.",
+            "Every commercial slab starts with a proper site assessment, soil testing when needed, and a pour plan that accounts for joint spacing, drainage, and load requirements specific to your operation. We also handle <a href='/commercial-concrete-oklahoma-city'>commercial parking lots</a>, <a href='/sidewalks-oklahoma-city'>curb and gutter</a> installation, and <a href='/foundations-oklahoma-city'>commercial foundation work</a>.",
           ],
           stats: [
             { value: "5–8\"", label: "Slab thickness" },
@@ -40,7 +40,7 @@ export default function CommercialConcreteSlabs() {
           titleAccent: "You Can Count On.",
           content: [
             "Redwood Construction has completed commercial concrete projects across Oklahoma City — from small retail pads to large warehouse floors. Our experience with commercial specifications, ADA compliance, and coordination with general contractors sets us apart.",
-            "We're licensed, bonded, and insured with BBB A+ accreditation. Our crew handles the complexity of commercial work — tight schedules, coordination with other trades, and specifications that demand precision. We also serve residential clients with <a href='/concrete-driveways'>driveway installation</a> and <a href='/concrete-slabs'>patio slab construction</a>. See our <a href='/our-projects'>project gallery</a> for examples of our commercial work.",
+            "We're licensed, bonded, and insured with BBB A+ accreditation. Our crew handles the complexity of commercial work — tight schedules, coordination with other trades, and specifications that demand precision. We also serve residential clients with <a href='/driveways-oklahoma-city'>driveway installation</a> and <a href='/patios-oklahoma-city'>patio slab construction</a>. See our <a href='/our-projects'>project gallery</a> for examples of our commercial work.",
           ],
         },
         {

@@ -16,7 +16,7 @@ export default function ConcreteSlabs() {
           titleAccent: "Clay & Weather.",
           content: [
             "<strong>Concrete slab contractors near Oklahoma City</strong> should know that Oklahoma's expansive clay soil requires more than a standard pour. Redwood Construction builds every slab with proper subgrade compaction, aggregate base, and reinforcement sized for your specific conditions.",
-            "We pour patio slabs, garage floors, shop floors, equipment pads, and custom slabs across the OKC metro. Same process, same standards on every job. Need a <a href='/concrete-driveways'>new driveway</a> or <a href='/stamped-concrete'>stamped patio</a> instead? We handle those with the same crew and standards.",
+            "We pour patio slabs, garage floors, shop floors, equipment pads, and custom slabs across the OKC metro. Same process, same standards on every job. Need a <a href='/driveways-oklahoma-city'>new driveway</a> or <a href='/patios-oklahoma-city'>stamped patio</a> instead? We handle those with the same crew and standards.",
           ],
           stats: [
             { value: "4,000", label: "PSI min mix" },
@@ -31,7 +31,7 @@ export default function ConcreteSlabs() {
           content: [
             "Every concrete slab project in Oklahoma City follows the same proven process. We start with a thorough site assessment, checking soil conditions, drainage patterns, and access. Problem clay is identified before the pour — not after.",
             "Our crew excavates to the correct depth, installs a minimum 4-inch compacted aggregate base (6 inches on problem clay), sets steel forms to grade, and places rebar on chairs at mid-slab depth. Ready-mix concrete is poured from a local OKC batch plant at 4,000 PSI minimum.",
-            "Control joints are tooled or saw-cut within 24 hours. Curing compound is applied immediately after finishing. We do a final walkthrough before leaving any job site. For structural projects, see our <a href='/concrete-foundations'>foundation services</a> and <a href='/oklahoma-city-concrete'>full OKC concrete services</a>.",
+            "Control joints are tooled or saw-cut within 24 hours. Curing compound is applied immediately after finishing. We do a final walkthrough before leaving any job site. For structural projects, see our <a href='/foundations-oklahoma-city'>foundation services</a> and <a href='/oklahoma-city-concrete'>full OKC concrete services</a>.",
           ],
         },
         {
@@ -58,7 +58,7 @@ export default function ConcreteSlabs() {
           titleAccent: "You Can Trust.",
           content: [
             "Redwood Construction LLC is a locally owned concrete company serving the OKC metro. We're not a franchise or a call center — our crew lives and works in Oklahoma City, and we understand the specific soil and weather challenges that affect every pour.",
-            "With a 4.9-star Google rating, BBB A+ accreditation, and over 500 completed projects, we've earned the trust of homeowners across <a href='/edmond-concrete'>Edmond</a>, <a href='/norman-ok-concrete'>Norman</a>, <a href='/moore-oklahoma-concrete'>Moore</a>, and the greater OKC metro. We also pour <a href='/parking-lot-concrete'>commercial parking lots</a> and <a href='/concrete-foundations'>concrete foundations</a> with the same crew and standards.",
+            "With a 4.9-star Google rating, BBB A+ accreditation, and over 500 completed projects, we've earned the trust of homeowners across <a href='/edmond-concrete'>Edmond</a>, <a href='/norman-ok-concrete'>Norman</a>, <a href='/moore-oklahoma-concrete'>Moore</a>, and the greater OKC metro. We also pour <a href='/commercial-concrete-oklahoma-city'>commercial parking lots</a> and <a href='/foundations-oklahoma-city'>concrete foundations</a> with the same crew and standards.",
           ],
         },
       ]}

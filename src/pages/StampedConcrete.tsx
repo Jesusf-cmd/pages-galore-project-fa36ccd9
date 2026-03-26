@@ -16,7 +16,7 @@ export default function StampedConcrete() {
           titleAccent: "& Colors.",
           content: [
             "<strong>Stamped concrete in Oklahoma City</strong> gives you the look of natural stone, brick, or slate at a fraction of the cost. We offer ashlar slate, random flagstone, herringbone brick, running bond, cobblestone, and wood plank patterns.",
-            "Every stamped project includes integral color, color hardener, release agent, and a high-solids acrylic sealer. Colors are selected on-site with physical samples — not guessed from a screen. Stamped concrete pairs perfectly with a standard <a href='/concrete-patio-okc'>broom-finish patio</a> or <a href='/concrete-driveways'>driveway</a> for a mixed-finish look.",
+            "Every stamped project includes integral color, color hardener, release agent, and a high-solids acrylic sealer. Colors are selected on-site with physical samples — not guessed from a screen. Stamped concrete pairs perfectly with a standard <a href='/patios-oklahoma-city'>broom-finish patio</a> or <a href='/driveways-oklahoma-city'>driveway</a> for a mixed-finish look.",
           ],
           stats: [
             { value: "$15–22", label: "Per sq ft installed" },
@@ -49,7 +49,7 @@ export default function StampedConcrete() {
           titleAccent: "Concrete Costs.",
           alt: true,
           content: [
-            "<strong>Stamped concrete in Oklahoma City</strong> runs $15–$22 per sq ft installed. A 400 sq ft stamped patio costs roughly $6,000–$8,800. For comparison, standard <a href='/concrete-slabs'>broom-finish slabs</a> run $6–$10/sq ft.",
+            "<strong>Stamped concrete in Oklahoma City</strong> runs $15–$22 per sq ft installed. A 400 sq ft stamped patio costs roughly $6,000–$8,800. For comparison, standard <a href='/patios-oklahoma-city'>broom-finish slabs</a> run $6–$10/sq ft.",
           ],
           table: {
             headers: ["Service", "Typical Size", "Price Range", "Notes"],
