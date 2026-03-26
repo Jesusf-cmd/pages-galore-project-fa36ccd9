@@ -5,21 +5,12 @@ import { Menu, X } from "lucide-react";
 
 const LOGO_URL = "https://img1.wsimg.com/isteam/ip/e58b3d42-c6ef-4001-afe8-1a0cde6bd652/redwood_logo_transparent.png/:/rs=h:182,cg:true,m/qt=q:80";
 
-const residentialLinks = [
-  { to: "/concrete-driveways", label: "Concrete Driveways" },
-  { to: "/concrete-slabs", label: "Concrete Slabs & Patios" },
-  { to: "/concrete-patio-okc", label: "Concrete Patio OKC" },
-  { to: "/stamped-concrete", label: "Stamped Concrete" },
-  { to: "/concrete-foundations", label: "Concrete Foundations" },
-  { to: "/concrete-sidewalks", label: "Concrete Sidewalks" },
-  { to: "/retaining-walls", label: "Retaining Walls" },
-];
-
-const commercialLinks = [
-  { to: "/parking-lot-concrete", label: "Parking Lot Concrete" },
-  { to: "/curb-and-gutter", label: "Curb & Gutter" },
-  { to: "/commercial-concrete-slabs", label: "Commercial Slabs" },
-  { to: "/concrete-foundations", label: "Commercial Foundations" },
+const serviceLinks = [
+  { to: "/driveways-oklahoma-city", label: "Concrete Driveways" },
+  { to: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped" },
+  { to: "/foundations-oklahoma-city", label: "Foundations & Retaining Walls" },
+  { to: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
+  { to: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
 ];
 
 const areaLinks = [
@@ -34,8 +25,7 @@ const areaLinks = [
 ];
 
 const mobileSections = [
-  { title: "Residential Services", links: residentialLinks },
-  { title: "Commercial Services", links: commercialLinks },
+  { title: "Concrete Services", links: serviceLinks },
   { title: "Service Areas", links: areaLinks },
 ];
 
@@ -84,8 +74,7 @@ export default function Navbar() {
         </Link>
 
         <ul className="hidden nav:flex gap-0 list-none">
-          <NavDropdown label="Residential Concrete" items={residentialLinks} />
-          <NavDropdown label="Commercial Concrete" items={commercialLinks} />
+          <NavDropdown label="Concrete Services" items={serviceLinks} />
           <NavDropdown label="Service Areas" items={areaLinks} />
           <li>
             <Link to="/our-projects" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete">

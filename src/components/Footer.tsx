@@ -34,16 +34,11 @@ export default function Footer() {
         <div>
           <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3">Concrete Services</div>
           <div className="flex flex-col gap-1.5">
-            <Link to="/concrete-driveways" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Driveways OKC</Link>
-            <Link to="/concrete-slabs" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Slabs Oklahoma City</Link>
-            <Link to="/concrete-patio-okc" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Patios OKC</Link>
-            <Link to="/stamped-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Stamped Concrete Oklahoma City</Link>
-            <Link to="/concrete-foundations" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Foundations OKC</Link>
-            <Link to="/concrete-sidewalks" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Sidewalks OKC</Link>
-            <Link to="/retaining-walls" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Retaining Walls OKC</Link>
-            <Link to="/parking-lot-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Parking Lot Concrete OKC</Link>
-            <Link to="/curb-and-gutter" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Curb &amp; Gutter OKC</Link>
-            <Link to="/commercial-concrete-slabs" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Commercial Concrete Slabs</Link>
+            <Link to="/driveways-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Driveways OKC</Link>
+            <Link to="/patios-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Patios, Slabs & Stamped Concrete</Link>
+            <Link to="/foundations-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Foundations & Retaining Walls</Link>
+            <Link to="/sidewalks-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Sidewalks, Curb & Gutter</Link>
+            <Link to="/commercial-concrete-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Commercial Concrete OKC</Link>
           </div>
         </div>
         <div>
