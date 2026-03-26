@@ -67,7 +67,7 @@ export default function Index() {
           <p className="prose-muted mb-6">Redwood Construction LLC serves the greater Oklahoma City metro. Click your city for local info and area-specific services.</p>
           <CityGrid />
           <p className="prose-muted mt-8 text-[0.82rem]">
-            <strong className="text-concrete">Why local expertise matters for Oklahoma concrete:</strong> Oklahoma's expansive clay soil is among the most challenging in the country for flatwork. A crew that knows the OKC metro — our frost lines, drainage patterns, and soil behavior — will build you a <Link to="/concrete-slabs" className="text-orange no-underline">slab</Link> or <Link to="/concrete-foundations" className="text-orange no-underline">foundation</Link> that lasts decades. Redwood Construction has seen what happens when contractors cut corners on Oklahoma clay. We don't do it.
+            <strong className="text-concrete">Why local expertise matters for Oklahoma concrete:</strong> Oklahoma's expansive clay soil is among the most challenging in the country for flatwork. A crew that knows the OKC metro — our frost lines, drainage patterns, and soil behavior — will build you a <Link to="/patios-oklahoma-city" className="text-orange no-underline">slab</Link> or <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundation</Link> that lasts decades. Redwood Construction has seen what happens when contractors cut corners on Oklahoma clay. We don't do it.
           </p>
           <p className="text-[0.78rem] text-muted-text mt-4">
             <strong className="text-concrete">OKC metro zip codes we serve:</strong> 73003, 73012, 73013, 73034 (Edmond) · 73025, 73099 (Yukon/Mustang) · 73069, 73071, 73072 (Norman) · 73160 (Moore) · 73107, 73109, 73112, 73118, 73120, 73127, 73132, 73142, 73159, 73162 (OKC) and surrounding areas.
@@ -360,7 +360,7 @@ function AboutSection() {
           <div className="section-eye">Concrete Contractors Oklahoma City</div>
           <h2 className="mb-7">Built for Oklahoma.<br/><em className="h2-accent">Built to Last.</em></h2>
           <p className="prose-muted mb-6">
-            Redwood Construction LLC is Oklahoma City's concrete specialist. We install and repair concrete <Link to="/concrete-driveways" className="text-orange no-underline">driveways</Link>, patios, <Link to="/concrete-slabs" className="text-orange no-underline">slabs</Link>, <Link to="/concrete-sidewalks" className="text-orange no-underline">sidewalks</Link>, and <Link to="/stamped-concrete" className="text-orange no-underline">stamped concrete</Link> surfaces for homeowners and businesses across the OKC metro — including Edmond, Moore, Yukon, Midwest City, Norman, Mustang, and Del City.
+            Redwood Construction LLC is Oklahoma City's concrete specialist. We install and repair concrete <Link to="/driveways-oklahoma-city" className="text-orange no-underline">driveways</Link>, patios, <Link to="/patios-oklahoma-city" className="text-orange no-underline">slabs</Link>, <Link to="/sidewalks-oklahoma-city" className="text-orange no-underline">sidewalks</Link>, and <Link to="/patios-oklahoma-city" className="text-orange no-underline">stamped concrete</Link> surfaces for homeowners and businesses across the OKC metro — including Edmond, Moore, Yukon, Midwest City, Norman, Mustang, and Del City.
           </p>
           <p className="prose-muted mb-6">
             Our team understands Oklahoma's unique conditions. From intense summer heat to winter freeze-thaw cycles and Oklahoma's heavy clay soil, we mix and pour concrete built to handle what this state throws at it. Every job starts with a free, no-obligation estimate. Every job ends with work built to last decades.
@@ -369,9 +369,9 @@ function AboutSection() {
             We're not a national franchise. Redwood Construction LLC is your local Oklahoma City concrete company — our own crew handles every project from start to finish. Call us at <a href="tel:4052470027" className="text-orange no-underline font-bold">(405) 247-0027</a> or email <a href="mailto:jesus.f@myconcreteestimate.com" className="text-orange no-underline">jesus.f@myconcreteestimate.com</a> to schedule your free estimate today.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <Link to="/concrete-driveways" className="btn-primary text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Driveway Contractors →</Link>
-            <Link to="/concrete-slabs" className="btn-outline text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Concrete Slabs →</Link>
-            <Link to="/concrete-foundations" className="btn-outline text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Foundations →</Link>
+            <Link to="/driveways-oklahoma-city" className="btn-primary text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Driveway Contractors →</Link>
+            <Link to="/patios-oklahoma-city" className="btn-outline text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Patios & Slabs →</Link>
+            <Link to="/foundations-oklahoma-city" className="btn-outline text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Foundations →</Link>
           </div>
         </div>
       </section>
@@ -381,12 +381,11 @@ function AboutSection() {
 
 function ServicesSection() {
   const services = [
-    { num: "01", name: "Concrete Driveways Oklahoma City", desc: "New installation, replacement, and repair of concrete driveways across OKC. Proper thickness, correct mix for Oklahoma weather, and drainage grading on every job.", to: "/concrete-driveways" },
-    { num: "02", name: "Concrete Patios OKC", desc: "Custom concrete patios for Oklahoma City backyards. Standard finish, exposed aggregate, or decorative stamped designs — built to survive Oklahoma's heat and freeze cycles.", to: "/concrete-slabs" },
-    { num: "03", name: "Stamped Concrete Oklahoma City", desc: "Decorative stamped concrete that looks like stone, brick, or slate. Popular for driveways, patios, and pool decks throughout the OKC metro area.", to: "/stamped-concrete" },
-    { num: "04", name: "Concrete Slabs & Foundations OKC", desc: "Garage floors, shop slabs, shed pads, and building foundations across Oklahoma City. Reinforced and graded for Oklahoma's clay soil.", to: "/concrete-foundations" },
-    { num: "05", name: "Concrete Repair Oklahoma City", desc: "Crack repair, leveling, and restoration for driveways, sidewalks, and patios across OKC. We identify the root cause before we fix the surface.", to: "/concrete-sidewalks" },
-    { num: "06", name: "Commercial Concrete OKC", desc: "Parking lots, warehouse floors, loading docks, and commercial slabs for Oklahoma City businesses. We meet commercial specs and pull all required permits.", to: "/retaining-walls" },
+    { num: "01", name: "Concrete Driveways Oklahoma City", desc: "New installation, replacement, and repair of concrete driveways across OKC. Proper thickness, correct mix for Oklahoma weather, and drainage grading on every job.", to: "/driveways-oklahoma-city" },
+    { num: "02", name: "Concrete Patios & Slabs OKC", desc: "Custom concrete patios, garage floors, shop slabs, and stamped decorative concrete — built to survive Oklahoma's heat and freeze cycles.", to: "/patios-oklahoma-city" },
+    { num: "03", name: "Foundations & Retaining Walls", desc: "Residential and commercial foundations, poured concrete walls, CMU block walls — engineered for Oklahoma's expansive clay soil.", to: "/foundations-oklahoma-city" },
+    { num: "04", name: "Sidewalks, Curb & Gutter", desc: "Sidewalks, walkways, curb and gutter installation — city-spec compliant and ADA accessible across OKC.", to: "/sidewalks-oklahoma-city" },
+    { num: "05", name: "Commercial Concrete OKC", desc: "Parking lots, warehouse floors, loading docks, and commercial slabs for Oklahoma City businesses. We meet commercial specs and pull all required permits.", to: "/commercial-concrete-oklahoma-city" },
   ];
 
   return (
@@ -407,8 +406,8 @@ function ServicesSection() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-concrete/[0.08] mt-px" style={{ border: "1px solid hsl(var(--concrete) / 0.08)", borderTop: "none" }}>
           {[
-            { tag: "Commercial", name: "Parking Lot Concrete", to: "/parking-lot-concrete" },
-            { tag: "Commercial", name: "Curb & Gutter", to: "/curb-and-gutter" },
+            { tag: "Commercial", name: "Commercial Concrete", to: "/commercial-concrete-oklahoma-city" },
+            { tag: "Residential", name: "Sidewalks & Curb", to: "/sidewalks-oklahoma-city" },
             { tag: "Res & Commercial", name: "Concrete Repair", to: "/#estimate" },
             { tag: "Not sure?", name: "Get a Free Quote →", to: "/#estimate", highlight: true },
           ].map((c, i) => (
@@ -445,7 +444,7 @@ function WhyUsSection() {
         <div className="relative z-[1]">
         <div className="section-eye">Why Redwood Construction</div>
         <h2 className="mb-3">Local Crew.<br/><em className="h2-accent">Real Results.</em></h2>
-        <p className="prose-muted mb-8">We're not a national franchise. Redwood Construction LLC is a locally owned OKC business — and we know exactly what Oklahoma soil, weather, and homeowners actually need for <Link to="/concrete-driveways" className="text-orange no-underline">driveways</Link>, <Link to="/concrete-slabs" className="text-orange no-underline">slabs</Link>, and <Link to="/concrete-foundations" className="text-orange no-underline">foundations</Link> that last.</p>
+        <p className="prose-muted mb-8">We're not a national franchise. Redwood Construction LLC is a locally owned OKC business — and we know exactly what Oklahoma soil, weather, and homeowners actually need for <Link to="/driveways-oklahoma-city" className="text-orange no-underline">driveways</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">slabs</Link>, and <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundations</Link> that last.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
           {reasons.map((r, i) => (
             <div key={i} className="bg-stone p-6">
@@ -463,9 +462,9 @@ function WhyUsSection() {
 
 function RecentProjectsSection() {
   const projects = [
-    { title: "Driveway Replacement", location: "Edmond, OK", desc: "Full tear-out and 4\" reinforced pour. Custom expansion joints, broom finish, and sealed surface included.", size: "24×40", time: "2 days", link: "/concrete-driveways", linkText: "See driveway work →" },
-    { title: "Stamped Concrete Patio", location: "Norman, OK", desc: "Ashlar slate pattern with custom release color and matte sealer. Covered extension with integrated steps.", size: "580 sq ft", time: "3 days", link: "/stamped-concrete", linkText: "See stamped work →" },
-    { title: "Parking Lot — Commercial", location: "Yukon, OK", desc: "Commercial concrete slab pour for a retail strip. Graded for drainage, reinforced for heavy traffic, striped and sealed.", size: "4,200 sq ft", time: "5 days", link: "/parking-lot-concrete", linkText: "See commercial work →" },
+    { title: "Driveway Replacement", location: "Edmond, OK", desc: "Full tear-out and 4\" reinforced pour. Custom expansion joints, broom finish, and sealed surface included.", size: "24×40", time: "2 days", link: "/driveways-oklahoma-city", linkText: "See driveway work →" },
+    { title: "Stamped Concrete Patio", location: "Norman, OK", desc: "Ashlar slate pattern with custom release color and matte sealer. Covered extension with integrated steps.", size: "580 sq ft", time: "3 days", link: "/patios-oklahoma-city", linkText: "See stamped work →" },
+    { title: "Parking Lot — Commercial", location: "Yukon, OK", desc: "Commercial concrete slab pour for a retail strip. Graded for drainage, reinforced for heavy traffic, striped and sealed.", size: "4,200 sq ft", time: "5 days", link: "/commercial-concrete-oklahoma-city", linkText: "See commercial work →" },
   ];
 
   return (
@@ -473,7 +472,7 @@ function RecentProjectsSection() {
       <section className="section-padding">
         <div className="section-eye">Our work</div>
         <h2 className="mb-3">Recent Projects<br/><em className="h2-accent">Across the Metro.</em></h2>
-        <p className="prose-muted mb-8">Real jobs for real Oklahoma homeowners and businesses. Every project — from <Link to="/concrete-driveways" className="text-orange no-underline">concrete driveways</Link> to <Link to="/stamped-concrete" className="text-orange no-underline">stamped patios</Link> — backed by the Redwood Construction guarantee.</p>
+        <p className="prose-muted mb-8">Real jobs for real Oklahoma homeowners and businesses. Every project — from <Link to="/driveways-oklahoma-city" className="text-orange no-underline">concrete driveways</Link> to <Link to="/patios-oklahoma-city" className="text-orange no-underline">stamped patios</Link> — backed by the Redwood Construction guarantee.</p>
         <div className="mb-6 overflow-hidden" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
           <img src={newDrivewayImg} alt="Completed concrete driveway project in Edmond Oklahoma by Redwood Construction LLC" className="w-full h-[280px] md:h-[360px] object-cover" />
         </div>

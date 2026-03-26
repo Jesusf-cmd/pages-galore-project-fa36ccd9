@@ -5,16 +5,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Layout from "@/components/Layout";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import ConcreteDriveways from "./pages/ConcreteDriveways";
-import ConcreteSlabs from "./pages/ConcreteSlabs";
-import StampedConcrete from "./pages/StampedConcrete";
-import ConcreteFoundations from "./pages/ConcreteFoundations";
-import ConcretePatioOKC from "./pages/ConcretePatioOKC";
-import ConcreteSidewalks from "./pages/ConcreteSidewalks";
-import RetainingWalls from "./pages/RetainingWalls";
-import CurbAndGutter from "./pages/CurbAndGutter";
-import ParkingLotConcrete from "./pages/ParkingLotConcrete";
-import CommercialConcreteSlabs from "./pages/CommercialConcreteSlabs";
+import DrivewaysOklahomaCity from "./pages/DrivewaysOklahomaCity";
+import PatiosOklahomaCity from "./pages/PatiosOklahomaCity";
+import FoundationsOklahomaCity from "./pages/FoundationsOklahomaCity";
+import SidewalksOklahomaCity from "./pages/SidewalksOklahomaCity";
+import CommercialConcreteOklahomaCity from "./pages/CommercialConcreteOklahomaCity";
 import CityPage from "./pages/CityPage";
 import OurProjects from "./pages/OurProjects";
 import BlogIndex from "./pages/BlogIndex";
@@ -39,19 +34,24 @@ const App = () => (
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
-            {/* Residential Concrete */}
-            <Route path="/concrete-driveways" element={<ConcreteDriveways />} />
-            <Route path="/concrete-slabs" element={<ConcreteSlabs />} />
-            <Route path="/stamped-concrete" element={<StampedConcrete />} />
-            <Route path="/concrete-foundations" element={<ConcreteFoundations />} />
-            <Route path="/concrete-patio-okc" element={<ConcretePatioOKC />} />
-            <Route path="/concrete-sidewalks" element={<ConcreteSidewalks />} />
-            <Route path="/retaining-walls" element={<RetainingWalls />} />
-            {/* Commercial Concrete */}
-            <Route path="/parking-lot-concrete" element={<ParkingLotConcrete />} />
-            <Route path="/curb-and-gutter" element={<CurbAndGutter />} />
-            <Route path="/curb-gutter" element={<Navigate to="/curb-and-gutter" replace />} />
-            <Route path="/commercial-concrete-slabs" element={<CommercialConcreteSlabs />} />
+            {/* Service Pages */}
+            <Route path="/driveways-oklahoma-city" element={<DrivewaysOklahomaCity />} />
+            <Route path="/patios-oklahoma-city" element={<PatiosOklahomaCity />} />
+            <Route path="/foundations-oklahoma-city" element={<FoundationsOklahomaCity />} />
+            <Route path="/sidewalks-oklahoma-city" element={<SidewalksOklahomaCity />} />
+            <Route path="/commercial-concrete-oklahoma-city" element={<CommercialConcreteOklahomaCity />} />
+            {/* 301 Redirects from old URLs */}
+            <Route path="/concrete-driveways" element={<Navigate to="/driveways-oklahoma-city" replace />} />
+            <Route path="/concrete-slabs" element={<Navigate to="/patios-oklahoma-city" replace />} />
+            <Route path="/stamped-concrete" element={<Navigate to="/patios-oklahoma-city" replace />} />
+            <Route path="/concrete-patio-okc" element={<Navigate to="/patios-oklahoma-city" replace />} />
+            <Route path="/concrete-foundations" element={<Navigate to="/foundations-oklahoma-city" replace />} />
+            <Route path="/retaining-walls" element={<Navigate to="/foundations-oklahoma-city" replace />} />
+            <Route path="/concrete-sidewalks" element={<Navigate to="/sidewalks-oklahoma-city" replace />} />
+            <Route path="/curb-and-gutter" element={<Navigate to="/sidewalks-oklahoma-city" replace />} />
+            <Route path="/curb-gutter" element={<Navigate to="/sidewalks-oklahoma-city" replace />} />
+            <Route path="/parking-lot-concrete" element={<Navigate to="/commercial-concrete-oklahoma-city" replace />} />
+            <Route path="/commercial-concrete-slabs" element={<Navigate to="/commercial-concrete-oklahoma-city" replace />} />
             {/* Service Areas */}
             <Route path="/oklahoma-city-concrete" element={<CityPage slug="oklahoma-city" />} />
             <Route path="/edmond-concrete" element={<CityPage slug="edmond" />} />
