@@ -16,7 +16,7 @@ export default function ConcreteDriveways() {
           titleAccent: "Oklahoma City.",
           content: [
             "We install new concrete driveways, replace damaged driveways, and handle driveway extensions for residential properties in Oklahoma City, Edmond, and Norman. Our team focuses on proper grading, base preparation, reinforcement, and clean finishing so your driveway performs well and looks professional for years to come.",
-            "Whether you need a new driveway or a full replacement, our team also provides <a href='/concrete-foundation-okc'>concrete foundation services in Oklahoma City</a> and <a href='/concrete-slabs'>concrete slab installation in Oklahoma City</a> with the same attention to quality and durability.",
+            "Whether you need a new driveway or a full replacement, our team also provides <a href='/foundations-oklahoma-city'>concrete foundation services in Oklahoma City</a> and <a href='/patios-oklahoma-city'>concrete slab installation in Oklahoma City</a> with the same attention to quality and durability.",
           ],
         },
         {
@@ -35,7 +35,7 @@ export default function ConcreteDriveways() {
           content: [
             "Homeowners choose Redwood Construction LLC because we deliver dependable concrete work with no shortcuts and no surprises:",
             "• Licensed and insured concrete contractor serving OKC metro<br/>• Rebar reinforcement included on every residential driveway<br/>• Proper base prep and compaction on every job — no shortcuts<br/>• Free written estimates with exact measurements and clear pricing<br/>• Oklahoma clay soil expertise — we build for local conditions<br/>• Scheduling within days, not weeks<br/>• Serving <a href='/oklahoma-city-concrete'>Oklahoma City</a>, <a href='/edmond-concrete'>Edmond</a>, <a href='/norman-ok-concrete'>Norman</a>, <a href='/moore-oklahoma-concrete'>Moore</a>, <a href='/yukon-oklahoma-concrete'>Yukon</a>, and <a href='/mustang-oklahoma-concrete'>Mustang</a>",
-            "From residential driveways to large-scale projects handled by our <a href='/commercial-concrete-slabs'>commercial concrete contractors in Oklahoma City</a>, we deliver consistent quality across every job.",
+            "From residential driveways to large-scale projects handled by our <a href='/commercial-concrete-oklahoma-city'>commercial concrete contractors in Oklahoma City</a>, we deliver consistent quality across every job.",
           ],
         },
         {

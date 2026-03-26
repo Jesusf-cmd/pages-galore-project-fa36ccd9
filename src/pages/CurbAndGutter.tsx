@@ -16,7 +16,7 @@ export default function CurbAndGutter() {
           titleAccent: "Residential Curb.",
           content: [
             "<strong>Curb and gutter contractors in Oklahoma City</strong> — Redwood Construction handles new construction, replacement, and repair of concrete curb and gutter across the OKC metro.",
-            "We pour standard barrier curb, mountable curb, valley gutter, and combination curb and gutter sections to city specifications. Our curb work integrates with <a href='/parking-lot-concrete'>parking lot</a>, <a href='/concrete-sidewalks'>sidewalk</a>, and <a href='/concrete-driveways'>driveway</a> projects for complete commercial and residential site work.",
+            "We pour standard barrier curb, mountable curb, valley gutter, and combination curb and gutter sections to city specifications. Our curb work integrates with <a href='/commercial-concrete-oklahoma-city'>parking lot</a>, <a href='/sidewalks-oklahoma-city'>sidewalk</a>, and <a href='/driveways-oklahoma-city'>driveway</a> projects for complete commercial and residential site work.",
           ],
           stats: [
             { value: "$18–30", label: "Per linear ft" },
@@ -40,7 +40,7 @@ export default function CurbAndGutter() {
           titleAccent: "Contractors.",
           content: [
             "Redwood Construction understands the specific curb and gutter specifications for Oklahoma City and surrounding municipalities. We coordinate with city inspectors, engineers, and general contractors to ensure every project passes inspection.",
-            "Our 4.9-star Google rating and BBB A+ accreditation reflect our commitment to quality on every project — from residential curb replacements to large commercial installations. See our <a href='/commercial-concrete-slabs'>commercial concrete services</a> and <a href='/concrete-foundations'>concrete foundation work</a> for related projects.",
+            "Our 4.9-star Google rating and BBB A+ accreditation reflect our commitment to quality on every project — from residential curb replacements to large commercial installations. See our <a href='/commercial-concrete-oklahoma-city'>commercial concrete services</a> and <a href='/foundations-oklahoma-city'>concrete foundation work</a> for related projects.",
           ],
         },
       ]}

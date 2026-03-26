@@ -16,7 +16,7 @@ export default function RetainingWalls() {
           titleAccent: "Oklahoma Soil.",
           content: [
             "<strong>Retaining wall contractors in Oklahoma City</strong> — Redwood Construction builds poured concrete, CMU block, and interlocking block retaining walls for slopes, erosion control, and outdoor living areas.",
-            "Oklahoma's clay soil and heavy rain events put significant lateral pressure on retaining structures. Every wall we build includes proper drainage, adequate footing depth, and reinforcement sized for the retained earth height. Retaining walls pair well with our <a href='/concrete-patio-okc'>patio</a> and <a href='/concrete-sidewalks'>sidewalk</a> services for complete outdoor projects.",
+            "Oklahoma's clay soil and heavy rain events put significant lateral pressure on retaining structures. Every wall we build includes proper drainage, adequate footing depth, and reinforcement sized for the retained earth height. Retaining walls pair well with our <a href='/patios-oklahoma-city'>patio</a> and <a href='/sidewalks-oklahoma-city'>sidewalk</a> services for complete outdoor projects.",
           ],
           stats: [
             { value: "$25–45", label: "Per linear ft" },
@@ -40,7 +40,7 @@ export default function RetainingWalls() {
           titleAccent: "Builders in OKC.",
           content: [
             "Retaining walls that fail can cause serious property damage — that's why choosing an experienced contractor matters. Redwood Construction has built retaining walls across Oklahoma City, <a href='/edmond-concrete'>Edmond</a>, <a href='/norman-ok-concrete'>Norman</a>, and surrounding cities.",
-            "We're licensed, bonded, and insured with a BBB A+ rating. Our crew understands the unique drainage challenges of Oklahoma clay and builds every wall to handle the lateral pressure from saturated soil. For related services, see our <a href='/concrete-foundations'>foundation work</a> and <a href='/concrete-driveways'>driveway installation</a>.",
+            "We're licensed, bonded, and insured with a BBB A+ rating. Our crew understands the unique drainage challenges of Oklahoma clay and builds every wall to handle the lateral pressure from saturated soil. For related services, see our <a href='/foundations-oklahoma-city'>foundation work</a> and <a href='/driveways-oklahoma-city'>driveway installation</a>.",
           ],
         },
       ]}

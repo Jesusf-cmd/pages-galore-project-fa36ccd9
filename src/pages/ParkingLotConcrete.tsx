@@ -16,7 +16,7 @@ export default function ParkingLotConcrete() {
           titleAccent: "Commercial Traffic.",
           content: [
             "<strong>Commercial concrete parking lot contractors in Oklahoma City</strong> — Redwood Construction handles new parking lot construction, resurfacing, and major repairs for OKC businesses.",
-            "Commercial parking lots require 5–6 inch slabs, proper drainage grading, joint sealing, and reinforcement designed for heavy vehicle loads. We handle projects from small retail lots to large commercial properties. Our parking lot work integrates with <a href='/curb-and-gutter'>curb and gutter</a> and <a href='/commercial-concrete-slabs'>commercial slab</a> services.",
+            "Commercial parking lots require 5–6 inch slabs, proper drainage grading, joint sealing, and reinforcement designed for heavy vehicle loads. We handle projects from small retail lots to large commercial properties. Our parking lot work integrates with <a href='/sidewalks-oklahoma-city'>curb and gutter</a> and <a href='/commercial-concrete-oklahoma-city'>commercial slab</a> services.",
           ],
           stats: [
             { value: "5–6\"", label: "Slab thickness" },
@@ -40,7 +40,7 @@ export default function ParkingLotConcrete() {
           titleAccent: "Lot Experts.",
           content: [
             "Redwood Construction has completed commercial parking lot projects across Oklahoma City — see our <a href='/our-projects'>project gallery</a> for examples including our Kiddie Academy project. We understand the specific requirements of commercial concrete: ADA compliance, drainage engineering, and durability under heavy traffic.",
-            "Our BBB A+ rating and 4.9-star Google reviews reflect consistent quality on commercial and <a href='/concrete-driveways'>residential driveway</a> projects alike. We also handle <a href='/concrete-foundations'>concrete foundation work</a> for commercial and residential buildings across Oklahoma City.",
+            "Our BBB A+ rating and 4.9-star Google reviews reflect consistent quality on commercial and <a href='/driveways-oklahoma-city'>residential driveway</a> projects alike. We also handle <a href='/foundations-oklahoma-city'>concrete foundation work</a> for commercial and residential buildings across Oklahoma City.",
           ],
         },
       ]}

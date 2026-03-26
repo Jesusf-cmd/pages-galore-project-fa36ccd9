@@ -16,7 +16,7 @@ export default function ConcreteFoundations() {
           titleAccent: "Oklahoma City.",
           content: [
             "We provide concrete foundation work for homes, additions, shops, commercial buildings, and other structures in Oklahoma City and surrounding areas. Our team handles layout, excavation coordination, forming, reinforcement, and concrete placement with attention to quality and site conditions.",
-            "In addition to foundation work, we also offer <a href='/concrete-driveways'>concrete driveway installation in Oklahoma City</a> and <a href='/concrete-slabs'>concrete slab installation in Oklahoma City</a> for residential and commercial properties.",
+            "In addition to foundation work, we also offer <a href='/driveways-oklahoma-city'>concrete driveway installation in Oklahoma City</a> and <a href='/patios-oklahoma-city'>concrete slab installation in Oklahoma City</a> for residential and commercial properties.",
           ],
         },
         {
@@ -34,7 +34,7 @@ export default function ConcreteFoundations() {
           titleAccent: "for Foundation Work.",
           content: [
             "Foundation work has to be done right the first time. Redwood Construction LLC focuses on dependable scheduling, clear communication, and solid concrete workmanship. We understand the importance of structural support, proper forming, and a foundation that meets the needs of the project.",
-            "From residential foundations to projects managed by our <a href='/commercial-concrete-slabs'>commercial concrete contractors in Oklahoma City</a>, we deliver consistent quality on every job.",
+            "From residential foundations to projects managed by our <a href='/commercial-concrete-oklahoma-city'>commercial concrete contractors in Oklahoma City</a>, we deliver consistent quality on every job.",
           ],
         },
         {

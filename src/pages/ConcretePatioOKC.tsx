@@ -16,7 +16,7 @@ export default function ConcretePatioOKC() {
           titleAccent: "Backyards.",
           content: [
             "<strong>Concrete patio contractors in OKC</strong> at Redwood Construction build patios that handle Oklahoma's temperature swings — from freezing winters to 105°F summers. Proper grading, reinforcement, and control joints keep your patio looking new for decades.",
-            "We offer broom finish, smooth finish, and <a href='/stamped-concrete'>stamped decorative</a> options. Every patio is graded for drainage away from your home. Looking for a full outdoor living space? Combine your patio with a <a href='/retaining-walls'>retaining wall</a> or <a href='/concrete-sidewalks'>walkway</a> for a complete backyard transformation.",
+            "We offer broom finish, smooth finish, and <a href='/patios-oklahoma-city'>stamped decorative</a> options. Every patio is graded for drainage away from your home. Looking for a full outdoor living space? Combine your patio with a <a href='/foundations-oklahoma-city'>retaining wall</a> or <a href='/sidewalks-oklahoma-city'>walkway</a> for a complete backyard transformation.",
           ],
           stats: [
             { value: "$6–10", label: "Per sq ft (standard)" },
@@ -49,7 +49,7 @@ export default function ConcretePatioOKC() {
           titleAccent: "in Oklahoma City.",
           alt: true,
           content: [
-            "Concrete patios in Oklahoma City range from $6–$10/sq ft for standard broom finish to $15–$22/sq ft for <a href='/stamped-concrete'>stamped decorative work</a>. Your total depends on size, finish, site conditions, and any additional features like steps or seat walls.",
+            "Concrete patios in Oklahoma City range from $6–$10/sq ft for standard broom finish to $15–$22/sq ft for <a href='/patios-oklahoma-city'>stamped decorative work</a>. Your total depends on size, finish, site conditions, and any additional features like steps or seat walls.",
           ],
           table: {
             headers: ["Service", "Typical Size", "Price Range", "Notes"],

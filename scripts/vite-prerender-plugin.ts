@@ -10,26 +10,21 @@ interface LinkItem {
 
 const primaryNavLinks: LinkItem[] = [
   { href: "/", label: "Home" },
-  { href: "/concrete-driveways", label: "Driveways" },
-  { href: "/concrete-slabs", label: "Concrete Slabs" },
-  { href: "/concrete-patio-okc", label: "Patios" },
-  { href: "/concrete-foundations", label: "Foundations" },
-  { href: "/retaining-walls", label: "Retaining Walls" },
+  { href: "/driveways-oklahoma-city", label: "Driveways" },
+  { href: "/patios-oklahoma-city", label: "Patios & Slabs" },
+  { href: "/foundations-oklahoma-city", label: "Foundations" },
+  { href: "/sidewalks-oklahoma-city", label: "Sidewalks" },
+  { href: "/commercial-concrete-oklahoma-city", label: "Commercial" },
   { href: "/our-projects", label: "Projects" },
   { href: "/blog", label: "Blog" },
 ];
 
 const serviceLinks: LinkItem[] = [
-  { href: "/concrete-driveways", label: "Concrete Driveways" },
-  { href: "/concrete-slabs", label: "Concrete Slabs" },
-  { href: "/stamped-concrete", label: "Stamped Concrete" },
-  { href: "/concrete-foundations", label: "Concrete Foundations" },
-  { href: "/concrete-patio-okc", label: "Concrete Patios" },
-  { href: "/concrete-sidewalks", label: "Concrete Sidewalks" },
-  { href: "/retaining-walls", label: "Retaining Walls" },
-  { href: "/curb-and-gutter", label: "Curb and Gutter" },
-  { href: "/parking-lot-concrete", label: "Parking Lot Concrete" },
-  { href: "/commercial-concrete-slabs", label: "Commercial Concrete Slabs" },
+  { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
+  { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
+  { href: "/foundations-oklahoma-city", label: "Foundations & Retaining Walls" },
+  { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
+  { href: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
 ];
 
 const serviceAreaLinks: LinkItem[] = [
