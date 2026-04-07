@@ -140,6 +140,7 @@ export default function QuotePage() {
     );
   }
 
+  const displayStatus = getDisplayStatus(quote);
   const lineItems: QuoteLineItem[] = Array.isArray(quote.line_items)
     ? (quote.line_items as unknown as QuoteLineItem[])
     : [];
