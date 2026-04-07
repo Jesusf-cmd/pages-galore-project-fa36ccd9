@@ -471,12 +471,29 @@ export default function QuotePage() {
 
       <style>{`
         @media print {
-          body { margin: 0; padding: 0; }
+          @page {
+            size: letter;
+            margin: 0.5in 0.4in;
+          }
+          html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            background: white !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+          }
           .print\\:hidden { display: none !important; }
           .print\\:shadow-none { box-shadow: none !important; }
           .print\\:bg-white { background: white !important; }
           .print\\:py-0 { padding-top: 0 !important; padding-bottom: 0 !important; }
           .print\\:px-0 { padding-left: 0 !important; padding-right: 0 !important; }
+          /* Prevent awkward breaks */
+          h2, h3 { page-break-after: avoid; }
+          table, figure, .border { page-break-inside: avoid; }
+          /* Keep authorization section together */
+          [data-print-section="authorization"] { page-break-inside: avoid; }
+          /* Keep each scope-of-work item together */
+          [data-print-section="line-item"] { page-break-inside: avoid; }
         }
       `}</style>
     </div>

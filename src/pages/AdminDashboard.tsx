@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo, useCallback, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
-import { formatCurrency, formatDate, formatQuoteNumber } from "@/lib/pricingConfig";
+import { formatCurrency, formatDate, formatQuoteNumber, SERVICE_TYPES, FINISH_TYPES } from "@/lib/pricingConfig";
 
 type StatusFilter = "all" | "pending" | "accepted" | "expired";
 type TimeFilter = "all" | "week" | "month";
