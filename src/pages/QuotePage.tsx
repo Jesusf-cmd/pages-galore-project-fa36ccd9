@@ -35,6 +35,18 @@ interface Quote {
   total_estimate: number;
   valid_until: string;
   created_at: string;
+  status: string;
+}
+
+function getDisplayStatus(quote: Quote): { label: string; color: string; bg: string } {
+  if (quote.status === "accepted") {
+    return { label: "ACCEPTED", color: "#16a34a", bg: "#dcfce7" };
+  }
+  const isExpired = new Date(quote.valid_until) < new Date();
+  if (quote.status === "expired" || isExpired) {
+    return { label: "EXPIRED", color: "#dc2626", bg: "#fef2f2" };
+  }
+  return { label: "PENDING", color: "#c45c26", bg: "#fff7ed" };
 }
 
 export default function QuotePage() {
