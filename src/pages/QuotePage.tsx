@@ -77,6 +77,7 @@ export default function QuotePage() {
           setError("Quote not found.");
         } else {
           setQuote(data as unknown as Quote);
+          document.title = `Estimate ${formatQuoteNumber(data.quote_number)} | Redwood Construction`;
         }
         setLoading(false);
       });
