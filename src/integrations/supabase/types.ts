@@ -62,6 +62,69 @@ export type Database = {
         }
         Relationships: []
       }
+      quotes: {
+        Row: {
+          created_at: string
+          customer_address: string
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          estimate_high: number
+          estimate_low: number
+          finish_type: string | null
+          id: string
+          length_ft: number
+          line_items: Json
+          project_details: string | null
+          project_type: string
+          quote_number: number
+          square_feet: number
+          total_estimate: number
+          valid_until: string
+          width_ft: number
+        }
+        Insert: {
+          created_at?: string
+          customer_address?: string
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          estimate_high: number
+          estimate_low: number
+          finish_type?: string | null
+          id?: string
+          length_ft: number
+          line_items?: Json
+          project_details?: string | null
+          project_type: string
+          quote_number?: number
+          square_feet: number
+          total_estimate: number
+          valid_until?: string
+          width_ft: number
+        }
+        Update: {
+          created_at?: string
+          customer_address?: string
+          customer_email?: string
+          customer_name?: string
+          customer_phone?: string
+          estimate_high?: number
+          estimate_low?: number
+          finish_type?: string | null
+          id?: string
+          length_ft?: number
+          line_items?: Json
+          project_details?: string | null
+          project_type?: string
+          quote_number?: number
+          square_feet?: number
+          total_estimate?: number
+          valid_until?: string
+          width_ft?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
