@@ -1,4 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  SERVICE_TYPES,
+  FINISH_TYPES,
+  buildLineItems,
+  calculateRange,
+} from "@/lib/pricingConfig";
 import commercialFoundationImg from "@/assets/commercial-concrete-foundation-okc.jpg";
 import newDrivewayImg from "@/assets/new-driveway.jpg";
 import tiedRebarImg from "@/assets/tied-rebar.jpg";
@@ -169,6 +176,7 @@ function HeroSection() {
 }
 
 function EstimateForm() {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [projectType, setProjectType] = useState("slab");
   const [length, setLength] = useState(20);
@@ -177,30 +185,20 @@ function EstimateForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
   const [details, setDetails] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
   const sqft = length * width;
-  const getRange = () => {
-    let low = 6, high = 10;
-    if (projectType === "foundation") { low = 9; high = 14; }
-    if (projectType === "wall") { low = 25; high = 45; }
-    if (finish === "stamped") { low += 9; high += 12; }
-    const totalLow = Math.round(sqft * low);
-    const totalHigh = Math.round(sqft * high);
-    return { low: totalLow, high: totalHigh, perFtLow: low, perFtHigh: high };
-  };
+  const range = calculateRange(projectType, finish, sqft);
 
-  const range = getRange();
-
-  const types = [
-    { id: "slab", name: "Concrete Slab", sub: "Patios, garage floors, slabs" },
-    { id: "foundation", name: "Foundation", sub: "Residential & commercial" },
-    { id: "sidewalk", name: "Sidewalk", sub: "Walkways and pathways" },
-    { id: "wall", name: "Retaining Wall", sub: "Structural walls for slopes" },
-  ];
+  const types = Object.values(SERVICE_TYPES).map((s) => ({
+    id: s.id,
+    name: s.name,
+    sub: s.description,
+  }));
 
   const handleSubmit = async () => {
     if (!name.trim() || !phone.trim() || !email.trim()) {
@@ -215,17 +213,25 @@ function EstimateForm() {
     setSubmitting(true);
 
     try {
-      const { error: fnError } = await supabase.functions.invoke("submit-estimate", {
+      const lineItems = buildLineItems(projectType, finish, sqft);
+      const siteUrl = window.location.origin;
+
+      const { data, error: fnError } = await supabase.functions.invoke("submit-quote", {
         body: {
-          name, phone, email, projectType, finishType: finish,
-          length, width, sqft,
+          name, email, phone, address, details,
+          projectType, finishType: finish,
+          lengthFt: length, widthFt: width, sqft,
           estimateLow: range.low, estimateHigh: range.high,
-          details,
+          lineItems, siteUrl,
         },
       });
 
       if (fnError) throw fnError;
-      setSubmitted(true);
+      if (data?.quoteId) {
+        navigate(`/quote/${data.quoteId}`);
+      } else {
+        setSubmitted(true);
+      }
     } catch (err) {
       console.error("Submission error:", err);
       setError("Something went wrong. Please call us at (405) 247-0027.");
@@ -238,13 +244,13 @@ function EstimateForm() {
     return (
       <div className="bg-stone" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}>
         <div className="bg-orange p-4 flex justify-between items-center">
-          <span className="font-display text-base font-extrabold tracking-[0.1em] uppercase text-white">Estimate Submitted</span>
+          <span className="font-display text-base font-extrabold tracking-[0.1em] uppercase text-white">Quote Submitted</span>
         </div>
         <div className="p-6 text-center">
           <div className="text-4xl mb-4">✅</div>
           <h3 className="text-concrete mb-2">Thank You, {name}!</h3>
-          <p className="text-muted-text text-sm mb-3">Your estimate request for <strong className="text-concrete">{sqft} sq ft</strong> of {projectType} work (<strong className="text-orange">${range.low.toLocaleString()} – ${range.high.toLocaleString()}</strong>) has been received.</p>
-          <p className="text-muted-text text-sm">We'll respond within one business day with a detailed estimate. Or call us now at <a href="tel:4052470027" className="text-orange font-bold no-underline">(405) 247-0027</a>.</p>
+          <p className="text-muted-text text-sm mb-3">Your quote has been created. Check your email for details.</p>
+          <p className="text-muted-text text-sm">Or call us now at <a href="tel:4052470027" className="text-orange font-bold no-underline">(405) 247-0027</a>.</p>
         </div>
       </div>
     );
@@ -295,9 +301,9 @@ function EstimateForm() {
             <div className="mb-3">
               <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Finish type</label>
               <select value={finish} onChange={e => setFinish(e.target.value)} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none cursor-pointer min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}>
-                <option value="broom" className="bg-stone text-concrete">Broom finish — standard</option>
-                <option value="brushed" className="bg-stone text-concrete">Brushed / smooth</option>
-                <option value="stamped" className="bg-stone text-concrete">Stamped / decorative</option>
+                {Object.values(FINISH_TYPES).map(f => (
+                  <option key={f.id} value={f.id} className="bg-stone text-concrete">{f.name} — {f.description}</option>
+                ))}
               </select>
             </div>
           )}
@@ -329,9 +335,13 @@ function EstimateForm() {
             <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Email</label>
             <input value={email} onChange={e => setEmail(e.target.value)} placeholder="email@example.com" type="email" className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
           </div>
+          <div className="mb-3">
+            <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Project Address</label>
+            <input value={address} onChange={e => setAddress(e.target.value)} placeholder="123 Main St, Oklahoma City, OK" className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+          </div>
           <div className="mb-4">
             <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Project Details</label>
-            <textarea value={details} onChange={e => setDetails(e.target.value)} placeholder="Tell us about your project..." rows={3} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none resize-y min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+            <textarea value={details} onChange={e => setDetails(e.target.value)} placeholder="Tell us about your project scope, timeline, special requirements..." rows={3} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none resize-y min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
           </div>
           {error && (
             <div className="bg-destructive/20 text-destructive text-sm p-3 mb-4" style={{ border: "1px solid hsl(0 60% 40% / 0.3)" }}>{error}</div>
@@ -343,7 +353,7 @@ function EstimateForm() {
           <div className="flex flex-col sm:flex-row gap-2">
             <button onClick={() => setStep(2)} className="btn-outline text-sm py-3.5 min-h-[48px] flex-1 w-full sm:w-auto">← Back</button>
             <button onClick={handleSubmit} disabled={submitting} className="btn-primary text-sm py-3.5 min-h-[48px] flex-1 w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed">
-              {submitting ? "Submitting..." : "Submit Estimate Request →"}
+              {submitting ? "Creating Quote..." : "Get Your Quote →"}
             </button>
           </div>
         </div>
