@@ -195,6 +195,7 @@ export default function QuotePage() {
                 >
                   {displayStatus.label}
                 </div>
+              </div>
             </div>
           </div>
 
