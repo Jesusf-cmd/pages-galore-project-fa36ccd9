@@ -27,7 +27,6 @@ Deno.serve(async (req) => {
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Fetch quote
     const { data: quote, error: fetchErr } = await supabase
       .from("quotes")
       .select("*")
@@ -82,7 +81,6 @@ Deno.serve(async (req) => {
     const signatureUrl = urlData.publicUrl;
     const acceptedAt = new Date().toISOString();
 
-    // Update quote
     const { error: updateErr } = await supabase
       .from("quotes")
       .update({
@@ -107,6 +105,9 @@ Deno.serve(async (req) => {
     const siteUrl = "https://myconcreteestimate.com";
     const quoteUrl = `${siteUrl}/quote/${quoteId}`;
     const fromAddress = "Redwood Construction <estimates@myconcreteestimate.com>";
+    const acceptedDateStr = new Date(acceptedAt).toLocaleDateString("en-US", {
+      year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit",
+    });
 
     if (LOVABLE_API_KEY && RESEND_API_KEY) {
       const sendEmail = async (to: string, subject: string, html: string) => {
@@ -131,6 +132,14 @@ Deno.serve(async (req) => {
 
       const firstName = quote.customer_name.trim().split(" ")[0];
 
+      // Line items for internal email
+      const itemsHtml = (quote.line_items as any[] || []).map((item: any) => `
+        <div style="margin-bottom:12px;">
+          <div style="font-weight:bold;color:#1a1a1a;font-size:14px;">ITEM ${String(item.number).padStart(2, "0")}: ${item.title}</div>
+          <div style="color:#c45c26;font-weight:bold;font-size:14px;">$${item.priceLow?.toLocaleString()} – $${item.priceHigh?.toLocaleString()}</div>
+        </div>
+      `).join("");
+
       const customerHtml = `
 <!DOCTYPE html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
@@ -151,6 +160,10 @@ Deno.serve(async (req) => {
         <div style="color:#888;font-size:11px;letter-spacing:2px;font-weight:bold;margin-bottom:8px;">TOTAL ESTIMATE</div>
         <div style="color:#c45c26;font-size:28px;font-weight:800;">$${quote.estimate_low.toLocaleString()} – $${quote.estimate_high.toLocaleString()}</div>
       </div>
+      <div style="background:#f5f1eb;border-radius:8px;padding:14px 20px;margin:0 0 24px;text-align:center;">
+        <div style="color:#888;font-size:11px;letter-spacing:2px;font-weight:bold;margin-bottom:4px;">ACCEPTED ON</div>
+        <div style="color:#1a1a1a;font-size:14px;font-weight:bold;">${acceptedDateStr}</div>
+      </div>
       <div style="text-align:center;margin:0 0 32px;">
         <a href="${quoteUrl}" style="display:inline-block;background:#c45c26;color:#ffffff;text-decoration:none;padding:14px 36px;font-size:14px;font-weight:bold;letter-spacing:1px;border-radius:4px;">VIEW YOUR QUOTE</a>
       </div>
@@ -158,6 +171,7 @@ Deno.serve(async (req) => {
     <div style="background:#1a1a1a;padding:20px 32px;text-align:center;">
       <div style="color:#ffffff;font-size:13px;font-weight:bold;">Redwood Construction LLC</div>
       <div style="color:#888;font-size:12px;margin-top:4px;">(405) 247-0027 · jesus.f@myconcreteestimate.com</div>
+      <div style="color:#666;font-size:11px;margin-top:4px;">myconcreteestimate.com</div>
     </div>
   </div>
 </body></html>`;
@@ -169,22 +183,30 @@ Deno.serve(async (req) => {
   <div style="max-width:600px;margin:0 auto;background:#fff;border:1px solid #ddd;">
     <div style="background:#16a34a;padding:16px 24px;">
       <div style="color:#fff;font-size:16px;font-weight:bold;">✓ Quote ${quoteNumber} ACCEPTED</div>
-      <div style="color:#dcfce7;font-size:12px;">${new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</div>
+      <div style="color:#dcfce7;font-size:12px;">${acceptedDateStr}</div>
     </div>
     <div style="padding:24px;">
       <h2 style="color:#1a1a1a;font-size:16px;margin:0 0 16px;border-bottom:2px solid #16a34a;padding-bottom:8px;">Customer Details</h2>
       <table style="width:100%;font-size:14px;margin-bottom:24px;">
         <tr><td style="padding:4px 0;color:#888;width:100px;">Name:</td><td style="color:#1a1a1a;font-weight:bold;">${quote.customer_name}</td></tr>
-        <tr><td style="padding:4px 0;color:#888;">Email:</td><td style="color:#1a1a1a;">${quote.customer_email}</td></tr>
-        <tr><td style="padding:4px 0;color:#888;">Phone:</td><td style="color:#1a1a1a;">${quote.customer_phone}</td></tr>
+        <tr><td style="padding:4px 0;color:#888;">Email:</td><td><a href="mailto:${quote.customer_email}" style="color:#c45c26;">${quote.customer_email}</a></td></tr>
+        <tr><td style="padding:4px 0;color:#888;">Phone:</td><td><a href="tel:${quote.customer_phone}" style="color:#c45c26;">${quote.customer_phone}</a></td></tr>
         <tr><td style="padding:4px 0;color:#888;">Address:</td><td style="color:#1a1a1a;">${quote.customer_address || "Not provided"}</td></tr>
       </table>
-      <div style="background:#1a1a1a;padding:16px 20px;margin:0 0 24px;border-radius:4px;">
+      <h2 style="color:#1a1a1a;font-size:16px;margin:0 0 16px;border-bottom:2px solid #16a34a;padding-bottom:8px;">Quote Summary</h2>
+      ${itemsHtml}
+      <div style="background:#1a1a1a;padding:16px 20px;margin:24px 0;border-radius:4px;">
         <div style="color:#888;font-size:11px;letter-spacing:2px;margin-bottom:4px;">TOTAL ESTIMATE</div>
         <div style="color:#c45c26;font-size:24px;font-weight:800;">$${quote.estimate_low.toLocaleString()} – $${quote.estimate_high.toLocaleString()}</div>
       </div>
-      <div style="text-align:center;">
-        <a href="${quoteUrl}" style="display:inline-block;background:#c45c26;color:#fff;text-decoration:none;padding:12px 28px;font-size:13px;font-weight:bold;border-radius:4px;">VIEW FULL QUOTE</a>
+      <h2 style="color:#1a1a1a;font-size:16px;margin:0 0 12px;border-bottom:2px solid #16a34a;padding-bottom:8px;">Customer Signature</h2>
+      <div style="background:#f9f9f9;border:1px solid #e5e5e5;border-radius:4px;padding:12px;margin:0 0 24px;text-align:center;">
+        <img src="${signatureUrl}" alt="Customer Signature" style="max-width:300px;height:auto;" />
+      </div>
+      ${quote.project_details ? `<h2 style="color:#1a1a1a;font-size:16px;margin:0 0 8px;border-bottom:2px solid #16a34a;padding-bottom:8px;">Project Notes</h2><p style="color:#555;font-size:14px;line-height:1.6;white-space:pre-wrap;">${quote.project_details}</p>` : ""}
+      <div style="text-align:center;margin-top:24px;">
+        <a href="${quoteUrl}" style="display:inline-block;background:#c45c26;color:#fff;text-decoration:none;padding:12px 28px;font-size:13px;font-weight:bold;border-radius:4px;margin-right:8px;">VIEW QUOTE</a>
+        <a href="${siteUrl}/admin" style="display:inline-block;background:#1a1a1a;color:#fff;text-decoration:none;padding:12px 28px;font-size:13px;font-weight:bold;border-radius:4px;">ADMIN DASHBOARD</a>
       </div>
     </div>
   </div>
@@ -192,12 +214,12 @@ Deno.serve(async (req) => {
 
       await Promise.allSettled([
         sendEmail(quote.customer_email, `Quote ${quoteNumber} Accepted - Redwood Construction`, customerHtml),
-        sendEmail("jesus.f@myconcreteestimate.com", `✓ Quote ${quoteNumber} ACCEPTED by ${quote.customer_name}`, internalHtml),
+        sendEmail("jesus.f@myconcreteestimate.com", `ACCEPTED: Quote ${quoteNumber} - ${quote.customer_name}`, internalHtml),
       ]);
     }
 
     return new Response(
-      JSON.stringify({ success: true, signatureUrl: signatureUrl, acceptedAt }),
+      JSON.stringify({ success: true, signatureUrl, acceptedAt }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (err) {
