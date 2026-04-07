@@ -189,7 +189,12 @@ export default function QuotePage() {
                 <div className="text-white text-2xl sm:text-3xl font-extrabold">
                   {formatQuoteNumber(quote.quote_number)}
                 </div>
-              </div>
+                <div
+                  className="inline-block mt-2 px-3 py-1 rounded text-[10px] tracking-[2px] font-bold"
+                  style={{ color: displayStatus.color, backgroundColor: displayStatus.bg }}
+                >
+                  {displayStatus.label}
+                </div>
             </div>
           </div>
 
