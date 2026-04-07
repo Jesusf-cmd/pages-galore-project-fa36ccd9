@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo, useCallback, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
-import { formatCurrency, formatDate, formatQuoteNumber } from "@/lib/pricingConfig";
+import { formatCurrency, formatDate, formatQuoteNumber, SERVICE_TYPES, FINISH_TYPES } from "@/lib/pricingConfig";
 
 type StatusFilter = "all" | "pending" | "accepted" | "expired";
 type TimeFilter = "all" | "week" | "month";
@@ -137,10 +137,12 @@ export default function AdminDashboard() {
   };
 
   const exportCSV = () => {
-    const headers = ["Quote #", "Customer", "Email", "Phone", "Project Type", "Sq Ft", "Estimate Low", "Estimate High", "Total", "Status", "Date Issued", "Expires On"];
+    const headers = ["Quote #", "Customer", "Email", "Phone", "Project Type", "Finish", "Sq Ft", "Estimate Low", "Estimate High", "Total", "Status", "Date Issued", "Expires On"];
     const rows = filtered.map((q) => [
       formatQuoteNumber(q.quote_number), q.customer_name, q.customer_email, q.customer_phone,
-      q.project_type, q.square_feet, q.estimate_low, q.estimate_high, q.total_estimate,
+      SERVICE_TYPES[q.project_type]?.name || q.project_type,
+      q.finish_type ? (FINISH_TYPES[q.finish_type]?.name || q.finish_type) : "N/A",
+      q.square_feet, q.estimate_low, q.estimate_high, q.total_estimate,
       q.status.toUpperCase(), new Date(q.created_at).toLocaleDateString(), new Date(q.valid_until).toLocaleDateString(),
     ]);
     const csv = [headers, ...rows].map((r) => r.map((c) => `"${c}"`).join(",")).join("\n");
@@ -367,7 +369,7 @@ export default function AdminDashboard() {
                             </div>
                             <div>
                               <div className="text-[#999] text-[10px] tracking-[2px] font-bold mb-1">PROJECT TYPE</div>
-                              <div className="text-[#1a1a1a] font-bold">{q.project_type} · {q.square_feet} sq ft</div>
+                              <div className="text-[#1a1a1a] font-bold">{SERVICE_TYPES[q.project_type]?.name || q.project_type}{q.finish_type ? ` · ${FINISH_TYPES[q.finish_type]?.name || q.finish_type}` : ""} · {q.square_feet} sq ft</div>
                             </div>
                           </div>
                           {q.project_details && (
