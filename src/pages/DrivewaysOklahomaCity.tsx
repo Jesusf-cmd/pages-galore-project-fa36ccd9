@@ -10,6 +10,7 @@ export default function DrivewaysOklahomaCity() {
       titleAccent="Oklahoma City, OK."
       description="Your driveway is the first thing visitors see when they arrive at your home. At Redwood Construction LLC, we specialize in concrete driveway installation, replacement, and repair throughout the Oklahoma City metro area. Whether you need a simple broom-finish driveway or an elegant stamped concrete entrance, our experienced crew delivers quality craftsmanship that stands up to Oklahoma's harsh weather conditions."
       introText="We've poured hundreds of driveways across Oklahoma City, Edmond, Norman, Moore, and surrounding communities. Every project starts with proper ground preparation, uses 4,000 PSI concrete minimum, and includes fiber mesh reinforcement for long-lasting durability."
+      serviceLabel="Driveway"
       serviceCards={[
         {
           icon: "🏗️",

@@ -14,9 +14,11 @@ interface ServicePageProps {
   titleAccent: string;
   description: string;
   introText?: string;
+  serviceLabel?: string;
   serviceCards?: { icon: string; title: string; description: string }[];
   specs?: { label: string; value: string }[];
   finishOptions?: { title: string; description: string }[];
+  finishLabel?: string;
   whyChooseUs?: { icon: string; title: string; description: string }[];
   sections: {
     eyebrow: string;
@@ -33,7 +35,7 @@ interface ServicePageProps {
   metaDescription?: string;
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceCards, specs, finishOptions, whyChooseUs, sections, faq, metaTitle, metaDescription }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription }: ServicePageProps) {
   useSEO({
     title: metaTitle || `${title} ${titleAccent.replace('.', '')} | Redwood Construction LLC`,
     description: metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155),
@@ -74,7 +76,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         <ScrollReveal>
           <section className="section-padding section-alt">
             <div className="section-eye">Our Services</div>
-            <h2 className="mb-8">Driveway Services in<br/><em className="h2-accent">Oklahoma City.</em></h2>
+            <h2 className="mb-8">{serviceLabel || "Our"} Services in<br/><em className="h2-accent">Oklahoma City.</em></h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
               {serviceCards.map((card, i) => (
                 <div key={i} className="bg-stone p-6 md:p-8">
@@ -146,7 +148,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         <ScrollReveal>
           <section className="section-padding section-alt">
             <div className="section-eye">Finish Options</div>
-            <h2 className="mb-8">Driveway Finish<br/><em className="h2-accent">Options.</em></h2>
+            <h2 className="mb-8">{finishLabel || "Finish"}<br/><em className="h2-accent">Options.</em></h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
               {finishOptions.map((opt, i) => (
                 <div key={i} className="bg-stone p-5 md:p-6">

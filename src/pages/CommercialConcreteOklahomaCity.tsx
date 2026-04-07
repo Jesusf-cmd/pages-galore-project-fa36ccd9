@@ -9,6 +9,54 @@ export default function CommercialConcreteOklahomaCity() {
       title="Commercial Concrete"
       titleAccent="Oklahoma City."
       description='Commercial concrete contractors in Oklahoma City — warehouse floors, parking lots, retail pads, industrial slabs, and site work across the OKC metro. <a href="tel:4052470027">(405) 247-0027</a>.'
+      introText="Redwood Construction LLC delivers commercial-grade concrete for businesses across the Oklahoma City metro. From warehouse floors to parking lots, every commercial pour uses 4,000+ PSI concrete, engineered reinforcement, and base preparation designed for heavy traffic and sustained loads."
+      serviceLabel="Commercial"
+      serviceCards={[
+        {
+          icon: "🏭",
+          title: "Warehouse & Industrial Floors",
+          description: "Heavy-duty 6-8 inch slabs with engineered rebar schedules for forklift traffic, equipment loads, and industrial operations. Smooth or burnished finish options.",
+        },
+        {
+          icon: "🅿️",
+          title: "Parking Lots",
+          description: "Commercial parking lot construction with proper drainage, ADA-compliant accessible spaces, joint sealing, and 5-6 inch slabs for heavy vehicle traffic.",
+        },
+        {
+          icon: "🏪",
+          title: "Retail Pads & Storefronts",
+          description: "Foundation pads and flatwork for retail buildings, restaurants, and commercial storefronts. Coordinated with general contractors and city inspectors.",
+        },
+        {
+          icon: "📦",
+          title: "Loading Docks & Aprons",
+          description: "Heavy-duty loading dock slabs and truck aprons reinforced for repeated heavy vehicle loads. Sloped for drainage.",
+        },
+        {
+          icon: "🛣️",
+          title: "Commercial Curb & Gutter",
+          description: "City-spec curb and gutter for parking lots and commercial developments. Standard barrier, mountable, and valley gutter profiles.",
+        },
+        {
+          icon: "🏗️",
+          title: "Equipment Pads & Foundations",
+          description: "Reinforced concrete pads for HVAC units, generators, dumpster pads, and heavy commercial equipment. Sized and reinforced per specifications.",
+        },
+      ]}
+      specs={[
+        { label: "Concrete Strength", value: "4,000 PSI minimum (5,000+ PSI for industrial)" },
+        { label: "Slab Thickness", value: "5-8 inches depending on use and load requirements" },
+        { label: "Reinforcement", value: "Rebar per engineered specifications, tied at intersections" },
+        { label: "Base", value: "6+ inch compacted aggregate for commercial applications" },
+        { label: "Joint Layout", value: "Engineered joint spacing for large-format slabs" },
+        { label: "ADA Compliance", value: "Accessible parking, ramps, and walkways per code" },
+      ]}
+      whyChooseUs={[
+        { icon: "🛡️", title: "Licensed & Insured", description: "Fully licensed Oklahoma contractor. BBB A+ accredited. Liability and workers comp on every project." },
+        { icon: "📍", title: "Commercial Experience", description: "Warehouse floors, parking lots, and commercial site work across the OKC metro." },
+        { icon: "💪", title: "Engineered Quality", description: "4,000+ PSI concrete, engineered reinforcement, and compacted aggregate base — built to spec." },
+        { icon: "📋", title: "GC Coordination", description: "We work with general contractors, engineers, and inspectors. On-time pours. No schedule surprises." },
+      ]}
       sections={[
         {
           eyebrow: "Commercial Slabs OKC",
@@ -16,7 +64,7 @@ export default function CommercialConcreteOklahomaCity() {
           titleAccent: "Commercial Use.",
           content: [
             "<strong>Commercial concrete contractors in Oklahoma City</strong> — Redwood Construction pours warehouse floors, retail pads, equipment slabs, and industrial concrete across the OKC metro. Commercial slabs require thicker pours, higher PSI concrete, and engineered reinforcement to handle forklift traffic, heavy equipment, and sustained loads.",
-            "Every commercial slab starts with a proper site assessment, soil testing when needed, and a pour plan that accounts for joint spacing, drainage, and load requirements specific to your operation. We also handle commercial parking lots, curb and gutter installation, and <a href='/foundations-oklahoma-city'>commercial foundation work</a>.",
+            "Every commercial slab starts with a proper site assessment, soil testing when needed, and a pour plan that accounts for joint spacing, drainage, and load requirements specific to your operation.",
           ],
           stats: [
             { value: "5–8\"", label: "Slab thickness" },
@@ -29,28 +77,8 @@ export default function CommercialConcreteOklahomaCity() {
           title: "Concrete Parking Lots Built for",
           titleAccent: "Heavy Commercial Traffic.",
           content: [
-            "<strong>Commercial concrete parking lot contractors in Oklahoma City</strong> — Redwood Construction handles new parking lot construction, resurfacing, and major repairs for OKC businesses.",
-            "Commercial parking lots require 5–6 inch slabs, proper drainage grading, joint sealing, and reinforcement designed for heavy vehicle loads. We handle projects from small retail lots to large commercial properties. Our parking lot work integrates with curb and gutter and commercial slab services for complete site development.",
-            "Parking lot construction requires careful planning for drainage, traffic flow, ADA compliance, and long-term durability. We coordinate with engineers and property owners to develop a pour plan that accounts for all of these factors. Joint spacing is engineered for the slab dimensions, and ADA-compliant accessible spaces are included per code.",
-          ],
-        },
-        {
-          eyebrow: "Our Commercial Process",
-          title: "Engineered for",
-          titleAccent: "Your Operation.",
-          content: [
-            "Commercial concrete requires a different approach than residential work. We coordinate with general contractors, site engineers, and building inspectors to ensure every pour meets specifications and passes inspection.",
-            "Our commercial process includes detailed site prep with engineered subgrade compaction, reinforcement per structural plans, proper joint layout for large-format slabs, and coordination of concrete delivery for continuous pours. We use 4,000 PSI minimum on all commercial work — higher mixes are specified for heavy industrial applications.",
-            "We serve commercial clients across the <a href='/oklahoma-city-concrete'>Oklahoma City metro</a> including retail, industrial, and institutional projects in <a href='/edmond-concrete'>Edmond</a>, <a href='/yukon-oklahoma-concrete'>Yukon</a>, and <a href='/moore-oklahoma-concrete'>Moore</a>.",
-          ],
-        },
-        {
-          eyebrow: "Why Choose Redwood",
-          title: "Commercial Concrete",
-          titleAccent: "You Can Count On.",
-          content: [
-            "Redwood Construction has completed commercial concrete projects across Oklahoma City — from small retail pads to large warehouse floors and commercial parking lots. Our experience with commercial specifications, ADA compliance, and coordination with general contractors sets us apart.",
-            "We're licensed, bonded, and insured with BBB A+ accreditation. Our crew handles the complexity of commercial work — tight schedules, coordination with other trades, and specifications that demand precision. We also serve residential clients with <a href='/driveways-oklahoma-city'>driveway installation</a> and <a href='/patios-oklahoma-city'>patio and slab construction</a>. See our <a href='/our-projects'>project gallery</a> for examples of our commercial work.",
+            "Commercial parking lots require 5–6 inch slabs, proper drainage grading, joint sealing, and reinforcement designed for heavy vehicle loads. We handle projects from small retail lots to large commercial properties.",
+            "Parking lot construction requires careful planning for drainage, traffic flow, ADA compliance, and long-term durability. We coordinate with engineers and property owners to develop a pour plan that accounts for all of these factors.",
           ],
         },
         {
@@ -59,7 +87,7 @@ export default function CommercialConcreteOklahomaCity() {
           titleAccent: "in Oklahoma City.",
           alt: true,
           content: [
-            "<strong>Commercial concrete in Oklahoma City</strong> runs $7–$14 per square foot depending on thickness, reinforcement, and finish requirements. Larger pours typically come in at lower per-square-foot rates. Parking lots run $7–$12 per square foot installed.",
+            "<strong>Commercial concrete in Oklahoma City</strong> runs $7–$14 per square foot depending on thickness, reinforcement, and finish requirements. Larger pours typically come in at lower per-square-foot rates.",
           ],
           table: {
             headers: ["Service", "Typical Size", "Price Range", "Notes"],
@@ -75,24 +103,13 @@ export default function CommercialConcreteOklahomaCity() {
         },
         {
           eyebrow: "Oklahoma Concrete Challenges",
-          title: "Common Concrete Problems",
+          title: "Commercial Concrete Challenges",
           titleAccent: "in Oklahoma City.",
           alt: true,
           content: [
-            "Oklahoma City sits on some of the most expansive clay soil in the United States. This Permian red clay absorbs moisture and swells during wet seasons, then contracts sharply during Oklahoma's summer droughts — sometimes shifting several inches in a single year. Concrete that isn't designed for this movement will crack, heave, and fail long before its time.",
-            "The most common commercial concrete failures we see across OKC are caused by the same three issues: inadequate base preparation, missing or improperly placed reinforcement, and poor drainage grading. A contractor who doesn't understand Oklahoma clay will pour a slab that starts cracking within two or three years.",
-            "Proper base prep means excavating to the correct depth, compacting the native subgrade, and installing adequate aggregate base. For commercial applications, this often means 6+ inches of compacted base. Rebar placed on chairs provides the tensile strength to resist soil movement.",
-            "If your existing commercial concrete in Oklahoma City is showing cracks, settlement, or surface scaling, call Redwood Construction LLC at (405) 247-0027 for an honest assessment. We'll tell you whether it needs repair or full replacement, and why.",
-          ],
-        },
-        {
-          eyebrow: "Oklahoma City Concrete Expertise",
-          title: "What Sets Our Commercial Work Apart",
-          titleAccent: "in Oklahoma City.",
-          content: [
-            "Every commercial concrete project in Oklahoma City faces the same adversary: Permian red clay. This soil is among the most expansive in the country. Contractors who don't account for this build slabs and parking lots that crack within a few years. Our crew has poured commercial concrete across every part of the OKC metro and knows exactly how each area's soil behaves.",
-            "Our process is the same on every commercial job: 811 utility locate before any excavation, subgrade assessment and compaction, engineered aggregate base, reinforcement per structural plans, 4,000 PSI minimum ready-mix from a local Oklahoma City batch plant, control joints engineered for the slab dimensions, and curing compound applied before we leave the site.",
-            "Redwood Construction LLC is locally owned — not a franchise, not a call center dispatching subcontractors. When you call (405) 247-0027, you're talking to the people who will manage your project. Our 4.9-star Google rating and BBB A+ accreditation come from consistent quality on every project — commercial and residential alike.",
+            "Oklahoma City's expansive clay soil creates unique challenges for commercial concrete. The swell-shrink cycle from seasonal moisture changes puts tremendous pressure on large-format slabs and parking lots.",
+            "The most common commercial concrete failures are caused by inadequate base preparation, missing reinforcement, and poor joint layout. On commercial projects, these failures are expensive to fix and disruptive to your business.",
+            "Proper commercial base prep means 6+ inches of compacted aggregate, engineered rebar schedules, and joint spacing designed for the slab dimensions. Every commercial project Redwood Construction handles follows these standards.",
           ],
         },
       ]}
@@ -103,6 +120,8 @@ export default function CommercialConcreteOklahomaCity() {
         { question: "Do you handle large commercial pours?", answer: "Yes — we handle commercial pours from small retail pads to large warehouse floors and parking lots. We coordinate with general contractors, site engineers, and building inspectors." },
         { question: "Do you handle ADA compliance for parking lots?", answer: "Yes — all our commercial parking lot projects include ADA-compliant accessible spaces, ramps, and signage per current code requirements." },
         { question: "Can you pour commercial concrete year-round in Oklahoma?", answer: "Yes — with proper cold-weather or hot-weather protocols. We adjust mix designs, curing methods, and scheduling to ensure quality in all seasons." },
+        { question: "Do you work with general contractors?", answer: "Yes — we regularly coordinate with GCs on commercial projects. We follow your schedule, meet spec requirements, and coordinate with other trades on site." },
+        { question: "What areas do you serve for commercial work?", answer: "We serve the entire OKC metro including Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City." },
       ]}
     />
   );
