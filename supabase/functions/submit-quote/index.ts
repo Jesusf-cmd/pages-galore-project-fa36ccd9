@@ -1,0 +1,203 @@
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+const GATEWAY_URL = "https://connector-gateway.lovable.dev/resend";
+
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers":
+    "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
+};
+
+Deno.serve(async (req) => {
+  if (req.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
+  }
+
+  try {
+    const body = await req.json();
+    const {
+      name, email, phone, address, details,
+      projectType, finishType, lengthFt, widthFt, sqft,
+      estimateLow, estimateHigh, lineItems, siteUrl,
+    } = body;
+
+    // Validate
+    if (!name || !email || !phone || !projectType || !lengthFt || !widthFt) {
+      return new Response(JSON.stringify({ error: "Missing required fields" }), {
+        status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return new Response(JSON.stringify({ error: "Invalid email" }), {
+        status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    // Insert quote
+    const { data: quote, error: dbError } = await supabase
+      .from("quotes")
+      .insert({
+        customer_name: name.trim().slice(0, 100),
+        customer_email: email.trim().slice(0, 255),
+        customer_phone: phone.trim().slice(0, 20),
+        customer_address: (address || "").trim().slice(0, 500),
+        project_details: details ? details.trim().slice(0, 2000) : null,
+        project_type: projectType,
+        finish_type: finishType || null,
+        length_ft: lengthFt,
+        width_ft: widthFt,
+        square_feet: sqft,
+        estimate_low: estimateLow,
+        estimate_high: estimateHigh,
+        line_items: lineItems || [],
+        total_estimate: estimateHigh,
+      })
+      .select("id, quote_number")
+      .single();
+
+    if (dbError || !quote) {
+      console.error("DB insert error:", dbError);
+      return new Response(JSON.stringify({ error: "Failed to save quote" }), {
+        status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    const quoteNumber = `#${String(quote.quote_number).padStart(4, "0")}`;
+    const quoteUrl = `${siteUrl || "https://myconcreteestimate.com"}/quote/${quote.id}`;
+    const firstName = name.trim().split(" ")[0];
+
+    // Send emails via Resend
+    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
+    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+
+    if (LOVABLE_API_KEY && RESEND_API_KEY) {
+      const fromAddress = "Redwood Construction <estimates@myconcreteestimate.com>";
+
+      // Build line items HTML for emails
+      const itemsHtml = (lineItems || []).map((item: any) => `
+        <tr>
+          <td style="padding:8px 12px;border-bottom:1px solid #e5e5e5;color:#333;font-size:14px;">${item.title}</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #e5e5e5;color:#c45c26;font-weight:bold;text-align:right;font-size:14px;">$${item.priceLow.toLocaleString()} – $${item.priceHigh.toLocaleString()}</td>
+        </tr>
+      `).join("");
+
+      // CUSTOMER EMAIL
+      const customerHtml = `
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f5f1eb;font-family:Arial,Helvetica,sans-serif;">
+  <div style="max-width:600px;margin:0 auto;background:#ffffff;">
+    <div style="background:#1a1a1a;padding:24px 32px;text-align:center;">
+      <div style="color:#c45c26;font-size:10px;letter-spacing:3px;font-weight:bold;margin-bottom:4px;">LICENSED & INSURED</div>
+      <div style="color:#ffffff;font-size:22px;font-weight:800;letter-spacing:1px;">REDWOOD CONSTRUCTION</div>
+    </div>
+    <div style="padding:32px;">
+      <h1 style="color:#1a1a1a;font-size:20px;margin:0 0 16px;">Hi ${firstName},</h1>
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0 0 20px;">Thank you for requesting a quote! Here's a summary of your estimate:</p>
+      <div style="background:#f5f1eb;border-left:4px solid #c45c26;padding:16px 20px;margin:0 0 24px;">
+        <div style="color:#888;font-size:11px;letter-spacing:2px;font-weight:bold;margin-bottom:4px;">QUOTE NUMBER</div>
+        <div style="color:#1a1a1a;font-size:24px;font-weight:800;">${quoteNumber}</div>
+      </div>
+      <div style="background:#1a1a1a;border-radius:8px;padding:20px;text-align:center;margin:0 0 24px;">
+        <div style="color:#888;font-size:11px;letter-spacing:2px;font-weight:bold;margin-bottom:8px;">TOTAL ESTIMATE</div>
+        <div style="color:#c45c26;font-size:28px;font-weight:800;">$${estimateLow.toLocaleString()} – $${estimateHigh.toLocaleString()}</div>
+      </div>
+      <p style="color:#888;font-size:13px;margin:0 0 24px;text-align:center;">⏳ This quote is valid for <strong style="color:#1a1a1a;">30 days</strong> from the date issued.</p>
+      <div style="text-align:center;margin:0 0 32px;">
+        <a href="${quoteUrl}" style="display:inline-block;background:#c45c26;color:#ffffff;text-decoration:none;padding:14px 36px;font-size:14px;font-weight:bold;letter-spacing:1px;border-radius:4px;">VIEW YOUR QUOTE</a>
+      </div>
+    </div>
+    <div style="background:#1a1a1a;padding:20px 32px;text-align:center;">
+      <div style="color:#ffffff;font-size:13px;font-weight:bold;">Redwood Construction LLC</div>
+      <div style="color:#888;font-size:12px;margin-top:4px;">(405) 247-0027 · jesus.f@myconcreteestimate.com</div>
+    </div>
+  </div>
+</body></html>`;
+
+      // INTERNAL EMAIL
+      const includesHtml = (lineItems || []).map((item: any) => `
+        <div style="margin-bottom:16px;">
+          <div style="font-weight:bold;color:#1a1a1a;font-size:14px;margin-bottom:4px;">ITEM ${String(item.number).padStart(2, "0")}: ${item.title}</div>
+          <div style="color:#c45c26;font-weight:bold;font-size:14px;margin-bottom:4px;">$${item.priceLow.toLocaleString()} – $${item.priceHigh.toLocaleString()}</div>
+          <ul style="margin:0;padding-left:20px;color:#555;font-size:13px;">
+            ${(item.includes || []).map((inc: string) => `<li style="margin-bottom:2px;">${inc}</li>`).join("")}
+          </ul>
+        </div>
+      `).join("");
+
+      const internalHtml = `
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"></head>
+<body style="margin:0;padding:20px;background:#f5f5f5;font-family:Arial,sans-serif;">
+  <div style="max-width:600px;margin:0 auto;background:#fff;border:1px solid #ddd;">
+    <div style="background:#1a1a1a;padding:16px 24px;">
+      <div style="color:#c45c26;font-size:16px;font-weight:bold;">New Quote ${quoteNumber}</div>
+      <div style="color:#888;font-size:12px;">${new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</div>
+    </div>
+    <div style="padding:24px;">
+      <h2 style="color:#1a1a1a;font-size:16px;margin:0 0 16px;border-bottom:2px solid #c45c26;padding-bottom:8px;">Customer Details</h2>
+      <table style="width:100%;font-size:14px;margin-bottom:24px;">
+        <tr><td style="padding:4px 0;color:#888;width:100px;">Name:</td><td style="color:#1a1a1a;font-weight:bold;">${name}</td></tr>
+        <tr><td style="padding:4px 0;color:#888;">Email:</td><td style="color:#1a1a1a;">${email}</td></tr>
+        <tr><td style="padding:4px 0;color:#888;">Phone:</td><td style="color:#1a1a1a;">${phone}</td></tr>
+        <tr><td style="padding:4px 0;color:#888;">Address:</td><td style="color:#1a1a1a;">${address || "Not provided"}</td></tr>
+      </table>
+      <h2 style="color:#1a1a1a;font-size:16px;margin:0 0 16px;border-bottom:2px solid #c45c26;padding-bottom:8px;">Itemized Breakdown</h2>
+      ${includesHtml}
+      <div style="background:#1a1a1a;padding:16px 20px;margin:24px 0;border-radius:4px;">
+        <div style="color:#888;font-size:11px;letter-spacing:2px;margin-bottom:4px;">TOTAL ESTIMATE</div>
+        <div style="color:#c45c26;font-size:24px;font-weight:800;">$${estimateLow.toLocaleString()} – $${estimateHigh.toLocaleString()}</div>
+      </div>
+      ${details ? `<h2 style="color:#1a1a1a;font-size:16px;margin:0 0 8px;border-bottom:2px solid #c45c26;padding-bottom:8px;">Project Notes</h2><p style="color:#555;font-size:14px;line-height:1.6;white-space:pre-wrap;">${details}</p>` : ""}
+      <div style="text-align:center;margin-top:24px;">
+        <a href="${quoteUrl}" style="display:inline-block;background:#c45c26;color:#fff;text-decoration:none;padding:12px 28px;font-size:13px;font-weight:bold;border-radius:4px;">VIEW FULL QUOTE</a>
+      </div>
+    </div>
+  </div>
+</body></html>`;
+
+      // Send both emails concurrently
+      const sendEmail = async (to: string, subject: string, html: string) => {
+        try {
+          const res = await fetch(`${GATEWAY_URL}/emails`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${LOVABLE_API_KEY}`,
+              "X-Connection-Api-Key": RESEND_API_KEY,
+            },
+            body: JSON.stringify({ from: fromAddress, to: [to], subject, html }),
+          });
+          const data = await res.json();
+          if (!res.ok) {
+            console.error(`Email send failed [${res.status}]:`, JSON.stringify(data));
+          }
+          return data;
+        } catch (e) {
+          console.error("Email send error:", e);
+        }
+      };
+
+      await Promise.allSettled([
+        sendEmail(email, `Your Quote ${quoteNumber} from Redwood Construction`, customerHtml),
+        sendEmail("jesus.f@myconcreteestimate.com", `New Quote ${quoteNumber} - ${name}`, internalHtml),
+      ]);
+    } else {
+      console.warn("Email keys not configured, skipping email sends");
+    }
+
+    return new Response(
+      JSON.stringify({ success: true, quoteId: quote.id, quoteNumber: quote.quote_number }),
+      { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+    );
+  } catch (err) {
+    console.error("Error processing quote:", err);
+    return new Response(JSON.stringify({ error: "Internal server error" }), {
+      status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+});
