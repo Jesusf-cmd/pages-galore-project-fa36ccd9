@@ -12,6 +12,7 @@ import SidewalksOklahomaCity from "./pages/SidewalksOklahomaCity";
 import CommercialConcreteOklahomaCity from "./pages/CommercialConcreteOklahomaCity";
 import CityPage from "./pages/CityPage";
 import OurProjects from "./pages/OurProjects";
+import QuotePage from "./pages/QuotePage";
 import BlogIndex from "./pages/BlogIndex";
 import BlogPost from "./pages/BlogPost";
 import { useEffect } from "react";
