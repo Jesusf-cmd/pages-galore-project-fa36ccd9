@@ -64,6 +64,7 @@ const App = () => (
             <Route path="/del-city-oklahoma-concrete" element={<CityPage slug="del-city" />} />
             {/* Other */}
             <Route path="/our-projects" element={<OurProjects />} />
+            <Route path="/quote/:id" element={<QuotePage />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />
