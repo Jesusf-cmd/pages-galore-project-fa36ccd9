@@ -9,6 +9,63 @@ export default function PatiosOklahomaCity() {
       title="Concrete Patios, Slabs &"
       titleAccent="Stamped Concrete OKC."
       description='Patios, garage floors, shop slabs, and stamped decorative concrete — properly graded and reinforced for Oklahoma weather. Free estimate. <a href="tel:4052470027">(405) 247-0027</a>.'
+      introText="From backyard patios to large shop slabs, Redwood Construction LLC delivers concrete flatwork built to handle Oklahoma's extreme temperature swings. Every pour starts with proper subgrade compaction, a minimum 4-inch aggregate base, rebar on chairs, and 4,000 PSI ready-mix from a local batch plant."
+      serviceLabel="Patio & Slab"
+      serviceCards={[
+        {
+          icon: "🏡",
+          title: "Backyard Patios",
+          description: "Custom concrete patios designed for outdoor living. Broom finish, smooth trowel, or stamped decorative options — all graded for proper drainage away from your home.",
+        },
+        {
+          icon: "🚗",
+          title: "Garage Floors",
+          description: "Reinforced garage floor slabs poured to handle vehicle weight. Smooth finish standard, with optional epoxy-ready surface preparation.",
+        },
+        {
+          icon: "🏗️",
+          title: "Shop & Barn Slabs",
+          description: "Heavy-duty slabs for workshops, barns, and outbuildings. 5-6 inch thickness with engineered reinforcement for equipment and heavy loads.",
+        },
+        {
+          icon: "🎨",
+          title: "Stamped & Decorative",
+          description: "Ashlar slate, flagstone, brick, cobblestone, and wood plank patterns. Integral color, color hardener, and high-solids acrylic sealer included.",
+        },
+        {
+          icon: "🔧",
+          title: "Slab Repair & Replacement",
+          description: "Remove and replace cracked, settled, or damaged slabs. Proper base prep and reinforcement to prevent repeat failures on Oklahoma clay.",
+        },
+        {
+          icon: "🏊",
+          title: "Pool Decks & Equipment Pads",
+          description: "Non-slip textured finishes for pool decks. Equipment pads sized and reinforced for HVAC units, hot tubs, and generators.",
+        },
+      ]}
+      specs={[
+        { label: "Concrete Strength", value: "4,000 PSI minimum for all flatwork" },
+        { label: "Thickness", value: "4 inches standard patios, 5-6 inches for shop slabs" },
+        { label: "Reinforcement", value: "Rebar on chairs at mid-slab depth, tied at intersections" },
+        { label: "Base", value: "4-inch compacted aggregate (6-inch on problem clay)" },
+        { label: "Control Joints", value: "Cut within 24 hours to 1/4 slab depth" },
+        { label: "Drainage", value: "Graded away from structure on every pour" },
+      ]}
+      finishLabel="Patio & Slab Finish"
+      finishOptions={[
+        { title: "Broom Finish", description: "Classic textured surface with excellent traction. Most popular and economical. Ideal for patios, walkways, and pool decks." },
+        { title: "Stamped Concrete", description: "Decorative patterns mimicking natural stone, brick, or slate. Premium curb appeal with integral color and sealer." },
+        { title: "Smooth Trowel", description: "Sleek, polished appearance. Best for covered patios, garage floors, and areas with minimal water exposure." },
+        { title: "Exposed Aggregate", description: "Reveals decorative stones in the surface for a unique, textured look. Durable and slip-resistant." },
+        { title: "Colored Concrete", description: "Integral color mixed into the concrete or surface stain applied after curing. Wide color selection available." },
+        { title: "Salt Finish", description: "Subtle pitted texture created with rock salt. Popular for patios and pool surrounds." },
+      ]}
+      whyChooseUs={[
+        { icon: "🛡️", title: "Licensed & Insured", description: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every job." },
+        { icon: "📍", title: "Local & Experienced", description: "Locally owned. We know Oklahoma soil, drainage patterns, and weather challenges firsthand." },
+        { icon: "💪", title: "Quality Materials", description: "4,000+ PSI concrete, rebar reinforcement, and compacted aggregate base — no shortcuts." },
+        { icon: "📋", title: "Free Estimates", description: "Written, itemized estimates with no hidden fees. The price we quote is the price you pay." },
+      ]}
       sections={[
         {
           eyebrow: "Patio & Slab Contractors OKC",
@@ -22,45 +79,6 @@ export default function PatiosOklahomaCity() {
             { value: "$6–10", label: "Per sq ft (standard)" },
             { value: "$15–22", label: "Per sq ft (stamped)" },
             { value: "30+yr", label: "Expected life" },
-          ],
-        },
-        {
-          eyebrow: "Concrete Slabs OKC",
-          title: "Every Type of Slab for",
-          titleAccent: "Oklahoma City Properties.",
-          content: [
-            "<strong>Concrete slab contractors near Oklahoma City</strong> should know that Oklahoma's expansive clay soil requires more than a standard pour. Redwood Construction builds every slab with proper subgrade compaction, aggregate base, and reinforcement sized for your specific conditions.",
-            "We pour patio slabs, garage floors, shop floors, equipment pads, and custom slabs across the OKC metro. Same process, same standards on every job. Need a <a href='/driveways-oklahoma-city'>new driveway</a> instead? We handle those with the same crew and standards.",
-            "Every concrete slab project in Oklahoma City follows our proven process. We start with a thorough site assessment, checking soil conditions, drainage patterns, and access. Problem clay is identified before the pour — not after. Our crew excavates to the correct depth, installs a minimum 4-inch compacted aggregate base (6 inches on problem clay), sets steel forms to grade, and places rebar on chairs at mid-slab depth.",
-          ],
-        },
-        {
-          eyebrow: "Stamped Concrete OKC",
-          title: "Custom Patterns",
-          titleAccent: "& Colors.",
-          content: [
-            "<strong>Stamped concrete in Oklahoma City</strong> gives you the look of natural stone, brick, or slate at a fraction of the cost. We offer ashlar slate, random flagstone, herringbone brick, running bond, cobblestone, and wood plank patterns.",
-            "Every stamped project includes integral color, color hardener, release agent, and a high-solids acrylic sealer. Colors are selected on-site with physical samples — not guessed from a screen. Stamped concrete pairs perfectly with a standard broom-finish patio or <a href='/driveways-oklahoma-city'>driveway</a> for a mixed-finish look.",
-            "Stamped concrete requires more skill and timing than standard flatwork. Our crew has the experience to handle the tight window between pour and stamp — getting the pattern crisp without compromising the concrete's structural integrity. After curing, we wash the surface, apply a high-solids acrylic sealer, and do a final walkthrough.",
-          ],
-        },
-        {
-          eyebrow: "Our Patio & Slab Process",
-          title: "From Design to",
-          titleAccent: "Finished Concrete.",
-          content: [
-            "Building a concrete patio or slab in Oklahoma City starts with understanding your space. We assess your yard's grade, soil conditions, and drainage patterns before quoting. This ensures your concrete drains properly and doesn't create water problems near your foundation.",
-            "Our crew excavates to the correct depth, installs compacted aggregate base, sets forms to grade with proper slope, and places reinforcement. We pour 4,000 PSI concrete and apply your chosen finish — broom, smooth, or stamped with custom patterns and colors.",
-            "Every project gets proper control joints, curing compound, and a final walkthrough. We serve the entire <a href='/oklahoma-city-concrete'>Oklahoma City metro</a> with the same standards on every job.",
-          ],
-        },
-        {
-          eyebrow: "Why Choose Redwood",
-          title: "OKC's Trusted Patio",
-          titleAccent: "& Slab Builders.",
-          content: [
-            "Redwood Construction LLC has built hundreds of concrete patios and slabs across Oklahoma City, <a href='/edmond-concrete'>Edmond</a>, <a href='/norman-ok-concrete'>Norman</a>, and the surrounding metro. Our 4.9-star Google rating reflects our commitment to quality work and honest pricing.",
-            "We're locally owned — not a franchise. Our crew shows up when we say, delivers the finish you chose, and stands behind the work. Every project includes a written quote that doesn't change, proper drainage grading, and reinforcement designed for Oklahoma's expansive clay soil. We provide physical color samples on-site for stamped work so you see exactly what you're getting.",
           ],
         },
         {
@@ -79,9 +97,7 @@ export default function PatiosOklahomaCity() {
               ["Stamped patio", "400 sq ft", "<strong>$6,000–$8,800</strong>", "Pattern + color + sealer"],
               ["Garage floor", "24×24 ft (576 sq ft)", "<strong>$3,456–$5,760</strong>", "4\", smooth finish"],
               ["Shop/barn slab", "30×40 ft (1,200 sq ft)", "<strong>$7,200–$12,000</strong>", "5\", 4,000 PSI"],
-              ["Stamped driveway", "960 sq ft", "<strong>$14,400–$21,120</strong>", "Full pattern + sealer"],
-              ["Stamped pool deck", "600 sq ft", "<strong>$9,000–$13,200</strong>", "Non-slip texture"],
-              ["Patio + steps combo", "450 sq ft", "<strong>$3,600–$6,000</strong>", "Includes 2–3 formed steps"],
+              ["Pool deck", "600 sq ft", "<strong>$9,000–$13,200</strong>", "Non-slip texture"],
             ],
           },
         },
@@ -91,22 +107,9 @@ export default function PatiosOklahomaCity() {
           titleAccent: "in Oklahoma City.",
           alt: true,
           content: [
-            "Oklahoma City sits on some of the most expansive clay soil in the United States. This Permian red clay absorbs moisture and swells during wet seasons, then contracts sharply during Oklahoma's summer droughts — sometimes shifting several inches in a single year. Concrete that isn't designed for this movement will crack, heave, and fail long before its time.",
-            "The most common concrete problems we see across OKC are caused by the same three issues: inadequate base preparation, missing or improperly placed reinforcement, and poor drainage grading. A contractor who doesn't understand Oklahoma clay will pour a beautiful-looking slab that starts cracking within two or three years.",
+            "Oklahoma City sits on some of the most expansive clay soil in the United States. This Permian red clay absorbs moisture and swells during wet seasons, then contracts sharply during Oklahoma's summer droughts — sometimes shifting several inches in a single year.",
+            "The most common concrete problems we see across OKC are caused by inadequate base preparation, missing or improperly placed reinforcement, and poor drainage grading. A contractor who doesn't understand Oklahoma clay will pour a beautiful-looking slab that starts cracking within two or three years.",
             "Proper base prep means excavating to the correct depth, compacting the native subgrade, and installing a minimum 4-inch aggregate base — 6 inches on known problem clay lots. Rebar placed on chairs at mid-slab depth provides the tensile strength to resist soil movement. Control joints cut within 24 hours guide where the concrete relieves stress rather than cracking randomly.",
-            "Drainage is the third factor most contractors skip. Oklahoma City gets significant rainfall, and concrete graded flat or toward a structure keeps the clay soil constantly saturated — accelerating the swell-shrink cycle and accelerating failure. Every slab Redwood Construction pours is graded to move water away from your structure.",
-            "If your existing concrete in Oklahoma City is showing cracks, settlement, or surface scaling, the cause is almost always one of these three issues — not the concrete itself. Call Redwood Construction LLC at (405) 247-0027 for an honest assessment. We'll tell you whether it needs repair or full replacement, and why.",
-          ],
-        },
-        {
-          eyebrow: "Oklahoma City Concrete Expertise",
-          title: "What Sets Our Concrete Work Apart",
-          titleAccent: "in Oklahoma City.",
-          content: [
-            "Every concrete project in Oklahoma City faces the same adversary: Permian red clay. This soil is among the most expansive in the country — it swells when wet and contracts when dry, creating lateral and upward pressure on any concrete surface above it. Contractors who don't account for this build patios and slabs that crack within a few years. Our crew has poured concrete across every part of the OKC metro and knows exactly how each neighborhood's soil behaves.",
-            "Our process is the same on every job: 811 utility locate before any excavation, subgrade assessment and compaction, minimum 4-inch compacted aggregate base (6 inches on high-shrink lots), rebar on chairs at mid-slab depth tied at every intersection, 4,000 PSI minimum ready-mix from a local Oklahoma City batch plant, control joints cut to 1/4 slab depth within 24 hours, and curing compound applied before we leave the site. That sequence is non-negotiable on every project — residential or commercial.",
-            "We also grade every pour for drainage. Oklahoma City gets significant rainfall, and concrete sloped flat or toward a structure keeps clay soil constantly saturated — which accelerates the swell-shrink cycle and destroys the base over time. Proper drainage is what separates a slab that lasts 5 years from one that lasts 40.",
-            "Redwood Construction LLC is locally owned — not a franchise, not a call center dispatching subcontractors. When you call (405) 247-0027, you're talking to the people who will be on your property. Our 4.9-star Google rating and 80+ verified reviews come from homeowners across Oklahoma City, Edmond, Norman, Moore, Yukon, and Mustang who got exactly what they were quoted.",
           ],
         },
       ]}

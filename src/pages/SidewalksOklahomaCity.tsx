@@ -9,13 +9,61 @@ export default function SidewalksOklahomaCity() {
       title="Concrete Sidewalks, Curb &"
       titleAccent="Gutter Oklahoma City."
       description='Sidewalks, walkways, curb and gutter installation — city-spec compliant and ADA accessible. Serving OKC metro. Free estimate. <a href="tel:4052470027">(405) 247-0027</a>.'
+      introText="From city right-of-way replacements to private walkways and commercial curb work, Redwood Construction delivers sidewalks and curbs built to code and graded for proper drainage. Every project uses 4,000 PSI concrete with reinforcement appropriate for the application."
+      serviceLabel="Sidewalk & Curb"
+      serviceCards={[
+        {
+          icon: "🚶",
+          title: "New Sidewalk Installation",
+          description: "Residential and commercial sidewalk construction with proper base prep, grading, and broom finish for traction. ADA-compliant where required.",
+        },
+        {
+          icon: "🔄",
+          title: "Sidewalk Replacement",
+          description: "Remove and replace cracked, heaved, or settled sidewalk panels. Proper base correction to prevent repeat failures on Oklahoma clay.",
+        },
+        {
+          icon: "♿",
+          title: "ADA-Compliant Ramps",
+          description: "Detectable warning surfaces and proper slope for ADA curb ramps. Required for commercial properties and city right-of-way work.",
+        },
+        {
+          icon: "🛣️",
+          title: "Curb & Gutter Installation",
+          description: "Standard barrier curb, mountable curb, valley gutter, and combination sections poured to city specifications.",
+        },
+        {
+          icon: "🏘️",
+          title: "Subdivision Sidewalks",
+          description: "New construction sidewalk installation for residential developments. Coordinated with builders, city inspectors, and utility companies.",
+        },
+        {
+          icon: "🏢",
+          title: "Commercial Walkways",
+          description: "ADA-compliant walkways for retail, office, and industrial properties. Proper width, slope, and surface texture per code.",
+        },
+      ]}
+      specs={[
+        { label: "Concrete Strength", value: "4,000 PSI minimum for all sidewalk and curb work" },
+        { label: "Sidewalk Thickness", value: "4 inches standard, 5 inches at vehicle crossings" },
+        { label: "Reinforcement", value: "Wire mesh or rebar depending on application and load" },
+        { label: "Base", value: "Compacted aggregate subbase per city specifications" },
+        { label: "Finish", value: "Broom finish standard for traction and slip resistance" },
+        { label: "ADA Compliance", value: "Detectable warnings, proper slopes, and width per code" },
+      ]}
+      whyChooseUs={[
+        { icon: "🛡️", title: "Licensed & Insured", description: "Fully licensed Oklahoma contractor. Insurance protects you and our workers on every job." },
+        { icon: "📍", title: "City-Spec Experts", description: "We know OKC, Edmond, Norman, and Moore sidewalk and curb specifications inside and out." },
+        { icon: "💪", title: "Code Compliant", description: "ADA-compliant ramps, proper slopes, and city-spec curb profiles on every project." },
+        { icon: "📋", title: "Free Estimates", description: "Written estimates with clear pricing. We handle permits and inspector coordination." },
+      ]}
       sections={[
         {
           eyebrow: "Sidewalk Contractors OKC",
           title: "Safe, Clean &",
           titleAccent: "Built to Code.",
           content: [
-            "<strong>Concrete sidewalk contractors in Oklahoma City</strong> — Redwood Construction handles new construction, replacement, and city right-of-way sidewalks with proper base prep and ADA-compliant options. Our sidewalk work builds on the same <a href='/foundations-oklahoma-city'>foundation expertise</a> we bring to every project.",
+            "<strong>Concrete sidewalk contractors in Oklahoma City</strong> — Redwood Construction handles new construction, replacement, and city right-of-way sidewalks with proper base prep and ADA-compliant options.",
             "We handle city-required sidewalk repairs, new construction in subdivisions, and private walkway projects. Every sidewalk is broom-finished for traction and properly jointed. Our sidewalk work complements our <a href='/driveways-oklahoma-city'>driveway</a> and <a href='/patios-oklahoma-city'>patio</a> services for complete residential concrete projects.",
           ],
         },
@@ -25,8 +73,7 @@ export default function SidewalksOklahomaCity() {
           titleAccent: "Curb Work.",
           content: [
             "<strong>Curb and gutter contractors in Oklahoma City</strong> — Redwood Construction handles new construction, replacement, and repair of concrete curb and gutter across the OKC metro.",
-            "We pour standard barrier curb, mountable curb, valley gutter, and combination curb and gutter sections to city specifications. Our curb work integrates with <a href='/commercial-concrete-oklahoma-city'>parking lot</a>, sidewalk, and <a href='/driveways-oklahoma-city'>driveway</a> projects for complete commercial and residential site work.",
-            "Curb and gutter work demands precision — proper grade for drainage, consistent profile, and compliance with city specifications. Our crew uses steel forms and laser-guided grade checks to ensure every section meets specifications. We handle both slip-form and traditional formed curb work depending on project requirements.",
+            "We pour standard barrier curb, mountable curb, valley gutter, and combination curb and gutter sections to city specifications. Our curb work integrates with <a href='/commercial-concrete-oklahoma-city'>parking lot</a>, sidewalk, and <a href='/driveways-oklahoma-city'>driveway</a> projects for complete site work.",
           ],
           stats: [
             { value: "$18–30", label: "Per linear ft (curb)" },
@@ -35,31 +82,12 @@ export default function SidewalksOklahomaCity() {
           ],
         },
         {
-          eyebrow: "Our Sidewalk & Curb Process",
-          title: "Proper Installation",
-          titleAccent: "Every Time.",
-          content: [
-            "Sidewalk installation in Oklahoma City requires attention to grade, drainage, and ADA compliance. Our crew sets forms to precise grade, ensures proper slope for water runoff, and places reinforcement appropriate for the application.",
-            "For city right-of-way work, we handle permitting coordination and ensure compliance with Oklahoma City and surrounding municipality specifications. Every sidewalk gets proper control joints, broom finish for traction, and adequate curing time. Every curb section includes proper subgrade compaction, adequate curing, and clean joint work.",
-            "We build sidewalks and curb across the <a href='/oklahoma-city-concrete'>OKC metro</a> including <a href='/edmond-concrete'>Edmond</a>, <a href='/moore-oklahoma-concrete'>Moore</a>, and <a href='/midwest-city-oklahoma-concrete'>Midwest City</a>. Same standards, same crew on every job.",
-          ],
-        },
-        {
-          eyebrow: "Why Choose Redwood",
-          title: "Trusted Sidewalk & Curb",
-          titleAccent: "Contractors in OKC.",
-          content: [
-            "Redwood Construction handles sidewalk and curb projects of all sizes — from a single walkway panel to full subdivision installations. We understand Oklahoma City's specific requirements for right-of-way work, ADA accessibility, and municipal curb specifications.",
-            "Our 4.9-star Google rating and BBB A+ accreditation come from consistently delivering quality work on time and on budget. We coordinate with city inspectors, engineers, and general contractors to ensure every project passes inspection. We also offer <a href='/patios-oklahoma-city'>concrete slab construction</a> and <a href='/commercial-concrete-oklahoma-city'>commercial concrete</a> for complete site work.",
-          ],
-        },
-        {
           eyebrow: "Sidewalk & Curb Pricing OKC",
           title: "What Sidewalks & Curb Work Cost",
           titleAccent: "in Oklahoma City.",
           alt: true,
           content: [
-            "Concrete sidewalks in Oklahoma City typically cost $6–$10 per square foot installed. Standard curb and gutter runs $18–$30 per linear foot installed. Pricing depends on length, width, site conditions, profile type, and whether the project requires city permitting.",
+            "Concrete sidewalks in Oklahoma City typically cost $6–$10 per square foot installed. Standard curb and gutter runs $18–$30 per linear foot installed.",
           ],
           table: {
             headers: ["Service", "Typical Size", "Price Range", "Notes"],
@@ -75,24 +103,13 @@ export default function SidewalksOklahomaCity() {
         },
         {
           eyebrow: "Oklahoma Concrete Challenges",
-          title: "Common Concrete Problems",
+          title: "Common Sidewalk & Curb Problems",
           titleAccent: "in Oklahoma City.",
           alt: true,
           content: [
-            "Oklahoma City sits on some of the most expansive clay soil in the United States. This Permian red clay absorbs moisture and swells during wet seasons, then contracts sharply during Oklahoma's summer droughts — sometimes shifting several inches in a single year. Concrete that isn't designed for this movement will crack, heave, and fail long before its time.",
-            "The most common concrete problems we see across OKC are caused by the same three issues: inadequate base preparation, missing or improperly placed reinforcement, and poor drainage grading. A contractor who doesn't understand Oklahoma clay will pour concrete that starts cracking within two or three years.",
-            "Proper base prep means excavating to the correct depth, compacting the native subgrade, and installing a minimum 4-inch aggregate base. Rebar placed on chairs at mid-slab depth provides the tensile strength to resist soil movement. Control joints cut within 24 hours guide where the concrete relieves stress rather than cracking randomly.",
-            "If your existing sidewalks or curbing in Oklahoma City is showing cracks, settlement, or surface scaling, the cause is almost always one of these three issues — not the concrete itself. Call Redwood Construction LLC at (405) 247-0027 for an honest assessment.",
-          ],
-        },
-        {
-          eyebrow: "Oklahoma City Concrete Expertise",
-          title: "What Sets Our Concrete Work Apart",
-          titleAccent: "in Oklahoma City.",
-          content: [
-            "Every concrete project in Oklahoma City faces the same adversary: Permian red clay. This soil is among the most expansive in the country — it swells when wet and contracts when dry, creating lateral and upward pressure on any concrete surface above it. Our crew has poured concrete across every part of the OKC metro and knows exactly how each neighborhood's soil behaves.",
-            "Our process is the same on every job: 811 utility locate before any excavation, subgrade assessment and compaction, proper aggregate base, reinforcement per specifications, 4,000 PSI minimum ready-mix from a local Oklahoma City batch plant, and curing compound applied before we leave the site.",
-            "Redwood Construction LLC is locally owned — not a franchise, not a call center dispatching subcontractors. When you call (405) 247-0027, you're talking to the people who will be on your property. Our 4.9-star Google rating and 80+ verified reviews come from homeowners across Oklahoma City, Edmond, Norman, Moore, Yukon, and Mustang who got exactly what they were quoted.",
+            "Oklahoma City's expansive clay soil causes sidewalk panels to heave, settle, and crack — often within a few years of installation if base prep was inadequate.",
+            "The most common sidewalk failures we see are caused by inadequate base preparation and poor drainage. Proper subgrade compaction and aggregate base prevent soil movement from destroying your sidewalks and curbs.",
+            "If your existing sidewalks or curbing show cracks, heaving, or settlement, call Redwood Construction LLC at (405) 247-0027 for an honest assessment.",
           ],
         },
       ]}
@@ -103,6 +120,8 @@ export default function SidewalksOklahomaCity() {
         { question: "What types of curb profiles do you pour?", answer: "We handle standard barrier curb, mountable (rollover) curb, valley gutter, and combination curb and gutter sections." },
         { question: "How thick should a concrete sidewalk be?", answer: "4 inches is standard for pedestrian sidewalks. 5 inches is recommended where vehicles may cross, such as driveway approaches." },
         { question: "Do sidewalks need reinforcement?", answer: "Yes — we use wire mesh or rebar depending on the application. On Oklahoma clay, reinforcement helps prevent cracking from soil movement." },
+        { question: "Do you handle permits for sidewalk work?", answer: "Yes — we coordinate all necessary permits and inspections for city right-of-way and commercial sidewalk projects." },
+        { question: "Are your sidewalks ADA compliant?", answer: "Yes — all commercial and right-of-way sidewalks include proper slopes, widths, and detectable warning surfaces per current ADA standards." },
       ]}
     />
   );
