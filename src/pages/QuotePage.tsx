@@ -251,9 +251,26 @@ export default function QuotePage() {
               <div className="text-[#1a1a1a] text-sm font-bold">{formatDate(quote.created_at)}</div>
             </div>
             <div className="px-8 sm:px-10 py-5">
-              <div className="text-[#999] text-[10px] tracking-[2px] font-bold mb-1">VALID FOR</div>
-              <div className="text-[#1a1a1a] text-sm font-bold">30 Days</div>
-              <div className="text-[#888] text-xs mt-0.5">Until {formatDate(quote.valid_until)}</div>
+              <div className="text-[#999] text-[10px] tracking-[2px] font-bold mb-1">
+                {isAccepted ? "ACCEPTED ON" : isExpired ? "EXPIRED ON" : "EXPIRES IN"}
+              </div>
+              {isAccepted && quote.accepted_at ? (
+                <div className="text-[#16a34a] text-sm font-bold">{formatDate(quote.accepted_at)}</div>
+              ) : isExpired ? (
+                <div className="text-[#dc2626] text-sm font-bold">{formatDate(quote.valid_until)}</div>
+              ) : (
+                <>
+                  <div className="text-[#1a1a1a] text-sm font-bold">
+                    {(() => {
+                      const days = Math.ceil((new Date(quote.valid_until).getTime() - Date.now()) / (1000 * 60 * 60 * 24));
+                      if (days <= 0) return "Expiring today";
+                      if (days === 1) return "1 day";
+                      return `${days} days`;
+                    })()}
+                  </div>
+                  <div className="text-[#888] text-xs mt-0.5">Until {formatDate(quote.valid_until)}</div>
+                </>
+              )}
             </div>
           </div>
 
