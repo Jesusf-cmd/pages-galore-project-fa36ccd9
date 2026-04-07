@@ -35,6 +35,18 @@ interface Quote {
   total_estimate: number;
   valid_until: string;
   created_at: string;
+  status: string;
+}
+
+function getDisplayStatus(quote: Quote): { label: string; color: string; bg: string } {
+  if (quote.status === "accepted") {
+    return { label: "ACCEPTED", color: "#16a34a", bg: "#dcfce7" };
+  }
+  const isExpired = new Date(quote.valid_until) < new Date();
+  if (quote.status === "expired" || isExpired) {
+    return { label: "EXPIRED", color: "#dc2626", bg: "#fef2f2" };
+  }
+  return { label: "PENDING", color: "#c45c26", bg: "#fff7ed" };
 }
 
 export default function QuotePage() {
@@ -128,6 +140,7 @@ export default function QuotePage() {
     );
   }
 
+  const displayStatus = getDisplayStatus(quote);
   const lineItems: QuoteLineItem[] = Array.isArray(quote.line_items)
     ? (quote.line_items as unknown as QuoteLineItem[])
     : [];
@@ -174,6 +187,12 @@ export default function QuotePage() {
                 </div>
                 <div className="text-white text-2xl sm:text-3xl font-extrabold">
                   {formatQuoteNumber(quote.quote_number)}
+                </div>
+                <div
+                  className="inline-block mt-2 px-3 py-1 rounded text-[10px] tracking-[2px] font-bold"
+                  style={{ color: displayStatus.color, backgroundColor: displayStatus.bg }}
+                >
+                  {displayStatus.label}
                 </div>
               </div>
             </div>

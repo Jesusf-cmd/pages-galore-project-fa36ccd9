@@ -79,6 +79,7 @@ export type Database = {
           project_type: string
           quote_number: number
           square_feet: number
+          status: string
           total_estimate: number
           valid_until: string
           width_ft: number
@@ -99,6 +100,7 @@ export type Database = {
           project_type: string
           quote_number?: number
           square_feet: number
+          status?: string
           total_estimate: number
           valid_until?: string
           width_ft: number
@@ -119,6 +121,7 @@ export type Database = {
           project_type?: string
           quote_number?: number
           square_feet?: number
+          status?: string
           total_estimate?: number
           valid_until?: string
           width_ft?: number
