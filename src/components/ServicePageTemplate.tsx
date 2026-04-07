@@ -33,7 +33,7 @@ interface ServicePageProps {
   metaDescription?: string;
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, sections, faq, metaTitle, metaDescription }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceCards, specs, finishOptions, whyChooseUs, sections, faq, metaTitle, metaDescription }: ServicePageProps) {
   useSEO({
     title: metaTitle || `${title} ${titleAccent.replace('.', '')} | Redwood Construction LLC`,
     description: metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155),
@@ -59,6 +59,34 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         </div>
       </section>
       <TrustBar />
+
+      {/* Intro text */}
+      {introText && (
+        <ScrollReveal>
+          <section className="section-padding">
+            <p className="prose-muted max-w-[820px]" dangerouslySetInnerHTML={{ __html: introText }} />
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* Service Cards Grid */}
+      {serviceCards && serviceCards.length > 0 && (
+        <ScrollReveal>
+          <section className="section-padding section-alt">
+            <div className="section-eye">Our Services</div>
+            <h2 className="mb-8">Driveway Services in<br/><em className="h2-accent">Oklahoma City.</em></h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+              {serviceCards.map((card, i) => (
+                <div key={i} className="bg-stone p-6 md:p-8">
+                  <div className="text-2xl mb-3">{card.icon}</div>
+                  <h3 className="text-base mb-2">{card.title}</h3>
+                  <p className="text-[0.85rem] text-muted-text leading-relaxed font-light">{card.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
 
       {sections.map((s, i) => (
         <ScrollReveal key={i}>
