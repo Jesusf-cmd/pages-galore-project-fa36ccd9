@@ -137,10 +137,12 @@ export default function AdminDashboard() {
   };
 
   const exportCSV = () => {
-    const headers = ["Quote #", "Customer", "Email", "Phone", "Project Type", "Sq Ft", "Estimate Low", "Estimate High", "Total", "Status", "Date Issued", "Expires On"];
+    const headers = ["Quote #", "Customer", "Email", "Phone", "Project Type", "Finish", "Sq Ft", "Estimate Low", "Estimate High", "Total", "Status", "Date Issued", "Expires On"];
     const rows = filtered.map((q) => [
       formatQuoteNumber(q.quote_number), q.customer_name, q.customer_email, q.customer_phone,
-      q.project_type, q.square_feet, q.estimate_low, q.estimate_high, q.total_estimate,
+      SERVICE_TYPES[q.project_type]?.name || q.project_type,
+      q.finish_type ? (FINISH_TYPES[q.finish_type]?.name || q.finish_type) : "N/A",
+      q.square_feet, q.estimate_low, q.estimate_high, q.total_estimate,
       q.status.toUpperCase(), new Date(q.created_at).toLocaleDateString(), new Date(q.valid_until).toLocaleDateString(),
     ]);
     const csv = [headers, ...rows].map((r) => r.map((c) => `"${c}"`).join(",")).join("\n");
