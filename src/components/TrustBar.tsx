@@ -1,26 +1,32 @@
-export default function TrustBar() {
-  const items = [
-    { icon: "🛡", title: "Licensed & Insured", sub: "Oklahoma contractor" },
-    { icon: "🏗", title: "500+ Projects", sub: "Completed OKC metro" },
-    { icon: "⭐", title: "4.9 Star Rating", sub: "Verified customer reviews" },
-    { icon: "⚡", title: "Free Estimates", sub: "Response in 24 hours" },
-  ];
+import { Shield, MapPin, Star, Clock, BadgeCheck } from "lucide-react";
 
+const badges = [
+  { icon: Shield, label: "Licensed & Insured" },
+  { icon: MapPin, label: "Locally Owned" },
+  { icon: Star, label: "5-Star Rated" },
+  { icon: Clock, label: "Free Estimates" },
+  { icon: BadgeCheck, label: "Satisfaction Guaranteed" },
+];
+
+export default function TrustBar() {
   return (
-    <div className="bg-orange px-4 md:px-12 py-3.5 flex justify-center items-stretch flex-wrap">
-      {items.map((item, i) => (
-        <div
-          key={i}
-          className="flex items-center gap-2.5 px-4 md:px-10 py-1.5 flex-1 min-w-[155px] justify-center"
-          style={{ borderRight: i < items.length - 1 ? "1px solid rgba(255,255,255,0.2)" : "none" }}
-        >
-          <span className="text-xl leading-none">{item.icon}</span>
-          <div>
-            <div className="font-display text-[0.88rem] font-extrabold uppercase tracking-[0.06em] text-white leading-tight">{item.title}</div>
-            <div className="text-[0.6rem] text-white/70 tracking-[0.06em] uppercase mt-0.5">{item.sub}</div>
+    <div className="bg-white border-b border-border/30 px-4 md:px-12 py-3">
+      <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-y-2">
+        {badges.map((badge, i) => (
+          <div
+            key={i}
+            className="group flex items-center gap-2 px-4 md:px-6 py-1.5 transition-transform duration-200 hover:scale-105"
+          >
+            <badge.icon className="w-5 h-5 text-orange shrink-0" strokeWidth={1.75} />
+            <span className="font-display text-[0.82rem] font-bold uppercase tracking-wide text-foreground whitespace-nowrap">
+              {badge.label}
+            </span>
+            {i < badges.length - 1 && (
+              <span className="hidden md:block ml-4 w-px h-4 bg-muted-text/20" />
+            )}
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
