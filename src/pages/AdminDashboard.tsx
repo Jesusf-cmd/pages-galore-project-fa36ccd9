@@ -367,7 +367,7 @@ export default function AdminDashboard() {
                             </div>
                             <div>
                               <div className="text-[#999] text-[10px] tracking-[2px] font-bold mb-1">PROJECT TYPE</div>
-                              <div className="text-[#1a1a1a] font-bold">{q.project_type} · {q.square_feet} sq ft</div>
+                              <div className="text-[#1a1a1a] font-bold">{SERVICE_TYPES[q.project_type]?.name || q.project_type}{q.finish_type ? ` · ${FINISH_TYPES[q.finish_type]?.name || q.finish_type}` : ""} · {q.square_feet} sq ft</div>
                             </div>
                           </div>
                           {q.project_details && (

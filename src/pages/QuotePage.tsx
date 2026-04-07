@@ -279,7 +279,7 @@ export default function QuotePage() {
             <h2 className="text-[#1a1a1a] text-lg font-extrabold tracking-wide mb-6 pb-3 border-b-2 border-[#c45c26]">SCOPE OF WORK</h2>
             <div className="space-y-4">
               {lineItems.map((item) => (
-                <div key={item.number} className="border border-[#e5e5e5] rounded">
+                <div key={item.number} className="border border-[#e5e5e5] rounded" data-print-section="line-item">
                   <div className="bg-[#fafafa] px-5 py-3 border-b border-[#e5e5e5] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                     <div>
                       <span className="text-[#c45c26] text-[10px] tracking-[2px] font-bold mr-3">ITEM {String(item.number).padStart(2, "0")}</span>
@@ -343,7 +343,7 @@ export default function QuotePage() {
           </div>
 
           {/* Authorization */}
-          <div className="px-8 sm:px-10 py-6 border-t border-[#e5e5e5]">
+          <div className="px-8 sm:px-10 py-6 border-t border-[#e5e5e5]" data-print-section="authorization">
             <h2 className="text-[#1a1a1a] text-lg font-extrabold tracking-wide mb-6 pb-3 border-b-2 border-[#c45c26]">AUTHORIZATION</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div>
