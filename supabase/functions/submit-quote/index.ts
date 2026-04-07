@@ -21,7 +21,6 @@ Deno.serve(async (req) => {
       estimateLow, estimateHigh, lineItems, siteUrl,
     } = body;
 
-    // Validate
     if (!name || !email || !phone || !projectType || !lengthFt || !widthFt) {
       return new Response(JSON.stringify({ error: "Missing required fields" }), {
         status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -37,7 +36,6 @@ Deno.serve(async (req) => {
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Insert quote
     const { data: quote, error: dbError } = await supabase
       .from("quotes")
       .insert({
@@ -56,7 +54,7 @@ Deno.serve(async (req) => {
         line_items: lineItems || [],
         total_estimate: estimateHigh,
       })
-      .select("id, quote_number")
+      .select("id, quote_number, valid_until")
       .single();
 
     if (dbError || !quote) {
@@ -67,25 +65,19 @@ Deno.serve(async (req) => {
     }
 
     const quoteNumber = `#${String(quote.quote_number).padStart(4, "0")}`;
-    const quoteUrl = `${siteUrl || "https://myconcreteestimate.com"}/quote/${quote.id}`;
+    const baseUrl = siteUrl || "https://myconcreteestimate.com";
+    const quoteUrl = `${baseUrl}/quote/${quote.id}`;
     const firstName = name.trim().split(" ")[0];
+    const expiresDate = new Date(quote.valid_until).toLocaleDateString("en-US", {
+      year: "numeric", month: "long", day: "numeric",
+    });
 
-    // Send emails via Resend
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
     if (LOVABLE_API_KEY && RESEND_API_KEY) {
       const fromAddress = "Redwood Construction <estimates@myconcreteestimate.com>";
 
-      // Build line items HTML for emails
-      const itemsHtml = (lineItems || []).map((item: any) => `
-        <tr>
-          <td style="padding:8px 12px;border-bottom:1px solid #e5e5e5;color:#333;font-size:14px;">${item.title}</td>
-          <td style="padding:8px 12px;border-bottom:1px solid #e5e5e5;color:#c45c26;font-weight:bold;text-align:right;font-size:14px;">$${item.priceLow.toLocaleString()} – $${item.priceHigh.toLocaleString()}</td>
-        </tr>
-      `).join("");
-
-      // CUSTOMER EMAIL
       const customerHtml = `
 <!DOCTYPE html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
@@ -106,19 +98,25 @@ Deno.serve(async (req) => {
         <div style="color:#888;font-size:11px;letter-spacing:2px;font-weight:bold;margin-bottom:8px;">TOTAL ESTIMATE</div>
         <div style="color:#c45c26;font-size:28px;font-weight:800;">$${estimateLow.toLocaleString()} – $${estimateHigh.toLocaleString()}</div>
       </div>
-      <p style="color:#888;font-size:13px;margin:0 0 24px;text-align:center;">⏳ This quote is valid for <strong style="color:#1a1a1a;">30 days</strong> from the date issued.</p>
-      <div style="text-align:center;margin:0 0 32px;">
+      <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:14px 20px;margin:0 0 24px;text-align:center;">
+        <div style="color:#c45c26;font-size:13px;font-weight:bold;">⏳ Valid for 30 days</div>
+        <div style="color:#888;font-size:12px;margin-top:4px;">Expires on <strong style="color:#1a1a1a;">${expiresDate}</strong></div>
+      </div>
+      <div style="text-align:center;margin:0 0 16px;">
         <a href="${quoteUrl}" style="display:inline-block;background:#c45c26;color:#ffffff;text-decoration:none;padding:14px 36px;font-size:14px;font-weight:bold;letter-spacing:1px;border-radius:4px;">VIEW YOUR QUOTE</a>
+      </div>
+      <div style="text-align:center;margin:0 0 32px;">
+        <a href="${quoteUrl}" style="display:inline-block;background:#1a1a1a;color:#ffffff;text-decoration:none;padding:12px 28px;font-size:13px;font-weight:bold;letter-spacing:1px;border-radius:4px;">ACCEPT QUOTE NOW →</a>
       </div>
     </div>
     <div style="background:#1a1a1a;padding:20px 32px;text-align:center;">
       <div style="color:#ffffff;font-size:13px;font-weight:bold;">Redwood Construction LLC</div>
       <div style="color:#888;font-size:12px;margin-top:4px;">(405) 247-0027 · jesus.f@myconcreteestimate.com</div>
+      <div style="color:#666;font-size:11px;margin-top:4px;">myconcreteestimate.com</div>
     </div>
   </div>
 </body></html>`;
 
-      // INTERNAL EMAIL
       const includesHtml = (lineItems || []).map((item: any) => `
         <div style="margin-bottom:16px;">
           <div style="font-weight:bold;color:#1a1a1a;font-size:14px;margin-bottom:4px;">ITEM ${String(item.number).padStart(2, "0")}: ${item.title}</div>
@@ -142,8 +140,8 @@ Deno.serve(async (req) => {
       <h2 style="color:#1a1a1a;font-size:16px;margin:0 0 16px;border-bottom:2px solid #c45c26;padding-bottom:8px;">Customer Details</h2>
       <table style="width:100%;font-size:14px;margin-bottom:24px;">
         <tr><td style="padding:4px 0;color:#888;width:100px;">Name:</td><td style="color:#1a1a1a;font-weight:bold;">${name}</td></tr>
-        <tr><td style="padding:4px 0;color:#888;">Email:</td><td style="color:#1a1a1a;">${email}</td></tr>
-        <tr><td style="padding:4px 0;color:#888;">Phone:</td><td style="color:#1a1a1a;">${phone}</td></tr>
+        <tr><td style="padding:4px 0;color:#888;">Email:</td><td style="color:#1a1a1a;"><a href="mailto:${email}" style="color:#c45c26;">${email}</a></td></tr>
+        <tr><td style="padding:4px 0;color:#888;">Phone:</td><td style="color:#1a1a1a;"><a href="tel:${phone}" style="color:#c45c26;">${phone}</a></td></tr>
         <tr><td style="padding:4px 0;color:#888;">Address:</td><td style="color:#1a1a1a;">${address || "Not provided"}</td></tr>
       </table>
       <h2 style="color:#1a1a1a;font-size:16px;margin:0 0 16px;border-bottom:2px solid #c45c26;padding-bottom:8px;">Itemized Breakdown</h2>
@@ -152,15 +150,18 @@ Deno.serve(async (req) => {
         <div style="color:#888;font-size:11px;letter-spacing:2px;margin-bottom:4px;">TOTAL ESTIMATE</div>
         <div style="color:#c45c26;font-size:24px;font-weight:800;">$${estimateLow.toLocaleString()} – $${estimateHigh.toLocaleString()}</div>
       </div>
+      <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:4px;padding:10px 16px;margin:0 0 24px;">
+        <div style="color:#c45c26;font-size:12px;font-weight:bold;">Expires: ${expiresDate}</div>
+      </div>
       ${details ? `<h2 style="color:#1a1a1a;font-size:16px;margin:0 0 8px;border-bottom:2px solid #c45c26;padding-bottom:8px;">Project Notes</h2><p style="color:#555;font-size:14px;line-height:1.6;white-space:pre-wrap;">${details}</p>` : ""}
       <div style="text-align:center;margin-top:24px;">
-        <a href="${quoteUrl}" style="display:inline-block;background:#c45c26;color:#fff;text-decoration:none;padding:12px 28px;font-size:13px;font-weight:bold;border-radius:4px;">VIEW FULL QUOTE</a>
+        <a href="${quoteUrl}" style="display:inline-block;background:#c45c26;color:#fff;text-decoration:none;padding:12px 28px;font-size:13px;font-weight:bold;border-radius:4px;margin-right:8px;">VIEW QUOTE</a>
+        <a href="${baseUrl}/admin" style="display:inline-block;background:#1a1a1a;color:#fff;text-decoration:none;padding:12px 28px;font-size:13px;font-weight:bold;border-radius:4px;">ADMIN DASHBOARD</a>
       </div>
     </div>
   </div>
 </body></html>`;
 
-      // Send both emails concurrently
       const sendEmail = async (to: string, subject: string, html: string) => {
         try {
           const res = await fetch(`${GATEWAY_URL}/emails`, {
