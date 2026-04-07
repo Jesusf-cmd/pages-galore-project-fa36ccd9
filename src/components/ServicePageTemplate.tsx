@@ -123,7 +123,61 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         </ScrollReveal>
       ))}
 
-      <ScrollReveal>
+      {/* Materials & Specs */}
+      {specs && specs.length > 0 && (
+        <ScrollReveal>
+          <section className="section-padding">
+            <div className="section-eye">Quality Materials</div>
+            <h2 className="mb-8">Quality Materials &<br/><em className="h2-accent">Specifications.</em></h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+              {specs.map((spec, i) => (
+                <div key={i} className="bg-stone p-5 md:p-6">
+                  <div className="text-[0.6rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">{spec.label}</div>
+                  <div className="text-[0.88rem] text-concrete font-medium leading-relaxed">{spec.value}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* Finish Options */}
+      {finishOptions && finishOptions.length > 0 && (
+        <ScrollReveal>
+          <section className="section-padding section-alt">
+            <div className="section-eye">Finish Options</div>
+            <h2 className="mb-8">Driveway Finish<br/><em className="h2-accent">Options.</em></h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+              {finishOptions.map((opt, i) => (
+                <div key={i} className="bg-stone p-5 md:p-6">
+                  <h3 className="text-sm mb-2">{opt.title}</h3>
+                  <p className="text-[0.82rem] text-muted-text leading-relaxed font-light">{opt.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* Why Choose Us */}
+      {whyChooseUs && whyChooseUs.length > 0 && (
+        <ScrollReveal>
+          <section className="section-padding">
+            <div className="section-eye">Why Redwood</div>
+            <h2 className="mb-8">Why Oklahoma City Homeowners Choose<br/><em className="h2-accent">Redwood Construction.</em></h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+              {whyChooseUs.map((item, i) => (
+                <div key={i} className="bg-stone p-6 md:p-8">
+                  <div className="text-2xl mb-3">{item.icon}</div>
+                  <h3 className="text-base mb-2">{item.title}</h3>
+                  <p className="text-[0.85rem] text-muted-text leading-relaxed font-light">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
         <section className="section-padding section-alt">
           <div className="section-eye">Our Concrete Process</div>
           <h2 className="mb-4">How We Build<br/><em className="h2-accent">Concrete That Lasts.</em></h2>
