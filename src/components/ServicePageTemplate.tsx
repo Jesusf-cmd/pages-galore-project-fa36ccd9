@@ -14,9 +14,11 @@ interface ServicePageProps {
   titleAccent: string;
   description: string;
   introText?: string;
+  serviceLabel?: string;
   serviceCards?: { icon: string; title: string; description: string }[];
   specs?: { label: string; value: string }[];
   finishOptions?: { title: string; description: string }[];
+  finishLabel?: string;
   whyChooseUs?: { icon: string; title: string; description: string }[];
   sections: {
     eyebrow: string;
