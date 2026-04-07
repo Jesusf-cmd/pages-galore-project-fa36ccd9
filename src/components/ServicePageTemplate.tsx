@@ -178,6 +178,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         </ScrollReveal>
       )}
 
+      <ScrollReveal>
         <section className="section-padding section-alt">
           <div className="section-eye">Our Concrete Process</div>
           <h2 className="mb-4">How We Build<br/><em className="h2-accent">Concrete That Lasts.</em></h2>
