@@ -35,7 +35,7 @@ interface ServicePageProps {
   metaDescription?: string;
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceCards, specs, finishOptions, whyChooseUs, sections, faq, metaTitle, metaDescription }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription }: ServicePageProps) {
   useSEO({
     title: metaTitle || `${title} ${titleAccent.replace('.', '')} | Redwood Construction LLC`,
     description: metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155),
