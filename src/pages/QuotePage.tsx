@@ -125,9 +125,7 @@ export default function QuotePage() {
   }
 
   if (error || !quote) {
-  const displayStatus = getDisplayStatus(quote);
-
-  return (
+    return (
       <div className="min-h-screen flex items-center justify-center bg-[#f5f1eb]">
         <div className="text-center">
           <div className="text-4xl mb-4">📄</div>
