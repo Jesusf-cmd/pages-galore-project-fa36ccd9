@@ -18,7 +18,6 @@ interface QuoteLineItem {
 }
 
 interface Quote {
-  id: string;
   quote_number: number;
   customer_name: string;
   customer_email: string;
@@ -39,6 +38,8 @@ interface Quote {
   status: string;
   signature_url: string | null;
   accepted_at: string | null;
+  signer_name?: string | null;
+  signer_email?: string | null;
 }
 
 function getDisplayStatus(quote: Quote): { label: string; color: string; bg: string } {
@@ -53,7 +54,8 @@ function getDisplayStatus(quote: Quote): { label: string; color: string; bg: str
 }
 
 export default function QuotePage() {
-  const { id } = useParams<{ id: string }>();
+  // The :id route param now carries the unguessable access token, not the quote's primary id.
+  const { id: accessToken } = useParams<{ id: string }>();
   const [quote, setQuote] = useState<Quote | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -62,6 +64,8 @@ export default function QuotePage() {
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [accepting, setAccepting] = useState(false);
   const [acceptError, setAcceptError] = useState("");
+  const [signerName, setSignerName] = useState("");
+  const [signerEmail, setSignerEmail] = useState("");
   const contentRef = useRef<HTMLDivElement>(null);
   const sigRef = useRef<SignatureCanvas | null>(null);
 
