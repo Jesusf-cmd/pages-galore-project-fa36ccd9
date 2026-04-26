@@ -3,6 +3,7 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function DrivewaysOklahomaCity() {
   return (
     <ServicePage
+      currentServiceSlug="driveways-oklahoma-city"
       metaTitle="Concrete Driveways Oklahoma City | Installation & Replacement | Redwood Construction"
       metaDescription="Concrete driveway installation & replacement in Oklahoma City. 4,000 PSI concrete, rebar reinforcement, 30+ year durability. Licensed & insured. Free estimates — call (405) 247-0027."
       eyebrow="OKC Metro · Driveway Contractors · Licensed & Insured"

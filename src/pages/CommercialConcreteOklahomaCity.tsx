@@ -3,6 +3,7 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function CommercialConcreteOklahomaCity() {
   return (
     <ServicePage
+      currentServiceSlug="commercial-concrete-oklahoma-city"
       metaTitle="Commercial Concrete Contractors Oklahoma City | Redwood Construction LLC"
       metaDescription="Commercial concrete contractors in Oklahoma City. Warehouse floors, parking lots, retail pads, industrial slabs, curb & gutter. 4,000+ PSI. Free estimate: (405) 247-0027."
       eyebrow="OKC Metro · Commercial Concrete · Licensed & Insured"

@@ -3,6 +3,7 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function PatiosOklahomaCity() {
   return (
     <ServicePage
+      currentServiceSlug="patios-oklahoma-city"
       metaTitle="Concrete Patios, Slabs & Stamped Concrete Oklahoma City | Redwood Construction LLC"
       metaDescription="Concrete patio, slab, and stamped concrete contractors in Oklahoma City. Broom, smooth, stamped finishes. Garage floors, shop slabs, decorative patios. Free estimate."
       eyebrow="OKC Metro · Patio & Slab Contractors · Licensed & Insured"
