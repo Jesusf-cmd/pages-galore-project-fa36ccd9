@@ -67,17 +67,15 @@ export default function QuotePage() {
 
   useEffect(() => {
     if (!id) return;
-    supabase
-      .from("quotes")
-      .select("*")
-      .eq("id", id)
-      .single()
+    supabase.functions
+      .invoke("get-quote", { body: { id } })
       .then(({ data, error: err }) => {
-        if (err || !data) {
+        const quoteData = (data as { quote?: Quote } | null)?.quote;
+        if (err || !quoteData) {
           setError("Quote not found.");
         } else {
-          setQuote(data as unknown as Quote);
-          document.title = `Estimate ${formatQuoteNumber(data.quote_number)} | Redwood Construction`;
+          setQuote(quoteData);
+          document.title = `Estimate ${formatQuoteNumber(quoteData.quote_number)} | Redwood Construction`;
         }
         setLoading(false);
       });
