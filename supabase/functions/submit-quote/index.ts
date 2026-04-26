@@ -54,7 +54,7 @@ Deno.serve(async (req) => {
         line_items: lineItems || [],
         total_estimate: estimateHigh,
       })
-      .select("id, quote_number, valid_until")
+      .select("id, quote_number, valid_until, access_token")
       .single();
 
     if (dbError || !quote) {
@@ -66,7 +66,8 @@ Deno.serve(async (req) => {
 
     const quoteNumber = `#${String(quote.quote_number).padStart(4, "0")}`;
     const baseUrl = siteUrl || "https://myconcreteestimate.com";
-    const quoteUrl = `${baseUrl}/quote/${quote.id}`;
+    // Public-facing link uses the unguessable access token, NOT the primary id.
+    const quoteUrl = `${baseUrl}/quote/${quote.access_token}`;
     const firstName = name.trim().split(" ")[0];
     const expiresDate = new Date(quote.valid_until).toLocaleDateString("en-US", {
       year: "numeric", month: "long", day: "numeric",
@@ -192,7 +193,7 @@ Deno.serve(async (req) => {
     }
 
     return new Response(
-      JSON.stringify({ success: true, quoteId: quote.id, quoteNumber: quote.quote_number }),
+      JSON.stringify({ success: true, accessToken: quote.access_token, quoteNumber: quote.quote_number }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (err) {
