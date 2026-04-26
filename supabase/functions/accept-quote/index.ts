@@ -8,16 +8,46 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function getClientIp(req: Request): string | null {
+  const fwd = req.headers.get("x-forwarded-for");
+  if (fwd) return fwd.split(",")[0].trim().slice(0, 64);
+  const real = req.headers.get("x-real-ip");
+  if (real) return real.trim().slice(0, 64);
+  return null;
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const { quoteId, signatureDataUrl } = await req.json();
+    const { accessToken, signatureDataUrl, signerName, signerEmail } = await req.json();
 
-    if (!quoteId || !signatureDataUrl) {
-      return new Response(JSON.stringify({ error: "Missing quoteId or signature" }), {
+    // Validate the token BEFORE doing anything else. Never accept a primary-id lookup from the public.
+    if (!accessToken || !UUID_RE.test(accessToken)) {
+      return new Response(JSON.stringify({ error: "Invalid quote link" }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    if (!signatureDataUrl || typeof signatureDataUrl !== "string" || !signatureDataUrl.startsWith("data:image/")) {
+      return new Response(JSON.stringify({ error: "Signature is required" }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    if (!signerName || typeof signerName !== "string" || signerName.trim().length < 2) {
+      return new Response(JSON.stringify({ error: "Signer name is required" }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    if (!signerEmail || typeof signerEmail !== "string" || !EMAIL_RE.test(signerEmail)) {
+      return new Response(JSON.stringify({ error: "Valid signer email is required" }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
@@ -27,11 +57,12 @@ Deno.serve(async (req) => {
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
+    // Token-scoped lookup: this function can ONLY ever touch the one quote tied to the provided token.
     const { data: quote, error: fetchErr } = await supabase
       .from("quotes")
       .select("*")
-      .eq("id", quoteId)
-      .single();
+      .eq("access_token", accessToken)
+      .maybeSingle();
 
     if (fetchErr || !quote) {
       return new Response(JSON.stringify({ error: "Quote not found" }), {
@@ -53,6 +84,8 @@ Deno.serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
+
+    const quoteId = quote.id;
 
     // Upload signature image
     const base64Data = signatureDataUrl.replace(/^data:image\/\w+;base64,/, "");
@@ -80,15 +113,23 @@ Deno.serve(async (req) => {
 
     const signatureUrl = urlData.publicUrl;
     const acceptedAt = new Date().toISOString();
+    const acceptedIp = getClientIp(req);
+    const cleanSignerName = signerName.trim().slice(0, 100);
+    const cleanSignerEmail = signerEmail.trim().slice(0, 255).toLowerCase();
 
+    // Scoped update: ONLY this quote, ONLY if still pending (atomic guard).
     const { error: updateErr } = await supabase
       .from("quotes")
       .update({
         status: "accepted",
         signature_url: signatureUrl,
         accepted_at: acceptedAt,
+        signer_name: cleanSignerName,
+        signer_email: cleanSignerEmail,
+        accepted_ip: acceptedIp,
       })
-      .eq("id", quoteId);
+      .eq("access_token", accessToken)
+      .eq("status", "pending");
 
     if (updateErr) {
       console.error("Quote update error:", updateErr);
