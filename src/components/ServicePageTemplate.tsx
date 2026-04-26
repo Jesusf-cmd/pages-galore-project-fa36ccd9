@@ -7,6 +7,7 @@ import CityGrid from "@/components/CityGrid";
 import ProcessSteps from "@/components/ProcessSteps";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
+import InternalLinksHub from "@/components/InternalLinksHub";
 
 interface ServicePageProps {
   eyebrow: string;
