@@ -15,14 +15,14 @@ Deno.serve(async (req) => {
 
   try {
     const url = new URL(req.url);
-    let id = url.searchParams.get("id");
-    if (!id && (req.method === "POST" || req.method === "PUT")) {
+    let token = url.searchParams.get("token") || url.searchParams.get("id");
+    if (!token && (req.method === "POST" || req.method === "PUT")) {
       const body = await req.json().catch(() => ({}));
-      id = body?.id ?? null;
+      token = body?.token ?? body?.id ?? null;
     }
 
-    if (!id || !UUID_RE.test(id)) {
-      return new Response(JSON.stringify({ error: "Invalid quote id" }), {
+    if (!token || !UUID_RE.test(token)) {
+      return new Response(JSON.stringify({ error: "Invalid quote link" }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
@@ -33,11 +33,12 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
 
+    // Look up by access_token only — never expose lookup by primary id to the public.
     const { data, error } = await supabase
       .from("quotes")
       .select("*")
-      .eq("id", id)
-      .single();
+      .eq("access_token", token)
+      .maybeSingle();
 
     if (error || !data) {
       return new Response(JSON.stringify({ error: "Quote not found" }), {
@@ -46,7 +47,10 @@ Deno.serve(async (req) => {
       });
     }
 
-    return new Response(JSON.stringify({ quote: data }), {
+    // Strip server-only fields before returning to the client.
+    const { id: _id, access_token: _t, accepted_ip: _ip, ...publicQuote } = data as Record<string, unknown>;
+
+    return new Response(JSON.stringify({ quote: publicQuote }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
