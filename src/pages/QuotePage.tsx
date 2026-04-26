@@ -70,20 +70,23 @@ export default function QuotePage() {
   const sigRef = useRef<SignatureCanvas | null>(null);
 
   useEffect(() => {
-    if (!id) return;
+    if (!accessToken) return;
     supabase.functions
-      .invoke("get-quote", { body: { id } })
+      .invoke("get-quote", { body: { token: accessToken } })
       .then(({ data, error: err }) => {
         const quoteData = (data as { quote?: Quote } | null)?.quote;
         if (err || !quoteData) {
           setError("Quote not found.");
         } else {
           setQuote(quoteData);
+          // Pre-fill signer fields with the customer info on file (still editable).
+          setSignerName(quoteData.customer_name || "");
+          setSignerEmail(quoteData.customer_email || "");
           document.title = `Estimate ${formatQuoteNumber(quoteData.quote_number)} | Redwood Construction`;
         }
         setLoading(false);
       });
-  }, [id]);
+  }, [accessToken]);
 
   const handleDownloadPDF = async () => {
     if (!contentRef.current) return;
@@ -119,8 +122,19 @@ export default function QuotePage() {
   };
 
   const handleAcceptQuote = useCallback(async () => {
-    if (!quote || !sigRef.current || sigRef.current.isEmpty()) {
+    if (!quote || !accessToken) return;
+    if (!sigRef.current || sigRef.current.isEmpty()) {
       setAcceptError("Please provide your signature.");
+      return;
+    }
+    const trimmedName = signerName.trim();
+    const trimmedEmail = signerEmail.trim();
+    if (trimmedName.length < 2) {
+      setAcceptError("Please enter your full name.");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
+      setAcceptError("Please enter a valid email address.");
       return;
     }
     if (!agreeTerms) {
@@ -132,7 +146,12 @@ export default function QuotePage() {
     try {
       const signatureDataUrl = sigRef.current.toDataURL("image/png");
       const { data, error: fnErr } = await supabase.functions.invoke("accept-quote", {
-        body: { quoteId: quote.id, signatureDataUrl },
+        body: {
+          accessToken,
+          signatureDataUrl,
+          signerName: trimmedName,
+          signerEmail: trimmedEmail,
+        },
       });
       if (fnErr || !data?.success) {
         setAcceptError(data?.error || "Failed to accept quote. Please try again.");
@@ -140,7 +159,14 @@ export default function QuotePage() {
       }
       setQuote((prev) =>
         prev
-          ? { ...prev, status: "accepted", signature_url: data.signatureUrl, accepted_at: data.acceptedAt }
+          ? {
+              ...prev,
+              status: "accepted",
+              signature_url: data.signatureUrl,
+              accepted_at: data.acceptedAt,
+              signer_name: trimmedName,
+              signer_email: trimmedEmail,
+            }
           : prev
       );
       setShowAcceptModal(false);
