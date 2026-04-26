@@ -449,6 +449,34 @@ export default function QuotePage() {
                 </div>
               </div>
 
+              <div className="mb-4">
+                <label htmlFor="signer-name" className="block text-[#1a1a1a] text-sm font-bold mb-2">Full Name</label>
+                <input
+                  id="signer-name"
+                  type="text"
+                  value={signerName}
+                  onChange={(e) => setSignerName(e.target.value)}
+                  autoComplete="name"
+                  maxLength={100}
+                  className="w-full px-3 py-2 text-sm border-2 border-[#e5e5e5] rounded focus:outline-none focus:border-[#c45c26]"
+                  placeholder="Type your full legal name"
+                />
+              </div>
+
+              <div className="mb-6">
+                <label htmlFor="signer-email" className="block text-[#1a1a1a] text-sm font-bold mb-2">Email</label>
+                <input
+                  id="signer-email"
+                  type="email"
+                  value={signerEmail}
+                  onChange={(e) => setSignerEmail(e.target.value)}
+                  autoComplete="email"
+                  maxLength={255}
+                  className="w-full px-3 py-2 text-sm border-2 border-[#e5e5e5] rounded focus:outline-none focus:border-[#c45c26]"
+                  placeholder="you@example.com"
+                />
+              </div>
+
               <div className="mb-6">
                 <div className="text-[#1a1a1a] text-sm font-bold mb-2">Your Signature</div>
                 <div className="border-2 border-[#e5e5e5] rounded bg-white" style={{ touchAction: "none" }}>
