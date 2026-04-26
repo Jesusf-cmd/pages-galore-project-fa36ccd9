@@ -3,6 +3,7 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function SidewalksOklahomaCity() {
   return (
     <ServicePage
+      currentServiceSlug="sidewalks-oklahoma-city"
       metaTitle="Concrete Sidewalks, Curb & Gutter Oklahoma City | Redwood Construction LLC"
       metaDescription="Concrete sidewalk and curb & gutter contractors in Oklahoma City. New construction, city right-of-way, ADA-compliant ramps, city-spec curb work. Free estimate: (405) 247-0027."
       eyebrow="OKC Metro · Sidewalk & Curb Contractors · Licensed & Insured"

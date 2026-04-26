@@ -3,6 +3,7 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function FoundationsOklahomaCity() {
   return (
     <ServicePage
+      currentServiceSlug="foundations-oklahoma-city"
       metaTitle="Concrete Foundations & Retaining Walls Oklahoma City | Redwood Construction LLC"
       metaDescription="Concrete foundation and retaining wall contractor in Oklahoma City. Residential, commercial foundations, poured concrete walls, CMU block walls. Free estimate: (405) 247-0027."
       eyebrow="OKC Metro · Foundation & Wall Contractors · Licensed & Insured"

@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useSEO } from "@/hooks/useSEO";
 import FinalCTA from "@/components/FinalCTA";
+import InternalLinksHub from "@/components/InternalLinksHub";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 
 const blogPosts: Record<string, { title: string; date: string; time: string; tags: string[]; deck: string; sections: { heading: string; content: string[] }[] }> = {
@@ -148,6 +149,8 @@ export default function BlogPost() {
           </div>
         </article>
       </ScrollReveal>
+
+      <InternalLinksHub showCities={false} />
 
       <FinalCTA />
     </main>

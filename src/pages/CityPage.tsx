@@ -174,6 +174,17 @@ const cityData: Record<string, {
   },
 };
 
+const NEARBY: Record<string, { name: string; to: string }[]> = {
+  "oklahoma-city": [{ name: "Edmond", to: "/edmond-concrete" }, { name: "Moore", to: "/moore-oklahoma-concrete" }, { name: "Midwest City", to: "/midwest-city-oklahoma-concrete" }],
+  edmond: [{ name: "Oklahoma City", to: "/oklahoma-city-concrete" }, { name: "Yukon", to: "/yukon-oklahoma-concrete" }, { name: "Moore", to: "/moore-oklahoma-concrete" }],
+  norman: [{ name: "Moore", to: "/moore-oklahoma-concrete" }, { name: "Oklahoma City", to: "/oklahoma-city-concrete" }, { name: "Del City", to: "/del-city-oklahoma-concrete" }],
+  yukon: [{ name: "Mustang", to: "/mustang-oklahoma-concrete" }, { name: "Oklahoma City", to: "/oklahoma-city-concrete" }, { name: "Edmond", to: "/edmond-concrete" }],
+  mustang: [{ name: "Yukon", to: "/yukon-oklahoma-concrete" }, { name: "Oklahoma City", to: "/oklahoma-city-concrete" }, { name: "Moore", to: "/moore-oklahoma-concrete" }],
+  moore: [{ name: "Norman", to: "/norman-ok-concrete" }, { name: "Oklahoma City", to: "/oklahoma-city-concrete" }, { name: "Del City", to: "/del-city-oklahoma-concrete" }],
+  "midwest-city": [{ name: "Del City", to: "/del-city-oklahoma-concrete" }, { name: "Oklahoma City", to: "/oklahoma-city-concrete" }, { name: "Moore", to: "/moore-oklahoma-concrete" }],
+  "del-city": [{ name: "Midwest City", to: "/midwest-city-oklahoma-concrete" }, { name: "Oklahoma City", to: "/oklahoma-city-concrete" }, { name: "Moore", to: "/moore-oklahoma-concrete" }],
+};
+
 export default function CityPage({ slug }: { slug: string }) {
   const data = cityData[slug] || cityData["oklahoma-city"];
   return (
@@ -198,6 +209,7 @@ export default function CityPage({ slug }: { slug: string }) {
       }}
       faq={data.faq}
       metaDescription={data.metaDescription}
+      nearbyLinks={NEARBY[slug]}
     />
   );
 }

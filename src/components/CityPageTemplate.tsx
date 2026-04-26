@@ -87,12 +87,34 @@ export default function CityPageTemplate({ city, county, description, localConte
         </section>
       </ScrollReveal>
 
-      {nearbyLinks && (
+      <ScrollReveal>
+        <section className="section-padding">
+          <div className="section-eye">Services in {city}</div>
+          <h2 className="mb-4">Concrete Services<br/><em className="h2-accent">Available in {city}.</em></h2>
+          <p className="prose-muted mb-6 max-w-[760px]">
+            Redwood Construction offers the full range of residential and commercial concrete work for {city} homeowners and businesses. Every service below is delivered by the same crew, with the same materials and standards we use across the OKC metro.
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3" style={{ listStyle: "none", padding: 0 }}>
+            <li><a href="/driveways-oklahoma-city" className="text-orange no-underline hover:underline">→ Concrete driveways in {city}</a></li>
+            <li><a href="/patios-oklahoma-city" className="text-orange no-underline hover:underline">→ Stamped patios and slabs in {city}</a></li>
+            <li><a href="/foundations-oklahoma-city" className="text-orange no-underline hover:underline">→ Foundation contractors in {city}</a></li>
+            <li><a href="/sidewalks-oklahoma-city" className="text-orange no-underline hover:underline">→ Sidewalks and curb work in {city}</a></li>
+            <li><a href="/commercial-concrete-oklahoma-city" className="text-orange no-underline hover:underline">→ Commercial concrete in {city}</a></li>
+          </ul>
+        </section>
+      </ScrollReveal>
+
+      {nearbyLinks && nearbyLinks.length > 0 && (
         <ScrollReveal>
-          <section className="section-padding">
+          <section className="section-padding section-alt">
             <div className="section-eye">Nearby Service Areas</div>
-            <h2 className="mb-4">We Also Cover<br/><em className="h2-accent">Surrounding Cities.</em></h2>
-            <p className="prose-muted mb-4">Our {city} crew covers all of {county} and connects seamlessly with our OKC metro-wide coverage.</p>
+            <h2 className="mb-4">Nearby Areas<br/><em className="h2-accent">We Serve.</em></h2>
+            <p className="prose-muted mb-4 max-w-[760px]">Our {city} crew also covers the surrounding {county} and OKC metro communities — same crew, same pricing.</p>
+            <ul className="flex flex-wrap gap-4" style={{ listStyle: "none", padding: 0 }}>
+              {nearbyLinks.map((n) => (
+                <li key={n.to}><Link to={n.to} className="text-orange no-underline hover:underline">→ Concrete contractor in {n.name}</Link></li>
+              ))}
+            </ul>
           </section>
         </ScrollReveal>
       )}

@@ -7,6 +7,7 @@ import CityGrid from "@/components/CityGrid";
 import ProcessSteps from "@/components/ProcessSteps";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
+import InternalLinksHub from "@/components/InternalLinksHub";
 
 interface ServicePageProps {
   eyebrow: string;
@@ -33,9 +34,10 @@ interface ServicePageProps {
   faq: { question: string; answer: string }[];
   metaTitle?: string;
   metaDescription?: string;
+  currentServiceSlug?: string;
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug }: ServicePageProps) {
   useSEO({
     title: metaTitle || `${title} ${titleAccent.replace('.', '')} | Redwood Construction LLC`,
     description: metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155),
@@ -251,6 +253,8 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
           <CityGrid />
         </section>
       </ScrollReveal>
+
+      <InternalLinksHub currentServiceSlug={currentServiceSlug} />
 
       <FinalCTA />
     </main>

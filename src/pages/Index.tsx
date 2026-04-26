@@ -18,6 +18,7 @@ import FinalCTA from "@/components/FinalCTA";
 import ServicesFooterGrid from "@/components/ServicesFooterGrid";
 import CityGrid from "@/components/CityGrid";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
+import InternalLinksHub from "@/components/InternalLinksHub";
 
 const homeFAQ = [
   { question: "How much does a concrete driveway cost in Oklahoma City?", answer: "In Oklahoma City, a standard concrete driveway typically costs $5,760–$9,600 for a 24×40 ft pour — about $6–$10 per sq ft installed. The concrete cost in Oklahoma City depends on base prep depth, slab thickness, PSI specification, and whether existing pavement needs removal." },
@@ -113,6 +114,7 @@ export default function Index() {
           </p>
         </section>
       </ScrollReveal>
+      <InternalLinksHub showServices={false} showCities={false} />
       <FinalCTA />
     </main>
   );
