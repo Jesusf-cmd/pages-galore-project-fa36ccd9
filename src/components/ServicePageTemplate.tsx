@@ -254,6 +254,8 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         </section>
       </ScrollReveal>
 
+      <InternalLinksHub currentServiceSlug={currentServiceSlug} />
+
       <FinalCTA />
     </main>
   );
