@@ -144,7 +144,7 @@ Deno.serve(async (req) => {
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     const quoteNumber = `#${String(quote.quote_number).padStart(4, "0")}`;
     const siteUrl = "https://myconcreteestimate.com";
-    const quoteUrl = `${siteUrl}/quote/${quoteId}`;
+    const quoteUrl = `${siteUrl}/quote/${quote.access_token}`;
     const fromAddress = "Redwood Construction <estimates@myconcreteestimate.com>";
     const acceptedDateStr = new Date(acceptedAt).toLocaleDateString("en-US", {
       year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit",
