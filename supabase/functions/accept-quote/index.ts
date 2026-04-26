@@ -107,11 +107,22 @@ Deno.serve(async (req) => {
       });
     }
 
-    const { data: urlData } = supabase.storage
+    // Bucket is private — issue a long-lived signed URL (10 years) so emails and
+    // the post-acceptance display can render the signature without exposing the bucket.
+    const TEN_YEARS_SECONDS = 60 * 60 * 24 * 365 * 10;
+    const { data: signedData, error: signedErr } = await supabase.storage
       .from("signatures")
-      .getPublicUrl(signaturePath);
+      .createSignedUrl(signaturePath, TEN_YEARS_SECONDS);
 
-    const signatureUrl = urlData.publicUrl;
+    if (signedErr || !signedData?.signedUrl) {
+      console.error("Signed URL error:", signedErr);
+      return new Response(JSON.stringify({ error: "Failed to prepare signature" }), {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    const signatureUrl = signedData.signedUrl;
     const acceptedAt = new Date().toISOString();
     const acceptedIp = getClientIp(req);
     const cleanSignerName = signerName.trim().slice(0, 100);
