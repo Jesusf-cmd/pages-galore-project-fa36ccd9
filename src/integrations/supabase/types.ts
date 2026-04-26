@@ -65,6 +65,8 @@ export type Database = {
       quotes: {
         Row: {
           accepted_at: string | null
+          accepted_ip: string | null
+          access_token: string
           created_at: string
           customer_address: string
           customer_email: string
@@ -80,6 +82,8 @@ export type Database = {
           project_type: string
           quote_number: number
           signature_url: string | null
+          signer_email: string | null
+          signer_name: string | null
           square_feet: number
           status: string
           total_estimate: number
@@ -88,6 +92,8 @@ export type Database = {
         }
         Insert: {
           accepted_at?: string | null
+          accepted_ip?: string | null
+          access_token?: string
           created_at?: string
           customer_address?: string
           customer_email: string
@@ -103,6 +109,8 @@ export type Database = {
           project_type: string
           quote_number?: number
           signature_url?: string | null
+          signer_email?: string | null
+          signer_name?: string | null
           square_feet: number
           status?: string
           total_estimate: number
@@ -111,6 +119,8 @@ export type Database = {
         }
         Update: {
           accepted_at?: string | null
+          accepted_ip?: string | null
+          access_token?: string
           created_at?: string
           customer_address?: string
           customer_email?: string
@@ -126,6 +136,8 @@ export type Database = {
           project_type?: string
           quote_number?: number
           signature_url?: string | null
+          signer_email?: string | null
+          signer_name?: string | null
           square_feet?: number
           status?: string
           total_estimate?: number
