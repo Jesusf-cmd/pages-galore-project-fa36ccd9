@@ -18,7 +18,6 @@ interface QuoteLineItem {
 }
 
 interface Quote {
-  id: string;
   quote_number: number;
   customer_name: string;
   customer_email: string;
@@ -39,6 +38,8 @@ interface Quote {
   status: string;
   signature_url: string | null;
   accepted_at: string | null;
+  signer_name?: string | null;
+  signer_email?: string | null;
 }
 
 function getDisplayStatus(quote: Quote): { label: string; color: string; bg: string } {
@@ -53,7 +54,8 @@ function getDisplayStatus(quote: Quote): { label: string; color: string; bg: str
 }
 
 export default function QuotePage() {
-  const { id } = useParams<{ id: string }>();
+  // The :id route param now carries the unguessable access token, not the quote's primary id.
+  const { id: accessToken } = useParams<{ id: string }>();
   const [quote, setQuote] = useState<Quote | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -62,24 +64,29 @@ export default function QuotePage() {
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [accepting, setAccepting] = useState(false);
   const [acceptError, setAcceptError] = useState("");
+  const [signerName, setSignerName] = useState("");
+  const [signerEmail, setSignerEmail] = useState("");
   const contentRef = useRef<HTMLDivElement>(null);
   const sigRef = useRef<SignatureCanvas | null>(null);
 
   useEffect(() => {
-    if (!id) return;
+    if (!accessToken) return;
     supabase.functions
-      .invoke("get-quote", { body: { id } })
+      .invoke("get-quote", { body: { token: accessToken } })
       .then(({ data, error: err }) => {
         const quoteData = (data as { quote?: Quote } | null)?.quote;
         if (err || !quoteData) {
           setError("Quote not found.");
         } else {
           setQuote(quoteData);
+          // Pre-fill signer fields with the customer info on file (still editable).
+          setSignerName(quoteData.customer_name || "");
+          setSignerEmail(quoteData.customer_email || "");
           document.title = `Estimate ${formatQuoteNumber(quoteData.quote_number)} | Redwood Construction`;
         }
         setLoading(false);
       });
-  }, [id]);
+  }, [accessToken]);
 
   const handleDownloadPDF = async () => {
     if (!contentRef.current) return;
@@ -115,8 +122,19 @@ export default function QuotePage() {
   };
 
   const handleAcceptQuote = useCallback(async () => {
-    if (!quote || !sigRef.current || sigRef.current.isEmpty()) {
+    if (!quote || !accessToken) return;
+    if (!sigRef.current || sigRef.current.isEmpty()) {
       setAcceptError("Please provide your signature.");
+      return;
+    }
+    const trimmedName = signerName.trim();
+    const trimmedEmail = signerEmail.trim();
+    if (trimmedName.length < 2) {
+      setAcceptError("Please enter your full name.");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
+      setAcceptError("Please enter a valid email address.");
       return;
     }
     if (!agreeTerms) {
@@ -128,7 +146,12 @@ export default function QuotePage() {
     try {
       const signatureDataUrl = sigRef.current.toDataURL("image/png");
       const { data, error: fnErr } = await supabase.functions.invoke("accept-quote", {
-        body: { quoteId: quote.id, signatureDataUrl },
+        body: {
+          accessToken,
+          signatureDataUrl,
+          signerName: trimmedName,
+          signerEmail: trimmedEmail,
+        },
       });
       if (fnErr || !data?.success) {
         setAcceptError(data?.error || "Failed to accept quote. Please try again.");
@@ -136,7 +159,14 @@ export default function QuotePage() {
       }
       setQuote((prev) =>
         prev
-          ? { ...prev, status: "accepted", signature_url: data.signatureUrl, accepted_at: data.acceptedAt }
+          ? {
+              ...prev,
+              status: "accepted",
+              signature_url: data.signatureUrl,
+              accepted_at: data.acceptedAt,
+              signer_name: trimmedName,
+              signer_email: trimmedEmail,
+            }
           : prev
       );
       setShowAcceptModal(false);
@@ -145,7 +175,7 @@ export default function QuotePage() {
     } finally {
       setAccepting(false);
     }
-  }, [quote, agreeTerms]);
+  }, [quote, accessToken, agreeTerms, signerName, signerEmail]);
 
   if (loading) {
     return (
@@ -417,6 +447,34 @@ export default function QuotePage() {
                 <div className="text-[#c45c26] text-xl font-extrabold">
                   {formatCurrency(quote.estimate_low)} – {formatCurrency(quote.estimate_high)}
                 </div>
+              </div>
+
+              <div className="mb-4">
+                <label htmlFor="signer-name" className="block text-[#1a1a1a] text-sm font-bold mb-2">Full Name</label>
+                <input
+                  id="signer-name"
+                  type="text"
+                  value={signerName}
+                  onChange={(e) => setSignerName(e.target.value)}
+                  autoComplete="name"
+                  maxLength={100}
+                  className="w-full px-3 py-2 text-sm border-2 border-[#e5e5e5] rounded focus:outline-none focus:border-[#c45c26]"
+                  placeholder="Type your full legal name"
+                />
+              </div>
+
+              <div className="mb-6">
+                <label htmlFor="signer-email" className="block text-[#1a1a1a] text-sm font-bold mb-2">Email</label>
+                <input
+                  id="signer-email"
+                  type="email"
+                  value={signerEmail}
+                  onChange={(e) => setSignerEmail(e.target.value)}
+                  autoComplete="email"
+                  maxLength={255}
+                  className="w-full px-3 py-2 text-sm border-2 border-[#e5e5e5] rounded focus:outline-none focus:border-[#c45c26]"
+                  placeholder="you@example.com"
+                />
               </div>
 
               <div className="mb-6">
