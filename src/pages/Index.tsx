@@ -229,8 +229,8 @@ function EstimateForm() {
       });
 
       if (fnError) throw fnError;
-      if (data?.quoteId) {
-        navigate(`/quote/${data.quoteId}`);
+      if (data?.accessToken) {
+        navigate(`/quote/${data.accessToken}`);
       } else {
         setSubmitted(true);
       }
