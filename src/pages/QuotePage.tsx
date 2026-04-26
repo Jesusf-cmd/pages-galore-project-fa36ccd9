@@ -175,7 +175,7 @@ export default function QuotePage() {
     } finally {
       setAccepting(false);
     }
-  }, [quote, agreeTerms]);
+  }, [quote, accessToken, agreeTerms, signerName, signerEmail]);
 
   if (loading) {
     return (
