@@ -35,7 +35,7 @@ export default function StampedConcrete() {
           ],
         },
         {
-          eyebrow: "Why Choose Redwood",
+          eyebrow: "Why Choose FDZ",
           title: "Decorative Concrete",
           titleAccent: "Done Right.",
           content: [

@@ -35,7 +35,7 @@ export default function CurbAndGutter() {
           ],
         },
         {
-          eyebrow: "Why Choose Redwood",
+          eyebrow: "Why Choose FDZ",
           title: "Experienced Curb",
           titleAccent: "Contractors.",
           content: [

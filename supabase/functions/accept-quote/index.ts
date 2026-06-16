@@ -199,7 +199,7 @@ Deno.serve(async (req) => {
   <div style="max-width:600px;margin:0 auto;background:#ffffff;">
     <div style="background:#1a1a1a;padding:24px 32px;text-align:center;">
       <div style="color:#c45c26;font-size:10px;letter-spacing:3px;font-weight:bold;margin-bottom:4px;">LICENSED & INSURED</div>
-      <div style="color:#ffffff;font-size:22px;font-weight:800;letter-spacing:1px;">REDWOOD CONSTRUCTION</div>
+      <div style="color:#ffffff;font-size:22px;font-weight:800;letter-spacing:1px;">FDZ CONSTRUCTION</div>
     </div>
     <div style="padding:32px;">
       <div style="background:#dcfce7;border-left:4px solid #16a34a;padding:16px 20px;margin:0 0 24px;">

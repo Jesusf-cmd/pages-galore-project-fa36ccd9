@@ -35,7 +35,7 @@ export default function CommercialConcreteSlabs() {
           ],
         },
         {
-          eyebrow: "Why Choose Redwood",
+          eyebrow: "Why Choose FDZ",
           title: "Commercial Concrete",
           titleAccent: "You Can Count On.",
           content: [

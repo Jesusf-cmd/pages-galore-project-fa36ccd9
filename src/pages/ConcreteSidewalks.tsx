@@ -30,7 +30,7 @@ export default function ConcreteSidewalks() {
           ],
         },
         {
-          eyebrow: "Why Choose Redwood",
+          eyebrow: "Why Choose FDZ",
           title: "Trusted Sidewalk",
           titleAccent: "Contractors in OKC.",
           content: [

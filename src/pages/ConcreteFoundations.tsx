@@ -29,7 +29,7 @@ export default function ConcreteFoundations() {
           ],
         },
         {
-          eyebrow: "Why Redwood",
+          eyebrow: "Why FDZ",
           title: "Why Choose FDZ Construction LLC",
           titleAccent: "for Foundation Work.",
           content: [

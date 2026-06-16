@@ -53,7 +53,7 @@ export default function ConcreteSlabs() {
           },
         },
         {
-          eyebrow: "Why Choose Redwood",
+          eyebrow: "Why Choose FDZ",
           title: "Local Expertise",
           titleAccent: "You Can Trust.",
           content: [

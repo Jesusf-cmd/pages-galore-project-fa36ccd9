@@ -29,7 +29,7 @@ export default function ConcreteDriveways() {
           ],
         },
         {
-          eyebrow: "Why Redwood",
+          eyebrow: "Why FDZ",
           title: "Why Homeowners Choose",
           titleAccent: "FDZ Construction LLC.",
           content: [

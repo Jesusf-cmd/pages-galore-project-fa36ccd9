@@ -6,43 +6,43 @@
 
 @layer base {
   :root {
-    --background: 30 7% 7%;
-    --foreground: 30 15% 89%;
+    --background: 47 24% 93%;
+    --foreground: 40 4% 17%;
 
-    --card: 25 8% 14%;
-    --card-foreground: 30 15% 89%;
+    --card: 0 0% 100%;
+    --card-foreground: 40 4% 17%;
 
-    --popover: 25 8% 14%;
-    --popover-foreground: 30 15% 89%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 40 4% 17%;
 
     --primary: 15 68% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 8% 14%;
-    --secondary-foreground: 30 15% 89%;
+    --secondary: 40 14% 88%;
+    --secondary-foreground: 40 4% 17%;
 
-    --muted: 25 8% 14%;
-    --muted-foreground: 25 8% 52%;
+    --muted: 40 14% 88%;
+    --muted-foreground: 48 4% 36%;
 
     --accent: 15 68% 52%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 48%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 15% 89% / 0.08;
-    --input: 30 15% 89% / 0.1;
+    --border: 40 5% 17% / 0.14;
+    --input: 40 5% 17% / 0.18;
     --ring: 15 68% 52%;
 
     --radius: 1px;
 
     /* Custom tokens */
-    --concrete: 30 15% 89%;
-    --darker: 30 7% 7%;
+    --concrete: 40 4% 17%;
+    --darker: 47 24% 93%;
     --orange: 15 68% 52%;
     --orange-light: 15 74% 60%;
-    --stone: 25 8% 14%;
-    --muted-text: 25 8% 52%;
+    --stone: 0 0% 100%;
+    --muted-text: 48 4% 36%;
 
     --font-display: 'Barlow Condensed', sans-serif;
     --font-body: 'Barlow', sans-serif;

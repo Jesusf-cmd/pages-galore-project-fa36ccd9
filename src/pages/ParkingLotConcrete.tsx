@@ -35,7 +35,7 @@ export default function ParkingLotConcrete() {
           ],
         },
         {
-          eyebrow: "Why Choose Redwood",
+          eyebrow: "Why Choose FDZ",
           title: "Commercial Parking",
           titleAccent: "Lot Experts.",
           content: [

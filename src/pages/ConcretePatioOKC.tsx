@@ -35,7 +35,7 @@ export default function ConcretePatioOKC() {
           ],
         },
         {
-          eyebrow: "Why Choose Redwood",
+          eyebrow: "Why Choose FDZ",
           title: "OKC's Trusted",
           titleAccent: "Patio Builders.",
           content: [

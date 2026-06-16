@@ -522,7 +522,7 @@ function GoogleReviewsSection() {
     { initials: "JK", name: "James K.", location: "Yukon, OK", text: "Called for an estimate on a concrete slab for my shop. They came out fast, gave me a fair price, and had the work done within the week. Very happy with the results.", ago: "", project: "Concrete Slab" },
     { initials: "LW", name: "Linda W.", location: "Moore, OK", text: "Our old cracked driveway was an eyesore. FDZ Construction replaced the whole thing and it looks brand new. Best money we've spent on the house.", ago: "", project: "Driveway Replacement" },
     { initials: "DL", name: "Derek L.", location: "Mustang, OK", text: "Professional start to finish. The crew caught a drainage issue I didn't know I had and addressed it in the same pour. Cannot recommend enough.", ago: "", project: "Driveway & Drainage" },
-    { initials: "KS", name: "Karen S.", location: "Norman, OK", text: "Got three quotes and Redwood was the most knowledgeable. The slab they poured has held up perfectly. No issues after two Oklahoma winters.", ago: "", project: "Concrete Slab" },
+    { initials: "KS", name: "Karen S.", location: "Norman, OK", text: "Got three quotes and FDZ was the most knowledgeable. The slab they poured has held up perfectly. No issues after two Oklahoma winters.", ago: "", project: "Concrete Slab" },
   ];
 
   return (

@@ -24,7 +24,7 @@ export default function AdminLogin() {
       <div className="w-full max-w-sm">
         <div className="bg-[#1a1a1a] px-8 py-6 text-center rounded-t-lg">
           <div className="text-[#c45c26] text-[10px] tracking-[3px] font-bold mb-1">ADMIN PORTAL</div>
-          <div className="text-white text-xl font-extrabold tracking-wide">REDWOOD CONSTRUCTION</div>
+          <div className="text-white text-xl font-extrabold tracking-wide">FDZ CONSTRUCTION</div>
         </div>
         <form onSubmit={handleLogin} className="bg-white px-8 py-8 rounded-b-lg shadow-lg">
           <div className="mb-4">

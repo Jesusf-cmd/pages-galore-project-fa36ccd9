@@ -35,7 +35,7 @@ export default function RetainingWalls() {
           ],
         },
         {
-          eyebrow: "Why Choose Redwood",
+          eyebrow: "Why Choose FDZ",
           title: "Expert Wall",
           titleAccent: "Builders in OKC.",
           content: [

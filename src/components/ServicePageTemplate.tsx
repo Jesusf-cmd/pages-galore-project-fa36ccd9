@@ -167,7 +167,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
       {whyChooseUs && whyChooseUs.length > 0 && (
         <ScrollReveal>
           <section className="section-padding">
-            <div className="section-eye">Why Redwood</div>
+            <div className="section-eye">Why FDZ</div>
             <h2 className="mb-8">Why Oklahoma City Homeowners Choose<br/><em className="h2-accent">FDZ Construction.</em></h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
               {whyChooseUs.map((item, i) => (

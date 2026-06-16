@@ -149,7 +149,7 @@ export default function AdminDashboard() {
     const blob = new Blob([csv], { type: "text/csv" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = `redwood-quotes-${new Date().toISOString().split("T")[0]}.csv`;
+    a.download = `fdz-quotes-${new Date().toISOString().split("T")[0]}.csv`;
     a.click();
   };
 
@@ -174,7 +174,7 @@ export default function AdminDashboard() {
         <div className="flex items-center gap-4">
           <div>
             <div className="text-[#c45c26] text-[9px] tracking-[3px] font-bold">ADMIN DASHBOARD</div>
-            <div className="text-white text-lg font-extrabold tracking-wide">REDWOOD CONSTRUCTION</div>
+            <div className="text-white text-lg font-extrabold tracking-wide">FDZ CONSTRUCTION</div>
           </div>
         </div>
         <div className="flex items-center gap-3">

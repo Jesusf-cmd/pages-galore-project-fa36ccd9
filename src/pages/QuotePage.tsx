@@ -113,7 +113,7 @@ export default function QuotePage() {
         remainingHeight -= pageHeight;
         position += pageHeight;
       }
-      pdf.save(`Redwood-Construction-Quote-${formatQuoteNumber(quote!.quote_number)}.pdf`);
+      pdf.save(`FDZ-Construction-Quote-${formatQuoteNumber(quote!.quote_number)}.pdf`);
     } catch (e) {
       console.error("PDF generation failed:", e);
     } finally {
@@ -252,7 +252,7 @@ export default function QuotePage() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div>
                 <div className="text-[#c45c26] text-[10px] tracking-[3px] font-bold mb-1">{COMPANY.badge}</div>
-                <div className="text-white text-xl sm:text-2xl font-extrabold tracking-wide">REDWOOD CONSTRUCTION</div>
+                <div className="text-white text-xl sm:text-2xl font-extrabold tracking-wide">FDZ CONSTRUCTION</div>
                 <div className="text-[#888] text-xs mt-1">LLC</div>
               </div>
               <div className="text-left sm:text-right mt-2 sm:mt-0">
@@ -388,7 +388,7 @@ export default function QuotePage() {
               </div>
               <div>
                 <div className="border-b-2 border-[#1a1a1a] pb-1 mb-2 min-h-[40px]" />
-                <div className="text-[#888] text-[10px] tracking-[2px] font-bold">REDWOOD CONSTRUCTION LLC</div>
+                <div className="text-[#888] text-[10px] tracking-[2px] font-bold">FDZ CONSTRUCTION LLC</div>
                 <div className="text-[#555] text-xs mt-0.5">Authorized Representative</div>
               </div>
             </div>

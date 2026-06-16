@@ -4,8 +4,8 @@ interface LogoProps {
 
 /**
  * FDZ Construction monogram-badge logo (Concept 3).
- * Text colors are tuned for the site's dark UI; badge rings use the
- * brand burnt orange (#D85A30) exactly as specified in the brand kit.
+ * Uses the brand-kit colors as specified: charcoal text on the light UI,
+ * with badge rings in the brand burnt orange (#D85A30).
  */
 export default function Logo({ className }: LogoProps) {
   return (
@@ -26,7 +26,7 @@ export default function Logo({ className }: LogoProps) {
         fontSize="24"
         fontWeight="800"
         letterSpacing="2"
-        fill="#F1EFE8"
+        fill="#2C2C2A"
       >
         FDZ
       </text>
@@ -38,11 +38,11 @@ export default function Logo({ className }: LogoProps) {
         fontSize="17"
         fontWeight="800"
         letterSpacing="1"
-        fill="#F1EFE8"
+        fill="#2C2C2A"
       >
         FDZ CONSTRUCTION
       </text>
-      <rect x="102" y="44" width="150" height="1" fill="#5F5E5A" />
+      <rect x="102" y="44" width="150" height="1" fill="#B4B2A9" />
       <text
         x="102"
         y="58"
@@ -50,7 +50,7 @@ export default function Logo({ className }: LogoProps) {
         fontSize="8"
         fontWeight="400"
         letterSpacing="3"
-        fill="#B4B2A9"
+        fill="#5F5E5A"
       >
         CONCRETE CONTRACTORS
       </text>
@@ -61,7 +61,7 @@ export default function Logo({ className }: LogoProps) {
         fontSize="7"
         fontWeight="400"
         letterSpacing="2.5"
-        fill="#8A8884"
+        fill="#B4B2A9"
       >
         OKLAHOMA CITY, OK · LLC
       </text>
