@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-
-const LOGO_URL = "https://img1.wsimg.com/isteam/ip/e58b3d42-c6ef-4001-afe8-1a0cde6bd652/redwood_logo_transparent.png/:/rs=h:182,cg:true,m/qt=q:80";
+import Logo from "./Logo";
 
 const serviceLinks = [
   { to: "/driveways-oklahoma-city", label: "Concrete Driveways" },
@@ -64,13 +63,8 @@ export default function Navbar() {
         }`}
         style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}
       >
-        <Link to="/" className="flex flex-col gap-0.5">
-          <img
-            src={LOGO_URL}
-            alt="FDZ Construction LLC — Concrete Contractors Oklahoma City"
-            className="h-[40px] md:h-[50px] w-auto object-contain"
-            loading="eager"
-          />
+        <Link to="/" className="flex flex-col gap-0.5" aria-label="FDZ Construction LLC home">
+          <Logo className="h-[40px] md:h-[50px] w-auto" />
         </Link>
 
         <ul className="hidden nav:flex gap-0 list-none">
@@ -138,13 +132,8 @@ function MobileMenuOverlay({ onClose }: { onClose: () => void }) {
           className="flex items-center justify-between px-5 py-4"
           style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.1)" }}
         >
-          <Link to="/" onClick={onClose} className="flex items-center">
-            <img
-              src={LOGO_URL}
-              alt="FDZ Construction LLC"
-              className="h-[38px] w-auto object-contain"
-              loading="eager"
-            />
+          <Link to="/" onClick={onClose} className="flex items-center" aria-label="FDZ Construction LLC home">
+            <Logo className="h-[38px] w-auto" />
           </Link>
           <button
             type="button"

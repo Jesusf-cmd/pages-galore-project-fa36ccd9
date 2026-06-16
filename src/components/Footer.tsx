@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-
-const LOGO_URL = "https://img1.wsimg.com/isteam/ip/e58b3d42-c6ef-4001-afe8-1a0cde6bd652/redwood_logo_transparent.png/:/rs=h:182,cg:true,m/qt=q:80";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
@@ -23,11 +22,12 @@ export default function Footer() {
             <a href="mailto:jesus.f@myconcreteestimate.com" className="text-orange text-sm font-medium no-underline hover:underline">jesus.f@myconcreteestimate.com</a>
             <a href="tel:4054584805" className="text-orange text-sm font-medium no-underline hover:underline">(405) 458-4805</a>
           </div>
+          <address className="not-italic text-[0.74rem] text-muted-text mt-2">7004 S Indiana Ave, Oklahoma City, OK 73159</address>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
         <div>
-          <img src={LOGO_URL} alt="FDZ Construction LLC — Oklahoma City Concrete Contractor" className="h-9 opacity-70 mb-3" />
+          <Logo className="h-12 w-auto opacity-90 mb-3" />
           <p className="text-[0.74rem] text-muted-text">Oklahoma City's concrete contractor. Licensed &amp; insured in Oklahoma.</p>
           <p className="text-[0.74rem] text-muted-text mt-2">© {new Date().getFullYear()} FDZ Construction LLC. All rights reserved.</p>
         </div>
