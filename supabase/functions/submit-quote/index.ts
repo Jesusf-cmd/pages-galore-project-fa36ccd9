@@ -77,7 +77,7 @@ Deno.serve(async (req) => {
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
     if (LOVABLE_API_KEY && RESEND_API_KEY) {
-      const fromAddress = "Redwood Construction <estimates@myconcreteestimate.com>";
+      const fromAddress = "FDZ Construction <estimates@myconcreteestimate.com>";
 
       const customerHtml = `
 <!DOCTYPE html>
@@ -111,8 +111,8 @@ Deno.serve(async (req) => {
       </div>
     </div>
     <div style="background:#1a1a1a;padding:20px 32px;text-align:center;">
-      <div style="color:#ffffff;font-size:13px;font-weight:bold;">Redwood Construction LLC</div>
-      <div style="color:#888;font-size:12px;margin-top:4px;">(405) 247-0027 · jesus.f@myconcreteestimate.com</div>
+      <div style="color:#ffffff;font-size:13px;font-weight:bold;">FDZ Construction LLC</div>
+      <div style="color:#888;font-size:12px;margin-top:4px;">(405) 458-4805 · jesus.f@myconcreteestimate.com</div>
       <div style="color:#666;font-size:11px;margin-top:4px;">myconcreteestimate.com</div>
     </div>
   </div>
@@ -185,7 +185,7 @@ Deno.serve(async (req) => {
       };
 
       await Promise.allSettled([
-        sendEmail(email, `Your Quote ${quoteNumber} from Redwood Construction`, customerHtml),
+        sendEmail(email, `Your Quote ${quoteNumber} from FDZ Construction`, customerHtml),
         sendEmail("jesus.f@myconcreteestimate.com", `New Quote ${quoteNumber} - ${name}`, internalHtml),
       ]);
     } else {

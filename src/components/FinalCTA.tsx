@@ -15,7 +15,7 @@ export default function FinalCTA() {
       <div className="flex flex-col gap-3 md:items-end">
         <Link to="/#estimate" className="btn-white text-center">Get Free Estimate →</Link>
         <div className="text-[0.75rem] text-white/70 text-center">
-          or call <a href="tel:4052470027" className="text-white font-bold no-underline">(405) 247-0027</a>
+          or call <a href="tel:4054584805" className="text-white font-bold no-underline">(405) 458-4805</a>
         </div>
       </div>
     </div>

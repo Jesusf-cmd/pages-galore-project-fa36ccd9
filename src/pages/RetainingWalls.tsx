@@ -3,19 +3,19 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function RetainingWalls() {
   return (
     <ServicePage
-      metaTitle="Retaining Walls in Oklahoma City | Redwood Construction LLC"
+      metaTitle="Retaining Walls in Oklahoma City | FDZ Construction LLC"
       metaDescription="Retaining wall contractors in Oklahoma City. Poured concrete, CMU block, and interlocking walls engineered for Oklahoma clay soil. Free estimate available."
       eyebrow="OKC Metro · Retaining Wall Contractors · Licensed & Insured"
       title="Retaining Walls"
       titleAccent="Oklahoma City."
-      description='Poured concrete, block, and interlocking retaining walls for slopes, drainage, and erosion control. OKC metro. <a href="tel:4052470027">(405) 247-0027</a>.'
+      description='Poured concrete, block, and interlocking retaining walls for slopes, drainage, and erosion control. OKC metro. <a href="tel:4054584805">(405) 458-4805</a>.'
       sections={[
         {
           eyebrow: "Retaining Walls OKC",
           title: "Engineered for",
           titleAccent: "Oklahoma Soil.",
           content: [
-            "<strong>Retaining wall contractors in Oklahoma City</strong> — Redwood Construction builds poured concrete, CMU block, and interlocking block retaining walls for slopes, erosion control, and outdoor living areas.",
+            "<strong>Retaining wall contractors in Oklahoma City</strong> — FDZ Construction builds poured concrete, CMU block, and interlocking block retaining walls for slopes, erosion control, and outdoor living areas.",
             "Oklahoma's clay soil and heavy rain events put significant lateral pressure on retaining structures. Every wall we build includes proper drainage, adequate footing depth, and reinforcement sized for the retained earth height. Retaining walls pair well with our <a href='/patios-oklahoma-city'>patio</a> and <a href='/sidewalks-oklahoma-city'>sidewalk</a> services for complete outdoor projects.",
           ],
           stats: [
@@ -39,7 +39,7 @@ export default function RetainingWalls() {
           title: "Expert Wall",
           titleAccent: "Builders in OKC.",
           content: [
-            "Retaining walls that fail can cause serious property damage — that's why choosing an experienced contractor matters. Redwood Construction has built retaining walls across Oklahoma City, <a href='/edmond-concrete'>Edmond</a>, <a href='/norman-ok-concrete'>Norman</a>, and surrounding cities.",
+            "Retaining walls that fail can cause serious property damage — that's why choosing an experienced contractor matters. FDZ Construction has built retaining walls across Oklahoma City, <a href='/edmond-concrete'>Edmond</a>, <a href='/norman-ok-concrete'>Norman</a>, and surrounding cities.",
             "We're licensed, bonded, and insured with a BBB A+ rating. Our crew understands the unique drainage challenges of Oklahoma clay and builds every wall to handle the lateral pressure from saturated soil. For related services, see our <a href='/foundations-oklahoma-city'>foundation work</a> and <a href='/driveways-oklahoma-city'>driveway installation</a>.",
           ],
         },

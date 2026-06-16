@@ -4,12 +4,12 @@ export default function DrivewaysOklahomaCity() {
   return (
     <ServicePage
       currentServiceSlug="driveways-oklahoma-city"
-      metaTitle="Concrete Driveways Oklahoma City | Installation & Replacement | Redwood Construction"
-      metaDescription="Concrete driveway installation & replacement in Oklahoma City. 4,000 PSI concrete, rebar reinforcement, 30+ year durability. Licensed & insured. Free estimates — call (405) 247-0027."
+      metaTitle="Concrete Driveways Oklahoma City | Installation & Replacement | FDZ Construction"
+      metaDescription="Concrete driveway installation & replacement in Oklahoma City. 4,000 PSI concrete, rebar reinforcement, 30+ year durability. Licensed & insured. Free estimates — call (405) 458-4805."
       eyebrow="OKC Metro · Driveway Contractors · Licensed & Insured"
       title="Concrete Driveway Installation & Replacement in"
       titleAccent="Oklahoma City, OK."
-      description="Your driveway is the first thing visitors see when they arrive at your home. At Redwood Construction LLC, we specialize in concrete driveway installation, replacement, and repair throughout the Oklahoma City metro area. Whether you need a simple broom-finish driveway or an elegant stamped concrete entrance, our experienced crew delivers quality craftsmanship that stands up to Oklahoma's harsh weather conditions."
+      description="Your driveway is the first thing visitors see when they arrive at your home. At FDZ Construction LLC, we specialize in concrete driveway installation, replacement, and repair throughout the Oklahoma City metro area. Whether you need a simple broom-finish driveway or an elegant stamped concrete entrance, our experienced crew delivers quality craftsmanship that stands up to Oklahoma's harsh weather conditions."
       introText="We've poured hundreds of driveways across Oklahoma City, Edmond, Norman, Moore, and surrounding communities. Every project starts with proper ground preparation, uses 4,000 PSI concrete minimum, and includes fiber mesh reinforcement for long-lasting durability."
       serviceLabel="Driveway"
       serviceCards={[
@@ -84,7 +84,7 @@ export default function DrivewaysOklahomaCity() {
               ["Demolition of old driveway", "$1 – $2 / sq ft", "Add to above"],
             ],
           },
-          infoBlock: "Ready for a free driveway estimate? Call <a href='tel:4052470027'>(405) 247-0027</a> or <a href='/#estimate'>contact us online</a> — we'll measure your project and give you a clear price with no pressure.",
+          infoBlock: "Ready for a free driveway estimate? Call <a href='tel:4054584805'>(405) 458-4805</a> or <a href='/#estimate'>contact us online</a> — we'll measure your project and give you a clear price with no pressure.",
         },
         {
           eyebrow: "Concrete vs Asphalt",
@@ -105,7 +105,7 @@ export default function DrivewaysOklahomaCity() {
               ["Appearance options", "Broom, stamped, stained, colored", "Limited — black only"],
             ],
           },
-          infoBlock: "For most Oklahoma City homeowners, concrete is the better long-term investment — especially given our clay soil conditions and summer heat. Call <a href='tel:4052470027'>(405) 247-0027</a> to discuss the best option for your property.",
+          infoBlock: "For most Oklahoma City homeowners, concrete is the better long-term investment — especially given our clay soil conditions and summer heat. Call <a href='tel:4054584805'>(405) 458-4805</a> to discuss the best option for your property.",
         },
         {
           eyebrow: "Driveway Sizing",
@@ -143,8 +143,8 @@ export default function DrivewaysOklahomaCity() {
           titleAccent: "Oklahoma City?",
           content: [
             "In most cases, yes — Oklahoma City requires a permit for new driveway construction or significant replacement. Permit requirements vary depending on the scope of work, property location, and whether the driveway connects to a public street or alley.",
-            "The good news: Redwood Construction LLC handles permit coordination as part of our process. We'll let you know exactly what's required before we start and make sure your project is fully compliant with city codes.",
-            "Call <a href='tel:4052470027'>(405) 247-0027</a> if you have questions about permits before your project starts.",
+            "The good news: FDZ Construction LLC handles permit coordination as part of our process. We'll let you know exactly what's required before we start and make sure your project is fully compliant with city codes.",
+            "Call <a href='tel:4054584805'>(405) 458-4805</a> if you have questions about permits before your project starts.",
           ],
         },
       ]}

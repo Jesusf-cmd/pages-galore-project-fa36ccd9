@@ -23,7 +23,7 @@ interface CityPageProps {
 
 export default function CityPageTemplate({ city, county, description, localContent, servicesContent, table, faq, zipCodes, nearbyLinks, metaDescription }: CityPageProps) {
   useSEO({
-    title: `Concrete Contractor in ${city} OK | Redwood Construction LLC`,
+    title: `Concrete Contractor in ${city} OK | FDZ Construction LLC`,
     description: metaDescription || `Professional concrete contractor in ${city}, Oklahoma. Driveways, patios, slabs, and foundations built for local soil conditions. Call for a free estimate.`,
   });
   const processSteps = [
@@ -43,7 +43,7 @@ export default function CityPageTemplate({ city, county, description, localConte
         <p className="prose-muted max-w-[680px] mb-8" dangerouslySetInnerHTML={{ __html: description }} />
         <div className="flex gap-4 flex-wrap">
           <Link to="/#estimate" className="btn-primary">Get Free Estimate →</Link>
-          <a href="tel:4052470027" className="btn-outline">📞 (405) 247-0027</a>
+          <a href="tel:4054584805" className="btn-outline">📞 (405) 458-4805</a>
         </div>
       </section>
       <TrustBar />
@@ -92,7 +92,7 @@ export default function CityPageTemplate({ city, county, description, localConte
           <div className="section-eye">Services in {city}</div>
           <h2 className="mb-4">Concrete Services<br/><em className="h2-accent">Available in {city}.</em></h2>
           <p className="prose-muted mb-6 max-w-[760px]">
-            Redwood Construction offers the full range of residential and commercial concrete work for {city} homeowners and businesses. Every service below is delivered by the same crew, with the same materials and standards we use across the OKC metro.
+            FDZ Construction offers the full range of residential and commercial concrete work for {city} homeowners and businesses. Every service below is delivered by the same crew, with the same materials and standards we use across the OKC metro.
           </p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3" style={{ listStyle: "none", padding: 0 }}>
             <li><a href="/driveways-oklahoma-city" className="text-orange no-underline hover:underline">→ Concrete driveways in {city}</a></li>

@@ -108,7 +108,7 @@ export default function TrustSection() {
         {/* header */}
         <ScrollReveal className="text-center mb-14">
           <h2 className="font-display text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-foreground">
-            Why Trust Redwood Construction
+            Why Trust FDZ Construction
           </h2>
           <p className="mt-3 text-muted-text text-base max-w-xl mx-auto">
             Licensed, insured, and committed to quality concrete work
@@ -220,10 +220,10 @@ export default function TrustSection() {
               Get Your Free Estimate
             </Link>
             <a
-              href="tel:4052470027"
+              href="tel:4054584805"
               className="inline-flex items-center justify-center px-8 py-3.5 rounded-md border border-foreground/20 text-foreground font-display font-bold uppercase tracking-wide text-sm hover:bg-foreground/5 transition-colors"
             >
-              Call (405) 247-0027
+              Call (405) 458-4805
             </a>
           </div>
           <p className="mt-4 text-xs text-muted-text">

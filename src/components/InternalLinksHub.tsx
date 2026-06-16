@@ -51,7 +51,7 @@ export default function InternalLinksHub({
             <div className="section-eye">Related Services</div>
             <h2 className="mb-4">Related Concrete Services<br/><em className="h2-accent">in Oklahoma City.</em></h2>
             <p className="prose-muted mb-6 max-w-[760px]">
-              Most concrete projects involve more than one element — a new driveway often pairs with a sidewalk extension, and a backyard patio frequently ties into retaining wall or foundation work. Here are the other services Redwood Construction offers across the OKC metro.
+              Most concrete projects involve more than one element — a new driveway often pairs with a sidewalk extension, and a backyard patio frequently ties into retaining wall or foundation work. Here are the other services FDZ Construction offers across the OKC metro.
             </p>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)", listStyle: "none", padding: 0 }}>
               {services.map((s) => (
@@ -90,7 +90,7 @@ export default function InternalLinksHub({
             <div className="section-eye">Areas We Serve</div>
             <h2 className="mb-4">Areas We Serve in<br/><em className="h2-accent">the Oklahoma City Metro.</em></h2>
             <p className="prose-muted mb-6 max-w-[760px]">
-              Redwood Construction LLC pours concrete across the entire OKC metro. Visit your city page for local soil notes, zip codes, and recent project examples.
+              FDZ Construction LLC pours concrete across the entire OKC metro. Visit your city page for local soil notes, zip codes, and recent project examples.
             </p>
             <ul className="grid grid-cols-2 md:grid-cols-4 gap-3" style={{ listStyle: "none", padding: 0 }}>
               {ALL_CITIES.map((c) => (

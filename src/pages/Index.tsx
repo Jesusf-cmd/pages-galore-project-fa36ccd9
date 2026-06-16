@@ -31,12 +31,12 @@ const homeFAQ = [
 
 export default function Index() {
   useSEO({
-    title: "Concrete Contractors Oklahoma City | Redwood Construction LLC | Free Estimates",
-    description: "Oklahoma City's concrete contractor for driveways, patios, slabs & more. Licensed & insured. Serving OKC metro. Call (405) 247-0027 for a free estimate.",
+    title: "Concrete Contractors Oklahoma City | FDZ Construction LLC | Free Estimates",
+    description: "Oklahoma City's concrete contractor for driveways, patios, slabs & more. Licensed & insured. Serving OKC metro. Call (405) 458-4805 for a free estimate.",
     canonical: "https://myconcreteestimate.com/",
     og: {
-      title: "Concrete Contractors Oklahoma City | Redwood Construction LLC",
-      description: "Oklahoma City's concrete contractor for driveways, patios & slabs. Free estimates. Call (405) 247-0027.",
+      title: "Concrete Contractors Oklahoma City | FDZ Construction LLC",
+      description: "Oklahoma City's concrete contractor for driveways, patios & slabs. Free estimates. Call (405) 458-4805.",
       type: "website",
       url: "https://myconcreteestimate.com/",
     },
@@ -72,10 +72,10 @@ export default function Index() {
         <section className="section-padding">
           <div className="section-eye">Service areas</div>
           <h2 className="mb-3">We Come To<br/><em className="h2-accent">You.</em></h2>
-          <p className="prose-muted mb-6">Redwood Construction LLC serves the greater Oklahoma City metro. Click your city for local info and area-specific services.</p>
+          <p className="prose-muted mb-6">FDZ Construction LLC serves the greater Oklahoma City metro. Click your city for local info and area-specific services.</p>
           <CityGrid />
           <p className="prose-muted mt-8 text-[0.82rem]">
-            <strong className="text-concrete">Why local expertise matters for Oklahoma concrete:</strong> Oklahoma's expansive clay soil is among the most challenging in the country for flatwork. A crew that knows the OKC metro — our frost lines, drainage patterns, and soil behavior — will build you a <Link to="/patios-oklahoma-city" className="text-orange no-underline">slab</Link> or <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundation</Link> that lasts decades. Redwood Construction has seen what happens when contractors cut corners on Oklahoma clay. We don't do it.
+            <strong className="text-concrete">Why local expertise matters for Oklahoma concrete:</strong> Oklahoma's expansive clay soil is among the most challenging in the country for flatwork. A crew that knows the OKC metro — our frost lines, drainage patterns, and soil behavior — will build you a <Link to="/patios-oklahoma-city" className="text-orange no-underline">slab</Link> or <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundation</Link> that lasts decades. FDZ Construction has seen what happens when contractors cut corners on Oklahoma clay. We don't do it.
           </p>
           <p className="text-[0.78rem] text-muted-text mt-4">
             <strong className="text-concrete">OKC metro zip codes we serve:</strong> 73003, 73012, 73013, 73034 (Edmond) · 73025, 73099 (Yukon/Mustang) · 73069, 73071, 73072 (Norman) · 73160 (Moore) · 73107, 73109, 73112, 73118, 73120, 73127, 73132, 73142, 73159, 73162 (OKC) and surrounding areas.
@@ -106,11 +106,11 @@ export default function Index() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Redwood Construction LLC service area map — Oklahoma City concrete contractor"
+              title="FDZ Construction LLC service area map — Oklahoma City concrete contractor"
             />
           </div>
           <p className="prose-muted">
-            Redwood Construction LLC provides concrete services throughout Oklahoma City and the surrounding metro. We serve Edmond, Norman, Moore, Yukon, Mustang, Midwest City, Del City, and all surrounding OKC communities.
+            FDZ Construction LLC provides concrete services throughout Oklahoma City and the surrounding metro. We serve Edmond, Norman, Moore, Yukon, Mustang, Midwest City, Del City, and all surrounding OKC communities.
           </p>
         </section>
       </ScrollReveal>
@@ -125,7 +125,7 @@ function HeroSection() {
     <section className="grid grid-cols-1 nav:grid-cols-[1.15fr_0.85fr] gap-6 nav:gap-12 px-4 md:px-12 pt-20 pb-8 md:pt-32 md:pb-16 nav:min-h-screen relative overflow-hidden" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img src={commercialFoundationImg} alt="Commercial concrete foundation project in Oklahoma City by Redwood Construction LLC" className="w-full h-full object-cover opacity-[0.55]" />
+        <img src={commercialFoundationImg} alt="Commercial concrete foundation project in Oklahoma City by FDZ Construction LLC" className="w-full h-full object-cover opacity-[0.55]" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(var(--darker) / 0.85) 30%, hsl(var(--darker) / 0.4) 100%)" }} />
       </div>
       <div className="hero-glow" style={{ zIndex: 1 }} />
@@ -136,7 +136,7 @@ function HeroSection() {
             Oklahoma City's Concrete Contractors — Driveways, Patios & More
           </h1>
           <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-5 md:mb-7 leading-[1.7] font-light">
-            Redwood Construction LLC installs and repairs concrete driveways, patios, slabs, and stamped concrete across Oklahoma City and the surrounding metro. Licensed, insured, and built for Oklahoma weather. Call (405) 247-0027 for a free estimate.
+            FDZ Construction LLC installs and repairs concrete driveways, patios, slabs, and stamped concrete across Oklahoma City and the surrounding metro. Licensed, insured, and built for Oklahoma weather. Call (405) 458-4805 for a free estimate.
           </p>
           <div className="flex flex-wrap gap-1.5 mb-5 md:mb-8">
             {["Oklahoma City", "Edmond", "Norman", "Mustang", "Moore", "Yukon"].map(city => (
@@ -147,7 +147,7 @@ function HeroSection() {
           </div>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 md:mb-10">
             <a href="#estimate" className="btn-primary text-center w-full sm:w-auto">Get Your Free OKC Estimate →</a>
-            <a href="tel:4052470027" className="btn-outline text-center w-full sm:w-auto">📞 (405) 247-0027</a>
+            <a href="tel:4054584805" className="btn-outline text-center w-full sm:w-auto">📞 (405) 458-4805</a>
           </div>
           <div className="flex gap-6 md:gap-10 pt-6 md:pt-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div>
@@ -236,7 +236,7 @@ function EstimateForm() {
       }
     } catch (err) {
       console.error("Submission error:", err);
-      setError("Something went wrong. Please call us at (405) 247-0027.");
+      setError("Something went wrong. Please call us at (405) 458-4805.");
     } finally {
       setSubmitting(false);
     }
@@ -252,7 +252,7 @@ function EstimateForm() {
           <div className="text-4xl mb-4">✅</div>
           <h3 className="text-concrete mb-2">Thank You, {name}!</h3>
           <p className="text-muted-text text-sm mb-3">Your quote has been created. Check your email for details.</p>
-          <p className="text-muted-text text-sm">Or call us now at <a href="tel:4052470027" className="text-orange font-bold no-underline">(405) 247-0027</a>.</p>
+          <p className="text-muted-text text-sm">Or call us now at <a href="tel:4054584805" className="text-orange font-bold no-underline">(405) 458-4805</a>.</p>
         </div>
       </div>
     );
@@ -372,13 +372,13 @@ function AboutSection() {
           <div className="section-eye">Concrete Contractors Oklahoma City</div>
           <h2 className="mb-7">Built for Oklahoma.<br/><em className="h2-accent">Built to Last.</em></h2>
           <p className="prose-muted mb-6">
-            Redwood Construction LLC is Oklahoma City's concrete specialist. We install and repair concrete <Link to="/driveways-oklahoma-city" className="text-orange no-underline">driveways</Link>, patios, <Link to="/patios-oklahoma-city" className="text-orange no-underline">slabs</Link>, <Link to="/sidewalks-oklahoma-city" className="text-orange no-underline">sidewalks</Link>, and <Link to="/patios-oklahoma-city" className="text-orange no-underline">stamped concrete</Link> surfaces for homeowners and businesses across the OKC metro — including Edmond, Moore, Yukon, Midwest City, Norman, Mustang, and Del City.
+            FDZ Construction LLC is Oklahoma City's concrete specialist. We install and repair concrete <Link to="/driveways-oklahoma-city" className="text-orange no-underline">driveways</Link>, patios, <Link to="/patios-oklahoma-city" className="text-orange no-underline">slabs</Link>, <Link to="/sidewalks-oklahoma-city" className="text-orange no-underline">sidewalks</Link>, and <Link to="/patios-oklahoma-city" className="text-orange no-underline">stamped concrete</Link> surfaces for homeowners and businesses across the OKC metro — including Edmond, Moore, Yukon, Midwest City, Norman, Mustang, and Del City.
           </p>
           <p className="prose-muted mb-6">
             Our team understands Oklahoma's unique conditions. From intense summer heat to winter freeze-thaw cycles and Oklahoma's heavy clay soil, we mix and pour concrete built to handle what this state throws at it. Every job starts with a free, no-obligation estimate. Every job ends with work built to last decades.
           </p>
           <p className="prose-muted mb-8">
-            We're not a national franchise. Redwood Construction LLC is your local Oklahoma City concrete company — our own crew handles every project from start to finish. Call us at <a href="tel:4052470027" className="text-orange no-underline font-bold">(405) 247-0027</a> or email <a href="mailto:jesus.f@myconcreteestimate.com" className="text-orange no-underline">jesus.f@myconcreteestimate.com</a> to schedule your free estimate today.
+            We're not a national franchise. FDZ Construction LLC is your local Oklahoma City concrete company — our own crew handles every project from start to finish. Call us at <a href="tel:4054584805" className="text-orange no-underline font-bold">(405) 458-4805</a> or email <a href="mailto:jesus.f@myconcreteestimate.com" className="text-orange no-underline">jesus.f@myconcreteestimate.com</a> to schedule your free estimate today.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Link to="/driveways-oklahoma-city" className="btn-primary text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Driveway Contractors →</Link>
@@ -450,13 +450,13 @@ function WhyUsSection() {
     <ScrollReveal>
       <section className="section-padding section-alt relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={tiedRebarImg} alt="Tied rebar reinforcement for concrete slab in Oklahoma City by Redwood Construction LLC" className="w-full h-full object-cover opacity-[0.04]" />
+          <img src={tiedRebarImg} alt="Tied rebar reinforcement for concrete slab in Oklahoma City by FDZ Construction LLC" className="w-full h-full object-cover opacity-[0.04]" />
           <div className="absolute inset-0 bg-stone" style={{ opacity: 0.92 }} />
         </div>
         <div className="relative z-[1]">
-        <div className="section-eye">Why Redwood Construction</div>
+        <div className="section-eye">Why FDZ Construction</div>
         <h2 className="mb-3">Local Crew.<br/><em className="h2-accent">Real Results.</em></h2>
-        <p className="prose-muted mb-8">We're not a national franchise. Redwood Construction LLC is a locally owned OKC business — and we know exactly what Oklahoma soil, weather, and homeowners actually need for <Link to="/driveways-oklahoma-city" className="text-orange no-underline">driveways</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">slabs</Link>, and <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundations</Link> that last.</p>
+        <p className="prose-muted mb-8">We're not a national franchise. FDZ Construction LLC is a locally owned OKC business — and we know exactly what Oklahoma soil, weather, and homeowners actually need for <Link to="/driveways-oklahoma-city" className="text-orange no-underline">driveways</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">slabs</Link>, and <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundations</Link> that last.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
           {reasons.map((r, i) => (
             <div key={i} className="bg-stone p-6">
@@ -484,9 +484,9 @@ function RecentProjectsSection() {
       <section className="section-padding">
         <div className="section-eye">Our work</div>
         <h2 className="mb-3">Recent Projects<br/><em className="h2-accent">Across the Metro.</em></h2>
-        <p className="prose-muted mb-8">Real jobs for real Oklahoma homeowners and businesses. Every project — from <Link to="/driveways-oklahoma-city" className="text-orange no-underline">concrete driveways</Link> to <Link to="/patios-oklahoma-city" className="text-orange no-underline">stamped patios</Link> — backed by the Redwood Construction guarantee.</p>
+        <p className="prose-muted mb-8">Real jobs for real Oklahoma homeowners and businesses. Every project — from <Link to="/driveways-oklahoma-city" className="text-orange no-underline">concrete driveways</Link> to <Link to="/patios-oklahoma-city" className="text-orange no-underline">stamped patios</Link> — backed by the FDZ Construction guarantee.</p>
         <div className="mb-6 overflow-hidden" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-          <img src={newDrivewayImg} alt="Completed concrete driveway project in Edmond Oklahoma by Redwood Construction LLC" className="w-full h-[280px] md:h-[360px] object-cover" />
+          <img src={newDrivewayImg} alt="Completed concrete driveway project in Edmond Oklahoma by FDZ Construction LLC" className="w-full h-[280px] md:h-[360px] object-cover" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
           {projects.map((p, i) => (
@@ -517,10 +517,10 @@ function RecentProjectsSection() {
 
 function GoogleReviewsSection() {
   const reviews = [
-    { initials: "MT", name: "Mike T.", location: "Edmond, OK", text: "Redwood Construction did an outstanding job on our driveway. They were on time, professional, and the finished product looks great. Would highly recommend to anyone in the OKC area.", ago: "", project: "Concrete Driveway" },
+    { initials: "MT", name: "Mike T.", location: "Edmond, OK", text: "FDZ Construction did an outstanding job on our driveway. They were on time, professional, and the finished product looks great. Would highly recommend to anyone in the OKC area.", ago: "", project: "Concrete Driveway" },
     { initials: "SR", name: "Sandra R.", location: "Oklahoma City, OK", text: "We had a large backyard patio done and the stamped concrete turned out better than we expected. Great communication from start to finish.", ago: "", project: "Stamped Patio" },
     { initials: "JK", name: "James K.", location: "Yukon, OK", text: "Called for an estimate on a concrete slab for my shop. They came out fast, gave me a fair price, and had the work done within the week. Very happy with the results.", ago: "", project: "Concrete Slab" },
-    { initials: "LW", name: "Linda W.", location: "Moore, OK", text: "Our old cracked driveway was an eyesore. Redwood Construction replaced the whole thing and it looks brand new. Best money we've spent on the house.", ago: "", project: "Driveway Replacement" },
+    { initials: "LW", name: "Linda W.", location: "Moore, OK", text: "Our old cracked driveway was an eyesore. FDZ Construction replaced the whole thing and it looks brand new. Best money we've spent on the house.", ago: "", project: "Driveway Replacement" },
     { initials: "DL", name: "Derek L.", location: "Mustang, OK", text: "Professional start to finish. The crew caught a drainage issue I didn't know I had and addressed it in the same pour. Cannot recommend enough.", ago: "", project: "Driveway & Drainage" },
     { initials: "KS", name: "Karen S.", location: "Norman, OK", text: "Got three quotes and Redwood was the most knowledgeable. The slab they poured has held up perfectly. No issues after two Oklahoma winters.", ago: "", project: "Concrete Slab" },
   ];
@@ -571,7 +571,7 @@ function ServiceAreasDetailSection() {
         <div className="section-eye">Service Areas</div>
         <h2 className="mb-4">Concrete Services in<br/><em className="h2-accent">Oklahoma City Metro.</em></h2>
         <p className="prose-muted mb-6">
-          Redwood Construction LLC provides full-service residential and commercial concrete work across the greater OKC metro. Our <Link to="/oklahoma-city-concrete" className="text-orange no-underline">Oklahoma City concrete contractors</Link> handle everything from driveway replacements in established neighborhoods to commercial slab pours in new developments — with the same crew, same standards, every time. In the north metro, our <Link to="/edmond-concrete" className="text-orange no-underline">Edmond concrete contractors</Link> work across all of Oklahoma County, serving both new construction and older properties where Oklahoma clay has done its damage over the years. South of OKC, our <Link to="/norman-ok-concrete" className="text-orange no-underline">Norman concrete contractors</Link> serve Cleveland County homeowners and businesses with driveways, patios, slabs, and foundations built for the area's specific soil and drainage conditions. To the west, our <Link to="/yukon-oklahoma-concrete" className="text-orange no-underline">Yukon concrete contractors</Link> and <Link to="/mustang-oklahoma-concrete" className="text-orange no-underline">Mustang concrete contractors</Link> cover Canadian County — one of the fastest-growing parts of the metro and an area where proper base prep and reinforcement are non-negotiable on expanding soil. We also serve <Link to="/moore-oklahoma-concrete" className="text-orange no-underline">Moore</Link> across Cleveland County, including repair and replacement work in neighborhoods that took storm damage over the years. No matter which part of the metro your project is in, you're getting the same process: proper subgrade, correct mix design, adequate reinforcement, and a crew that stands behind what they pour.
+          FDZ Construction LLC provides full-service residential and commercial concrete work across the greater OKC metro. Our <Link to="/oklahoma-city-concrete" className="text-orange no-underline">Oklahoma City concrete contractors</Link> handle everything from driveway replacements in established neighborhoods to commercial slab pours in new developments — with the same crew, same standards, every time. In the north metro, our <Link to="/edmond-concrete" className="text-orange no-underline">Edmond concrete contractors</Link> work across all of Oklahoma County, serving both new construction and older properties where Oklahoma clay has done its damage over the years. South of OKC, our <Link to="/norman-ok-concrete" className="text-orange no-underline">Norman concrete contractors</Link> serve Cleveland County homeowners and businesses with driveways, patios, slabs, and foundations built for the area's specific soil and drainage conditions. To the west, our <Link to="/yukon-oklahoma-concrete" className="text-orange no-underline">Yukon concrete contractors</Link> and <Link to="/mustang-oklahoma-concrete" className="text-orange no-underline">Mustang concrete contractors</Link> cover Canadian County — one of the fastest-growing parts of the metro and an area where proper base prep and reinforcement are non-negotiable on expanding soil. We also serve <Link to="/moore-oklahoma-concrete" className="text-orange no-underline">Moore</Link> across Cleveland County, including repair and replacement work in neighborhoods that took storm damage over the years. No matter which part of the metro your project is in, you're getting the same process: proper subgrade, correct mix design, adequate reinforcement, and a crew that stands behind what they pour.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
           {[

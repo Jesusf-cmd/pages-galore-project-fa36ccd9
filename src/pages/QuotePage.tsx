@@ -82,7 +82,7 @@ export default function QuotePage() {
           // Pre-fill signer fields with the customer info on file (still editable).
           setSignerName(quoteData.customer_name || "");
           setSignerEmail(quoteData.customer_email || "");
-          document.title = `Estimate ${formatQuoteNumber(quoteData.quote_number)} | Redwood Construction`;
+          document.title = `Estimate ${formatQuoteNumber(quoteData.quote_number)} | FDZ Construction`;
         }
         setLoading(false);
       });
@@ -239,7 +239,7 @@ export default function QuotePage() {
           <div className="bg-[#fef2f2] border border-[#fecaca] rounded px-5 py-4 text-center">
             <div className="text-[#dc2626] text-sm font-bold mb-1">This quote has expired.</div>
             <div className="text-[#555] text-xs">
-              Please contact us at <a href="tel:4052470027" className="text-[#c45c26] font-bold">(405) 247-0027</a> for an updated estimate.
+              Please contact us at <a href="tel:4054584805" className="text-[#c45c26] font-bold">(405) 458-4805</a> for an updated estimate.
             </div>
           </div>
         </div>
@@ -423,7 +423,7 @@ export default function QuotePage() {
 
           {/* Footer */}
           <div className="bg-[#1a1a1a] px-8 sm:px-10 py-6 text-center">
-            <div className="text-white text-sm font-bold tracking-wide">Redwood Construction LLC</div>
+            <div className="text-white text-sm font-bold tracking-wide">FDZ Construction LLC</div>
             <div className="text-[#888] text-xs mt-2">{COMPANY.phone} · {COMPANY.email}</div>
             <div className="text-[#888] text-xs mt-1">{COMPANY.siteUrl}</div>
           </div>

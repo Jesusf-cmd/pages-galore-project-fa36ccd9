@@ -18,18 +18,18 @@ export default function Footer() {
       {/* Contact info */}
       <div className="flex flex-wrap gap-6 justify-center mb-6 text-center">
         <div>
-          <div className="text-[0.6rem] tracking-[0.14em] uppercase text-muted-text font-semibold mb-1">Contact Redwood Construction directly</div>
+          <div className="text-[0.6rem] tracking-[0.14em] uppercase text-muted-text font-semibold mb-1">Contact FDZ Construction directly</div>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="mailto:jesus.f@myconcreteestimate.com" className="text-orange text-sm font-medium no-underline hover:underline">jesus.f@myconcreteestimate.com</a>
-            <a href="tel:4052470027" className="text-orange text-sm font-medium no-underline hover:underline">(405) 247-0027</a>
+            <a href="tel:4054584805" className="text-orange text-sm font-medium no-underline hover:underline">(405) 458-4805</a>
           </div>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
         <div>
-          <img src={LOGO_URL} alt="Redwood Construction LLC — Oklahoma City Concrete Contractor" className="h-9 opacity-70 mb-3" />
+          <img src={LOGO_URL} alt="FDZ Construction LLC — Oklahoma City Concrete Contractor" className="h-9 opacity-70 mb-3" />
           <p className="text-[0.74rem] text-muted-text">Oklahoma City's concrete contractor. Licensed &amp; insured in Oklahoma.</p>
-          <p className="text-[0.74rem] text-muted-text mt-2">© {new Date().getFullYear()} Redwood Construction LLC. All rights reserved.</p>
+          <p className="text-[0.74rem] text-muted-text mt-2">© {new Date().getFullYear()} FDZ Construction LLC. All rights reserved.</p>
         </div>
         <div>
           <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3">Concrete Services</div>
@@ -60,7 +60,7 @@ export default function Footer() {
             <Link to="/our-projects" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Our Work</Link>
             <Link to="/blog" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Tips Blog</Link>
             <span className="text-[0.74rem] text-muted-text">Workmanship Warranty</span>
-            <a href="tel:4052470027" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">(405) 247-0027</a>
+            <a href="tel:4054584805" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">(405) 458-4805</a>
             <a href="mailto:jesus.f@myconcreteestimate.com" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">jesus.f@myconcreteestimate.com</a>
           </div>
         </div>

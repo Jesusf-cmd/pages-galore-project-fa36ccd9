@@ -2,8 +2,8 @@
 // Single source of truth for all service definitions, pricing, and inclusions.
 
 export const COMPANY = {
-  name: "Redwood Construction LLC",
-  phone: "(405) 247-0027",
+  name: "FDZ Construction LLC",
+  phone: "(405) 458-4805",
   email: "jesus.f@myconcreteestimate.com",
   siteUrl: "https://myconcreteestimate.com",
   badge: "LICENSED & INSURED",

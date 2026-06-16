@@ -13,8 +13,8 @@ const posts = [
 
 export default function BlogIndex() {
   useSEO({
-    title: "Concrete Tips & Guides for Oklahoma City | Redwood Construction LLC",
-    description: "Expert concrete guides for Oklahoma City homeowners. Pricing, specifications, soil tips, and maintenance advice from Redwood Construction LLC.",
+    title: "Concrete Tips & Guides for Oklahoma City | FDZ Construction LLC",
+    description: "Expert concrete guides for Oklahoma City homeowners. Pricing, specifications, soil tips, and maintenance advice from FDZ Construction LLC.",
   });
 
   return (

@@ -15,19 +15,19 @@ const cityData: Record<string, {
     city: "Oklahoma City",
     county: "Oklahoma County",
     zips: "73107, 73109, 73112, 73118, 73120, 73127",
-    metaDescription: "Concrete contractor in Oklahoma City, OK — Redwood Construction LLC. Driveways, slabs, foundations & patios built for OKC's expansive Permian clay. 500+ metro projects. Free estimate: (405) 247-0027.",
+    metaDescription: "Concrete contractor in Oklahoma City, OK — FDZ Construction LLC. Driveways, slabs, foundations & patios built for OKC's expansive Permian clay. 500+ metro projects. Free estimate: (405) 458-4805.",
     intro: [
-      "Redwood Construction LLC is headquartered in the Oklahoma City metro, giving us firsthand knowledge of the soil conditions, drainage challenges, and building codes that affect every concrete project in the area. From the historic neighborhoods near Capitol Hill to the growing developments in northwest OKC, we've poured concrete across every part of this city.",
+      "FDZ Construction LLC is headquartered in the Oklahoma City metro, giving us firsthand knowledge of the soil conditions, drainage challenges, and building codes that affect every concrete project in the area. From the historic neighborhoods near Capitol Hill to the growing developments in northwest OKC, we've poured concrete across every part of this city.",
       "Oklahoma City's expansive Permian red clay is among the most challenging soil types for concrete work in the entire country. This clay swells dramatically during wet seasons and contracts during Oklahoma's intense summer droughts, creating a cycle of movement that destroys improperly built concrete. Our crews understand this at a granular level — we adjust base depth, reinforcement, and drainage for each zip code we serve.",
     ],
     servicesIntro: [
-      "<strong>Concrete services in Oklahoma City</strong> from Redwood Construction include <a href='/driveways-oklahoma-city'>concrete driveways</a>, <a href='/patios-oklahoma-city'>patio and garage slabs</a>, <a href='/patios-oklahoma-city'>stamped decorative concrete</a>, <a href='/foundations-oklahoma-city'>foundations</a>, <a href='/foundations-oklahoma-city'>retaining walls</a>, <a href='/sidewalks-oklahoma-city'>sidewalks</a>, and <a href='/commercial-concrete-oklahoma-city'>commercial parking lots</a>.",
+      "<strong>Concrete services in Oklahoma City</strong> from FDZ Construction include <a href='/driveways-oklahoma-city'>concrete driveways</a>, <a href='/patios-oklahoma-city'>patio and garage slabs</a>, <a href='/patios-oklahoma-city'>stamped decorative concrete</a>, <a href='/foundations-oklahoma-city'>foundations</a>, <a href='/foundations-oklahoma-city'>retaining walls</a>, <a href='/sidewalks-oklahoma-city'>sidewalks</a>, and <a href='/commercial-concrete-oklahoma-city'>commercial parking lots</a>.",
     ],
     localDetails: "We've completed projects near Lake Hefner, in Nichols Hills, across the Paseo district, and throughout south OKC. Our knowledge of local permitting requirements and city right-of-way specifications keeps projects running on schedule.",
     soilNote: "OKC sits on Permian-age red clay with a Plasticity Index often exceeding 35. This means aggressive swell-shrink cycles that demand deeper base prep and heavier reinforcement than most cities require.",
     faq: [
       { question: "How much does concrete work cost in Oklahoma City?", answer: "Concrete pricing in Oklahoma City runs $6–$10 per sq ft for standard slabs and driveways, $15–$22 for stamped work, and $9–$14 for foundation pours. Get a free on-site estimate for accurate pricing." },
-      { question: "Do you serve all of Oklahoma City?", answer: "Yes — Redwood Construction serves all of Oklahoma City including zip codes 73107, 73109, 73112, 73118, 73120, 73127, and surrounding areas. Same crew, same pricing." },
+      { question: "Do you serve all of Oklahoma City?", answer: "Yes — FDZ Construction serves all of Oklahoma City including zip codes 73107, 73109, 73112, 73118, 73120, 73127, and surrounding areas. Same crew, same pricing." },
       { question: "What concrete services do you offer in Oklahoma City?", answer: "We offer driveways, patio slabs, stamped concrete, foundations, retaining walls, sidewalks, curb and gutter, and commercial parking lots throughout Oklahoma City." },
       { question: "Why is base prep so important in Oklahoma City?", answer: "OKC's expansive clay soil swells and contracts with moisture changes. Without proper base prep — excavation, aggregate base, and compaction — concrete will crack and heave within a few years." },
     ],
@@ -36,9 +36,9 @@ const cityData: Record<string, {
     city: "Edmond",
     county: "Oklahoma County",
     zips: "73003, 73012, 73013, 73025, 73034",
-    metaDescription: "Concrete contractor in Edmond, OK — driveways, patios, slabs & foundations for Deer Creek, Coffee Creek, and all of Oklahoma County. Redwood Construction LLC. Call (405) 247-0027.",
+    metaDescription: "Concrete contractor in Edmond, OK — driveways, patios, slabs & foundations for Deer Creek, Coffee Creek, and all of Oklahoma County. FDZ Construction LLC. Call (405) 458-4805.",
     intro: [
-      "Edmond is one of the fastest-growing cities in the OKC metro, with new residential construction booming in areas like Deer Creek, Coffee Creek, and along the 15th Street corridor. Redwood Construction has been pouring concrete for Edmond homeowners and builders since our earliest days — we know the neighborhoods, the soil variations, and the local expectations.",
+      "Edmond is one of the fastest-growing cities in the OKC metro, with new residential construction booming in areas like Deer Creek, Coffee Creek, and along the 15th Street corridor. FDZ Construction has been pouring concrete for Edmond homeowners and builders since our earliest days — we know the neighborhoods, the soil variations, and the local expectations.",
       "Edmond's soil conditions vary significantly by location. The western sections near Piedmont feature heavier clay with higher swell potential, while the eastern areas closer to I-35 have more mixed soil profiles. We adjust our base prep and reinforcement recommendations based on the specific lot — not a one-size-fits-all approach.",
     ],
     servicesIntro: [
@@ -56,10 +56,10 @@ const cityData: Record<string, {
     city: "Norman",
     county: "Cleveland County",
     zips: "73019, 73026, 73069, 73071, 73072",
-    metaDescription: "Concrete contractor in Norman, OK serving Cleveland County. Driveways, patios, slabs & retaining walls built for Norman's soil and drainage conditions. Redwood Construction LLC. (405) 247-0027.",
+    metaDescription: "Concrete contractor in Norman, OK serving Cleveland County. Driveways, patios, slabs & retaining walls built for Norman's soil and drainage conditions. FDZ Construction LLC. (405) 458-4805.",
     intro: [
       "Norman, home to the University of Oklahoma, presents unique concrete challenges due to its location in Cleveland County. The soil profile in Norman differs from central Oklahoma City — it includes both heavy red clay in the western sections and lighter sandy-clay mix near the Canadian River corridor in the east.",
-      "Redwood Construction has completed numerous projects in Norman, from driveway replacements in established neighborhoods near Main Street to new construction foundations in the growing communities along 24th Avenue NW. Norman's weather exposure is slightly different from OKC — the city catches more direct storm paths, making proper drainage grading critical on every pour.",
+      "FDZ Construction has completed numerous projects in Norman, from driveway replacements in established neighborhoods near Main Street to new construction foundations in the growing communities along 24th Avenue NW. Norman's weather exposure is slightly different from OKC — the city catches more direct storm paths, making proper drainage grading critical on every pour.",
     ],
     servicesIntro: [
       "<strong>Concrete services in Norman, Oklahoma</strong> include <a href='/driveways-oklahoma-city'>driveway installation and replacement</a>, <a href='/patios-oklahoma-city'>patio and garage slabs</a>, <a href='/patios-oklahoma-city'>stamped decorative concrete</a>, <a href='/foundations-oklahoma-city'>residential foundations</a>, and <a href='/foundations-oklahoma-city'>retaining walls</a>. Norman homeowners near the Canadian River floodplain especially benefit from proper <a href='/foundations-oklahoma-city'>foundation engineering</a> and drainage planning.",
@@ -76,10 +76,10 @@ const cityData: Record<string, {
     city: "Yukon",
     county: "Canadian County",
     zips: "73036, 73099",
-    metaDescription: "Concrete contractor in Yukon, OK — driveways, slabs, patios & commercial concrete in Canadian County. Transitional clay soil experts. Redwood Construction LLC. (405) 247-0027.",
+    metaDescription: "Concrete contractor in Yukon, OK — driveways, slabs, patios & commercial concrete in Canadian County. Transitional clay soil experts. FDZ Construction LLC. (405) 458-4805.",
     intro: [
       "Yukon sits in Canadian County on the western edge of the OKC metro, where the soil transitions from Oklahoma County's red clay to the slightly sandier profiles found further west. This transition zone creates unique concrete challenges — the soil can behave differently across a single property.",
-      "Redwood Construction serves Yukon homeowners and businesses with the same standards and crew we use across the entire metro. We've completed driveways, patios, commercial slabs, and foundation work throughout Yukon — including projects near the downtown district and in the newer developments along SH-66.",
+      "FDZ Construction serves Yukon homeowners and businesses with the same standards and crew we use across the entire metro. We've completed driveways, patios, commercial slabs, and foundation work throughout Yukon — including projects near the downtown district and in the newer developments along SH-66.",
     ],
     servicesIntro: [
       "<strong>Concrete services in Yukon, Oklahoma</strong> include <a href='/driveways-oklahoma-city'>driveways</a>, <a href='/patios-oklahoma-city'>patio and garage slabs</a>, <a href='/patios-oklahoma-city'>stamped concrete</a>, <a href='/foundations-oklahoma-city'>foundations</a>, and <a href='/commercial-concrete-oklahoma-city'>commercial parking lots</a>. Yukon's growing commercial corridor along I-40 keeps our <a href='/commercial-concrete-oklahoma-city'>commercial concrete</a> crew busy.",
@@ -96,9 +96,9 @@ const cityData: Record<string, {
     city: "Mustang",
     county: "Canadian County",
     zips: "73064",
-    metaDescription: "Concrete contractor in Mustang, OK. Driveways, patios, slabs & foundations for Mustang homeowners and new construction subdivisions. Redwood Construction LLC. Call (405) 247-0027.",
+    metaDescription: "Concrete contractor in Mustang, OK. Driveways, patios, slabs & foundations for Mustang homeowners and new construction subdivisions. FDZ Construction LLC. Call (405) 458-4805.",
     intro: [
-      "Mustang has experienced significant residential growth over the past decade, with new subdivisions expanding south and west of the city center. Redwood Construction serves Mustang homeowners with driveways, patios, foundations, and decorative concrete — bringing the same quality we deliver across the OKC metro.",
+      "Mustang has experienced significant residential growth over the past decade, with new subdivisions expanding south and west of the city center. FDZ Construction serves Mustang homeowners with driveways, patios, foundations, and decorative concrete — bringing the same quality we deliver across the OKC metro.",
       "Like neighboring Yukon, Mustang's Canadian County soil is transitional between the heavy red clay of central OKC and the sandier profiles further west. Our crew evaluates each Mustang property individually — adjusting base depth and reinforcement based on actual soil conditions, not assumptions.",
     ],
     servicesIntro: [
@@ -116,9 +116,9 @@ const cityData: Record<string, {
     city: "Moore",
     county: "Cleveland County",
     zips: "73160, 73170",
-    metaDescription: "Concrete contractor in Moore, OK — driveways, foundations & storm damage concrete replacement in Cleveland County. Redwood Construction LLC. Free estimate: (405) 247-0027.",
+    metaDescription: "Concrete contractor in Moore, OK — driveways, foundations & storm damage concrete replacement in Cleveland County. FDZ Construction LLC. Free estimate: (405) 458-4805.",
     intro: [
-      "Moore, located in Cleveland County just south of Oklahoma City, is known for its strong residential communities and, unfortunately, its exposure to severe weather. The tornado activity in Moore has led to significant rebuilding over the years — and Redwood Construction has been part of that recovery, pouring foundations and flatwork for homeowners rebuilding after storms.",
+      "Moore, located in Cleveland County just south of Oklahoma City, is known for its strong residential communities and, unfortunately, its exposure to severe weather. The tornado activity in Moore has led to significant rebuilding over the years — and FDZ Construction has been part of that recovery, pouring foundations and flatwork for homeowners rebuilding after storms.",
       "Moore's soil conditions are consistent with the broader Cleveland County profile — moderate to heavy clay that requires proper base preparation on every concrete project. The city's flat terrain means drainage grading is especially important — without proper slope, water pools on slabs and against foundations.",
     ],
     servicesIntro: [
@@ -136,7 +136,7 @@ const cityData: Record<string, {
     city: "Midwest City",
     county: "Oklahoma County",
     zips: "73110, 73130",
-    metaDescription: "Concrete contractor in Midwest City, OK. Driveway replacement, patio slabs & sidewalk repair in eastern Oklahoma County. Redwood Construction LLC. Call (405) 247-0027.",
+    metaDescription: "Concrete contractor in Midwest City, OK. Driveway replacement, patio slabs & sidewalk repair in eastern Oklahoma County. FDZ Construction LLC. Call (405) 458-4805.",
     intro: [
       "Midwest City, located adjacent to Tinker Air Force Base in eastern Oklahoma County, has a well-established residential base with many homes built in the mid-20th century. This means a significant portion of our Midwest City work involves replacing aging driveways, patios, and sidewalks that have reached the end of their service life.",
       "The soil in eastern Oklahoma County tends to be slightly less aggressive than the central OKC red clay, but still contains enough expansive minerals to require proper base preparation. Midwest City's older neighborhoods often have mature trees with root systems that can affect concrete work — our crew identifies and addresses these issues during the site assessment.",
@@ -156,10 +156,10 @@ const cityData: Record<string, {
     city: "Del City",
     county: "Oklahoma County",
     zips: "73115, 73135",
-    metaDescription: "Concrete contractor in Del City, OK — driveway replacement, patio slabs & sidewalk repair for Del City homeowners. Redwood Construction LLC. Call (405) 247-0027.",
+    metaDescription: "Concrete contractor in Del City, OK — driveway replacement, patio slabs & sidewalk repair for Del City homeowners. FDZ Construction LLC. Call (405) 458-4805.",
     intro: [
       "Del City is a tightly-knit community in southeastern Oklahoma County, bordered by Midwest City and south Oklahoma City. Like its neighbors, Del City has an established housing stock that frequently needs concrete replacement — driveways, sidewalks, and patios that were originally poured decades ago.",
-      "Redwood Construction serves Del City homeowners with affordable, quality concrete work. The soil conditions in this part of Oklahoma County are moderate clay — manageable with proper base prep but still requiring attention to drainage and reinforcement. Our crew treats every Del City project with the same standards we apply across the entire OKC metro.",
+      "FDZ Construction serves Del City homeowners with affordable, quality concrete work. The soil conditions in this part of Oklahoma County are moderate clay — manageable with proper base prep but still requiring attention to drainage and reinforcement. Our crew treats every Del City project with the same standards we apply across the entire OKC metro.",
     ],
     servicesIntro: [
       "<strong>Concrete services in Del City, Oklahoma</strong> include <a href='/driveways-oklahoma-city'>driveway replacement and new construction</a>, <a href='/patios-oklahoma-city'>patio slabs</a>, <a href='/sidewalks-oklahoma-city'>sidewalk repair</a>, and <a href='/foundations-oklahoma-city'>retaining walls</a>. Del City homeowners looking to upgrade their outdoor living space can combine a <a href='/patios-oklahoma-city'>new patio</a> with a <a href='/patios-oklahoma-city'>stamped finish</a> for a premium look at a fraction of natural stone costs.",
@@ -191,7 +191,7 @@ export default function CityPage({ slug }: { slug: string }) {
     <CityPageTemplate
       city={data.city}
       county={data.county}
-      description={`<a href="/driveways-oklahoma-city">Driveways</a>, <a href="/patios-oklahoma-city">slabs</a>, <a href="/foundations-oklahoma-city">foundations</a>, and <a href="/patios-oklahoma-city">stamped concrete</a> in <strong>${data.city}, Oklahoma</strong>. Redwood Construction LLC — locally owned <strong>concrete company in OKC</strong>. <a href="tel:4052470027">(405) 247-0027</a>.`}
+      description={`<a href="/driveways-oklahoma-city">Driveways</a>, <a href="/patios-oklahoma-city">slabs</a>, <a href="/foundations-oklahoma-city">foundations</a>, and <a href="/patios-oklahoma-city">stamped concrete</a> in <strong>${data.city}, Oklahoma</strong>. FDZ Construction LLC — locally owned <strong>concrete company in OKC</strong>. <a href="tel:4054584805">(405) 458-4805</a>.`}
       localContent={data.intro}
       servicesContent={[
         ...data.servicesIntro,

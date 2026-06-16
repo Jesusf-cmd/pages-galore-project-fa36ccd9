@@ -9,7 +9,7 @@ const blogPosts: Record<string, { title: string; date: string; time: string; tag
     title: "Why Concrete Driveways Crack in Oklahoma",
     date: "2026-03-15", time: "7 min read",
     tags: ["Oklahoma City Concrete", "Driveway Cracking", "OKC Clay Soil"],
-    deck: "Five real causes — and how Redwood Construction builds driveways in Oklahoma City that don't.",
+    deck: "Five real causes — and how FDZ Construction builds driveways in Oklahoma City that don't.",
     sections: [
       { heading: "The Real Culprit: Oklahoma Clay Soil", content: ["Oklahoma City sits on some of the most expansive clay soil in the country. When it rains, the clay absorbs water and expands. When drought hits, it contracts. A concrete driveway goes through this cycle multiple times every year. Concrete doesn't flex — when clay pushes up unevenly, it creates tension and cracks."] },
       { heading: "Cause #1: Inadequate Base Preparation", content: ["This is the most common cause of <a href='/driveways-oklahoma-city' class='text-orange no-underline'>concrete driveway</a> failure in Oklahoma City. Proper base prep means excavating to the right depth, compacting the native subgrade, and installing 4–6 inches of compacted aggregate base. A lot of contractors cut corners here because it takes time and equipment."] },
@@ -70,23 +70,23 @@ const blogPosts: Record<string, { title: string; date: string; time: string; tag
 
 const blogSEO: Record<string, { title: string; description: string }> = {
   "why-concrete-driveways-crack-oklahoma": {
-    title: "Why Concrete Driveways Crack in Oklahoma | Redwood Construction LLC",
+    title: "Why Concrete Driveways Crack in Oklahoma | FDZ Construction LLC",
     description: "Five real reasons concrete driveways crack in Oklahoma — clay soil, bad base prep, missing rebar — and how to prevent every one of them.",
   },
   "cost-of-concrete-oklahoma-city-2026": {
-    title: "Cost of Concrete in Oklahoma City 2026 | Redwood Construction LLC",
+    title: "Cost of Concrete in Oklahoma City 2026 | FDZ Construction LLC",
     description: "Updated 2026 concrete pricing for Oklahoma City. Per square foot rates, typical project costs, and what drives price in the OKC market.",
   },
   "rebar-vs-wire-mesh-concrete-slabs": {
-    title: "Rebar vs Wire Mesh for Concrete Slabs | Redwood Construction LLC",
+    title: "Rebar vs Wire Mesh for Concrete Slabs | FDZ Construction LLC",
     description: "Rebar vs wire mesh for concrete slabs in Oklahoma. Which your project actually needs on OKC clay soil — and why the choice matters long-term.",
   },
   "how-thick-should-driveway-be-oklahoma": {
-    title: "How Thick Should a Driveway Be in Oklahoma | Redwood Construction LLC",
+    title: "How Thick Should a Driveway Be in Oklahoma | FDZ Construction LLC",
     description: "How thick should a concrete driveway be in Oklahoma? 4 inches is standard — but not always right. Learn when you need 5–6 inches instead.",
   },
   "best-time-of-year-to-pour-concrete-okc": {
-    title: "Best Time to Pour Concrete in OKC | Redwood Construction LLC",
+    title: "Best Time to Pour Concrete in OKC | FDZ Construction LLC",
     description: "Best time to pour concrete in Oklahoma City. Fall is ideal, but experienced OKC contractors work year-round with the right protocols.",
   },
 };
@@ -97,8 +97,8 @@ export default function BlogPost() {
   const seo = blogSEO[slug || ""];
 
   useSEO({
-    title: seo?.title || `${post?.title || "Blog"} | Redwood Construction LLC`,
-    description: seo?.description || post?.deck || "Concrete tips and guides from Redwood Construction LLC in Oklahoma City.",
+    title: seo?.title || `${post?.title || "Blog"} | FDZ Construction LLC`,
+    description: seo?.description || post?.deck || "Concrete tips and guides from FDZ Construction LLC in Oklahoma City.",
   });
 
   if (!post) {
@@ -119,7 +119,7 @@ export default function BlogPost() {
         <div className="flex gap-4 text-[0.75rem] text-muted-text mb-4">
           <span>📅 {post.date}</span>
           <span>⏱ {post.time}</span>
-          <span>By Redwood Construction LLC</span>
+          <span>By FDZ Construction LLC</span>
         </div>
         <div className="flex gap-2 flex-wrap">
           {post.tags.map(tag => (
@@ -141,7 +141,7 @@ export default function BlogPost() {
             </div>
           ))}
           <div className="mt-10 mb-8">
-            <p className="prose-muted">Looking for a contractor? Redwood Construction handles <Link to="/driveways-oklahoma-city" className="text-orange no-underline">concrete driveway installation</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">patio and garage slab construction</Link>, <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundation and retaining wall work</Link>, and <Link to="/commercial-concrete-oklahoma-city" className="text-orange no-underline">commercial concrete</Link> across the <Link to="/oklahoma-city-concrete" className="text-orange no-underline">Oklahoma City metro</Link>.</p>
+            <p className="prose-muted">Looking for a contractor? FDZ Construction handles <Link to="/driveways-oklahoma-city" className="text-orange no-underline">concrete driveway installation</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">patio and garage slab construction</Link>, <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundation and retaining wall work</Link>, and <Link to="/commercial-concrete-oklahoma-city" className="text-orange no-underline">commercial concrete</Link> across the <Link to="/oklahoma-city-concrete" className="text-orange no-underline">Oklahoma City metro</Link>.</p>
           </div>
           <div className="flex gap-4 flex-wrap mt-12 pt-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <Link to="/blog" className="btn-outline text-sm">← All Articles</Link>

@@ -156,7 +156,7 @@ Deno.serve(async (req) => {
     const quoteNumber = `#${String(quote.quote_number).padStart(4, "0")}`;
     const siteUrl = "https://myconcreteestimate.com";
     const quoteUrl = `${siteUrl}/quote/${quote.access_token}`;
-    const fromAddress = "Redwood Construction <estimates@myconcreteestimate.com>";
+    const fromAddress = "FDZ Construction <estimates@myconcreteestimate.com>";
     const acceptedDateStr = new Date(acceptedAt).toLocaleDateString("en-US", {
       year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit",
     });
@@ -221,8 +221,8 @@ Deno.serve(async (req) => {
       </div>
     </div>
     <div style="background:#1a1a1a;padding:20px 32px;text-align:center;">
-      <div style="color:#ffffff;font-size:13px;font-weight:bold;">Redwood Construction LLC</div>
-      <div style="color:#888;font-size:12px;margin-top:4px;">(405) 247-0027 · jesus.f@myconcreteestimate.com</div>
+      <div style="color:#ffffff;font-size:13px;font-weight:bold;">FDZ Construction LLC</div>
+      <div style="color:#888;font-size:12px;margin-top:4px;">(405) 458-4805 · jesus.f@myconcreteestimate.com</div>
       <div style="color:#666;font-size:11px;margin-top:4px;">myconcreteestimate.com</div>
     </div>
   </div>
@@ -265,7 +265,7 @@ Deno.serve(async (req) => {
 </body></html>`;
 
       await Promise.allSettled([
-        sendEmail(quote.customer_email, `Quote ${quoteNumber} Accepted - Redwood Construction`, customerHtml),
+        sendEmail(quote.customer_email, `Quote ${quoteNumber} Accepted - FDZ Construction`, customerHtml),
         sendEmail("jesus.f@myconcreteestimate.com", `ACCEPTED: Quote ${quoteNumber} - ${quote.customer_name}`, internalHtml),
       ]);
     }

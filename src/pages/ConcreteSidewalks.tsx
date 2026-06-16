@@ -3,19 +3,19 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function ConcreteSidewalks() {
   return (
     <ServicePage
-      metaTitle="Concrete Sidewalks in Oklahoma City | Redwood Construction LLC"
+      metaTitle="Concrete Sidewalks in Oklahoma City | FDZ Construction LLC"
       metaDescription="Concrete sidewalk contractors in Oklahoma City. New construction, city right-of-way replacements, and ADA-compliant ramps. $6–$10/sq ft. Free estimate."
       eyebrow="OKC Metro · Sidewalk Contractors · Licensed & Insured"
       title="Concrete Sidewalks"
       titleAccent="Oklahoma City."
-      description='New construction, replacements, city right-of-way work. Serving OKC metro. Free estimate. <a href="tel:4052470027">(405) 247-0027</a>.'
+      description='New construction, replacements, city right-of-way work. Serving OKC metro. Free estimate. <a href="tel:4054584805">(405) 458-4805</a>.'
       sections={[
         {
           eyebrow: "Sidewalk Contractors OKC",
           title: "Safe, Clean &",
           titleAccent: "Built to Code.",
           content: [
-            "<strong>Concrete sidewalk contractors in Oklahoma City</strong> — Redwood Construction handles new construction, replacement, and city right-of-way sidewalks with proper base prep and ADA-compliant options. Our sidewalk work builds on the same <a href='/foundations-oklahoma-city'>foundation expertise</a> we bring to every project.",
+            "<strong>Concrete sidewalk contractors in Oklahoma City</strong> — FDZ Construction handles new construction, replacement, and city right-of-way sidewalks with proper base prep and ADA-compliant options. Our sidewalk work builds on the same <a href='/foundations-oklahoma-city'>foundation expertise</a> we bring to every project.",
             "We handle city-required sidewalk repairs, new construction in subdivisions, and private walkway projects. Every sidewalk is broom-finished for traction and properly jointed. Our sidewalk work complements our <a href='/driveways-oklahoma-city'>driveway</a> and <a href='/patios-oklahoma-city'>patio</a> services for complete residential concrete projects.",
           ],
         },
@@ -34,7 +34,7 @@ export default function ConcreteSidewalks() {
           title: "Trusted Sidewalk",
           titleAccent: "Contractors in OKC.",
           content: [
-            "Redwood Construction handles sidewalk projects of all sizes — from a single walkway panel to full subdivision installations. We understand Oklahoma City's specific requirements for right-of-way work and ADA accessibility.",
+            "FDZ Construction handles sidewalk projects of all sizes — from a single walkway panel to full subdivision installations. We understand Oklahoma City's specific requirements for right-of-way work and ADA accessibility.",
             "Our 4.9-star Google rating and BBB A+ accreditation come from consistently delivering quality work on time and on budget. We also offer <a href='/sidewalks-oklahoma-city'>curb and gutter</a> installation, <a href='/patios-oklahoma-city'>concrete slab construction</a>, and <a href='/commercial-concrete-oklahoma-city'>commercial concrete</a> for complete site work.",
           ],
         },

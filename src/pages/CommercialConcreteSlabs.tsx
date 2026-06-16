@@ -3,19 +3,19 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function CommercialConcreteSlabs() {
   return (
     <ServicePage
-      metaTitle="Commercial Concrete Slabs in Oklahoma City | Redwood Construction LLC"
+      metaTitle="Commercial Concrete Slabs in Oklahoma City | FDZ Construction LLC"
       metaDescription="Commercial concrete slab contractors in Oklahoma City. Warehouse floors, retail pads, and industrial slabs with 4,000+ PSI concrete. Free commercial estimate."
       eyebrow="OKC Metro · Commercial Concrete · Licensed & Insured"
       title="Commercial"
       titleAccent="Concrete Slabs."
-      description='Heavy-duty commercial slabs for warehouses, retail buildings, and industrial facilities across the OKC metro. Engineered for heavy loads and high traffic. <a href="tel:4052470027">(405) 247-0027</a>.'
+      description='Heavy-duty commercial slabs for warehouses, retail buildings, and industrial facilities across the OKC metro. Engineered for heavy loads and high traffic. <a href="tel:4054584805">(405) 458-4805</a>.'
       sections={[
         {
           eyebrow: "Commercial Slabs OKC",
           title: "Built for Heavy",
           titleAccent: "Commercial Use.",
           content: [
-            "<strong>Commercial concrete slab contractors in Oklahoma City</strong> — Redwood Construction pours warehouse floors, retail pads, equipment slabs, and industrial concrete across the OKC metro. Commercial slabs require thicker pours, higher PSI concrete, and engineered reinforcement to handle forklift traffic, heavy equipment, and sustained loads.",
+            "<strong>Commercial concrete slab contractors in Oklahoma City</strong> — FDZ Construction pours warehouse floors, retail pads, equipment slabs, and industrial concrete across the OKC metro. Commercial slabs require thicker pours, higher PSI concrete, and engineered reinforcement to handle forklift traffic, heavy equipment, and sustained loads.",
             "Every commercial slab starts with a proper site assessment, soil testing when needed, and a pour plan that accounts for joint spacing, drainage, and load requirements specific to your operation. We also handle <a href='/commercial-concrete-oklahoma-city'>commercial parking lots</a>, <a href='/sidewalks-oklahoma-city'>curb and gutter</a> installation, and <a href='/foundations-oklahoma-city'>commercial foundation work</a>.",
           ],
           stats: [
@@ -39,7 +39,7 @@ export default function CommercialConcreteSlabs() {
           title: "Commercial Concrete",
           titleAccent: "You Can Count On.",
           content: [
-            "Redwood Construction has completed commercial concrete projects across Oklahoma City — from small retail pads to large warehouse floors. Our experience with commercial specifications, ADA compliance, and coordination with general contractors sets us apart.",
+            "FDZ Construction has completed commercial concrete projects across Oklahoma City — from small retail pads to large warehouse floors. Our experience with commercial specifications, ADA compliance, and coordination with general contractors sets us apart.",
             "We're licensed, bonded, and insured with BBB A+ accreditation. Our crew handles the complexity of commercial work — tight schedules, coordination with other trades, and specifications that demand precision. We also serve residential clients with <a href='/driveways-oklahoma-city'>driveway installation</a> and <a href='/patios-oklahoma-city'>patio slab construction</a>. See our <a href='/our-projects'>project gallery</a> for examples of our commercial work.",
           ],
         },

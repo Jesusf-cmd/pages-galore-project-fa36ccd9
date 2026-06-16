@@ -3,8 +3,8 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function ParkingLotConcrete() {
   return (
     <ServicePage
-      metaTitle="Parking Lot Concrete in Oklahoma City | Redwood Construction LLC"
-      metaDescription="Commercial concrete parking lot contractors in Oklahoma City. New construction, resurfacing, and ADA-compliant design. Call Redwood Construction for an estimate."
+      metaTitle="Parking Lot Concrete in Oklahoma City | FDZ Construction LLC"
+      metaDescription="Commercial concrete parking lot contractors in Oklahoma City. New construction, resurfacing, and ADA-compliant design. Call FDZ Construction for an estimate."
       eyebrow="OKC Metro · Commercial Concrete · Licensed & Insured"
       title="Parking Lot"
       titleAccent="Concrete OKC."
@@ -15,7 +15,7 @@ export default function ParkingLotConcrete() {
           title: "Built for Heavy",
           titleAccent: "Commercial Traffic.",
           content: [
-            "<strong>Commercial concrete parking lot contractors in Oklahoma City</strong> — Redwood Construction handles new parking lot construction, resurfacing, and major repairs for OKC businesses.",
+            "<strong>Commercial concrete parking lot contractors in Oklahoma City</strong> — FDZ Construction handles new parking lot construction, resurfacing, and major repairs for OKC businesses.",
             "Commercial parking lots require 5–6 inch slabs, proper drainage grading, joint sealing, and reinforcement designed for heavy vehicle loads. We handle projects from small retail lots to large commercial properties. Our parking lot work integrates with <a href='/sidewalks-oklahoma-city'>curb and gutter</a> and <a href='/commercial-concrete-oklahoma-city'>commercial slab</a> services.",
           ],
           stats: [
@@ -39,7 +39,7 @@ export default function ParkingLotConcrete() {
           title: "Commercial Parking",
           titleAccent: "Lot Experts.",
           content: [
-            "Redwood Construction has completed commercial parking lot projects across Oklahoma City — see our <a href='/our-projects'>project gallery</a> for examples including our Kiddie Academy project. We understand the specific requirements of commercial concrete: ADA compliance, drainage engineering, and durability under heavy traffic.",
+            "FDZ Construction has completed commercial parking lot projects across Oklahoma City — see our <a href='/our-projects'>project gallery</a> for examples including our Kiddie Academy project. We understand the specific requirements of commercial concrete: ADA compliance, drainage engineering, and durability under heavy traffic.",
             "Our BBB A+ rating and 4.9-star Google reviews reflect consistent quality on commercial and <a href='/driveways-oklahoma-city'>residential driveway</a> projects alike. We also handle <a href='/foundations-oklahoma-city'>concrete foundation work</a> for commercial and residential buildings across Oklahoma City.",
           ],
         },

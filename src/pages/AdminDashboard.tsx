@@ -58,7 +58,7 @@ export default function AdminDashboard() {
     setLoading(false);
   }, []);
 
-  useEffect(() => { document.title = "Admin Dashboard | Redwood Construction"; fetchQuotes(); }, [fetchQuotes]);
+  useEffect(() => { document.title = "Admin Dashboard | FDZ Construction"; fetchQuotes(); }, [fetchQuotes]);
 
   const filtered = useMemo(() => {
     let list = [...quotes];

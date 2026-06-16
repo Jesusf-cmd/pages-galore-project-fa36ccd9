@@ -4,13 +4,13 @@ export default function FoundationsOklahomaCity() {
   return (
     <ServicePage
       currentServiceSlug="foundations-oklahoma-city"
-      metaTitle="Concrete Foundations & Retaining Walls Oklahoma City | Redwood Construction LLC"
-      metaDescription="Concrete foundation and retaining wall contractor in Oklahoma City. Residential, commercial foundations, poured concrete walls, CMU block walls. Free estimate: (405) 247-0027."
+      metaTitle="Concrete Foundations & Retaining Walls Oklahoma City | FDZ Construction LLC"
+      metaDescription="Concrete foundation and retaining wall contractor in Oklahoma City. Residential, commercial foundations, poured concrete walls, CMU block walls. Free estimate: (405) 458-4805."
       eyebrow="OKC Metro · Foundation & Wall Contractors · Licensed & Insured"
       title="Concrete Foundations & Retaining Walls in"
       titleAccent="Oklahoma City."
-      description='Redwood Construction LLC provides concrete foundation and retaining wall services in Oklahoma City for residential and commercial projects. Structural concrete built for Oklahoma clay soil. <a href="tel:4052470027">(405) 247-0027</a>.'
-      introText="Foundations and retaining walls are the most critical concrete on your property — they support everything above them. Redwood Construction builds every foundation with proper footing depth, engineered reinforcement, and 4,000 PSI minimum concrete designed to handle Oklahoma's expansive clay."
+      description='FDZ Construction LLC provides concrete foundation and retaining wall services in Oklahoma City for residential and commercial projects. Structural concrete built for Oklahoma clay soil. <a href="tel:4054584805">(405) 458-4805</a>.'
+      introText="Foundations and retaining walls are the most critical concrete on your property — they support everything above them. FDZ Construction builds every foundation with proper footing depth, engineered reinforcement, and 4,000 PSI minimum concrete designed to handle Oklahoma's expansive clay."
       serviceLabel="Foundation & Wall"
       serviceCards={[
         {
@@ -73,7 +73,7 @@ export default function FoundationsOklahomaCity() {
           title: "Retaining Walls Engineered for",
           titleAccent: "Oklahoma Soil.",
           content: [
-            "<strong>Retaining wall contractors in Oklahoma City</strong> — Redwood Construction builds poured concrete, CMU block, and interlocking block retaining walls for slopes, erosion control, and outdoor living areas across the OKC metro.",
+            "<strong>Retaining wall contractors in Oklahoma City</strong> — FDZ Construction builds poured concrete, CMU block, and interlocking block retaining walls for slopes, erosion control, and outdoor living areas across the OKC metro.",
             "Oklahoma's clay soil and heavy rain events put significant lateral pressure on retaining structures. Every wall we build includes proper drainage, adequate footing depth, and reinforcement sized for the retained earth height.",
           ],
           stats: [
@@ -109,7 +109,7 @@ export default function FoundationsOklahomaCity() {
           content: [
             "Oklahoma City sits on some of the most expansive clay soil in the United States. This Permian red clay absorbs moisture and swells during wet seasons, then contracts sharply during summer droughts — sometimes shifting several inches in a single year.",
             "Foundation failures in OKC are almost always caused by inadequate footing depth, missing or improperly placed reinforcement, and poor drainage around the structure. A contractor who doesn't understand Oklahoma clay will pour a foundation that cracks and settles within a few years.",
-            "Proper foundation construction means footings below frost line, compacted subgrade, rebar per engineered plans, and drainage grading that moves water away from the structure. Every foundation Redwood Construction pours follows this standard.",
+            "Proper foundation construction means footings below frost line, compacted subgrade, rebar per engineered plans, and drainage grading that moves water away from the structure. Every foundation FDZ Construction pours follows this standard.",
           ],
         },
       ]}

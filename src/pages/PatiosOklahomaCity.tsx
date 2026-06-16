@@ -4,13 +4,13 @@ export default function PatiosOklahomaCity() {
   return (
     <ServicePage
       currentServiceSlug="patios-oklahoma-city"
-      metaTitle="Concrete Patios, Slabs & Stamped Concrete Oklahoma City | Redwood Construction LLC"
+      metaTitle="Concrete Patios, Slabs & Stamped Concrete Oklahoma City | FDZ Construction LLC"
       metaDescription="Concrete patio, slab, and stamped concrete contractors in Oklahoma City. Broom, smooth, stamped finishes. Garage floors, shop slabs, decorative patios. Free estimate."
       eyebrow="OKC Metro · Patio & Slab Contractors · Licensed & Insured"
       title="Concrete Patios, Slabs &"
       titleAccent="Stamped Concrete OKC."
-      description='Patios, garage floors, shop slabs, and stamped decorative concrete — properly graded and reinforced for Oklahoma weather. Free estimate. <a href="tel:4052470027">(405) 247-0027</a>.'
-      introText="From backyard patios to large shop slabs, Redwood Construction LLC delivers concrete flatwork built to handle Oklahoma's extreme temperature swings. Every pour starts with proper subgrade compaction, a minimum 4-inch aggregate base, rebar on chairs, and 4,000 PSI ready-mix from a local batch plant."
+      description='Patios, garage floors, shop slabs, and stamped decorative concrete — properly graded and reinforced for Oklahoma weather. Free estimate. <a href="tel:4054584805">(405) 458-4805</a>.'
+      introText="From backyard patios to large shop slabs, FDZ Construction LLC delivers concrete flatwork built to handle Oklahoma's extreme temperature swings. Every pour starts with proper subgrade compaction, a minimum 4-inch aggregate base, rebar on chairs, and 4,000 PSI ready-mix from a local batch plant."
       serviceLabel="Patio & Slab"
       serviceCards={[
         {
@@ -73,7 +73,7 @@ export default function PatiosOklahomaCity() {
           title: "Built for Oklahoma",
           titleAccent: "Backyards & Properties.",
           content: [
-            "<strong>Concrete patio and slab contractors in Oklahoma City</strong> at Redwood Construction build patios, garage floors, shop slabs, and equipment pads that handle Oklahoma's temperature swings — from freezing winters to 105°F summers. Proper grading, reinforcement, and control joints keep your concrete looking new for decades.",
+            "<strong>Concrete patio and slab contractors in Oklahoma City</strong> at FDZ Construction build patios, garage floors, shop slabs, and equipment pads that handle Oklahoma's temperature swings — from freezing winters to 105°F summers. Proper grading, reinforcement, and control joints keep your concrete looking new for decades.",
             "We offer broom finish, smooth finish, and stamped decorative options including ashlar slate, random flagstone, herringbone brick, running bond, cobblestone, and wood plank patterns. Every patio and slab is graded for drainage away from your home. Combine your patio with a <a href='/foundations-oklahoma-city'>retaining wall or foundation project</a> or <a href='/sidewalks-oklahoma-city'>walkway</a> for a complete outdoor transformation.",
           ],
           stats: [

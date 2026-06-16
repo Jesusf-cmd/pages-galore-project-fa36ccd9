@@ -4,13 +4,13 @@ export default function CommercialConcreteOklahomaCity() {
   return (
     <ServicePage
       currentServiceSlug="commercial-concrete-oklahoma-city"
-      metaTitle="Commercial Concrete Contractors Oklahoma City | Redwood Construction LLC"
-      metaDescription="Commercial concrete contractors in Oklahoma City. Warehouse floors, parking lots, retail pads, industrial slabs, curb & gutter. 4,000+ PSI. Free estimate: (405) 247-0027."
+      metaTitle="Commercial Concrete Contractors Oklahoma City | FDZ Construction LLC"
+      metaDescription="Commercial concrete contractors in Oklahoma City. Warehouse floors, parking lots, retail pads, industrial slabs, curb & gutter. 4,000+ PSI. Free estimate: (405) 458-4805."
       eyebrow="OKC Metro · Commercial Concrete · Licensed & Insured"
       title="Commercial Concrete"
       titleAccent="Oklahoma City."
-      description='Commercial concrete contractors in Oklahoma City — warehouse floors, parking lots, retail pads, industrial slabs, and site work across the OKC metro. <a href="tel:4052470027">(405) 247-0027</a>.'
-      introText="Redwood Construction LLC delivers commercial-grade concrete for businesses across the Oklahoma City metro. From warehouse floors to parking lots, every commercial pour uses 4,000+ PSI concrete, engineered reinforcement, and base preparation designed for heavy traffic and sustained loads."
+      description='Commercial concrete contractors in Oklahoma City — warehouse floors, parking lots, retail pads, industrial slabs, and site work across the OKC metro. <a href="tel:4054584805">(405) 458-4805</a>.'
+      introText="FDZ Construction LLC delivers commercial-grade concrete for businesses across the Oklahoma City metro. From warehouse floors to parking lots, every commercial pour uses 4,000+ PSI concrete, engineered reinforcement, and base preparation designed for heavy traffic and sustained loads."
       serviceLabel="Commercial"
       serviceCards={[
         {
@@ -64,7 +64,7 @@ export default function CommercialConcreteOklahomaCity() {
           title: "Built for Heavy",
           titleAccent: "Commercial Use.",
           content: [
-            "<strong>Commercial concrete contractors in Oklahoma City</strong> — Redwood Construction pours warehouse floors, retail pads, equipment slabs, and industrial concrete across the OKC metro. Commercial slabs require thicker pours, higher PSI concrete, and engineered reinforcement to handle forklift traffic, heavy equipment, and sustained loads.",
+            "<strong>Commercial concrete contractors in Oklahoma City</strong> — FDZ Construction pours warehouse floors, retail pads, equipment slabs, and industrial concrete across the OKC metro. Commercial slabs require thicker pours, higher PSI concrete, and engineered reinforcement to handle forklift traffic, heavy equipment, and sustained loads.",
             "Every commercial slab starts with a proper site assessment, soil testing when needed, and a pour plan that accounts for joint spacing, drainage, and load requirements specific to your operation.",
           ],
           stats: [
@@ -110,7 +110,7 @@ export default function CommercialConcreteOklahomaCity() {
           content: [
             "Oklahoma City's expansive clay soil creates unique challenges for commercial concrete. The swell-shrink cycle from seasonal moisture changes puts tremendous pressure on large-format slabs and parking lots.",
             "The most common commercial concrete failures are caused by inadequate base preparation, missing reinforcement, and poor joint layout. On commercial projects, these failures are expensive to fix and disruptive to your business.",
-            "Proper commercial base prep means 6+ inches of compacted aggregate, engineered rebar schedules, and joint spacing designed for the slab dimensions. Every commercial project Redwood Construction handles follows these standards.",
+            "Proper commercial base prep means 6+ inches of compacted aggregate, engineered rebar schedules, and joint spacing designed for the slab dimensions. Every commercial project FDZ Construction handles follows these standards.",
           ],
         },
       ]}

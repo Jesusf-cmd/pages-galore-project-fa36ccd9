@@ -67,7 +67,7 @@ export default function Navbar() {
         <Link to="/" className="flex flex-col gap-0.5">
           <img
             src={LOGO_URL}
-            alt="Redwood Construction LLC — Concrete Contractors Oklahoma City"
+            alt="FDZ Construction LLC — Concrete Contractors Oklahoma City"
             className="h-[40px] md:h-[50px] w-auto object-contain"
             loading="eager"
           />
@@ -91,7 +91,7 @@ export default function Navbar() {
         <div className="hidden nav:flex items-center gap-5 flex-shrink-0">
           <div className="flex flex-col items-end">
             <span className="text-[0.56rem] tracking-[0.14em] uppercase text-muted-text">Free Estimate</span>
-            <a href="tel:4052470027" className="font-display text-lg font-extrabold text-orange no-underline leading-tight">(405) 247-0027</a>
+            <a href="tel:4054584805" className="font-display text-lg font-extrabold text-orange no-underline leading-tight">(405) 458-4805</a>
           </div>
           <Link to="/#estimate" className="bg-orange text-white px-5 py-2 font-display text-[0.8rem] font-extrabold tracking-[0.08em] uppercase no-underline transition-colors hover:bg-orange-light whitespace-nowrap">
             Get Quote →
@@ -99,7 +99,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex nav:hidden items-center gap-2">
-          <a href="tel:4052470027" className="bg-orange text-white px-3 py-2 font-display text-[0.72rem] font-extrabold tracking-[0.06em] uppercase no-underline whitespace-nowrap">
+          <a href="tel:4054584805" className="bg-orange text-white px-3 py-2 font-display text-[0.72rem] font-extrabold tracking-[0.06em] uppercase no-underline whitespace-nowrap">
             📞 Call
           </a>
           <button
@@ -141,7 +141,7 @@ function MobileMenuOverlay({ onClose }: { onClose: () => void }) {
           <Link to="/" onClick={onClose} className="flex items-center">
             <img
               src={LOGO_URL}
-              alt="Redwood Construction LLC"
+              alt="FDZ Construction LLC"
               className="h-[38px] w-auto object-contain"
               loading="eager"
             />
@@ -177,8 +177,8 @@ function MobileMenuOverlay({ onClose }: { onClose: () => void }) {
             </div>
 
             <div className="space-y-3 pt-2">
-              <a href="tel:4052470027" className="btn-primary w-full py-4 text-center text-base">
-                📞 (405) 247-0027
+              <a href="tel:4054584805" className="btn-primary w-full py-4 text-center text-base">
+                📞 (405) 458-4805
               </a>
               <Link to="/#estimate" onClick={onClose} className="btn-outline w-full py-4 text-center text-base">
                 Get Free Estimate →

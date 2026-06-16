@@ -3,12 +3,12 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function StampedConcrete() {
   return (
     <ServicePage
-      metaTitle="Stamped Concrete in Oklahoma City | Redwood Construction LLC"
+      metaTitle="Stamped Concrete in Oklahoma City | FDZ Construction LLC"
       metaDescription="Stamped concrete contractors in Oklahoma City. Custom patterns, integral color, and professional sealers for patios, pool decks, and driveways. Free estimate."
       eyebrow="OKC Metro · Decorative Concrete · Licensed & Insured"
       title="Stamped Concrete"
       titleAccent="Oklahoma City."
-      description='Custom patterns, colors, and sealers for patios, pool decks, and driveways across OKC metro. <a href="tel:4052470027">(405) 247-0027</a>.'
+      description='Custom patterns, colors, and sealers for patios, pool decks, and driveways across OKC metro. <a href="tel:4054584805">(405) 458-4805</a>.'
       sections={[
         {
           eyebrow: "Stamped Concrete OKC",
@@ -39,7 +39,7 @@ export default function StampedConcrete() {
           title: "Decorative Concrete",
           titleAccent: "Done Right.",
           content: [
-            "Stamped concrete is only as good as the crew placing it. Timing, pattern alignment, color consistency, and proper sealing all require experienced hands. Redwood Construction has completed hundreds of stamped projects across Oklahoma City, <a href='/edmond-concrete'>Edmond</a>, and <a href='/norman-ok-concrete'>Norman</a>.",
+            "Stamped concrete is only as good as the crew placing it. Timing, pattern alignment, color consistency, and proper sealing all require experienced hands. FDZ Construction has completed hundreds of stamped projects across Oklahoma City, <a href='/edmond-concrete'>Edmond</a>, and <a href='/norman-ok-concrete'>Norman</a>.",
             "We provide physical color samples on-site so you see exactly what you're getting. Our 4.9-star Google rating and BBB A+ accreditation reflect the quality of our decorative work. Every stamped project includes a written maintenance guide for resealing.",
           ],
         },

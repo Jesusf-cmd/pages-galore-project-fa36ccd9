@@ -3,19 +3,19 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function ConcreteSlabs() {
   return (
     <ServicePage
-      metaTitle="Concrete Slabs in Oklahoma City | Redwood Construction LLC"
+      metaTitle="Concrete Slabs in Oklahoma City | FDZ Construction LLC"
       metaDescription="Professional concrete slab contractors in Oklahoma City. Patio slabs, garage floors, and shop pads built for OKC clay soil. $6–$10/sq ft. Free estimate."
       eyebrow="OKC Metro · Slab Contractors · Licensed & Insured"
       title="Concrete Slabs"
       titleAccent="Oklahoma City."
-      description='Patio slabs, garage floors, and shop slabs for <strong>Oklahoma City homeowners</strong> — properly graded, reinforced for OKC clay soil. Free estimate. <a href="tel:4052470027">(405) 247-0027</a>.'
+      description='Patio slabs, garage floors, and shop slabs for <strong>Oklahoma City homeowners</strong> — properly graded, reinforced for OKC clay soil. Free estimate. <a href="tel:4054584805">(405) 458-4805</a>.'
       sections={[
         {
           eyebrow: "Concrete Slabs OKC",
           title: "Built for Oklahoma",
           titleAccent: "Clay & Weather.",
           content: [
-            "<strong>Concrete slab contractors near Oklahoma City</strong> should know that Oklahoma's expansive clay soil requires more than a standard pour. Redwood Construction builds every slab with proper subgrade compaction, aggregate base, and reinforcement sized for your specific conditions.",
+            "<strong>Concrete slab contractors near Oklahoma City</strong> should know that Oklahoma's expansive clay soil requires more than a standard pour. FDZ Construction builds every slab with proper subgrade compaction, aggregate base, and reinforcement sized for your specific conditions.",
             "We pour patio slabs, garage floors, shop floors, equipment pads, and custom slabs across the OKC metro. Same process, same standards on every job. Need a <a href='/driveways-oklahoma-city'>new driveway</a> or <a href='/patios-oklahoma-city'>stamped patio</a> instead? We handle those with the same crew and standards.",
           ],
           stats: [
@@ -57,7 +57,7 @@ export default function ConcreteSlabs() {
           title: "Local Expertise",
           titleAccent: "You Can Trust.",
           content: [
-            "Redwood Construction LLC is a locally owned concrete company serving the OKC metro. We're not a franchise or a call center — our crew lives and works in Oklahoma City, and we understand the specific soil and weather challenges that affect every pour.",
+            "FDZ Construction LLC is a locally owned concrete company serving the OKC metro. We're not a franchise or a call center — our crew lives and works in Oklahoma City, and we understand the specific soil and weather challenges that affect every pour.",
             "With a 4.9-star Google rating, BBB A+ accreditation, and over 500 completed projects, we've earned the trust of homeowners across <a href='/edmond-concrete'>Edmond</a>, <a href='/norman-ok-concrete'>Norman</a>, <a href='/moore-oklahoma-concrete'>Moore</a>, and the greater OKC metro. We also pour <a href='/commercial-concrete-oklahoma-city'>commercial parking lots</a> and <a href='/foundations-oklahoma-city'>concrete foundations</a> with the same crew and standards.",
           ],
         },

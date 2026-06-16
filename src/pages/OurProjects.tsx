@@ -22,8 +22,8 @@ const otherProjects = [
 
 export default function OurProjects() {
   useSEO({
-    title: "Our Concrete Projects in Oklahoma City | Redwood Construction LLC",
-    description: "Browse completed concrete projects across the OKC metro. Driveways, patios, foundations, commercial pours, and retaining walls by Redwood Construction LLC.",
+    title: "Our Concrete Projects in Oklahoma City | FDZ Construction LLC",
+    description: "Browse completed concrete projects across the OKC metro. Driveways, patios, foundations, commercial pours, and retaining walls by FDZ Construction LLC.",
   });
 
   return (
@@ -35,7 +35,7 @@ export default function OurProjects() {
         <p className="prose-muted max-w-[680px] mb-8">Real jobs for <strong>Oklahoma City homeowners and businesses</strong> — <Link to="/driveways-oklahoma-city" className="text-orange no-underline">concrete driveways</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">patios</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">stamped concrete</Link>, foundations, and commercial pours.</p>
         <div className="flex gap-4 flex-wrap">
           <Link to="/#estimate" className="btn-primary">Get Your Free Estimate →</Link>
-          <a href="tel:4052470027" className="btn-outline">📞 (405) 247-0027</a>
+          <a href="tel:4054584805" className="btn-outline">📞 (405) 458-4805</a>
         </div>
       </section>
       <TrustBar />

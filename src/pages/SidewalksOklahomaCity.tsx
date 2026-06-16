@@ -4,13 +4,13 @@ export default function SidewalksOklahomaCity() {
   return (
     <ServicePage
       currentServiceSlug="sidewalks-oklahoma-city"
-      metaTitle="Concrete Sidewalks, Curb & Gutter Oklahoma City | Redwood Construction LLC"
-      metaDescription="Concrete sidewalk and curb & gutter contractors in Oklahoma City. New construction, city right-of-way, ADA-compliant ramps, city-spec curb work. Free estimate: (405) 247-0027."
+      metaTitle="Concrete Sidewalks, Curb & Gutter Oklahoma City | FDZ Construction LLC"
+      metaDescription="Concrete sidewalk and curb & gutter contractors in Oklahoma City. New construction, city right-of-way, ADA-compliant ramps, city-spec curb work. Free estimate: (405) 458-4805."
       eyebrow="OKC Metro · Sidewalk & Curb Contractors · Licensed & Insured"
       title="Concrete Sidewalks, Curb &"
       titleAccent="Gutter Oklahoma City."
-      description='Sidewalks, walkways, curb and gutter installation — city-spec compliant and ADA accessible. Serving OKC metro. Free estimate. <a href="tel:4052470027">(405) 247-0027</a>.'
-      introText="From city right-of-way replacements to private walkways and commercial curb work, Redwood Construction delivers sidewalks and curbs built to code and graded for proper drainage. Every project uses 4,000 PSI concrete with reinforcement appropriate for the application."
+      description='Sidewalks, walkways, curb and gutter installation — city-spec compliant and ADA accessible. Serving OKC metro. Free estimate. <a href="tel:4054584805">(405) 458-4805</a>.'
+      introText="From city right-of-way replacements to private walkways and commercial curb work, FDZ Construction delivers sidewalks and curbs built to code and graded for proper drainage. Every project uses 4,000 PSI concrete with reinforcement appropriate for the application."
       serviceLabel="Sidewalk & Curb"
       serviceCards={[
         {
@@ -64,7 +64,7 @@ export default function SidewalksOklahomaCity() {
           title: "Safe, Clean &",
           titleAccent: "Built to Code.",
           content: [
-            "<strong>Concrete sidewalk contractors in Oklahoma City</strong> — Redwood Construction handles new construction, replacement, and city right-of-way sidewalks with proper base prep and ADA-compliant options.",
+            "<strong>Concrete sidewalk contractors in Oklahoma City</strong> — FDZ Construction handles new construction, replacement, and city right-of-way sidewalks with proper base prep and ADA-compliant options.",
             "We handle city-required sidewalk repairs, new construction in subdivisions, and private walkway projects. Every sidewalk is broom-finished for traction and properly jointed. Our sidewalk work complements our <a href='/driveways-oklahoma-city'>driveway</a> and <a href='/patios-oklahoma-city'>patio</a> services for complete residential concrete projects.",
           ],
         },
@@ -73,7 +73,7 @@ export default function SidewalksOklahomaCity() {
           title: "Commercial & Residential",
           titleAccent: "Curb Work.",
           content: [
-            "<strong>Curb and gutter contractors in Oklahoma City</strong> — Redwood Construction handles new construction, replacement, and repair of concrete curb and gutter across the OKC metro.",
+            "<strong>Curb and gutter contractors in Oklahoma City</strong> — FDZ Construction handles new construction, replacement, and repair of concrete curb and gutter across the OKC metro.",
             "We pour standard barrier curb, mountable curb, valley gutter, and combination curb and gutter sections to city specifications. Our curb work integrates with <a href='/commercial-concrete-oklahoma-city'>parking lot</a>, sidewalk, and <a href='/driveways-oklahoma-city'>driveway</a> projects for complete site work.",
           ],
           stats: [
@@ -110,7 +110,7 @@ export default function SidewalksOklahomaCity() {
           content: [
             "Oklahoma City's expansive clay soil causes sidewalk panels to heave, settle, and crack — often within a few years of installation if base prep was inadequate.",
             "The most common sidewalk failures we see are caused by inadequate base preparation and poor drainage. Proper subgrade compaction and aggregate base prevent soil movement from destroying your sidewalks and curbs.",
-            "If your existing sidewalks or curbing show cracks, heaving, or settlement, call Redwood Construction LLC at (405) 247-0027 for an honest assessment.",
+            "If your existing sidewalks or curbing show cracks, heaving, or settlement, call FDZ Construction LLC at (405) 458-4805 for an honest assessment.",
           ],
         },
       ]}
