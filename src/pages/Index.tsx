@@ -33,12 +33,12 @@ export default function Index() {
   useSEO({
     title: "Concrete Contractors Oklahoma City | FDZ Construction LLC | Free Estimates",
     description: "Oklahoma City's concrete contractor for driveways, patios, slabs & more. Licensed & insured. Serving OKC metro. Call (405) 458-4805 for a free estimate.",
-    canonical: "https://myconcreteestimate.com/",
+    canonical: "https://fdzconstruction.com/",
     og: {
       title: "Concrete Contractors Oklahoma City | FDZ Construction LLC",
       description: "Oklahoma City's concrete contractor for driveways, patios & slabs. Free estimates. Call (405) 458-4805.",
       type: "website",
-      url: "https://myconcreteestimate.com/",
+      url: "https://fdzconstruction.com/",
     },
   });
 

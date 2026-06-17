@@ -5,7 +5,7 @@ export const COMPANY = {
   name: "FDZ Construction LLC",
   phone: "(405) 458-4805",
   email: "jesus.f@myconcreteestimate.com",
-  siteUrl: "https://myconcreteestimate.com",
+  siteUrl: "https://fdzconstruction.com",
   badge: "LICENSED & INSURED",
 };
 

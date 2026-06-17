@@ -12,7 +12,7 @@ export interface PrerenderRoute {
   content: string; // key visible text for crawlers
 }
 
-const BASE = "https://myconcreteestimate.com";
+const BASE = "https://fdzconstruction.com";
 
 export const routes: PrerenderRoute[] = [
   {
