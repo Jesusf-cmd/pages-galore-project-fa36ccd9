@@ -36,9 +36,11 @@ export default function Footer() {
           <div className="flex flex-col gap-1.5">
             <Link to="/driveways-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Driveways OKC</Link>
             <Link to="/patios-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Patios, Slabs & Stamped Concrete</Link>
-            <Link to="/foundations-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Foundations & Retaining Walls</Link>
+            <Link to="/foundations-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Foundations OKC</Link>
+            <Link to="/retaining-walls-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Retaining Walls OKC</Link>
             <Link to="/sidewalks-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Sidewalks, Curb & Gutter</Link>
             <Link to="/commercial-concrete-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Commercial Concrete OKC</Link>
+            <Link to="/parking-lots-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Parking Lots OKC</Link>
           </div>
         </div>
         <div>

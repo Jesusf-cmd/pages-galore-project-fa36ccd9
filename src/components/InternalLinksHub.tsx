@@ -4,9 +4,11 @@ import { ScrollReveal } from "@/hooks/useScrollReveal";
 const ALL_SERVICES = [
   { slug: "driveways-oklahoma-city", anchor: "concrete driveways in Oklahoma City", blurb: "New installs, replacements, and stamped driveway upgrades across the OKC metro." },
   { slug: "patios-oklahoma-city", anchor: "concrete patios and backyard slabs", blurb: "Broom-finish, stamped, and decorative patio slabs built on Oklahoma clay." },
-  { slug: "foundations-oklahoma-city", anchor: "garage and home foundations", blurb: "Slab-on-grade foundations, garage pads, and engineered retaining walls." },
+  { slug: "foundations-oklahoma-city", anchor: "garage and home foundations", blurb: "Slab-on-grade foundations, footings, stem walls, and commercial pads." },
+  { slug: "retaining-walls-oklahoma-city", anchor: "retaining walls in Oklahoma City", blurb: "Poured concrete, CMU block, and interlocking walls with proper drainage." },
   { slug: "sidewalks-oklahoma-city", anchor: "sidewalks and walkways", blurb: "ADA-compliant sidewalks, curb & gutter, and city right-of-way work." },
-  { slug: "commercial-concrete-oklahoma-city", anchor: "commercial concrete services", blurb: "Parking lots, commercial slabs, and site work for OKC businesses." },
+  { slug: "commercial-concrete-oklahoma-city", anchor: "commercial concrete services", blurb: "Warehouse floors, commercial slabs, and site work for OKC businesses." },
+  { slug: "parking-lots-oklahoma-city", anchor: "concrete parking lots", blurb: "New construction, replacement, and ADA-compliant commercial parking lots." },
 ];
 
 const ALL_BLOGS = [

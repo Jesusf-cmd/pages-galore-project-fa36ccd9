@@ -98,8 +98,10 @@ export default function CityPageTemplate({ city, county, description, localConte
             <li><a href="/driveways-oklahoma-city" className="text-orange no-underline hover:underline">→ Concrete driveways in {city}</a></li>
             <li><a href="/patios-oklahoma-city" className="text-orange no-underline hover:underline">→ Stamped patios and slabs in {city}</a></li>
             <li><a href="/foundations-oklahoma-city" className="text-orange no-underline hover:underline">→ Foundation contractors in {city}</a></li>
+            <li><a href="/retaining-walls-oklahoma-city" className="text-orange no-underline hover:underline">→ Retaining walls in {city}</a></li>
             <li><a href="/sidewalks-oklahoma-city" className="text-orange no-underline hover:underline">→ Sidewalks and curb work in {city}</a></li>
             <li><a href="/commercial-concrete-oklahoma-city" className="text-orange no-underline hover:underline">→ Commercial concrete in {city}</a></li>
+            <li><a href="/parking-lots-oklahoma-city" className="text-orange no-underline hover:underline">→ Concrete parking lots in {city}</a></li>
           </ul>
         </section>
       </ScrollReveal>

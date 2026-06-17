@@ -395,9 +395,11 @@ function ServicesSection() {
   const services = [
     { num: "01", name: "Concrete Driveways Oklahoma City", desc: "New installation, replacement, and repair of concrete driveways across OKC. Proper thickness, correct mix for Oklahoma weather, and drainage grading on every job.", to: "/driveways-oklahoma-city" },
     { num: "02", name: "Concrete Patios & Slabs OKC", desc: "Custom concrete patios, garage floors, shop slabs, and stamped decorative concrete — built to survive Oklahoma's heat and freeze cycles.", to: "/patios-oklahoma-city" },
-    { num: "03", name: "Foundations & Retaining Walls", desc: "Residential and commercial foundations, poured concrete walls, CMU block walls — engineered for Oklahoma's expansive clay soil.", to: "/foundations-oklahoma-city" },
-    { num: "04", name: "Sidewalks, Curb & Gutter", desc: "Sidewalks, walkways, curb and gutter installation — city-spec compliant and ADA accessible across OKC.", to: "/sidewalks-oklahoma-city" },
-    { num: "05", name: "Commercial Concrete OKC", desc: "Parking lots, warehouse floors, loading docks, and commercial slabs for Oklahoma City businesses. We meet commercial specs and pull all required permits.", to: "/commercial-concrete-oklahoma-city" },
+    { num: "03", name: "Concrete Foundations OKC", desc: "Residential and commercial foundations — slab-on-grade, stem walls, footings, and structural pads engineered for Oklahoma's expansive clay soil.", to: "/foundations-oklahoma-city" },
+    { num: "04", name: "Retaining Walls OKC", desc: "Poured concrete, CMU block, and interlocking retaining walls with proper drainage for slopes, erosion control, and outdoor living areas.", to: "/retaining-walls-oklahoma-city" },
+    { num: "05", name: "Sidewalks, Curb & Gutter", desc: "Sidewalks, walkways, curb and gutter installation — city-spec compliant and ADA accessible across OKC.", to: "/sidewalks-oklahoma-city" },
+    { num: "06", name: "Commercial Concrete OKC", desc: "Warehouse floors, loading docks, retail pads, and commercial slabs for Oklahoma City businesses. We meet commercial specs and pull all required permits.", to: "/commercial-concrete-oklahoma-city" },
+    { num: "07", name: "Concrete Parking Lots OKC", desc: "New construction, replacement, and ADA-compliant commercial parking lots — 5–6 inch reinforced slabs built to outlast asphalt across the OKC metro.", to: "/parking-lots-oklahoma-city" },
   ];
 
   return (

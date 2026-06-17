@@ -7,9 +7,16 @@ import Logo from "./Logo";
 const serviceLinks = [
   { to: "/driveways-oklahoma-city", label: "Concrete Driveways" },
   { to: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped" },
-  { to: "/foundations-oklahoma-city", label: "Foundations & Retaining Walls" },
+  { to: "/foundations-oklahoma-city", label: "Foundations" },
+  { to: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
   { to: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
+];
+
+const commercialLinks = [
   { to: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
+  { to: "/parking-lots-oklahoma-city", label: "Parking Lots" },
+  { to: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
+  { to: "/foundations-oklahoma-city", label: "Foundations" },
 ];
 
 const areaLinks = [
@@ -24,7 +31,8 @@ const areaLinks = [
 ];
 
 const mobileSections = [
-  { title: "Concrete Services", links: serviceLinks },
+  { title: "Residential", links: serviceLinks },
+  { title: "Commercial", links: commercialLinks },
   { title: "Service Areas", links: areaLinks },
 ];
 
@@ -68,7 +76,8 @@ export default function Navbar() {
         </Link>
 
         <ul className="hidden nav:flex gap-0 list-none">
-          <NavDropdown label="Concrete Services" items={serviceLinks} />
+          <NavDropdown label="Residential" items={serviceLinks} />
+          <NavDropdown label="Commercial" items={commercialLinks} />
           <NavDropdown label="Service Areas" items={areaLinks} />
           <li>
             <Link to="/our-projects" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete">

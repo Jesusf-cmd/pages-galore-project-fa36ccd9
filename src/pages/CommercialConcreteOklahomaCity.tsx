@@ -78,7 +78,7 @@ export default function CommercialConcreteOklahomaCity() {
           title: "Concrete Parking Lots Built for",
           titleAccent: "Heavy Commercial Traffic.",
           content: [
-            "Commercial parking lots require 5–6 inch slabs, proper drainage grading, joint sealing, and reinforcement designed for heavy vehicle loads. We handle projects from small retail lots to large commercial properties.",
+            "Commercial parking lots require 5–6 inch slabs, proper drainage grading, joint sealing, and reinforcement designed for heavy vehicle loads. We handle projects from small retail lots to large commercial properties — see our dedicated <a href='/parking-lots-oklahoma-city'>concrete parking lot page</a> for pricing, the concrete-vs-asphalt comparison, and our full process.",
             "Parking lot construction requires careful planning for drainage, traffic flow, ADA compliance, and long-term durability. We coordinate with engineers and property owners to develop a pour plan that accounts for all of these factors.",
           ],
         },

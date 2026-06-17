@@ -38,10 +38,10 @@ export const routes: PrerenderRoute[] = [
   },
   {
     path: "/foundations-oklahoma-city",
-    title: "Concrete Foundations & Retaining Walls Oklahoma City | FDZ Construction LLC",
-    description: "Concrete foundation and retaining wall contractor in Oklahoma City. Residential, commercial foundations, poured concrete walls, CMU block walls. Free estimate: (405) 458-4805.",
-    h1: "Concrete Foundations & Retaining Walls in Oklahoma City",
-    content: "FDZ Construction LLC provides concrete foundation and retaining wall services in Oklahoma City for residential and commercial projects. We install foundations with a focus on proper preparation, dependable workmanship, and long-term structural performance. Poured concrete, CMU block, and interlocking retaining walls for slopes, drainage, and erosion control. Call (405) 458-4805 for a free estimate.",
+    title: "Concrete Foundations Oklahoma City | Residential & Commercial | FDZ Construction LLC",
+    description: "Concrete foundation contractor in Oklahoma City. Slab-on-grade, stem walls, footings, garage pads, and commercial foundations engineered for clay soil. Free estimate: (405) 458-4805.",
+    h1: "Concrete Foundations in Oklahoma City",
+    content: "FDZ Construction LLC builds residential and commercial concrete foundations in Oklahoma City. Slab-on-grade for homes and warehouses, stem walls, continuous and spread footings, garage and shop slabs, and retail pad footings — engineered for proper preparation, reinforcement, and long-term structural performance on Oklahoma's expansive clay soil. Call (405) 458-4805 for a free estimate.",
   },
   {
     path: "/sidewalks-oklahoma-city",
@@ -56,6 +56,20 @@ export const routes: PrerenderRoute[] = [
     description: "Commercial concrete contractors in Oklahoma City. Warehouse floors, parking lots, retail pads, industrial slabs, curb & gutter. 4,000+ PSI. Free estimate: (405) 458-4805.",
     h1: "Commercial Concrete Oklahoma City",
     content: "Commercial concrete contractors in Oklahoma City — warehouse floors, parking lots, retail pads, industrial slabs, and site work across the OKC metro. Heavy-duty commercial slabs engineered for heavy loads and high traffic. 4,000+ PSI concrete. ADA-compliant parking lots. Call (405) 458-4805 for a free estimate.",
+  },
+  {
+    path: "/parking-lots-oklahoma-city",
+    title: "Concrete Parking Lots Oklahoma City | FDZ Construction LLC",
+    description: "Commercial concrete parking lot contractors in Oklahoma City. New construction, replacement, ADA-compliant design, curb & gutter. 5–6 inch reinforced slabs. Free estimate: (405) 458-4805.",
+    h1: "Concrete Parking Lots in Oklahoma City",
+    content: "FDZ Construction LLC builds commercial concrete parking lots in Oklahoma City — new construction, full replacement, and major repairs for businesses, retail centers, churches, and industrial properties. 5–6 inch reinforced slabs, engineered drainage grading, sealed joints, curb and gutter, and ADA-compliant accessible spaces. Concrete lasts 30–40 years versus asphalt's 15–20. Call (405) 458-4805 for a free estimate.",
+  },
+  {
+    path: "/retaining-walls-oklahoma-city",
+    title: "Retaining Walls Oklahoma City | FDZ Construction LLC",
+    description: "Retaining wall contractors in Oklahoma City. Poured concrete, CMU block, and interlocking walls engineered for clay soil with French drainage. Free estimate: (405) 458-4805.",
+    h1: "Retaining Walls in Oklahoma City",
+    content: "FDZ Construction LLC builds retaining walls in Oklahoma City engineered for the lateral pressure of expansive clay soil — poured concrete for maximum strength, reinforced CMU block for walls under four feet, and interlocking segmental walls for landscape terracing. Every wall includes footings below frost line and a French drain to relieve hydrostatic pressure. Retaining walls run $25–$45 per linear foot. Call (405) 458-4805 for a free estimate.",
   },
   {
     path: "/oklahoma-city-concrete",

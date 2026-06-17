@@ -22,9 +22,11 @@ const primaryNavLinks: LinkItem[] = [
 const serviceLinks: LinkItem[] = [
   { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
   { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
-  { href: "/foundations-oklahoma-city", label: "Foundations & Retaining Walls" },
+  { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
+  { href: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
   { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
   { href: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
+  { href: "/parking-lots-oklahoma-city", label: "Parking Lots" },
 ];
 
 const serviceAreaLinks: LinkItem[] = [

@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 const services = [
   { tag: "Residential", name: "Concrete Driveways", to: "/driveways-oklahoma-city" },
   { tag: "Residential", name: "Patios, Slabs & Stamped", to: "/patios-oklahoma-city" },
-  { tag: "Structural", name: "Foundations & Retaining Walls", to: "/foundations-oklahoma-city" },
+  { tag: "Structural", name: "Foundations", to: "/foundations-oklahoma-city" },
+  { tag: "Structural", name: "Retaining Walls", to: "/retaining-walls-oklahoma-city" },
   { tag: "Residential", name: "Sidewalks, Curb & Gutter", to: "/sidewalks-oklahoma-city" },
   { tag: "Commercial", name: "Commercial Concrete", to: "/commercial-concrete-oklahoma-city" },
+  { tag: "Commercial", name: "Parking Lots", to: "/parking-lots-oklahoma-city" },
 ];
 
 export default function ServicesFooterGrid() {

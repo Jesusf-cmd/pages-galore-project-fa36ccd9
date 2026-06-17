@@ -4,53 +4,53 @@ export default function FoundationsOklahomaCity() {
   return (
     <ServicePage
       currentServiceSlug="foundations-oklahoma-city"
-      metaTitle="Concrete Foundations & Retaining Walls Oklahoma City | FDZ Construction LLC"
-      metaDescription="Concrete foundation and retaining wall contractor in Oklahoma City. Residential, commercial foundations, poured concrete walls, CMU block walls. Free estimate: (405) 458-4805."
-      eyebrow="OKC Metro · Foundation & Wall Contractors · Licensed & Insured"
-      title="Concrete Foundations & Retaining Walls in"
+      metaTitle="Concrete Foundations Oklahoma City | Residential & Commercial | FDZ Construction LLC"
+      metaDescription="Concrete foundation contractor in Oklahoma City. Slab-on-grade, stem walls, footings, garage pads, and commercial foundations engineered for clay soil. Free estimate: (405) 458-4805."
+      eyebrow="OKC Metro · Foundation Contractors · Licensed & Insured"
+      title="Concrete Foundations in"
       titleAccent="Oklahoma City."
-      description='FDZ Construction LLC provides concrete foundation and retaining wall services in Oklahoma City for residential and commercial projects. Structural concrete built for Oklahoma clay soil. <a href="tel:4054584805">(405) 458-4805</a>.'
-      introText="Foundations and retaining walls are the most critical concrete on your property — they support everything above them. FDZ Construction builds every foundation with proper footing depth, engineered reinforcement, and 4,000 PSI minimum concrete designed to handle Oklahoma's expansive clay."
-      serviceLabel="Foundation & Wall"
+      description='FDZ Construction LLC builds residential and commercial concrete foundations in Oklahoma City — slab-on-grade, stem walls, footings, and structural pads engineered for Oklahoma clay. <a href="tel:4054584805">(405) 458-4805</a>.'
+      introText="Your foundation supports everything above it — there is no part of a build where shortcuts cost more. FDZ Construction LLC pours residential and commercial foundations with proper footing depth, engineered reinforcement, and 4,000+ PSI concrete designed for the swell-shrink cycle of Oklahoma's expansive clay. Looking for slope or erosion work? See our dedicated <a href='/retaining-walls-oklahoma-city'>retaining wall page</a>."
+      serviceLabel="Foundation"
       serviceCards={[
         {
           icon: "🏠",
           title: "Residential Foundations",
-          description: "Slab-on-grade and stem wall foundations for new homes, additions, and room conversions. Engineered for Oklahoma's expansive clay soil conditions.",
+          description: "Slab-on-grade and stem wall foundations for new homes, additions, and room conversions — engineered for Oklahoma's expansive clay soil conditions.",
         },
         {
-          icon: "🏢",
-          title: "Commercial Foundations",
-          description: "Structural foundation work for commercial buildings, retail spaces, and warehouses. Coordinated with engineers and general contractors.",
+          icon: "🏭",
+          title: "Commercial Slab-on-Grade",
+          description: "Warehouse and industrial floor foundations with engineered rebar schedules, 6+ inch compacted base, and joint layouts built for forklift and equipment loads.",
         },
         {
-          icon: "🧱",
-          title: "Retaining Walls – Poured",
-          description: "Poured concrete retaining walls for maximum strength. French drain included. Ideal for walls over 4 feet or heavy lateral loads.",
-        },
-        {
-          icon: "🪨",
-          title: "Retaining Walls – CMU Block",
-          description: "Cost-effective CMU block retaining walls for walls under 4 feet. Reinforced cores with rebar and grout for stability.",
+          icon: "🏪",
+          title: "Retail Pad Footings",
+          description: "Footings and foundation pads for retail buildings, restaurants, and storefronts — coordinated with general contractors, engineers, and city inspectors.",
         },
         {
           icon: "🏗️",
           title: "Stem Walls & Footings",
-          description: "Continuous and spread footings poured below frost line. Stem walls for crawl spaces and elevated structures.",
+          description: "Continuous and spread footings poured below frost line. Stem walls for crawl spaces, elevated structures, and additions.",
+        },
+        {
+          icon: "🚜",
+          title: "Garage, Shop & Equipment Pads",
+          description: "Reinforced slabs and foundations for garages, shops, and heavy equipment — HVAC, generators, and dumpster pads sized per spec.",
         },
         {
           icon: "🔧",
           title: "Foundation Repair Coordination",
-          description: "We assess existing foundation damage and coordinate repairs. Honest evaluation — we'll tell you if it needs patching or full replacement.",
+          description: "We assess existing foundation damage and coordinate repairs — an honest evaluation of whether it needs patching or full replacement.",
         },
       ]}
       specs={[
-        { label: "Concrete Strength", value: "4,000 PSI minimum (5,000 PSI for commercial)" },
-        { label: "Footing Depth", value: "Below frost line per Oklahoma code (18-24 inches)" },
+        { label: "Concrete Strength", value: "4,000 PSI minimum (5,000+ PSI for commercial/industrial)" },
+        { label: "Footing Depth", value: "Below frost line per Oklahoma code (18–24 inches)" },
         { label: "Reinforcement", value: "Rebar per engineered plans, tied at every intersection" },
-        { label: "Base", value: "Compacted subgrade with aggregate base where required" },
-        { label: "Drainage", value: "French drain behind all retaining walls" },
-        { label: "Waterproofing", value: "Applied to below-grade surfaces per project specs" },
+        { label: "Base", value: "Compacted subgrade + aggregate base (6+ inches commercial)" },
+        { label: "Vapor Barrier", value: "Under-slab vapor barrier where required by use" },
+        { label: "Code & Permits", value: "Permits pulled, inspections coordinated to OKC code" },
       ]}
       whyChooseUs={[
         { icon: "🛡️", title: "Licensed & Insured", description: "Fully licensed Oklahoma contractor. Workers comp and liability coverage on every project." },
@@ -61,43 +61,43 @@ export default function FoundationsOklahomaCity() {
       sections={[
         {
           eyebrow: "Foundation Services",
-          title: "Foundation Services in",
+          title: "Residential Foundation Services in",
           titleAccent: "Oklahoma City.",
           content: [
-            "We provide concrete foundation work for homes, additions, shops, commercial buildings, and other structures in Oklahoma City and surrounding areas. Our team handles layout, excavation coordination, forming, reinforcement, and concrete placement with attention to quality and site conditions.",
-            "In addition to foundation work, we also offer <a href='/driveways-oklahoma-city'>concrete driveway installation in Oklahoma City</a> and <a href='/patios-oklahoma-city'>concrete patio and slab installation in Oklahoma City</a> for residential and commercial properties.",
+            "We provide concrete foundation work for homes, additions, garages, and shops in Oklahoma City and surrounding areas. Our team handles layout, excavation coordination, forming, reinforcement, and concrete placement with attention to soil and site conditions.",
+            "Slab-on-grade is the most common residential foundation in the OKC metro — a monolithic pour with thickened edges and engineered reinforcement. For crawl spaces and elevated structures, we pour continuous footings and stem walls below frost line. In addition to foundations, we also offer <a href='/driveways-oklahoma-city'>concrete driveways</a> and <a href='/patios-oklahoma-city'>patios and slabs</a> for residential properties.",
           ],
         },
         {
-          eyebrow: "Retaining Walls OKC",
-          title: "Retaining Walls Engineered for",
-          titleAccent: "Oklahoma Soil.",
+          eyebrow: "Commercial Foundations",
+          title: "Commercial Foundations Built for",
+          titleAccent: "Heavy Loads.",
           content: [
-            "<strong>Retaining wall contractors in Oklahoma City</strong> — FDZ Construction builds poured concrete, CMU block, and interlocking block retaining walls for slopes, erosion control, and outdoor living areas across the OKC metro.",
-            "Oklahoma's clay soil and heavy rain events put significant lateral pressure on retaining structures. Every wall we build includes proper drainage, adequate footing depth, and reinforcement sized for the retained earth height.",
+            "<strong>Commercial foundation contractors in Oklahoma City</strong> — FDZ Construction pours slab-on-grade foundations for warehouses, footings and pads for retail buildings, and structural foundations for commercial developments across the OKC metro.",
+            "Commercial slab-on-grade for warehouses requires thicker pours, engineered rebar schedules, and 6+ inch compacted aggregate base to carry forklift traffic, racking loads, and equipment without cracking. Retail pad footings are sized and reinforced per engineered plans and coordinated with your general contractor and city inspectors. For complete commercial site builds, we also handle <a href='/commercial-concrete-oklahoma-city'>commercial concrete</a> and <a href='/parking-lots-oklahoma-city'>parking lots</a>.",
           ],
           stats: [
-            { value: "$25–45", label: "Per linear ft (walls)" },
-            { value: "French", label: "Drain included" },
-            { value: "30+yr", label: "Expected life" },
+            { value: "5,000+", label: "PSI available" },
+            { value: "6\"+", label: "Commercial base" },
+            { value: "GC", label: "Coordination" },
           ],
         },
         {
-          eyebrow: "Foundation & Wall Pricing",
-          title: "Cost of Foundations & Retaining Walls in",
+          eyebrow: "Foundation Pricing",
+          title: "Cost of Foundations in",
           titleAccent: "Oklahoma City.",
           alt: true,
           content: [
-            "Foundation pricing depends on project size, depth, reinforcement, site access, excavation conditions, and concrete volume. Retaining walls run $25–$45 per linear foot depending on height, material, and drainage requirements.",
+            "Foundation pricing depends on project size, depth, reinforcement, site access, excavation conditions, and concrete volume. Residential slab-on-grade typically runs $9–$14 per square foot; commercial foundations are custom-quoted from engineered plans.",
           ],
           table: {
             headers: ["Service", "Typical Range", "Notes"],
             rows: [
-              ["Residential foundation", "$9–$14 per sq ft", "Depends on size, depth, reinforcement"],
-              ["Commercial foundation", "Custom quoted", "Engineered plans required"],
-              ["Retaining wall (poured)", "$30–$45 per linear ft", "Maximum strength option"],
-              ["Retaining wall (CMU block)", "$25–$35 per linear ft", "Cost-effective under 4 ft"],
-              ["Retaining wall (interlocking)", "$25–$40 per linear ft", "Landscape applications"],
+              ["Residential slab-on-grade", "$9–$14 per sq ft", "Depends on size, depth, reinforcement"],
+              ["Garage / shop slab", "$8–$12 per sq ft", "Thickened edges, rebar reinforced"],
+              ["Stem wall & footing", "Custom quoted", "Below frost line, per soil conditions"],
+              ["Commercial slab-on-grade", "Custom quoted", "Engineered rebar, 6\"+ base"],
+              ["Retail pad / footings", "Custom quoted", "Engineered plans required"],
             ],
           },
         },
@@ -115,12 +115,12 @@ export default function FoundationsOklahomaCity() {
       ]}
       faq={[
         { question: "What types of foundations do you install?", answer: "We handle slab-on-grade, stem wall, and continuous footing foundations for residential and commercial projects. Every foundation is engineered for Oklahoma's clay soil conditions." },
-        { question: "How much does a retaining wall cost in OKC?", answer: "Retaining walls run $25–$45 per linear foot depending on height, material, and drainage requirements. Poured concrete is the strongest option. CMU block is cost-effective for walls under 4 feet." },
-        { question: "What type of retaining wall is best for Oklahoma?", answer: "Poured concrete is the strongest option for Oklahoma's expansive clay. CMU block is cost-effective for walls under 4 feet. Interlocking block works well for landscape walls." },
-        { question: "Do retaining walls need drainage?", answer: "Yes — every retaining wall in Oklahoma should include a French drain or weep holes. Without drainage, hydrostatic pressure from saturated clay soil can push walls over." },
-        { question: "How tall can a retaining wall be without engineering?", answer: "Walls over 4 feet typically require engineered plans. We coordinate with structural engineers for taller walls and ensure all work meets local code requirements." },
-        { question: "How deep should footings be in Oklahoma?", answer: "Oklahoma code requires footings below the frost line — typically 18-24 inches deep. On expansive clay, we may go deeper based on soil conditions." },
-        { question: "Do you handle permits for foundation work?", answer: "Yes — we coordinate all necessary permits and inspections for foundation and retaining wall projects across the OKC metro." },
+        { question: "Do you build commercial foundations?", answer: "Yes — we pour commercial slab-on-grade for warehouses, footings and pads for retail buildings, and structural foundations for developments, coordinated with engineers, GCs, and inspectors." },
+        { question: "How much does a foundation cost in OKC?", answer: "Residential slab-on-grade typically runs $9–$14 per square foot depending on size, depth, and reinforcement. Commercial foundations are custom-quoted from engineered plans." },
+        { question: "How deep should footings be in Oklahoma?", answer: "Oklahoma code requires footings below the frost line — typically 18–24 inches deep. On expansive clay, we may go deeper based on soil conditions and load." },
+        { question: "What concrete strength do you use for foundations?", answer: "We specify 4,000 PSI minimum for residential foundations and 5,000+ PSI for commercial and industrial work, with reinforcement per engineered plans." },
+        { question: "Do you handle permits for foundation work?", answer: "Yes — we coordinate all necessary permits and inspections for foundation projects across the OKC metro." },
+        { question: "Do you build retaining walls too?", answer: "Yes — retaining walls now have their own dedicated page. See our retaining wall services for poured concrete, CMU block, and interlocking walls engineered for Oklahoma clay." },
         { question: "Do you serve areas outside Oklahoma City?", answer: "Yes. We serve Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City." },
       ]}
     />
