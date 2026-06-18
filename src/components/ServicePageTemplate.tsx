@@ -87,7 +87,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
   ];
   const steps = processSteps && processSteps.length > 0 ? processSteps : defaultProcessSteps;
   // TODO: "8+ years" is a placeholder phrasing — replace with the exact figure (or founding year) once confirmed.
-  const defaultTrustLine = "FDZ Construction LLC is a licensed and insured Oklahoma concrete contractor with 8+ years of experience serving the OKC metro — and every project is backed by a 1-year workmanship warranty.";
+  const defaultTrustLine = "FDZ Construction LLC is licensed, bonded, and insured in Oklahoma — 8+ years of experience serving the OKC metro, and every project is backed by a 1-year workmanship warranty.";
   const resolvedTrustLine = trustLine === null ? null : (trustLine ?? defaultTrustLine);
 
   return (

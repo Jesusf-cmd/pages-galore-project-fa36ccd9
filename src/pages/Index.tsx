@@ -67,7 +67,7 @@ export default function Index() {
       <ServicesSection />
       <WhyUsSection />
       <RecentProjectsSection />
-      <GoogleReviewsSection />
+      {/* TODO: re-add once GBP is live with real reviews */}
       <ScrollReveal>
         <section className="section-padding">
           <div className="section-eye">Service areas</div>
@@ -98,8 +98,9 @@ export default function Index() {
           <div className="section-eye">Service Area</div>
           <h2 className="mb-3">Serving All of<br/><em className="h2-accent">Oklahoma City Metro.</em></h2>
           <div className="mb-6 overflow-hidden" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+            {/* TODO: swap to Place ID embed once GBP is claimed */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d208938.08060392047!2d-97.6532644!3d35.4675602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b21453f69b2571%3A0xd20ac77e5ebd2c3a!2sRedwood%20Construction%20LLC!5e0!3m2!1sen!2sus!4v1718300000000!5m2!1sen!2sus"
+              src="https://www.google.com/maps?q=7004+S+Indiana+Ave,+Oklahoma+City,+OK+73159&output=embed"
               width="100%"
               height="400"
               style={{ border: 0 }}
@@ -151,12 +152,12 @@ function HeroSection() {
           </div>
           <div className="flex gap-6 md:gap-10 pt-6 md:pt-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div>
-              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">500<span className="text-orange">+</span></div>
-              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">OKC metro projects</div>
+              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">8<span className="text-orange">+</span></div>
+              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Years experience</div>
             </div>
             <div>
-              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">4.9<span className="text-orange">★</span></div>
-              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Customer rating</div>
+              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">1<span className="text-orange">yr</span></div>
+              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Workmanship warranty</div>
             </div>
             <div>
               <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">24<span className="text-orange">hr</span></div>
@@ -440,10 +441,10 @@ function WhyUsSection() {
   const reasons = [
     { icon: "🏠", title: "Locally owned & operated", desc: "Based in the OKC metro. We know local soil, city codes, and what Oklahoma homeowners need — because we live here too." },
     { icon: "📋", title: "Free on-site estimates", desc: "No ballpark guesses over the phone. We come to your property and give you an accurate price before any work starts." },
-    { icon: "🛡", title: "Licensed, bonded & insured", desc: "Fully licensed in Oklahoma with active liability insurance. Your property and investment are protected on every job." },
+    { icon: "🛡", title: "Licensed, bonded & insured", desc: "Fully licensed, bonded, and insured in Oklahoma. Your property and investment are protected on every job." },
     { icon: "✅", title: "No surprise pricing — ever", desc: "The price we quote is the price you pay. No change orders, no hidden fees, no upsells once our crew shows up." },
-    { icon: "⭐", title: "4.9 Star Customer Rating", desc: "Highly rated by homeowners across OKC, Edmond, Norman, Mustang, Moore, and Yukon for quality concrete work and honest pricing." },
-    { icon: "🏆", title: "BBB Accredited Business", desc: "A+ rating with the Better Business Bureau. Verified, ethical, and committed to doing right by every customer." },
+    { icon: "📅", title: "8+ Years of Experience", desc: "Years of hands-on concrete work across the OKC metro — we know what Oklahoma soil, weather, and homeowners need." },
+    { icon: "🤝", title: "1-Year Workmanship Warranty", desc: "Every project is backed by a 1-year workmanship warranty. If something isn't right, we come back and make it right." },
     { icon: "🌡", title: "Oklahoma Clay Soil Experts", desc: "Every pour accounts for local soil movement, frost lines, and drainage — because Oklahoma clay is unforgiving." },
     { icon: "⚡", title: "24-Hour Estimate Response", desc: "Submit your project and hear back within one business day. No waiting weeks just to get a quote." },
   ];
@@ -458,6 +459,7 @@ function WhyUsSection() {
         <div className="relative z-[1]">
         <div className="section-eye">Why FDZ Construction</div>
         <h2 className="mb-3">Local Crew.<br/><em className="h2-accent">Real Results.</em></h2>
+        <p className="text-[0.8rem] text-orange font-semibold uppercase tracking-[0.08em] mb-4">Licensed, bonded &amp; insured · 8+ years of experience · 1-year workmanship warranty</p>
         <p className="prose-muted mb-8">We're not a national franchise. FDZ Construction LLC is a locally owned OKC business — and we know exactly what Oklahoma soil, weather, and homeowners actually need for <Link to="/driveways-oklahoma-city" className="text-orange no-underline">driveways</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">slabs</Link>, and <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundations</Link> that last.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
           {reasons.map((r, i) => (
@@ -511,55 +513,6 @@ function RecentProjectsSection() {
         </div>
         <div className="mt-6 text-center">
           <Link to="/our-projects" className="btn-outline text-sm py-3 px-8">View All Projects →</Link>
-        </div>
-      </section>
-    </ScrollReveal>
-  );
-}
-
-function GoogleReviewsSection() {
-  const reviews = [
-    { initials: "MT", name: "Mike T.", location: "Edmond, OK", text: "FDZ Construction did an outstanding job on our driveway. They were on time, professional, and the finished product looks great. Would highly recommend to anyone in the OKC area.", ago: "", project: "Concrete Driveway" },
-    { initials: "SR", name: "Sandra R.", location: "Oklahoma City, OK", text: "We had a large backyard patio done and the stamped concrete turned out better than we expected. Great communication from start to finish.", ago: "", project: "Stamped Patio" },
-    { initials: "JK", name: "James K.", location: "Yukon, OK", text: "Called for an estimate on a concrete slab for my shop. They came out fast, gave me a fair price, and had the work done within the week. Very happy with the results.", ago: "", project: "Concrete Slab" },
-    { initials: "LW", name: "Linda W.", location: "Moore, OK", text: "Our old cracked driveway was an eyesore. FDZ Construction replaced the whole thing and it looks brand new. Best money we've spent on the house.", ago: "", project: "Driveway Replacement" },
-    { initials: "DL", name: "Derek L.", location: "Mustang, OK", text: "Professional start to finish. The crew caught a drainage issue I didn't know I had and addressed it in the same pour. Cannot recommend enough.", ago: "", project: "Driveway & Drainage" },
-    { initials: "KS", name: "Karen S.", location: "Norman, OK", text: "Got three quotes and FDZ was the most knowledgeable. The slab they poured has held up perfectly. No issues after two Oklahoma winters.", ago: "", project: "Concrete Slab" },
-  ];
-
-  return (
-    <ScrollReveal>
-      <section className="section-padding section-alt">
-        <div className="section-eye">What Our Customers Say</div>
-        <h2 className="mb-3">What Oklahoma<br/><em className="h2-accent">Homeowners Say.</em></h2>
-        <div className="mb-8">
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 items-start">
-          {/* Rating summary */}
-          <div className="bg-darker p-6" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-            <div className="font-display text-5xl font-black text-concrete leading-none mb-1">4.9</div>
-            <div className="text-orange text-lg mb-1">★★★★★</div>
-            <p className="text-[0.78rem] text-muted-text leading-relaxed mb-4">Serving Oklahoma City, Edmond, Norman, Moore, Yukon, and the surrounding OKC metro.</p>
-            <a href="https://g.page/r/redwood-construction-okc/review" target="_blank" rel="noopener noreferrer" className="btn-outline text-[0.72rem] w-full text-center mt-4 py-2">Leave Us a Review →</a>
-            <div className="text-[0.6rem] text-muted-text text-center mt-1">Takes less than 60 seconds</div>
-          </div>
-          {/* Review cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-            {reviews.map((r, i) => (
-              <div key={i} className="bg-stone p-5">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-9 h-9 bg-orange/10 flex items-center justify-center font-display text-xs font-extrabold text-orange">{r.initials}</div>
-                  <div>
-                    <div className="font-display text-sm font-bold text-concrete">{r.name}</div>
-                    <div className="text-[0.62rem] text-muted-text">{r.location}</div>
-                  </div>
-                </div>
-                <div className="text-orange text-xs mb-2">★★★★★</div>
-                <p className="text-[0.78rem] text-muted-text leading-relaxed mb-2">"{r.text}"</p>
-                <div className="text-[0.6rem] text-muted-text">{r.project}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     </ScrollReveal>

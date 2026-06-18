@@ -184,7 +184,7 @@ export default function TrustSection() {
               Certifications & Affiliations
             </p>
             <p className="text-muted-text/60 text-xs">
-              BBB Accredited Business &bull; Add your certification logos here
+              Add your certification logos here
             </p>
           </div>
         </ScrollReveal>

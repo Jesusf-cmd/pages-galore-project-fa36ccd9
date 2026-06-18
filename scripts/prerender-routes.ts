@@ -74,7 +74,7 @@ export const routes: PrerenderRoute[] = [
   {
     path: "/oklahoma-city-concrete",
     title: "Concrete Contractor in Oklahoma City OK | FDZ Construction LLC",
-    description: "Concrete contractor in Oklahoma City, OK — FDZ Construction LLC. Driveways, slabs, foundations & patios built for OKC's expansive Permian clay. 500+ metro projects. Free estimate: (405) 458-4805.",
+    description: "Concrete contractor in Oklahoma City, OK — FDZ Construction LLC. Driveways, slabs, foundations & patios built for OKC's expansive Permian clay. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
     h1: "Concrete Contractor in Oklahoma City, OK",
     content: "FDZ Construction LLC is headquartered in the Oklahoma City metro, giving us firsthand knowledge of the soil conditions, drainage challenges, and building codes that affect every concrete project in the area. Concrete services in Oklahoma City include driveways, patio and garage slabs, stamped decorative concrete, foundations, retaining walls, sidewalks, and commercial parking lots. Call (405) 458-4805 for a free estimate.",
   },
