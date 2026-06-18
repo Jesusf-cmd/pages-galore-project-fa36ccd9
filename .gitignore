@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .env
+
+# Local diagnostic / scratch files
+body.html
