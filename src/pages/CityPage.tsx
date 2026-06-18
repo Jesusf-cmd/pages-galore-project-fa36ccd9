@@ -1,175 +1,276 @@
 import CityPageTemplate from "@/components/CityPageTemplate";
 
-const cityData: Record<string, {
+const BASE = "https://fdzconstruction.com";
+
+// slug -> live route path (used for canonical + og:url)
+const ROUTE_BY_SLUG: Record<string, string> = {
+  "oklahoma-city": "/oklahoma-city-concrete",
+  edmond: "/edmond-concrete",
+  norman: "/norman-ok-concrete",
+  yukon: "/yukon-oklahoma-concrete",
+  mustang: "/mustang-oklahoma-concrete",
+  moore: "/moore-oklahoma-concrete",
+  "midwest-city": "/midwest-city-oklahoma-concrete",
+  "del-city": "/del-city-oklahoma-concrete",
+};
+
+interface CityData {
   city: string;
   county: string;
-  zips: string;
-  intro: string[];
-  servicesIntro: string[];
-  localDetails: string;
-  soilNote: string;
-  faq: { question: string; answer: string }[];
+  tier: "priority" | "standard";
   metaDescription: string;
-}> = {
+  heroBlurb: string;
+  intro: string[];
+  localTerrainNote: string;
+  driveTimeNote: string;
+  neighborhoods?: string[];
+  linkedServices: { label: string; to: string; blurb: string }[];
+  faq: { question: string; answer: string }[];
+}
+
+const SVC = {
+  driveways: { label: "Concrete driveways", to: "/driveways-oklahoma-city", blurb: "Tear-out and replacement or new pours — reinforced, properly based, and graded to drain." },
+  patios: { label: "Patios, slabs & stamped", to: "/patios-oklahoma-city", blurb: "Patios, garage and shop slabs, and stamped decorative finishes built for OKC clay." },
+  foundations: { label: "Concrete foundations", to: "/foundations-oklahoma-city", blurb: "Slab-on-grade, stem walls, footings, and pads engineered for expansive soil." },
+  retaining: { label: "Retaining walls", to: "/retaining-walls-oklahoma-city", blurb: "Poured concrete, block, and segmental walls with proper footings and drainage." },
+  sidewalks: { label: "Sidewalks, curb & gutter", to: "/sidewalks-oklahoma-city", blurb: "New walks, city right-of-way replacement, ADA ramps, and city-spec curb work." },
+  commercial: { label: "Commercial concrete", to: "/commercial-concrete-oklahoma-city", blurb: "Warehouse floors, retail pads, equipment slabs, and site flatwork for the metro." },
+};
+
+const cityData: Record<string, CityData> = {
   "oklahoma-city": {
     city: "Oklahoma City",
     county: "Oklahoma County",
-    zips: "73107, 73109, 73112, 73118, 73120, 73127",
-    metaDescription: "Concrete contractor in Oklahoma City, OK — FDZ Construction LLC. Driveways, slabs, foundations & patios built for OKC's expansive Permian clay. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
+    tier: "priority",
+    metaDescription:
+      "Concrete contractor in Oklahoma City, OK — FDZ Construction LLC, based in south OKC. Driveways, patios, slabs & foundations. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
+    heroBlurb:
+      "Concrete driveways, patios, slabs, and foundations in <strong>Oklahoma City, Oklahoma</strong> — from our south OKC shop. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
-      "FDZ Construction LLC is headquartered in the Oklahoma City metro, giving us firsthand knowledge of the soil conditions, drainage challenges, and building codes that affect every concrete project in the area. From the historic neighborhoods near Capitol Hill to the growing developments in northwest OKC, we've poured concrete across every part of this city.",
-      "Oklahoma City's expansive Permian red clay is among the most challenging soil types for concrete work in the entire country. This clay swells dramatically during wet seasons and contracts during Oklahoma's intense summer droughts, creating a cycle of movement that destroys improperly built concrete. Our crews understand this at a granular level — we adjust base depth, reinforcement, and drainage for each zip code we serve.",
+      "FDZ Construction LLC is based in south Oklahoma City, at 7004 S Indiana Ave — so OKC itself is the area we work most. We pour driveways, patios, slabs, foundations, and commercial concrete across the city, with the fastest response of anywhere we serve.",
     ],
-    servicesIntro: [
-      "<strong>Concrete services in Oklahoma City</strong> from FDZ Construction include <a href='/driveways-oklahoma-city'>concrete driveways</a>, <a href='/patios-oklahoma-city'>patio and garage slabs</a>, <a href='/patios-oklahoma-city'>stamped decorative concrete</a>, <a href='/foundations-oklahoma-city'>foundations</a>, <a href='/foundations-oklahoma-city'>retaining walls</a>, <a href='/sidewalks-oklahoma-city'>sidewalks</a>, and <a href='/commercial-concrete-oklahoma-city'>commercial parking lots</a>.",
-    ],
-    localDetails: "We've completed projects near Lake Hefner, in Nichols Hills, across the Paseo district, and throughout south OKC. Our knowledge of local permitting requirements and city right-of-way specifications keeps projects running on schedule.",
-    soilNote: "OKC sits on Permian-age red clay with a Plasticity Index often exceeding 35. This means aggressive swell-shrink cycles that demand deeper base prep and heavier reinforcement than most cities require.",
+    localTerrainNote:
+      "Oklahoma City is too large for one soil story — conditions shift from one part of the city to another — but it broadly shares the metro's Permian-age clay and shale base. The terrain is mostly flat, and the North Canadian River corridor runs through the city, so drainage planning matters most on low-lying lots near the river and its tributaries. Because conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city.",
+    driveTimeNote: "we're based right here in south OKC, so Oklahoma City gets the fastest response of any area we serve.",
+    neighborhoods: ["Nichols Hills"],
+    linkedServices: [SVC.driveways, SVC.foundations],
     faq: [
-      { question: "How much does concrete work cost in Oklahoma City?", answer: "Concrete pricing in Oklahoma City runs $6–$10 per sq ft for standard slabs and driveways, $15–$22 for stamped work, and $9–$14 for foundation pours. Get a free on-site estimate for accurate pricing." },
-      { question: "Do you serve all of Oklahoma City?", answer: "Yes — FDZ Construction serves all of Oklahoma City including zip codes 73107, 73109, 73112, 73118, 73120, 73127, and surrounding areas. Same crew, same pricing." },
-      { question: "What concrete services do you offer in Oklahoma City?", answer: "We offer driveways, patio slabs, stamped concrete, foundations, retaining walls, sidewalks, curb and gutter, and commercial parking lots throughout Oklahoma City." },
-      { question: "Why is base prep so important in Oklahoma City?", answer: "OKC's expansive clay soil swells and contracts with moisture changes. Without proper base prep — excavation, aggregate base, and compaction — concrete will crack and heave within a few years." },
+      {
+        question: "Do you work throughout all of Oklahoma City?",
+        answer:
+          "Yes, with a particular concentration in south OKC near our shop. Because the city is large and conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city.",
+      },
+      {
+        question: "How much does concrete cost in Oklahoma City?",
+        answer:
+          "Standard driveways and slabs generally run $6–$10 per square foot and foundation work $9–$14, depending on thickness, reinforcement, and site conditions. We give an exact price after an on-site look — no phone quotes.",
+      },
+      {
+        question: "Why does base prep matter so much in Oklahoma City?",
+        answer:
+          "OKC sits on expansive Permian clay that swells when wet and shrinks in drought. Without a properly excavated, compacted aggregate base and adequate reinforcement, concrete is far more likely to crack and move over time.",
+      },
     ],
   },
   edmond: {
     city: "Edmond",
     county: "Oklahoma County",
-    zips: "73003, 73012, 73013, 73025, 73034",
-    metaDescription: "Concrete contractor in Edmond, OK — driveways, patios, slabs & foundations for Deer Creek, Coffee Creek, and all of Oklahoma County. FDZ Construction LLC. Call (405) 458-4805.",
+    tier: "priority",
+    metaDescription:
+      "Concrete contractor in Edmond, OK — driveways, patios, slabs, foundations & retaining walls across Edmond and Oklahoma County. FDZ Construction LLC. Call (405) 458-4805.",
+    heroBlurb:
+      "Concrete driveways, patios, slabs, foundations, and retaining walls in <strong>Edmond, Oklahoma</strong>. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
-      "Edmond is one of the fastest-growing cities in the OKC metro, with new residential construction booming in areas like Deer Creek, Coffee Creek, and along the 15th Street corridor. FDZ Construction has been pouring concrete for Edmond homeowners and builders since our earliest days — we know the neighborhoods, the soil variations, and the local expectations.",
-      "Edmond's soil conditions vary significantly by location. The western sections near Piedmont feature heavier clay with higher swell potential, while the eastern areas closer to I-35 have more mixed soil profiles. We adjust our base prep and reinforcement recommendations based on the specific lot — not a one-size-fits-all approach.",
+      "Edmond is one of the areas we work most often outside our south OKC home base. We pour driveways, patios, slabs, foundations, and retaining walls for Edmond homeowners and builders across Oklahoma County.",
     ],
-    servicesIntro: [
-      "<strong>Concrete services in Edmond, Oklahoma</strong> include <a href='/driveways-oklahoma-city'>residential driveways</a>, <a href='/patios-oklahoma-city'>patio and garage slabs</a>, <a href='/patios-oklahoma-city'>stamped decorative concrete</a>, <a href='/foundations-oklahoma-city'>new construction foundations</a>, and <a href='/sidewalks-oklahoma-city'>sidewalks</a>. Edmond's newer subdivisions often require coordination with builders on <a href='/foundations-oklahoma-city'>foundation work</a> and <a href='/driveways-oklahoma-city'>driveway pours</a>.",
-    ],
-    localDetails: "Our Edmond projects include driveways in Deer Creek, stamped patios near UCO, and foundation work in the growing communities along Covell Road. We understand Edmond's specific permitting requirements and HOA standards.",
-    soilNote: "Western Edmond near Piedmont has some of the heaviest clay in Oklahoma County, often requiring 6-inch aggregate base and #4 rebar at 18-inch spacing. Eastern Edmond soils are more forgiving but still require proper preparation.",
+    localTerrainNote:
+      "Edmond sits on the northern part of the Garber-Wellington aquifer, where the underlying formations carry more sandstone than the rest of the metro. In practice, soil here can shift between sandy and clay-heavy across a single lot, and the terrain has more rolling grade than much of the flat OKC metro. That combination makes grading and drainage planning a bigger factor here than on flatter sites — so we evaluate each lot rather than applying a one-size approach.",
+    driveTimeNote: "Edmond is about 30–40 minutes north of the shop, across the metro — still one of the areas we serve most regularly.",
+    linkedServices: [SVC.foundations, SVC.retaining],
     faq: [
-      { question: "How much does concrete cost in Edmond, OK?", answer: "Concrete in Edmond follows OKC metro rates: $6–$10 per sq ft for driveways and slabs, $15–$22 for stamped work. New construction foundation work runs $9–$14/sq ft." },
-      { question: "Do you serve all Edmond neighborhoods?", answer: "Yes — we serve all of Edmond including Deer Creek, Coffee Creek, Spring Creek, and zip codes 73003, 73012, 73013, 73025, and 73034." },
-      { question: "Can you match existing concrete in Edmond subdivisions?", answer: "Yes — we match existing colors, finishes, and grades for driveway extensions, patio additions, and replacement work in established Edmond neighborhoods." },
-    ],
-  },
-  norman: {
-    city: "Norman",
-    county: "Cleveland County",
-    zips: "73019, 73026, 73069, 73071, 73072",
-    metaDescription: "Concrete contractor in Norman, OK serving Cleveland County. Driveways, patios, slabs & retaining walls built for Norman's soil and drainage conditions. FDZ Construction LLC. (405) 458-4805.",
-    intro: [
-      "Norman, home to the University of Oklahoma, presents unique concrete challenges due to its location in Cleveland County. The soil profile in Norman differs from central Oklahoma City — it includes both heavy red clay in the western sections and lighter sandy-clay mix near the Canadian River corridor in the east.",
-      "FDZ Construction has completed numerous projects in Norman, from driveway replacements in established neighborhoods near Main Street to new construction foundations in the growing communities along 24th Avenue NW. Norman's weather exposure is slightly different from OKC — the city catches more direct storm paths, making proper drainage grading critical on every pour.",
-    ],
-    servicesIntro: [
-      "<strong>Concrete services in Norman, Oklahoma</strong> include <a href='/driveways-oklahoma-city'>driveway installation and replacement</a>, <a href='/patios-oklahoma-city'>patio and garage slabs</a>, <a href='/patios-oklahoma-city'>stamped decorative concrete</a>, <a href='/foundations-oklahoma-city'>residential foundations</a>, and <a href='/foundations-oklahoma-city'>retaining walls</a>. Norman homeowners near the Canadian River floodplain especially benefit from proper <a href='/foundations-oklahoma-city'>foundation engineering</a> and drainage planning.",
-    ],
-    localDetails: "We've worked on projects throughout Norman — from the historic neighborhoods near OU campus to the newer developments along Rock Creek Road. Our understanding of Cleveland County building codes and soil conditions ensures compliant, durable concrete work.",
-    soilNote: "Norman's western areas have heavy clay similar to OKC, but the eastern sections near the Canadian River feature alluvial deposits with different bearing capacity. We adjust footing depth and base specifications accordingly.",
-    faq: [
-      { question: "How much does concrete cost in Norman, OK?", answer: "Norman follows OKC metro concrete pricing: $6–$10/sq ft for standard work, $15–$22 for stamped. Foundation work runs $9–$14/sq ft. Get a free estimate for your specific project." },
-      { question: "Do you serve all of Norman?", answer: "Yes — we cover all Norman zip codes including 73019, 73026, 73069, 73071, and 73072. Same crew and standards as our OKC projects." },
-      { question: "What's different about pouring concrete in Norman?", answer: "Norman's soil profile varies more than OKC — western areas have heavy clay while eastern sections near the river have different characteristics. We adjust our approach for each site." },
+      {
+        question: "Does Edmond's terrain affect foundation or retaining wall work?",
+        answer:
+          "Yes — more than on flatter parts of the metro. The mix of sandy and clay soil and the rolling grade mean we evaluate each site and plan grading and drainage accordingly, rather than applying a one-size approach.",
+      },
+      {
+        question: "How much does concrete cost in Edmond?",
+        answer:
+          "Edmond pricing follows our OKC metro rates: roughly $6–$10 per square foot for standard driveways and slabs and $9–$14 for foundation work, with an exact price after an on-site estimate.",
+      },
+      {
+        question: "Do you coordinate with builders on new construction in Edmond?",
+        answer:
+          "Yes — we handle foundation pours, driveways, and flatwork for new builds and coordinate scheduling with builders and inspectors.",
+      },
     ],
   },
   yukon: {
     city: "Yukon",
     county: "Canadian County",
-    zips: "73036, 73099",
-    metaDescription: "Concrete contractor in Yukon, OK — driveways, slabs, patios & commercial concrete in Canadian County. Transitional clay soil experts. FDZ Construction LLC. (405) 458-4805.",
+    tier: "priority",
+    metaDescription:
+      "Concrete contractor in Yukon, OK — driveways, slabs, foundations & commercial concrete in Canadian County. FDZ Construction LLC. Call (405) 458-4805.",
+    heroBlurb:
+      "Concrete driveways, slabs, foundations, and commercial work in <strong>Yukon, Oklahoma</strong>. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
-      "Yukon sits in Canadian County on the western edge of the OKC metro, where the soil transitions from Oklahoma County's red clay to the slightly sandier profiles found further west. This transition zone creates unique concrete challenges — the soil can behave differently across a single property.",
-      "FDZ Construction serves Yukon homeowners and businesses with the same standards and crew we use across the entire metro. We've completed driveways, patios, commercial slabs, and foundation work throughout Yukon — including projects near the downtown district and in the newer developments along SH-66.",
+      "Yukon, on the west side of the metro in Canadian County, is one of the areas we work frequently. We handle driveways, patios, slabs, foundations, and commercial concrete for Yukon homeowners and businesses.",
     ],
-    servicesIntro: [
-      "<strong>Concrete services in Yukon, Oklahoma</strong> include <a href='/driveways-oklahoma-city'>driveways</a>, <a href='/patios-oklahoma-city'>patio and garage slabs</a>, <a href='/patios-oklahoma-city'>stamped concrete</a>, <a href='/foundations-oklahoma-city'>foundations</a>, and <a href='/commercial-concrete-oklahoma-city'>commercial parking lots</a>. Yukon's growing commercial corridor along I-40 keeps our <a href='/commercial-concrete-oklahoma-city'>commercial concrete</a> crew busy.",
-    ],
-    localDetails: "Our Yukon projects span from residential driveways near Czech Hall to commercial pours along the I-40 corridor. We understand Canadian County's building requirements and coordinate with local inspectors.",
-    soilNote: "Canadian County soil in Yukon is transitional — less aggressive than Oklahoma County red clay but still expansive enough to require proper base prep. We typically spec 4-inch aggregate base minimum with rebar reinforcement.",
+    localTerrainNote:
+      "Yukon has flatter terrain than Edmond, on the same expansive clay base shared across the region. A lot of the work here is in newer subdivisions built on graded former agricultural land — and on those sites, the quality of the fill and the compaction done during the original grading matters as much as the native soil itself. We check compaction and drainage on these lots specifically.",
+    driveTimeNote: "Yukon is about 20–25 minutes west of the shop.",
+    linkedServices: [SVC.driveways, SVC.commercial],
     faq: [
-      { question: "How much does concrete cost in Yukon, OK?", answer: "Yukon concrete pricing matches OKC metro rates: $6–$10/sq ft for standard driveways and slabs, $15–$22 for stamped finishes. Contact us for a free on-site estimate." },
-      { question: "Do you serve all of Yukon?", answer: "Yes — we serve all of Yukon including zip codes 73036 and 73099, plus the surrounding Canadian County areas." },
-      { question: "Is Yukon soil easier to work with than OKC?", answer: "Slightly — Canadian County clay is generally less aggressive than Oklahoma County red clay, but proper base prep and reinforcement are still essential for durable concrete." },
+      {
+        question: "Is new-construction concrete different in growing areas like Yukon?",
+        answer:
+          "The base-prep considerations differ slightly, since lots are often on graded fill rather than undisturbed native soil. We check compaction and drainage on these sites specifically before we pour.",
+      },
+      {
+        question: "How much does concrete cost in Yukon?",
+        answer:
+          "Yukon pricing matches our OKC metro rates — roughly $6–$10 per square foot for standard driveways and slabs — with an exact price after a free on-site estimate.",
+      },
     ],
   },
-  mustang: {
-    city: "Mustang",
-    county: "Canadian County",
-    zips: "73064",
-    metaDescription: "Concrete contractor in Mustang, OK. Driveways, patios, slabs & foundations for Mustang homeowners and new construction subdivisions. FDZ Construction LLC. Call (405) 458-4805.",
+  norman: {
+    city: "Norman",
+    county: "Cleveland County",
+    tier: "standard",
+    metaDescription:
+      "Concrete contractor in Norman, OK serving Cleveland County. Driveways, patios, slabs & foundations built for Norman's soil and drainage. FDZ Construction LLC. (405) 458-4805.",
+    heroBlurb:
+      "Concrete driveways, patios, slabs, and foundations in <strong>Norman, Oklahoma</strong>. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
-      "Mustang has experienced significant residential growth over the past decade, with new subdivisions expanding south and west of the city center. FDZ Construction serves Mustang homeowners with driveways, patios, foundations, and decorative concrete — bringing the same quality we deliver across the OKC metro.",
-      "Like neighboring Yukon, Mustang's Canadian County soil is transitional between the heavy red clay of central OKC and the sandier profiles further west. Our crew evaluates each Mustang property individually — adjusting base depth and reinforcement based on actual soil conditions, not assumptions.",
+      "FDZ Construction serves Norman and Cleveland County with driveways, patios, slabs, foundations, and retaining walls — the same crew and standards we bring across the OKC metro.",
     ],
-    servicesIntro: [
-      "<strong>Concrete services in Mustang, Oklahoma</strong> include <a href='/driveways-oklahoma-city'>driveway construction</a>, <a href='/patios-oklahoma-city'>patio and garage floor slabs</a>, <a href='/patios-oklahoma-city'>stamped decorative concrete</a>, and <a href='/foundations-oklahoma-city'>residential foundations</a>. Many Mustang homeowners combine a <a href='/patios-oklahoma-city'>new patio</a> with <a href='/foundations-oklahoma-city'>retaining wall</a> work for complete backyard upgrades.",
-    ],
-    localDetails: "We've completed projects throughout Mustang — from driveway replacements in established neighborhoods to new construction foundations in the subdivisions south of SH-152. Our familiarity with Mustang's growth patterns helps us anticipate site conditions.",
-    soilNote: "Mustang soil profiles are similar to Yukon — transitional clay that still requires proper base compaction and reinforcement. New construction sites often have fill soil that needs additional compaction before pouring.",
+    localTerrainNote:
+      "Norman's position along the Canadian River means some lots sit on sandier, river-influenced soil that can transition to denser clay within a short distance on the same property. That's a different base-prep call than the more uniform clay sites elsewhere in the metro, so we assess the soil on each lot before we pour.",
+    driveTimeNote: "Norman is about 20–25 minutes south of the shop.",
+    linkedServices: [SVC.driveways, SVC.foundations],
     faq: [
-      { question: "How much does concrete cost in Mustang, OK?", answer: "Mustang concrete pricing follows OKC metro rates: $6–$10/sq ft for standard work, $15–$22 for stamped concrete. Foundation work runs $9–$14/sq ft." },
-      { question: "Do you work in new Mustang subdivisions?", answer: "Yes — we coordinate with builders on foundation pours and handle driveway and patio work in both new and established Mustang neighborhoods." },
-      { question: "What services do you offer in Mustang?", answer: "We offer driveways, patios, slabs, stamped concrete, foundations, retaining walls, and sidewalks throughout Mustang. Same crew and pricing as our OKC work." },
+      {
+        question: "What's different about pouring concrete in Norman?",
+        answer:
+          "Norman's spot along the Canadian River means some lots have sandier, river-influenced soil that can change to denser clay across a short distance. We evaluate the soil and adjust base prep for each site rather than assuming one approach.",
+      },
+      {
+        question: "How much does concrete cost in Norman?",
+        answer:
+          "Norman pricing follows our OKC metro rates — roughly $6–$10 per square foot for standard work and $9–$14 for foundations — with an exact price after a free on-site estimate.",
+      },
     ],
   },
   moore: {
     city: "Moore",
     county: "Cleveland County",
-    zips: "73160, 73170",
-    metaDescription: "Concrete contractor in Moore, OK — driveways, foundations & storm damage concrete replacement in Cleveland County. FDZ Construction LLC. Free estimate: (405) 458-4805.",
+    tier: "standard",
+    metaDescription:
+      "Concrete contractor in Moore, OK — driveways, patios, slabs & foundations in Cleveland County. Drainage-conscious flatwork. FDZ Construction LLC. Free estimate: (405) 458-4805.",
+    heroBlurb:
+      "Concrete driveways, patios, slabs, and foundations in <strong>Moore, Oklahoma</strong>. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
-      "Moore, located in Cleveland County just south of Oklahoma City, is known for its strong residential communities and, unfortunately, its exposure to severe weather. The tornado activity in Moore has led to significant rebuilding over the years — and FDZ Construction has been part of that recovery, pouring foundations and flatwork for homeowners rebuilding after storms.",
-      "Moore's soil conditions are consistent with the broader Cleveland County profile — moderate to heavy clay that requires proper base preparation on every concrete project. The city's flat terrain means drainage grading is especially important — without proper slope, water pools on slabs and against foundations.",
+      "Moore, just south of Oklahoma City in Cleveland County, is one of the closest areas to our shop. We pour driveways, patios, slabs, foundations, and sidewalks for Moore homeowners.",
     ],
-    servicesIntro: [
-      "<strong>Concrete services in Moore, Oklahoma</strong> include <a href='/driveways-oklahoma-city'>driveway installation</a>, <a href='/patios-oklahoma-city'>patio and garage slabs</a>, <a href='/patios-oklahoma-city'>stamped concrete</a>, <a href='/foundations-oklahoma-city'>residential foundations</a>, and <a href='/sidewalks-oklahoma-city'>sidewalks</a>. Moore homeowners rebuilding after storm damage benefit from our experience with <a href='/foundations-oklahoma-city'>foundation replacement</a> and complete site work.",
-    ],
-    localDetails: "Our Moore projects include foundation replacement after storm damage, driveway work near Warren Theatre, and patio installations in the neighborhoods along 19th Street. We understand Moore's specific building requirements and work with local inspectors.",
-    soilNote: "Moore's flat terrain and Cleveland County clay create drainage challenges. We grade every slab and driveway to direct water away from structures — a critical detail in a city where standing water can cause foundation problems.",
+    localTerrainNote:
+      "Moore sits on flat terrain over the same expansive clay base found across the metro, with limited natural runoff in low-lying areas. That makes proper slope-to-drain detailing matter more here than on higher ground — we grade every slab and driveway to move water away from the structure.",
+    driveTimeNote: "Moore is among the closest areas we serve, just south of the shop.",
+    linkedServices: [SVC.driveways, SVC.foundations],
     faq: [
-      { question: "How much does concrete cost in Moore, OK?", answer: "Moore concrete pricing follows OKC metro rates: $6–$10/sq ft for driveways and slabs, $9–$14 for foundations. Storm damage replacement costs vary based on scope." },
-      { question: "Do you handle foundation replacement after storm damage?", answer: "Yes — we've completed multiple foundation and flatwork projects in Moore for homeowners rebuilding after severe weather. We coordinate with insurance adjusters and builders." },
-      { question: "What areas of Moore do you serve?", answer: "We serve all of Moore including zip codes 73160 and 73170 — from the neighborhoods near I-35 to the western developments." },
+      {
+        question: "Why does drainage matter so much in Moore?",
+        answer:
+          "Moore's flat terrain and clay soil mean water doesn't drain away on its own in low-lying areas. We grade slabs and driveways with a slope that moves water away from the structure, which is critical to preventing pooling and long-term concrete and foundation problems.",
+      },
+      {
+        question: "How much does concrete cost in Moore?",
+        answer:
+          "Moore pricing follows our OKC metro rates — roughly $6–$10 per square foot for driveways and slabs and $9–$14 for foundations — with an exact price after a free on-site estimate.",
+      },
+    ],
+  },
+  mustang: {
+    city: "Mustang",
+    county: "Canadian County",
+    tier: "standard",
+    metaDescription:
+      "Concrete contractor in Mustang, OK — driveways, patios, slabs & foundations for homeowners and new-construction subdivisions. FDZ Construction LLC. Call (405) 458-4805.",
+    heroBlurb:
+      "Concrete driveways, patios, slabs, and foundations in <strong>Mustang, Oklahoma</strong>. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
+    intro: [
+      "Mustang, on the west side of the metro in Canadian County, is an area we serve with driveways, patios, slabs, and foundations for homeowners and new-construction subdivisions.",
+    ],
+    localTerrainNote:
+      "Mustang shares Yukon's flatter west-metro terrain and the region's expansive clay base. Like Yukon, a lot of the work here is on newer subdivisions built on graded former agricultural land, where fill quality and compaction matter as much as the native soil — so we check both before we pour.",
+    driveTimeNote: "Mustang is about 20–25 minutes west of the shop.",
+    linkedServices: [SVC.driveways, SVC.foundations],
+    faq: [
+      {
+        question: "Do you work on new-construction lots in Mustang?",
+        answer:
+          "Yes. Many Mustang lots sit on graded fill rather than undisturbed native soil, so we check compaction and drainage on these sites specifically and coordinate with builders on scheduling.",
+      },
+      {
+        question: "How much does concrete cost in Mustang?",
+        answer:
+          "Mustang pricing follows our OKC metro rates — roughly $6–$10 per square foot for standard work — with an exact price after a free on-site estimate.",
+      },
     ],
   },
   "midwest-city": {
     city: "Midwest City",
     county: "Oklahoma County",
-    zips: "73110, 73130",
-    metaDescription: "Concrete contractor in Midwest City, OK. Driveway replacement, patio slabs & sidewalk repair in eastern Oklahoma County. FDZ Construction LLC. Call (405) 458-4805.",
+    tier: "standard",
+    metaDescription:
+      "Concrete contractor in Midwest City, OK — driveway replacement, patio slabs & sidewalk work in eastern Oklahoma County. FDZ Construction LLC. Call (405) 458-4805.",
+    heroBlurb:
+      "Driveway replacement, patio slabs, sidewalks, and foundation work in <strong>Midwest City, Oklahoma</strong>. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
-      "Midwest City, located adjacent to Tinker Air Force Base in eastern Oklahoma County, has a well-established residential base with many homes built in the mid-20th century. This means a significant portion of our Midwest City work involves replacing aging driveways, patios, and sidewalks that have reached the end of their service life.",
-      "The soil in eastern Oklahoma County tends to be slightly less aggressive than the central OKC red clay, but still contains enough expansive minerals to require proper base preparation. Midwest City's older neighborhoods often have mature trees with root systems that can affect concrete work — our crew identifies and addresses these issues during the site assessment.",
+      "FDZ Construction serves Midwest City in eastern Oklahoma County with driveway replacement, patio slabs, sidewalk work, and foundation work.",
     ],
-    servicesIntro: [
-      "<strong>Concrete services in Midwest City, Oklahoma</strong> include <a href='/driveways-oklahoma-city'>driveway replacement</a>, <a href='/patios-oklahoma-city'>patio slabs</a>, <a href='/sidewalks-oklahoma-city'>sidewalk repair</a>, and <a href='/foundations-oklahoma-city'>foundation work</a>. Midwest City's older homes often need complete <a href='/driveways-oklahoma-city'>driveway tear-out and replacement</a> — our crew handles demolition and new construction in one project.",
-    ],
-    localDetails: "We've completed projects near Tinker AFB, throughout the Rose State College area, and in the established neighborhoods along Reno Avenue. Our familiarity with Midwest City's older infrastructure helps us plan efficient replacement projects.",
-    soilNote: "Eastern Oklahoma County soil in Midwest City is moderately expansive — less aggressive than central OKC but still requires a minimum 4-inch compacted base. Older lots may have compromised soil from decades of settling.",
+    localTerrainNote:
+      "Midwest City sits along Crutcho Creek and Cherry Creek, and the area sees increased flood risk along those creeks during sustained rain, when backwater from the North Canadian River slows drainage — per the city's own floodplain information. Otherwise it shares the metro's flat, expansive clay base. For any work near those drainage corridors, grading and drainage are the priority.",
+    driveTimeNote: "Midwest City is about 15–20 minutes east of the shop.",
+    linkedServices: [SVC.driveways, SVC.sidewalks],
     faq: [
-      { question: "How much does concrete cost in Midwest City?", answer: "Midwest City pricing follows OKC metro rates: $6–$10/sq ft for driveways and slabs. Replacement work that includes tear-out of existing concrete adds $1–$2/sq ft." },
-      { question: "Do you do concrete replacement in older neighborhoods?", answer: "Yes — a large portion of our Midwest City work is tear-out and replacement of aging driveways, patios, and sidewalks in established neighborhoods." },
-      { question: "Do you serve areas near Tinker AFB?", answer: "Yes — we serve all of Midwest City including zip codes 73110 and 73130, covering neighborhoods near Tinker and throughout the city." },
+      {
+        question: "Does flooding near Crutcho Creek or Cherry Creek affect concrete work?",
+        answer:
+          "It can. The city's floodplain information notes that flood risk along Crutcho Creek and Cherry Creek rises during sustained rain due to backwater from the North Canadian River. For work near those corridors we pay extra attention to grading and drainage so water moves away from the slab.",
+      },
+      {
+        question: "How much does concrete cost in Midwest City?",
+        answer:
+          "Midwest City pricing follows our OKC metro rates — roughly $6–$10 per square foot for driveways and slabs, with tear-out of existing concrete adding to the cost — and an exact price after a free on-site estimate.",
+      },
     ],
   },
   "del-city": {
     city: "Del City",
     county: "Oklahoma County",
-    zips: "73115, 73135",
-    metaDescription: "Concrete contractor in Del City, OK — driveway replacement, patio slabs & sidewalk repair for Del City homeowners. FDZ Construction LLC. Call (405) 458-4805.",
+    tier: "standard",
+    metaDescription:
+      "Concrete contractor in Del City, OK — driveway replacement, patio slabs, sidewalks & retaining walls. FDZ Construction LLC. Call (405) 458-4805.",
+    heroBlurb:
+      "Driveway replacement, patio slabs, sidewalks, and retaining walls in <strong>Del City, Oklahoma</strong>. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
-      "Del City is a tightly-knit community in southeastern Oklahoma County, bordered by Midwest City and south Oklahoma City. Like its neighbors, Del City has an established housing stock that frequently needs concrete replacement — driveways, sidewalks, and patios that were originally poured decades ago.",
-      "FDZ Construction serves Del City homeowners with affordable, quality concrete work. The soil conditions in this part of Oklahoma County are moderate clay — manageable with proper base prep but still requiring attention to drainage and reinforcement. Our crew treats every Del City project with the same standards we apply across the entire OKC metro.",
+      "Del City, bordered by Midwest City and south Oklahoma City, is an area we serve with driveway replacement, patio slabs, sidewalk work, and retaining walls.",
     ],
-    servicesIntro: [
-      "<strong>Concrete services in Del City, Oklahoma</strong> include <a href='/driveways-oklahoma-city'>driveway replacement and new construction</a>, <a href='/patios-oklahoma-city'>patio slabs</a>, <a href='/sidewalks-oklahoma-city'>sidewalk repair</a>, and <a href='/foundations-oklahoma-city'>retaining walls</a>. Del City homeowners looking to upgrade their outdoor living space can combine a <a href='/patios-oklahoma-city'>new patio</a> with a <a href='/patios-oklahoma-city'>stamped finish</a> for a premium look at a fraction of natural stone costs.",
-    ],
-    localDetails: "Our Del City work includes driveway replacements in the neighborhoods near SE 44th Street, patio installations in the areas along Sunnylane Road, and sidewalk repairs for homeowners responding to city notices.",
-    soilNote: "Del City's southeastern Oklahoma County soil is moderately expansive. We specify a minimum 4-inch aggregate base with rebar reinforcement on all flatwork — adequate for the local conditions when properly compacted.",
+    localTerrainNote:
+      "Del City shares the same Crutcho Creek and Cherry Creek flood dynamic as neighboring Midwest City — the city's own floodplain information confirms flood risk rises along those creeks during sustained rain from North Canadian River backwater. That's relevant for any work near those drainage corridors. The terrain is otherwise flat, over the same expansive clay base as the rest of the metro.",
+    driveTimeNote: "Del City is about 15–20 minutes east of the shop, in the same general area as Midwest City.",
+    linkedServices: [SVC.driveways, SVC.sidewalks],
     faq: [
-      { question: "How much does concrete cost in Del City?", answer: "Del City concrete follows OKC metro pricing: $6–$10/sq ft for driveways and slabs, $15–$22 for stamped work. Tear-out of old concrete adds $1–$2/sq ft." },
-      { question: "Do you serve all of Del City?", answer: "Yes — we cover all Del City zip codes including 73115 and 73135, with the same crew and pricing as our OKC metro work." },
-      { question: "Can you help with city-required sidewalk repairs?", answer: "Yes — we handle permitted sidewalk replacements in Del City, including coordination with city requirements and ADA-compliant installations." },
+      {
+        question: "Does flood risk near Crutcho Creek or Cherry Creek matter for my project?",
+        answer:
+          "If your property is near those drainage corridors, yes. Del City's floodplain information confirms flood risk along Crutcho Creek and Cherry Creek rises during sustained rain from North Canadian River backwater, so we prioritize grading and drainage on work in those areas.",
+      },
+      {
+        question: "How much does concrete cost in Del City?",
+        answer:
+          "Del City pricing follows our OKC metro rates — roughly $6–$10 per square foot for driveways and slabs — with an exact price after a free on-site estimate.",
+      },
     ],
   },
 };
@@ -187,29 +288,21 @@ const NEARBY: Record<string, { name: string; to: string }[]> = {
 
 export default function CityPage({ slug }: { slug: string }) {
   const data = cityData[slug] || cityData["oklahoma-city"];
+  const routePath = ROUTE_BY_SLUG[slug] || ROUTE_BY_SLUG["oklahoma-city"];
   return (
     <CityPageTemplate
       city={data.city}
       county={data.county}
-      description={`<a href="/driveways-oklahoma-city">Driveways</a>, <a href="/patios-oklahoma-city">slabs</a>, <a href="/foundations-oklahoma-city">foundations</a>, and <a href="/patios-oklahoma-city">stamped concrete</a> in <strong>${data.city}, Oklahoma</strong>. FDZ Construction LLC — locally owned <strong>concrete company in OKC</strong>. <a href="tel:4054584805">(405) 458-4805</a>.`}
-      localContent={data.intro}
-      servicesContent={[
-        ...data.servicesIntro,
-        data.localDetails,
-        `<strong>Soil conditions in ${data.city}:</strong> ${data.soilNote}`,
-      ]}
-      table={{
-        headers: ["Service", "Typical Size", "Price Range", "Notes"],
-        rows: [
-          [`${data.city} driveway`, "24×40 ft", "<strong>$5,760–$9,600</strong>", "4\", rebar"],
-          [`${data.city} patio slab`, "20×20 ft", "<strong>$2,400–$4,000</strong>", "4\", broom"],
-          [`${data.city} stamped patio`, "400 sq ft", "<strong>$6,000–$8,800</strong>", "Pattern + sealer"],
-          [`${data.city} foundation`, "1,200 sq ft", "<strong>$10,800–$16,800</strong>", "Slab-on-grade"],
-        ],
-      }}
+      canonicalUrl={`${BASE}${routePath}`}
+      heroBlurb={data.heroBlurb}
+      intro={data.intro}
+      localTerrainNote={data.localTerrainNote}
+      driveTimeNote={data.driveTimeNote}
+      neighborhoods={data.neighborhoods}
+      linkedServices={data.linkedServices}
       faq={data.faq}
-      metaDescription={data.metaDescription}
       nearbyLinks={NEARBY[slug]}
+      metaDescription={data.metaDescription}
     />
   );
 }

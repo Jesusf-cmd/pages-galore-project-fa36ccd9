@@ -1,11 +1,11 @@
-import { Shield, MapPin, Star, Clock, BadgeCheck } from "lucide-react";
+import { Shield, MapPin, Award, Clock, BadgeCheck } from "lucide-react";
 
 const badges = [
-  { icon: Shield, label: "Licensed & Insured" },
+  { icon: Shield, label: "Licensed, Bonded & Insured" },
   { icon: MapPin, label: "Locally Owned" },
-  { icon: Star, label: "5-Star Rated" },
+  { icon: Award, label: "1-Year Warranty" },
   { icon: Clock, label: "Free Estimates" },
-  { icon: BadgeCheck, label: "Satisfaction Guaranteed" },
+  { icon: BadgeCheck, label: "8+ Years Experience" },
 ];
 
 export default function TrustBar() {
