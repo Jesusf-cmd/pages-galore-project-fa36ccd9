@@ -97,7 +97,7 @@ function buildPrerenderMarkup(route: PrerenderRoute): string {
       <article>
         <h1>${escapeHtml(route.h1)}</h1>
         ${paragraphs}
-        <p><strong>Call:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus.f@myconcreteestimate.com">jesus.f@myconcreteestimate.com</a></p>
+        <p><strong>Call:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
       </article>
       <section aria-labelledby="prerender-services-heading">
         <h2 id="prerender-services-heading">Concrete Services</h2>

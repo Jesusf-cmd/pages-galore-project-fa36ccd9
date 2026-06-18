@@ -19,7 +19,7 @@ export default function Footer() {
         <div>
           <div className="text-[0.6rem] tracking-[0.14em] uppercase text-muted-text font-semibold mb-1">Contact FDZ Construction directly</div>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="mailto:jesus.f@myconcreteestimate.com" className="text-orange text-sm font-medium no-underline hover:underline">jesus.f@myconcreteestimate.com</a>
+            <a href="mailto:jesus@fdzconstruction.com" className="text-orange text-sm font-medium no-underline hover:underline">jesus@fdzconstruction.com</a>
             <a href="tel:4054584805" className="text-orange text-sm font-medium no-underline hover:underline">(405) 458-4805</a>
           </div>
           <address className="not-italic text-[0.74rem] text-muted-text mt-2">7004 S Indiana Ave, Oklahoma City, OK 73159</address>
@@ -63,7 +63,7 @@ export default function Footer() {
             <Link to="/blog" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Tips Blog</Link>
             <span className="text-[0.74rem] text-muted-text">Workmanship Warranty</span>
             <a href="tel:4054584805" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">(405) 458-4805</a>
-            <a href="mailto:jesus.f@myconcreteestimate.com" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">jesus.f@myconcreteestimate.com</a>
+            <a href="mailto:jesus@fdzconstruction.com" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">jesus@fdzconstruction.com</a>
           </div>
         </div>
       </div>

@@ -378,7 +378,7 @@ function AboutSection() {
             Our team understands Oklahoma's unique conditions. From intense summer heat to winter freeze-thaw cycles and Oklahoma's heavy clay soil, we mix and pour concrete built to handle what this state throws at it. Every job starts with a free, no-obligation estimate. Every job ends with work built to last decades.
           </p>
           <p className="prose-muted mb-8">
-            We're not a national franchise. FDZ Construction LLC is your local Oklahoma City concrete company — our own crew handles every project from start to finish. Call us at <a href="tel:4054584805" className="text-orange no-underline font-bold">(405) 458-4805</a> or email <a href="mailto:jesus.f@myconcreteestimate.com" className="text-orange no-underline">jesus.f@myconcreteestimate.com</a> to schedule your free estimate today.
+            We're not a national franchise. FDZ Construction LLC is your local Oklahoma City concrete company — our own crew handles every project from start to finish. Call us at <a href="tel:4054584805" className="text-orange no-underline font-bold">(405) 458-4805</a> or email <a href="mailto:jesus@fdzconstruction.com" className="text-orange no-underline">jesus@fdzconstruction.com</a> to schedule your free estimate today.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Link to="/driveways-oklahoma-city" className="btn-primary text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Driveway Contractors →</Link>
