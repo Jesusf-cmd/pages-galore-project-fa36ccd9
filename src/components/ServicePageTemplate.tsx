@@ -53,13 +53,31 @@ interface ServicePageProps {
   projectTypesTitleAccent?: string;
   projectTypesIntro?: string;
   cityBlockIntro?: string;
+  /** OKC-specific technical point relevant to this service. Rendered as a highlighted callout. */
+  localExpertiseNote?: string;
+  /** Experience + warranty line. Pass null to hide; defaults to the confirmed company trust line. */
+  trustLine?: string | null;
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, trustLine }: ServicePageProps) {
+  const seoTitle = metaTitle || `${title} ${titleAccent.replace('.', '')} | FDZ Construction LLC`;
+  const seoDescription = metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155);
+  const canonical = currentServiceSlug ? `https://fdzconstruction.com/${currentServiceSlug}` : undefined;
   useSEO({
-    title: metaTitle || `${title} ${titleAccent.replace('.', '')} | FDZ Construction LLC`,
-    description: metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155),
+    title: seoTitle,
+    description: seoDescription,
+    canonical,
+    og: canonical ? { title: seoTitle, description: seoDescription, type: "website", url: canonical } : undefined,
   });
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer.replace(/<[^>]+>/g, "") },
+    })),
+  };
   const defaultProcessSteps = [
     { title: "Site prep & excavation", description: "We start by marking the area, calling 811 for utility locates, and excavating to the correct depth for your soil conditions. Problem soil gets flagged before the pour, not after." },
     { title: "Base compaction", description: "We install a compacted aggregate base — minimum 4 inches on standard OKC residential work, 6 inches on problem clay. This is the single biggest factor in whether your slab lasts 5 years or 40." },
@@ -68,9 +86,13 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
     { title: "Curing & sealing", description: "Curing compound is applied immediately after finishing. Sealer is applied after full cure. We do a final walkthrough with you before leaving the job site." },
   ];
   const steps = processSteps && processSteps.length > 0 ? processSteps : defaultProcessSteps;
+  // TODO: "8+ years" is a placeholder phrasing — replace with the exact figure (or founding year) once confirmed.
+  const defaultTrustLine = "FDZ Construction LLC is a licensed and insured Oklahoma concrete contractor with 8+ years of experience serving the OKC metro — and every project is backed by a 1-year workmanship warranty.";
+  const resolvedTrustLine = trustLine === null ? null : (trustLine ?? defaultTrustLine);
 
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <section className="page-hero">
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">{eyebrow}</span>
@@ -88,6 +110,17 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         <ScrollReveal>
           <section className="section-padding">
             <p className="prose-muted max-w-[820px]" dangerouslySetInnerHTML={{ __html: introText }} />
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* Local expertise note — OKC-specific technical point */}
+      {localExpertiseNote && (
+        <ScrollReveal>
+          <section className="section-padding section-alt">
+            <div className="section-eye">Local Expertise</div>
+            <h2 className="mb-4">Built for<br/><em className="h2-accent">Oklahoma Soil.</em></h2>
+            <div className="info-block"><p dangerouslySetInnerHTML={{ __html: localExpertiseNote }} /></div>
           </section>
         </ScrollReveal>
       )}
@@ -251,10 +284,18 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
               <p className="prose-muted mb-5">Oklahoma's soil conditions make concrete work harder than almost anywhere else in the country. A contractor who follows generic national specs — without adjusting for OKC's clay soil, frost lines, and drainage patterns — will deliver work that looks right on day one and fails within a few years. The cost of redoing a driveway or patio far exceeds the cost of doing it right the first time.</p>
               <p className="prose-muted mb-5">FDZ Construction LLC is fully licensed and insured in the state of Oklahoma. We pull all required permits, follow Oklahoma City building codes, and coordinate with inspectors when required. Our crew handles every project from first dig to final walkthrough — no subcontractors, no handoffs to an unknown crew.</p>
               <p className="prose-muted mb-5">Every quote we give is written and itemized — labor, materials, and demolition listed separately. The price we quote is the price you pay. We don't show up and add change orders. We don't start work without your written approval. And if something is wrong with our workmanship, we come back and make it right.</p>
-              <p className="prose-muted mb-5">Our 4.9-star Google rating and BBB A+ accreditation come from 500+ completed projects across Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City — all delivered by the same crew, to the same standards, every time.</p>
+              <p className="prose-muted mb-5">With 8+ years of experience across Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City, we deliver every project with the same crew and the same standards — and back our workmanship with a 1-year warranty.</p>
             </section>
           </ScrollReveal>
         </>
+      )}
+
+      {resolvedTrustLine && (
+        <ScrollReveal>
+          <section className="section-padding">
+            <div className="info-block"><p dangerouslySetInnerHTML={{ __html: resolvedTrustLine }} /></div>
+          </section>
+        </ScrollReveal>
       )}
 
       <ScrollReveal>

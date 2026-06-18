@@ -59,8 +59,8 @@ export default function CityPageTemplate({ city, county, description, localConte
               ))}
             </div>
             <div className="grid grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-              <div className="bg-stone p-6 text-center"><div className="font-display text-4xl font-black text-orange leading-none">4.9★</div><div className="text-[0.66rem] text-muted-text tracking-[0.08em] uppercase mt-1">Customer rating</div></div>
-              <div className="bg-stone p-6 text-center"><div className="font-display text-4xl font-black text-orange leading-none">500+</div><div className="text-[0.66rem] text-muted-text tracking-[0.08em] uppercase mt-1">OKC metro projects</div></div>
+              <div className="bg-stone p-6 text-center"><div className="font-display text-4xl font-black text-orange leading-none">8+</div><div className="text-[0.66rem] text-muted-text tracking-[0.08em] uppercase mt-1">Years experience</div></div>
+              <div className="bg-stone p-6 text-center"><div className="font-display text-4xl font-black text-orange leading-none">1yr</div><div className="text-[0.66rem] text-muted-text tracking-[0.08em] uppercase mt-1">Workmanship warranty</div></div>
               <div className="bg-stone p-6 text-center"><div className="font-display text-4xl font-black text-orange leading-none">24hr</div><div className="text-[0.66rem] text-muted-text tracking-[0.08em] uppercase mt-1">Estimate response</div></div>
             </div>
           </div>

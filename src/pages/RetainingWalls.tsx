@@ -5,6 +5,7 @@ export default function RetainingWalls() {
     <ServicePage
       enriched
       currentServiceSlug="retaining-walls-oklahoma-city"
+      localExpertiseNote="Oklahoma's clay holds water and swells, putting enormous lateral pressure on retaining structures. That's why drainage — a gravel backfill zone and a French drain behind every wall — is the single biggest factor in whether a wall lasts, more than the wall material itself."
       metaTitle="Retaining Walls Oklahoma City | FDZ Construction LLC"
       metaDescription="Retaining wall contractors in Oklahoma City. Poured concrete, CMU block, and segmental walls for slope stabilization, drainage & erosion control — engineered for clay soil. (405) 458-4805."
       eyebrow="OKC Metro · Retaining Wall Contractors · Licensed & Insured"

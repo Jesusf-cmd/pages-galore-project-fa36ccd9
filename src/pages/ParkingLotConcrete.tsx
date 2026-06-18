@@ -5,6 +5,7 @@ export default function ParkingLotConcrete() {
     <ServicePage
       enriched
       currentServiceSlug="parking-lots-oklahoma-city"
+      localExpertiseNote="Asphalt softens and ruts in Oklahoma's summer heat, and OKC's clay subgrade moves with moisture. We grade for positive drainage and build on a proof-rolled aggregate base so the lot carries loaded vehicles without ponding, rutting, or cracking."
       metaTitle="Concrete Parking Lots Oklahoma City | FDZ Construction LLC"
       metaDescription="Commercial concrete parking lot contractors in Oklahoma City. Retail, warehouse, HOA & municipal lots. New construction, replacement, ADA-compliant, curb & gutter. Free estimate: (405) 458-4805."
       eyebrow="OKC Metro · Commercial Parking Lots · Licensed & Insured"

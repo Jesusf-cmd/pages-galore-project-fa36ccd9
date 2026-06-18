@@ -3,7 +3,19 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function SidewalksOklahomaCity() {
   return (
     <ServicePage
+      enriched
       currentServiceSlug="sidewalks-oklahoma-city"
+      localExpertiseNote="On Oklahoma clay, sidewalk panels heave and settle when the base is skipped. Proper subgrade compaction and an aggregate base — plus expansion joints where the walk meets driveways and structures — are what keep panels from cracking and lifting."
+      processEyebrow="How We Pour Sidewalks & Curb"
+      processTitle="Graded, Formed,"
+      processTitleAccent="Poured & Jointed."
+      processIntro="Sidewalk and curb work is mostly about grade and drainage. Our process is straightforward:"
+      processSteps={[
+        { title: "Grading for drainage & ADA slope", description: "We grade the route for positive drainage and, where the walk is an accessible route, for ADA-compliant cross-slope and running slope." },
+        { title: "Forming", description: "Forms are set to line and grade — by hand for short or custom runs, machine-formed for long, consistent runs." },
+        { title: "Pour & broom finish", description: "We place 4,000 PSI concrete and finish with a broom texture for slip resistance." },
+        { title: "Joint placement", description: "We tool or saw control joints at regular intervals and place expansion joints where the sidewalk meets driveways, curbs, and structures." },
+      ]}
       metaTitle="Concrete Sidewalks, Curb & Gutter Oklahoma City | FDZ Construction LLC"
       metaDescription="Concrete sidewalk and curb & gutter contractors in Oklahoma City. New construction, city right-of-way, ADA-compliant ramps, city-spec curb work. Free estimate: (405) 458-4805."
       eyebrow="OKC Metro · Sidewalk & Curb Contractors · Licensed & Insured"
@@ -121,6 +133,9 @@ export default function SidewalksOklahomaCity() {
         { question: "What types of curb profiles do you pour?", answer: "We handle standard barrier curb, mountable (rollover) curb, valley gutter, and combination curb and gutter sections." },
         { question: "How thick should a concrete sidewalk be?", answer: "4 inches is standard for pedestrian sidewalks. 5 inches is recommended where vehicles may cross, such as driveway approaches." },
         { question: "Do sidewalks need reinforcement?", answer: "Yes — we use wire mesh or rebar depending on the application. On Oklahoma clay, reinforcement helps prevent cracking from soil movement." },
+        { question: "Do sidewalks need expansion joints?", answer: "Yes — typically at regular intervals and wherever a sidewalk meets a driveway, curb, or structure, to allow for movement and prevent random cracking." },
+        { question: "What's the difference between curb and gutter vs. just curb?", answer: "Curb and gutter combines the curb with a paved drainage channel, common on streets and parking lots; standalone curb is just the edge without the drainage component." },
+        { question: "How is curb and gutter installed for subdivisions or parking lots?", answer: "Longer runs are typically machine-formed (slipform) for consistency; smaller or custom sections are hand-formed." },
         { question: "Do you handle permits for sidewalk work?", answer: "Yes — we coordinate all necessary permits and inspections for city right-of-way and commercial sidewalk projects." },
         { question: "Are your sidewalks ADA compliant?", answer: "Yes — all commercial and right-of-way sidewalks include proper slopes, widths, and detectable warning surfaces per current ADA standards." },
       ]}

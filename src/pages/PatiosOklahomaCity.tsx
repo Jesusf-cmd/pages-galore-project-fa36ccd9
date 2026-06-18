@@ -3,7 +3,21 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function PatiosOklahomaCity() {
   return (
     <ServicePage
+      enriched
       currentServiceSlug="patios-oklahoma-city"
+      localExpertiseNote="OKC's freeze-thaw cycles make sealing non-negotiable for stamped concrete — an unsealed decorative surface is far more likely to spall, flake, or fade within a season or two. We seal every stamped pour and give you a resealing schedule to protect the look long-term."
+      processEyebrow="How a Stamped Patio Gets Built"
+      processTitle="From Base Prep to"
+      processTitleAccent="Sealed Finish."
+      processIntro="Decorative concrete has a tight timing window — color and stamping have to happen while the slab is still plastic. Here's how a stamped patio comes together."
+      processSteps={[
+        { title: "Base prep & forming", description: "We compact the subgrade and aggregate base and set forms to grade so the patio drains away from your home." },
+        { title: "Pour", description: "We place 4,000 PSI concrete and screed it to a flat, even surface." },
+        { title: "Color hardener & release agent", description: "For stamped finishes, color hardener and release agent are applied while the slab is still plastic — the window that makes or breaks the final look." },
+        { title: "Stamp with texture mats", description: "We press texture mats into the surface at the right point in the cure to get crisp, defined pattern detail." },
+        { title: "Cure", description: "The slab cures before any cleaning or sealing so the finish sets up properly." },
+        { title: "Pressure wash & seal", description: "We pressure wash off the release agent and apply sealer — essential in Oklahoma's freeze-thaw climate." },
+      ]}
       metaTitle="Concrete Patios, Slabs & Stamped Concrete Oklahoma City | FDZ Construction LLC"
       metaDescription="Concrete patio, slab, and stamped concrete contractors in Oklahoma City. Broom, smooth, stamped finishes. Garage floors, shop slabs, decorative patios. Free estimate."
       eyebrow="OKC Metro · Patio & Slab Contractors · Licensed & Insured"
@@ -120,7 +134,10 @@ export default function PatiosOklahomaCity() {
         { question: "How much does stamped concrete cost in Oklahoma City?", answer: "Stamped concrete runs $15–$22 per sq ft installed — including base, pattern, color, and sealer. A 400 sq ft stamped patio costs roughly $6,000–$8,800." },
         { question: "What finish is best for a patio in Oklahoma?", answer: "Broom finish is the most popular — good traction, low maintenance, and affordable. Stamped concrete offers a premium look at a higher price point. For pool decks, we specify a non-slip texture broadcast." },
         { question: "How thick should a patio or slab be?", answer: "4 inches is standard for patios and light use. 5–6 inches for garage floors and heavy equipment. On known problem clay, we may recommend thickened edges or deeper base prep." },
-        { question: "How long does stamped concrete last in OKC?", answer: "Stamped concrete lasts 25–40 years in Oklahoma City with proper maintenance. Resealing every 2–4 years is critical — UV exposure, heat, and freeze-thaw cycles break down sealers faster in Oklahoma." },
+        { question: "How long does stamped concrete last in OKC?", answer: "The structural slab lasts as long as any concrete slab — decades. The decorative surface needs periodic resealing to keep its color and finish, especially in Oklahoma's sun and freeze-thaw cycles." },
+        { question: "How often does stamped concrete need to be resealed?", answer: "Roughly every 2–3 years, depending on sun exposure and how much traffic the surface sees. We provide a resealing schedule when the project is finished." },
+        { question: "What patterns and colors are available?", answer: "We offer patterns including ashlar slate, cobblestone, wood plank, and brick/herringbone, in a range of integral colors and color-hardener tones. <!-- TODO: link to a stamped concrete gallery once real project photos exist -->" },
+        { question: "Can chips or cracks in stamped concrete be repaired?", answer: "Minor chips and color touch-ups are usually repairable. More significant cracking may require repairing or replacing the affected section — we'll give you an honest assessment of which is needed." },
         { question: "Can you add a patio to an existing home?", answer: "Yes — most of our patio projects are additions to existing homes. We grade the new patio to drain away from your foundation and match existing surfaces where possible." },
         { question: "Can I pour a slab on clay soil in Oklahoma?", answer: "Yes — with proper base prep. Oklahoma's clay requires deeper aggregate base and adequate reinforcement to prevent soil movement from cracking the slab." },
       ]}

@@ -5,6 +5,7 @@ export default function FoundationsOklahomaCity() {
     <ServicePage
       enriched
       currentServiceSlug="foundations-oklahoma-city"
+      localExpertiseNote="Oklahoma's expansive red clay swells and shrinks with moisture and is the leading cause of foundation cracking in this region. Footing depth, reinforcement, and drainage all have to account for that movement — which is why we engineer each foundation to the soil, not a generic national spec."
       metaTitle="Concrete Foundations Oklahoma City | Residential & Commercial | FDZ Construction LLC"
       metaDescription="Concrete foundation contractor in Oklahoma City. Slab-on-grade, stem walls, footings, garage pads, and commercial warehouse & retail foundations engineered for clay soil. (405) 458-4805."
       eyebrow="OKC Metro · Foundation Contractors · Licensed & Insured"

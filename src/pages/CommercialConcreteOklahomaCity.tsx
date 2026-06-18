@@ -5,6 +5,7 @@ export default function CommercialConcreteOklahomaCity() {
     <ServicePage
       enriched
       currentServiceSlug="commercial-concrete-oklahoma-city"
+      localExpertiseNote="Oklahoma City's expansive clay puts heavy pressure on large-format slabs, dock aprons, and parking surfaces. Commercial base prep here means 6+ inches of compacted, proof-rolled aggregate and engineered joint spacing — the details that keep a slab from cracking under loaded trucks and forklift traffic."
       metaTitle="Commercial Concrete Contractors Oklahoma City | FDZ Construction LLC"
       metaDescription="Commercial concrete contractors in Oklahoma City. Warehouse floors, retail pads, loading docks, equipment pads, curb & gutter, and parking lots. 4,000+ PSI. Free estimate: (405) 458-4805."
       eyebrow="OKC Metro · Commercial Concrete · Licensed & Insured"

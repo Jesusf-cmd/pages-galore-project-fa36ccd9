@@ -3,7 +3,21 @@ import ServicePage from "@/components/ServicePageTemplate";
 export default function DrivewaysOklahomaCity() {
   return (
     <ServicePage
+      enriched
       currentServiceSlug="driveways-oklahoma-city"
+      localExpertiseNote="Oklahoma's expansive red clay swells and shrinks with moisture, which is why proper sub-base prep — a compacted gravel base — matters far more here than in stable-soil regions. Skipping or shortcutting it is the single most common cause of driveway cracking in the OKC metro."
+      processEyebrow="How a Driveway Gets Poured"
+      processTitle="From Sub-Base to"
+      processTitleAccent="Cured Slab."
+      processIntro="On Oklahoma clay, a driveway is won or lost in the base prep — long before the concrete arrives. Here's how we build one that lasts."
+      processSteps={[
+        { title: "Sub-base excavation & compaction", description: "We excavate to depth and compact a gravel sub-base. On Oklahoma clay this step matters more than any other — it's where most cracked driveways are lost before a single yard of concrete is poured." },
+        { title: "Forming", description: "Forms are set to grade and slope so the finished driveway sheds water away from your home and garage instead of pooling against the foundation." },
+        { title: "Reinforcement", description: "We place rebar or wire mesh, chosen per the soil and load conditions of your specific driveway — we evaluate this per project rather than defaulting to one." },
+        { title: "Pour & broom finish", description: "We place the concrete and finish with a broom texture for traction in Oklahoma rain and ice." },
+        { title: "Control joints", description: "Control joints are cut every 8–10 feet to direct any cracking to the joints instead of across the slab." },
+        { title: "Cure", description: "Light foot traffic in about 3 days, vehicle traffic in about 7 days, and full structural cure at around 28 days." },
+      ]}
       metaTitle="Concrete Driveways Oklahoma City | Installation & Replacement | FDZ Construction"
       metaDescription="Concrete driveway installation & replacement in Oklahoma City. 4,000 PSI concrete, rebar reinforcement, 30+ year durability. Licensed & insured. Free estimates — call (405) 458-4805."
       eyebrow="OKC Metro · Driveway Contractors · Licensed & Insured"
@@ -142,8 +156,8 @@ export default function DrivewaysOklahomaCity() {
           title: "Do You Need a Permit for a Concrete Driveway in",
           titleAccent: "Oklahoma City?",
           content: [
-            "In most cases, yes — Oklahoma City requires a permit for new driveway construction or significant replacement. Permit requirements vary depending on the scope of work, property location, and whether the driveway connects to a public street or alley.",
-            "The good news: FDZ Construction LLC handles permit coordination as part of our process. We'll let you know exactly what's required before we start and make sure your project is fully compliant with city codes.",
+            "Permit requirements for driveways vary by city and by the scope of work — and by whether the driveway ties into a public street or alley. Rather than guess at the rules for your area, we confirm exactly what your specific project requires before we start.",
+            "FDZ Construction LLC handles permit coordination as part of our process — we'll tell you what's needed and pull the necessary permits so the work is done properly.",
             "Call <a href='tel:4054584805'>(405) 458-4805</a> if you have questions about permits before your project starts.",
           ],
         },
@@ -156,7 +170,7 @@ export default function DrivewaysOklahomaCity() {
         { question: "Can you pour concrete in cold or hot weather?", answer: "Yes, but we take precautions. In cold weather (below 40°F), we use heated water and insulating blankets. In extreme heat, we pour early morning and use evaporation retarders. We'll advise you on the best timing for your project." },
         { question: "What's the difference between concrete and cement?", answer: "Cement is an ingredient in concrete. Concrete is the finished product made from cement, sand, gravel, and water. When you hire us for a 'cement driveway,' you're getting concrete — the strong, durable surface you need." },
         { question: "Will my new driveway crack?", answer: "We cut control joints every 8-10 feet to control where cracks occur. Hairline cracks can appear as concrete cures, but our proper preparation and reinforcement minimize cracking. We stand behind our work." },
-        { question: "Do you handle permits?", answer: "Yes, we pull all necessary permits and schedule inspections. Permit requirements vary by city — Oklahoma City, Edmond, and Norman each have different requirements. We handle the paperwork so you don't have to." },
+        { question: "Do you handle permits?", answer: "Yes — we handle permit coordination as part of our process. Requirements vary by city and by project scope, so we confirm what's required for your specific project and pull the necessary permits so you don't have to." },
       ]}
     />
   );
