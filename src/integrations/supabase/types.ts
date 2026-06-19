@@ -62,6 +62,39 @@ export type Database = {
         }
         Relationships: []
       }
+      document_submissions: {
+        Row: {
+          address: string | null
+          created_at: string
+          details: string | null
+          email: string
+          file_paths: Json
+          id: string
+          name: string
+          phone: string
+        }
+        Insert: {
+          address?: string | null
+          created_at?: string
+          details?: string | null
+          email: string
+          file_paths?: Json
+          id?: string
+          name: string
+          phone: string
+        }
+        Update: {
+          address?: string | null
+          created_at?: string
+          details?: string | null
+          email?: string
+          file_paths?: Json
+          id?: string
+          name?: string
+          phone?: string
+        }
+        Relationships: []
+      }
       quotes: {
         Row: {
           accepted_at: string | null
