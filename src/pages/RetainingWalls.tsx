@@ -5,45 +5,94 @@ export default function RetainingWalls() {
     <ServicePage
       enriched
       currentServiceSlug="retaining-walls-oklahoma-city"
-      localExpertiseNote="Oklahoma's clay holds water and swells, putting enormous lateral pressure on retaining structures. That's why drainage — a gravel backfill zone and a French drain behind every wall — is the single biggest factor in whether a wall lasts, more than the wall material itself."
-      metaTitle="Retaining Walls Oklahoma City | FDZ Construction LLC"
-      metaDescription="Retaining wall contractors in Oklahoma City. Poured concrete, CMU block, and segmental walls for slope stabilization, drainage & erosion control — engineered for clay soil. (405) 458-4805."
+      localExpertiseNote="Oklahoma's Permian-age clay and shale base swells significantly when wet and shrinks when dry — sometimes moving several inches across a single season. On any sloped lot, that soil movement creates lateral pressure against a wall constantly, not just during rain events. The biggest variable in retaining wall longevity in OKC isn't the wall material — it's the drainage behind it."
+      subServices={{
+        sectionEyebrow: "Service Types",
+        sectionTitle: "Retaining Wall Services in Oklahoma City",
+        items: [
+          {
+            title: "New Retaining Wall Installation",
+            bullets: [
+              "Site evaluation for slope, soil conditions, and drainage before any design decisions",
+              "Footing sized to wall height, load, and soil type",
+              "Drainage planning behind the wall — gravel backfill, weep holes, French drain where needed",
+              "Wall construction in poured concrete or CMU block depending on scope",
+              "Backfill compacted in lifts",
+            ],
+          },
+          {
+            title: "Retaining Wall Repair",
+            bullets: [
+              "Leaning or bowing walls are almost always a drainage failure, not a material failure — we evaluate the cause before recommending repair vs. replacement",
+              "Structural stabilization where rebuild isn't warranted",
+              "Drainage correction included where inadequate drainage caused the original failure",
+            ],
+          },
+          {
+            title: "Poured Concrete Retaining Walls",
+            bullets: [
+              "Monolithic structure — no block joints to shift or crack over time",
+              "Best for taller walls, higher-load applications, and sites with severe soil movement",
+              "Can be formed to follow curves and grade changes",
+              "Finish options available (smooth, textured)",
+            ],
+          },
+          {
+            title: "CMU Block Retaining Walls",
+            bullets: [
+              "Concrete masonry unit construction — durable and cost-effective for mid-height walls",
+              "Requires the same drainage planning behind the wall as poured concrete",
+              "Good choice where an engineered poured-concrete wall isn't required by height or load",
+            ],
+          },
+          {
+            title: "Decorative and Landscape Walls",
+            bullets: [
+              "Lower-height walls for garden beds, landscape separation, and outdoor living areas",
+              "Can be paired with a patio or stamped concrete project — <a href='/patios-oklahoma-city'>see our patios page</a>",
+              "Drainage still matters even on smaller walls — we don't skip it",
+            ],
+          },
+        ],
+      }}
+      metaTitle="Concrete Retaining Walls Oklahoma City | FDZ Construction LLC"
+      metaDescription="Concrete retaining wall installation and repair in Oklahoma City. Poured concrete and CMU block walls built for OKC's expansive clay soil. Licensed, bonded, insured. Free estimates — (405) 458-4805."
       eyebrow="OKC Metro · Retaining Wall Contractors · Licensed & Insured"
-      title="Retaining Walls in"
-      titleAccent="Oklahoma City."
-      description='Poured concrete, CMU block, and segmental retaining walls for slope stabilization, drainage, and erosion control across the OKC metro — engineered for Oklahoma clay. <a href="tel:4054584805">(405) 458-4805</a>.'
-      introText="A retaining wall holds back tons of saturated earth, so a failure isn't cosmetic — it's structural and expensive. FDZ Construction LLC builds retaining walls engineered for Oklahoma's expansive clay: footings below frost line, French drainage behind every wall, and reinforcement sized for the exact height of soil being retained. Whether you're stabilizing a slope, controlling drainage, or carving usable yard out of a grade change, we build walls that stand for decades."
+      title="Concrete Retaining Wall Contractors in"
+      titleAccent="Oklahoma City, OK."
+      description='Poured concrete and CMU block retaining walls built for OKC\'s expansive clay soil — slope stabilization, drainage, and outdoor living across the OKC metro. <a href="tel:4054584805">(405) 458-4805</a>.'
+      introText="FDZ Construction LLC builds and repairs concrete retaining walls across the Oklahoma City metro. Whether you need a wall to control a sloped yard, protect a foundation from soil movement, create usable outdoor space, or manage drainage, we design each wall around your specific site conditions — not a one-size template. Based in south OKC, licensed, bonded, and insured in Oklahoma, and every wall is backed by a 1-year workmanship warranty."
       serviceLabel="Retaining Wall"
       serviceCards={[
         {
           icon: "🧱",
           title: "Poured Concrete Walls",
-          description: "Maximum-strength poured concrete walls for tall heights, heavy loads, and structural applications. Reinforced and drained for Oklahoma clay.",
+          description: "Monolithic structure with no block joints — best for taller walls, higher loads, and sites with severe soil movement. Formed to any shape or grade.",
         },
         {
           icon: "🪨",
           title: "CMU Block Walls",
-          description: "Cost-effective reinforced block walls for retained heights under 4 feet. Cores filled with rebar and grout for stability and longevity.",
+          description: "Durable and cost-effective for mid-height walls. Requires the same drainage planning as poured concrete — block doesn't reduce hydrostatic pressure risk.",
         },
         {
           icon: "🌿",
-          title: "Segmental / Interlocking",
-          description: "Segmental block walls for landscape terracing, garden beds, and outdoor living areas — clean lines with engineered drainage behind.",
+          title: "Decorative & Landscape Walls",
+          description: "Lower-height walls for garden beds, landscape separation, and outdoor living. Often paired with patio and stamped concrete projects.",
         },
         {
           icon: "💧",
           title: "Drainage & French Drains",
-          description: "Every wall includes a gravel backfill zone and a French drain or weep holes to relieve hydrostatic pressure from saturated clay.",
+          description: "Every wall includes a gravel backfill zone and a French drain or weep holes. Water pressure behind the wall is the leading cause of failure in OKC's clay soil.",
         },
         {
-          icon: "⛰️",
-          title: "Slope & Erosion Control",
-          description: "Walls and grading that stabilize slopes, stop erosion, and reclaim usable yard on Oklahoma's shifting clay lots.",
+          icon: "🔧",
+          title: "Retaining Wall Repair",
+          description: "Leaning walls are almost always a drainage failure. We evaluate the cause before recommending repair vs. replacement, then correct the drainage as part of the fix.",
         },
         {
           icon: "🏢",
           title: "Commercial Retaining Walls",
-          description: "Engineered retaining structures for commercial sites, parking areas, and developments — coordinated with engineers and inspectors.",
+          description: "Retaining structures for commercial sites, parking lots, and site development projects across the OKC metro.",
         },
       ]}
       specs={[
@@ -53,63 +102,82 @@ export default function RetainingWalls() {
         { label: "Poured Walls", value: "4,000 PSI concrete for maximum strength and tall walls" },
         { label: "Block Walls", value: "Grouted, rebar-filled CMU cores on a reinforced footing" },
         { label: "Backfill", value: "Compacted free-draining backfill placed in lifts, graded to shed water" },
-        { label: "Engineering", value: "Stamped plans coordinated for walls over 4 ft or with loads above" },
+        { label: "Engineering", value: "Stamped plans coordinated for walls over height threshold or with surcharge loads" },
         { label: "Cure & Load", value: "Footing/wall cures ~7 days before staged backfill; full strength ~28 days" },
+      ]}
+      whyChooseUs={[
+        { icon: "🛡️", title: "Licensed, Bonded & Insured in Oklahoma", description: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project." },
+        { icon: "📅", title: "8+ Years Building Retaining Walls in OKC Clay", description: /* TODO: confirm exact figure or founding year */ "Over 8 years of experience building retaining walls in Oklahoma's expansive clay soil — we know what drainage failures look like and how to prevent them." },
+        { icon: "🔒", title: "1-Year Workmanship Warranty", description: "Every retaining wall we build is backed by a 1-year workmanship warranty on all work." },
+        { icon: "💧", title: "Drainage Evaluated Before Design", description: "We don't design the wall and figure out drainage later. Drainage planning comes first — before footing depth, before material choice, before cost." },
+        { icon: "📋", title: "Free On-Site Estimates", description: "No phone quotes, no pressure. We evaluate your specific slope, soil, and drainage conditions and give you a written estimate." },
+        { icon: "📍", title: "Based in South OKC — Full Metro Service", description: "We're at 7004 S Indiana Ave. Serving OKC, Edmond, Yukon, Norman, Moore, Mustang, Midwest City, and Del City." },
       ]}
       sections={[
         {
-          eyebrow: "Who It's For",
-          title: "Engineered for",
-          titleAccent: "Oklahoma Soil.",
+          eyebrow: "Oklahoma Soil",
+          title: "Why OKC Soil Makes Retaining Walls",
+          titleAccent: "a Critical Investment.",
           content: [
-            "<strong>Retaining wall contractors in Oklahoma City</strong> — FDZ Construction builds poured concrete, CMU block, and segmental block retaining walls for homeowners, builders, and commercial property owners across the OKC metro.",
-            "People call us for four main reasons: a slope that's sliding or eroding, water that's collecting in the wrong place, a grade change that's eating into usable yard or a driveway/parking area, or a structure that needs protection from shifting earth. Oklahoma's clay soil and heavy rain events put enormous lateral pressure on retaining structures, so the right answer depends on wall height, what's loading the soil above it, and how water moves across your lot.",
-            "Every wall we build includes proper drainage, a footing below frost line, and reinforcement sized for the retained height. Retaining walls pair well with our <a href='/patios-oklahoma-city'>patio</a>, <a href='/sidewalks-oklahoma-city'>sidewalk</a>, <a href='/driveways-oklahoma-city'>driveway</a>, and <a href='/foundations-oklahoma-city'>foundation</a> services for complete outdoor and site projects.",
-          ],
-          stats: [
-            { value: "$25–45", label: "Per linear ft" },
-            { value: "French", label: "Drain included" },
-            { value: "30+yr", label: "Expected life" },
+            "Oklahoma's Permian-age clay and shale base is among the most expansive soil in the country. It swells significantly when wet and shrinks when dry — sometimes moving several inches across a single season. On any sloped lot, that soil movement creates lateral pressure against the wall constantly, not just during rain events.",
+            "This is why the biggest variable in retaining wall longevity in OKC isn't the wall material — it's the drainage behind it. Water pressure that builds up in the soil behind an inadequately drained wall is the leading cause of wall failure in this region. A wall that looks solid can lean or fail within a few years if the drainage wasn't done right from the start.",
+            "On Edmond's rolling terrain specifically — where the soil can shift between sandy and clay-heavy on the same lot — proper site evaluation before design is especially important. A retaining wall that works well on a clay site in south OKC may need a different approach on a sandier Edmond lot with more elevation change.",
           ],
         },
         {
-          eyebrow: "Poured vs Block vs Segmental",
-          title: "Choosing the Right",
-          titleAccent: "Wall Type.",
+          eyebrow: "Wall Types",
+          title: "Retaining Wall Types — Which Is Right",
+          titleAccent: "for Your Project?",
           content: [
-            "<strong>Poured concrete</strong> is the strongest option — best for tall walls, heavy surcharge loads (like a driveway or structure above), and structural applications. <strong>CMU block</strong>, with grouted and rebar-filled cores, is the most cost-effective choice for retained heights under about 4 feet. <strong>Segmental/interlocking block</strong> is ideal for landscape terracing and garden walls where appearance matters and loads are lighter.",
-            "Whichever type fits your project, the make-or-break detail is the same: drainage. Most retaining wall failures in Oklahoma aren't strength failures — they're drainage failures, where water builds up behind the wall and hydrostatic pressure pushes it over. Every wall we build is drained to relieve that pressure.",
+            "<strong>Gravity walls</strong> hold back soil using their own weight and mass. Work well for shorter walls on moderate slopes. Require a properly sized footing and good drainage to prevent overturning.",
+            "<strong>Poured concrete walls</strong> are the most versatile option — can be formed to any shape, height, or grade. Preferred for taller walls, high-load applications, or where OKC's severe soil movement requires a monolithic structure with no joints. Requires rebar reinforcement and drainage engineering.",
+            "<strong>CMU (concrete block) walls</strong> are faster to build than poured walls on smaller projects. Durable and well-suited to mid-height residential walls. Still requires the same drainage planning — block construction doesn't reduce the hydrostatic pressure risk.",
+            "<strong>Segmental retaining walls</strong> use interlocking concrete block systems. Work well for lower-height landscape walls and garden applications. Not appropriate for high-load or tall structural walls without engineering.",
+            "Note: walls over a certain height (varies by city) typically require an engineer's stamp — we confirm what's required for your specific project.",
           ],
         },
         {
-          eyebrow: "Wall Pricing",
-          title: "Retaining Wall Cost",
-          titleAccent: "in Oklahoma City.",
+          eyebrow: "Retaining Wall Pricing",
+          title: "How Much Does a Retaining Wall Cost",
+          titleAccent: "in Oklahoma City?",
           alt: true,
           content: [
-            "Retaining walls run roughly $25–$45 per linear foot depending on height, material, drainage requirements, and site access. Taller walls that require engineered plans, deep footings, or surcharge reinforcement are quoted individually.",
+            "Cost depends on wall height and length, material choice (poured concrete vs. CMU block), site drainage requirements, soil conditions, equipment access, and whether engineering is required. We provide free on-site estimates with a clear scope before any work begins.",
           ],
-          table: {
-            headers: ["Wall Type", "Best For", "Typical Range"],
-            rows: [
-              ["Poured concrete", "Tall walls, heavy loads, structural", "<strong>$30–$45 / linear ft</strong>"],
-              ["CMU block", "Walls under 4 ft, budget projects", "<strong>$25–$35 / linear ft</strong>"],
-              ["Segmental / interlocking", "Landscape terracing, gardens", "<strong>$25–$40 / linear ft</strong>"],
-            ],
-          },
+          infoBlock: "Call <a href='tel:4054584805'>(405) 458-4805</a> or email <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a> to schedule your free on-site estimate.",
+        },
+        {
+          eyebrow: "Get Started",
+          title: "Request a Free",
+          titleAccent: "Retaining Wall Estimate.",
+          alt: true,
+          content: [
+            "We provide free on-site estimates across Oklahoma City, Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro including Norman, Moore, Mustang, Midwest City, and Del City. Based at 7004 S Indiana Ave in south OKC.",
+          ],
+          infoBlock: "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
+        },
+        {
+          eyebrow: "Related Services",
+          title: "Other Concrete Services",
+          titleAccent: "From FDZ.",
+          content: [
+            "<a href='/foundations-oklahoma-city' class='text-orange no-underline font-medium'>Concrete Foundations</a> — Retaining walls and foundations often go hand-in-hand on sloped lots.",
+            "<a href='/patios-oklahoma-city' class='text-orange no-underline font-medium'>Patios &amp; Stamped Concrete</a> — Landscape walls frequently paired with patio or outdoor living projects.",
+            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete</a> — Retaining walls for commercial site development and parking lot projects.",
+          ],
         },
       ]}
       processEyebrow="How a Wall Gets Built"
-      processTitle="From Assessment to"
-      processTitleAccent="Backfill."
+      processTitle="From Site Assessment to"
+      processTitleAccent="Finished Wall."
       processIntro="A retaining wall is only as good as its footing and its drainage. Here's how we take a wall from first site visit to a finished, drained structure that holds."
       processSteps={[
-        { title: "Site & soil assessment", description: "We measure the wall height and length, evaluate the soil and how water moves across the site, and determine whether the wall needs engineered, stamped plans." },
-        { title: "Excavation & footing", description: "We excavate below the frost line and form and pour a reinforced concrete footing sized to the wall height and the load it will carry." },
-        { title: "Wall construction", description: "We build the wall — poured concrete in forms, grouted CMU block, or segmental units — with rebar sized for the retained earth height." },
-        { title: "Drainage installation", description: "We install a gravel backfill zone and a French drain or weep holes so water behind the wall has somewhere to go instead of pushing on the wall." },
-        { title: "Backfill & compaction", description: "Free-draining backfill is placed and compacted in lifts and graded to shed surface water away from the top of the wall." },
-        { title: "Cure & finish", description: "The wall cures before it carries full load. We finish grading, add caps or facing where specified, and walk the project with you." },
+        { title: "Site evaluation", description: "We assess your slope, soil type, drainage patterns, and what the wall needs to hold back before recommending a wall type or height." },
+        { title: "Drainage plan", description: "Gravel backfill depth, weep hole placement, and French drain routing (where needed) are planned before construction starts — not added as an afterthought." },
+        { title: "Footing", description: "Sized and poured to the depth and width required for the specific wall height and soil conditions." },
+        { title: "Wall construction", description: "Poured concrete or CMU block, built per the drainage plan and footing design." },
+        { title: "Backfill", description: "Compacted in lifts to avoid point-loading against the new wall." },
+        { title: "Final inspection", description: "We walk through the finished wall with you before we leave the job site." },
       ]}
       projectTypesEyebrow="Common Project Types"
       projectTypesTitle="Retaining Wall"
@@ -121,20 +189,21 @@ export default function RetainingWalls() {
         { title: "Parking lot & driveway grade changes", description: "Structural walls that support the edge of a driveway, parking area, or raised pad." },
         { title: "Tiered / terraced landscape walls", description: "Multiple shorter walls that step down a slope for planting beds and outdoor living areas." },
         { title: "Foundation & structure protection", description: "Walls that keep shifting earth and water away from a home, garage, or commercial building." },
-        { title: "Poured concrete walls", description: "Maximum-strength walls for tall heights and heavy loads above the wall." },
-        { title: "CMU block walls", description: "Cost-effective reinforced block walls for shorter retained heights." },
-        { title: "Segmental block walls", description: "Clean, modular landscape walls for terracing and garden applications." },
+        { title: "Commercial site retaining walls", description: "Engineered retaining structures for commercial sites, parking areas, and developments." },
+        { title: "Outdoor living walls", description: "Lower-height decorative walls for garden beds, landscape separation, and entertaining areas." },
+        { title: "Retaining wall repair", description: "Structural stabilization and drainage correction for leaning or failing walls." },
       ]}
-      cityBlockIntro={`We build retaining walls — poured concrete, CMU block, and segmental — throughout the Oklahoma City metro, including <a href="/oklahoma-city-concrete" class="text-orange no-underline">Oklahoma City</a>, <a href="/edmond-concrete" class="text-orange no-underline">Edmond</a>, <a href="/norman-ok-concrete" class="text-orange no-underline">Norman</a>, <a href="/moore-oklahoma-concrete" class="text-orange no-underline">Moore</a>, <a href="/yukon-oklahoma-concrete" class="text-orange no-underline">Yukon</a>, <a href="/mustang-oklahoma-concrete" class="text-orange no-underline">Mustang</a>, <a href="/midwest-city-oklahoma-concrete" class="text-orange no-underline">Midwest City</a>, and <a href="/del-city-oklahoma-concrete" class="text-orange no-underline">Del City</a>.`}
+      cityBlockIntro={`We build retaining walls — poured concrete, CMU block, and landscape walls — throughout the Oklahoma City metro, including <a href="/oklahoma-city-concrete" class="text-orange no-underline">Oklahoma City</a>, <a href="/edmond-concrete" class="text-orange no-underline">Edmond</a>, <a href="/norman-ok-concrete" class="text-orange no-underline">Norman</a>, <a href="/moore-oklahoma-concrete" class="text-orange no-underline">Moore</a>, <a href="/yukon-oklahoma-concrete" class="text-orange no-underline">Yukon</a>, <a href="/mustang-oklahoma-concrete" class="text-orange no-underline">Mustang</a>, <a href="/midwest-city-oklahoma-concrete" class="text-orange no-underline">Midwest City</a>, and <a href="/del-city-oklahoma-concrete" class="text-orange no-underline">Del City</a>.`}
       faq={[
-        { question: "How much does a retaining wall cost in OKC?", answer: "Retaining walls run roughly $25–$45 per linear foot depending on height, material, drainage, and site access. Poured concrete is the strongest and most expensive; CMU block is the most cost-effective for shorter walls. Tall walls needing engineered plans are quoted individually." },
-        { question: "What type of retaining wall is best for Oklahoma?", answer: "Poured concrete is best for tall walls and heavy loads. CMU block is cost-effective for walls under about 4 feet. Segmental/interlocking block works well for landscape terracing. The right choice depends on height, load, and appearance." },
-        { question: "How long before a retaining wall can support a slope?", answer: "We don't load a wall until it's cured. The footing and wall typically cure about 7 days before we place and compact backfill in stages, and concrete reaches full design strength at around 28 days. We backfill in lifts so the wall is never overloaded before it's ready." },
-        { question: "Do retaining walls need drainage?", answer: "Yes — every retaining wall in Oklahoma should include a French drain or weep holes plus a gravel backfill zone. Without drainage, hydrostatic pressure from saturated clay soil can push a wall over. Drainage is the single most important detail in a lasting wall." },
-        { question: "How tall can a retaining wall be without engineering?", answer: "Walls over about 4 feet — or shorter walls with a driveway, slope, or structure loading the soil above — typically require engineered, stamped plans. We coordinate with structural engineers and ensure the work meets local code." },
-        { question: "How deep should the footing be?", answer: "Footings go below the frost line — typically 18–24 inches in Oklahoma — on a compacted base, and are sized to the wall height and load. Taller walls require deeper, wider footings." },
-        { question: "Do you build commercial retaining walls?", answer: "Yes — we build engineered retaining structures for commercial sites, parking areas, and developments, coordinated with engineers and city inspectors." },
-        { question: "What areas do you serve for retaining walls?", answer: "We serve the entire OKC metro including Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City." },
+        { question: "Why do retaining walls fail?", answer: "Almost always drainage — not the wall material or age. Water pressure builds up in the soil behind a wall with inadequate drainage and pushes it out of place over time. A wall that looks structurally sound can lean or fail within a few years if drainage wasn't handled correctly from the start." },
+        { question: "How tall can a retaining wall be before it needs an engineer?", answer: "This varies by city and jurisdiction. Many areas require an engineer's stamp for walls over 4 feet. We confirm the specific requirement for your project location before work begins." },
+        { question: "What's the difference between poured concrete and CMU block for a retaining wall?", answer: "Poured concrete creates a monolithic structure with no joints — preferred for taller walls, higher loads, or severe soil movement. CMU block is faster and more cost-effective for mid-height walls where the load and height don't require a monolithic pour. Both need proper drainage behind them." },
+        { question: "How long does a concrete retaining wall last?", answer: "A properly built wall with adequate drainage can last 50+ years. The drainage is the variable — a well-drained wall outlasts a poorly drained one by decades regardless of material." },
+        { question: "Do you handle the drainage behind the wall or just the wall itself?", answer: "We handle the full scope — drainage plan, gravel backfill, weep holes, French drain where needed, and the wall itself. We don't build the wall and leave the drainage to someone else." },
+        { question: "Can you repair a leaning retaining wall, or does it need to be replaced?", answer: "Depends on how far it's leaned and what caused it. Minor movement with a repairable drainage issue can often be stabilized. Significant structural displacement usually requires rebuild. We evaluate this on-site at no charge." },
+        { question: "Do you build retaining walls for commercial properties?", answer: "Yes — we build retaining walls for commercial sites, parking lots, and site development projects across the OKC metro, in addition to residential work." },
+        { question: "How much does a retaining wall cost in Oklahoma City?", answer: "Cost depends on wall height and length, material choice, site drainage requirements, soil conditions, equipment access, and whether engineering is required. We provide free on-site estimates with a clear scope before any work begins — call (405) 458-4805." },
+        { question: "What areas do you serve for retaining walls?", answer: "We serve the entire OKC metro including Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City. Based at 7004 S Indiana Ave in south OKC." },
       ]}
     />
   );
