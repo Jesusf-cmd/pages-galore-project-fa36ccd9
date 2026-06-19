@@ -540,23 +540,169 @@ export const prerenderBodies: Record<string, string> = {
   `,
 
   "/parking-lots-oklahoma-city": `
-    <h1>Concrete Parking Lots in Oklahoma City</h1>
-    <p>FDZ Construction LLC builds commercial concrete parking lots in Oklahoma City — new construction, full replacement, and major repairs for businesses, retail centers, churches, and industrial properties across the OKC metro.</p>
-    <h2>Commercial Parking Lot Scope</h2>
-    <p>We pour 5–6 inch reinforced slabs with engineered drainage grading, sealed joints, curb and gutter, and ADA-compliant accessible spaces. Concrete parking lots typically last 30–40 years versus asphalt's 15–20, with lower long-term maintenance on Oklahoma's expansive clay when the base is built correctly.</p>
-    ${faqSection("Parking Lot FAQ", [
-      { question: "How much does a concrete parking lot cost in OKC?", answer: "Commercial parking lots typically run $7–$12 per square foot installed, depending on thickness, reinforcement, and site prep." },
-      { question: "Concrete parking lot vs asphalt?", answer: "Concrete costs more upfront but lasts roughly twice as long with lower maintenance — especially important on Oklahoma clay when the base is engineered for heavy traffic." },
+    <h1>Concrete Parking Lot Contractors in Oklahoma City, OK</h1>
+    <p>FDZ Construction LLC provides concrete parking lot installation, repair, and site concrete services for commercial properties across the Oklahoma City metro. We work directly with property managers, business owners, and general contractors — handling the full scope from grading and forming through ADA-compliant layout, curb and gutter, and striping coordination. Licensed, bonded, and insured in Oklahoma. Certificate of insurance and bonding documentation available as part of the bid process.</p>
+    <h2>Concrete Parking Lot Services in Oklahoma City</h2>
+    <h3>New Parking Lot Installation</h3>
+    <ul>
+      <li>Site grading for drainage and ADA-compliant slopes</li>
+      <li>4,000+ PSI concrete mix standard for vehicle loads</li>
+      <li>Reinforcement sized to expected traffic and load</li>
+      <li>Expansion joint planning for large-area pours</li>
+      <li>ADA-accessible parking stall layout</li>
+      <li>Curb and gutter installation</li>
+    </ul>
+    <h3>Parking Lot Repair and Partial Replacement</h3>
+    <ul>
+      <li>Section removal and replacement for cracked or failed areas</li>
+      <li>Joint sealing to prevent water intrusion and further deterioration</li>
+      <li>We assess the sub-base condition before recommending repair vs. replacement — OKC's expansive clay can cause slab failure from below, not just surface wear</li>
+    </ul>
+    <h3>Full Parking Lot Replacement</h3>
+    <ul>
+      <li>Full demolition and removal of existing concrete or asphalt</li>
+      <li>Sub-base re-evaluation and correction before new pour</li>
+      <li>Re-grading for drainage improvements if the original lot had pooling or drainage issues</li>
+      <li>New reinforced pour with updated ADA layout where required</li>
+    </ul>
+    <h3>Concrete Curb and Gutter</h3>
+    <ul>
+      <li>Perimeter curb and gutter for drainage routing</li>
+      <li>ADA curb ramps and accessible routes</li>
+      <li>Slipform for longer runs; hand-formed for custom sections</li>
+    </ul>
+    <h3>ADA Compliance</h3>
+    <ul>
+      <li>Accessible parking stall count and placement per ADA requirements</li>
+      <li>Van-accessible stall dimensions</li>
+      <li>Accessible route from parking to building entry</li>
+      <li>Curb ramp slopes and landing dimensions confirmed before design is finalized</li>
+    </ul>
+    <h2>What Property Managers and GCs Should Know</h2>
+    <p>Our proposals define exactly what's included — demolition, sub-base prep, reinforcement, concrete thickness, ADA layout, curb and gutter, and cleanup. We coordinate with your project schedule and other trades on site, communicate timeline changes before they happen, and are set up to work as a sub-contractor on GC-managed projects. COI and bonding documentation available for the bid process.</p>
+    <p>OKC's expansive clay soil means parking lot failures often originate below the slab. Before recommending repair vs. replacement, we evaluate sub-base conditions — a slab repair on a failed base is money wasted. ADA compliance is confirmed before we finalize any layout.</p>
+    ${processSection("From Assessment to Finished Lot", [
+      { title: "On-site assessment", description: "We walk the property, evaluate existing conditions, sub-base, drainage, and ADA layout before providing a proposal." },
+      { title: "Proposal", description: "Clear scope, defined deliverables, no hidden line items." },
+      { title: "Site prep and grading", description: "Proper grading for drainage is set before any concrete is placed." },
+      { title: "Forming and reinforcement", description: "Forms set to ADA slopes and drainage grades; reinforcement placed per load requirements." },
+      { title: "Pour and finish", description: "4,000+ PSI mix, properly cured before opening to traffic." },
+      { title: "Curb, gutter, ADA ramps, and close-out", description: "Installed per layout plan. Site left clean. Job photos provided on completion." },
     ])}
+    <h2>Oklahoma City Soil and Parking Lot Longevity</h2>
+    <p>Oklahoma's expansive clay and shale base creates a challenge that most parking lot failures trace back to: the sub-base moves with moisture, and if the concrete wasn't designed around that movement, the slab cracks and fails from below regardless of surface quality. Proper sub-base preparation — compacted aggregate base, drainage routing, and appropriate joint spacing for large-area pours — is what separates a parking lot that lasts 30 years from one that needs patching within five.</p>
+    <h2>Why Oklahoma City Businesses Choose FDZ for Parking Lot Work</h2>
+    <ul>
+      <li>Licensed, bonded, and insured in Oklahoma</li>
+      <li>8+ years of commercial concrete experience across the OKC metro</li>
+      <li>1-year workmanship warranty</li>
+      <li>COI and bonding documentation available for bid process</li>
+      <li>ADA-compliant layouts on every project</li>
+      <li>4,000+ PSI commercial mix standard</li>
+      <li>Sub-base evaluation before repair or replacement recommendations</li>
+    </ul>
+    <h2>How Much Does a Concrete Parking Lot Cost in Oklahoma City?</h2>
+    <p>Commercial parking lot costs depend on square footage, existing site conditions, sub-base preparation requirements, ADA layout complexity, curb and gutter scope, and schedule requirements. We provide competitive bids with a clear, itemized scope. Call <a href="tel:4054584805">(405) 458-4805</a> or email <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> to discuss your project.</p>
+    ${faqSection("Parking Lot FAQ", [
+      { question: "Do you work as a sub-contractor on GC-managed projects?", answer: "Yes. We're set up to work within a GC's project schedule, coordinate with other trades on site, and provide required documentation — COI, bonding information — as part of the sub process." },
+      { question: "How quickly can you turn around a bid for a parking lot project?", answer: "Contact us with project details and we'll schedule an on-site assessment promptly. Bid turnaround depends on project complexity." },
+      { question: "Can you provide a certificate of insurance and bonding documentation?", answer: "Yes, as part of the bid process." },
+      { question: "Do you handle ADA compliance in the parking lot layout?", answer: "Yes. Stall count, van-accessible placement, curb ramp slopes, and accessible route continuity are part of every parking lot layout we design." },
+      { question: "How long before a new concrete parking lot can be opened to traffic?", answer: "Concrete parking lots typically require 7 days minimum before light vehicle traffic, and up to 28 days for full structural cure. We provide a specific timeline as part of the project schedule." },
+      { question: "Why do concrete parking lots fail in Oklahoma?", answer: "Most failures in OKC trace back to sub-base issues, not surface quality. Oklahoma's expansive clay soil moves significantly with moisture — if the sub-base wasn't properly compacted and the slab wasn't designed for that movement, failure can start from below the slab surface." },
+      { question: "What PSI concrete do you use for parking lots?", answer: "4,000+ PSI standard for commercial vehicle loads. Adjusted upward for heavy truck or equipment traffic where needed." },
+      { question: "What areas do you serve for parking lot work?", answer: "We serve the entire OKC metro — Oklahoma City (home base, fastest response), Edmond (~30–40 min north), Yukon (~20–25 min west), Norman, Moore, Mustang, Midwest City, and Del City." },
+    ])}
+    <h2>Related Services</h2>
+    <ul>
+      <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Warehouse slabs, dock pads, retail site concrete, and equipment pads.</li>
+      <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; Curb and Gutter</a> — Often part of the same commercial site scope as parking lot work.</li>
+      <li><a href="/foundations-oklahoma-city">Foundations</a> — Commercial foundation work for the buildings your parking lot serves.</li>
+    </ul>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
   `,
 
   "/retaining-walls-oklahoma-city": `
-    <h1>Retaining Walls in Oklahoma City</h1>
-    <p>FDZ Construction LLC builds retaining walls in Oklahoma City engineered for the lateral pressure of expansive clay soil — poured concrete for maximum strength, reinforced CMU block for walls under four feet, and interlocking segmental walls for landscape terracing.</p>
-    <h2>Drainage Behind the Wall</h2>
-    <p>Every wall includes footings below frost line and drainage behind the wall — gravel backfill, weep holes, and sometimes a French drain — because hydrostatic pressure from Oklahoma clay is the leading cause of retaining wall failure in this region.</p>
-    <p>Retaining walls typically run $25–$45 per linear foot depending on height, material, and site access.</p>
+    <h1>Concrete Retaining Wall Contractors in Oklahoma City, OK</h1>
+    <p>FDZ Construction LLC builds and repairs concrete retaining walls across the Oklahoma City metro. Whether you need a wall to control a sloped yard, protect a foundation from soil movement, create usable outdoor space, or manage drainage, we design each wall around your specific site conditions — not a one-size template. Licensed, bonded, and insured in Oklahoma, and every wall is backed by a 1-year workmanship warranty.</p>
+    <h2>Retaining Wall Services in Oklahoma City</h2>
+    <h3>New Retaining Wall Installation</h3>
+    <ul>
+      <li>Site evaluation for slope, soil conditions, and drainage before any design decisions</li>
+      <li>Footing sized to wall height, load, and soil type</li>
+      <li>Drainage planning behind the wall — gravel backfill, weep holes, French drain where needed</li>
+      <li>Wall construction in poured concrete or CMU block depending on scope</li>
+      <li>Backfill compacted in lifts</li>
+    </ul>
+    <h3>Retaining Wall Repair</h3>
+    <ul>
+      <li>Leaning or bowing walls are almost always a drainage failure, not a material failure — we evaluate the cause before recommending repair vs. replacement</li>
+      <li>Structural stabilization where rebuild isn't warranted</li>
+      <li>Drainage correction included where inadequate drainage caused the original failure</li>
+    </ul>
+    <h3>Poured Concrete Retaining Walls</h3>
+    <ul>
+      <li>Monolithic structure — no block joints to shift or crack over time</li>
+      <li>Best for taller walls, higher-load applications, and sites with severe soil movement</li>
+      <li>Can be formed to follow curves and grade changes</li>
+    </ul>
+    <h3>CMU Block Retaining Walls</h3>
+    <ul>
+      <li>Concrete masonry unit construction — durable and cost-effective for mid-height walls</li>
+      <li>Requires the same drainage planning behind the wall as poured concrete</li>
+      <li>Good choice where an engineered poured-concrete wall isn't required by height or load</li>
+    </ul>
+    <h3>Decorative and Landscape Walls</h3>
+    <ul>
+      <li>Lower-height walls for garden beds, landscape separation, and outdoor living areas</li>
+      <li>Often paired with a patio or stamped concrete project</li>
+      <li>Drainage still matters even on smaller walls — we don't skip it</li>
+    </ul>
+    <h2>Why Oklahoma City Soil Makes Retaining Walls a Critical Investment</h2>
+    <p>Oklahoma's Permian-age clay and shale base is among the most expansive soil in the country. It swells significantly when wet and shrinks when dry — sometimes moving several inches across a single season. On any sloped lot, that soil movement creates lateral pressure against the wall constantly, not just during rain events. The biggest variable in retaining wall longevity in OKC isn't the wall material — it's the drainage behind it. Water pressure that builds up in the soil behind an inadequately drained wall is the leading cause of wall failure in this region.</p>
+    <p>On Edmond's rolling terrain specifically — where the soil can shift between sandy and clay-heavy on the same lot — proper site evaluation before design is especially important.</p>
+    <h2>Retaining Wall Types — Which Is Right for Your Project?</h2>
+    <p><strong>Gravity walls</strong> hold back soil using their own weight and mass. Work well for shorter walls on moderate slopes.</p>
+    <p><strong>Poured concrete walls</strong> are the most versatile option — can be formed to any shape, height, or grade. Preferred for taller walls, high-load applications, or where OKC's severe soil movement requires a monolithic structure with no joints.</p>
+    <p><strong>CMU (concrete block) walls</strong> are faster to build than poured walls on smaller projects. Still requires the same drainage planning.</p>
+    <p><strong>Segmental retaining walls</strong> use interlocking concrete block systems. Work well for lower-height landscape walls and garden applications. Not appropriate for high-load or tall structural walls without engineering.</p>
+    <p>Note: walls over a certain height (varies by city) typically require an engineer's stamp — we confirm what's required for your specific project.</p>
+    ${processSection("Our Retaining Wall Process", [
+      { title: "Site evaluation", description: "We assess your slope, soil type, drainage patterns, and what the wall needs to hold back before recommending a wall type or height." },
+      { title: "Drainage plan", description: "Gravel backfill depth, weep hole placement, and French drain routing are planned before construction starts — not added as an afterthought." },
+      { title: "Footing", description: "Sized and poured to the depth and width required for the specific wall height and soil conditions." },
+      { title: "Wall construction", description: "Poured concrete or CMU block, built per the drainage plan and footing design." },
+      { title: "Backfill and final inspection", description: "Compacted in lifts to avoid point-loading. We walk through the finished wall with you before we leave." },
+    ])}
+    <h2>Why Oklahoma City Homeowners and Businesses Choose FDZ for Retaining Walls</h2>
+    <ul>
+      <li>Licensed, bonded, and insured in Oklahoma</li>
+      <li>8+ years building retaining walls in OKC's expansive clay soil</li>
+      <li>1-year workmanship warranty on all retaining wall work</li>
+      <li>We evaluate drainage before design — not after the wall fails</li>
+      <li>Free on-site estimates, no pressure</li>
+      <li>Based in south OKC — serving OKC, Edmond, Yukon, Norman, Moore, Mustang, Midwest City, Del City</li>
+    </ul>
+    <h2>How Much Does a Retaining Wall Cost in Oklahoma City?</h2>
+    <p>Cost depends on wall height and length, material choice (poured concrete vs. CMU block), site drainage requirements, soil conditions, equipment access, and whether engineering is required. We provide free on-site estimates with a clear scope before any work begins. Call <a href="tel:4054584805">(405) 458-4805</a> or email <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a>.</p>
+    ${faqSection("Retaining Wall FAQ", [
+      { question: "Why do retaining walls fail?", answer: "Almost always drainage — not the wall material or age. Water pressure builds up in the soil behind a wall with inadequate drainage and pushes it out of place over time." },
+      { question: "How tall can a retaining wall be before it needs an engineer?", answer: "This varies by city and jurisdiction. Many areas require an engineer's stamp for walls over 4 feet. We confirm the specific requirement for your project location before work begins." },
+      { question: "What's the difference between poured concrete and CMU block for a retaining wall?", answer: "Poured concrete creates a monolithic structure with no joints — preferred for taller walls, higher loads, or severe soil movement. CMU block is faster and more cost-effective for mid-height walls. Both need proper drainage behind them." },
+      { question: "How long does a concrete retaining wall last?", answer: "A properly built wall with adequate drainage can last 50+ years. The drainage is the variable — a well-drained wall outlasts a poorly drained one by decades regardless of material." },
+      { question: "Do you handle the drainage behind the wall or just the wall itself?", answer: "We handle the full scope — drainage plan, gravel backfill, weep holes, French drain where needed, and the wall itself." },
+      { question: "Can you repair a leaning retaining wall, or does it need to be replaced?", answer: "Depends on how far it's leaned and what caused it. Minor movement with a repairable drainage issue can often be stabilized. Significant structural displacement usually requires rebuild. We evaluate this on-site at no charge." },
+      { question: "Do you build retaining walls for commercial properties?", answer: "Yes — we build retaining walls for commercial sites, parking lots, and site development projects across the OKC metro." },
+      { question: "How much does a retaining wall cost in Oklahoma City?", answer: "Cost depends on wall height and length, material choice, drainage requirements, soil conditions, and whether engineering is required. We provide free on-site estimates — call (405) 458-4805." },
+    ])}
+    <h2>Related Services</h2>
+    <ul>
+      <li><a href="/foundations-oklahoma-city">Concrete Foundations</a> — Retaining walls and foundations often go hand-in-hand on sloped lots.</li>
+      <li><a href="/patios-oklahoma-city">Patios &amp; Stamped Concrete</a> — Landscape walls frequently paired with patio or outdoor living projects.</li>
+      <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Retaining walls for commercial site development.</li>
+    </ul>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
   `,
 };
