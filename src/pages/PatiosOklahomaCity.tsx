@@ -6,6 +6,46 @@ export default function PatiosOklahomaCity() {
       enriched
       currentServiceSlug="patios-oklahoma-city"
       localExpertiseNote="OKC's freeze-thaw cycles make sealing non-negotiable for stamped concrete — an unsealed decorative surface is far more likely to spall, flake, or fade within a season or two. We seal every stamped pour and give you a resealing schedule to protect the look long-term."
+      subServices={{
+        sectionEyebrow: "Service Types",
+        sectionTitle: "Concrete Patio and Slab Services in Oklahoma City",
+        items: [
+          {
+            title: "Standard Concrete Patios",
+            bullets: [
+              "Clean, durable outdoor slabs for entertaining, furniture, or outdoor kitchens",
+              "Broom or smooth finish options",
+              "Properly sloped away from the house for drainage",
+            ],
+          },
+          {
+            title: "Stamped Concrete Patios",
+            bullets: [
+              "Applied during pour while concrete is still plastic",
+              // TODO: add gallery link when available
+              "Most popular decorative concrete service in the OKC metro — homeowners in Nichols Hills, Edmond, and Yukon regularly request it",
+              "Requires sealing after cure — OKC's freeze-thaw cycles make this non-negotiable",
+              "Pattern and color options available — contact us to discuss",
+            ],
+          },
+          {
+            title: "Outdoor Living Slabs",
+            bullets: [
+              "Slabs for outdoor kitchens, fire pits, pergolas, and pool surrounds",
+              "Often paired with a retaining wall on sloped lots — <a href='/foundations-oklahoma-city'>see our foundations &amp; retaining walls page</a>",
+              "Drainage planning especially important on Edmond's rolling terrain",
+            ],
+          },
+          {
+            title: "Concrete Slab Replacements",
+            bullets: [
+              "Old slab removal and disposal",
+              "Re-evaluation of base conditions before new pour",
+              "Drainage correction if original slab had pooling issues",
+            ],
+          },
+        ],
+      }}
       processEyebrow="How a Stamped Patio Gets Built"
       processTitle="From Base Prep to"
       processTitleAccent="Sealed Finish."
@@ -40,7 +80,7 @@ export default function PatiosOklahomaCity() {
         {
           icon: "🏗️",
           title: "Shop & Barn Slabs",
-          description: "Heavy-duty slabs for workshops, barns, and outbuildings. 5-6 inch thickness with engineered reinforcement for equipment and heavy loads.",
+          description: "Heavy-duty slabs for workshops, barns, and outbuildings. Thicker slab with engineered reinforcement for equipment and heavy loads.",
         },
         {
           icon: "🎨",
@@ -60,7 +100,7 @@ export default function PatiosOklahomaCity() {
       ]}
       specs={[
         { label: "Concrete Strength", value: "4,000 PSI minimum for all flatwork" },
-        { label: "Thickness", value: "4 inches standard patios, 5-6 inches for shop slabs" },
+        { label: "Thickness", value: "4 inches standard patios, 5–6 inches for shop slabs" },
         { label: "Reinforcement", value: "Rebar on chairs at mid-slab depth, tied at intersections" },
         { label: "Base", value: "4-inch compacted aggregate (6-inch on problem clay)" },
         { label: "Control Joints", value: "Cut within 24 hours to 1/4 slab depth" },
@@ -76,10 +116,12 @@ export default function PatiosOklahomaCity() {
         { title: "Salt Finish", description: "Subtle pitted texture created with rock salt. Popular for patios and pool surrounds." },
       ]}
       whyChooseUs={[
-        { icon: "🛡️", title: "Licensed & Insured", description: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every job." },
-        { icon: "📍", title: "Local & Experienced", description: "Locally owned. We know Oklahoma soil, drainage patterns, and weather challenges firsthand." },
-        { icon: "💪", title: "Quality Materials", description: "4,000+ PSI concrete, rebar reinforcement, and compacted aggregate base — no shortcuts." },
-        { icon: "📋", title: "Free Estimates", description: "Written, itemized estimates with no hidden fees. The price we quote is the price you pay." },
+        { icon: "🛡️", title: "Licensed, Bonded & Insured in Oklahoma", description: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project." },
+        { icon: "📅", title: "8+ Years Serving the OKC Metro", description: /* TODO: confirm exact figure or founding year */ "Over 8 years of experience with OKC's clay soil, drainage conditions, and weather challenges." },
+        { icon: "🔒", title: "1-Year Workmanship Warranty", description: "Every patio and slab we pour is backed by a 1-year workmanship warranty." },
+        { icon: "📍", title: "Based in South OKC — Fastest Response", description: "We're at 7004 S Indiana Ave. OKC gets our fastest response and tightest scheduling of anywhere we serve." },
+        { icon: "📋", title: "Free On-Site Estimates", description: "No phone quotes, no pressure. We come to your property, measure the project, and give you a written estimate." },
+        { icon: "❄️", title: "OKC Freeze-Thaw Expertise", description: "OKC's freeze-thaw cycles can damage an unsealed stamped surface within a season or two — we don't cut corners on sealing." },
       ]}
       sections={[
         {
@@ -91,30 +133,21 @@ export default function PatiosOklahomaCity() {
             "We offer broom finish, smooth finish, and stamped decorative options including ashlar slate, random flagstone, herringbone brick, running bond, cobblestone, and wood plank patterns. Every patio and slab is graded for drainage away from your home. Combine your patio with a <a href='/foundations-oklahoma-city'>retaining wall or foundation project</a> or <a href='/sidewalks-oklahoma-city'>walkway</a> for a complete outdoor transformation.",
           ],
           stats: [
-            { value: "$6–10", label: "Per sq ft (standard)" },
-            { value: "$15–22", label: "Per sq ft (stamped)" },
             { value: "30+yr", label: "Expected life" },
+            { value: "Free", label: "On-site estimate" },
+            { value: "OKC", label: "Metro-wide service" },
           ],
         },
         {
-          eyebrow: "Pricing OKC",
-          title: "What Patios & Slabs Cost",
-          titleAccent: "in Oklahoma City.",
+          eyebrow: "Patio & Slab Pricing",
+          title: "How Much Does a Concrete Patio Cost",
+          titleAccent: "in Oklahoma City?",
           alt: true,
           content: [
-            "Concrete patios and slabs in Oklahoma City range from $6–$10/sq ft for standard broom finish to $15–$22/sq ft for stamped decorative work. Your total depends on size, finish, site conditions, and any additional features like steps or seat walls.",
+            "Costs vary by square footage, finish type (broom, stamped, or decorative), slab thickness, site conditions, and whether existing concrete needs removal. We provide free on-site estimates — call <a href='tel:4054584805'>(405) 458-4805</a> or use the quote form above.",
+            "Stamped concrete requires additional steps — color hardener, release agent, stamping, and sealing — which affects the overall cost. On Oklahoma clay, base prep depth is a variable too. The estimate is free and comes with no pressure.",
           ],
-          table: {
-            headers: ["Service", "Typical Size", "Price Range", "Notes"],
-            rows: [
-              ["Broom finish patio", "20×20 ft (400 sq ft)", "<strong>$2,400–$4,000</strong>", "4\", rebar, standard"],
-              ["Smooth finish patio", "400 sq ft", "<strong>$2,800–$4,400</strong>", "Troweled finish"],
-              ["Stamped patio", "400 sq ft", "<strong>$6,000–$8,800</strong>", "Pattern + color + sealer"],
-              ["Garage floor", "24×24 ft (576 sq ft)", "<strong>$3,456–$5,760</strong>", "4\", smooth finish"],
-              ["Shop/barn slab", "30×40 ft (1,200 sq ft)", "<strong>$7,200–$12,000</strong>", "5\", 4,000 PSI"],
-              ["Pool deck", "600 sq ft", "<strong>$9,000–$13,200</strong>", "Non-slip texture"],
-            ],
-          },
+          infoBlock: "Call <a href='tel:4054584805'>(405) 458-4805</a> or email <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a> to schedule your free on-site estimate.",
         },
         {
           eyebrow: "Oklahoma Concrete Challenges",
@@ -127,18 +160,37 @@ export default function PatiosOklahomaCity() {
             "Proper base prep means excavating to the correct depth, compacting the native subgrade, and installing a minimum 4-inch aggregate base — 6 inches on known problem clay lots. Rebar placed on chairs at mid-slab depth provides the tensile strength to resist soil movement. Control joints cut within 24 hours guide where the concrete relieves stress rather than cracking randomly.",
           ],
         },
+        {
+          eyebrow: "Get Started",
+          title: "Request a Free",
+          titleAccent: "Patio Estimate.",
+          alt: true,
+          content: [
+            "We provide free on-site estimates for patios and slabs across Oklahoma City, Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro including Norman, Moore, Mustang, Midwest City, and Del City. Based at 7004 S Indiana Ave in south OKC.",
+          ],
+          // TODO: embed quote form here once document-upload feature ships
+          infoBlock: "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
+        },
+        {
+          eyebrow: "Related Services",
+          title: "Other Concrete Services",
+          titleAccent: "From FDZ.",
+          content: [
+            "<a href='/driveways-oklahoma-city' class='text-orange no-underline font-medium'>Driveways</a> — New installation, replacement, and stamped decorative driveways to pair with your patio project.",
+            "<a href='/foundations-oklahoma-city' class='text-orange no-underline font-medium'>Foundations &amp; Retaining Walls</a> — Outdoor living slabs on sloped lots often pair with a retaining wall. We handle both.",
+          ],
+        },
       ]}
       faq={[
-        { question: "How much does a concrete patio cost in OKC?", answer: "A standard broom-finish patio costs $6–$10 per sq ft. A 20×20 patio runs $2,400–$4,000. Stamped patios cost $15–$22/sq ft." },
-        { question: "How much does a concrete slab cost in Oklahoma City?", answer: "A standard concrete slab runs $6–$10 per sq ft installed. A 20×20 patio slab costs $2,400–$4,000. Garage floors and shop slabs are priced similarly based on size and thickness." },
-        { question: "How much does stamped concrete cost in Oklahoma City?", answer: "Stamped concrete runs $15–$22 per sq ft installed — including base, pattern, color, and sealer. A 400 sq ft stamped patio costs roughly $6,000–$8,800." },
-        { question: "What finish is best for a patio in Oklahoma?", answer: "Broom finish is the most popular — good traction, low maintenance, and affordable. Stamped concrete offers a premium look at a higher price point. For pool decks, we specify a non-slip texture broadcast." },
+        { question: "How much does a concrete patio cost in OKC?", answer: "Costs vary by square footage, finish type, site conditions, and whether existing concrete needs removal. We provide free on-site estimates — call (405) 458-4805 or use the quote form above." },
+        { question: "How much does a concrete slab cost in Oklahoma City?", answer: "Costs vary by size, thickness, finish, and site conditions. We provide free on-site estimates rather than phone quotes — every site is different on Oklahoma clay." },
+        { question: "How much does stamped concrete cost in Oklahoma City?", answer: "Stamped concrete requires additional steps — color hardener, release agent, stamping, and sealing — which affects cost. We provide free on-site estimates for your specific project." },
+        { question: "What finish is best for a patio in Oklahoma?", answer: "Broom finish is the most popular — good traction, low maintenance, and affordable. Stamped concrete offers a premium look at a higher price point. For pool decks, we specify a non-slip texture." },
         { question: "How thick should a patio or slab be?", answer: "4 inches is standard for patios and light use. 5–6 inches for garage floors and heavy equipment. On known problem clay, we may recommend thickened edges or deeper base prep." },
         { question: "How long does stamped concrete last in OKC?", answer: "The structural slab lasts as long as any concrete slab — decades. The decorative surface needs periodic resealing to keep its color and finish, especially in Oklahoma's sun and freeze-thaw cycles." },
         { question: "How often does stamped concrete need to be resealed?", answer: "Roughly every 2–3 years, depending on sun exposure and how much traffic the surface sees. We provide a resealing schedule when the project is finished." },
-        { question: "What patterns and colors are available?", answer: "We offer patterns including ashlar slate, cobblestone, wood plank, and brick/herringbone, in a range of integral colors and color-hardener tones. <!-- TODO: link to a stamped concrete gallery once real project photos exist -->" },
-        { question: "Can chips or cracks in stamped concrete be repaired?", answer: "Minor chips and color touch-ups are usually repairable. More significant cracking may require repairing or replacing the affected section — we'll give you an honest assessment of which is needed." },
-        { question: "Can you add a patio to an existing home?", answer: "Yes — most of our patio projects are additions to existing homes. We grade the new patio to drain away from your foundation and match existing surfaces where possible." },
+        { question: "Can stamped concrete be repaired if it chips or cracks?", answer: "Minor surface chips and color touch-ups are usually repairable. More significant cracking depends on whether it's a surface issue or a structural/base issue — we evaluate this on-site." },
+        { question: "How long after a new patio is poured before I can put furniture on it?", answer: "Light foot traffic in about 3 days; furniture and normal use after about a week. Full structural strength takes approximately 28 days." },
         { question: "Can I pour a slab on clay soil in Oklahoma?", answer: "Yes — with proper base prep. Oklahoma's clay requires deeper aggregate base and adequate reinforcement to prevent soil movement from cracking the slab." },
       ]}
     />

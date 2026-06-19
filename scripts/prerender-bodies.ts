@@ -43,7 +43,40 @@ export const prerenderBodies: Record<string, string> = {
 
   "/driveways-oklahoma-city": `
     <h1>Concrete Driveway Installation in Oklahoma City, OK</h1>
-    <p>FDZ Construction LLC provides professional concrete driveway installation in Oklahoma City and surrounding areas. We build durable, long-lasting driveways for homeowners, builders, and property owners who need dependable concrete work done right. Every project starts with proper ground preparation, uses 4,000 PSI concrete minimum, and includes reinforcement for Oklahoma clay.</p>
+    <p>FDZ Construction LLC provides professional concrete driveway installation in Oklahoma City and surrounding areas. We build durable, long-lasting driveways for homeowners, builders, and property owners who need dependable concrete work done right. Every project starts with proper ground preparation and includes reinforcement for Oklahoma clay. Based at 7004 S Indiana Ave in south OKC — about 20–25 min from Yukon and 30–40 min from Edmond.</p>
+    <h2>Concrete Driveway Services in Oklahoma City</h2>
+    <h3>New Driveway Installation</h3>
+    <ul>
+      <li>Site evaluation, grading, and subgrade preparation</li>
+      <li>Reinforcement with rebar or wire mesh based on soil and load conditions</li>
+      <li>Pour, broom finish, and control joint placement</li>
+      <li>Full cure before vehicle traffic — light at 7 days, full structural at 28 days</li>
+    </ul>
+    <h3>Driveway Replacement</h3>
+    <ul>
+      <li>Full removal and disposal of existing concrete</li>
+      <li>Base re-evaluation — OKC's expansive clay means we check what's under the old slab, not just the surface</li>
+      <li>New reinforced install with corrected drainage if needed</li>
+      <li>Most common reason for replacement: inadequate base prep on the original pour</li>
+    </ul>
+    <h3>Stamped and Decorative Driveways</h3>
+    <ul>
+      <li>Color hardener and release agent options applied during the pour</li>
+      <li>Same structural process as standard driveway — decorative finish applied while concrete is still plastic</li>
+      <li>Requires sealing after cure and periodic resealing every 2–3 years in OKC's climate</li>
+    </ul>
+    <h3>Driveway Extensions</h3>
+    <ul>
+      <li>Adding width or length to an existing driveway</li>
+      <li>Matching existing finish where possible</li>
+      <li>Expansion joint between new and existing concrete to allow for independent movement</li>
+    </ul>
+    <h3>Commercial Driveways and Access Drives</h3>
+    <ul>
+      <li>Higher PSI mix for heavier vehicle loads</li>
+      <li>Thicker slab where truck or equipment traffic is expected</li>
+      <li>Coordinate with property manager or GC schedule</li>
+    </ul>
     ${processSection("How We Install Concrete Driveways in Oklahoma City", [
       { title: "Sub-base excavation & compaction", description: "We excavate to depth and compact a gravel sub-base. On Oklahoma clay this step matters more than any other — it's where most cracked driveways are lost before concrete is poured." },
       { title: "Forming", description: "Forms are set to grade and slope so the finished driveway sheds water away from your home and garage." },
@@ -52,26 +85,67 @@ export const prerenderBodies: Record<string, string> = {
       { title: "Control joints", description: "Control joints are cut every 8–10 feet to direct cracking to the joints instead of across the slab." },
       { title: "Cure", description: "Light foot traffic in about 3 days, vehicle traffic in about 7 days, and full structural cure at around 28 days." },
     ])}
+    <h2>Why Oklahoma City Homeowners and Businesses Choose FDZ</h2>
+    <ul>
+      <li>Licensed, bonded, and insured in Oklahoma</li>
+      <li>8+ years serving the OKC metro</li>
+      <li>1-year workmanship warranty on all driveway work</li>
+      <li>Based in south OKC — fastest response time in the metro</li>
+      <li>Free on-site estimates, no pressure</li>
+      <li>We evaluate your specific site conditions — OKC's expansive clay soil means base prep decisions aren't one-size-fits-all</li>
+    </ul>
     <h2>Oklahoma City Soil and Your Driveway</h2>
     <p>Oklahoma's expansive red clay swells and shrinks with moisture, which is why proper sub-base prep — a compacted gravel base — matters far more here than in stable-soil regions. Skipping or shortcutting it is the single most common cause of driveway cracking in the OKC metro.</p>
-    <h2>What Affects Driveway Cost</h2>
-    <p>Driveway pricing depends on square footage, slab thickness, removal of existing concrete, site access and slope, and finish type (broom, stamped, or decorative). Standard residential driveways in the OKC area typically run $6–$12 per square foot installed depending on scope.</p>
+    <h2>How Much Does a Concrete Driveway Cost in Oklahoma City?</h2>
+    <p>Costs vary by square footage, site conditions, finish type, and whether existing concrete needs removal. We provide free on-site estimates — call <a href="tel:4054584805">(405) 458-4805</a> or use the quote form above.</p>
     ${faqSection("Driveway FAQ", [
-      { question: "How much does a concrete driveway cost in Oklahoma City?", answer: "Most residential concrete driveways in the OKC area cost between $6–$12 per square foot, depending on size, thickness, and finish type." },
+      { question: "How much does a concrete driveway cost in Oklahoma City?", answer: "Costs vary by square footage, site conditions, finish type, and whether existing concrete needs removal. We provide free on-site estimates — call (405) 458-4805 or use the quote form above." },
       { question: "How long does it take to install a concrete driveway?", answer: "Most residential driveways are poured in 1 day. You can walk on new concrete after 24–48 hours, but should wait 7 days before driving on it." },
-      { question: "How long will a concrete driveway last?", answer: "A properly installed concrete driveway in Oklahoma typically lasts 25–30 years or more with minimal maintenance." },
+      { question: "How long does a concrete driveway last in Oklahoma City?", answer: "A properly installed driveway with adequate base prep and control joints can last 30+ years. OKC's expansive clay soil makes base preparation the biggest variable in longevity." },
+      { question: "Do I need a permit to replace my driveway in Oklahoma City?", answer: "Permit requirements vary by city and project scope. We confirm what's required for your specific project before work begins." },
       { question: "Do I need to seal my concrete driveway?", answer: "We recommend sealing your driveway 30 days after installation and every 2–3 years thereafter." },
       { question: "Can you pour concrete in cold or hot weather?", answer: "Yes, with proper cold-weather or hot-weather protocols. We'll advise you on the best timing for your project." },
       { question: "Will my new driveway crack?", answer: "We cut control joints every 8–10 feet to control where cracks occur. Proper preparation and reinforcement minimize random cracking." },
-      { question: "What's the difference between concrete and cement?", answer: "Cement is an ingredient in concrete. Concrete is the finished product made from cement, sand, gravel, and water. When you hire us for a 'cement driveway,' you're getting concrete — the strong, durable surface you need." },
       { question: "Do you handle permits?", answer: "Yes — we confirm what's required for your specific project and pull the necessary permits." },
     ])}
+    <h2>Related Services</h2>
+    <ul>
+      <li><a href="/patios-oklahoma-city">Patios &amp; Stamped Concrete</a> — Backyard patios, decorative stamped surfaces, and outdoor living slabs.</li>
+      <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Parking lots, warehouse floors, loading docks, and site concrete for commercial properties.</li>
+      <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; Curb and Gutter</a> — Walkways, ADA curb ramps, and curb work to complete your property.</li>
+    </ul>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
   `,
 
   "/patios-oklahoma-city": `
     <h1>Patios, Slabs &amp; Stamped Concrete in Oklahoma City</h1>
     <p>From backyard patios to garage and shop slabs, FDZ Construction LLC delivers concrete flatwork built for Oklahoma's temperature swings. Every pour starts with proper subgrade compaction, a minimum 4-inch aggregate base, rebar on chairs, and 4,000 PSI ready-mix from a local batch plant.</p>
+    <h2>Concrete Patio and Slab Services in Oklahoma City</h2>
+    <h3>Standard Concrete Patios</h3>
+    <ul>
+      <li>Clean, durable outdoor slabs for entertaining, furniture, or outdoor kitchens</li>
+      <li>Broom or smooth finish options</li>
+      <li>Properly sloped away from the house for drainage</li>
+    </ul>
+    <h3>Stamped Concrete Patios</h3>
+    <ul>
+      <li>Applied during pour while concrete is still plastic</li>
+      <li>Most popular decorative concrete service in the OKC metro — homeowners in Nichols Hills, Edmond, and Yukon regularly request it</li>
+      <li>Requires sealing after cure — OKC's freeze-thaw cycles make this non-negotiable</li>
+    </ul>
+    <h3>Outdoor Living Slabs</h3>
+    <ul>
+      <li>Slabs for outdoor kitchens, fire pits, pergolas, and pool surrounds</li>
+      <li>Often paired with a retaining wall on sloped lots</li>
+      <li>Drainage planning especially important on Edmond's rolling terrain</li>
+    </ul>
+    <h3>Concrete Slab Replacements</h3>
+    <ul>
+      <li>Old slab removal and disposal</li>
+      <li>Re-evaluation of base conditions before new pour</li>
+      <li>Drainage correction if original slab had pooling issues</li>
+    </ul>
     ${processSection("The Stamped Concrete Process", [
       { title: "Base prep & forming", description: "We compact the subgrade and aggregate base and set forms to grade so the patio drains away from your home." },
       { title: "Pour", description: "We place 4,000 PSI concrete and screed it to a flat, even surface." },
@@ -80,26 +154,72 @@ export const prerenderBodies: Record<string, string> = {
       { title: "Cure", description: "The slab cures before any cleaning or sealing so the finish sets up properly." },
       { title: "Pressure wash & seal", description: "We pressure wash off the release agent and apply sealer — essential in Oklahoma's freeze-thaw climate." },
     ])}
+    <h2>Why Oklahoma City Homeowners and Businesses Choose FDZ</h2>
+    <ul>
+      <li>Licensed, bonded, and insured in Oklahoma</li>
+      <li>8+ years serving the OKC metro</li>
+      <li>1-year workmanship warranty on all patio and slab work</li>
+      <li>Based in south OKC — fastest response time in the metro</li>
+      <li>Free on-site estimates, no pressure</li>
+      <li>OKC's freeze-thaw cycles can damage an unsealed stamped surface within a season or two — we don't cut corners on sealing</li>
+    </ul>
     <h2>Why Sealing Matters in Oklahoma City</h2>
     <p>OKC's freeze-thaw cycles make sealing non-negotiable for stamped concrete — an unsealed decorative surface is far more likely to spall, flake, or fade within a season or two. We seal every stamped pour and give you a resealing schedule to protect the look long-term.</p>
-    <h2>Patterns and Finishes</h2>
-    <p>We offer broom finish, smooth trowel, stamped decorative, exposed aggregate, and colored concrete options. <!-- TODO: link to a stamped concrete gallery once real project photos exist --></p>
-    <h2>What Affects Patio Cost</h2>
-    <p>Concrete patios and slabs in Oklahoma City range from $6–$10/sq ft for standard broom finish to $15–$22/sq ft for stamped decorative work. Your total depends on square footage, pattern complexity, number of colors, and site prep.</p>
-    ${faqSection("Stamped Concrete FAQ", [
-      { question: "How much does a concrete patio cost in OKC?", answer: "A standard broom-finish patio costs $6–$10 per sq ft. A 20×20 patio runs $2,400–$4,000." },
-      { question: "How much does stamped concrete cost in Oklahoma City?", answer: "Stamped concrete runs $15–$22 per sq ft installed — including base, pattern, color, and sealer." },
+    <h2>How Much Does a Concrete Patio Cost in Oklahoma City?</h2>
+    <p>Costs vary by square footage, finish type (broom, stamped, or decorative), slab thickness, site conditions, and whether existing concrete needs removal. We provide free on-site estimates — call <a href="tel:4054584805">(405) 458-4805</a> or use the quote form above.</p>
+    ${faqSection("Patio FAQ", [
+      { question: "How much does a concrete patio cost in OKC?", answer: "Costs vary by square footage, finish type, and site conditions. We provide free on-site estimates — call (405) 458-4805 or use the quote form above." },
+      { question: "How much does stamped concrete cost in Oklahoma City?", answer: "Stamped concrete requires additional steps — color hardener, release agent, stamping, and sealing — which affects cost. We provide free on-site estimates for your specific project." },
       { question: "What finish is best for a patio in Oklahoma?", answer: "Broom finish is the most popular for traction and value. Stamped concrete offers a premium look at a higher price point." },
       { question: "How often does stamped concrete need to be resealed?", answer: "Roughly every 2–3 years, depending on sun exposure and traffic. We provide a resealing schedule when the project is finished." },
-      { question: "What patterns and colors are available?", answer: "We offer patterns including ashlar slate, cobblestone, wood plank, and brick/herringbone, in a range of integral colors and color-hardener tones. <!-- TODO: link to a stamped concrete gallery once real project photos exist -->" },
+      { question: "Can stamped concrete be repaired if it chips or cracks?", answer: "Minor surface chips and color touch-ups are usually repairable. More significant cracking depends on whether it's a surface issue or a structural/base issue — we evaluate this on-site." },
+      { question: "How long after a new patio is poured before I can put furniture on it?", answer: "Light foot traffic in about 3 days; furniture and normal use after about a week. Full structural strength takes approximately 28 days." },
       { question: "Can I pour a slab on clay soil in Oklahoma?", answer: "Yes — with proper base prep. Oklahoma's clay requires deeper aggregate base and adequate reinforcement." },
     ])}
+    <h2>Related Services</h2>
+    <ul>
+      <li><a href="/driveways-oklahoma-city">Driveways</a> — New installation, replacement, and stamped decorative driveways.</li>
+      <li><a href="/foundations-oklahoma-city">Foundations &amp; Retaining Walls</a> — Outdoor living slabs on sloped lots often pair with a retaining wall.</li>
+    </ul>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
   `,
 
   "/foundations-oklahoma-city": `
     <h1>Concrete Foundations in Oklahoma City</h1>
     <p>FDZ Construction LLC builds residential and commercial concrete foundations in Oklahoma City — slab-on-grade, stem walls, footings, and structural pads engineered for Oklahoma clay. Your foundation supports everything above it; we pour with proper footing depth, engineered reinforcement, and 4,000+ PSI concrete designed for the swell-shrink cycle of expansive soil.</p>
+    <h2>Foundation and Retaining Wall Services in Oklahoma City</h2>
+    <h3>Residential Foundations</h3>
+    <ul>
+      <li>Footing layout and excavation</li>
+      <li>Rebar placement and forming</li>
+      <li>Pour and cure</li>
+      <li>Oklahoma's expansive clay means footing depth matters more here than in stable-soil regions</li>
+    </ul>
+    <h3>Commercial and Structural Foundations</h3>
+    <ul>
+      <li>Coordination with GC and inspection schedule</li>
+      <li>Higher PSI mixes for structural loads</li>
+      <li>COI and bonding documentation available for bid process</li>
+    </ul>
+    <h3>Poured Concrete Retaining Walls</h3>
+    <ul>
+      <li>Monolithic structure — no block joints to shift or crack over time</li>
+      <li>Drainage planning behind the wall is the single biggest factor in longevity (gravel backfill, weep holes, French drain where needed)</li>
+      <li>Best for taller walls and higher-load applications</li>
+    </ul>
+    <h3>CMU Block Retaining Walls</h3>
+    <ul>
+      <li>Faster to build than poured walls on smaller projects</li>
+      <li>Still requires proper drainage behind the wall</li>
+      <li>Good option for mid-height walls where engineered poured concrete isn't required</li>
+    </ul>
+    <h3>Retaining Wall Repair</h3>
+    <ul>
+      <li>Leaning or bowing walls almost always caused by water pressure from inadequate drainage — not just age</li>
+      <li>We evaluate the drainage situation before recommending repair vs. replacement</li>
+      <li>Stabilization and drainage correction where rebuild isn't necessary</li>
+    </ul>
     <h2>Oklahoma's Expansive Clay Soil and What It Means for Foundations</h2>
     <p>Oklahoma's expansive red clay swells and shrinks with moisture and is the leading cause of foundation cracking in this region. Footing depth, reinforcement, and drainage all have to account for that movement — which is why we engineer each foundation to the soil, not a generic national spec.</p>
     ${processSection("Foundation Installation Process", [
@@ -110,59 +230,139 @@ export const prerenderBodies: Record<string, string> = {
       { title: "Pour & finish", description: "We place 4,000+ PSI concrete, screed and float to grade, and set anchor bolts before the concrete sets." },
       { title: "Cure & inspection", description: "The slab cures before it carries load. We coordinate required inspections and walk the finished foundation with you." },
     ])}
-    <h2>Retaining Wall Installation</h2>
-    <p>Drainage behind the wall — gravel backfill, weep holes, and sometimes a French drain — is the number one factor in whether a wall lasts on Oklahoma clay. Wall construction follows proper footings below frost line and reinforcement per plan. See our dedicated <a href="/retaining-walls-oklahoma-city">retaining walls page</a> for slope and grade-change work.</p>
-    <h2>What Affects Foundation and Retaining Wall Cost</h2>
-    <p>Foundation pricing depends on project size, depth, reinforcement, site access, excavation conditions, and concrete volume. Residential slab-on-grade typically runs $9–$14 per square foot; commercial foundations are custom-quoted from engineered plans.</p>
+    <h2>Why Oklahoma City Homeowners and Businesses Choose FDZ</h2>
+    <p>Oklahoma's Permian-age clay is highly expansive — it swells when wet and shrinks when dry. Most foundation and retaining wall problems in this region trace back to inadequate drainage or footings that didn't account for this movement. We've been working in this soil for 8+ years and know what it takes to build structures that last.</p>
+    <ul>
+      <li>Licensed, bonded, and insured in Oklahoma</li>
+      <li>8+ years serving the OKC metro</li>
+      <li>1-year workmanship warranty on all foundation and retaining wall work</li>
+      <li>Based in south OKC — fastest response time in the metro</li>
+      <li>Free on-site estimates, no pressure</li>
+      <li>COI and bonding documentation available for commercial bid process</li>
+    </ul>
+    <h2>How Much Do Foundations and Retaining Walls Cost in Oklahoma City?</h2>
+    <p>Foundation pricing depends on project size, depth, reinforcement, site access, and excavation conditions. Retaining wall cost depends on wall height, drainage complexity, soil conditions, and whether engineering is required. We provide free on-site estimates — call <a href="tel:4054584805">(405) 458-4805</a> or use the quote form above.</p>
     ${faqSection("Foundation FAQ", [
       { question: "What types of foundations do you install?", answer: "We handle slab-on-grade, stem wall, and continuous footing foundations for residential and commercial projects." },
       { question: "Do you build commercial foundations?", answer: "Yes — we pour commercial slab-on-grade for warehouses, footings and pads for retail buildings, and structural foundations for developments." },
-      { question: "How much does a foundation cost in OKC?", answer: "Residential slab-on-grade typically runs $9–$14 per square foot depending on size, depth, and reinforcement." },
+      { question: "How much does a foundation cost in OKC?", answer: "Foundation pricing depends on project size, depth, reinforcement, site access, and excavation conditions. We provide free on-site estimates — call (405) 458-4805 or use the quote form above." },
       { question: "How deep should footings be in Oklahoma?", answer: "Oklahoma code requires footings below the frost line — typically 18–24 inches deep." },
-      { question: "What concrete strength do you use for foundations?", answer: "We specify 4,000 PSI minimum for residential foundations and 5,000+ PSI for commercial and industrial work." },
+      { question: "How do I know if my retaining wall needs repair or full replacement?", answer: "If the wall is leaning significantly, has visible cracking through the structure, or has lost its footing, replacement is usually the right call. Minor surface cracking without structural movement is often repairable. We evaluate this on-site at no charge." },
+      { question: "Do you handle the engineering requirements for taller retaining walls?", answer: "Many jurisdictions require an engineer's stamp for walls over a certain height. We confirm what's required for your specific project and can work with an engineer when needed." },
       { question: "How long before I can build on a new foundation?", answer: "Forms can usually be stripped in 1–2 days and framing often starts around 7 days, but concrete reaches full design strength at about 28 days. We'll give you a clear schedule based on your mix and the weather." },
       { question: "Do you handle permits and inspections?", answer: "Yes — we coordinate all necessary permits and inspections for foundation projects across the OKC metro." },
-      { question: "Do you serve areas outside Oklahoma City?", answer: "Yes. We serve Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City." },
     ])}
+    <h2>Related Services</h2>
+    <ul>
+      <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Warehouse floors, retail pads, loading docks, and site concrete for commercial properties.</li>
+      <li><a href="/patios-oklahoma-city">Patios &amp; Stamped Concrete</a> — Outdoor living slabs on sloped lots often pair with a retaining wall.</li>
+    </ul>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
   `,
 
   "/sidewalks-oklahoma-city": `
     <h1>Sidewalks, Curb &amp; Gutter in Oklahoma City</h1>
     <p>From city right-of-way replacements to private walkways and commercial curb work, FDZ Construction delivers sidewalks and curbs built to code and graded for proper drainage. Every project uses 4,000 PSI concrete with reinforcement appropriate for the application.</p>
+    <h2>Sidewalk, Curb, and Gutter Services in Oklahoma City</h2>
+    <h3>Residential Sidewalks</h3>
+    <ul>
+      <li>Grading for proper drainage and ADA-compliant slope where required</li>
+      <li>Control joint placement to prevent uncontrolled cracking</li>
+      <li>Standard 4-inch thickness for pedestrian use</li>
+    </ul>
+    <h3>Curb and Gutter</h3>
+    <ul>
+      <li>Combination curb-and-gutter for streets, parking lots, and driveways</li>
+      <li>Slipform for longer runs; hand-formed for custom or tight sections</li>
+      <li>Drainage routing away from structures</li>
+    </ul>
+    <h3>Sidewalk Replacement</h3>
+    <ul>
+      <li>Removal of damaged sections or full runs</li>
+      <li>Common need: tree root damage, settled sections, or original pour with inadequate joints</li>
+      <li>ADA compliance correction where applicable</li>
+    </ul>
+    <h3>Commercial and Subdivision Sidewalks</h3>
+    <ul>
+      <li>Larger-scale runs for new subdivisions and commercial sites</li>
+      <li>Coordination with site grading and other trades</li>
+    </ul>
     ${processSection("Process", [
       { title: "Grading for drainage & ADA slope", description: "We grade the route for positive drainage and, where required, for ADA-compliant cross-slope and running slope." },
       { title: "Forming", description: "Forms are set to line and grade — by hand for short runs or machine-formed for long, consistent runs." },
       { title: "Pour & broom finish", description: "We place 4,000 PSI concrete and finish with a broom texture for slip resistance." },
       { title: "Joint placement", description: "We tool or saw control joints at regular intervals and place expansion joints where the walk meets driveways, curbs, and structures." },
     ])}
+    <h2>Why Oklahoma City Homeowners and Businesses Choose FDZ</h2>
+    <ul>
+      <li>Licensed, bonded, and insured in Oklahoma</li>
+      <li>8+ years serving the OKC metro</li>
+      <li>1-year workmanship warranty on all sidewalk and curb work</li>
+      <li>Based in south OKC — fastest response time in the metro</li>
+      <li>ADA-compliant ramps, proper slopes, and city-spec curb profiles on every project</li>
+      <li>Free on-site estimates, no pressure</li>
+    </ul>
+    <h2>How Much Do Sidewalks and Curb Work Cost in Oklahoma City?</h2>
+    <p>Costs vary by linear footage, slab thickness, site conditions, and whether existing concrete needs removal. ADA-compliant ramps, curb profiles, and right-of-way permits also affect the total. We provide free on-site estimates — call <a href="tel:4054584805">(405) 458-4805</a> or use the quote form above.</p>
     ${faqSection("Sidewalk FAQ", [
-      { question: "How much does a concrete sidewalk cost in OKC?", answer: "Sidewalks typically cost $6–$10 per sq ft. A 50-foot, 4-foot-wide sidewalk runs approximately $1,200–$2,000." },
-      { question: "How much does curb and gutter cost in OKC?", answer: "Standard curb and gutter runs $18–$30 per linear foot installed, depending on profile type and site conditions." },
+      { question: "How much does a concrete sidewalk cost in OKC?", answer: "Costs vary by linear footage, site conditions, and whether existing concrete needs removal. We provide free on-site estimates — call (405) 458-4805 or use the quote form above." },
+      { question: "How much does curb and gutter cost in OKC?", answer: "Curb and gutter pricing depends on linear footage, curb profile type, and site conditions. We provide free on-site estimates." },
       { question: "Do you handle city-required sidewalk repairs?", answer: "Yes — we handle permitted city right-of-way sidewalk replacements including ADA curb ramps." },
       { question: "What types of curb profiles do you pour?", answer: "We handle standard barrier curb, mountable (rollover) curb, valley gutter, and combination sections." },
       { question: "How thick should a concrete sidewalk be?", answer: "4 inches is standard for pedestrian sidewalks. 5 inches is recommended where vehicles may cross." },
     ])}
+    <h2>Related Services</h2>
+    <ul>
+      <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Parking lots, warehouse floors, site flatwork, and curb &amp; gutter for commercial developments.</li>
+      <li><a href="/driveways-oklahoma-city">Driveways</a> — Sidewalk work often pairs with new driveway installation or replacement.</li>
+    </ul>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
   `,
 
   "/commercial-concrete-oklahoma-city": `
     <h1>Commercial Concrete Contractors in Oklahoma City</h1>
-    <p>Commercial concrete contractors in Oklahoma City — FDZ Construction pours warehouse floors, retail pads, equipment slabs, loading docks, and site flatwork for property owners, developers, and general contractors across the OKC metro using 4,000+ PSI mixes and base preparation built for heavy, sustained loads.</p>
+    <p>Commercial concrete contractors in Oklahoma City — FDZ Construction pours warehouse floors, retail pads, equipment slabs, loading docks, and site flatwork for property owners, developers, and general contractors across the OKC metro using 4,000+ PSI mixes and base preparation built for heavy, sustained loads. Based at 7004 S Indiana Ave in south OKC — fastest response for OKC projects.</p>
     <!-- TODO: add real commercial project photos when available -->
-    <h2>Commercial Concrete Scope</h2>
-    <p>We specify 4,000+ PSI commercial mix as a minimum, build ADA-compliant parking lot layouts where required, coordinate with general contractors and other trades on schedule, and can provide COI and bonding information as part of the bid process.</p>
-    <h2>What We Build</h2>
+    <h2>Commercial Concrete Services in Oklahoma City</h2>
+    <h3>Parking Lots</h3>
     <ul>
-      <li>Commercial parking lots and drive lanes — see our <a href="/parking-lots-oklahoma-city">parking lot page</a></li>
-      <li>Retail pads and storefront flatwork</li>
-      <li>Warehouse and industrial floor slabs</li>
-      <li>Loading docks and truck aprons</li>
-      <li>Equipment pads, dumpster pads, and site flatwork</li>
-      <li>Commercial curb, gutter, and sidewalks</li>
+      <li>Layout for drainage, ADA-accessible parking, and traffic flow</li>
+      <li>High-PSI mix for vehicle loads</li>
+      <li>Expansion joint planning for large-area pours</li>
     </ul>
-    <h2>Working with General Contractors</h2>
-    <p>We coordinate pour schedules with your GC and other trades, follow engineered specifications, and provide COI turnaround as part of commercial bids. Commercial base prep here means 6+ inches of compacted, proof-rolled aggregate and engineered joint spacing for loaded trucks and forklift traffic on Oklahoma clay.</p>
+    <h3>Warehouse and Industrial Slabs</h3>
+    <ul>
+      <li>Flat, level pours for racking systems and forklift traffic</li>
+      <li>Thickness and PSI specified per load requirements</li>
+      <li>Large-area pours coordinated with GC schedule</li>
+    </ul>
+    <h3>Retail Pads and Site Concrete</h3>
+    <ul>
+      <li>Aprons, drive approaches, sidewalks, and entry pads</li>
+      <li>ADA compliance for accessible routes</li>
+      <li>Coordination with other site work trades</li>
+    </ul>
+    <h3>Dock Pads and Loading Areas</h3>
+    <ul>
+      <li>Reinforced for heavy vehicle and equipment loads</li>
+      <li>Drainage away from building entry</li>
+    </ul>
+    <h3>Commercial Foundations</h3>
+    <ul>
+      <li>See our <a href="/foundations-oklahoma-city">Foundations page</a> for full detail</li>
+      <li>COI and bonding documentation available for bid process</li>
+      <li>Coordination with GC and inspection schedule</li>
+    </ul>
+    <h2>Working with General Contractors and Property Managers</h2>
+    <ul>
+      <li>Certificate of insurance and bonding documentation available as part of the bid process</li>
+      <li>We coordinate with your project schedule and other trades on site</li>
+      <li>4,000+ PSI commercial mix standard; adjusted for specific load requirements</li>
+      <li>Free on-site estimates and competitive bid turnaround</li>
+      <li>Licensed, bonded, and insured in Oklahoma</li>
+    </ul>
     ${processSection("From Plans to Sealed Slab", [
       { title: "Scope & coordination", description: "We review plans and specs with your GC and engineer and lock in a pour schedule that fits the other trades." },
       { title: "Site prep & grading", description: "We excavate, grade for drainage, and prepare the subgrade for stable, properly shaped ground." },
@@ -171,16 +371,25 @@ export const prerenderBodies: Record<string, string> = {
       { title: "Pour & finish", description: "We place 4,000+ PSI concrete and finish to spec — broom, steel-trowel smooth, or burnished depending on use." },
       { title: "Joints, cure & seal", description: "Control joints are saw-cut within 24 hours, the slab is cured, joints and surface are sealed, and we walk it for final inspection." },
     ])}
+    <h2>What Does Commercial Concrete Cost in Oklahoma City?</h2>
+    <p>Commercial concrete pricing depends on scope, square footage, PSI requirements, site access, and schedule coordination. We provide competitive bids with clear line items — call <a href="tel:4054584805">(405) 458-4805</a> or email <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> to discuss your project.</p>
     ${faqSection("Commercial Concrete FAQ", [
-      { question: "How thick should a commercial concrete slab be?", answer: "Most commercial slabs require 5–6 inches minimum. Warehouse floors with forklift traffic may require 6–8 inches with engineered rebar schedules." },
-      { question: "How much does commercial concrete cost in OKC?", answer: "Commercial concrete runs roughly $7–$14 per square foot depending on thickness, reinforcement, and finish." },
+      { question: "How thick should a commercial concrete slab be?", answer: "Most commercial slabs require 5–6 inches minimum. Warehouse floors with forklift traffic may require more, with engineered rebar schedules. We specify per your load requirements." },
+      { question: "How much does commercial concrete cost in OKC?", answer: "Commercial concrete pricing depends on scope, square footage, PSI requirements, site access, and schedule coordination. We provide competitive bids with clear line items — call (405) 458-4805 or email jesus@fdzconstruction.com to discuss your project." },
       { question: "What PSI concrete do you use for commercial work?", answer: "We specify 4,000 PSI minimum for commercial slabs and 5,000+ PSI for heavy industrial applications." },
       { question: "How long before we can use a new commercial slab?", answer: "Foot traffic is usually fine in 24–48 hours and light equipment after about 7 days. The slab reaches full design strength at around 28 days. We can phase pours to keep part of your operation running." },
-      { question: "Do you handle large commercial pours?", answer: "Yes — we handle commercial pours from small retail pads to large warehouse floors and parking lots, coordinating with general contractors, site engineers, and building inspectors." },
-      { question: "Do you work with general contractors?", answer: "Yes — we regularly coordinate with GCs on commercial projects. We follow your schedule and meet spec requirements." },
+      { question: "How quickly can you turn around a bid for a commercial project?", answer: "Contact us with project details and we'll schedule an on-site visit promptly. Bid turnaround depends on project complexity." },
+      { question: "Do you work as a sub-contractor on GC-managed projects?", answer: "Yes. We're set up to work within a GC's project schedule, coordinate with other trades on site, and provide required documentation (COI, bonding) as part of the sub process." },
       { question: "Can you pour commercial concrete year-round in Oklahoma?", answer: "Yes — with proper cold-weather or hot-weather protocols. We adjust mix designs and curing methods by season." },
-      { question: "What areas do you serve for commercial work?", answer: "We serve the entire OKC metro including Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City." },
+      { question: "What areas do you serve for commercial work?", answer: "We serve the entire OKC metro — Oklahoma City (home base, fastest response), Edmond (~30–40 min), Yukon (~20–25 min west), Norman, Moore, Mustang, Midwest City, and Del City." },
     ])}
+    <h2>Related Services</h2>
+    <ul>
+      <li><a href="/foundations-oklahoma-city">Foundations</a> — Commercial slab-on-grade and structural foundations for the buildings your site concrete serves.</li>
+      <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; Curb and Gutter</a> — Site sidewalks, ADA ramps, and curb work for commercial developments.</li>
+      <li><a href="/parking-lots-oklahoma-city">Parking Lots</a> — Dedicated page for commercial parking lot design, layout, and construction.</li>
+    </ul>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
   `,
 
