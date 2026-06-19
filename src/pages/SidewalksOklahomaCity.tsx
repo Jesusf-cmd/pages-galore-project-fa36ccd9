@@ -6,6 +6,43 @@ export default function SidewalksOklahomaCity() {
       enriched
       currentServiceSlug="sidewalks-oklahoma-city"
       localExpertiseNote="On Oklahoma clay, sidewalk panels heave and settle when the base is skipped. Proper subgrade compaction and an aggregate base — plus expansion joints where the walk meets driveways and structures — are what keep panels from cracking and lifting."
+      subServices={{
+        sectionEyebrow: "Service Types",
+        sectionTitle: "Sidewalk, Curb, and Gutter Services in Oklahoma City",
+        items: [
+          {
+            title: "Residential Sidewalks",
+            bullets: [
+              "Grading for proper drainage and ADA-compliant slope where required",
+              "Control joint placement to prevent uncontrolled cracking",
+              "Standard 4-inch thickness for pedestrian use",
+            ],
+          },
+          {
+            title: "Curb and Gutter",
+            bullets: [
+              "Combination curb-and-gutter for streets, parking lots, and driveways",
+              "Slipform for longer runs; hand-formed for custom or tight sections",
+              "Drainage routing away from structures",
+            ],
+          },
+          {
+            title: "Sidewalk Replacement",
+            bullets: [
+              "Removal of damaged sections or full runs",
+              "Common need: tree root damage, settled sections, or original pour with inadequate joints",
+              "ADA compliance correction where applicable",
+            ],
+          },
+          {
+            title: "Commercial and Subdivision Sidewalks",
+            bullets: [
+              "Larger-scale runs for new subdivisions and commercial sites",
+              "Coordination with site grading and other trades",
+            ],
+          },
+        ],
+      }}
       processEyebrow="How We Pour Sidewalks & Curb"
       processTitle="Graded, Formed,"
       processTitleAccent="Poured & Jointed."
@@ -65,10 +102,12 @@ export default function SidewalksOklahomaCity() {
         { label: "ADA Compliance", value: "Detectable warnings, proper slopes, and width per code" },
       ]}
       whyChooseUs={[
-        { icon: "🛡️", title: "Licensed & Insured", description: "Fully licensed Oklahoma contractor. Insurance protects you and our workers on every job." },
-        { icon: "📍", title: "City-Spec Experts", description: "We know OKC, Edmond, Norman, and Moore sidewalk and curb specifications inside and out." },
-        { icon: "💪", title: "Code Compliant", description: "ADA-compliant ramps, proper slopes, and city-spec curb profiles on every project." },
-        { icon: "📋", title: "Free Estimates", description: "Written estimates with clear pricing. We handle permits and inspector coordination." },
+        { icon: "🛡️", title: "Licensed, Bonded & Insured in Oklahoma", description: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project." },
+        { icon: "📅", title: "8+ Years Serving the OKC Metro", description: /* TODO: confirm exact figure or founding year */ "Over 8 years of experience with OKC's clay soil, ADA requirements, and city-spec sidewalk and curb work." },
+        { icon: "🔒", title: "1-Year Workmanship Warranty", description: "Every sidewalk and curb project we pour is backed by a 1-year workmanship warranty." },
+        { icon: "📍", title: "Based in South OKC — Fastest Response", description: "We're at 7004 S Indiana Ave. OKC gets our fastest response of anywhere we serve." },
+        { icon: "♿", title: "Code Compliant", description: "ADA-compliant ramps, proper slopes, and city-spec curb profiles on every project. We know OKC, Edmond, Norman, and Moore specifications." },
+        { icon: "📋", title: "Free On-Site Estimates", description: "Written estimates with clear pricing. We handle permits and inspector coordination." },
       ]}
       sections={[
         {
@@ -89,30 +128,20 @@ export default function SidewalksOklahomaCity() {
             "We pour standard barrier curb, mountable curb, valley gutter, and combination curb and gutter sections to city specifications. Our curb work integrates with <a href='/commercial-concrete-oklahoma-city'>parking lot</a>, sidewalk, and <a href='/driveways-oklahoma-city'>driveway</a> projects for complete site work.",
           ],
           stats: [
-            { value: "$18–30", label: "Per linear ft (curb)" },
             { value: "City", label: "Spec compliant" },
-            { value: "24hr", label: "Estimate response" },
+            { value: "ADA", label: "Accessible" },
+            { value: "Free", label: "On-site estimate" },
           ],
         },
         {
-          eyebrow: "Sidewalk & Curb Pricing OKC",
-          title: "What Sidewalks & Curb Work Cost",
-          titleAccent: "in Oklahoma City.",
+          eyebrow: "Sidewalk & Curb Pricing",
+          title: "How Much Do Sidewalks and Curb Work Cost",
+          titleAccent: "in Oklahoma City?",
           alt: true,
           content: [
-            "Concrete sidewalks in Oklahoma City typically cost $6–$10 per square foot installed. Standard curb and gutter runs $18–$30 per linear foot installed.",
+            "Costs vary by linear footage, slab thickness, site conditions, and whether existing concrete needs removal. ADA-compliant ramps, curb profiles, and right-of-way permits also affect the total. We provide free on-site estimates — call <a href='tel:4054584805'>(405) 458-4805</a> or use the quote form above.",
           ],
-          table: {
-            headers: ["Service", "Typical Size", "Price Range", "Notes"],
-            rows: [
-              ["Standard sidewalk", "50 LF × 4 ft", "<strong>$1,200–$2,000</strong>", "4\", broom finish"],
-              ["ADA-compliant ramp", "Per ramp", "<strong>$800–$1,500</strong>", "Detectable warnings"],
-              ["Private walkway", "30 LF × 3 ft", "<strong>$540–$900</strong>", "4\", residential"],
-              ["Standard curb & gutter", "Per linear ft", "<strong>$18–$30</strong>", "City spec compliant"],
-              ["Mountable (rollover) curb", "Per linear ft", "<strong>$18–$25</strong>", "Residential driveways"],
-              ["Valley gutter", "Per linear ft", "<strong>$20–$30</strong>", "Drainage applications"],
-            ],
-          },
+          infoBlock: "Call <a href='tel:4054584805'>(405) 458-4805</a> or email <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a> to schedule your free on-site estimate.",
         },
         {
           eyebrow: "Oklahoma Concrete Challenges",
@@ -125,10 +154,30 @@ export default function SidewalksOklahomaCity() {
             "If your existing sidewalks or curbing show cracks, heaving, or settlement, call FDZ Construction LLC at (405) 458-4805 for an honest assessment.",
           ],
         },
+        {
+          eyebrow: "Get Started",
+          title: "Request a Free",
+          titleAccent: "Sidewalk Estimate.",
+          alt: true,
+          content: [
+            "We provide free on-site estimates for sidewalks and curb work across Oklahoma City, Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro. Based at 7004 S Indiana Ave in south OKC.",
+          ],
+          // TODO: embed quote form here once document-upload feature ships
+          infoBlock: "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
+        },
+        {
+          eyebrow: "Related Services",
+          title: "Other Concrete Services",
+          titleAccent: "From FDZ.",
+          content: [
+            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete</a> — Parking lots, warehouse floors, site flatwork, and curb &amp; gutter for commercial developments.",
+            "<a href='/driveways-oklahoma-city' class='text-orange no-underline font-medium'>Driveways</a> — Sidewalk work often pairs with new driveway installation or replacement.",
+          ],
+        },
       ]}
       faq={[
-        { question: "How much does a concrete sidewalk cost in OKC?", answer: "Sidewalks typically cost $6–$10 per sq ft. A 50-foot, 4-foot-wide sidewalk runs approximately $1,200–$2,000." },
-        { question: "How much does curb and gutter cost in OKC?", answer: "Standard curb and gutter runs $18–$30 per linear foot installed, depending on profile type and site conditions." },
+        { question: "How much does a concrete sidewalk cost in OKC?", answer: "Costs vary by linear footage, site conditions, and whether existing concrete needs removal. We provide free on-site estimates — call (405) 458-4805 or use the quote form above." },
+        { question: "How much does curb and gutter cost in OKC?", answer: "Curb and gutter pricing depends on linear footage, curb profile type, and site conditions. We provide free on-site estimates." },
         { question: "Do you handle city-required sidewalk repairs?", answer: "Yes — we handle permitted city right-of-way sidewalk replacements including ADA curb ramps." },
         { question: "What types of curb profiles do you pour?", answer: "We handle standard barrier curb, mountable (rollover) curb, valley gutter, and combination curb and gutter sections." },
         { question: "How thick should a concrete sidewalk be?", answer: "4 inches is standard for pedestrian sidewalks. 5 inches is recommended where vehicles may cross, such as driveway approaches." },

@@ -57,9 +57,18 @@ interface ServicePageProps {
   localExpertiseNote?: string;
   /** Experience + warranty line. Pass null to hide; defaults to the confirmed company trust line. */
   trustLine?: string | null;
+  /** Sub-services breakdown: H2 section with H3 entries + bullet points. */
+  subServices?: {
+    sectionTitle: string;
+    sectionEyebrow?: string;
+    items: {
+      title: string;
+      bullets: string[];
+    }[];
+  };
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, trustLine }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, trustLine, subServices }: ServicePageProps) {
   const seoTitle = metaTitle || `${title} ${titleAccent.replace('.', '')} | FDZ Construction LLC`;
   const seoDescription = metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155);
   const canonical = currentServiceSlug ? `https://fdzconstruction.com/${currentServiceSlug}` : undefined;
@@ -137,6 +146,32 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
                   <div className="text-2xl mb-3">{card.icon}</div>
                   <h3 className="text-base mb-2">{card.title}</h3>
                   <p className="text-[0.85rem] text-muted-text leading-relaxed font-light">{card.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* Sub-services section — H2 with H3 sub-types and bullet points */}
+      {subServices && (
+        <ScrollReveal>
+          <section className="section-padding section-alt">
+            <div className="section-eye">{subServices.sectionEyebrow || "Service Types"}</div>
+            <h2 className="mb-10">{subServices.sectionTitle}</h2>
+            <div className="space-y-10">
+              {subServices.items.map((item, i) => (
+                <div key={i} className={i > 0 ? "border-t border-concrete/20 pt-10" : ""}>
+                  {/* TODO: add photo of specific type work when available */}
+                  <h3 className="text-xl mb-4">{item.title}</h3>
+                  <ul className="space-y-2 pl-0 list-none">
+                    {item.bullets.map((b, j) => (
+                      <li key={j} className="flex items-baseline gap-2 text-[0.88rem] text-muted-text leading-relaxed font-light">
+                        <span className="text-orange flex-shrink-0">▸</span>
+                        <span dangerouslySetInnerHTML={{ __html: b }} />
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
