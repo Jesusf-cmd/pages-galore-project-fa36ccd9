@@ -54,7 +54,7 @@ export const routes: PrerenderRoute[] = [
     path: "/commercial-concrete-oklahoma-city",
     title: "Commercial Concrete Contractors Oklahoma City | FDZ Construction LLC",
     description: "Commercial concrete contractors in Oklahoma City. Warehouse floors, parking lots, retail pads, industrial slabs, curb & gutter. 4,000+ PSI. Free estimate: (405) 458-4805.",
-    h1: "Commercial Concrete Oklahoma City",
+    h1: "Commercial Concrete Contractors in Oklahoma City",
     content: "Commercial concrete contractors in Oklahoma City — warehouse floors, parking lots, retail pads, industrial slabs, and site work across the OKC metro. Heavy-duty commercial slabs engineered for heavy loads and high traffic. 4,000+ PSI concrete. ADA-compliant parking lots. Call (405) 458-4805 for a free estimate.",
   },
   {

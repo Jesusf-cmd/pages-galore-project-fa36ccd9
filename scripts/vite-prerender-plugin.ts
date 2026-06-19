@@ -1,4 +1,5 @@
 import type { Plugin } from "vite";
+import { getPrerenderBody, getSkipFooterNav } from "./prerender-bodies";
 import { routes, getCanonical, type PrerenderRoute } from "./prerender-routes";
 import * as fs from "fs";
 import * as path from "path";
@@ -80,11 +81,32 @@ function generateRouteHtml(template: string, route: PrerenderRoute): string {
 }
 
 function buildPrerenderMarkup(route: PrerenderRoute): string {
-  const paragraphs = route.content
-    .split(/(?<=[.!?])\s+/)
-    .filter(Boolean)
-    .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
-    .join("");
+  const bodyHtml = getPrerenderBody(route.path);
+  const skipFooterNav = getSkipFooterNav(route.path);
+
+  const articleContent =
+    bodyHtml ??
+    `<h1>${escapeHtml(route.h1)}</h1>${fallbackParagraphs(route.content)}`;
+
+  const footerNav = skipFooterNav
+    ? ""
+    : `
+      <footer>
+        <section aria-labelledby="prerender-services-heading">
+          <h2 id="prerender-services-heading">Concrete Services</h2>
+          <nav aria-label="Concrete services">
+            ${renderLinks(serviceLinks)}
+          </nav>
+        </section>
+        <section aria-labelledby="prerender-areas-heading">
+          <h2 id="prerender-areas-heading">Service Areas</h2>
+          <nav aria-label="Service areas">
+            ${renderLinks(serviceAreaLinks)}
+          </nav>
+        </section>
+        <p><strong>Call:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
+      </footer>
+    `;
 
   return `
     <header>
@@ -94,27 +116,18 @@ function buildPrerenderMarkup(route: PrerenderRoute): string {
       </nav>
     </header>
     <main>
-      <article>
-        <h1>${escapeHtml(route.h1)}</h1>
-        ${paragraphs}
-        <p><strong>Call:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
-      </article>
-      <section aria-labelledby="prerender-services-heading">
-        <h2 id="prerender-services-heading">Concrete Services</h2>
-        <p>FDZ Construction LLC provides concrete driveways, patios, slabs, foundations, stamped concrete, sidewalks, retaining walls, curb and gutter, parking lots, and commercial concrete work.</p>
-        <nav aria-label="Concrete services">
-          ${renderLinks(serviceLinks)}
-        </nav>
-      </section>
-      <section aria-labelledby="prerender-areas-heading">
-        <h2 id="prerender-areas-heading">Service Areas</h2>
-        <p>Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City.</p>
-        <nav aria-label="Service areas">
-          ${renderLinks(serviceAreaLinks)}
-        </nav>
-      </section>
+      <article>${articleContent}</article>
+      ${footerNav}
     </main>
   `;
+}
+
+function fallbackParagraphs(content: string): string {
+  return content
+    .split(/(?<=[.!?])\s+/)
+    .filter(Boolean)
+    .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+    .join("");
 }
 
 function renderLinks(links: LinkItem[]): string {

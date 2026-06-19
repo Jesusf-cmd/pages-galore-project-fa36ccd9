@@ -154,9 +154,9 @@ Deno.serve(async (req) => {
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     const quoteNumber = `#${String(quote.quote_number).padStart(4, "0")}`;
-    const siteUrl = "https://myconcreteestimate.com";
+    const siteUrl = Deno.env.get("SITE_URL") || "https://fdzconstruction.com";
     const quoteUrl = `${siteUrl}/quote/${quote.access_token}`;
-    const fromAddress = "FDZ Construction <estimates@myconcreteestimate.com>";
+    const fromAddress = Deno.env.get("FROM_EMAIL") || "FDZ Construction <jesus@fdzconstruction.com>";
     const acceptedDateStr = new Date(acceptedAt).toLocaleDateString("en-US", {
       year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit",
     });
@@ -222,8 +222,8 @@ Deno.serve(async (req) => {
     </div>
     <div style="background:#1a1a1a;padding:20px 32px;text-align:center;">
       <div style="color:#ffffff;font-size:13px;font-weight:bold;">FDZ Construction LLC</div>
-      <div style="color:#888;font-size:12px;margin-top:4px;">(405) 458-4805 · jesus.f@myconcreteestimate.com</div>
-      <div style="color:#666;font-size:11px;margin-top:4px;">myconcreteestimate.com</div>
+      <div style="color:#888;font-size:12px;margin-top:4px;">(405) 458-4805 · jesus@fdzconstruction.com</div>
+      <div style="color:#666;font-size:11px;margin-top:4px;">fdzconstruction.com</div>
     </div>
   </div>
 </body></html>`;
@@ -266,7 +266,7 @@ Deno.serve(async (req) => {
 
       await Promise.allSettled([
         sendEmail(quote.customer_email, `Quote ${quoteNumber} Accepted - FDZ Construction`, customerHtml),
-        sendEmail("jesus.f@myconcreteestimate.com", `ACCEPTED: Quote ${quoteNumber} - ${quote.customer_name}`, internalHtml),
+        sendEmail("jesus@fdzconstruction.com", `ACCEPTED: Quote ${quoteNumber} - ${quote.customer_name}`, internalHtml),
       ]);
     }
 

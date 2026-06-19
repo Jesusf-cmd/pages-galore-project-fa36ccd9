@@ -192,7 +192,7 @@ Deno.serve(async (req) => {
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     const notifyEmail = Deno.env.get("NOTIFICATION_EMAIL") || "jesus@fdzconstruction.com";
-    const fromAddress = Deno.env.get("FROM_EMAIL") || "FDZ Construction <estimates@myconcreteestimate.com>";
+    const fromAddress = Deno.env.get("FROM_EMAIL") || "FDZ Construction <jesus@fdzconstruction.com>";
     const signedUrlSeconds = 60 * 60 * 24 * 7;
 
     if (LOVABLE_API_KEY && RESEND_API_KEY) {
