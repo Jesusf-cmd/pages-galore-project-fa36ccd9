@@ -10,6 +10,7 @@ const KIDDIE_VIDEO = "https://img1.wsimg.com/blobby/go/e58b3d42-c6ef-4001-afe8-1
 const ROSEDALE_VIDEO = "/videos/shop-foundation-pour-rosedale-oklahoma.mp4";
 
 const otherProjects = [
+  { title: "Forklift Ramp — Warehouse Concrete", location: "Guthrie, OK", desc: "Concrete forklift ramp poured inside a live warehouse. Reinforced slab, precise slope for forklift transition, power trowel finish flush with existing floor.", size: "Commercial", time: "1 day pour" },
   { title: "Residential Foundation Pour", location: "Piedmont, OK", desc: "Slab-on-grade residential foundation on Oklahoma red clay — compacted aggregate base, engineered rebar schedule, smooth trowel finish.", size: "1,400 sq ft", time: "1 day pour" },
   { title: "Driveway Replacement", location: "Edmond, OK", desc: "Full tear-out of cracked original driveway, 4\" reinforced pour with #3 rebar, broom finish.", size: "24×40", time: "2 days" },
   { title: "Stamped Concrete Patio", location: "Norman, OK", desc: "Ashlar slate pattern, custom charcoal release, matte sealer. Covered extension.", size: "580 sq ft", time: "3 days" },
@@ -157,6 +158,55 @@ export default function OurProjects() {
                 <div>
                   <div className="font-display text-xl font-black text-orange">1 Pour</div>
                   <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Full footprint</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Guthrie forklift ramp — photos */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08] mb-8" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+            <div className="bg-darker relative overflow-hidden">
+              <div className="grid grid-cols-2 h-full min-h-[320px]" style={{ gridTemplateRows: "1fr 1fr" }}>
+                <img
+                  src="/images/projects/forklift-ramp-pour-guthrie-oklahoma-1.jpg"
+                  alt="FDZ Construction power trowel finishing a concrete forklift ramp pour inside a warehouse in Guthrie, Oklahoma"
+                  className="w-full h-full object-cover col-span-1"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/projects/forklift-ramp-pour-guthrie-oklahoma-2.jpg"
+                  alt="FDZ Construction crew troweling concrete forklift ramp in Guthrie, OK warehouse — forms and fresh pour visible"
+                  className="w-full h-full object-cover col-span-1"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/projects/forklift-ramp-finished-guthrie-oklahoma.jpg"
+                  alt="Finished concrete forklift ramp in Guthrie, Oklahoma — smooth trowel finish, flush transition to existing warehouse floor"
+                  className="w-full h-full object-cover col-span-2"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div className="bg-stone p-8 lg:p-10 flex flex-col justify-center order-first lg:order-last">
+              <div className="text-[0.6rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Commercial · Guthrie, Oklahoma</div>
+              <h3 className="font-display text-[clamp(1.4rem,2.5vw,2rem)] font-black uppercase leading-[1.05] mb-4">
+                Forklift Ramp<br/>Warehouse Concrete
+              </h3>
+              <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-5">
+                <Link to="/commercial-concrete-oklahoma-city" className="text-orange no-underline">Commercial concrete ramp</Link> built for forklift traffic inside a warehouse in Guthrie, Oklahoma. The ramp required precise slope grading for smooth forklift transitions, a reinforced slab thickness to handle repeated heavy equipment loads, and a power trowel finish flush with the surrounding warehouse floor. Formed and poured in a live warehouse environment with active racking and inventory on site.
+              </p>
+              <div className="flex gap-8 pt-4" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Heavy</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Equipment loads</div>
+                </div>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Trowel</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Smooth finish</div>
+                </div>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Live</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Warehouse pour</div>
                 </div>
               </div>
             </div>
