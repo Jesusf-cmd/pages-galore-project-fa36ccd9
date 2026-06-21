@@ -7,8 +7,10 @@ import { useSEO } from "@/hooks/useSEO";
 
 const SPENCER_VIDEO = "https://img1.wsimg.com/blobby/go/e58b3d42-c6ef-4001-afe8-1a0cde6bd652/video/copy_AD0EB7AC-6471-4D2C-9970-C121B31EB011.mp4";
 const KIDDIE_VIDEO = "https://img1.wsimg.com/blobby/go/e58b3d42-c6ef-4001-afe8-1a0cde6bd652/video/Kiddie%20academy%20MP4.mp4";
+const ROSEDALE_VIDEO = "/videos/shop-foundation-pour-rosedale-oklahoma.mp4";
 
 const otherProjects = [
+  { title: "Residential Foundation Pour", location: "Piedmont, OK", desc: "Slab-on-grade residential foundation on Oklahoma red clay — compacted aggregate base, engineered rebar schedule, smooth trowel finish.", size: "1,400 sq ft", time: "1 day pour" },
   { title: "Driveway Replacement", location: "Edmond, OK", desc: "Full tear-out of cracked original driveway, 4\" reinforced pour with #3 rebar, broom finish.", size: "24×40", time: "2 days" },
   { title: "Stamped Concrete Patio", location: "Norman, OK", desc: "Ashlar slate pattern, custom charcoal release, matte sealer. Covered extension.", size: "580 sq ft", time: "3 days" },
   { title: "Commercial Parking Lot", location: "Yukon, OK", desc: "5\" commercial concrete parking lot for retail strip. Graded for drainage, rebar reinforced.", size: "4,200 sq ft", time: "5 days" },
@@ -84,7 +86,7 @@ export default function OurProjects() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08] mb-8" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div className="bg-stone p-8 lg:p-10 flex flex-col justify-center order-2 lg:order-1">
               <div className="text-[0.6rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Commercial · Oklahoma City, OK</div>
               <h3 className="font-display text-[clamp(1.4rem,2.5vw,2rem)] font-black uppercase leading-[1.05] mb-4">
@@ -120,6 +122,86 @@ export default function OurProjects() {
                 <source src={KIDDIE_VIDEO} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+            </div>
+          </div>
+          {/* Rosedale shop foundation — video */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08] mb-8" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+            <div className="bg-darker relative overflow-hidden">
+              <video
+                className="w-full h-full object-cover min-h-[320px]"
+                controls
+                preload="metadata"
+                playsInline
+              >
+                <source src={ROSEDALE_VIDEO} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="bg-stone p-8 lg:p-10 flex flex-col justify-center">
+              <div className="text-[0.6rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Commercial · Rosedale, Oklahoma</div>
+              <h3 className="font-display text-[clamp(1.4rem,2.5vw,2rem)] font-black uppercase leading-[1.05] mb-4">
+                10,000 Sq Ft<br/>Shop Foundation
+              </h3>
+              <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-5">
+                Large-scale <Link to="/foundations-oklahoma-city" className="text-orange no-underline">commercial foundation pour</Link> for a 10,000 sq ft shop in Rosedale, Oklahoma. The project required careful sub-base preparation on Oklahoma's expansive clay soil, a full engineered rebar schedule, and coordinated concrete placement across the full slab footprint in a single pour. Power trowel finish throughout.
+              </p>
+              <div className="flex gap-8 pt-4" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">10,000</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Sq ft slab</div>
+                </div>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Shop</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Foundation</div>
+                </div>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">1 Pour</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Full footprint</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Piedmont residential foundation — photos */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+            <div className="bg-stone p-8 lg:p-10 flex flex-col justify-center order-2 lg:order-1">
+              <div className="text-[0.6rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Residential · Piedmont, Oklahoma</div>
+              <h3 className="font-display text-[clamp(1.4rem,2.5vw,2rem)] font-black uppercase leading-[1.05] mb-4">
+                Residential<br/>Foundation Pour
+              </h3>
+              <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-5">
+                Slab-on-grade <Link to="/foundations-oklahoma-city" className="text-orange no-underline">residential foundation</Link> in Piedmont, Oklahoma — compacted aggregate base over Oklahoma red clay, full engineered rebar schedule, and power trowel finish. Piedmont's soil carries the same Permian-age clay and shale base as the rest of the OKC metro, so sub-base prep is critical before any foundation pour.
+              </p>
+              <div className="flex gap-8 pt-4" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Rebar</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Engineered schedule</div>
+                </div>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Trowel</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Finish</div>
+                </div>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Clay</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Soil prep</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-darker relative overflow-hidden order-1 lg:order-2">
+              <div className="grid grid-cols-2 h-full min-h-[320px]">
+                <img
+                  src="/images/projects/residential-foundation-pour-piedmont-oklahoma.jpg"
+                  alt="FDZ Construction residential foundation pour in Piedmont, Oklahoma — fresh slab on Oklahoma red clay subgrade with forms visible"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/projects/residential-foundation-crew-piedmont-ok.jpg"
+                  alt="FDZ Construction crew finishing residential foundation slab in Piedmont, OK — power trowel finish with rebar anchors visible"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </section>
