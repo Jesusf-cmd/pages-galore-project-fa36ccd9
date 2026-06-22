@@ -56,7 +56,7 @@ export default function OurProjects() {
               <video
                 className="w-full h-full object-cover min-h-[320px]"
                 controls
-                preload="metadata"
+                preload="none"
                 playsInline
                 poster=""
               >
@@ -119,7 +119,7 @@ export default function OurProjects() {
               <video
                 className="w-full h-full object-cover min-h-[320px]"
                 controls
-                preload="metadata"
+                preload="none"
                 playsInline
               >
                 <source src={KIDDIE_VIDEO} type="video/mp4" />
@@ -133,7 +133,7 @@ export default function OurProjects() {
               <video
                 className="w-full h-full object-cover min-h-[320px]"
                 controls
-                preload="metadata"
+                preload="none"
                 playsInline
               >
                 <source src={ROSEDALE_VIDEO} type="video/mp4" />
