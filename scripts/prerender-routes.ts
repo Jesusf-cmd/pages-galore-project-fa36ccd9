@@ -252,6 +252,62 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
     h1: "Concrete Patio Contractors in Norman, OK",
     content: "Concrete patio contractors serving Norman, Oklahoma. Most Norman patio failures we see are the slab pulling away from the house — caused by undersized reinforcement and missing drainage detailing at the slab-house joint. Norman's mixed sandy and clay soil amplifies the problem. We pour with engineered rebar sized for actual soil, slope minimum 1/8″ per foot away from house, sealed isolation joint at the foundation, sawcut control joints within 24 hours. Broom finish $6–$10/sq ft, stamped finishes $15–$22/sq ft. Call (405) 458-4805 for a free on-site estimate.",
   },
+  {
+    path: "/patios-edmond",
+    title: "Concrete Patio Contractors in Edmond, OK | FDZ Construction LLC",
+    description: "Concrete patios, slabs, and stamped concrete in Edmond, OK. Built for Edmond's mixed soil and rolling grade with proper drainage. Free estimate: (405) 458-4805.",
+    h1: "Concrete Patio Contractors in Edmond, OK",
+    content: "Concrete patio contractors serving Edmond, Oklahoma. Most Edmond patios fail at the grade transition or the slab-house joint — both upstream issues caused by spec'ing a flat patio onto a rolling lot or skipping drainage detailing. We pour Edmond patios with rebar sized for mixed sandy and clay soil, minimum 1/8″ per foot slope away from the house, sealed isolation joint at the foundation, and sawcut control joints within 24 hours. Broom finish $6–$10/sq ft, stamped finishes $15–$22/sq ft. Call (405) 458-4805 for a free estimate.",
+  },
+  {
+    path: "/foundations-norman",
+    title: "Concrete Foundation Contractors in Norman, OK | FDZ Construction LLC",
+    description: "Concrete foundation contractors in Norman, OK — slab-on-grade, stem walls, pier foundations for Norman's river-influenced soil variability. Free estimate: (405) 458-4805.",
+    h1: "Concrete Foundation Contractors in Norman, OK",
+    content: "Concrete foundation contractors serving Norman, Oklahoma. Cracked Norman foundations almost always show a crack along a soil transition line — sandy river-influenced section meeting denser clay. We read the soil across the entire footprint before specifying type: slab-on-grade for uniform-soil lots, pier-and-thickened-slab for variable-soil or fill lots (piers drilled past the soil transition to bearing material). Engineered base, 4,000 PSI mix, rebar per spec, drainage detailed around the perimeter. Builder coordination for new construction. Call (405) 458-4805 for a free on-site estimate.",
+  },
+  {
+    path: "/foundations-yukon",
+    title: "Concrete Foundation Contractors in Yukon, OK | FDZ Construction LLC",
+    description: "Concrete foundation contractors in Yukon, OK — slab-on-grade and pier foundations for Canadian County's clay base and new-subdivision fill conditions. Free estimate: (405) 458-4805.",
+    h1: "Concrete Foundation Contractors in Yukon, OK",
+    content: "Concrete foundation contractors serving Yukon, Oklahoma. Yukon's subdivision growth has put many new homes on graded former farmland, and original fill compaction matters as much as the native clay for any foundation. We proof-roll every Yukon base before pouring. Pier-and-thickened-slab on poor-fill lots — piers drilled to undisturbed native clay below, slab tied to piers. Slab-on-grade where the fill is sound. Engineered base, 4,000 PSI mix, rebar, drainage detailed. Builder coordination for new construction. Call (405) 458-4805 for a free estimate.",
+  },
+  {
+    path: "/driveways-moore",
+    title: "Concrete Driveway Contractors in Moore, OK | FDZ Construction LLC",
+    description: "Concrete driveway installation and replacement in Moore, OK. Built for Moore's flat terrain, expansive clay, and drainage-critical low-lying areas. Free estimate: (405) 458-4805.",
+    h1: "Concrete Driveway Contractors in Moore, OK",
+    content: "Concrete driveway contractors serving Moore, Oklahoma. Moore's flat terrain and clay soil mean water doesn't drain away on its own — a driveway without an engineered slope traps moisture under the slab and accelerates the expansive clay's swell-shrink cycle. We pour Moore driveways with mandatory slope-to-drain detailing (minimum 1/8″ per foot away from the house), apron transitions formed to shed water cleanly, 4,000 PSI mix, rebar at mid-depth, sawcut joints within 24 hours. Tear-out, replacement, new pours. Typical 24×40 driveway $5,760–$9,600. Call (405) 458-4805 for a free estimate.",
+  },
+  {
+    path: "/patios-moore",
+    title: "Concrete Patio Contractors in Moore, OK | FDZ Construction LLC",
+    description: "Concrete patios, slabs, and stamped concrete in Moore, OK. Drainage-first design for flat clay terrain. Free estimate: (405) 458-4805.",
+    h1: "Concrete Patio Contractors in Moore, OK",
+    content: "Concrete patio contractors serving Moore, Oklahoma. The Moore patios we tear out almost always failed because water pooled at the slab-house joint that wasn't drained from the start. We pour Moore patios with minimum 1/8″ per foot slope away from the foundation, sealed isolation joint at the house wall, 4,000 PSI mix, rebar at mid-depth, sawcut control joints within 24 hours. Broom finish $6–$10/sq ft, stamped finishes $15–$22/sq ft. 400 sq ft stamped patio typically $6,000–$8,800. Call (405) 458-4805 for a free estimate.",
+  },
+  {
+    path: "/driveways-mustang",
+    title: "Concrete Driveway Contractors in Mustang, OK | FDZ Construction LLC",
+    description: "Concrete driveway installation and replacement in Mustang, OK. Built for Canadian County's clay base and new-subdivision fill. Free estimate: (405) 458-4805.",
+    h1: "Concrete Driveway Contractors in Mustang, OK",
+    content: "Concrete driveway contractors serving Mustang, Oklahoma. Mustang's subdivision growth has put many new driveways on graded former farmland — and the quality of the original fill compaction decides whether the driveway is still flat at year five. We proof-roll the base on every Mustang pour and re-prep soft spots before any new aggregate goes in. Tear-out, replacement, new pours, 4,000 PSI mix, rebar at mid-depth, slope-to-drain detailing, sawcut joints within 24 hours. Typical 24×40 driveway $5,760–$9,600. Call (405) 458-4805 for a free estimate.",
+  },
+  {
+    path: "/retaining-walls-norman",
+    title: "Retaining Wall Contractors in Norman, OK | FDZ Construction LLC",
+    description: "Poured concrete and CMU retaining walls in Norman, OK — drainage-first design for Norman's river-corridor soil. Repairs included. Free estimate: (405) 458-4805.",
+    h1: "Retaining Wall Contractors in Norman, OK",
+    content: "Retaining wall contractors serving Norman, Oklahoma. Leaning Norman walls usually fail along soil transitions — sandy river-influenced section meeting denser clay. The clay section loads with water and pushes harder than the sandy section, and the wall twists rather than uniformly leans. We design uniform engineered drainage across the entire wall length: gravel backfill, weep holes spaced for wall height, French drain routed to daylight. Footing sized to actual soil bearing and wall height — not a generic spec. Poured concrete for taller walls, CMU for mid-height. Repair and stabilization included. Call (405) 458-4805 for a free estimate.",
+  },
+  {
+    path: "/patios-yukon",
+    title: "Concrete Patio Contractors in Yukon, OK | FDZ Construction LLC",
+    description: "Concrete patios, slabs, and stamped concrete in Yukon, OK. Built for Canadian County's clay base and new-subdivision fill. Free estimate: (405) 458-4805.",
+    h1: "Concrete Patio Contractors in Yukon, OK",
+    content: "Concrete patio contractors serving Yukon, Oklahoma. Most failed Yukon patios settled on bad subdivision fill — the same root cause we see on Yukon driveways. We proof-roll the base on every Yukon pour before any aggregate goes in. Engineered base, 4,000 PSI mix, rebar at mid-depth, minimum 1/8″ per foot slope away from the house, sealed isolation joint at the foundation, sawcut control joints within 24 hours. Broom finish $6–$10/sq ft, stamped finishes $15–$22/sq ft. Call (405) 458-4805 for a free estimate.",
+  },
 ];
 
 export function getCanonical(path: string): string {

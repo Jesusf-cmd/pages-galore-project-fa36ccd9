@@ -87,6 +87,14 @@ const App = () => (
               <Route path="/foundations-edmond" element={<ServiceInCity slug="foundations-edmond" />} />
               <Route path="/retaining-walls-edmond" element={<ServiceInCity slug="retaining-walls-edmond" />} />
               <Route path="/patios-norman" element={<ServiceInCity slug="patios-norman" />} />
+              <Route path="/patios-edmond" element={<ServiceInCity slug="patios-edmond" />} />
+              <Route path="/foundations-norman" element={<ServiceInCity slug="foundations-norman" />} />
+              <Route path="/foundations-yukon" element={<ServiceInCity slug="foundations-yukon" />} />
+              <Route path="/driveways-moore" element={<ServiceInCity slug="driveways-moore" />} />
+              <Route path="/patios-moore" element={<ServiceInCity slug="patios-moore" />} />
+              <Route path="/driveways-mustang" element={<ServiceInCity slug="driveways-mustang" />} />
+              <Route path="/retaining-walls-norman" element={<ServiceInCity slug="retaining-walls-norman" />} />
+              <Route path="/patios-yukon" element={<ServiceInCity slug="patios-yukon" />} />
               <Route path="/our-projects" element={<OurProjects />} />
               <Route path="/quote/:id" element={<QuotePage />} />
               <Route path="/blog" element={<BlogIndex />} />

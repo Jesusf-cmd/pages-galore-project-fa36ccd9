@@ -460,7 +460,572 @@ const data: Record<string, ServiceInCityData> = {
     parentCity: { label: "All Norman Concrete Services", to: "/norman-ok-concrete" },
     siblings: [
       { label: "Driveways in Norman", to: "/driveways-norman" },
+      { label: "Foundations in Norman", to: "/foundations-norman" },
+      { label: "Retaining Walls in Norman", to: "/retaining-walls-norman" },
+      { label: "Patios in Edmond", to: "/patios-edmond" },
+    ],
+  },
+
+  "patios-edmond": {
+    path: "/patios-edmond",
+    metaTitle: "Concrete Patio Contractors in Edmond, OK | FDZ Construction LLC",
+    metaDescription:
+      "Concrete patios, slabs, and stamped concrete in Edmond, OK. Built for Edmond's mixed soil and rolling grade with proper drainage. Free estimate: (405) 458-4805.",
+    eyebrow: "Edmond, OK · Concrete Patios · Licensed & Insured",
+    h1Lead: "Concrete Patio Contractors in",
+    h1Accent: "Edmond, OK.",
+    heroBlurbHtml:
+      "Patios, garage slabs, and stamped concrete for <strong>Edmond homeowners</strong> — built for Edmond's rolling grade and the mixed soil that decides how long a slab actually lasts. <a href='tel:4054584805'>(405) 458-4805</a>.",
+    problemTitle: "Edmond Patios Fail at the",
+    problemAccent: "Grade Transition.",
+    problemHtml: [
+      "<strong>The Edmond patios we tear out almost always failed at the grade transition</strong> — the point where the slab meets the slope of the lot. A flat-spec patio on a rolling Edmond lot leaves an edge sitting on a base that washes out within a few seasons, and the slab follows.",
+      "The other common failure is the slab-house joint. Edmond's mixed sandy-and-clay soil makes the differential movement worse — the slab twists across its footprint and lifts away from the house at the worst point, opening a gap that lets water in and accelerates the next round of damage.",
+      "Both failures are upstream. A patio detailed for Edmond's actual grade and soil — with rebar sized for soil movement, a graded slope away from the house, and a sealed isolation joint at the foundation — stays tight to the house for the life of the slab.",
+    ],
+    localConditionsTitle: "Edmond Grade, Soil,",
+    localConditionsAccent: "& Patio Spec.",
+    localConditionsHtml: [
+      "Edmond's rolling grade means a patio on the north side of a lot can need a different base prep than one on the south side. Sandier sections need careful compaction so the base doesn't migrate; clay sections need depth and adequate aggregate so swell-shrink doesn't crack the slab.",
+      "For patios near the house wall — which is most patios — drainage is the variable that decides longevity. Standing water at the slab-house joint accelerates foundation moisture, soil swelling, slab lift, and eventually a separated joint. We grade every Edmond patio to slope cleanly away from the house at a minimum 1/8\" per foot.",
+      "On stamped patios, the same rules apply. The decorative finish is the last 10% of the job; base, reinforcement, and drainage are the 90% that make the patio still look good a decade later.",
+    ],
+    scopeBullets: [
+      { title: "Site soil + grade read", body: "On-site evaluation of sandy vs. clay sections and lot slope so the base and rebar match the actual conditions." },
+      { title: "Engineered base", body: "Excavated to grade, compacted, then 4\" of aggregate base compacted in lifts before forms go in." },
+      { title: "4,000 PSI mix with rebar", body: "Residential standard for Edmond patios. Rebar on chairs at mid-depth, tied at intersections — not wire mesh." },
+      { title: "Slope away from house", body: "Minimum 1/8\" per foot pitch away from the foundation, plus a sealed isolation joint where the slab meets the house wall." },
+      { title: "Joint timing", body: "Sawcut control joints within 24 hours, spaced 8–12 feet. Cut on time, sealed once cured — the most-skipped step on failed patios." },
+      { title: "Stamped finishes", body: "Pattern, integral color, antique release applied on site. Sealed after cure. Stamped, not just textured." },
+    ],
+    midCtaTitle: "Get a Free Edmond",
+    midCtaAccent: "Patio Estimate.",
+    faq: [
+      {
+        question: "Why do Edmond patios pull away from the house?",
+        answer:
+          "Combination of inadequate reinforcement and missing drainage detailing at the slab-house joint. Edmond's mixed soil makes differential movement worse — the slab twists and lifts away from the foundation. We fix this with rebar sized for the soil, slope to drain, and a sealed isolation joint at the house wall.",
+      },
+      {
+        question: "How thick should an Edmond patio be?",
+        answer:
+          "4 inches on properly prepared base is standard for residential patios. We bump to 5 inches if the lot has more aggressive clay sections or the patio will see heavy loads — outdoor kitchen, hot tub, vehicle parking.",
+      },
+      {
+        question: "Should I use rebar or wire mesh on an Edmond patio?",
+        answer:
+          "Rebar. Wire mesh controls shrinkage cracking but doesn't add structural strength. Edmond's mixed soil — particularly the clay-heavy sections — actively pushes against the slab as it swells and shrinks, and rebar's tensile strength is what resists that movement.",
+      },
+      {
+        question: "How much does a stamped patio cost in Edmond?",
+        answer:
+          "Stamped concrete runs $15–$22 per square foot installed in the Edmond market. A 400 sq ft stamped patio typically runs $6,000–$8,800. Standard broom-finish patios run $6–$10 per sq ft. Exact pricing after an on-site read.",
+      },
+      {
+        question: "Can a new patio tie into an existing slab or deck?",
+        answer:
+          "Yes — with a proper isolation joint between the new pour and the existing structure so they can move independently. Bonding new concrete directly to old without an isolation joint guarantees a crack at the seam within a few seasons.",
+      },
+    ],
+    parentService: { label: "All Patios & Stamped Concrete", to: "/patios-oklahoma-city" },
+    parentCity: { label: "All Edmond Concrete Services", to: "/edmond-concrete" },
+    siblings: [
       { label: "Driveways in Edmond", to: "/driveways-edmond" },
+      { label: "Foundations in Edmond", to: "/foundations-edmond" },
+      { label: "Retaining Walls in Edmond", to: "/retaining-walls-edmond" },
+      { label: "Patios in Norman", to: "/patios-norman" },
+    ],
+  },
+
+  "foundations-norman": {
+    path: "/foundations-norman",
+    metaTitle: "Concrete Foundation Contractors in Norman, OK | FDZ Construction LLC",
+    metaDescription:
+      "Concrete foundation contractors in Norman, OK — slab-on-grade, stem walls, pier foundations for Norman's river-influenced soil variability. Free estimate: (405) 458-4805.",
+    eyebrow: "Norman, OK · Concrete Foundations · Licensed & Insured",
+    h1Lead: "Concrete Foundation Contractors in",
+    h1Accent: "Norman, OK.",
+    heroBlurbHtml:
+      "Slab-on-grade, stem wall, and pier foundations for <strong>Norman homeowners and builders</strong> — engineered for Cleveland County's variable river-corridor soil. <a href='tel:4054584805'>(405) 458-4805</a>.",
+    problemTitle: "Norman Foundations Crack Along",
+    problemAccent: "Soil Transitions.",
+    problemHtml: [
+      "<strong>The cracked Norman foundations we evaluate almost all show the same pattern</strong>: a crack that runs along a soil transition line — sandy river-influenced section on one side, denser clay on the other. A foundation poured to a flat metro spec doesn't account for that transition, and the differential movement opens a crack within years.",
+      "Norman's spot along the Canadian River corridor makes this a per-lot problem, not a neighborhood one. The same property can have sandier section near a low corner and denser clay at the high corner. Picking foundation type from a satellite photo is a recipe for a crack along the seam.",
+      "The fix is upstream: read the soil before specifying the foundation type. Slab-on-grade works on uniform-soil lots; pier-and-thickened-slab is the right call on lots with significant soil variability or fill. We make the call lot-by-lot.",
+    ],
+    localConditionsTitle: "Norman Soil, River Corridor,",
+    localConditionsAccent: "& Foundation Type.",
+    localConditionsHtml: [
+      "Norman's position along the Canadian River means some lots sit on sandier river-influenced soil that transitions to denser clay within a short distance on the same property. That's a different base-prep call than the uniform-clay sites elsewhere in the metro.",
+      "On uniform-soil lots — sometimes found on Norman's higher ground or further from the river corridor — slab-on-grade with engineered base, rebar, and drainage detailed works well long-term. On variable-soil lots, deeper foundations are the right call: piers drilled past the soil transition to undisturbed bearing material, with the slab tied to the pier system.",
+      "On older Norman properties we also check for prior repair work, buried debris, or imported fill before we excavate — not always visible from the surface and a major source of differential movement we see in failed older foundations.",
+    ],
+    scopeBullets: [
+      { title: "Lot evaluation first", body: "Soil read across the entire footprint, fill assessment, drainage check — before specifying foundation type." },
+      { title: "Slab-on-grade where appropriate", body: "Engineered base, 4,000 PSI mix, rebar per spec, drainage detailing — for uniform-soil lots." },
+      { title: "Pier-and-thickened-slab", body: "Piers drilled past the soil transition to undisturbed bearing material, with the slab tied to the pier system." },
+      { title: "Stem wall foundations", body: "Footings to bearing soil, stem walls poured to grade, backfill compacted in lifts where appropriate to the build." },
+      { title: "Drainage detailing", body: "Slope-to-drain around the foundation perimeter; French drains where the river-corridor grade requires them." },
+      { title: "Builder coordination", body: "Schedule with GCs, framers, plumbing, and City of Norman inspectors on new-construction builds." },
+    ],
+    midCtaTitle: "Get a Free Norman",
+    midCtaAccent: "Foundation Estimate.",
+    faq: [
+      {
+        question: "How do I know if my Norman lot needs a pier foundation?",
+        answer:
+          "If the lot has significant soil variability — sandy river-influenced section transitioning to denser clay — pouring slab-on-grade is set up for a crack along the transition. We evaluate the soil across the entire footprint before specifying foundation type. Lots near the Canadian River corridor especially benefit from a per-lot soil read.",
+      },
+      {
+        question: "How deep do piers go on a Norman foundation?",
+        answer:
+          "Typically 4–6 feet to reach past the soil transition into undisturbed bearing material, depending on the depth of the variable layer. We drill to the bearing soil and stop there — we don't pick a number first.",
+      },
+      {
+        question: "How much does a foundation cost in Norman?",
+        answer:
+          "Norman foundations follow our OKC metro rates: roughly $9–$14 per square foot for standard slab-on-grade, with pier-and-thickened-slab and stem walls priced per the engineered spec and lot conditions. Exact pricing after an on-site soil read.",
+      },
+      {
+        question: "Do you work with builders on new-construction Norman builds?",
+        answer:
+          "Yes. We coordinate with the GC on schedule, with framers on tie-in details, and with City of Norman inspectors on each required stage. Most of our Norman foundation work is on new-construction lots.",
+      },
+      {
+        question: "How long does a Norman foundation last?",
+        answer:
+          "A foundation engineered for the actual soil and drainage conditions outlasts the structure on top of it. Foundations that fail in Norman almost always had the wrong type for the lot's soil variability, or inadequate drainage around the perimeter.",
+      },
+    ],
+    parentService: { label: "All Concrete Foundations", to: "/foundations-oklahoma-city" },
+    parentCity: { label: "All Norman Concrete Services", to: "/norman-ok-concrete" },
+    siblings: [
+      { label: "Driveways in Norman", to: "/driveways-norman" },
+      { label: "Patios in Norman", to: "/patios-norman" },
+      { label: "Retaining Walls in Norman", to: "/retaining-walls-norman" },
+      { label: "Foundations in Edmond", to: "/foundations-edmond" },
+    ],
+  },
+
+  "foundations-yukon": {
+    path: "/foundations-yukon",
+    metaTitle: "Concrete Foundation Contractors in Yukon, OK | FDZ Construction LLC",
+    metaDescription:
+      "Concrete foundation contractors in Yukon, OK — slab-on-grade and pier foundations for Canadian County's clay base and new-subdivision fill conditions. Free estimate: (405) 458-4805.",
+    eyebrow: "Yukon, OK · Concrete Foundations · Licensed & Insured",
+    h1Lead: "Concrete Foundation Contractors in",
+    h1Accent: "Yukon, OK.",
+    heroBlurbHtml:
+      "Foundations for <strong>Yukon homeowners and builders</strong> — engineered for Canadian County's expansive clay and the compaction quality of new-subdivision graded fill. <a href='tel:4054584805'>(405) 458-4805</a>.",
+    problemTitle: "Yukon's Foundation Risk:",
+    problemAccent: "What's Underneath.",
+    problemHtml: [
+      "<strong>Yukon's growth has put a lot of new homes on graded former agricultural land</strong> — and the quality of the original fill compaction matters as much as the native clay for any foundation pour. The foundations that fail by year five almost always had a fill problem at the start.",
+      "Slab-on-grade on poorly compacted fill is the most common failure mode. The slab can look fine on move-in but show a hairline crack at year three and a 1/4\" step by year seven. That's not the concrete — it's the fill settling unevenly underneath.",
+      "On Yukon fill lots, the right answer is often pier-and-thickened-slab, where piers are drilled through the fill to the undisturbed native clay below. The slab is tied to the piers; the fill carries no structural load. That foundation outlasts the structure on top of it.",
+    ],
+    localConditionsTitle: "Yukon Fill, Native Clay,",
+    localConditionsAccent: "& Foundation Type.",
+    localConditionsHtml: [
+      "Yukon's terrain is flatter than Edmond's, so grade is rarely the issue — fill quality is. On newer subdivisions we proof-roll the existing base before any pour and look for soft spots that indicate poor original compaction.",
+      "Where the fill is sound, slab-on-grade with engineered base and proper drainage performs well on Yukon's underlying expansive clay. Where fill compaction failed — common in subdivisions where original grading was rushed — pier-and-thickened-slab is the right call.",
+      "On older Yukon properties built before recent subdivision growth, the soil is more predictable and the foundation spec is closer to what we'd pour in central OKC. We make the call after we read the lot — not before.",
+    ],
+    scopeBullets: [
+      { title: "Fill + compaction read", body: "Proof-roll the existing base on every Yukon pour; look for soft spots from poor subdivision grading." },
+      { title: "Slab-on-grade where appropriate", body: "Engineered base, 4,000 PSI mix, rebar per spec, drainage detailing — for sound-fill or undisturbed-native lots." },
+      { title: "Pier-and-thickened-slab", body: "Piers drilled through fill to undisturbed native clay below, slab tied to piers. The fill carries no structural load." },
+      { title: "Stem wall foundations", body: "Footings to bearing soil, stem walls poured to grade, backfill compacted in lifts." },
+      { title: "Drainage detailing", body: "Perimeter slope-to-drain; French drains where the lot grade or fill conditions require them." },
+      { title: "Builder coordination", body: "Schedule with GCs and City of Yukon inspectors on new-construction subdivisions." },
+    ],
+    midCtaTitle: "Get a Free Yukon",
+    midCtaAccent: "Foundation Estimate.",
+    faq: [
+      {
+        question: "How do I know if my Yukon lot needs a pier foundation?",
+        answer:
+          "If the lot was graded for a newer subdivision and the fill compaction is questionable, pier-and-thickened-slab is usually the right call. We proof-roll the base on every Yukon pour to evaluate the fill — if it's sound, slab-on-grade works; if not, piers are the answer.",
+      },
+      {
+        question: "Why do new-subdivision Yukon foundations crack so early?",
+        answer:
+          "Almost always because original subdivision-grading fill wasn't compacted properly. The foundation sits on a base that settles unevenly for years — hairline at year three, a step by year seven. We proof-roll every base and re-prep where compaction failed.",
+      },
+      {
+        question: "How much does a Yukon foundation cost?",
+        answer:
+          "Yukon foundations follow our OKC metro rates: roughly $9–$14 per square foot for slab-on-grade, with pier-and-thickened-slab and stem walls priced per engineered spec and lot conditions. Exact pricing after an on-site fill and soil read.",
+      },
+      {
+        question: "Do you work with new-construction builders in Yukon?",
+        answer:
+          "Yes — much of our Yukon foundation work is in new subdivisions. We coordinate with GCs, framers, plumbing trades, and City of Yukon inspectors on each required stage.",
+      },
+      {
+        question: "Can a poorly-compacted base be fixed without replacing the slab?",
+        answer:
+          "Usually not. Once a slab is poured on bad fill and the foundation has moved, the corrective options are limited and expensive. Catching the fill problem before the pour — by proof-rolling — is the only sure fix.",
+      },
+    ],
+    parentService: { label: "All Concrete Foundations", to: "/foundations-oklahoma-city" },
+    parentCity: { label: "All Yukon Concrete Services", to: "/yukon-oklahoma-concrete" },
+    siblings: [
+      { label: "Driveways in Yukon", to: "/driveways-yukon" },
+      { label: "Patios in Yukon", to: "/patios-yukon" },
+      { label: "Foundations in Edmond", to: "/foundations-edmond" },
+      { label: "Driveways in Mustang", to: "/driveways-mustang" },
+    ],
+  },
+
+  "driveways-moore": {
+    path: "/driveways-moore",
+    metaTitle: "Concrete Driveway Contractors in Moore, OK | FDZ Construction LLC",
+    metaDescription:
+      "Concrete driveway installation and replacement in Moore, OK. Built for Moore's flat terrain, expansive clay, and drainage-critical low-lying areas. Free estimate: (405) 458-4805.",
+    eyebrow: "Moore, OK · Concrete Driveways · Licensed & Insured",
+    h1Lead: "Concrete Driveway Contractors in",
+    h1Accent: "Moore, OK.",
+    heroBlurbHtml:
+      "Driveway pours and replacements for <strong>Moore homeowners</strong> — built for Moore's flat clay terrain where drainage is the variable that decides longevity. <a href='tel:4054584805'>(405) 458-4805</a>.",
+    problemTitle: "Moore Driveways Fail Because",
+    problemAccent: "Water Has Nowhere to Go.",
+    problemHtml: [
+      "<strong>The Moore driveways we tear out failed because of water</strong> — not weather and not weight. Moore's flat terrain and clay soil mean water doesn't drain away on its own. A driveway poured without an engineered slope traps moisture under and around the slab, and the expansive clay underneath swells and shrinks more aggressively.",
+      "Within a few years, the slab cracks. Within ten, the section near the house has lifted. The slab itself looked fine the day it was poured — the failure was baked in by the lack of a slope-to-drain that moved water off the surface and away from the structure.",
+      "The fix is non-negotiable on every Moore pour we do: minimum 1/8\" per foot pitch away from the house, apron formed to shed water cleanly, and joint timing that lets the slab move without cracking where we don't want it to.",
+    ],
+    localConditionsTitle: "Moore Drainage, Clay,",
+    localConditionsAccent: "& Driveway Spec.",
+    localConditionsHtml: [
+      "Moore sits on flat terrain over the same expansive clay base found across the metro, with limited natural runoff in low-lying neighborhoods. The terrain that makes Moore an easy build also makes drainage the hardest job on every concrete pour.",
+      "Driveways here need engineered slope, properly detailed apron transitions, and saw-cut control joints timed within 24 hours of the pour. We grade every Moore driveway so water moves away from the house and the garage apron at a minimum 1/8\" per foot.",
+      "For driveways in older Moore neighborhoods near drainage corridors, we also check for prior fill, settling, and any tie-in to public street that needs City of Moore right-of-way coordination.",
+    ],
+    scopeBullets: [
+      { title: "Drainage planning first", body: "Slope-to-drain pitch designed before we form. On a flat Moore lot, where water goes decides whether the slab lasts." },
+      { title: "Tear-out & disposal", body: "Full removal of failed slab and any compromised base. No pouring over standing problems." },
+      { title: "Engineered base", body: "Excavated to grade, compacted native, 4–6\" of aggregate compacted in lifts and proof-rolled." },
+      { title: "4,000 PSI mix with rebar", body: "Residential standard for Moore clay. Rebar on chairs at mid-depth, tied at intersections." },
+      { title: "Apron transition detailing", body: "Garage and street aprons formed to shed water cleanly. Water-catching apron joints are a major Moore failure point." },
+      { title: "Joint timing & sealing", body: "Sawcut within 24 hours, sealed once cured. On time, every time." },
+    ],
+    midCtaTitle: "Get a Free Moore",
+    midCtaAccent: "Driveway Estimate.",
+    faq: [
+      {
+        question: "Why does drainage matter so much for Moore driveways?",
+        answer:
+          "Moore's flat terrain and clay soil mean water doesn't drain away on its own in low-lying areas. A driveway without an engineered slope traps water under and around the slab, accelerating the expansive clay's swell-shrink cycle — and that's the leading cause of cracked Moore driveways.",
+      },
+      {
+        question: "How thick should a Moore driveway be?",
+        answer:
+          "4 inches on a properly prepared base for standard vehicles, 5+ inches for trucks, RVs, or trailers. Thickness can't compensate for inadequate drainage — slope-to-drain is the bigger variable for longevity here.",
+      },
+      {
+        question: "How long does a properly built Moore driveway last?",
+        answer:
+          "30+ years with engineered base, rebar, proper joint timing, and slope-to-drain detailed. The driveways that fail by year 10–15 in Moore almost always had a drainage problem set on day one.",
+      },
+      {
+        question: "How much does a Moore driveway cost?",
+        answer:
+          "Moore driveways follow our OKC metro rates: roughly $6–$10 per square foot installed. A typical 24×40 Moore driveway runs $5,760–$9,600, with tear-out of an existing slab adding to the total. Exact pricing after an on-site read.",
+      },
+      {
+        question: "Can you pour a driveway year-round in Moore?",
+        answer:
+          "Yes — with proper hot-weather and cold-weather protocols. Spring storm season needs scheduling flexibility because heavy rain on a fresh pour or saturated subgrade is a real risk in the Moore area.",
+      },
+    ],
+    parentService: { label: "All Concrete Driveways", to: "/driveways-oklahoma-city" },
+    parentCity: { label: "All Moore Concrete Services", to: "/moore-oklahoma-concrete" },
+    siblings: [
+      { label: "Patios in Moore", to: "/patios-moore" },
+      { label: "Driveways in Norman", to: "/driveways-norman" },
+      { label: "Driveways in Edmond", to: "/driveways-edmond" },
+    ],
+  },
+
+  "patios-moore": {
+    path: "/patios-moore",
+    metaTitle: "Concrete Patio Contractors in Moore, OK | FDZ Construction LLC",
+    metaDescription:
+      "Concrete patios, slabs, and stamped concrete in Moore, OK. Drainage-first design for flat clay terrain. Free estimate: (405) 458-4805.",
+    eyebrow: "Moore, OK · Concrete Patios · Licensed & Insured",
+    h1Lead: "Concrete Patio Contractors in",
+    h1Accent: "Moore, OK.",
+    heroBlurbHtml:
+      "Patios, garage slabs, and stamped concrete for <strong>Moore homeowners</strong> — drainage-first design for Moore's flat clay terrain. <a href='tel:4054584805'>(405) 458-4805</a>.",
+    problemTitle: "Moore Patios Fail When Water",
+    problemAccent: "Pools at the House.",
+    problemHtml: [
+      "<strong>The Moore patios we replace almost always show the same pattern</strong>: water pooling at the slab-house joint that wasn't designed out from the start. Moore's flat terrain means a patio without an engineered slope traps water against the foundation and the slab edge — and the failure follows.",
+      "Once water is sitting at the joint, everything downstream goes wrong. The clay underneath the slab swells more aggressively. The slab lifts away from the house. The joint opens. More water gets in. By year ten there's a 1/2\" gap separating the patio from the house wall.",
+      "Every Moore patio we pour gets a slope-to-drain detail and a sealed isolation joint at the house wall. The patio sheds water; the joint stays tight; the slab stays where we put it.",
+    ],
+    localConditionsTitle: "Moore Drainage, Clay,",
+    localConditionsAccent: "& Patio Spec.",
+    localConditionsHtml: [
+      "Moore sits on flat terrain over the same expansive clay base found across the metro. The flat terrain that makes Moore an easy build also makes drainage the most important detail on any patio against a house wall.",
+      "On Moore patios we grade a minimum 1/8\" per foot slope away from the foundation, install a sealed isolation joint where the slab meets the house, and time sawcut control joints within 24 hours so shrinkage cracks land where we want them.",
+      "Where a Moore patio will see heavy loads — outdoor kitchens, hot tubs, vehicle parking — we increase slab thickness and rebar schedule rather than relying on the standard residential spec.",
+    ],
+    scopeBullets: [
+      { title: "Drainage planning first", body: "Slope-to-drain detailing designed before any forms — the single biggest variable for Moore patio longevity." },
+      { title: "Engineered base", body: "Excavated, compacted, 4\" of aggregate base compacted in lifts before any forming." },
+      { title: "4,000 PSI mix with rebar", body: "Residential standard for Moore clay. Rebar on chairs at mid-depth, tied — not wire mesh." },
+      { title: "Slope + isolation joint at house", body: "Minimum 1/8\" per foot pitch away from foundation, sealed isolation joint where the slab meets the house wall." },
+      { title: "Joint timing", body: "Sawcut within 24 hours, spaced 8–12 feet, sealed once cured." },
+      { title: "Stamped finishes", body: "Pattern, integral color, antique release applied on site. Sealed after cure. Stamped, not just textured." },
+    ],
+    midCtaTitle: "Get a Free Moore",
+    midCtaAccent: "Patio Estimate.",
+    faq: [
+      {
+        question: "Why do Moore patios pull away from the house?",
+        answer:
+          "Water pooling at the slab-house joint that wasn't drained from the start. Moore's flat terrain traps water against the foundation; the clay swells; the slab lifts. We design slope-to-drain and a sealed isolation joint at the house wall on every Moore patio to prevent this from the start.",
+      },
+      {
+        question: "Should I use rebar or wire mesh on a Moore patio?",
+        answer:
+          "Rebar. On Moore's expansive clay, soil movement is active and rebar's tensile strength is what resists it. Wire mesh controls shrinkage cracking but doesn't add structural strength.",
+      },
+      {
+        question: "How thick should a Moore patio be?",
+        answer:
+          "4 inches on properly prepared base for standard residential patios. 5 inches for heavier loads — outdoor kitchen, hot tub, vehicle parking. Thickness matters less than base prep and drainage detailing.",
+      },
+      {
+        question: "How much does a Moore patio cost?",
+        answer:
+          "Broom-finish patios in Moore run $6–$10 per square foot installed. Stamped concrete runs $15–$22 per square foot. A 400 sq ft stamped patio typically runs $6,000–$8,800. Exact pricing after an on-site read.",
+      },
+      {
+        question: "Can you tie a new patio into an existing slab or deck?",
+        answer:
+          "Yes — with a proper isolation joint between the new pour and the existing structure so they can move independently. Bonding without an isolation joint guarantees a crack at the seam within a few seasons.",
+      },
+    ],
+    parentService: { label: "All Patios & Stamped Concrete", to: "/patios-oklahoma-city" },
+    parentCity: { label: "All Moore Concrete Services", to: "/moore-oklahoma-concrete" },
+    siblings: [
+      { label: "Driveways in Moore", to: "/driveways-moore" },
+      { label: "Patios in Norman", to: "/patios-norman" },
+      { label: "Patios in Edmond", to: "/patios-edmond" },
+    ],
+  },
+
+  "driveways-mustang": {
+    path: "/driveways-mustang",
+    metaTitle: "Concrete Driveway Contractors in Mustang, OK | FDZ Construction LLC",
+    metaDescription:
+      "Concrete driveway installation and replacement in Mustang, OK. Built for Canadian County's clay base and new-subdivision fill. Free estimate: (405) 458-4805.",
+    eyebrow: "Mustang, OK · Concrete Driveways · Licensed & Insured",
+    h1Lead: "Concrete Driveway Contractors in",
+    h1Accent: "Mustang, OK.",
+    heroBlurbHtml:
+      "Driveway pours and replacements for <strong>Mustang homeowners</strong> — built for Canadian County's expansive clay and the compaction quality of new-subdivision graded fill. <a href='tel:4054584805'>(405) 458-4805</a>.",
+    problemTitle: "Mustang Driveways Settle on",
+    problemAccent: "Bad Subdivision Fill.",
+    problemHtml: [
+      "<strong>Mustang's rapid subdivision growth has put a lot of new driveways on graded former farmland</strong> — and the quality of the original fill compaction decides whether the driveway is still flat at year five. The driveways that fail early in Mustang almost always had a fill problem the original contractor didn't catch.",
+      "The slab can look perfect on move-in day. By year three, a hairline crack runs diagonally across the apron. By year seven, there's a step where the fill settled unevenly underneath. The concrete itself is fine — it just had no chance on the base it was poured on.",
+      "Every Mustang driveway we pour gets the base proof-rolled before any forming. Soft spots get re-prepped or excavated and replaced. It adds a day to the schedule and saves a decade of cracking.",
+    ],
+    localConditionsTitle: "Mustang Fill, Native Clay,",
+    localConditionsAccent: "& Driveway Spec.",
+    localConditionsHtml: [
+      "Mustang shares Yukon's flatter west-metro terrain and the region's expansive clay base — but the dominant issue here is fill quality from recent subdivision grading. The native clay underneath is the same swell-shrink material found across the metro, so once we get past the fill question, the standard OKC base-prep protocol applies.",
+      "On older Mustang properties built before the subdivision boom, the soil profile is more predictable. The driveway spec is closer to what we'd pour in central OKC, and the base prep is straightforward.",
+      "On any Mustang driveway, drainage is still part of the spec. Flat terrain plus expansive clay plus heavy seasonal rain means slope-to-drain pitch is non-negotiable for long-term performance.",
+    ],
+    scopeBullets: [
+      { title: "Compaction check", body: "Proof-roll the existing base on every Mustang pour. Soft spots get re-prepped before any new aggregate goes in." },
+      { title: "Re-base where needed", body: "Excavate and re-prep where original fill compaction failed. The only sure way to avoid year-three settlement cracks." },
+      { title: "Tear-out & disposal", body: "Full removal of failed slabs and compromised base. Pouring over moving substrate is a guaranteed do-over." },
+      { title: "4,000 PSI mix with rebar", body: "Residential standard for Mustang clay. Rebar on chairs at mid-depth, tied at intersections." },
+      { title: "Drainage detailing", body: "Slope-to-drain pitch away from the house; apron transitions formed to shed water cleanly." },
+      { title: "Joint timing & sealing", body: "Sawcut within 24 hours, spaced 8–12 feet, sealed once cured." },
+    ],
+    midCtaTitle: "Get a Free Mustang",
+    midCtaAccent: "Driveway Estimate.",
+    faq: [
+      {
+        question: "Why do new-subdivision Mustang driveways crack so early?",
+        answer:
+          "Almost always because the fill from original subdivision grading wasn't compacted properly. The slab sits on a base that settles unevenly for years — hairline at year three, a step or diagonal crack by year seven. We proof-roll the base on every Mustang pour and re-prep where compaction failed.",
+      },
+      {
+        question: "How thick should a Mustang driveway be?",
+        answer:
+          "4 inches on properly prepared base for standard passenger vehicles, 5 inches when the base is questionable or the homeowner has trucks, RVs, or trailers. Thickness can't compensate for a bad base.",
+      },
+      {
+        question: "Can you re-prep a base that's already failing?",
+        answer:
+          "Yes — when the slab is gone we excavate, expose the failing fill, and re-base properly. Once a slab is in place and moving, the corrective options are limited and expensive. Catching the fill problem before the pour is always cheaper than catching it after.",
+      },
+      {
+        question: "How much does a Mustang driveway cost?",
+        answer:
+          "Mustang driveways follow our OKC metro rates: roughly $6–$10 per square foot installed. A typical 24×40 driveway runs $5,760–$9,600, with tear-out and any re-base adding to the total. Exact pricing after an on-site read.",
+      },
+      {
+        question: "Do you work on new-construction Mustang builds?",
+        answer:
+          "Yes — we coordinate with builders, framers, and inspectors on Mustang subdivisions and handle the driveway pour timing to fit the broader project schedule.",
+      },
+    ],
+    parentService: { label: "All Concrete Driveways", to: "/driveways-oklahoma-city" },
+    parentCity: { label: "All Mustang Concrete Services", to: "/mustang-oklahoma-concrete" },
+    siblings: [
+      { label: "Driveways in Yukon", to: "/driveways-yukon" },
+      { label: "Driveways in Moore", to: "/driveways-moore" },
+      { label: "Foundations in Yukon", to: "/foundations-yukon" },
+    ],
+  },
+
+  "retaining-walls-norman": {
+    path: "/retaining-walls-norman",
+    metaTitle: "Retaining Wall Contractors in Norman, OK | FDZ Construction LLC",
+    metaDescription:
+      "Poured concrete and CMU retaining walls in Norman, OK — drainage-first design for Norman's river-corridor soil. Repairs included. Free estimate: (405) 458-4805.",
+    eyebrow: "Norman, OK · Retaining Walls · Licensed & Insured",
+    h1Lead: "Retaining Wall Contractors in",
+    h1Accent: "Norman, OK.",
+    heroBlurbHtml:
+      "Poured concrete and CMU retaining walls for <strong>Norman homeowners</strong> — drainage-first design for Norman's river-corridor soil and variable lateral pressure. <a href='tel:4054584805'>(405) 458-4805</a>.",
+    problemTitle: "Norman Walls Fail Where",
+    problemAccent: "Soil Changes.",
+    problemHtml: [
+      "<strong>Leaning Norman walls usually fail along a soil transition</strong> — the spot where sandier river-influenced soil meets denser clay. The clay section loads up with water and pushes harder than the sandy section, and the wall twists rather than uniformly leans.",
+      "Drainage is the bigger underlying issue. Whatever the wall material, water trapped behind it builds hydrostatic pressure that the wall isn't designed to resist long-term. On Norman's variable soil, the trapped-water sections aren't always where you'd expect.",
+      "Every Norman wall we build or rebuild gets uniform engineered drainage across the entire wall length — gravel backfill, weep holes spaced for the wall height, French drain routed to daylight. Then the wall is sized to the actual lot conditions, not a generic spec.",
+    ],
+    localConditionsTitle: "Norman Soil, River Corridor,",
+    localConditionsAccent: "& Wall Drainage.",
+    localConditionsHtml: [
+      "Norman's position along the Canadian River means walls here face less uniform lateral pressure than walls on uniform-clay sites elsewhere in the metro. Variable soil drains and holds water differently across the wall's length, which is exactly the condition that causes walls to twist.",
+      "Uniform engineered drainage across the full wall — not just where it looks needed — is the only way to prevent that twisting failure. Gravel backfill the entire length, weep holes spaced per the wall height, and a French drain routed to daylight.",
+      "Footing depth and reinforcement also get adjusted for Norman conditions. Below frost line per code, sized to wall height and the soil bearing capacity at the actual lot. Generic specs are where leaning walls start.",
+    ],
+    scopeBullets: [
+      { title: "Site evaluation", body: "Slope, soil read across the wall length, drainage patterns, and what the wall needs to hold back." },
+      { title: "Uniform drainage plan", body: "Gravel backfill the full length, weep holes spaced for wall height, French drain routed to daylight." },
+      { title: "Footing sized to soil + height", body: "Below frost line per code, sized to actual soil bearing capacity and wall height — not a generic spec." },
+      { title: "Poured concrete or CMU", body: "Monolithic poured concrete for taller walls and variable soil; CMU for mid-height walls where load and conditions allow." },
+      { title: "Backfill in lifts", body: "Compacted in lifts to avoid point-loading. Skipping this step bows fresh walls before the concrete cures." },
+      { title: "Repair & stabilization", body: "Leaning wall? We evaluate cause first. Drainage correction is part of every repair." },
+    ],
+    midCtaTitle: "Get a Free Norman",
+    midCtaAccent: "Retaining Wall Estimate.",
+    faq: [
+      {
+        question: "Why do Norman walls twist instead of uniformly lean?",
+        answer:
+          "Norman's variable river-influenced soil drains and holds water differently across the wall's length. The clay-section trap water and push harder than the sandy section, and the wall twists. The fix is uniform engineered drainage across the entire wall, not just where it looks needed.",
+      },
+      {
+        question: "How tall can a Norman wall be before it needs an engineer?",
+        answer:
+          "Walls over 4 feet typically require an engineer's stamp, but specific requirements vary by jurisdiction. We confirm the requirement for your project location before work begins.",
+      },
+      {
+        question: "Can you repair a leaning Norman wall, or does it need to be replaced?",
+        answer:
+          "Depends on how far it's leaned and what caused it. Minor lean with a fixable drainage issue can often be stabilized and re-drained. Significant displacement usually requires rebuild — and the rebuild includes fixing the original drainage problem.",
+      },
+      {
+        question: "How much does a retaining wall cost in Norman?",
+        answer:
+          "Cost depends on wall height and length, material (poured concrete vs. CMU), drainage requirements, soil conditions, and engineering. Free on-site estimates with a clear scope after we read the lot.",
+      },
+      {
+        question: "How long does a properly built Norman wall last?",
+        answer:
+          "50+ years with uniform engineered drainage. The walls that fail in 10–20 years almost always had a drainage problem set at construction.",
+      },
+    ],
+    parentService: { label: "All Retaining Walls", to: "/retaining-walls-oklahoma-city" },
+    parentCity: { label: "All Norman Concrete Services", to: "/norman-ok-concrete" },
+    siblings: [
+      { label: "Foundations in Norman", to: "/foundations-norman" },
+      { label: "Driveways in Norman", to: "/driveways-norman" },
+      { label: "Retaining Walls in Edmond", to: "/retaining-walls-edmond" },
+    ],
+  },
+
+  "patios-yukon": {
+    path: "/patios-yukon",
+    metaTitle: "Concrete Patio Contractors in Yukon, OK | FDZ Construction LLC",
+    metaDescription:
+      "Concrete patios, slabs, and stamped concrete in Yukon, OK. Built for Canadian County's clay base and new-subdivision fill. Free estimate: (405) 458-4805.",
+    eyebrow: "Yukon, OK · Concrete Patios · Licensed & Insured",
+    h1Lead: "Concrete Patio Contractors in",
+    h1Accent: "Yukon, OK.",
+    heroBlurbHtml:
+      "Patios, garage slabs, and stamped concrete for <strong>Yukon homeowners</strong> — built for Canadian County's clay base and the fill conditions of newer subdivisions. <a href='tel:4054584805'>(405) 458-4805</a>.",
+    problemTitle: "Yukon Patios Settle When",
+    problemAccent: "the Base Wasn't Right.",
+    problemHtml: [
+      "<strong>Most failed Yukon patios we replace settled on bad subdivision fill</strong> — the same root cause we see on Yukon driveways. The slab can look perfect when fresh and develop an uneven section by year three as the fill compresses underneath.",
+      "The other common failure is the slab-house joint. Water trapped against the foundation accelerates the clay's swell-shrink cycle under the slab edge, and the patio lifts away from the house. Two failure modes, one upstream solution: read the base, detail the drainage, reinforce properly.",
+      "Every Yukon patio we pour gets the existing base proof-rolled before any forming. Soft spots get re-prepped. The slab gets graded away from the house at minimum 1/8\" per foot, with a sealed isolation joint where it meets the foundation.",
+    ],
+    localConditionsTitle: "Yukon Fill, Drainage,",
+    localConditionsAccent: "& Patio Spec.",
+    localConditionsHtml: [
+      "Yukon's flat terrain makes grading simpler than Edmond's, but the subdivision fill question makes base prep more involved. On newer-subdivision lots we proof-roll before any aggregate goes in and look for soft spots from poor original compaction.",
+      "For patios against the house wall — which is most patios — drainage is critical regardless of the fill conditions. Standing water at the slab-house joint accelerates everything bad, and the failure is hard to fix once the slab is in place. Slope-to-drain detailing comes first.",
+      "On stamped patios the same rules apply. Base, reinforcement, drainage — the decorative finish is the last 10% of the job. The 90% that makes the patio still look good in 15 years happens below the surface.",
+    ],
+    scopeBullets: [
+      { title: "Base + compaction check", body: "Proof-roll the existing base on every Yukon pour. Re-prep soft spots before any aggregate goes in." },
+      { title: "Engineered base", body: "Excavated, compacted, 4\" of aggregate base compacted in lifts before forms." },
+      { title: "4,000 PSI mix with rebar", body: "Residential standard for Yukon clay. Rebar on chairs at mid-depth, tied — not wire mesh." },
+      { title: "Slope + isolation joint at house", body: "Minimum 1/8\" per foot pitch away from foundation, sealed isolation joint at the house wall." },
+      { title: "Joint timing", body: "Sawcut control joints within 24 hours, spaced 8–12 feet, sealed once cured." },
+      { title: "Stamped finishes", body: "Pattern, integral color, antique release applied on site. Sealed after cure." },
+    ],
+    midCtaTitle: "Get a Free Yukon",
+    midCtaAccent: "Patio Estimate.",
+    faq: [
+      {
+        question: "Why do new-subdivision Yukon patios settle?",
+        answer:
+          "Almost always poor compaction in the original subdivision fill. The slab sits on a base that settles unevenly for years. We proof-roll every Yukon base before pouring and re-prep soft spots — the only sure way to avoid early settlement.",
+      },
+      {
+        question: "Should I use rebar or wire mesh on a Yukon patio?",
+        answer:
+          "Rebar. Wire mesh controls shrinkage cracking but doesn't add structural strength. On Yukon clay — and on fill that may settle — rebar's tensile strength is what holds the slab together when soil moves under it.",
+      },
+      {
+        question: "How thick should a Yukon patio be?",
+        answer:
+          "4 inches on properly prepared base for standard residential patios, 5 inches for heavier loads (outdoor kitchen, hot tub, vehicle parking) or where the base is questionable.",
+      },
+      {
+        question: "How much does a Yukon patio cost?",
+        answer:
+          "Broom-finish patios run $6–$10 per square foot installed. Stamped concrete runs $15–$22 per square foot. A 400 sq ft stamped patio typically runs $6,000–$8,800. Exact pricing after an on-site read.",
+      },
+      {
+        question: "Can you tie a Yukon patio into an existing slab?",
+        answer:
+          "Yes — with a proper isolation joint between the new and existing pours so they can move independently. Bonding directly to old concrete without an isolation joint guarantees a crack at the seam.",
+      },
+    ],
+    parentService: { label: "All Patios & Stamped Concrete", to: "/patios-oklahoma-city" },
+    parentCity: { label: "All Yukon Concrete Services", to: "/yukon-oklahoma-concrete" },
+    siblings: [
+      { label: "Driveways in Yukon", to: "/driveways-yukon" },
+      { label: "Foundations in Yukon", to: "/foundations-yukon" },
+      { label: "Patios in Edmond", to: "/patios-edmond" },
     ],
   },
 };
