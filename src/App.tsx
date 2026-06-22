@@ -14,6 +14,8 @@ import ParkingLotConcrete from "./pages/ParkingLotConcrete";
 import RetainingWalls from "./pages/RetainingWalls";
 import CityPage from "./pages/CityPage";
 import OurProjects from "./pages/OurProjects";
+import ServiceInCity from "./pages/ServiceInCity";
+import RepairService from "./pages/RepairService";
 import QuotePage from "./pages/QuotePage";
 import BlogIndex from "./pages/BlogIndex";
 import BlogPost from "./pages/BlogPost";
@@ -80,6 +82,24 @@ const App = () => (
               <Route path="/moore-oklahoma-concrete" element={<CityPage slug="moore" />} />
               <Route path="/midwest-city-oklahoma-concrete" element={<CityPage slug="midwest-city" />} />
               <Route path="/del-city-oklahoma-concrete" element={<CityPage slug="del-city" />} />
+              <Route path="/driveways-edmond" element={<ServiceInCity slug="driveways-edmond" />} />
+              <Route path="/driveways-norman" element={<ServiceInCity slug="driveways-norman" />} />
+              <Route path="/driveways-yukon" element={<ServiceInCity slug="driveways-yukon" />} />
+              <Route path="/foundations-edmond" element={<ServiceInCity slug="foundations-edmond" />} />
+              <Route path="/retaining-walls-edmond" element={<ServiceInCity slug="retaining-walls-edmond" />} />
+              <Route path="/patios-norman" element={<ServiceInCity slug="patios-norman" />} />
+              <Route path="/patios-edmond" element={<ServiceInCity slug="patios-edmond" />} />
+              <Route path="/foundations-norman" element={<ServiceInCity slug="foundations-norman" />} />
+              <Route path="/foundations-yukon" element={<ServiceInCity slug="foundations-yukon" />} />
+              <Route path="/driveways-moore" element={<ServiceInCity slug="driveways-moore" />} />
+              <Route path="/patios-moore" element={<ServiceInCity slug="patios-moore" />} />
+              <Route path="/driveways-mustang" element={<ServiceInCity slug="driveways-mustang" />} />
+              <Route path="/retaining-walls-norman" element={<ServiceInCity slug="retaining-walls-norman" />} />
+              <Route path="/patios-yukon" element={<ServiceInCity slug="patios-yukon" />} />
+              <Route path="/driveway-repair-oklahoma-city" element={<RepairService slug="driveway-repair-oklahoma-city" />} />
+              <Route path="/foundation-repair-oklahoma-city" element={<RepairService slug="foundation-repair-oklahoma-city" />} />
+              <Route path="/driveway-repair" element={<Navigate to="/driveway-repair-oklahoma-city" replace />} />
+              <Route path="/foundation-repair" element={<Navigate to="/foundation-repair-oklahoma-city" replace />} />
               <Route path="/our-projects" element={<OurProjects />} />
               <Route path="/quote/:id" element={<QuotePage />} />
               <Route path="/blog" element={<BlogIndex />} />

@@ -64,7 +64,7 @@ export default function PatiosOklahomaCity() {
       title="Concrete Patios, Slabs &"
       titleAccent="Stamped Concrete OKC."
       description='Patios, garage floors, shop slabs, and stamped decorative concrete — properly graded and reinforced for Oklahoma weather. Free estimate. <a href="tel:4054584805">(405) 458-4805</a>.'
-      introText="From backyard patios to large shop slabs, FDZ Construction LLC delivers concrete flatwork built to handle Oklahoma's extreme temperature swings. Every pour starts with proper subgrade compaction, a minimum 4-inch aggregate base, rebar on chairs, and 4,000 PSI ready-mix from a local batch plant."
+      introText={`<strong>The patios we replace almost always failed for the same two reasons: water pooling at the slab-house joint, and missing or wrong reinforcement.</strong> Oklahoma's expansive clay amplifies both — it pushes harder against undersized slabs and traps moisture that accelerates the next round of damage. The result is a patio that lifts away from the house and cracks down the middle by year eight. We build patios, garage slabs, and shop slabs that stay flat and tight to the structure — minimum 4" engineered base, rebar on chairs (not wire mesh), 4,000 PSI mix, slope-to-drain away from the house, and a sealed isolation joint where the slab meets the foundation.`}
       serviceLabel="Patio & Slab"
       serviceCards={[
         {
