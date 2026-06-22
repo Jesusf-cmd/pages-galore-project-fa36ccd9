@@ -127,7 +127,7 @@ export default function ParkingLotConcrete() {
         { icon: "♿", title: "ADA Compliance Built In", description: "Stall count, van-accessible placement, curb ramp slopes, and accessible route continuity are confirmed before we finalize any layout — not treated as an afterthought." },
         { icon: "🧱", title: "Sub-Base Evaluation Before Recommendation", description: "OKC's expansive clay means parking lot failures often start below the slab. We evaluate sub-base conditions before recommending repair vs. replacement — a repair on a failed base is money wasted." },
         { icon: "📋", title: "Clear Bid Scope", description: "Our proposals define exactly what's included — demolition, sub-base prep, reinforcement, concrete thickness, ADA layout, curb and gutter, and cleanup. No hidden line items." },
-        { icon: "📅", title: "8+ Years of Commercial Concrete Experience", description: /* TODO: confirm exact figure or founding year */ "Over 8 years of commercial concrete experience across the OKC metro. 1-year workmanship warranty on all parking lot work." },
+        { icon: "📅", title: "8+ Years of Commercial Concrete Experience", description: /* TODO: confirm exact figure or founding year */ "Over 8 years of commercial concrete experience across the OKC metro. 2-year workmanship warranty on all parking lot work." },
       ]}
       sections={[
         {

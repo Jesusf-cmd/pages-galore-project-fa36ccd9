@@ -104,7 +104,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
   ];
   const steps = processSteps && processSteps.length > 0 ? processSteps : defaultProcessSteps;
   // TODO: "8+ years" is a placeholder phrasing — replace with the exact figure (or founding year) once confirmed.
-  const defaultTrustLine = "FDZ Construction LLC is licensed, bonded, and insured in Oklahoma — 8+ years of experience serving the OKC metro, and every project is backed by a 1-year workmanship warranty.";
+  const defaultTrustLine = "FDZ Construction LLC is licensed, bonded, and insured in Oklahoma — 8+ years of experience serving the OKC metro, and every project is backed by a 2-year workmanship warranty.";
   const resolvedTrustLine = trustLine === null ? null : (trustLine ?? defaultTrustLine);
 
   return (
@@ -353,7 +353,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
               <p className="prose-muted mb-5">Oklahoma's soil conditions make concrete work harder than almost anywhere else in the country. A contractor who follows generic national specs — without adjusting for OKC's clay soil, frost lines, and drainage patterns — will deliver work that looks right on day one and fails within a few years. The cost of redoing a driveway or patio far exceeds the cost of doing it right the first time.</p>
               <p className="prose-muted mb-5">FDZ Construction LLC is fully licensed and insured in the state of Oklahoma. We pull all required permits, follow Oklahoma City building codes, and coordinate with inspectors when required. Our crew handles every project from first dig to final walkthrough — no subcontractors, no handoffs to an unknown crew.</p>
               <p className="prose-muted mb-5">Every quote we give is written and itemized — labor, materials, and demolition listed separately. The price we quote is the price you pay. We don't show up and add change orders. We don't start work without your written approval. And if something is wrong with our workmanship, we come back and make it right.</p>
-              <p className="prose-muted mb-5">With 8+ years of experience across Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City, we deliver every project with the same crew and the same standards — and back our workmanship with a 1-year warranty.</p>
+              <p className="prose-muted mb-5">With 8+ years of experience across Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City, we deliver every project with the same crew and the same standards — and back our workmanship with a 2-year warranty.</p>
             </section>
           </ScrollReveal>
         </>

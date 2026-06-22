@@ -151,18 +151,22 @@ function HeroSection() {
             <a href="#estimate" className="btn-primary text-center w-full sm:w-auto">Get Your Free OKC Estimate →</a>
             <a href="tel:4054584805" className="btn-outline text-center w-full sm:w-auto">📞 (405) 458-4805</a>
           </div>
-          <div className="flex gap-6 md:gap-10 pt-6 md:pt-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
+          <div className="flex gap-5 md:gap-8 pt-6 md:pt-8 flex-wrap" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
+            <div>
+              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">5<span className="text-orange">★</span></div>
+              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Google rated</div>
+            </div>
+            <div>
+              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">2<span className="text-orange">yr</span></div>
+              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Workmanship warranty</div>
+            </div>
             <div>
               <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">8<span className="text-orange">+</span></div>
               <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Years experience</div>
             </div>
             <div>
-              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">1<span className="text-orange">yr</span></div>
-              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Workmanship warranty</div>
-            </div>
-            <div>
-              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">24<span className="text-orange">hr</span></div>
-              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Estimate turnaround</div>
+              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">$0<span className="text-orange">↓</span></div>
+              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Financing available</div>
             </div>
           </div>
         </div>
@@ -446,7 +450,7 @@ function WhyUsSection() {
     { icon: "🛡", title: "Licensed, bonded & insured", desc: "Fully licensed, bonded, and insured in Oklahoma. Your property and investment are protected on every job." },
     { icon: "✅", title: "No surprise pricing — ever", desc: "The price we quote is the price you pay. No change orders, no hidden fees, no upsells once our crew shows up." },
     { icon: "📅", title: "8+ Years of Experience", desc: "Years of hands-on concrete work across the OKC metro — we know what Oklahoma soil, weather, and homeowners need." },
-    { icon: "🤝", title: "1-Year Workmanship Warranty", desc: "Every project is backed by a 1-year workmanship warranty. If something isn't right, we come back and make it right." },
+    { icon: "🤝", title: "2-Year Workmanship Warranty", desc: "Every project is backed by a 2-year workmanship warranty. If something isn't right, we come back and make it right." },
     { icon: "🌡", title: "Oklahoma Clay Soil Experts", desc: "Every pour accounts for local soil movement, frost lines, and drainage — because Oklahoma clay is unforgiving." },
     { icon: "⚡", title: "24-Hour Estimate Response", desc: "Submit your project and hear back within one business day. No waiting weeks just to get a quote." },
   ];
@@ -461,7 +465,7 @@ function WhyUsSection() {
         <div className="relative z-[1]">
         <div className="section-eye">Why FDZ Construction</div>
         <h2 className="mb-3">Local Crew.<br/><em className="h2-accent">Real Results.</em></h2>
-        <p className="text-[0.8rem] text-orange font-semibold uppercase tracking-[0.08em] mb-4">Licensed, bonded &amp; insured · 8+ years of experience · 1-year workmanship warranty</p>
+        <p className="text-[0.8rem] text-orange font-semibold uppercase tracking-[0.08em] mb-4">Licensed, bonded &amp; insured · 8+ years of experience · 2-year workmanship warranty</p>
         <p className="prose-muted mb-8">We're not a national franchise. FDZ Construction LLC is a locally owned OKC business — and we know exactly what Oklahoma soil, weather, and homeowners actually need for <Link to="/driveways-oklahoma-city" className="text-orange no-underline">driveways</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">slabs</Link>, and <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundations</Link> that last.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
           {reasons.map((r, i) => (

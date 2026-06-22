@@ -104,7 +104,7 @@ export default function SidewalksOklahomaCity() {
       whyChooseUs={[
         { icon: "🛡️", title: "Licensed, Bonded & Insured in Oklahoma", description: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project." },
         { icon: "📅", title: "8+ Years Serving the OKC Metro", description: /* TODO: confirm exact figure or founding year */ "Over 8 years of experience with OKC's clay soil, ADA requirements, and city-spec sidewalk and curb work." },
-        { icon: "🔒", title: "1-Year Workmanship Warranty", description: "Every sidewalk and curb project we pour is backed by a 1-year workmanship warranty." },
+        { icon: "🔒", title: "2-Year Workmanship Warranty", description: "Every sidewalk and curb project we pour is backed by a 2-year workmanship warranty." },
         { icon: "📍", title: "Based in South OKC — Fastest Response", description: "We're at 7004 S Indiana Ave. OKC gets our fastest response of anywhere we serve." },
         { icon: "♿", title: "Code Compliant", description: "ADA-compliant ramps, proper slopes, and city-spec curb profiles on every project. We know OKC, Edmond, Norman, and Moore specifications." },
         { icon: "📋", title: "Free On-Site Estimates", description: "Written estimates with clear pricing. We handle permits and inspector coordination." },

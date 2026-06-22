@@ -106,7 +106,7 @@ export default function FoundationsOklahomaCity() {
       whyChooseUs={[
         { icon: "🛡️", title: "Licensed, Bonded & Insured in Oklahoma", description: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project." },
         { icon: "📅", title: "8+ Years Serving the OKC Metro", description: /* TODO: confirm exact figure or founding year */ "Oklahoma's Permian-age clay is highly expansive — it swells when wet and shrinks when dry. Most foundation and retaining wall problems in this region trace back to inadequate drainage or footings that didn't account for this movement. We've been working in this soil for 8+ years and know what it takes to build structures that last." },
-        { icon: "🔒", title: "1-Year Workmanship Warranty", description: "Every foundation and retaining wall we pour is backed by a 1-year workmanship warranty." },
+        { icon: "🔒", title: "2-Year Workmanship Warranty", description: "Every foundation and retaining wall we pour is backed by a 2-year workmanship warranty." },
         { icon: "📍", title: "Based in South OKC — Fastest Response", description: "We're at 7004 S Indiana Ave. OKC gets our fastest response and tightest scheduling of anywhere we serve." },
         { icon: "📋", title: "Free On-Site Estimates", description: "No phone quotes, no pressure. We evaluate your specific site conditions and give you a written estimate." },
         { icon: "🤝", title: "GC & Builder Coordination", description: "COI and bonding documentation available for commercial bid process. We coordinate with your schedule and other trades on site." },

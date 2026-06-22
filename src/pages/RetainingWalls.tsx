@@ -61,7 +61,7 @@ export default function RetainingWalls() {
       title="Concrete Retaining Wall Contractors in"
       titleAccent="Oklahoma City, OK."
       description={`Poured concrete and CMU block retaining walls built for OKC's expansive clay soil — slope stabilization, drainage, and outdoor living across the OKC metro. <a href="tel:4054584805">(405) 458-4805</a>.`}
-      introText="FDZ Construction LLC builds and repairs concrete retaining walls across the Oklahoma City metro. Whether you need a wall to control a sloped yard, protect a foundation from soil movement, create usable outdoor space, or manage drainage, we design each wall around your specific site conditions — not a one-size template. Based in south OKC, licensed, bonded, and insured in Oklahoma, and every wall is backed by a 1-year workmanship warranty."
+      introText="FDZ Construction LLC builds and repairs concrete retaining walls across the Oklahoma City metro. Whether you need a wall to control a sloped yard, protect a foundation from soil movement, create usable outdoor space, or manage drainage, we design each wall around your specific site conditions — not a one-size template. Based in south OKC, licensed, bonded, and insured in Oklahoma, and every wall is backed by a 2-year workmanship warranty."
       serviceLabel="Retaining Wall"
       serviceCards={[
         {
@@ -108,7 +108,7 @@ export default function RetainingWalls() {
       whyChooseUs={[
         { icon: "🛡️", title: "Licensed, Bonded & Insured in Oklahoma", description: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project." },
         { icon: "📅", title: "8+ Years Building Retaining Walls in OKC Clay", description: /* TODO: confirm exact figure or founding year */ "Over 8 years of experience building retaining walls in Oklahoma's expansive clay soil — we know what drainage failures look like and how to prevent them." },
-        { icon: "🔒", title: "1-Year Workmanship Warranty", description: "Every retaining wall we build is backed by a 1-year workmanship warranty on all work." },
+        { icon: "🔒", title: "2-Year Workmanship Warranty", description: "Every retaining wall we build is backed by a 2-year workmanship warranty on all work." },
         { icon: "💧", title: "Drainage Evaluated Before Design", description: "We don't design the wall and figure out drainage later. Drainage planning comes first — before footing depth, before material choice, before cost." },
         { icon: "📋", title: "Free On-Site Estimates", description: "No phone quotes, no pressure. We evaluate your specific slope, soil, and drainage conditions and give you a written estimate." },
         { icon: "📍", title: "Based in South OKC — Full Metro Service", description: "We're at 7004 S Indiana Ave. Serving OKC, Edmond, Yukon, Norman, Moore, Mustang, Midwest City, and Del City." },

@@ -1,10 +1,11 @@
-import { Shield, MapPin, Award, Clock, BadgeCheck } from "lucide-react";
+import { Shield, MapPin, Award, Star, BadgeCheck, CreditCard } from "lucide-react";
 
 const badges = [
+  { icon: Star, label: "5-Star Google Rated" },
   { icon: Shield, label: "Licensed, Bonded & Insured" },
-  { icon: MapPin, label: "Locally Owned" },
-  { icon: Award, label: "1-Year Warranty" },
-  { icon: Clock, label: "Free Estimates" },
+  { icon: Award, label: "2-Year Workmanship Warranty" },
+  { icon: CreditCard, label: "Financing Available" },
+  { icon: MapPin, label: "Locally Owned · OKC Metro" },
   { icon: BadgeCheck, label: "8+ Years Experience" },
 ];
 

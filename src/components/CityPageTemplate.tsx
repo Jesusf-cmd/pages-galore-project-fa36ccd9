@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
 
 const TRUST_LINE =
-  "FDZ Construction LLC is licensed, bonded, and insured in Oklahoma — 8+ years of experience serving the OKC metro, and every project is backed by a 1-year workmanship warranty.";
+  "FDZ Construction LLC is licensed, bonded, and insured in Oklahoma — 8+ years of experience serving the OKC metro, and every project is backed by a 2-year workmanship warranty.";
 
 interface LinkedService {
   label: string;
@@ -85,7 +85,7 @@ export default function CityPageTemplate({
             </div>
             <div className="grid grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
               <div className="bg-stone p-6 text-center"><div className="font-display text-4xl font-black text-orange leading-none">8+</div><div className="text-[0.66rem] text-muted-text tracking-[0.08em] uppercase mt-1">Years experience</div></div>
-              <div className="bg-stone p-6 text-center"><div className="font-display text-4xl font-black text-orange leading-none">1yr</div><div className="text-[0.66rem] text-muted-text tracking-[0.08em] uppercase mt-1">Workmanship warranty</div></div>
+              <div className="bg-stone p-6 text-center"><div className="font-display text-4xl font-black text-orange leading-none">2yr</div><div className="text-[0.66rem] text-muted-text tracking-[0.08em] uppercase mt-1">Workmanship warranty</div></div>
               <div className="bg-stone p-6 text-center"><div className="font-display text-4xl font-black text-orange leading-none">24hr</div><div className="text-[0.66rem] text-muted-text tracking-[0.08em] uppercase mt-1">Estimate response</div></div>
             </div>
           </div>

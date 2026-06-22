@@ -109,7 +109,7 @@ export default function CommercialConcreteOklahomaCity() {
         { icon: "🏗️", title: "Commercial Mix Standard", description: "4,000+ PSI commercial mix standard; adjusted for specific load requirements. Engineered base and joint layout on every pour." },
         { icon: "📋", title: "Competitive Bid Turnaround", description: "Free on-site estimates and competitive bid turnaround. Call (405) 458-4805 or email jesus@fdzconstruction.com to discuss your project." },
         { icon: "📅", title: "8+ Years Serving the OKC Metro", description: /* TODO: confirm exact figure or founding year */ "Over 8 years of commercial concrete experience in OKC's clay soil environment." },
-        { icon: "🔒", title: "1-Year Workmanship Warranty", description: "Every commercial project we deliver is backed by a 1-year workmanship warranty." },
+        { icon: "🔒", title: "2-Year Workmanship Warranty", description: "Every commercial project we deliver is backed by a 2-year workmanship warranty." },
       ]}
       sections={[
         {

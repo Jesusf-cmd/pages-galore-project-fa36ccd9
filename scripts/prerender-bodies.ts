@@ -89,7 +89,7 @@ export const prerenderBodies: Record<string, string> = {
     <ul>
       <li>Licensed, bonded, and insured in Oklahoma</li>
       <li>8+ years serving the OKC metro</li>
-      <li>1-year workmanship warranty on all driveway work</li>
+      <li>2-year workmanship warranty on all driveway work</li>
       <li>Based in south OKC — fastest response time in the metro</li>
       <li>Free on-site estimates, no pressure</li>
       <li>We evaluate your specific site conditions — OKC's expansive clay soil means base prep decisions aren't one-size-fits-all</li>
@@ -158,7 +158,7 @@ export const prerenderBodies: Record<string, string> = {
     <ul>
       <li>Licensed, bonded, and insured in Oklahoma</li>
       <li>8+ years serving the OKC metro</li>
-      <li>1-year workmanship warranty on all patio and slab work</li>
+      <li>2-year workmanship warranty on all patio and slab work</li>
       <li>Based in south OKC — fastest response time in the metro</li>
       <li>Free on-site estimates, no pressure</li>
       <li>OKC's freeze-thaw cycles can damage an unsealed stamped surface within a season or two — we don't cut corners on sealing</li>
@@ -235,7 +235,7 @@ export const prerenderBodies: Record<string, string> = {
     <ul>
       <li>Licensed, bonded, and insured in Oklahoma</li>
       <li>8+ years serving the OKC metro</li>
-      <li>1-year workmanship warranty on all foundation and retaining wall work</li>
+      <li>2-year workmanship warranty on all foundation and retaining wall work</li>
       <li>Based in south OKC — fastest response time in the metro</li>
       <li>Free on-site estimates, no pressure</li>
       <li>COI and bonding documentation available for commercial bid process</li>
@@ -305,7 +305,7 @@ export const prerenderBodies: Record<string, string> = {
     <ul>
       <li>Licensed, bonded, and insured in Oklahoma</li>
       <li>8+ years serving the OKC metro</li>
-      <li>1-year workmanship warranty on all sidewalk and curb work</li>
+      <li>2-year workmanship warranty on all sidewalk and curb work</li>
       <li>Based in south OKC — fastest response time in the metro</li>
       <li>ADA-compliant ramps, proper slopes, and city-spec curb profiles on every project</li>
       <li>Free on-site estimates, no pressure</li>
@@ -607,7 +607,7 @@ export const prerenderBodies: Record<string, string> = {
     <ul>
       <li>Licensed, bonded, and insured in Oklahoma</li>
       <li>8+ years of commercial concrete experience across the OKC metro</li>
-      <li>1-year workmanship warranty</li>
+      <li>2-year workmanship warranty</li>
       <li>COI and bonding documentation available for bid process</li>
       <li>ADA-compliant layouts on every project</li>
       <li>4,000+ PSI commercial mix standard</li>
@@ -637,7 +637,7 @@ export const prerenderBodies: Record<string, string> = {
 
   "/retaining-walls-oklahoma-city": `
     <h1>Concrete Retaining Wall Contractors in Oklahoma City, OK</h1>
-    <p>FDZ Construction LLC builds and repairs concrete retaining walls across the Oklahoma City metro. Whether you need a wall to control a sloped yard, protect a foundation from soil movement, create usable outdoor space, or manage drainage, we design each wall around your specific site conditions — not a one-size template. Licensed, bonded, and insured in Oklahoma, and every wall is backed by a 1-year workmanship warranty.</p>
+    <p>FDZ Construction LLC builds and repairs concrete retaining walls across the Oklahoma City metro. Whether you need a wall to control a sloped yard, protect a foundation from soil movement, create usable outdoor space, or manage drainage, we design each wall around your specific site conditions — not a one-size template. Licensed, bonded, and insured in Oklahoma, and every wall is backed by a 2-year workmanship warranty.</p>
     <h2>Retaining Wall Services in Oklahoma City</h2>
     <h3>New Retaining Wall Installation</h3>
     <ul>
@@ -691,7 +691,7 @@ export const prerenderBodies: Record<string, string> = {
     <ul>
       <li>Licensed, bonded, and insured in Oklahoma</li>
       <li>8+ years building retaining walls in OKC's expansive clay soil</li>
-      <li>1-year workmanship warranty on all retaining wall work</li>
+      <li>2-year workmanship warranty on all retaining wall work</li>
       <li>We evaluate drainage before design — not after the wall fails</li>
       <li>Free on-site estimates, no pressure</li>
       <li>Based in south OKC — serving OKC, Edmond, Yukon, Norman, Moore, Mustang, Midwest City, Del City</li>

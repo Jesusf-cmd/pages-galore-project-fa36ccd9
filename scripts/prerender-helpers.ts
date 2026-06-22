@@ -1,5 +1,5 @@
 export const TRUST_LINE =
-  "FDZ Construction LLC is licensed, bonded, and insured in Oklahoma — 8+ years of experience serving the OKC metro, and every project is backed by a 1-year workmanship warranty.";
+  "FDZ Construction LLC is licensed, bonded, and insured in Oklahoma — 8+ years of experience serving the OKC metro, and every project is backed by a 2-year workmanship warranty.";
 
 export function trustParagraph(): string {
   return `<p><strong>${TRUST_LINE}</strong></p>`;

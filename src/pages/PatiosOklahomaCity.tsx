@@ -118,7 +118,7 @@ export default function PatiosOklahomaCity() {
       whyChooseUs={[
         { icon: "🛡️", title: "Licensed, Bonded & Insured in Oklahoma", description: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project." },
         { icon: "📅", title: "8+ Years Serving the OKC Metro", description: /* TODO: confirm exact figure or founding year */ "Over 8 years of experience with OKC's clay soil, drainage conditions, and weather challenges." },
-        { icon: "🔒", title: "1-Year Workmanship Warranty", description: "Every patio and slab we pour is backed by a 1-year workmanship warranty." },
+        { icon: "🔒", title: "2-Year Workmanship Warranty", description: "Every patio and slab we pour is backed by a 2-year workmanship warranty." },
         { icon: "📍", title: "Based in South OKC — Fastest Response", description: "We're at 7004 S Indiana Ave. OKC gets our fastest response and tightest scheduling of anywhere we serve." },
         { icon: "📋", title: "Free On-Site Estimates", description: "No phone quotes, no pressure. We come to your property, measure the project, and give you a written estimate." },
         { icon: "❄️", title: "OKC Freeze-Thaw Expertise", description: "OKC's freeze-thaw cycles can damage an unsealed stamped surface within a season or two — we don't cut corners on sealing." },
