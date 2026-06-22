@@ -193,6 +193,15 @@ export default function RetainingWalls() {
         { title: "Outdoor living walls", description: "Lower-height decorative walls for garden beds, landscape separation, and entertaining areas." },
         { title: "Retaining wall repair", description: "Structural stabilization and drainage correction for leaning or failing walls." },
       ]}
+      projectGallery={{
+        eyebrow: "Recent Retaining Walls",
+        title: "Real Retaining Wall Projects",
+        titleAccent: "in the OKC Metro.",
+        intro: "A tall poured concrete retaining wall we built for a new residential construction project in Oklahoma City — forms stripped to reveal a clean monolithic structure, engineered for the lateral pressure of OKC's expansive clay soil with drainage behind the wall.",
+        photos: [
+          { src: "/images/projects/poured-concrete-retaining-wall-oklahoma-city.jpg", alt: "Tall poured concrete retaining wall in Oklahoma City — monolithic structure supporting new residential construction on expansive clay soil" },
+        ],
+      }}
       cityBlockIntro={`We build retaining walls — poured concrete, CMU block, and landscape walls — throughout the Oklahoma City metro, including <a href="/oklahoma-city-concrete" class="text-orange no-underline">Oklahoma City</a>, <a href="/edmond-concrete" class="text-orange no-underline">Edmond</a>, <a href="/norman-ok-concrete" class="text-orange no-underline">Norman</a>, <a href="/moore-oklahoma-concrete" class="text-orange no-underline">Moore</a>, <a href="/yukon-oklahoma-concrete" class="text-orange no-underline">Yukon</a>, <a href="/mustang-oklahoma-concrete" class="text-orange no-underline">Mustang</a>, <a href="/midwest-city-oklahoma-concrete" class="text-orange no-underline">Midwest City</a>, and <a href="/del-city-oklahoma-concrete" class="text-orange no-underline">Del City</a>.`}
       faq={[
         { question: "Why do retaining walls fail?", answer: "Almost always drainage — not the wall material or age. Water pressure builds up in the soil behind a wall with inadequate drainage and pushes it out of place over time. A wall that looks structurally sound can lean or fail within a few years if drainage wasn't handled correctly from the start." },

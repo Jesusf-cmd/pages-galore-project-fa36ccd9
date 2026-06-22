@@ -242,6 +242,13 @@ export const prerenderBodies: Record<string, string> = {
     </ul>
     <h2>How Much Do Foundations and Retaining Walls Cost in Oklahoma City?</h2>
     <p>Foundation pricing depends on project size, depth, reinforcement, site access, and excavation conditions. Retaining wall cost depends on wall height, drainage complexity, soil conditions, and whether engineering is required. We provide free on-site estimates — call <a href="tel:4054584805">(405) 458-4805</a> or use the quote form above.</p>
+    <h2>Real Foundation Projects Across the OKC Metro</h2>
+    <p>A few recent foundation pours — from a pier-supported thickened slab in Edmond to residential slab-on-grade work in Piedmont. <a href="/our-projects">See more completed projects across the OKC metro</a>.</p>
+    <img src="/images/projects/pier-foundation-excavation-edmond-oklahoma-1.jpg" alt="Excavation and site grading for pier foundation in Edmond, Oklahoma — skid steer and excavator working red clay lot" loading="lazy" />
+    <img src="/images/projects/pier-foundation-pour-edmond-oklahoma-concrete-truck.jpg" alt="Concrete truck on site during pier foundation slab pour in Edmond, Oklahoma — crew finishing fresh slab" loading="lazy" />
+    <img src="/images/projects/pier-foundation-finished-edmond-oklahoma-curing.jpg" alt="Finished pier foundation thickened slab curing in Edmond, Oklahoma" loading="lazy" />
+    <img src="/images/projects/residential-foundation-pour-piedmont-oklahoma.jpg" alt="Residential foundation pour in Piedmont, Oklahoma — fresh slab on Oklahoma red clay subgrade" loading="lazy" />
+    <img src="/images/projects/residential-foundation-crew-piedmont-ok.jpg" alt="FDZ Construction crew finishing residential foundation slab in Piedmont, OK with power trowel" loading="lazy" />
     ${faqSection("Foundation FAQ", [
       { question: "What types of foundations do you install?", answer: "We handle slab-on-grade, stem wall, and continuous footing foundations for residential and commercial projects." },
       { question: "Do you build commercial foundations?", answer: "Yes — we pour commercial slab-on-grade for warehouses, footings and pads for retail buildings, and structural foundations for developments." },
@@ -373,6 +380,11 @@ export const prerenderBodies: Record<string, string> = {
     ])}
     <h2>What Does Commercial Concrete Cost in Oklahoma City?</h2>
     <p>Commercial concrete pricing depends on scope, square footage, PSI requirements, site access, and schedule coordination. We provide competitive bids with clear line items — call <a href="tel:4054584805">(405) 458-4805</a> or email <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> to discuss your project.</p>
+    <h2>Real Commercial Concrete Projects in the OKC Metro</h2>
+    <p>A concrete forklift ramp we built inside a live warehouse in Guthrie, Oklahoma — poured around active racking and inventory, with a reinforced slab sized for repeated heavy equipment loads and a power trowel finish flush with the existing floor. <a href="/our-projects">See more completed projects across the OKC metro</a>.</p>
+    <img src="/images/projects/forklift-ramp-pour-guthrie-oklahoma-1.jpg" alt="Power trowel finishing a concrete forklift ramp pour inside a warehouse in Guthrie, Oklahoma" loading="lazy" />
+    <img src="/images/projects/forklift-ramp-pour-guthrie-oklahoma-2.jpg" alt="Crew troweling concrete forklift ramp in Guthrie, OK warehouse — forms and fresh pour visible" loading="lazy" />
+    <img src="/images/projects/forklift-ramp-finished-guthrie-oklahoma.jpg" alt="Finished concrete forklift ramp in Guthrie, Oklahoma — smooth trowel finish flush with warehouse floor" loading="lazy" />
     ${faqSection("Commercial Concrete FAQ", [
       { question: "How thick should a commercial concrete slab be?", answer: "Most commercial slabs require 5–6 inches minimum. Warehouse floors with forklift traffic may require more, with engineered rebar schedules. We specify per your load requirements." },
       { question: "How much does commercial concrete cost in OKC?", answer: "Commercial concrete pricing depends on scope, square footage, PSI requirements, site access, and schedule coordination. We provide competitive bids with clear line items — call (405) 458-4805 or email jesus@fdzconstruction.com to discuss your project." },
@@ -686,6 +698,9 @@ export const prerenderBodies: Record<string, string> = {
     </ul>
     <h2>How Much Does a Retaining Wall Cost in Oklahoma City?</h2>
     <p>Cost depends on wall height and length, material choice (poured concrete vs. CMU block), site drainage requirements, soil conditions, equipment access, and whether engineering is required. We provide free on-site estimates with a clear scope before any work begins. Call <a href="tel:4054584805">(405) 458-4805</a> or email <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a>.</p>
+    <h2>Real Retaining Wall Projects in the OKC Metro</h2>
+    <p>A tall poured concrete retaining wall we built for a new residential construction project in Oklahoma City — a clean monolithic structure engineered for the lateral pressure of OKC's expansive clay soil with drainage behind the wall. <a href="/our-projects">See more completed projects across the OKC metro</a>.</p>
+    <img src="/images/projects/poured-concrete-retaining-wall-oklahoma-city.jpg" alt="Tall poured concrete retaining wall in Oklahoma City — monolithic structure supporting new residential construction on expansive clay soil" loading="lazy" />
     ${faqSection("Retaining Wall FAQ", [
       { question: "Why do retaining walls fail?", answer: "Almost always drainage — not the wall material or age. Water pressure builds up in the soil behind a wall with inadequate drainage and pushes it out of place over time." },
       { question: "How tall can a retaining wall be before it needs an engineer?", answer: "This varies by city and jurisdiction. Many areas require an engineer's stamp for walls over 4 feet. We confirm the specific requirement for your project location before work begins." },

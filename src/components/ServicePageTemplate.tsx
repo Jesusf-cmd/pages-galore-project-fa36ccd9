@@ -66,9 +66,17 @@ interface ServicePageProps {
       bullets: string[];
     }[];
   };
+  /** Real project photo gallery — pulls from completed work. Links to /our-projects. */
+  projectGallery?: {
+    eyebrow?: string;
+    title: string;
+    titleAccent?: string;
+    intro?: string;
+    photos: { src: string; alt: string }[];
+  };
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, trustLine, subServices }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, trustLine, subServices, projectGallery }: ServicePageProps) {
   const seoTitle = metaTitle || `${title} ${titleAccent.replace('.', '')} | FDZ Construction LLC`;
   const seoDescription = metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155);
   const canonical = currentServiceSlug ? `https://fdzconstruction.com/${currentServiceSlug}` : undefined;
@@ -213,6 +221,32 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
           </section>
         </ScrollReveal>
       ))}
+
+      {/* Real project photo gallery */}
+      {projectGallery && projectGallery.photos.length > 0 && (
+        <ScrollReveal>
+          <section className="section-padding">
+            <div className="section-eye">{projectGallery.eyebrow || "Recent Work"}</div>
+            <h2 className="mb-4">{projectGallery.title}<br/><em className="h2-accent">{projectGallery.titleAccent || "By FDZ Construction."}</em></h2>
+            {projectGallery.intro && <p className="prose-muted mb-8 max-w-[820px]" dangerouslySetInnerHTML={{ __html: projectGallery.intro }} />}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+              {projectGallery.photos.map((photo, i) => (
+                <div key={i} className="bg-darker overflow-hidden aspect-[4/3]">
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+            <p className="prose-muted mt-6">
+              <Link to="/our-projects" className="text-orange no-underline font-medium">See more completed projects across the OKC metro →</Link>
+            </p>
+          </section>
+        </ScrollReveal>
+      )}
 
       {/* Materials & Specs */}
       {specs && specs.length > 0 && (
