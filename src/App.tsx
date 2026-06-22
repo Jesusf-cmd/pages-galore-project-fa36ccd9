@@ -14,6 +14,7 @@ import ParkingLotConcrete from "./pages/ParkingLotConcrete";
 import RetainingWalls from "./pages/RetainingWalls";
 import CityPage from "./pages/CityPage";
 import OurProjects from "./pages/OurProjects";
+import ServiceInCity from "./pages/ServiceInCity";
 import QuotePage from "./pages/QuotePage";
 import BlogIndex from "./pages/BlogIndex";
 import BlogPost from "./pages/BlogPost";
@@ -80,6 +81,12 @@ const App = () => (
               <Route path="/moore-oklahoma-concrete" element={<CityPage slug="moore" />} />
               <Route path="/midwest-city-oklahoma-concrete" element={<CityPage slug="midwest-city" />} />
               <Route path="/del-city-oklahoma-concrete" element={<CityPage slug="del-city" />} />
+              <Route path="/driveways-edmond" element={<ServiceInCity slug="driveways-edmond" />} />
+              <Route path="/driveways-norman" element={<ServiceInCity slug="driveways-norman" />} />
+              <Route path="/driveways-yukon" element={<ServiceInCity slug="driveways-yukon" />} />
+              <Route path="/foundations-edmond" element={<ServiceInCity slug="foundations-edmond" />} />
+              <Route path="/retaining-walls-edmond" element={<ServiceInCity slug="retaining-walls-edmond" />} />
+              <Route path="/patios-norman" element={<ServiceInCity slug="patios-norman" />} />
               <Route path="/our-projects" element={<OurProjects />} />
               <Route path="/quote/:id" element={<QuotePage />} />
               <Route path="/blog" element={<BlogIndex />} />

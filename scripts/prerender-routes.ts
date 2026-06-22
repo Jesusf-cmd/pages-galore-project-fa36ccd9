@@ -210,6 +210,48 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
     h1: "Best Time of Year to Pour Concrete in OKC",
     content: "Fall and spring offer the best temperatures for concrete work in Oklahoma City. The ideal window is October through April. Summer pours require early morning scheduling and evaporation retarders. Winter pours below 40°F need heated water and insulated blankets. Spring storm season brings heavy rain risks.",
   },
+  {
+    path: "/driveways-edmond",
+    title: "Concrete Driveway Contractors in Edmond, OK | FDZ Construction LLC",
+    description: "Concrete driveway installation and replacement in Edmond, OK. Built for Edmond's mixed sandy and clay soil with proper base prep, 4,000 PSI mix, and rebar reinforcement. Free estimate: (405) 458-4805.",
+    h1: "Concrete Driveway Contractors in Edmond, OK",
+    content: "FDZ Construction LLC builds and replaces concrete driveways in Edmond, Oklahoma. Edmond sits on the northern Garber-Wellington formation where soil can shift between sandy and clay-heavy across a single lot — so we read each lot before specifying base depth and reinforcement. Engineered base, 4,000 PSI mix, rebar at mid-depth, drainage detailed for Edmond's rolling grade. Tear-out and replacement, new pours, and City of Edmond permit coordination. Typical 24×40 driveway $5,760–$9,600. Call (405) 458-4805 for a free on-site estimate.",
+  },
+  {
+    path: "/driveways-norman",
+    title: "Concrete Driveway Contractors in Norman, OK | FDZ Construction LLC",
+    description: "Concrete driveway installation and replacement in Norman, OK. Built for Norman's mixed river-influenced soil with proper base prep and rebar reinforcement. Free estimate: (405) 458-4805.",
+    h1: "Concrete Driveway Contractors in Norman, OK",
+    content: "Concrete driveway contractors serving Norman, Oklahoma. Norman's spot along the Canadian River means some lots sit on sandier river-influenced soil that transitions to denser clay within a short distance — we read soil per-lot and adjust base depth, compaction, and rebar accordingly. Tear-out and replacement, new pours, City of Norman permit coordination, and drainage detailed for the actual lot grade. Typical 24×40 Norman driveway $5,760–$9,600. Call (405) 458-4805 for a free on-site estimate.",
+  },
+  {
+    path: "/driveways-yukon",
+    title: "Concrete Driveway Contractors in Yukon, OK | FDZ Construction LLC",
+    description: "Concrete driveway installation and replacement in Yukon, OK. Built for Canadian County's clay base and new-subdivision graded fill. Free estimate: (405) 458-4805.",
+    h1: "Concrete Driveway Contractors in Yukon, OK",
+    content: "Concrete driveway contractors in Yukon, Oklahoma. A lot of Yukon work is in newer subdivisions on graded former agricultural land, where the quality of original fill and compaction matters as much as the native clay underneath. We proof-roll every Yukon base before pouring and re-prep where original grading compaction failed. Engineered base, 4,000 PSI mix, rebar at mid-depth, sawcut joints within 24 hours. Tear-out and replacement, new pours. Typical 24×40 driveway $5,760–$9,600. Call (405) 458-4805 for a free estimate.",
+  },
+  {
+    path: "/foundations-edmond",
+    title: "Concrete Foundation Contractors in Edmond, OK | FDZ Construction LLC",
+    description: "Concrete foundation contractors in Edmond, OK — slab-on-grade, stem walls, pier-and-thickened-slab on fill lots. Engineered for Edmond's mixed soil. Free estimate: (405) 458-4805.",
+    h1: "Concrete Foundation Contractors in Edmond, OK",
+    content: "Concrete foundation contractors serving Edmond, Oklahoma. Edmond's rolling terrain means many lots required fill to level grade — pouring slab-on-grade on top of fill risks differential settlement. We read each lot first: pier-and-thickened-slab on fill lots (piers drilled to undisturbed soil, typically 4–6 ft), slab-on-grade on undisturbed-native lots, stem walls where appropriate. Engineered base, 4,000 PSI mix, rebar per spec, drainage detailed. Builder coordination for new construction. Call (405) 458-4805 for a free on-site estimate.",
+  },
+  {
+    path: "/retaining-walls-edmond",
+    title: "Retaining Wall Contractors in Edmond, OK | FDZ Construction LLC",
+    description: "Poured concrete and CMU retaining walls in Edmond, OK — drainage-first design for Edmond's rolling terrain and mixed soil. Repairs included. Free estimate: (405) 458-4805.",
+    h1: "Retaining Wall Contractors in Edmond, OK",
+    content: "Retaining wall contractors serving Edmond, Oklahoma. Almost every leaning Edmond wall we evaluate is a drainage failure, not a material failure — Edmond's rolling grade and mixed sandy-and-clay soil create variable lateral pressure that twists walls without uniform engineered drainage. We design drainage first: gravel backfill zone, weep hole placement, French drain routing. Then wall type and footing sized to site conditions. Poured concrete for taller walls and severe soil movement, CMU for mid-height. Repair and stabilization for leaning walls. Call (405) 458-4805 for a free estimate.",
+  },
+  {
+    path: "/patios-norman",
+    title: "Concrete Patio Contractors in Norman, OK | FDZ Construction LLC",
+    description: "Concrete patios, slabs, and stamped concrete in Norman, OK. Built for Norman's river-influenced soil with proper drainage and reinforcement. Free estimate: (405) 458-4805.",
+    h1: "Concrete Patio Contractors in Norman, OK",
+    content: "Concrete patio contractors serving Norman, Oklahoma. Most Norman patio failures we see are the slab pulling away from the house — caused by undersized reinforcement and missing drainage detailing at the slab-house joint. Norman's mixed sandy and clay soil amplifies the problem. We pour with engineered rebar sized for actual soil, slope minimum 1/8″ per foot away from house, sealed isolation joint at the foundation, sawcut control joints within 24 hours. Broom finish $6–$10/sq ft, stamped finishes $15–$22/sq ft. Call (405) 458-4805 for a free on-site estimate.",
+  },
 ];
 
 export function getCanonical(path: string): string {
