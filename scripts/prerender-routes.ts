@@ -302,6 +302,20 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
     content: "Retaining wall contractors serving Norman, Oklahoma. Leaning Norman walls usually fail along soil transitions — sandy river-influenced section meeting denser clay. The clay section loads with water and pushes harder than the sandy section, and the wall twists rather than uniformly leans. We design uniform engineered drainage across the entire wall length: gravel backfill, weep holes spaced for wall height, French drain routed to daylight. Footing sized to actual soil bearing and wall height — not a generic spec. Poured concrete for taller walls, CMU for mid-height. Repair and stabilization included. Call (405) 458-4805 for a free estimate.",
   },
   {
+    path: "/driveway-repair-oklahoma-city",
+    title: "Concrete Driveway Repair in Oklahoma City | FDZ Construction LLC",
+    description: "Concrete driveway repair, leveling, joint sealing, and replacement in Oklahoma City. Honest repair-vs-replace evaluation. Free on-site estimate: (405) 458-4805.",
+    h1: "Concrete Driveway Repair in Oklahoma City",
+    content: "Most quick driveway repairs don't address why the driveway failed in the first place — the base moved, the drainage was wrong, the original joints weren't cut on time. We do real repairs that solve real problems: joint sealing, crack repair with structural epoxy or flexible sealant, section panel replacement, apron replacement, and slab leveling on sound bases. We also tell you honestly when replacement is the cheaper long-term answer. Joint sealing $300–$800, single-panel replacement $400–$1,200, apron replacement $1,500–$4,000, full replacement at $6–$10 per square foot. Free on-site evaluation. Call (405) 458-4805.",
+  },
+  {
+    path: "/foundation-repair-oklahoma-city",
+    title: "Concrete Foundation Repair in Oklahoma City | FDZ Construction LLC",
+    description: "Concrete foundation repair, slab leveling, drainage correction, and partial replacement in Oklahoma City. Honest evaluation — repair vs replace. Free estimate: (405) 458-4805.",
+    h1: "Concrete Foundation Repair in Oklahoma City",
+    content: "Most foundation movement in OKC isn't a foundation problem — it's a drainage problem causing a foundation problem. We evaluate the actual cause of movement first: drainage correction (re-grading, gutter extensions, French drains), slab leveling where surrounding base is sound, partial slab replacement, and structural engineer coordination for cases where piers are genuinely required. We are not a pier sales operation — we won't push piers when drainage correction or slab leveling solves the problem. Drainage correction $500–$3,000, slab leveling $800–$2,500, partial replacement $1,500–$6,000, structural piers $3,500–$25,000+. Free on-site evaluation. Call (405) 458-4805.",
+  },
+  {
     path: "/patios-yukon",
     title: "Concrete Patio Contractors in Yukon, OK | FDZ Construction LLC",
     description: "Concrete patios, slabs, and stamped concrete in Yukon, OK. Built for Canadian County's clay base and new-subdivision fill. Free estimate: (405) 458-4805.",

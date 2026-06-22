@@ -77,7 +77,7 @@ export default function ParkingLotConcrete() {
       title="Concrete Parking Lot Contractors in"
       titleAccent="Oklahoma City, OK."
       description='Commercial concrete parking lot installation, repair, and replacement — ADA-compliant layouts, 4,000+ PSI mix, curb and gutter. Serving OKC metro. <a href="tel:4054584805">(405) 458-4805</a>.'
-      introText="FDZ Construction LLC provides concrete parking lot installation, repair, and site concrete services for commercial properties across the Oklahoma City metro. We work directly with property managers, business owners, and general contractors — handling the full scope from grading and forming through ADA-compliant layout, curb and gutter, and striping coordination. Licensed, bonded, and insured in Oklahoma. Certificate of insurance and bonding documentation available as part of the bid process."
+      introText="<strong>A failed parking lot doesn't just look bad — it costs your business in liability claims, ADA violations, and customer turnover.</strong> Crumbling apron edges, ponding water that ices in winter, missing ADA-compliant stalls, faded striping over hairline cracks — every one of these is solvable upstream with the right base prep, drainage, joint layout, and PSI for the loads you actually carry. We pour and rebuild commercial parking lots across the OKC metro for property managers, business owners, and GCs. Engineered base, 4,000+ PSI mix, ADA-compliant layout, curb and gutter to city spec, striping coordination. Licensed, bonded, and insured in Oklahoma — COI and bonding documentation as part of the bid process."
       serviceLabel="Parking Lot"
       serviceCards={[
         {

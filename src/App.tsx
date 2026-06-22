@@ -15,6 +15,7 @@ import RetainingWalls from "./pages/RetainingWalls";
 import CityPage from "./pages/CityPage";
 import OurProjects from "./pages/OurProjects";
 import ServiceInCity from "./pages/ServiceInCity";
+import RepairService from "./pages/RepairService";
 import QuotePage from "./pages/QuotePage";
 import BlogIndex from "./pages/BlogIndex";
 import BlogPost from "./pages/BlogPost";
@@ -95,6 +96,10 @@ const App = () => (
               <Route path="/driveways-mustang" element={<ServiceInCity slug="driveways-mustang" />} />
               <Route path="/retaining-walls-norman" element={<ServiceInCity slug="retaining-walls-norman" />} />
               <Route path="/patios-yukon" element={<ServiceInCity slug="patios-yukon" />} />
+              <Route path="/driveway-repair-oklahoma-city" element={<RepairService slug="driveway-repair-oklahoma-city" />} />
+              <Route path="/foundation-repair-oklahoma-city" element={<RepairService slug="foundation-repair-oklahoma-city" />} />
+              <Route path="/driveway-repair" element={<Navigate to="/driveway-repair-oklahoma-city" replace />} />
+              <Route path="/foundation-repair" element={<Navigate to="/foundation-repair-oklahoma-city" replace />} />
               <Route path="/our-projects" element={<OurProjects />} />
               <Route path="/quote/:id" element={<QuotePage />} />
               <Route path="/blog" element={<BlogIndex />} />
