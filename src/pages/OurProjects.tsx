@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
 
 const SPENCER_VIDEO = "https://img1.wsimg.com/blobby/go/e58b3d42-c6ef-4001-afe8-1a0cde6bd652/video/copy_AD0EB7AC-6471-4D2C-9970-C121B31EB011.mp4";
-const ROSEDALE_VIDEO = "/videos/shop-foundation-pour-rosedale-oklahoma.mp4";
+const ROSEDALE_VIDEO = "/videos/shop-foundation-pour-rosedale-oklahoma-web.mp4";
 
 const otherProjects = [
   { title: "Pier Foundation — Thickened Slab", location: "Edmond, OK", desc: "Piers drilled 5 ft deep to undisturbed soil on a fill lot, tied to a thickened slab pour. Designed for Edmond's variable soil conditions where fill depth made standard prep insufficient.", size: "Residential", time: "Multi-day" },
@@ -57,7 +57,7 @@ export default function OurProjects() {
                 controls
                 preload="none"
                 playsInline
-                poster=""
+                poster="/images/poster-rosedale.webp"
               >
                 <source src={SPENCER_VIDEO} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -96,6 +96,7 @@ export default function OurProjects() {
                 controls
                 preload="none"
                 playsInline
+                poster="/images/poster-rosedale.webp"
               >
                 <source src={ROSEDALE_VIDEO} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -154,25 +155,25 @@ export default function OurProjects() {
             <div className="bg-darker relative overflow-hidden order-first lg:order-last">
               <div className="grid grid-cols-2 h-full min-h-[320px]">
                 <img
-                  src="/images/projects/pier-foundation-excavation-edmond-oklahoma-1.jpg"
+                  src="/images/projects/pier-foundation-excavation-edmond-oklahoma-1.webp"
                   alt="Excavation and site grading for pier foundation in Edmond, Oklahoma — skid steer and mini excavator working red clay lot with fill"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
                 <img
-                  src="/images/projects/pier-foundation-excavation-edmond-oklahoma-2.jpg"
+                  src="/images/projects/pier-foundation-excavation-edmond-oklahoma-2.webp"
                   alt="Site prep and pier layout for thickened slab foundation in Edmond, OK — graded lot on fill dirt before pier drilling"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
                 <img
-                  src="/images/projects/pier-foundation-pour-edmond-oklahoma-concrete-truck.jpg"
+                  src="/images/projects/pier-foundation-pour-edmond-oklahoma-concrete-truck.webp"
                   alt="Concrete truck on site during pier foundation slab pour in Edmond, Oklahoma — crew finishing fresh slab with power trowel"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
                 <img
-                  src="/images/projects/pier-foundation-finished-edmond-oklahoma-curing.jpg"
+                  src="/images/projects/pier-foundation-finished-edmond-oklahoma-curing.webp"
                   alt="Finished pier foundation slab curing in Edmond, Oklahoma — thickened slab on pier system, white curing compound applied"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -208,7 +209,7 @@ export default function OurProjects() {
             </div>
             <div className="bg-darker relative overflow-hidden min-h-[320px]">
               <img
-                src="/images/projects/poured-concrete-retaining-wall-oklahoma-city.jpg"
+                src="/images/projects/poured-concrete-retaining-wall-oklahoma-city.webp"
                 alt="Tall poured concrete retaining wall in Oklahoma City — forms just stripped, monolithic structure supporting new residential construction on expansive clay soil"
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -221,19 +222,19 @@ export default function OurProjects() {
             <div className="bg-darker relative overflow-hidden">
               <div className="grid grid-cols-2 h-full min-h-[320px]" style={{ gridTemplateRows: "1fr 1fr" }}>
                 <img
-                  src="/images/projects/forklift-ramp-pour-guthrie-oklahoma-1.jpg"
+                  src="/images/projects/forklift-ramp-pour-guthrie-oklahoma-1.webp"
                   alt="FDZ Construction power trowel finishing a concrete forklift ramp pour inside a warehouse in Guthrie, Oklahoma"
                   className="w-full h-full object-cover col-span-1"
                   loading="lazy"
                 />
                 <img
-                  src="/images/projects/forklift-ramp-pour-guthrie-oklahoma-2.jpg"
+                  src="/images/projects/forklift-ramp-pour-guthrie-oklahoma-2.webp"
                   alt="FDZ Construction crew troweling concrete forklift ramp in Guthrie, OK warehouse — forms and fresh pour visible"
                   className="w-full h-full object-cover col-span-1"
                   loading="lazy"
                 />
                 <img
-                  src="/images/projects/forklift-ramp-finished-guthrie-oklahoma.jpg"
+                  src="/images/projects/forklift-ramp-finished-guthrie-oklahoma.webp"
                   alt="Finished concrete forklift ramp in Guthrie, Oklahoma — smooth trowel finish, flush transition to existing warehouse floor"
                   className="w-full h-full object-cover col-span-2"
                   loading="lazy"
@@ -293,13 +294,13 @@ export default function OurProjects() {
             <div className="bg-darker relative overflow-hidden order-1 lg:order-2">
               <div className="grid grid-cols-2 h-full min-h-[320px]">
                 <img
-                  src="/images/projects/residential-foundation-pour-piedmont-oklahoma.jpg"
+                  src="/images/projects/residential-foundation-pour-piedmont-oklahoma.webp"
                   alt="FDZ Construction residential foundation pour in Piedmont, Oklahoma — fresh slab on Oklahoma red clay subgrade with forms visible"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
                 <img
-                  src="/images/projects/residential-foundation-crew-piedmont-ok.jpg"
+                  src="/images/projects/residential-foundation-crew-piedmont-ok.webp"
                   alt="FDZ Construction crew finishing residential foundation slab in Piedmont, OK — power trowel finish with rebar anchors visible"
                   className="w-full h-full object-cover"
                   loading="lazy"
