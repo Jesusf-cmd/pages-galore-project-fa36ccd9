@@ -6,7 +6,6 @@ import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
 
 const SPENCER_VIDEO = "https://img1.wsimg.com/blobby/go/e58b3d42-c6ef-4001-afe8-1a0cde6bd652/video/copy_AD0EB7AC-6471-4D2C-9970-C121B31EB011.mp4";
-const KIDDIE_VIDEO = "https://img1.wsimg.com/blobby/go/e58b3d42-c6ef-4001-afe8-1a0cde6bd652/video/Kiddie%20academy%20MP4.mp4";
 const ROSEDALE_VIDEO = "/videos/shop-foundation-pour-rosedale-oklahoma.mp4";
 
 const otherProjects = [
@@ -49,7 +48,7 @@ export default function OurProjects() {
         <section className="section-padding">
           <div className="section-eye">Featured Projects</div>
           <h2 className="mb-4">Watch Our Work<br/><em className="h2-accent">In Action.</em></h2>
-          <p className="prose-muted mb-10">Two of our proudest commercial concrete projects — with video so you can see the quality for yourself.</p>
+          <p className="prose-muted mb-10">Some of our proudest commercial concrete projects — with video so you can see the quality for yourself.</p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08] mb-8" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div className="bg-darker relative overflow-hidden">
@@ -89,44 +88,6 @@ export default function OurProjects() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08] mb-8" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-            <div className="bg-stone p-8 lg:p-10 flex flex-col justify-center order-2 lg:order-1">
-              <div className="text-[0.6rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Commercial · Oklahoma City, OK</div>
-              <h3 className="font-display text-[clamp(1.4rem,2.5vw,2rem)] font-black uppercase leading-[1.05] mb-4">
-                Kiddie Academy<br/>Foundation & Parking Lot
-              </h3>
-              <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-3">
-                This commercial concrete project for Kiddie Academy in Oklahoma City included <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundation work</Link> and <Link to="/commercial-concrete-oklahoma-city" className="text-orange no-underline">parking lot construction</Link> from start to finish. Our team handled site preparation, grading, formwork, reinforcement installation, and concrete placement to ensure a durable, long-lasting structure.
-              </p>
-              <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-5">
-                Proper drainage and slope were carefully planned to prevent water buildup and protect the integrity of the concrete over time.
-              </p>
-              <div className="text-[0.72rem] text-muted-text mb-5">
-                📍 <strong className="text-concrete">3100 NW 150th St, Oklahoma City, OK 73134</strong>
-              </div>
-              <div className="flex gap-8 pt-4" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
-                <div>
-                  <div className="font-display text-xl font-black text-orange">Foundation</div>
-                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Commercial pour</div>
-                </div>
-                <div>
-                  <div className="font-display text-xl font-black text-orange">Parking</div>
-                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Lot concrete</div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-darker relative overflow-hidden order-1 lg:order-2">
-              <video
-                className="w-full h-full object-cover min-h-[320px]"
-                controls
-                preload="none"
-                playsInline
-              >
-                <source src={KIDDIE_VIDEO} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
           {/* Rosedale shop foundation — video */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08] mb-8" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div className="bg-darker relative overflow-hidden">
