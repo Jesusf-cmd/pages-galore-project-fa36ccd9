@@ -10,6 +10,7 @@ const KIDDIE_VIDEO = "https://img1.wsimg.com/blobby/go/e58b3d42-c6ef-4001-afe8-1
 const ROSEDALE_VIDEO = "/videos/shop-foundation-pour-rosedale-oklahoma.mp4";
 
 const otherProjects = [
+  { title: "Pier Foundation — Thickened Slab", location: "Edmond, OK", desc: "Piers drilled 5 ft deep to undisturbed soil on a fill lot, tied to a thickened slab pour. Designed for Edmond's variable soil conditions where fill depth made standard prep insufficient.", size: "Residential", time: "Multi-day" },
   { title: "Poured Concrete Retaining Wall", location: "Oklahoma City, OK", desc: "Tall monolithic poured concrete retaining wall for new residential construction — engineered for OKC clay soil lateral pressure, drainage behind the wall.", size: "Residential", time: "Multi-day" },
   { title: "Forklift Ramp — Warehouse Concrete", location: "Guthrie, OK", desc: "Concrete forklift ramp poured inside a live warehouse. Reinforced slab, precise slope for forklift transition, power trowel finish flush with existing floor.", size: "Commercial", time: "1 day pour" },
   { title: "Residential Foundation Pour", location: "Piedmont, OK", desc: "Slab-on-grade residential foundation on Oklahoma red clay — compacted aggregate base, engineered rebar schedule, smooth trowel finish.", size: "1,400 sq ft", time: "1 day pour" },
@@ -160,6 +161,61 @@ export default function OurProjects() {
                   <div className="font-display text-xl font-black text-orange">1 Pour</div>
                   <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Full footprint</div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Edmond pier foundation — photos */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08] mb-8" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+            <div className="bg-stone p-8 lg:p-10 flex flex-col justify-center">
+              <div className="text-[0.6rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Residential · Edmond, Oklahoma</div>
+              <h3 className="font-display text-[clamp(1.4rem,2.5vw,2rem)] font-black uppercase leading-[1.05] mb-4">
+                Pier Foundation<br/>Thickened Slab
+              </h3>
+              <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-5">
+                <Link to="/foundations-oklahoma-city" className="text-orange no-underline">Pier foundation with thickened slab</Link> in Edmond, Oklahoma — designed for a lot that required fill to level the grade. Rather than pouring on compacted fill, we drilled piers 5 feet deep to reach undisturbed soil, then tied the thickened slab to the pier system. Edmond's mix of sandy and clay-heavy soil makes this kind of site-specific evaluation critical before any foundation pour.
+              </p>
+              <div className="flex gap-8 pt-4" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">5 ft</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Pier depth</div>
+                </div>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Pier</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">+ thickened slab</div>
+                </div>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Fill</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Lot engineered</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-darker relative overflow-hidden order-first lg:order-last">
+              <div className="grid grid-cols-2 h-full min-h-[320px]">
+                <img
+                  src="/images/projects/pier-foundation-excavation-edmond-oklahoma-1.jpg"
+                  alt="Excavation and site grading for pier foundation in Edmond, Oklahoma — skid steer and mini excavator working red clay lot with fill"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/projects/pier-foundation-excavation-edmond-oklahoma-2.jpg"
+                  alt="Site prep and pier layout for thickened slab foundation in Edmond, OK — graded lot on fill dirt before pier drilling"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/projects/pier-foundation-pour-edmond-oklahoma-concrete-truck.jpg"
+                  alt="Concrete truck on site during pier foundation slab pour in Edmond, Oklahoma — crew finishing fresh slab with power trowel"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/projects/pier-foundation-finished-edmond-oklahoma-curing.jpg"
+                  alt="Finished pier foundation slab curing in Edmond, Oklahoma — thickened slab on pier system, white curing compound applied"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
