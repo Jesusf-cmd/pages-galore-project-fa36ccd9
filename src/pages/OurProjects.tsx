@@ -10,6 +10,7 @@ const KIDDIE_VIDEO = "https://img1.wsimg.com/blobby/go/e58b3d42-c6ef-4001-afe8-1
 const ROSEDALE_VIDEO = "/videos/shop-foundation-pour-rosedale-oklahoma.mp4";
 
 const otherProjects = [
+  { title: "Poured Concrete Retaining Wall", location: "Oklahoma City, OK", desc: "Tall monolithic poured concrete retaining wall for new residential construction — engineered for OKC clay soil lateral pressure, drainage behind the wall.", size: "Residential", time: "Multi-day" },
   { title: "Forklift Ramp — Warehouse Concrete", location: "Guthrie, OK", desc: "Concrete forklift ramp poured inside a live warehouse. Reinforced slab, precise slope for forklift transition, power trowel finish flush with existing floor.", size: "Commercial", time: "1 day pour" },
   { title: "Residential Foundation Pour", location: "Piedmont, OK", desc: "Slab-on-grade residential foundation on Oklahoma red clay — compacted aggregate base, engineered rebar schedule, smooth trowel finish.", size: "1,400 sq ft", time: "1 day pour" },
   { title: "Driveway Replacement", location: "Edmond, OK", desc: "Full tear-out of cracked original driveway, 4\" reinforced pour with #3 rebar, broom finish.", size: "24×40", time: "2 days" },
@@ -160,6 +161,41 @@ export default function OurProjects() {
                   <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Full footprint</div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* OKC poured concrete retaining wall */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08] mb-8" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+            <div className="bg-stone p-8 lg:p-10 flex flex-col justify-center">
+              <div className="text-[0.6rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Residential · Oklahoma City, OK</div>
+              <h3 className="font-display text-[clamp(1.4rem,2.5vw,2rem)] font-black uppercase leading-[1.05] mb-4">
+                Poured Concrete<br/>Retaining Wall
+              </h3>
+              <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-5">
+                Tall <Link to="/retaining-walls-oklahoma-city" className="text-orange no-underline">poured concrete retaining wall</Link> built alongside a new residential construction project in Oklahoma City. Forms stripped to reveal a clean monolithic structure — no block joints to shift or crack over time. Wall was designed for the lateral pressure of OKC's expansive clay soil with proper drainage behind the wall to prevent hydrostatic buildup.
+              </p>
+              <div className="flex gap-8 pt-4" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Poured</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Concrete wall</div>
+                </div>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Mono</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">lithic structure</div>
+                </div>
+                <div>
+                  <div className="font-display text-xl font-black text-orange">Clay</div>
+                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Soil engineered</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-darker relative overflow-hidden min-h-[320px]">
+              <img
+                src="/images/projects/poured-concrete-retaining-wall-oklahoma-city.jpg"
+                alt="Tall poured concrete retaining wall in Oklahoma City — forms just stripped, monolithic structure supporting new residential construction on expansive clay soil"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
 
