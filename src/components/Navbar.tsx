@@ -9,6 +9,7 @@ const serviceLinks = [
   { to: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped" },
   { to: "/foundations-oklahoma-city", label: "Foundations" },
   { to: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
+  { to: "/pool-deck-oklahoma-city", label: "Pool Decks" },
   { to: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
 ];
 
