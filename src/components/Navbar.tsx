@@ -14,10 +14,15 @@ const serviceLinks = [
 ];
 
 const commercialLinks = [
-  { to: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
+  { to: "/commercial-concrete-oklahoma-city", label: "All Commercial Services" },
+  { to: "/loading-dock-construction-oklahoma-city", label: "Loading Dock Construction" },
+  { to: "/loading-dock-replacement-oklahoma-city", label: "Loading Dock Replacement" },
+  { to: "/dock-leveler-pits-oklahoma-city", label: "Dock Leveler Pits" },
+  { to: "/truck-courts-oklahoma-city", label: "Truck Courts" },
+  { to: "/industrial-concrete-repair-oklahoma-city", label: "Industrial Concrete Repair" },
+  { to: "/warehouse-floor-replacement-oklahoma-city", label: "Warehouse Floor Replacement" },
+  { to: "/equipment-foundations-oklahoma-city", label: "Equipment Foundations" },
   { to: "/parking-lots-oklahoma-city", label: "Parking Lots" },
-  { to: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
-  { to: "/foundations-oklahoma-city", label: "Foundations" },
 ];
 
 const areaLinks = [

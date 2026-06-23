@@ -27,6 +27,13 @@ const BlogPost = lazy(() => import("./pages/BlogPost"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const PoolDeckOklahomaCity = lazy(() => import("./pages/PoolDeckOklahomaCity"));
+const LoadingDockConstruction = lazy(() => import("./pages/LoadingDockConstruction"));
+const LoadingDockReplacement = lazy(() => import("./pages/LoadingDockReplacement"));
+const DockLevelerPits = lazy(() => import("./pages/DockLevelerPits"));
+const TruckCourts = lazy(() => import("./pages/TruckCourts"));
+const IndustrialConcreteRepair = lazy(() => import("./pages/IndustrialConcreteRepair"));
+const WarehouseFloorReplacement = lazy(() => import("./pages/WarehouseFloorReplacement"));
+const EquipmentFoundations = lazy(() => import("./pages/EquipmentFoundations"));
 
 const queryClient = new QueryClient();
 
@@ -70,6 +77,13 @@ const App = () => (
                 <Route path="/parking-lots-oklahoma-city" element={<ParkingLotConcrete />} />
                 <Route path="/retaining-walls-oklahoma-city" element={<RetainingWalls />} />
                 <Route path="/pool-deck-oklahoma-city" element={<PoolDeckOklahomaCity />} />
+                <Route path="/loading-dock-construction-oklahoma-city" element={<LoadingDockConstruction />} />
+                <Route path="/loading-dock-replacement-oklahoma-city" element={<LoadingDockReplacement />} />
+                <Route path="/dock-leveler-pits-oklahoma-city" element={<DockLevelerPits />} />
+                <Route path="/truck-courts-oklahoma-city" element={<TruckCourts />} />
+                <Route path="/industrial-concrete-repair-oklahoma-city" element={<IndustrialConcreteRepair />} />
+                <Route path="/warehouse-floor-replacement-oklahoma-city" element={<WarehouseFloorReplacement />} />
+                <Route path="/equipment-foundations-oklahoma-city" element={<EquipmentFoundations />} />
                 <Route path="/concrete-driveways" element={<Navigate to="/driveways-oklahoma-city" replace />} />
                 <Route path="/concrete-slabs" element={<Navigate to="/patios-oklahoma-city" replace />} />
                 <Route path="/stamped-concrete" element={<Navigate to="/patios-oklahoma-city" replace />} />
