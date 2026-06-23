@@ -316,6 +316,13 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
     content: "Most foundation movement in OKC isn't a foundation problem — it's a drainage problem causing a foundation problem. We evaluate the actual cause of movement first: drainage correction (re-grading, gutter extensions, French drains), slab leveling where surrounding base is sound, partial slab replacement, and structural engineer coordination for cases where piers are genuinely required. We are not a pier sales operation — we won't push piers when drainage correction or slab leveling solves the problem. Drainage correction $500–$3,000, slab leveling $800–$2,500, partial replacement $1,500–$6,000, structural piers $3,500–$25,000+. Free on-site evaluation. Call (405) 458-4805.",
   },
   {
+    path: "/pool-deck-oklahoma-city",
+    title: "Pool Deck Contractor Oklahoma City | FDZ Construction LLC",
+    description: "Concrete pool deck installation and resurfacing in Oklahoma City. Slip-resistant finishes, heat-reflective colors, and Oklahoma freeze-thaw rated concrete. Free estimate: (405) 458-4805.",
+    h1: "Concrete Pool Deck Contractor in Oklahoma City, OK.",
+    content: "FDZ Construction LLC installs and resurfaces concrete pool decks across the Oklahoma City metro. Slip-resistant broom, exposed aggregate, and stamped concrete finishes — all rated for OKC's freeze-thaw cycles and summer heat. Licensed, bonded, and insured in Oklahoma. 2-year workmanship warranty. Services: new pool deck installation, pool deck resurfacing and overlay, stamped and decorative concrete pool surround, cool deck and heat-reflective concrete finishes, coping and bond beam work, drain and slope correction. Broom finish $8–$12/sq ft, exposed aggregate $10–$15/sq ft, stamped concrete $14–$20/sq ft, resurfacing overlay $5–$9/sq ft, cool deck coating $4–$7/sq ft. Serving Oklahoma City, Edmond, Norman, Yukon, Mustang, Moore, Midwest City, and Del City. Call (405) 458-4805 for a free estimate.",
+  },
+  {
     path: "/patios-yukon",
     title: "Concrete Patio Contractors in Yukon, OK | FDZ Construction LLC",
     description: "Concrete patios, slabs, and stamped concrete in Yukon, OK. Built for Canadian County's clay base and new-subdivision fill. Free estimate: (405) 458-4805.",

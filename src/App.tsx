@@ -26,6 +26,7 @@ const BlogIndex = lazy(() => import("./pages/BlogIndex"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const PoolDeckOklahomaCity = lazy(() => import("./pages/PoolDeckOklahomaCity"));
 
 const queryClient = new QueryClient();
 
@@ -68,6 +69,7 @@ const App = () => (
                 <Route path="/commercial-concrete-oklahoma-city" element={<CommercialConcreteOklahomaCity />} />
                 <Route path="/parking-lots-oklahoma-city" element={<ParkingLotConcrete />} />
                 <Route path="/retaining-walls-oklahoma-city" element={<RetainingWalls />} />
+                <Route path="/pool-deck-oklahoma-city" element={<PoolDeckOklahomaCity />} />
                 <Route path="/concrete-driveways" element={<Navigate to="/driveways-oklahoma-city" replace />} />
                 <Route path="/concrete-slabs" element={<Navigate to="/patios-oklahoma-city" replace />} />
                 <Route path="/stamped-concrete" element={<Navigate to="/patios-oklahoma-city" replace />} />
