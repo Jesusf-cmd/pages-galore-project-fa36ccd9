@@ -44,6 +44,7 @@ const RetailRestaurantConcrete = lazy(() => import("./pages/RetailRestaurantConc
 const TiltWallConcrete = lazy(() => import("./pages/TiltWallConcrete"));
 const SoilStabilization = lazy(() => import("./pages/SoilStabilization"));
 const ConcreteMaintenance = lazy(() => import("./pages/ConcreteMaintenance"));
+const BuilderPricing = lazy(() => import("./pages/BuilderPricing"));
 
 const queryClient = new QueryClient();
 
@@ -148,6 +149,8 @@ const App = () => (
                 <Route path="*" element={<NotFound />} />
               </Route>
               <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+              {/* Gated builder pricing page — no nav/footer, noindex */}
+              <Route path="/builders" element={<BuilderPricing />} />
             </Routes>
           </Suspense>
         </BrowserRouter>

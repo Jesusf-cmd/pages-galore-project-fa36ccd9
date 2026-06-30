@@ -75,6 +75,13 @@ function generateRouteHtml(template: string, route: PrerenderRoute): string {
     `<meta name="twitter:description" content="${escapeAttr(route.description)}">`
   );
 
+  if (route.noindex) {
+    html = html.replace(
+      '</head>',
+      `<meta name="robots" content="noindex, nofollow" /></head>`
+    );
+  }
+
   html = html.replace('<div id="root"></div>', `<div id="root">${buildPrerenderMarkup(route)}</div>`);
 
   return html;

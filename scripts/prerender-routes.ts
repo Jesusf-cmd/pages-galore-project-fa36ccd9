@@ -10,6 +10,7 @@ export interface PrerenderRoute {
   description: string;
   h1: string;
   content: string; // key visible text for crawlers
+  noindex?: boolean; // set true to inject noindex meta in static HTML
 }
 
 const BASE = "https://fdzconstruction.com";
@@ -447,6 +448,14 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
     description: "Concrete patios, slabs, and stamped concrete in Yukon, OK. Built for Canadian County's clay base and new-subdivision fill. Free estimate: (405) 458-4805.",
     h1: "Concrete Patio Contractors in Yukon, OK",
     content: "Concrete patio contractors serving Yukon, Oklahoma. Most failed Yukon patios settled on bad subdivision fill — the same root cause we see on Yukon driveways. We proof-roll the base on every Yukon pour before any aggregate goes in. Engineered base, 4,000 PSI mix, rebar at mid-depth, minimum 1/8″ per foot slope away from the house, sealed isolation joint at the foundation, sawcut control joints within 24 hours. Broom finish $6–$10/sq ft, stamped finishes $15–$22/sq ft. Call (405) 458-4805 for a free estimate.",
+  },
+  {
+    path: "/builders",
+    title: "Builder Pricing — FDZ Construction LLC",
+    description: "Gated builder pricing page — not for public distribution.",
+    h1: "FDZ Builder Rate Sheet",
+    content: "Builder pricing for Oklahoma City concrete contractors. Foundation labor rates, pad preparation, retaining walls.",
+    noindex: true,
   },
 ];
 
