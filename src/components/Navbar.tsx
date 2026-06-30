@@ -23,6 +23,12 @@ const commercialLinks = [
   { to: "/warehouse-floor-replacement-oklahoma-city", label: "Warehouse Floor Replacement" },
   { to: "/equipment-foundations-oklahoma-city", label: "Equipment Foundations" },
   { to: "/parking-lots-oklahoma-city", label: "Parking Lots" },
+  { to: "/polished-concrete-oklahoma-city", label: "Polished Concrete" },
+  { to: "/epoxy-floor-coatings-oklahoma-city", label: "Epoxy Floor Coatings" },
+  { to: "/commercial-concrete-repair-oklahoma-city", label: "Commercial Concrete Repair" },
+  { to: "/ada-ramps-oklahoma-city", label: "ADA Ramps & Accessibility" },
+  { to: "/tilt-wall-concrete-oklahoma-city", label: "Tilt-Wall Concrete" },
+  { to: "/soil-stabilization-oklahoma-city", label: "Soil Stabilization" },
 ];
 
 const areaLinks = [
