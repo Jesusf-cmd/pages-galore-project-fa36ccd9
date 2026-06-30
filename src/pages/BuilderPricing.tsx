@@ -50,6 +50,28 @@ const PRICING = {
 
 type FormState = "idle" | "submitting" | "disqualified" | "qualified" | "error";
 
+const labelStyle: React.CSSProperties = {
+  color: "#a09890",
+  fontSize: "0.78rem",
+  fontWeight: 700,
+  letterSpacing: "0.1em",
+  textTransform: "uppercase",
+};
+
+// Must be defined outside BuilderPricing — defining it inside causes remount on every keystroke,
+// which dismisses the mobile keyboard after one character.
+function Field({
+  id, label, error, children,
+}: { id: string; label: string; error?: string; children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col gap-1">
+      <label htmlFor={id} style={labelStyle}>{label}</label>
+      {children}
+      {error && <span style={{ color: "#f97316", fontSize: "0.78rem" }}>{error}</span>}
+    </div>
+  );
+}
+
 export default function BuilderPricing() {
   const [formState, setFormState] = useState<FormState>("idle");
   const [fields, setFields] = useState({
@@ -129,18 +151,6 @@ export default function BuilderPricing() {
     setFormState(qualified ? "qualified" : "disqualified");
   }
 
-  function Field({
-    id, label, error, children,
-  }: { id: string; label: string; error?: string; children: React.ReactNode }) {
-    return (
-      <div className="flex flex-col gap-1">
-        <label htmlFor={id} style={labelStyle}>{label}</label>
-        {children}
-        {error && <span style={{ color: "#f97316", fontSize: "0.78rem" }}>{error}</span>}
-      </div>
-    );
-  }
-
   const inputStyle: React.CSSProperties = {
     background: "#1c1c1e",
     border: "1px solid rgba(255,255,255,0.12)",
@@ -153,14 +163,6 @@ export default function BuilderPricing() {
     boxSizing: "border-box",
     transition: "border-color 0.15s",
   };
-  const labelStyle: React.CSSProperties = {
-    color: "#a09890",
-    fontSize: "0.78rem",
-    fontWeight: 700,
-    letterSpacing: "0.1em",
-    textTransform: "uppercase",
-  };
-
   return (
     <div style={{ minHeight: "100vh", background: "#141414", color: "#e5e0d8", fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif" }}>
 
