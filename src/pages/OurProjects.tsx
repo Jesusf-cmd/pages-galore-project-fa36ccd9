@@ -2,10 +2,8 @@ import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
 import FinalCTA from "@/components/FinalCTA";
 import ServicesFooterGrid from "@/components/ServicesFooterGrid";
-import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
 
-const SPENCER_VIDEO = "https://img1.wsimg.com/blobby/go/e58b3d42-c6ef-4001-afe8-1a0cde6bd652/video/copy_AD0EB7AC-6471-4D2C-9970-C121B31EB011.mp4";
 const ROSEDALE_VIDEO = "/videos/shop-foundation-pour-rosedale-oklahoma-web.mp4";
 
 const otherProjects = [
@@ -44,25 +42,12 @@ export default function OurProjects() {
       </section>
       <TrustBar />
 
-      <ScrollReveal>
-        <section className="section-padding">
+      <section className="section-padding">
           <div className="section-eye">Featured Projects</div>
           <h2 className="mb-4">Watch Our Work<br/><em className="h2-accent">In Action.</em></h2>
           <p className="prose-muted mb-10">Some of our proudest commercial concrete projects — with video so you can see the quality for yourself.</p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08] mb-8" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-            <div className="bg-darker relative overflow-hidden">
-              <video
-                className="w-full h-full object-cover min-h-[320px]"
-                controls
-                preload="none"
-                playsInline
-                poster="/images/poster-rosedale.webp"
-              >
-                <source src={SPENCER_VIDEO} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
             <div className="bg-stone p-8 lg:p-10 flex flex-col justify-center">
               <div className="text-[0.6rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Commercial · Spencer, Oklahoma</div>
               <h3 className="font-display text-[clamp(1.4rem,2.5vw,2rem)] font-black uppercase leading-[1.05] mb-4">
@@ -85,6 +70,14 @@ export default function OurProjects() {
                   <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">School project</div>
                 </div>
               </div>
+            </div>
+            <div className="bg-darker relative overflow-hidden min-h-[320px]">
+              <img
+                src="/images/projects/poured-concrete-retaining-wall-oklahoma-city.webp"
+                alt="FDZ Construction concrete work at Star Spencer High School — ADA compliant ramps and sidewalks"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
 
@@ -309,10 +302,8 @@ export default function OurProjects() {
             </div>
           </div>
         </section>
-      </ScrollReveal>
 
-      <ScrollReveal>
-        <section className="section-padding section-alt">
+      <section className="section-padding section-alt">
           <div className="section-eye">More Projects</div>
           <h2 className="mb-4">Work Across<br/><em className="h2-accent">the OKC Metro.</em></h2>
           <p className="prose-muted mb-8">Every project below was completed by our own crew — no subcontractors.</p>
@@ -330,15 +321,12 @@ export default function OurProjects() {
             ))}
           </div>
         </section>
-      </ScrollReveal>
 
-      <ScrollReveal>
-        <section className="section-padding">
+      <section className="section-padding">
           <div className="section-eye">Our Concrete Services</div>
           <h2 className="mb-4">Every Concrete Service<br/><em className="h2-accent">OKC Homeowners Need.</em></h2>
           <ServicesFooterGrid />
         </section>
-      </ScrollReveal>
 
       <FinalCTA />
     </main>
