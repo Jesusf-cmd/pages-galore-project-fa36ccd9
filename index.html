@@ -82,15 +82,16 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://fdzconstruction.com/#business",
+      "@type": "GeneralContractor",
+      "@id": "https://fdzconstruction.com/#organization",
       "name": "FDZ Construction LLC",
-      "description": "Oklahoma City's concrete contractor for driveways, patios, slabs, foundations & more. Licensed & insured. Serving the OKC metro area.",
-      "url": "https://fdzconstruction.com",
-      "telephone": "+1-405-458-4805",
-      "email": "jesus@fdzconstruction.com",
       "image": "https://fdzconstruction.com/og-image.jpg",
+      "logo": "https://fdzconstruction.com/og-image.jpg",
+      "url": "https://fdzconstruction.com",
+      "telephone": "+14054584805",
+      "email": "jesus@fdzconstruction.com",
       "priceRange": "$$",
+      "description": "FDZ Construction LLC is a licensed, bonded, and insured concrete contractor based in south Oklahoma City, serving the OKC metro with driveways, patios, slabs, foundations, retaining walls, sidewalks, and commercial concrete. 8+ years of experience, every project backed by a 2-year workmanship warranty.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "7004 S Indiana Ave",
@@ -104,36 +105,38 @@
         "latitude": 35.4676,
         "longitude": -97.5164
       },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/fdzconstruction",
+        "https://www.google.com/maps/place/FDZ+Construction+LLC"
+      ],
       "areaServed": [
-        {"@type": "City", "name": "Oklahoma City"},
-        {"@type": "City", "name": "Edmond"},
-        {"@type": "City", "name": "Norman"},
-        {"@type": "City", "name": "Moore"},
-        {"@type": "City", "name": "Yukon"},
-        {"@type": "City", "name": "Mustang"},
-        {"@type": "City", "name": "Midwest City"},
-        {"@type": "City", "name": "Del City"}
-      ]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "@id": "https://fdzconstruction.com/#organization",
-      "name": "FDZ Construction LLC",
-      "url": "https://fdzconstruction.com",
-      "logo": "https://fdzconstruction.com/og-image.jpg",
-      "telephone": "+1-405-458-4805",
-      "email": "jesus@fdzconstruction.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "7004 S Indiana Ave",
-        "addressLocality": "Oklahoma City",
-        "addressRegion": "OK",
-        "postalCode": "73159",
-        "addressCountry": "US"
+        { "@type": "City", "name": "Oklahoma City", "addressRegion": "OK" },
+        { "@type": "City", "name": "Edmond", "addressRegion": "OK" },
+        { "@type": "City", "name": "Norman", "addressRegion": "OK" },
+        { "@type": "City", "name": "Moore", "addressRegion": "OK" },
+        { "@type": "City", "name": "Yukon", "addressRegion": "OK" },
+        { "@type": "City", "name": "Mustang", "addressRegion": "OK" },
+        { "@type": "City", "name": "Midwest City", "addressRegion": "OK" },
+        { "@type": "City", "name": "Del City", "addressRegion": "OK" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Concrete Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Concrete Driveways", "url": "https://fdzconstruction.com/driveways-oklahoma-city" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Patios, Slabs & Stamped Concrete", "url": "https://fdzconstruction.com/patios-oklahoma-city" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Concrete Foundations", "url": "https://fdzconstruction.com/foundations-oklahoma-city" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Retaining Walls", "url": "https://fdzconstruction.com/retaining-walls-oklahoma-city" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sidewalks, Curb & Gutter", "url": "https://fdzconstruction.com/sidewalks-oklahoma-city" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Concrete", "url": "https://fdzconstruction.com/commercial-concrete-oklahoma-city" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Parking Lots", "url": "https://fdzconstruction.com/parking-lots-oklahoma-city" } }
+        ]
       }
     }
     </script>

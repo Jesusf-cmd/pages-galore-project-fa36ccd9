@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import CityPageTemplate from "@/components/CityPageTemplate";
 
 const BASE = "https://fdzconstruction.com";
@@ -286,9 +287,41 @@ const NEARBY: Record<string, { name: string; to: string }[]> = {
   "del-city": [{ name: "Midwest City", to: "/midwest-city-oklahoma-concrete" }, { name: "Oklahoma City", to: "/oklahoma-city-concrete" }, { name: "Moore", to: "/moore-oklahoma-concrete" }],
 };
 
+const CITY_NAME: Record<string, string> = {
+  "oklahoma-city": "Oklahoma City",
+  edmond: "Edmond",
+  norman: "Norman",
+  yukon: "Yukon",
+  mustang: "Mustang",
+  moore: "Moore",
+  "midwest-city": "Midwest City",
+  "del-city": "Del City",
+};
+
 export default function CityPage({ slug }: { slug: string }) {
   const data = cityData[slug] || cityData["oklahoma-city"];
   const routePath = ROUTE_BY_SLUG[slug] || ROUTE_BY_SLUG["oklahoma-city"];
+  const cityName = CITY_NAME[slug] || "Oklahoma City";
+  const pageUrl = `${BASE}${routePath}`;
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "city-service-schema";
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Concrete Contracting",
+      "name": `Concrete Contractor in ${cityName}, OK`,
+      "url": pageUrl,
+      "provider": { "@id": "https://fdzconstruction.com/#organization" },
+      "areaServed": { "@type": "City", "name": cityName, "addressRegion": "OK" },
+    });
+    document.getElementById("city-service-schema")?.remove();
+    document.head.appendChild(script);
+    return () => { document.getElementById("city-service-schema")?.remove(); };
+  }, [cityName, pageUrl]);
+
   return (
     <CityPageTemplate
       city={data.city}
