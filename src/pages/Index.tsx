@@ -6,9 +6,9 @@ import {
   buildLineItems,
   calculateRange,
 } from "@/lib/pricingConfig";
-import commercialFoundationImg from "@/assets/commercial-concrete-foundation-okc.jpg";
-import newDrivewayImg from "@/assets/new-driveway.jpg";
-import tiedRebarImg from "@/assets/tied-rebar.jpg";
+import commercialFoundationImg from "@/assets/commercial-concrete-foundation-okc.webp";
+import newDrivewayImg from "@/assets/new-driveway.webp";
+import tiedRebarImg from "@/assets/tied-rebar.webp";
 import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
 import { useSEO } from "@/hooks/useSEO";

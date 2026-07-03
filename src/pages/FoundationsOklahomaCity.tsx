@@ -209,12 +209,12 @@ export default function FoundationsOklahomaCity() {
         titleAccent: "Across the OKC Metro.",
         intro: "A few recent foundation pours — from a pier-supported thickened slab in Edmond to residential slab-on-grade work in Piedmont. Every foundation is engineered for the specific soil and site conditions of the lot.",
         photos: [
-          { src: "/images/projects/pier-foundation-excavation-edmond-oklahoma-1.jpg", alt: "Excavation and site grading for pier foundation in Edmond, Oklahoma — skid steer and excavator working red clay lot" },
-          { src: "/images/projects/pier-foundation-pour-edmond-oklahoma-concrete-truck.jpg", alt: "Concrete truck on site during pier foundation slab pour in Edmond, Oklahoma — crew finishing fresh slab" },
-          { src: "/images/projects/pier-foundation-finished-edmond-oklahoma-curing.jpg", alt: "Finished pier foundation thickened slab curing in Edmond, Oklahoma" },
-          { src: "/images/projects/residential-foundation-pour-piedmont-oklahoma.jpg", alt: "Residential foundation pour in Piedmont, Oklahoma — fresh slab on Oklahoma red clay subgrade" },
-          { src: "/images/projects/residential-foundation-crew-piedmont-ok.jpg", alt: "FDZ Construction crew finishing residential foundation slab in Piedmont, OK with power trowel" },
-          { src: "/images/projects/pier-foundation-pour-edmond-oklahoma-crew-finishing.jpg", alt: "Crew finishing thickened slab foundation mid-pour in Edmond, Oklahoma" },
+          { src: "/images/projects/pier-foundation-excavation-edmond-oklahoma-1.webp", alt: "Excavation and site grading for pier foundation in Edmond, Oklahoma — skid steer and excavator working red clay lot" },
+          { src: "/images/projects/pier-foundation-pour-edmond-oklahoma-concrete-truck.webp", alt: "Concrete truck on site during pier foundation slab pour in Edmond, Oklahoma — crew finishing fresh slab" },
+          { src: "/images/projects/pier-foundation-finished-edmond-oklahoma-curing.webp", alt: "Finished pier foundation thickened slab curing in Edmond, Oklahoma" },
+          { src: "/images/projects/residential-foundation-pour-piedmont-oklahoma.webp", alt: "Residential foundation pour in Piedmont, Oklahoma — fresh slab on Oklahoma red clay subgrade" },
+          { src: "/images/projects/residential-foundation-crew-piedmont-ok.webp", alt: "FDZ Construction crew finishing residential foundation slab in Piedmont, OK with power trowel" },
+          { src: "/images/projects/pier-foundation-pour-edmond-oklahoma-crew-finishing.webp", alt: "Crew finishing thickened slab foundation mid-pour in Edmond, Oklahoma" },
         ],
       }}
       cityBlockIntro={`We pour residential and commercial concrete foundations throughout the Oklahoma City metro, including <a href="/oklahoma-city-concrete" class="text-orange no-underline">Oklahoma City</a>, <a href="/edmond-concrete" class="text-orange no-underline">Edmond</a>, <a href="/norman-ok-concrete" class="text-orange no-underline">Norman</a>, <a href="/moore-oklahoma-concrete" class="text-orange no-underline">Moore</a>, <a href="/yukon-oklahoma-concrete" class="text-orange no-underline">Yukon</a>, <a href="/mustang-oklahoma-concrete" class="text-orange no-underline">Mustang</a>, <a href="/midwest-city-oklahoma-concrete" class="text-orange no-underline">Midwest City</a>, and <a href="/del-city-oklahoma-concrete" class="text-orange no-underline">Del City</a>.`}

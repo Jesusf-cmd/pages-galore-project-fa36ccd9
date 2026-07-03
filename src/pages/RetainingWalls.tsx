@@ -199,7 +199,7 @@ export default function RetainingWalls() {
         titleAccent: "in the OKC Metro.",
         intro: "A tall poured concrete retaining wall we built for a new residential construction project in Oklahoma City — forms stripped to reveal a clean monolithic structure, engineered for the lateral pressure of OKC's expansive clay soil with drainage behind the wall.",
         photos: [
-          { src: "/images/projects/poured-concrete-retaining-wall-oklahoma-city.jpg", alt: "Tall poured concrete retaining wall in Oklahoma City — monolithic structure supporting new residential construction on expansive clay soil" },
+          { src: "/images/projects/poured-concrete-retaining-wall-oklahoma-city.webp", alt: "Tall poured concrete retaining wall in Oklahoma City — monolithic structure supporting new residential construction on expansive clay soil" },
         ],
       }}
       cityBlockIntro={`We build retaining walls — poured concrete, CMU block, and landscape walls — throughout the Oklahoma City metro, including <a href="/oklahoma-city-concrete" class="text-orange no-underline">Oklahoma City</a>, <a href="/edmond-concrete" class="text-orange no-underline">Edmond</a>, <a href="/norman-ok-concrete" class="text-orange no-underline">Norman</a>, <a href="/moore-oklahoma-concrete" class="text-orange no-underline">Moore</a>, <a href="/yukon-oklahoma-concrete" class="text-orange no-underline">Yukon</a>, <a href="/mustang-oklahoma-concrete" class="text-orange no-underline">Mustang</a>, <a href="/midwest-city-oklahoma-concrete" class="text-orange no-underline">Midwest City</a>, and <a href="/del-city-oklahoma-concrete" class="text-orange no-underline">Del City</a>.`}

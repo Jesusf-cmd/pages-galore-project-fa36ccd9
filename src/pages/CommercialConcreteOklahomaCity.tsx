@@ -261,9 +261,9 @@ export default function CommercialConcreteOklahomaCity() {
         titleAccent: "in the OKC Metro.",
         intro: "A concrete forklift ramp we built inside a live warehouse in Guthrie, Oklahoma — poured around active racking and inventory, with a reinforced slab sized for repeated heavy equipment loads and a power trowel finish flush with the existing floor.",
         photos: [
-          { src: "/images/projects/forklift-ramp-pour-guthrie-oklahoma-1.jpg", alt: "Power trowel finishing a concrete forklift ramp pour inside a warehouse in Guthrie, Oklahoma" },
-          { src: "/images/projects/forklift-ramp-pour-guthrie-oklahoma-2.jpg", alt: "Crew troweling concrete forklift ramp in Guthrie, OK warehouse — forms and fresh pour visible" },
-          { src: "/images/projects/forklift-ramp-finished-guthrie-oklahoma.jpg", alt: "Finished concrete forklift ramp in Guthrie, Oklahoma — smooth trowel finish flush with warehouse floor" },
+          { src: "/images/projects/forklift-ramp-pour-guthrie-oklahoma-1.webp", alt: "Power trowel finishing a concrete forklift ramp pour inside a warehouse in Guthrie, Oklahoma" },
+          { src: "/images/projects/forklift-ramp-pour-guthrie-oklahoma-2.webp", alt: "Crew troweling concrete forklift ramp in Guthrie, OK warehouse — forms and fresh pour visible" },
+          { src: "/images/projects/forklift-ramp-finished-guthrie-oklahoma.webp", alt: "Finished concrete forklift ramp in Guthrie, Oklahoma — smooth trowel finish flush with warehouse floor" },
         ],
       }}
       cityBlockIntro={`We provide commercial concrete throughout the Oklahoma City metro — warehouses, retail, and industrial sites in <a href="/oklahoma-city-concrete" class="text-orange no-underline">Oklahoma City</a>, <a href="/edmond-concrete" class="text-orange no-underline">Edmond</a>, <a href="/norman-ok-concrete" class="text-orange no-underline">Norman</a>, <a href="/moore-oklahoma-concrete" class="text-orange no-underline">Moore</a>, <a href="/yukon-oklahoma-concrete" class="text-orange no-underline">Yukon</a>, <a href="/mustang-oklahoma-concrete" class="text-orange no-underline">Mustang</a>, <a href="/midwest-city-oklahoma-concrete" class="text-orange no-underline">Midwest City</a>, and <a href="/del-city-oklahoma-concrete" class="text-orange no-underline">Del City</a>.`}
