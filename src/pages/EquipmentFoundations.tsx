@@ -4,9 +4,9 @@ export default function EquipmentFoundations() {
   return (
     <ServicePage
       enriched
-      currentServiceSlug="equipment-foundations-oklahoma-city"
-      metaTitle="Equipment Foundations Oklahoma City | FDZ Construction LLC"
-      metaDescription="Concrete equipment foundations in Oklahoma City — machine pads, generator pads, HVAC slabs, industrial equipment bases. Engineered to spec. Call (405) 458-4805."
+      currentServiceSlug="equipment-pad-concrete-oklahoma-city"
+      metaTitle="Equipment Pad Concrete Oklahoma City | Generator, HVAC & Mechanical Pads | FDZ Construction"
+      metaDescription="Concrete equipment pads in Oklahoma City — machine pads, generator pads, HVAC slabs, industrial equipment bases. Engineered to spec. Call (405) 458-4805."
       eyebrow="OKC Metro · Equipment Foundations · Licensed & Insured"
       title="Concrete Equipment Foundations in"
       titleAccent="Oklahoma City."

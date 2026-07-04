@@ -4,9 +4,9 @@ export default function WarehouseFloorReplacement() {
   return (
     <ServicePage
       enriched
-      currentServiceSlug="warehouse-floor-replacement-oklahoma-city"
-      metaTitle="Warehouse Floor Replacement Oklahoma City | FDZ Construction LLC"
-      metaDescription="Warehouse floor replacement in Oklahoma City. Phased pours, flatness tolerances for forklifts, 8&quot;+ reinforced concrete. Licensed commercial contractor. Call (405) 458-4805."
+      currentServiceSlug="warehouse-slab-repair-oklahoma-city"
+      metaTitle="Warehouse Slab Repair Oklahoma City | Interior Concrete Replacement | FDZ Construction"
+      metaDescription="Warehouse slab repair and floor replacement in Oklahoma City. Phased pours, flatness tolerances for forklifts, 8&quot;+ reinforced concrete. Licensed commercial contractor. Call (405) 458-4805."
       eyebrow="OKC Metro · Warehouse Floor Replacement · Licensed & Insured"
       title="Warehouse Floor Replacement in"
       titleAccent="Oklahoma City."

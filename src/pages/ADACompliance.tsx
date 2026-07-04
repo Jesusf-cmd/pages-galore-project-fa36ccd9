@@ -4,8 +4,8 @@ export default function ADACompliance() {
   return (
     <ServicePage
       enriched
-      currentServiceSlug="ada-ramps-oklahoma-city"
-      metaTitle="ADA Ramps & Concrete Compliance Oklahoma City | FDZ Construction LLC"
+      currentServiceSlug="ada-concrete-ramps-oklahoma-city"
+      metaTitle="ADA Concrete Ramps Oklahoma City | Sidewalks, Curb Ramps & Access Routes | FDZ Construction"
       metaDescription="ADA-compliant concrete ramps, curb cuts & accessible surfaces in Oklahoma City. Licensed contractor. Fix violations fast. Free estimates — (405) 458-4805."
       eyebrow="OKC Metro · ADA Compliance · Licensed & Insured"
       title="ADA Ramps & Concrete Compliance in"

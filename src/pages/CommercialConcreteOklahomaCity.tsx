@@ -11,12 +11,38 @@ export default function CommercialConcreteOklahomaCity() {
         sectionTitle: "Commercial Concrete Services in Oklahoma City",
         items: [
           {
+            title: "Bollard Installation",
+            bullets: [
+              "Concrete-set bollards for storefronts, loading areas, dock doors, and dumpster enclosures",
+              "Core drilling into existing slabs or new concrete sleeve bases",
+              "Proper sleeve depth — 36\"–48\" — for actual vehicle impact resistance",
+              "<a href='/bollard-installation-oklahoma-city'>Full bollard installation page →</a>",
+            ],
+          },
+          {
+            title: "Crane Foundation Installation",
+            bullets: [
+              "Concrete installation scope per approved engineered drawings",
+              "Anchor bolt and embed coordination with crane supplier and structural engineer",
+              "Reinforcement placed per plan/spec — sub-base evaluation before forming",
+              "<a href='/crane-foundation-installation-oklahoma-city'>Full crane foundation page →</a>",
+            ],
+          },
+          {
+            title: "Loading Dock Concrete Repair",
+            bullets: [
+              "Dock apron repair, dock face replacement, approach slab patching",
+              "Dock leveler pit wall repair and curb angle replacement",
+              "After-hours and weekend scheduling to minimize dock downtime",
+              "<a href='/loading-dock-concrete-repair-oklahoma-city'>Full loading dock repair page →</a>",
+            ],
+          },
+          {
             title: "Loading Dock Construction",
             bullets: [
               "New loading dock builds for warehouses and distribution centers",
               "Standard dock height 48–52\" from grade to match semi-trailer beds",
               "8\"+ reinforced concrete, 4,000–5,000 PSI, dock leveler pit coordination",
-              "After-hours and phased construction for occupied facilities",
               "<a href='/loading-dock-construction-oklahoma-city'>Full loading dock construction page →</a>",
             ],
           },
@@ -25,68 +51,90 @@ export default function CommercialConcreteOklahomaCity() {
             bullets: [
               "Complete demolition and replacement when repair is no longer viable",
               "Sub-base investigation and correction — the root cause of most dock failures",
-              "Dock height correction and dock leveler equipment integration",
               "Honest assessment: we'll tell you if repair is the better answer",
               "<a href='/loading-dock-replacement-oklahoma-city'>Full loading dock replacement page →</a>",
             ],
           },
           {
-            title: "Dock Leveler Pits",
+            title: "Dock Leveler Pit Concrete",
             bullets: [
               "Pit dimensions set from equipment supplier shop drawings — before any concrete is poured",
               "Steel curb angle placement, anchor bolt embedments, utility conduit",
               "New pit construction, retrofit into existing dock, pit repair and enlargement",
-              "<a href='/dock-leveler-pits-oklahoma-city'>Full dock leveler pit page →</a>",
+              "<a href='/dock-leveler-pit-concrete-oklahoma-city'>Full dock leveler pit page →</a>",
             ],
           },
           {
-            title: "Truck Courts",
+            title: "Truck Court Concrete",
             bullets: [
               "8\"–10\" reinforced concrete for Class 8 semi-truck loads (80,000 lbs GVW)",
               "Minimum 120-foot depth for 53-foot trailer maneuvering",
               "4,000–5,000 PSI, engineered joint spacing, broom finish for traction",
-              "<a href='/truck-courts-oklahoma-city'>Full truck court page →</a>",
+              "<a href='/truck-court-concrete-oklahoma-city'>Full truck court page →</a>",
             ],
           },
           {
-            title: "Industrial Concrete Repair",
-            bullets: [
-              "Forklift damage, spalling, joint failure, structural cracks, dock face repair",
-              "Rapid-set materials available — return to service in hours for surface repairs",
-              "Root cause evaluation before recommending repair vs. replacement",
-              "<a href='/industrial-concrete-repair-oklahoma-city'>Full industrial repair page →</a>",
-            ],
-          },
-          {
-            title: "Warehouse Floor Replacement",
+            title: "Warehouse Slab Repair",
             bullets: [
               "Phased replacement inside occupied facilities — section by section",
-              "Laser screed flatwork to FF/FL numbers required by your material handling equipment",
+              "Laser screed flatwork to FF/FL numbers required by forklift operations",
               "Sub-base investigation and correction before every pour",
-              "<a href='/warehouse-floor-replacement-oklahoma-city'>Full warehouse floor replacement page →</a>",
+              "<a href='/warehouse-slab-repair-oklahoma-city'>Full warehouse slab repair page →</a>",
             ],
           },
           {
-            title: "Equipment Foundations",
+            title: "Equipment Pad Concrete",
             bullets: [
               "Machine pads, generator pads, HVAC slabs, transformer pads, compressor bases",
               "Anchor bolt placement from equipment supplier shop drawings",
               "Poured to manufacturer specs — cure time before equipment set is non-negotiable",
-              "<a href='/equipment-foundations-oklahoma-city'>Full equipment foundations page →</a>",
+              "<a href='/equipment-pad-concrete-oklahoma-city'>Full equipment pad page →</a>",
             ],
           },
           {
-            title: "Parking Lots",
+            title: "Dumpster Pad Concrete",
+            bullets: [
+              "6\" minimum reinforced concrete on compacted sub-base for collection truck loads",
+              "Properly sloped for drainage, optional curb stops and enclosure coordination",
+              "<a href='/dumpster-pad-concrete-oklahoma-city'>Full dumpster pad page →</a>",
+            ],
+          },
+          {
+            title: "ADA Concrete Ramps",
+            bullets: [
+              "ADA-compliant curb ramps, accessible routes, detectable warning surfaces",
+              "Code-compliant to current ADA Standards and IBC requirements",
+              "<a href='/ada-concrete-ramps-oklahoma-city'>Full ADA ramps page →</a>",
+            ],
+          },
+          {
+            title: "Commercial Curb & Gutter",
+            bullets: [
+              "New parking lot curbing, replacement sections, drive approach cuts, island curbs",
+              "Straight and radius curb, slipform for longer runs, hand-formed for custom sections",
+              "<a href='/commercial-curb-and-gutter-oklahoma-city'>Full curb & gutter page →</a>",
+            ],
+          },
+          {
+            title: "Concrete Parking Lot Repair",
+            bullets: [
+              "Panel replacement, joint sealing, trip hazard grinding, crack repair",
+              "Sub-base evaluation on every panel replacement — not optional",
+              "<a href='/concrete-parking-lot-repair-oklahoma-city'>Full parking lot repair page →</a>",
+            ],
+          },
+          {
+            title: "Parking Lots (New Construction)",
             bullets: [
               "ADA-compliant parking lot construction with proper drainage",
               "High-PSI mix for vehicle loads, expansion joint planning for large-area pours",
-              "<a href='/parking-lots-oklahoma-city'>Full parking lot page →</a>",
+              "<a href='/parking-lots-oklahoma-city'>Full parking lot construction page →</a>",
             ],
           },
         ],
       }}
-      metaTitle="Commercial Concrete Contractors Oklahoma City | FDZ Construction LLC"
-      metaDescription="Commercial concrete contractors in Oklahoma City. Loading docks, warehouse floors, truck courts, equipment foundations, parking lots & more. Free estimate: (405) 458-4805."
+      metaTitle="Commercial Concrete Contractor Oklahoma City | FDZ Construction LLC"
+      metaDescription="Commercial concrete contractors in Oklahoma City. Loading docks, warehouse floors, truck courts, equipment pads, bollards, crane foundations & more. Free estimate: (405) 458-4805."
       eyebrow="OKC Metro · Commercial Concrete · Licensed & Insured"
       title="Commercial Concrete in"
       titleAccent="Oklahoma City."
@@ -215,17 +263,23 @@ export default function CommercialConcreteOklahomaCity() {
           title: "Every Commercial Service",
           titleAccent: "We Offer.",
           content: [
+            "<a href='/bollard-installation-oklahoma-city' class='text-orange no-underline font-medium'>Bollard Installation</a> — Concrete-set bollards for storefronts, dock areas, dumpster enclosures, and equipment protection.",
+            "<a href='/crane-foundation-installation-oklahoma-city' class='text-orange no-underline font-medium'>Crane Foundation Installation</a> — Concrete installation per approved engineered drawings with anchor bolt coordination.",
+            "<a href='/loading-dock-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Concrete Repair</a> — Dock apron, dock face, pit wall, and approach slab repairs.",
             "<a href='/loading-dock-construction-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Construction</a> — New loading docks for warehouses and distribution centers.",
             "<a href='/loading-dock-replacement-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Replacement</a> — Full demolition and replacement for failed docks.",
-            "<a href='/dock-leveler-pits-oklahoma-city' class='text-orange no-underline font-medium'>Dock Leveler Pits</a> — New pits, retrofits, and pit repair coordinated with equipment suppliers.",
-            "<a href='/truck-courts-oklahoma-city' class='text-orange no-underline font-medium'>Truck Courts</a> — Industrial-grade truck maneuvering areas for distribution facilities.",
+            "<a href='/dock-leveler-pit-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dock Leveler Pit Concrete</a> — New pits, retrofits, and pit repair coordinated with equipment suppliers.",
+            "<a href='/truck-court-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Truck Court Concrete</a> — Industrial-grade truck maneuvering areas for distribution facilities.",
+            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Slab Repair</a> — Phased replacement with flatness tolerances for forklift operations.",
+            "<a href='/equipment-pad-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Equipment Pad Concrete</a> — Machine pads, generator pads, HVAC slabs, transformer pads.",
+            "<a href='/dumpster-pad-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dumpster Pad Concrete</a> — Reinforced dumpster enclosure pads properly sloped and detailed.",
+            "<a href='/ada-concrete-ramps-oklahoma-city' class='text-orange no-underline font-medium'>ADA Concrete Ramps</a> — ADA-compliant curb ramps, accessible routes, and detectable warning surfaces.",
+            "<a href='/commercial-curb-and-gutter-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Curb &amp; Gutter</a> — Parking lot curbing, island curbs, and drive approach cuts.",
+            "<a href='/concrete-parking-lot-repair-oklahoma-city' class='text-orange no-underline font-medium'>Concrete Parking Lot Repair</a> — Panel replacement, joint sealing, trip hazard grinding.",
+            "<a href='/parking-lots-oklahoma-city' class='text-orange no-underline font-medium'>Parking Lots (New)</a> — ADA-compliant commercial parking lot construction.",
             "<a href='/industrial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Industrial Concrete Repair</a> — Forklift damage, spalling, joint failure, dock repairs.",
-            "<a href='/warehouse-floor-replacement-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Floor Replacement</a> — Phased replacement with flatness tolerances for forklift operations.",
-            "<a href='/equipment-foundations-oklahoma-city' class='text-orange no-underline font-medium'>Equipment Foundations</a> — Machine pads, generator pads, HVAC slabs, transformer pads.",
             "<a href='/pool-deck-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Pool Decks</a> — Slip-resistant concrete pool decks for HOAs, hotels, and commercial properties.",
-            "<a href='/parking-lots-oklahoma-city' class='text-orange no-underline font-medium'>Parking Lots</a> — ADA-compliant commercial parking lot construction.",
             "<a href='/foundations-oklahoma-city' class='text-orange no-underline font-medium'>Foundations</a> — Commercial slab-on-grade and structural foundations.",
-            "<a href='/sidewalks-oklahoma-city' class='text-orange no-underline font-medium'>Sidewalks &amp; Curb and Gutter</a> — Site sidewalks, ADA ramps, and curb work.",
           ],
         },
       ]}

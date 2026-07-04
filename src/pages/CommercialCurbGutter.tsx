@@ -4,8 +4,8 @@ export default function CommercialCurbGutter() {
   return (
     <ServicePage
       enriched
-      currentServiceSlug="commercial-curb-gutter-oklahoma-city"
-      metaTitle="Commercial Curb & Gutter Oklahoma City | FDZ Construction LLC"
+      currentServiceSlug="commercial-curb-and-gutter-oklahoma-city"
+      metaTitle="Commercial Curb and Gutter Oklahoma City | Concrete Curb Replacement | FDZ Construction"
       metaDescription="Commercial concrete curb and gutter in Oklahoma City — new construction, replacement, curb repair, and parking lot curbing. Licensed contractor. Call (405) 458-4805."
       eyebrow="OKC Metro · Commercial Curbing · Licensed & Insured"
       title="Commercial Curb & Gutter in"

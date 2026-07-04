@@ -4,8 +4,8 @@ export default function TruckCourts() {
   return (
     <ServicePage
       enriched
-      currentServiceSlug="truck-courts-oklahoma-city"
-      metaTitle="Truck Court Construction Oklahoma City | FDZ Construction LLC"
+      currentServiceSlug="truck-court-concrete-oklahoma-city"
+      metaTitle="Truck Court Concrete Oklahoma City | Heavy-Duty Concrete Paving | FDZ Construction"
       metaDescription="Concrete truck court construction in Oklahoma City. Industrial-grade flatwork engineered for semi-truck loads and daily heavy traffic. Free estimates — (405) 458-4805."
       eyebrow="OKC Metro · Truck Court Construction · Licensed & Insured"
       title="Truck Court Construction in"

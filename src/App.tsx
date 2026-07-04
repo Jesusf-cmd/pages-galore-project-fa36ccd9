@@ -30,6 +30,7 @@ const PoolDeckOklahomaCity = lazy(() => import("./pages/PoolDeckOklahomaCity"));
 const BollardInstallation = lazy(() => import("./pages/BollardInstallation"));
 const CraneFoundation = lazy(() => import("./pages/CraneFoundation"));
 const LoadingDockConcreteRepair = lazy(() => import("./pages/LoadingDockConcreteRepair"));
+const ConcreteParkinglotRepair = lazy(() => import("./pages/ConcreteParkinglotRepair"));
 const LoadingDockConstruction = lazy(() => import("./pages/LoadingDockConstruction"));
 const LoadingDockReplacement = lazy(() => import("./pages/LoadingDockReplacement"));
 const DockLevelerPits = lazy(() => import("./pages/DockLevelerPits"));
@@ -96,15 +97,25 @@ const App = () => (
                 <Route path="/loading-dock-concrete-repair-oklahoma-city" element={<LoadingDockConcreteRepair />} />
                 <Route path="/loading-dock-construction-oklahoma-city" element={<LoadingDockConstruction />} />
                 <Route path="/loading-dock-replacement-oklahoma-city" element={<LoadingDockReplacement />} />
-                <Route path="/dock-leveler-pits-oklahoma-city" element={<DockLevelerPits />} />
-                <Route path="/truck-courts-oklahoma-city" element={<TruckCourts />} />
+                {/* New preferred URLs for moved pages */}
+                <Route path="/dock-leveler-pit-concrete-oklahoma-city" element={<DockLevelerPits />} />
+                <Route path="/truck-court-concrete-oklahoma-city" element={<TruckCourts />} />
                 <Route path="/industrial-concrete-repair-oklahoma-city" element={<IndustrialConcreteRepair />} />
-                <Route path="/warehouse-floor-replacement-oklahoma-city" element={<WarehouseFloorReplacement />} />
-                <Route path="/equipment-foundations-oklahoma-city" element={<EquipmentFoundations />} />
-                <Route path="/ada-ramps-oklahoma-city" element={<ADACompliance />} />
-                <Route path="/dumpster-pads-oklahoma-city" element={<DumpsterPads />} />
+                <Route path="/warehouse-slab-repair-oklahoma-city" element={<WarehouseFloorReplacement />} />
+                <Route path="/equipment-pad-concrete-oklahoma-city" element={<EquipmentFoundations />} />
+                <Route path="/ada-concrete-ramps-oklahoma-city" element={<ADACompliance />} />
+                <Route path="/dumpster-pad-concrete-oklahoma-city" element={<DumpsterPads />} />
+                <Route path="/concrete-parking-lot-repair-oklahoma-city" element={<ConcreteParkinglotRepair />} />
                 <Route path="/commercial-concrete-repair-oklahoma-city" element={<CommercialConcreteRepair />} />
-                <Route path="/commercial-curb-gutter-oklahoma-city" element={<CommercialCurbGutter />} />
+                <Route path="/commercial-curb-and-gutter-oklahoma-city" element={<CommercialCurbGutter />} />
+                {/* 301 redirects: old URLs → new preferred URLs */}
+                <Route path="/dock-leveler-pits-oklahoma-city" element={<Navigate to="/dock-leveler-pit-concrete-oklahoma-city" replace />} />
+                <Route path="/truck-courts-oklahoma-city" element={<Navigate to="/truck-court-concrete-oklahoma-city" replace />} />
+                <Route path="/warehouse-floor-replacement-oklahoma-city" element={<Navigate to="/warehouse-slab-repair-oklahoma-city" replace />} />
+                <Route path="/equipment-foundations-oklahoma-city" element={<Navigate to="/equipment-pad-concrete-oklahoma-city" replace />} />
+                <Route path="/ada-ramps-oklahoma-city" element={<Navigate to="/ada-concrete-ramps-oklahoma-city" replace />} />
+                <Route path="/dumpster-pads-oklahoma-city" element={<Navigate to="/dumpster-pad-concrete-oklahoma-city" replace />} />
+                <Route path="/commercial-curb-gutter-oklahoma-city" element={<Navigate to="/commercial-curb-and-gutter-oklahoma-city" replace />} />
                 <Route path="/polished-concrete-oklahoma-city" element={<PolishedConcrete />} />
                 <Route path="/epoxy-floor-coatings-oklahoma-city" element={<EpoxyFloorCoatings />} />
                 <Route path="/retail-restaurant-concrete-oklahoma-city" element={<RetailRestaurantConcrete />} />

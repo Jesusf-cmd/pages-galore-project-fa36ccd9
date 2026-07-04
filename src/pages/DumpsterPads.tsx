@@ -4,8 +4,8 @@ export default function DumpsterPads() {
   return (
     <ServicePage
       enriched
-      currentServiceSlug="dumpster-pads-oklahoma-city"
-      metaTitle="Dumpster Pads Oklahoma City | Concrete Trash Enclosures | FDZ Construction LLC"
+      currentServiceSlug="dumpster-pad-concrete-oklahoma-city"
+      metaTitle="Dumpster Pad Concrete Oklahoma City | Trash Enclosure Slabs & Bollards | FDZ Construction"
       metaDescription="Concrete dumpster pads & trash enclosures in Oklahoma City. Commercial-grade, properly sloped, built for heavy containers. Free estimates — (405) 458-4805."
       eyebrow="OKC Metro · Commercial Concrete · Licensed & Insured"
       title="Concrete Dumpster Pads & Trash Enclosures in"
