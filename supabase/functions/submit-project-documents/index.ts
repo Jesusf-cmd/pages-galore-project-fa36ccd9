@@ -1,6 +1,6 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-const GATEWAY_URL = "https://connector-gateway.lovable.dev/resend";
+const RESEND_API_URL = "https://api.resend.com/emails";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -237,7 +237,7 @@ Deno.serve(async (req) => {
 </body></html>`;
 
       try {
-        const res = await fetch(`${GATEWAY_URL}/emails`, {
+        const res = await fetch(RESEND_API_URL, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

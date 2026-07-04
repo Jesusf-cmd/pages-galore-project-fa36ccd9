@@ -6,7 +6,7 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
-const GATEWAY_URL = "https://connector-gateway.lovable.dev/resend";
+const RESEND_API_URL = "https://api.resend.com/emails";
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -91,7 +91,7 @@ Deno.serve(async (req) => {
         </div>`;
 
       try {
-        await fetch(`${GATEWAY_URL}/emails`, {
+        await fetch(RESEND_API_URL, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
