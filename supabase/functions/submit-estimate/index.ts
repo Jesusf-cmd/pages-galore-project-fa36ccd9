@@ -1,12 +1,11 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { sendEmail } from "../_shared/email.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
     "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
-
-const RESEND_API_URL = "https://api.resend.com/emails";
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -50,18 +49,17 @@ Deno.serve(async (req) => {
     });
 
     if (dbError) {
-      console.error("DB insert error:", dbError);
+      console.error("DB insert error:", dbError.message, dbError);
       return new Response(JSON.stringify({ error: "Failed to save submission" }), {
         status: 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
-    // Send notification email to jesus@fdzconstruction.com
+    let emailSent = false;
     const resendApiKey = Deno.env.get("RESEND_API_KEY");
     if (resendApiKey) {
       const notifyEmail = Deno.env.get("NOTIFICATION_EMAIL") || "jesus@fdzconstruction.com";
-      const fromAddress = Deno.env.get("FROM_EMAIL") || "FDZ Construction <jesus@fdzconstruction.com>";
 
       const projectLabel = projectType.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase());
       const estimateRange = estimateLow && estimateHigh
@@ -90,28 +88,26 @@ Deno.serve(async (req) => {
           </div>
         </div>`;
 
-      try {
-        await fetch(RESEND_API_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${resendApiKey}`,
-          },
-          body: JSON.stringify({ from: fromAddress, to: [notifyEmail], subject: `New Estimate — ${projectLabel} — ${name}`, html: internalHtml }),
-        });
-      } catch (emailErr) {
-        console.warn("Email send failed (non-fatal):", emailErr);
+      const emailResult = await sendEmail(
+        notifyEmail,
+        `New Estimate — ${projectLabel} — ${name}`,
+        internalHtml,
+      );
+      emailSent = emailResult.ok;
+      if (!emailResult.ok) {
+        console.error("Estimate notification email failed:", emailResult.error);
       }
     } else {
       console.warn("RESEND_API_KEY not set — estimate saved to DB but no notification email sent.");
     }
 
     return new Response(
-      JSON.stringify({ success: true, message: "Estimate submitted successfully" }),
-      { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      JSON.stringify({ success: true, message: "Estimate submitted successfully", emailSent }),
+      { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } },
     );
   } catch (err) {
-    console.error("Error processing submission:", err);
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("Error processing submission:", message, err);
     return new Response(JSON.stringify({ error: "Internal server error" }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },

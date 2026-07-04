@@ -119,6 +119,7 @@ export default function ProjectDocumentUpload() {
         method: "POST",
         headers: {
           Authorization: `Bearer ${supabaseKey}`,
+          apikey: supabaseKey,
         },
         body: formData,
       });

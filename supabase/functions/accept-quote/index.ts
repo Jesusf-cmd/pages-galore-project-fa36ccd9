@@ -1,6 +1,5 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-
-const GATEWAY_URL = "https://connector-gateway.lovable.dev/resend";
+import { NOTIFICATION_EMAIL, sendEmail } from "../_shared/email.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -151,37 +150,15 @@ Deno.serve(async (req) => {
     }
 
     // Send emails
-    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     const quoteNumber = `#${String(quote.quote_number).padStart(4, "0")}`;
     const siteUrl = Deno.env.get("SITE_URL") || "https://fdzconstruction.com";
     const quoteUrl = `${siteUrl}/quote/${quote.access_token}`;
-    const fromAddress = Deno.env.get("FROM_EMAIL") || "FDZ Construction <jesus@fdzconstruction.com>";
     const acceptedDateStr = new Date(acceptedAt).toLocaleDateString("en-US", {
       year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit",
     });
 
-    if (LOVABLE_API_KEY && RESEND_API_KEY) {
-      const sendEmail = async (to: string, subject: string, html: string) => {
-        try {
-          const res = await fetch(`${GATEWAY_URL}/emails`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${LOVABLE_API_KEY}`,
-              "X-Connection-Api-Key": RESEND_API_KEY,
-            },
-            body: JSON.stringify({ from: fromAddress, to: [to], subject, html }),
-          });
-          if (!res.ok) {
-            const data = await res.json();
-            console.error(`Email failed [${res.status}]:`, JSON.stringify(data));
-          }
-        } catch (e) {
-          console.error("Email error:", e);
-        }
-      };
-
+    if (RESEND_API_KEY) {
       const firstName = quote.customer_name.trim().split(" ")[0];
 
       // Line items for internal email
@@ -264,10 +241,19 @@ Deno.serve(async (req) => {
   </div>
 </body></html>`;
 
+      const sendAcceptEmail = async (to: string, subject: string, html: string) => {
+        const result = await sendEmail(to, subject, html);
+        if (!result.ok) {
+          console.error(`Accept quote email failed (${subject}):`, result.error);
+        }
+      };
+
       await Promise.allSettled([
-        sendEmail(quote.customer_email, `Quote ${quoteNumber} Accepted - FDZ Construction`, customerHtml),
-        sendEmail("jesus@fdzconstruction.com", `ACCEPTED: Quote ${quoteNumber} - ${quote.customer_name}`, internalHtml),
+        sendAcceptEmail(quote.customer_email, `Quote ${quoteNumber} Accepted - FDZ Construction`, customerHtml),
+        sendAcceptEmail(NOTIFICATION_EMAIL, `ACCEPTED: Quote ${quoteNumber} - ${quote.customer_name}`, internalHtml),
       ]);
+    } else {
+      console.warn("RESEND_API_KEY not configured, skipping email sends");
     }
 
     return new Response(

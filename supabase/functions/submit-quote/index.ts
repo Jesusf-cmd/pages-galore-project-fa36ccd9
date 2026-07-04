@@ -1,6 +1,5 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-
-const GATEWAY_URL = "https://connector-gateway.lovable.dev/resend";
+import { NOTIFICATION_EMAIL, sendEmail } from "../_shared/email.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -73,12 +72,9 @@ Deno.serve(async (req) => {
       year: "numeric", month: "long", day: "numeric",
     });
 
-    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
-    if (LOVABLE_API_KEY && RESEND_API_KEY) {
-      const fromAddress = Deno.env.get("FROM_EMAIL") || "FDZ Construction <jesus@fdzconstruction.com>";
-
+    if (RESEND_API_KEY) {
       const customerHtml = `
 <!DOCTYPE html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
@@ -163,33 +159,19 @@ Deno.serve(async (req) => {
   </div>
 </body></html>`;
 
-      const sendEmail = async (to: string, subject: string, html: string) => {
-        try {
-          const res = await fetch(`${GATEWAY_URL}/emails`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${LOVABLE_API_KEY}`,
-              "X-Connection-Api-Key": RESEND_API_KEY,
-            },
-            body: JSON.stringify({ from: fromAddress, to: [to], subject, html }),
-          });
-          const data = await res.json();
-          if (!res.ok) {
-            console.error(`Email send failed [${res.status}]:`, JSON.stringify(data));
-          }
-          return data;
-        } catch (e) {
-          console.error("Email send error:", e);
+      const sendQuoteEmail = async (to: string, subject: string, html: string) => {
+        const result = await sendEmail(to, subject, html);
+        if (!result.ok) {
+          console.error(`Quote email failed (${subject}):`, result.error);
         }
       };
 
       await Promise.allSettled([
-        sendEmail(email, `Your Quote ${quoteNumber} from FDZ Construction`, customerHtml),
-        sendEmail("jesus@fdzconstruction.com", `New Quote ${quoteNumber} - ${name}`, internalHtml),
+        sendQuoteEmail(email, `Your Quote ${quoteNumber} from FDZ Construction`, customerHtml),
+        sendQuoteEmail(NOTIFICATION_EMAIL, `New Quote ${quoteNumber} - ${name}`, internalHtml),
       ]);
     } else {
-      console.warn("Email keys not configured, skipping email sends");
+      console.warn("RESEND_API_KEY not configured, skipping email sends");
     }
 
     return new Response(

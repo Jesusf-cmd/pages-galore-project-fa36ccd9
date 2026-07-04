@@ -1,6 +1,5 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-
-const RESEND_API_URL = "https://api.resend.com/emails";
+import { NOTIFICATION_EMAIL, sendEmail } from "../_shared/email.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -156,8 +155,11 @@ Deno.serve(async (req) => {
         });
 
       if (uploadError) {
-        console.error("Upload error:", uploadError);
-        return new Response(JSON.stringify({ error: "Failed to upload one of your files. Please try again." }), {
+        console.error("Upload error:", uploadError.message, uploadError);
+        const hint = uploadError.message?.includes("Bucket not found")
+          ? "Storage bucket project-documents is missing — run the Supabase migration."
+          : "Failed to upload one of your files. Please try again.";
+        return new Response(JSON.stringify({ error: hint }), {
           status: 500,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
@@ -182,20 +184,20 @@ Deno.serve(async (req) => {
     });
 
     if (dbError) {
-      console.error("DB insert error:", dbError);
-      return new Response(JSON.stringify({ error: "Failed to save your submission. Please try again." }), {
+      console.error("DB insert error:", dbError.message, dbError);
+      const hint = dbError.message?.includes("document_submissions")
+        ? "Document submissions table is missing — run the Supabase migration."
+        : "Failed to save your submission. Please try again.";
+      return new Response(JSON.stringify({ error: hint }), {
         status: 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
-    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-    const notifyEmail = Deno.env.get("NOTIFICATION_EMAIL") || "jesus@fdzconstruction.com";
-    const fromAddress = Deno.env.get("FROM_EMAIL") || "FDZ Construction <jesus@fdzconstruction.com>";
     const signedUrlSeconds = 60 * 60 * 24 * 7;
+    let emailSent = false;
 
-    if (LOVABLE_API_KEY && RESEND_API_KEY) {
+    if (Deno.env.get("RESEND_API_KEY")) {
       const fileLinks: string[] = [];
       for (const file of uploadedFiles) {
         const { data: signedData, error: signedErr } = await supabase.storage
@@ -236,38 +238,26 @@ Deno.serve(async (req) => {
   </div>
 </body></html>`;
 
-      try {
-        const res = await fetch(RESEND_API_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${LOVABLE_API_KEY}`,
-            "X-Connection-Api-Key": RESEND_API_KEY,
-          },
-          body: JSON.stringify({
-            from: fromAddress,
-            to: [notifyEmail],
-            subject: `Project documents uploaded — ${name}`,
-            html: internalHtml,
-          }),
-        });
-        if (!res.ok) {
-          const data = await res.json();
-          console.error(`Email send failed [${res.status}]:`, JSON.stringify(data));
-        }
-      } catch (e) {
-        console.error("Email send error:", e);
+      const emailResult = await sendEmail(
+        NOTIFICATION_EMAIL,
+        `Project documents uploaded — ${name}`,
+        internalHtml,
+      );
+      emailSent = emailResult.ok;
+      if (!emailResult.ok) {
+        console.error("Document notification email failed:", emailResult.error);
       }
     } else {
-      console.warn("Email keys not configured, skipping notification email");
+      console.warn("RESEND_API_KEY not configured, skipping notification email");
     }
 
-    return new Response(JSON.stringify({ success: true }), {
+    return new Response(JSON.stringify({ success: true, emailSent }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (err) {
-    console.error("Error processing document submission:", err);
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("Error processing document submission:", message, err);
     return new Response(JSON.stringify({ error: "Something went wrong. Please try again or call (405) 458-4805." }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
