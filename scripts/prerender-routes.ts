@@ -317,6 +317,27 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
     content: "Most foundation movement in OKC isn't a foundation problem — it's a drainage problem causing a foundation problem. We evaluate the actual cause of movement first: drainage correction (re-grading, gutter extensions, French drains), slab leveling where surrounding base is sound, partial slab replacement, and structural engineer coordination for cases where piers are genuinely required. We are not a pier sales operation — we won't push piers when drainage correction or slab leveling solves the problem. Drainage correction $500–$3,000, slab leveling $800–$2,500, partial replacement $1,500–$6,000, structural piers $3,500–$25,000+. Free on-site evaluation. Call (405) 458-4805.",
   },
   {
+    path: "/bollard-installation-oklahoma-city",
+    title: "Bollard Installation Oklahoma City | Concrete Bollards & Protective Posts | FDZ Construction",
+    description: "Concrete bollard installation in Oklahoma City — protective bollards for storefronts, dumpster enclosures, dock areas, and drive-through lanes. Licensed & insured. Call (405) 458-4805.",
+    h1: "Bollard Installation in Oklahoma City, OK",
+    content: "FDZ Construction installs concrete-set bollards for commercial properties, warehouses, distribution centers, retail storefronts, and drive-through facilities across Oklahoma City. We handle core drilling, anchor setting, and sleeve installation in both new concrete and existing slabs. Single bollard or full perimeter. Call (405) 458-4805.",
+  },
+  {
+    path: "/crane-foundation-installation-oklahoma-city",
+    title: "Crane Foundation Installation Oklahoma City | Concrete Crane Pads | FDZ Construction",
+    description: "Crane foundation installation in Oklahoma City — concrete crane pads, anchor bolt coordination, and reinforcement placed per engineered drawings. Licensed & insured. Call (405) 458-4805.",
+    h1: "Crane Foundation Installation in Oklahoma City, OK",
+    content: "FDZ Construction handles the concrete installation scope for crane foundations across the Oklahoma City metro: reinforcement placed per plan/spec, anchor bolts and embeds coordinated directly with the crane supplier and engineer, and pour sequencing coordinated with the GC. We install per approved plans — we do not engineer or design crane foundations. Call (405) 458-4805.",
+  },
+  {
+    path: "/loading-dock-concrete-repair-oklahoma-city",
+    title: "Loading Dock Concrete Repair Oklahoma City | Dock Aprons & Slabs | FDZ Construction",
+    description: "Loading dock concrete repair in Oklahoma City — dock apron repair, dock face replacement, pit wall repair, approach slab patching. Licensed & insured. Call (405) 458-4805.",
+    h1: "Loading Dock Concrete Repair in Oklahoma City, OK",
+    content: "FDZ Construction repairs loading dock concrete for warehouses, distribution centers, cold storage, and manufacturing facilities across Oklahoma City. Cracked dock aprons, spalled dock faces, failing pit walls, approach slab patching. We work around your receiving schedule — after-hours, weekends, and phased sequences. Call (405) 458-4805.",
+  },
+  {
     path: "/loading-dock-construction-oklahoma-city",
     title: "Loading Dock Construction Oklahoma City | FDZ Construction LLC",
     description: "Commercial loading dock construction in Oklahoma City. Laser-level precision, 8\"+ reinforced concrete, dock leveler pit coordination. Free estimates — (405) 458-4805.",

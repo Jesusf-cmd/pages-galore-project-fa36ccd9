@@ -27,6 +27,9 @@ const BlogPost = lazy(() => import("./pages/BlogPost"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const PoolDeckOklahomaCity = lazy(() => import("./pages/PoolDeckOklahomaCity"));
+const BollardInstallation = lazy(() => import("./pages/BollardInstallation"));
+const CraneFoundation = lazy(() => import("./pages/CraneFoundation"));
+const LoadingDockConcreteRepair = lazy(() => import("./pages/LoadingDockConcreteRepair"));
 const LoadingDockConstruction = lazy(() => import("./pages/LoadingDockConstruction"));
 const LoadingDockReplacement = lazy(() => import("./pages/LoadingDockReplacement"));
 const DockLevelerPits = lazy(() => import("./pages/DockLevelerPits"));
@@ -88,6 +91,9 @@ const App = () => (
                 <Route path="/parking-lots-oklahoma-city" element={<ParkingLotConcrete />} />
                 <Route path="/retaining-walls-oklahoma-city" element={<RetainingWalls />} />
                 <Route path="/pool-deck-oklahoma-city" element={<PoolDeckOklahomaCity />} />
+                <Route path="/bollard-installation-oklahoma-city" element={<BollardInstallation />} />
+                <Route path="/crane-foundation-installation-oklahoma-city" element={<CraneFoundation />} />
+                <Route path="/loading-dock-concrete-repair-oklahoma-city" element={<LoadingDockConcreteRepair />} />
                 <Route path="/loading-dock-construction-oklahoma-city" element={<LoadingDockConstruction />} />
                 <Route path="/loading-dock-replacement-oklahoma-city" element={<LoadingDockReplacement />} />
                 <Route path="/dock-leveler-pits-oklahoma-city" element={<DockLevelerPits />} />
