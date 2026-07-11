@@ -74,9 +74,17 @@ interface ServicePageProps {
     intro?: string;
     photos: { src: string; alt: string }[];
   };
+  /** Real job-site video clips — muted by default, playable with native controls. */
+  videoGallery?: {
+    eyebrow?: string;
+    title: string;
+    titleAccent?: string;
+    intro?: string;
+    videos: { src: string; poster: string; alt: string }[];
+  };
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, trustLine, subServices, projectGallery }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, trustLine, subServices, projectGallery, videoGallery }: ServicePageProps) {
   const seoTitle = metaTitle || `${title} ${titleAccent.replace('.', '')} | FDZ Construction LLC`;
   const seoDescription = metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155);
   const canonical = currentServiceSlug ? `https://fdzconstruction.com/${currentServiceSlug}` : undefined;
@@ -244,6 +252,35 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
             <p className="prose-muted mt-6">
               <Link to="/our-projects" className="text-orange no-underline font-medium">See more completed projects across the OKC metro →</Link>
             </p>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* Real job-site video clips */}
+      {videoGallery && videoGallery.videos.length > 0 && (
+        <ScrollReveal>
+          <section className="section-padding section-alt">
+            <div className="section-eye">{videoGallery.eyebrow || "Watch Our Work"}</div>
+            <h2 className="mb-4">{videoGallery.title}<br/><em className="h2-accent">{videoGallery.titleAccent || "In Action."}</em></h2>
+            {videoGallery.intro && <p className="prose-muted mb-8 max-w-[820px]" dangerouslySetInnerHTML={{ __html: videoGallery.intro }} />}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+              {videoGallery.videos.map((v, i) => (
+                <div key={i} className="bg-darker overflow-hidden">
+                  <video
+                    className="w-full h-full object-cover min-h-[260px]"
+                    controls
+                    muted
+                    preload="none"
+                    playsInline
+                    poster={v.poster}
+                    aria-label={v.alt}
+                  >
+                    <source src={v.src} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              ))}
+            </div>
           </section>
         </ScrollReveal>
       )}

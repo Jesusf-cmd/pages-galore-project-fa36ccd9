@@ -105,6 +105,25 @@ export default function SewerLineRepairOklahomaCity() {
           ],
         },
       ]}
+      projectGallery={{
+        eyebrow: "Recent Sewer Line Work",
+        title: "Real Sewer Line Repair",
+        titleAccent: "in Oklahoma City.",
+        intro: "A sewer line excavation alongside a home foundation in Oklahoma City — new PVC pipe run through the trench ahead of backfill and concrete restoration.",
+        photos: [
+          { src: "/images/projects/sewer-line-excavation-oklahoma-city.webp", alt: "New PVC sewer line trenched alongside a home foundation during a sewer line repair excavation in Oklahoma City" },
+        ],
+      }}
+      videoGallery={{
+        eyebrow: "Watch Our Work",
+        title: "Sewer Line Repair",
+        titleAccent: "On the Job in OKC.",
+        intro: "Real clips from a sewer line repair job in Oklahoma City — videos are muted by default, tap to play with sound.",
+        videos: [
+          { src: "/videos/sewer-line-repair-1-web.mp4", poster: "/images/poster-sewer-line-repair-1.webp", alt: "New PVC pipe fitting installed during a sewer line repair excavation in Oklahoma City" },
+          { src: "/videos/sewer-line-repair-2-web.mp4", poster: "/images/poster-sewer-line-repair-2.webp", alt: "Sewer line trench dug through Oklahoma City clay soil during a repair job" },
+        ],
+      }}
       processEyebrow="Our Process"
       processTitle="From Camera Inspection to"
       processTitleAccent="Final Walkthrough."
