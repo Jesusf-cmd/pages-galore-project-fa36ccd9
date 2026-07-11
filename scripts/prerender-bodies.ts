@@ -12,6 +12,7 @@ const SERVICE_LINKS = [
   { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
   { href: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
   { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
+  { href: "/sewer-line-repair-oklahoma-city", label: "Sewer Line Repair & Installation" },
   { href: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
   { href: "/parking-lots-oklahoma-city", label: "Parking Lots" },
 ];
@@ -113,6 +114,81 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/patios-oklahoma-city">Patios &amp; Stamped Concrete</a> — Backyard patios, decorative stamped surfaces, and outdoor living slabs.</li>
       <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Parking lots, warehouse floors, loading docks, and site concrete for commercial properties.</li>
       <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; Curb and Gutter</a> — Walkways, ADA curb ramps, and curb work to complete your property.</li>
+    </ul>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    ${trustParagraph()}
+  `,
+
+  "/sewer-line-repair-oklahoma-city": `
+    <h1>Sewer Line Repair &amp; Installation in Oklahoma City, OK</h1>
+    <p>Sewer line repair almost always means digging through a driveway, sidewalk, or slab — then someone has to pour it back. Most plumbers subcontract that part or leave you to find a second contractor. FDZ Construction does the excavation and the concrete restoration with the same crew, so nothing gets left half-finished. We handle sewer line repair, replacement, and new-line installation for homeowners across the OKC metro, plus new construction and additions that need a fresh line run.</p>
+    <h2>Sewer Line Repair &amp; Installation Methods We Offer</h2>
+    <h3>Trenchless Pipe Bursting</h3>
+    <ul>
+      <li>A new pipe is pulled through the path of the old one, breaking the old pipe outward as it goes — no long open trench across your yard or driveway</li>
+      <li>Right call when the line's path is sound but the pipe itself is cracked, root-damaged, or worn out along most of its length</li>
+      <li>Minimizes landscaping and hardscape disruption compared to a full open-trench dig</li>
+      <li>Still requires two access pits — we restore both in concrete or matching surface once the pipe work is done</li>
+    </ul>
+    <h3>Traditional Excavation Repair</h3>
+    <ul>
+      <li>The damaged section of pipe is exposed by digging down to it, removed, and replaced with new pipe</li>
+      <li>Right call for isolated damage that's deep, oddly located, or not a good fit for trenchless access</li>
+      <li>This is where our concrete background matters most — the trench almost always runs under a driveway, sidewalk, or slab, and we restore it ourselves instead of handing you off to a second contractor</li>
+    </ul>
+    <h3>Spot Repair</h3>
+    <ul>
+      <li>Fixes one isolated damaged section of the line without touching the rest of the pipe</li>
+      <li>Right call when a camera inspection shows the rest of the line is in good condition and only one section failed</li>
+      <li>The most affordable option when it's genuinely all that's needed — we won't sell you a full replacement if a spot repair solves it</li>
+    </ul>
+    <h3>Full Sewer Line Replacement &amp; New Installation</h3>
+    <ul>
+      <li>For lines too old, too damaged, or made of materials no longer worth repairing — and for new construction or additions that need a line run for the first time</li>
+      <li>Modern installs use PVC, the current standard, commonly rated for 50+ years of service life with proper installation and bedding</li>
+      <li>Older clay or cast iron lines are usually the ones that end up here rather than repaired — they've typically degraded past the point where a repair holds</li>
+      <li>Includes full concrete restoration of any driveway, sidewalk, or slab disturbed during the install</li>
+    </ul>
+    <h2>Signs You Need Sewer Line Repair</h2>
+    <ul>
+      <li>Slow or backed-up drains in more than one fixture</li>
+      <li>Sewage odor near the yard or inside the house</li>
+      <li>Gurgling sounds from toilets or drains</li>
+      <li>Soggy or unusually green patches of lawn, even without rain</li>
+      <li>Multiple fixtures backing up at the same time</li>
+      <li>Standing water near the sewer cleanout</li>
+    </ul>
+    <h2>Why Oklahoma City Soil Matters for Sewer Lines</h2>
+    <p>The OKC metro sits on Permian-age clay and shale that expands when wet and shrinks in drought — sometimes moving several inches across a single season. That movement shifts buried sewer pipe out of alignment, creates low spots where the line sags, and stresses joints until they leak or separate. Bedding and backfill matter as much as the pipe itself during a repair — we bed and backfill every repair the same way we'd prep a sub-base for a driveway, so it doesn't have to be redone. Beyond soil movement, the most common causes of sewer line damage we see are tree root intrusion, aging or deteriorated pipe material (especially older clay or cast iron), and pipe bellying or settling from clay movement.</p>
+    ${processSection("From Camera Inspection to Final Walkthrough", [
+      { title: "Camera inspection", description: "We run a camera through the line first. Guessing at what's wrong underground leads to the wrong fix." },
+      { title: "Diagnosis & quote", description: "Based on what the camera shows, we tell you plainly whether this is a spot repair, a full repair, or a replacement — and give you a written quote before any digging starts." },
+      { title: "Repair or replacement", description: "We excavate and complete the pipe work using the method that matches what the inspection found." },
+      { title: "Concrete & surface restoration", description: "Same crew — we restore the driveway, sidewalk, or slab that was disturbed, instead of leaving you to find a second contractor." },
+      { title: "Final walkthrough", description: "We walk the finished work with you before we leave — the pipe repair and the concrete restoration, done together." },
+    ])}
+    <h2>Why Oklahoma City Homeowners Choose FDZ for Sewer Work</h2>
+    <ul>
+      <li>One crew handles both the excavation and the concrete restoration — no coordinating two companies</li>
+      <li>Licensed, bonded, and insured in Oklahoma</li>
+      <li>8+ years serving the OKC metro</li>
+      <li>2-year workmanship warranty on all sewer line work</li>
+      <li>Free on-site estimates, no phone quotes</li>
+      <li>Based in south OKC — fastest response time in the metro</li>
+    </ul>
+    ${faqSection("Sewer Line Repair FAQ", [
+      { question: "How do I know if I need sewer repair or full replacement?", answer: "A camera inspection tells us for certain. Isolated damage on an otherwise sound line is usually a spot or trenchless repair. Lines that are old, degraded along their length, or made of clay or cast iron nearing the end of their service life are usually better replaced than repaired." },
+      { question: "Does sewer line repair mean my driveway or yard gets torn up?", answer: "Trenchless pipe bursting avoids a long open trench and only needs two access pits. Traditional excavation repair does require digging down to the damaged section, which often means cutting into a driveway, sidewalk, or slab — which is why we handle the concrete restoration ourselves." },
+      { question: "How long does sewer line replacement take?", answer: "It depends on the length of the line, the method used, and how much concrete restoration is involved. We give you a specific timeline as part of your written quote after the camera inspection." },
+      { question: "Do you handle the concrete repair after the sewer work?", answer: "Yes — we're a concrete contractor that also does sewer line excavation, repair, and installation, so the concrete restoration is done by the same crew that did the digging." },
+      { question: "Do you install sewer lines for new construction or additions?", answer: "Yes — we run new sewer lines for new construction and additions in addition to repairing and replacing existing lines." },
+      { question: "What causes sewer line damage in Oklahoma City specifically?", answer: "Tree root intrusion, aging or deteriorated pipe material (especially older clay or cast iron), and ground movement from OKC's expansive clay and shale, which can shift pipe alignment and cause sections of the line to sag." },
+    ])}
+    <h2>Related Services</h2>
+    <ul>
+      <li><a href="/driveways-oklahoma-city">Concrete Driveways</a> — Restoration after excavation frequently means a driveway repair or full replacement.</li>
+      <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; Curb and Gutter</a> — Sidewalk restoration after sewer line access.</li>
+      <li><a href="/foundations-oklahoma-city">Foundations</a> — Slab restoration when a line runs under a garage or shop floor.</li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}

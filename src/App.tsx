@@ -17,6 +17,7 @@ const SidewalksOklahomaCity = lazy(() => import("./pages/SidewalksOklahomaCity")
 const CommercialConcreteOklahomaCity = lazy(() => import("./pages/CommercialConcreteOklahomaCity"));
 const ParkingLotConcrete = lazy(() => import("./pages/ParkingLotConcrete"));
 const RetainingWalls = lazy(() => import("./pages/RetainingWalls"));
+const SewerLineRepairOklahomaCity = lazy(() => import("./pages/SewerLineRepairOklahomaCity"));
 const CityPage = lazy(() => import("./pages/CityPage"));
 const OurProjects = lazy(() => import("./pages/OurProjects"));
 const ServiceInCity = lazy(() => import("./pages/ServiceInCity"));
@@ -91,6 +92,7 @@ const App = () => (
                 <Route path="/commercial-concrete-oklahoma-city" element={<CommercialConcreteOklahomaCity />} />
                 <Route path="/parking-lots-oklahoma-city" element={<ParkingLotConcrete />} />
                 <Route path="/retaining-walls-oklahoma-city" element={<RetainingWalls />} />
+                <Route path="/sewer-line-repair-oklahoma-city" element={<SewerLineRepairOklahomaCity />} />
                 <Route path="/pool-deck-oklahoma-city" element={<PoolDeckOklahomaCity />} />
                 <Route path="/bollard-installation-oklahoma-city" element={<BollardInstallation />} />
                 <Route path="/crane-foundation-installation-oklahoma-city" element={<CraneFoundation />} />

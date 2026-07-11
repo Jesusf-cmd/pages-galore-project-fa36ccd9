@@ -407,6 +407,7 @@ function ServicesSection() {
     { num: "05", name: "Sidewalks, Curb & Gutter", desc: "Sidewalks, walkways, curb and gutter installation — city-spec compliant and ADA accessible across OKC.", to: "/sidewalks-oklahoma-city" },
     { num: "06", name: "Commercial Concrete OKC", desc: "Warehouse floors, loading docks, retail pads, and commercial slabs for Oklahoma City businesses. We meet commercial specs and pull all required permits.", to: "/commercial-concrete-oklahoma-city" },
     { num: "07", name: "Concrete Parking Lots OKC", desc: "New construction, replacement, and ADA-compliant commercial parking lots — 5–6 inch reinforced slabs built to outlast asphalt across the OKC metro.", to: "/parking-lots-oklahoma-city" },
+    { num: "08", name: "Sewer Line Repair & Installation", desc: "Sewer line repair, replacement, and new installation — plus the driveway, sidewalk, or slab restoration it requires, done by the same crew.", to: "/sewer-line-repair-oklahoma-city" },
   ];
 
   return (

@@ -45,6 +45,13 @@ export const routes: PrerenderRoute[] = [
     content: "FDZ Construction LLC builds residential and commercial concrete foundations in Oklahoma City. Slab-on-grade for homes and warehouses, stem walls, continuous and spread footings, garage and shop slabs, and retail pad footings — engineered for proper preparation, reinforcement, and long-term structural performance on Oklahoma's expansive clay soil. Call (405) 458-4805 for a free estimate.",
   },
   {
+    path: "/sewer-line-repair-oklahoma-city",
+    title: "Sewer Line Repair & Installation Oklahoma City | FDZ Construction LLC",
+    description: "Sewer line repair, replacement & installation in OKC. One crew handles excavation and concrete restoration — no second contractor. (405) 458-4805.",
+    h1: "Sewer Line Repair & Installation in Oklahoma City, OK",
+    content: "FDZ Construction LLC handles sewer line repair, replacement, and new-line installation for homeowners and new construction across the Oklahoma City metro. Most plumbers subcontract the excavation and concrete restoration or leave homeowners to hire a second contractor — we do the digging and the driveway, sidewalk, or slab restoration ourselves, one crew start to finish. Trenchless pipe bursting, traditional excavation repair, spot repair, and full replacement or new installation. Call (405) 458-4805 for a free estimate.",
+  },
+  {
     path: "/sidewalks-oklahoma-city",
     title: "Concrete Sidewalks, Curb & Gutter Oklahoma City | FDZ Construction LLC",
     description: "Concrete sidewalk and curb & gutter contractors in Oklahoma City. New construction, city right-of-way, ADA-compliant ramps, city-spec curb work. Free estimate.",

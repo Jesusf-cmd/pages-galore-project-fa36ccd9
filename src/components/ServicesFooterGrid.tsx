@@ -6,6 +6,7 @@ const services = [
   { tag: "Structural", name: "Foundations", to: "/foundations-oklahoma-city" },
   { tag: "Structural", name: "Retaining Walls", to: "/retaining-walls-oklahoma-city" },
   { tag: "Residential", name: "Sidewalks, Curb & Gutter", to: "/sidewalks-oklahoma-city" },
+  { tag: "Residential", name: "Sewer Line Repair", to: "/sewer-line-repair-oklahoma-city" },
   { tag: "Commercial", name: "Commercial Concrete", to: "/commercial-concrete-oklahoma-city" },
   { tag: "Commercial", name: "Parking Lots", to: "/parking-lots-oklahoma-city" },
 ];

@@ -7,6 +7,7 @@ const ALL_SERVICES = [
   { slug: "foundations-oklahoma-city", anchor: "garage and home foundations", blurb: "Slab-on-grade foundations, footings, stem walls, and commercial pads." },
   { slug: "retaining-walls-oklahoma-city", anchor: "retaining walls in Oklahoma City", blurb: "Poured concrete, CMU block, and interlocking walls with proper drainage." },
   { slug: "sidewalks-oklahoma-city", anchor: "sidewalks and walkways", blurb: "ADA-compliant sidewalks, curb & gutter, and city right-of-way work." },
+  { slug: "sewer-line-repair-oklahoma-city", anchor: "sewer line repair and installation", blurb: "Sewer line repair, replacement, and new installation — plus the concrete restoration it requires, done by the same crew." },
   { slug: "commercial-concrete-oklahoma-city", anchor: "commercial concrete services", blurb: "Warehouse floors, commercial slabs, and site work for OKC businesses." },
   { slug: "parking-lots-oklahoma-city", anchor: "concrete parking lots", blurb: "New construction, replacement, and ADA-compliant commercial parking lots." },
 ];

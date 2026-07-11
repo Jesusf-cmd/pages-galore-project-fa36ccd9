@@ -26,6 +26,7 @@ const serviceLinks: LinkItem[] = [
   { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
   { href: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
   { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
+  { href: "/sewer-line-repair-oklahoma-city", label: "Sewer Line Repair & Installation" },
   { href: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
   { href: "/parking-lots-oklahoma-city", label: "Parking Lots" },
 ];

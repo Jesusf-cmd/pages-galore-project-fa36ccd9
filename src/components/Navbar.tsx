@@ -11,6 +11,7 @@ const serviceLinks = [
   { to: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
   { to: "/pool-deck-oklahoma-city", label: "Pool Decks" },
   { to: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
+  { to: "/sewer-line-repair-oklahoma-city", label: "Sewer Line Repair" },
 ];
 
 const commercialLinks = [
