@@ -137,7 +137,7 @@ function HeroSection() {
         <div>
           <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">Oklahoma City Concrete, HVAC, Plumbing &amp; Electrical · Licensed &amp; Insured · Locally Owned</span>
           <h1 className="mb-4 md:mb-6" style={{ fontSize: "clamp(1.9rem, 5vw, 5.2rem)", lineHeight: 1.0 }}>
-            One Call Handles It All — Concrete, HVAC, Plumbing &amp; Electrical
+            Oklahoma City's Concrete Contractors — Driveways, Patios & More
           </h1>
           <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-5 md:mb-7 leading-[1.7] font-light">
             FDZ Construction LLC started with concrete — driveways, patios, slabs, and foundations across Oklahoma City. Now our licensed technicians also handle HVAC, plumbing, and electrical work, residential and commercial, across the OKC metro. Licensed, insured, and built for Oklahoma conditions. Call (405) 458-4805 for a free estimate.
