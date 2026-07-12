@@ -32,12 +32,12 @@ const homeFAQ = [
 
 export default function Index() {
   useSEO({
-    title: "Concrete Contractors Oklahoma City | FDZ Construction LLC | Free Estimates",
-    description: "Oklahoma City's concrete contractor for driveways, patios, slabs & more. Licensed & insured. Serving OKC metro. Call (405) 458-4805 for a free estimate.",
+    title: "Concrete, HVAC, Plumbing & Electrical Oklahoma City | FDZ Construction LLC",
+    description: "Oklahoma City concrete, HVAC, plumbing & electrical contractor. Licensed & insured. Serving OKC metro. Call (405) 458-4805 for a free estimate.",
     canonical: "https://fdzconstruction.com/",
     og: {
-      title: "Concrete Contractors Oklahoma City | FDZ Construction LLC",
-      description: "Oklahoma City's concrete contractor for driveways, patios & slabs. Free estimates. Call (405) 458-4805.",
+      title: "Concrete, HVAC, Plumbing & Electrical Oklahoma City | FDZ Construction LLC",
+      description: "Oklahoma City concrete, HVAC, plumbing & electrical contractor. Free estimates. Call (405) 458-4805.",
       type: "website",
       url: "https://fdzconstruction.com/",
     },
@@ -66,6 +66,8 @@ export default function Index() {
       <TrustBar />
       <AboutSection />
       <ServicesSection />
+      <TradesSection />
+      <EmergencyBanner />
       <WhyUsSection />
       <RecentProjectsSection />
       {/* TODO: re-add once GBP is live with real reviews */}
@@ -133,12 +135,12 @@ function HeroSection() {
       <div className="hero-glow" style={{ zIndex: 1 }} />
       <div className="relative z-[2]" style={{ padding: 0, border: "none" }}>
         <div>
-          <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">Oklahoma City Concrete Contractor · Licensed & Insured · Locally Owned</span>
+          <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">Oklahoma City Concrete, HVAC, Plumbing &amp; Electrical · Licensed &amp; Insured · Locally Owned</span>
           <h1 className="mb-4 md:mb-6" style={{ fontSize: "clamp(1.9rem, 5vw, 5.2rem)", lineHeight: 1.0 }}>
-            Oklahoma City's Concrete Contractors — Driveways, Patios & More
+            One Call Handles It All — Concrete, HVAC, Plumbing &amp; Electrical
           </h1>
           <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-5 md:mb-7 leading-[1.7] font-light">
-            FDZ Construction LLC installs and repairs concrete driveways, patios, slabs, and stamped concrete across Oklahoma City and the surrounding metro. Licensed, insured, and built for Oklahoma weather. Call (405) 458-4805 for a free estimate.
+            FDZ Construction LLC started with concrete — driveways, patios, slabs, and foundations across Oklahoma City. Now our licensed technicians also handle HVAC, plumbing, and electrical work, residential and commercial, across the OKC metro. Licensed, insured, and built for Oklahoma conditions. Call (405) 458-4805 for a free estimate.
           </p>
           <div className="flex flex-wrap gap-1.5 mb-5 md:mb-8">
             {["Oklahoma City", "Edmond", "Norman", "Mustang", "Moore", "Yukon"].map(city => (
@@ -412,7 +414,7 @@ function ServicesSection() {
 
   return (
     <ScrollReveal>
-      <section className="section-padding">
+      <section id="concrete-services" className="section-padding scroll-mt-24">
         <div className="section-eye">What we do</div>
         <h2 className="mb-3">Residential &<br/><em className="h2-accent">Commercial Concrete.</em></h2>
         <p className="prose-muted mb-8">From a single driveway to a full commercial parking lot — same crew, same standards, same guarantee.</p>
@@ -440,6 +442,53 @@ function ServicesSection() {
           ))}
         </div>
       </section>
+    </ScrollReveal>
+  );
+}
+
+function TradesSection() {
+  const trades = [
+    { icon: "🌡️", name: "HVAC Repair & Installation", desc: "AC repair and replacement, furnace service, heat pumps, and emergency no-heat/no-cool service for OKC's temperature swings.", to: "/hvac-oklahoma-city" },
+    { icon: "🚰", name: "Plumbing Services", desc: "General plumbing repair, drain cleaning, water heater service, leak detection, and sewer line repair & installation.", to: "/plumbing-oklahoma-city" },
+    { icon: "⚡", name: "Electrical Services", desc: "Panel upgrades, wiring and outlet repair, lighting, generator and EV charger installation, and emergency electrical service.", to: "/electrical-oklahoma-city" },
+  ];
+
+  return (
+    <ScrollReveal>
+      <section className="section-padding section-alt">
+        <div className="section-eye">One call handles it all</div>
+        <h2 className="mb-3">HVAC, Plumbing &<br/><em className="h2-accent">Electrical, Too.</em></h2>
+        <p className="prose-muted mb-8">FDZ Construction LLC has grown beyond concrete — licensed HVAC, plumbing, and electrical technicians now handle residential and commercial projects across the OKC metro, all under one roof.</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+          {trades.map((t) => (
+            <Link key={t.to} to={t.to} className="bg-stone p-6 md:p-8 no-underline block hover:bg-orange/[0.04] transition-colors">
+              <div className="text-2xl mb-3">{t.icon}</div>
+              <div className="font-display text-base font-extrabold uppercase tracking-[0.04em] text-concrete mb-2">{t.name}</div>
+              <p className="text-[0.82rem] text-muted-text leading-relaxed mb-4">{t.desc}</p>
+              <span className="text-[0.72rem] text-orange font-bold tracking-[0.06em] uppercase">View services →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </ScrollReveal>
+  );
+}
+
+function EmergencyBanner() {
+  return (
+    <ScrollReveal>
+      <Link
+        to="/emergency-services-oklahoma-city"
+        className="no-underline block bg-orange px-4 md:px-12 py-6 md:py-8 transition-colors hover:bg-orange-light"
+      >
+        <div className="flex flex-col md:flex-row items-center justify-between gap-3 max-w-6xl mx-auto text-center md:text-left">
+          <div>
+            <div className="font-display text-lg md:text-xl font-extrabold uppercase tracking-[0.04em] text-white">🚨 24/7 Emergency Services</div>
+            <p className="text-[0.85rem] text-white/80 mt-1">Concrete, HVAC, plumbing & electrical emergencies — one call, every trade.</p>
+          </div>
+          <span className="text-white font-display text-sm font-extrabold uppercase tracking-[0.06em] whitespace-nowrap">See Emergency Services →</span>
+        </div>
+      </Link>
     </ScrollReveal>
   );
 }

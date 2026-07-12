@@ -16,6 +16,10 @@ const primaryNavLinks: LinkItem[] = [
   { href: "/foundations-oklahoma-city", label: "Foundations" },
   { href: "/sidewalks-oklahoma-city", label: "Sidewalks" },
   { href: "/commercial-concrete-oklahoma-city", label: "Commercial" },
+  { href: "/hvac-oklahoma-city", label: "HVAC" },
+  { href: "/plumbing-oklahoma-city", label: "Plumbing" },
+  { href: "/electrical-oklahoma-city", label: "Electrical" },
+  { href: "/emergency-services-oklahoma-city", label: "Emergency Services" },
   { href: "/our-projects", label: "Projects" },
   { href: "/blog", label: "Blog" },
 ];
@@ -29,6 +33,10 @@ const serviceLinks: LinkItem[] = [
   { href: "/sewer-line-repair-oklahoma-city", label: "Sewer Line Repair & Installation" },
   { href: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
   { href: "/parking-lots-oklahoma-city", label: "Parking Lots" },
+  { href: "/hvac-oklahoma-city", label: "HVAC Repair & Installation" },
+  { href: "/plumbing-oklahoma-city", label: "Plumbing Services" },
+  { href: "/electrical-oklahoma-city", label: "Electrical Services" },
+  { href: "/emergency-services-oklahoma-city", label: "24/7 Emergency Services" },
 ];
 
 const serviceAreaLinks: LinkItem[] = [
@@ -102,8 +110,8 @@ function buildPrerenderMarkup(route: PrerenderRoute): string {
     : `
       <footer>
         <section aria-labelledby="prerender-services-heading">
-          <h2 id="prerender-services-heading">Concrete Services</h2>
-          <nav aria-label="Concrete services">
+          <h2 id="prerender-services-heading">Services</h2>
+          <nav aria-label="Services">
             ${renderLinks(serviceLinks)}
           </nav>
         </section>

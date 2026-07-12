@@ -50,15 +50,29 @@ const areaLinks = [
   { to: "/stillwater-oklahoma-concrete", label: "Stillwater" },
 ];
 
+const concreteGroups = [
+  { heading: "Residential", links: serviceLinks },
+  { heading: "Commercial", links: commercialLinks },
+];
+
+const tradeLinks = [
+  { to: "/hvac-oklahoma-city", label: "HVAC" },
+  { to: "/plumbing-oklahoma-city", label: "Plumbing" },
+  { to: "/electrical-oklahoma-city", label: "Electrical" },
+  { to: "/emergency-services-oklahoma-city", label: "Emergency Services" },
+];
+
 const mobileSections = [
-  { title: "Residential", links: serviceLinks },
-  { title: "Commercial", links: commercialLinks },
+  { title: "Concrete", links: [...serviceLinks, ...commercialLinks] },
   { title: "Service Areas", links: areaLinks },
 ];
 
 const mobilePrimaryLinks = [
-  { to: "/our-projects", label: "Our Work" },
+  { to: "/", label: "Home" },
+  ...tradeLinks,
+  { to: "/our-projects", label: "Projects" },
   { to: "/blog", label: "Blog" },
+  { to: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -96,17 +110,33 @@ export default function Navbar() {
         </Link>
 
         <ul className="hidden nav:flex gap-0 list-none">
-          <NavDropdown label="Residential" items={serviceLinks} />
-          <NavDropdown label="Commercial" items={commercialLinks} />
+          <li>
+            <Link to="/" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete">
+              Home
+            </Link>
+          </li>
+          <NavDropdown label="Concrete" groups={concreteGroups} />
+          {tradeLinks.map((t) => (
+            <li key={t.to}>
+              <Link to={t.to} className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete whitespace-nowrap">
+                {t.label}
+              </Link>
+            </li>
+          ))}
           <NavDropdown label="Service Areas" items={areaLinks} />
           <li>
             <Link to="/our-projects" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete">
-              Our Work
+              Projects
             </Link>
           </li>
           <li>
             <Link to="/blog" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete">
               Blog
+            </Link>
+          </li>
+          <li>
+            <Link to="/#contact" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete">
+              Contact
             </Link>
           </li>
         </ul>
@@ -240,7 +270,15 @@ function MobileSection({
   );
 }
 
-function NavDropdown({ label, items }: { label: string; items: { to: string; label: string }[] }) {
+function NavDropdown({
+  label,
+  items,
+  groups,
+}: {
+  label: string;
+  items?: { to: string; label: string }[];
+  groups?: { heading: string; links: { to: string; label: string }[] }[];
+}) {
   return (
     <li className="relative group">
       <span className="block cursor-pointer text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors group-hover:text-concrete select-none">
@@ -248,19 +286,39 @@ function NavDropdown({ label, items }: { label: string; items: { to: string; lab
       </span>
       <div className="absolute top-full left-0 min-w-[210px] pt-2 z-[200] opacity-0 pointer-events-none translate-y-1.5 transition-all duration-150 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0">
         <div
-          className="bg-stone"
+          className="bg-stone max-h-[70vh] overflow-y-auto"
           style={{ border: "1px solid hsl(var(--concrete) / 0.08)", borderTop: "2px solid hsl(var(--orange))" }}
         >
-          {items.map((item, i) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className="block px-4 py-2.5 text-[0.76rem] text-muted-text no-underline transition-colors hover:text-concrete hover:bg-concrete/[0.04]"
-              style={{ borderBottom: i < items.length - 1 ? "1px solid hsl(var(--concrete) / 0.08)" : "none" }}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {groups
+            ? groups.map((group, gi) => (
+                <div key={group.heading}>
+                  <div
+                    className="px-4 pt-2.5 pb-1 text-[0.62rem] tracking-[0.1em] uppercase font-bold text-orange"
+                    style={{ borderTop: gi > 0 ? "1px solid hsl(var(--concrete) / 0.08)" : "none" }}
+                  >
+                    {group.heading}
+                  </div>
+                  {group.links.map((item) => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      className="block px-4 py-2.5 text-[0.76rem] text-muted-text no-underline transition-colors hover:text-concrete hover:bg-concrete/[0.04]"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              ))
+            : items?.map((item, i) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="block px-4 py-2.5 text-[0.76rem] text-muted-text no-underline transition-colors hover:text-concrete hover:bg-concrete/[0.04]"
+                  style={{ borderBottom: i < items.length - 1 ? "1px solid hsl(var(--concrete) / 0.08)" : "none" }}
+                >
+                  {item.label}
+                </Link>
+              ))}
         </div>
       </div>
     </li>

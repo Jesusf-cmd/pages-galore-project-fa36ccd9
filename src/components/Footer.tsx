@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-darker px-4 md:px-12 py-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
       {/* HubSpot Contact Form */}
-      <div className="max-w-xl mx-auto mb-8">
+      <div id="contact" className="max-w-xl mx-auto mb-8 scroll-mt-24">
         <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3 text-center">Get In Touch</div>
         <div
           className="hs-form-frame"
@@ -25,11 +25,31 @@ export default function Footer() {
           <address className="not-italic text-[0.74rem] text-muted-text mt-2">7004 S Indiana Ave, Oklahoma City, OK 73159</address>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-        <div>
+      {/* Licensing / trust section */}
+      <div className="max-w-3xl mx-auto mb-8 text-center">
+        <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-2">Licensed, Bonded &amp; Insured in Oklahoma</div>
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-[0.72rem] text-muted-text">
+          <span>Concrete Contractor License #: [CONCRETE LICENSE # — TO BE PROVIDED]</span>
+          <span>HVAC License #: [HVAC LICENSE # — TO BE PROVIDED]</span>
+          <span>Plumbing License #: [PLUMBING LICENSE # — TO BE PROVIDED]</span>
+          <span>Electrical License #: [ELECTRICAL LICENSE # — TO BE PROVIDED]</span>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-start">
+        <div className="col-span-2 md:col-span-3 lg:col-span-1">
           <Logo className="h-12 w-auto opacity-90 mb-3" />
-          <p className="text-[0.74rem] text-muted-text">Oklahoma City's concrete contractor. Licensed &amp; insured in Oklahoma.</p>
+          <p className="text-[0.74rem] text-muted-text">Oklahoma City's concrete, HVAC, plumbing &amp; electrical contractor. Licensed &amp; insured in Oklahoma.</p>
           <p className="text-[0.74rem] text-muted-text mt-2">© {new Date().getFullYear()} FDZ Construction LLC. All rights reserved.</p>
+        </div>
+        <div>
+          <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3">Our Trades</div>
+          <div className="flex flex-col gap-1.5">
+            <Link to="/#concrete-services" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete</Link>
+            <Link to="/hvac-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">HVAC</Link>
+            <Link to="/plumbing-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Plumbing</Link>
+            <Link to="/electrical-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Electrical</Link>
+            <Link to="/emergency-services-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">24/7 Emergency Services</Link>
+          </div>
         </div>
         <div>
           <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3">Concrete Services</div>
@@ -61,7 +81,7 @@ export default function Footer() {
         <div>
           <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3">Company</div>
           <div className="flex flex-col gap-1.5">
-            <Link to="/our-projects" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Our Work</Link>
+            <Link to="/our-projects" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Projects</Link>
             <Link to="/blog" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Tips Blog</Link>
             <span className="text-[0.74rem] text-muted-text">Workmanship Warranty</span>
             <a href="tel:4054584805" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">(405) 458-4805</a>

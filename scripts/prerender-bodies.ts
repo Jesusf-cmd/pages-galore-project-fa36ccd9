@@ -17,6 +17,13 @@ const SERVICE_LINKS = [
   { href: "/parking-lots-oklahoma-city", label: "Parking Lots" },
 ];
 
+const TRADE_LINKS = [
+  { href: "/hvac-oklahoma-city", label: "HVAC Repair & Installation" },
+  { href: "/plumbing-oklahoma-city", label: "Plumbing Services" },
+  { href: "/electrical-oklahoma-city", label: "Electrical Services" },
+  { href: "/emergency-services-oklahoma-city", label: "24/7 Emergency Services" },
+];
+
 const CITY_LINKS = [
   { href: "/oklahoma-city-concrete", label: "Oklahoma City" },
   { href: "/edmond-concrete", label: "Edmond" },
@@ -31,11 +38,13 @@ const CITY_LINKS = [
 
 export const prerenderBodies: Record<string, string> = {
   "/": `
-    <h1>Oklahoma City Concrete Contractors</h1>
-    <p>FDZ Construction LLC is a licensed, bonded, and insured concrete contractor based in south Oklahoma City at 7004 S Indiana Ave. We pour driveways, patios, slabs, foundations, retaining walls, sidewalks, and commercial concrete across the OKC metro.</p>
+    <h1>One Call Handles It All — Concrete, HVAC, Plumbing & Electrical in Oklahoma City</h1>
+    <p>FDZ Construction LLC is a licensed, bonded, and insured multi-trade contractor based in south Oklahoma City at 7004 S Indiana Ave. We started with concrete — driveways, patios, slabs, foundations, retaining walls, sidewalks, and commercial concrete — and now our licensed technicians also handle HVAC, plumbing, and electrical work, residential and commercial, across the OKC metro. 24/7 emergency service available.</p>
     ${trustParagraph()}
     <h2>Concrete Services</h2>
     ${linkList(SERVICE_LINKS)}
+    <h2>HVAC, Plumbing & Electrical</h2>
+    ${linkList(TRADE_LINKS)}
     <h2>Why Oklahoma City Soil Matters</h2>
     <p>The OKC metro sits on Permian-age clay and shale that expands when wet and shrinks in drought. That movement is why proper sub-base compaction, reinforcement, and drainage grading matter on every driveway, slab, and foundation here — not just on problem lots.</p>
     <h2>Service Areas</h2>
@@ -837,6 +846,150 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Retaining walls for commercial site development.</li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    ${trustParagraph()}
+  `,
+
+  "/hvac-oklahoma-city": `
+    <h1>Oklahoma City HVAC Repair, Installation &amp; Emergency Service</h1>
+    <p>FDZ Construction LLC's licensed HVAC technicians handle repair, installation, replacement, and emergency no-heat/no-cool service for residential and commercial properties across the Oklahoma City metro. We size and service equipment for Oklahoma's actual climate — not a generic spec sheet.</p>
+    <h2>HVAC Services We Offer</h2>
+    <ul>
+      <li><strong>AC Repair &amp; Replacement</strong> — Diagnostic service, repair, and new installation sized to your home's actual square footage.</li>
+      <li><strong>Furnace Repair &amp; Replacement</strong> — Diagnostic and repair, full replacement for end-of-life units, proper venting and safety checks.</li>
+      <li><strong>Heat Pump Service</strong> — Repair, maintenance, replacement, and new installation.</li>
+      <li><strong>Emergency No-Heat / No-Cool Service</strong> — Priority response during cold snaps or peak summer heat.</li>
+    </ul>
+    <h2>Signs You Need HVAC Service</h2>
+    <ul>
+      <li>No cooling or no heating</li>
+      <li>Unusual noises — banging, squealing, or grinding</li>
+      <li>Utility bills spiking without a clear reason</li>
+      <li>Uneven temperatures from room to room</li>
+      <li>System cycling on and off frequently</li>
+      <li>Weak or poor airflow from vents</li>
+    </ul>
+    <h2>Why Oklahoma City Climate Matters</h2>
+    <p>Summers regularly push past 100°F and winters bring hard freezes and cold snaps. A system that's undersized or poorly installed struggles, or fails outright, exactly when you need it most. We size every installation for OKC's real seasonal swings, not a mild-climate average.</p>
+    ${processSection("From Diagnosis to System Test", [
+      { title: "Inspection & diagnosis", description: "We inspect the system and diagnose the actual problem before recommending anything." },
+      { title: "Repair vs. replacement recommendation", description: "We tell you plainly whether a repair makes sense or whether the system is better replaced." },
+      { title: "Service", description: "We complete the repair, replacement, or new installation sized and set up for your home." },
+      { title: "System test & walkthrough", description: "We test the system under real conditions and walk you through what was done." },
+    ])}
+    <h2>Why FDZ for HVAC</h2>
+    <ul>
+      <li>Licensed HVAC technicians in Oklahoma. License #: [HVAC LICENSE # — TO BE PROVIDED]</li>
+      <li>Part of a multi-trade team — useful when an HVAC issue overlaps with electrical, like panel capacity for a new system</li>
+      <li>2-year workmanship warranty on all HVAC work</li>
+      <li>Licensed, bonded, and insured in Oklahoma</li>
+    </ul>
+    ${faqSection("HVAC FAQ", [
+      { question: "How do I know if I need repair vs. replacement?", answer: "It depends on the age of the system, the cost of the repair relative to a new install, and how many previous repairs it's needed. We'll inspect the system and tell you honestly which option makes more sense." },
+      { question: "Do you offer emergency HVAC service?", answer: "Yes — no-heat and no-cool situations get priority response. See our emergency services page for details." },
+      { question: "Do you install new systems for additions or new construction?", answer: "Yes — we size and install HVAC systems for additions, new construction, and full system replacements." },
+      { question: "Do you work on both AC and furnace systems?", answer: "Yes — AC systems, furnaces, and heat pumps, so you're not calling a separate company for heating versus cooling." },
+    ])}
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    ${trustParagraph()}
+  `,
+
+  "/plumbing-oklahoma-city": `
+    <h1>Oklahoma City Plumbing Services</h1>
+    <p>FDZ Construction LLC's licensed plumbers cover the full range of residential and commercial plumbing — general repair, drain cleaning, water heater service, and leak detection. Sewer line repair and installation is a distinct specialty of ours — see our <a href="/sewer-line-repair-oklahoma-city">dedicated sewer line repair page</a> for the full breakdown of methods, process, and FAQ.</p>
+    <h2>Plumbing Services We Offer</h2>
+    <ul>
+      <li><strong>General Plumbing Repair</strong> — Leak repair, fixture repair and replacement, and general troubleshooting.</li>
+      <li><strong>Drain Cleaning</strong> — Clearing slow or clogged drains, diagnosis of recurring clogs.</li>
+      <li><strong>Water Heater Repair &amp; Installation</strong> — Repair and full replacement, including gas and electrical coordination.</li>
+      <li><strong>Leak Detection</strong> — Locating hidden leaks before they cause structural or water damage.</li>
+      <li><strong>Sewer Line Repair &amp; Installation</strong> — Trenchless pipe bursting, traditional excavation repair, spot repair, and full replacement. <a href="/sewer-line-repair-oklahoma-city">See our dedicated sewer line repair page →</a></li>
+    </ul>
+    <h2>Signs You Need a Plumber</h2>
+    <ul>
+      <li>Active leaks, even small ones</li>
+      <li>Low water pressure throughout the house</li>
+      <li>Slow drains in more than one fixture</li>
+      <li>Water heater issues — no hot water, inconsistent temperature, or leaking</li>
+      <li>Unexplained increases in your water bill</li>
+    </ul>
+    <h2>Why Oklahoma City Conditions Matter</h2>
+    <p>Oklahoma's hard water accelerates mineral buildup in pipes and water heaters over time, and the same expansive clay soil that stresses driveways and foundations also stresses buried plumbing lines. See our <a href="/sewer-line-repair-oklahoma-city">sewer line repair page</a> for more on how OKC soil affects underground lines.</p>
+    <h2>Why FDZ for Plumbing</h2>
+    <ul>
+      <li>Licensed plumbers in Oklahoma. License #: [PLUMBING LICENSE # — TO BE PROVIDED]</li>
+      <li>Part of a multi-trade team — a water heater replacement often touches plumbing, electrical, and gas</li>
+      <li>Sewer line work handled by the same crew that does the excavation and concrete restoration</li>
+      <li>2-year workmanship warranty on all plumbing work</li>
+    </ul>
+    ${faqSection("Plumbing FAQ", [
+      { question: "Do you handle sewer line repair, or is that a separate company?", answer: "Sewer line repair is one of our specialties, handled by the same team. See our dedicated sewer line repair page for full detail." },
+      { question: "Do you offer emergency plumbing service?", answer: "Yes — active leaks and no-water situations get priority response. See our emergency services page for details." },
+      { question: "Can you replace a water heater that involves electrical or gas work?", answer: "Yes — we coordinate plumbing, electrical, and gas work internally rather than requiring separate contractors." },
+      { question: "How does Oklahoma's hard water affect my plumbing?", answer: "Hard water accelerates mineral buildup inside pipes and water heaters, which can reduce lifespan and water pressure over time." },
+    ])}
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    ${trustParagraph()}
+  `,
+
+  "/electrical-oklahoma-city": `
+    <h1>Oklahoma City Electrical Services</h1>
+    <p>FDZ Construction LLC's licensed electricians handle residential and commercial electrical repair and installation across the OKC metro — panel upgrades, wiring and outlet repair, lighting, generator and EV charger installation, and emergency electrical service.</p>
+    <h2>Electrical Services We Offer</h2>
+    <ul>
+      <li><strong>Panel Upgrades &amp; Repairs</strong> — Upgrades for outdated or undersized service, repairs, capacity checks before adding major equipment.</li>
+      <li><strong>Outlet &amp; Wiring Repair</strong> — Repair and replacement of faulty outlets, switches, and wiring; rewiring for older homes.</li>
+      <li><strong>Lighting Installation</strong> — Interior and exterior lighting for residential and commercial properties.</li>
+      <li><strong>Generator Installation</strong> — Backup generator installation with proper transfer switch setup.</li>
+      <li><strong>EV Charger Installation</strong> — Home EV charger installation with panel capacity evaluation.</li>
+      <li><strong>Emergency Electrical Service</strong> — Priority response for active hazards — burning smells, sparking, total power loss.</li>
+    </ul>
+    <h2>Signs You Need an Electrician</h2>
+    <ul>
+      <li>Flickering lights</li>
+      <li>Breakers that trip frequently</li>
+      <li>Warm or discolored outlets</li>
+      <li>Any burning smell — treat this as urgent</li>
+      <li>Outdated wiring in an older home you haven't had inspected</li>
+    </ul>
+    <h2>Why Oklahoma City Conditions Matter</h2>
+    <p>OKC's severe storm season — high winds, hail, and tornado activity — brings real power surge and outage risk. A properly protected panel and, for some homes, a backup generator are a practical response to conditions this area sees every spring.</p>
+    ${processSection("From Inspection to Final Test", [
+      { title: "Inspection & diagnosis", description: "We inspect the panel, wiring, or fixture and diagnose the actual issue." },
+      { title: "Written estimate", description: "We give you a clear, written estimate before any work starts." },
+      { title: "Code-compliant service", description: "We complete the work to current electrical code — no shortcuts." },
+      { title: "Test & walkthrough", description: "We test everything under load and walk you through what was done." },
+    ])}
+    <h2>Why FDZ for Electrical</h2>
+    <ul>
+      <li>Licensed electricians in Oklahoma. License #: [ELECTRICAL LICENSE # — TO BE PROVIDED]</li>
+      <li>Part of a multi-trade team — panel capacity checks before an HVAC or generator install</li>
+      <li>2-year workmanship warranty on all electrical work</li>
+      <li>Licensed, bonded, and insured in Oklahoma</li>
+    </ul>
+    ${faqSection("Electrical FAQ", [
+      { question: "Do you handle both residential and commercial electrical work?", answer: "Yes — panel upgrades, wiring, lighting, and installation work for homes and businesses across the OKC metro." },
+      { question: "Do you offer emergency electrical service?", answer: "Yes — active hazards like burning smells, sparking, or total power loss get priority response." },
+      { question: "Can you check if my panel can handle a new HVAC system or EV charger?", answer: "Yes — panel capacity checks are routine before installing a new HVAC system, generator, or EV charger." },
+      { question: "Do you install generators and EV chargers?", answer: "Yes — including the panel and transfer switch work both require." },
+    ])}
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    ${trustParagraph()}
+  `,
+
+  "/emergency-services-oklahoma-city": `
+    <h1>24/7 Emergency Services in Oklahoma City</h1>
+    <p>One call handles concrete, HVAC, plumbing, and electrical emergencies — no juggling separate contractors while you're dealing with an active problem.</p>
+    <h2>Concrete Emergencies</h2>
+    <p>A collapsed or heaving slab, a driveway or sidewalk that's become a safety hazard, or storm damage to a concrete structure. <a href="/driveways-oklahoma-city">See Concrete Services →</a></p>
+    <h2>HVAC Emergencies</h2>
+    <p>No heat during a cold snap or no cooling during peak OKC summer heat. <a href="/hvac-oklahoma-city">See HVAC Services →</a></p>
+    <h2>Plumbing Emergencies</h2>
+    <p>Active leaks, no water, and sewer line failures. <a href="/plumbing-oklahoma-city">See Plumbing Services →</a> · <a href="/sewer-line-repair-oklahoma-city">Sewer Line Repair →</a></p>
+    <h2>Electrical Emergencies</h2>
+    <p>A burning smell, sparking, or total loss of power. <a href="/electrical-oklahoma-city">See Electrical Services →</a></p>
+    <h2>Why One Company for Every Trade</h2>
+    <p>FDZ Construction LLC covers concrete, HVAC, plumbing, and electrical under one roof — faster response, one point of contact, no coordinating multiple contractors during an already stressful situation. Every technician is licensed in their trade, and every job is backed by the same 2-year workmanship warranty.</p>
+    <p><strong>Call now:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
   `,
 };
