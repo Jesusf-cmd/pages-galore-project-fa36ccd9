@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-[0.72rem] text-muted-text">
           <span>Concrete Contractor License #: [CONCRETE LICENSE # — TO BE PROVIDED]</span>
           <span>HVAC License #: [HVAC LICENSE # — TO BE PROVIDED]</span>
-          <span>Plumbing License #: [PLUMBING LICENSE # — TO BE PROVIDED]</span>
+          <span>Plumbing License #: 75456</span>
           <span>Electrical License #: [ELECTRICAL LICENSE # — TO BE PROVIDED]</span>
         </div>
       </div>

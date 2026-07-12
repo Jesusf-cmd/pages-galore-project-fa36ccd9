@@ -97,7 +97,7 @@ export default function PlumbingOklahomaCity() {
         },
       ]}
       whyChooseUs={[
-        { icon: "🔧", title: "Licensed Plumbers", description: "Fully licensed plumbers in Oklahoma. License #: [PLUMBING LICENSE # — TO BE PROVIDED]." },
+        { icon: "🔧", title: "Licensed Plumbers", description: "Fully licensed plumbers in Oklahoma. License #: 75456." },
         { icon: "🧰", title: "Part of a Multi-Trade Team", description: "A water heater replacement often touches plumbing, electrical, and gas. We coordinate that internally instead of sending you to find separate contractors." },
         { icon: "🚧", title: "Sewer Line Specialists", description: "Our sewer line repair work is handled by the same crew that does the excavation and the concrete restoration — no handoff to a second contractor." },
         { icon: "🔒", title: "2-Year Workmanship Warranty", description: "Every plumbing repair or installation we complete is backed by the same 2-year workmanship warranty as the rest of our work." },

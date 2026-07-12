@@ -916,7 +916,7 @@ export const prerenderBodies: Record<string, string> = {
     <p>Oklahoma's hard water accelerates mineral buildup in pipes and water heaters over time, and the same expansive clay soil that stresses driveways and foundations also stresses buried plumbing lines. See our <a href="/sewer-line-repair-oklahoma-city">sewer line repair page</a> for more on how OKC soil affects underground lines.</p>
     <h2>Why FDZ for Plumbing</h2>
     <ul>
-      <li>Licensed plumbers in Oklahoma. License #: [PLUMBING LICENSE # — TO BE PROVIDED]</li>
+      <li>Licensed plumbers in Oklahoma. License #: 75456</li>
       <li>Part of a multi-trade team — a water heater replacement often touches plumbing, electrical, and gas</li>
       <li>Sewer line work handled by the same crew that does the excavation and concrete restoration</li>
       <li>2-year workmanship warranty on all plumbing work</li>
