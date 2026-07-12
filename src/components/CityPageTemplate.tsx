@@ -19,6 +19,9 @@ interface CityPageProps {
   county: string;
   canonicalUrl: string;
   heroBlurb: string;
+  /** Override the default "{city} Concrete" / "Contractors." hero title split. */
+  heroTitle?: string;
+  heroTitleAccent?: string;
   intro: string[];
   localTerrainNote: string;
   driveTimeNote: string;
@@ -28,6 +31,26 @@ interface CityPageProps {
   nearbyLinks?: { name: string; to: string }[];
   metaTitle?: string;
   metaDescription: string;
+  /** Sewer line repair/installation summary — links back to the full OKC sewer page rather than duplicating it. */
+  sewerSection?: {
+    intro: string;
+    methods: { title: string; blurb: string }[];
+    signs: string[];
+    localNote: string;
+    linkTo: string;
+  };
+  /** Honest differentiator + trust signals section, e.g. for a city outside the core OKC metro. */
+  whyFdzSection?: {
+    points: { title: string; desc: string }[];
+  };
+  /** Clearly-marked placeholder for real project photos/reviews once available — do not fabricate content here. */
+  projectsPlaceholder?: {
+    note: string;
+  };
+  /** Honest travel/scheduling note for areas outside the core OKC metro. */
+  serviceAreaNote?: string;
+  /** Override the default "Concrete in {city}" FAQ heading, e.g. for a combined concrete + sewer page. */
+  faqHeadingAccent?: string;
 }
 
 export default function CityPageTemplate({
@@ -35,6 +58,8 @@ export default function CityPageTemplate({
   county,
   canonicalUrl,
   heroBlurb,
+  heroTitle,
+  heroTitleAccent,
   intro,
   localTerrainNote,
   driveTimeNote,
@@ -44,6 +69,11 @@ export default function CityPageTemplate({
   nearbyLinks,
   metaTitle,
   metaDescription,
+  sewerSection,
+  whyFdzSection,
+  projectsPlaceholder,
+  serviceAreaNote,
+  faqHeadingAccent,
 }: CityPageProps) {
   const title = metaTitle || `Concrete Contractor in ${city} OK | FDZ Construction LLC`;
   useSEO({
@@ -58,7 +88,7 @@ export default function CityPageTemplate({
       <section className="page-hero">
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">{city} · {county} · Licensed, Bonded & Insured</span>
-        <h1 className="max-w-[820px] mb-5">{city} Concrete<br/><span className="text-orange">Contractors.</span></h1>
+        <h1 className="max-w-[820px] mb-5">{heroTitle || `${city} Concrete`}<br/><span className="text-orange">{heroTitleAccent || "Contractors."}</span></h1>
         <p className="prose-muted max-w-[680px] mb-8" dangerouslySetInnerHTML={{ __html: heroBlurb }} />
         <div className="flex gap-4 flex-wrap">
           <Link to="/#estimate" className="btn-primary">Get Free Estimate →</Link>
@@ -120,9 +150,79 @@ export default function CityPageTemplate({
         </section>
       </ScrollReveal>
 
+      {sewerSection && (
+        <ScrollReveal>
+          <section className="section-padding section-alt">
+            <div className="section-eye">Sewer Line Repair &amp; Installation</div>
+            <h2 className="mb-4">Sewer Line Repair &amp; Installation<br/><em className="h2-accent">in {city}.</em></h2>
+            <p className="prose-muted max-w-[820px] mb-6" dangerouslySetInnerHTML={{ __html: sewerSection.intro }} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-concrete/[0.08] mb-8" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+              {sewerSection.methods.map((m, i) => (
+                <div key={i} className="bg-stone p-5 md:p-6">
+                  <h3 className="text-sm mb-2">{m.title}</h3>
+                  <p className="text-[0.82rem] text-muted-text leading-relaxed font-light">{m.blurb}</p>
+                </div>
+              ))}
+            </div>
+            <div className="info-block mb-6">
+              <p className="mb-2"><strong className="text-concrete">Signs you may need sewer line repair:</strong></p>
+              <p dangerouslySetInnerHTML={{ __html: sewerSection.signs.map((s) => `▸ ${s}`).join("<br/>") }} />
+            </div>
+            <p className="prose-muted max-w-[820px] mb-6" dangerouslySetInnerHTML={{ __html: sewerSection.localNote }} />
+            <p className="prose-muted">
+              <Link to={sewerSection.linkTo} className="text-orange no-underline font-medium">See full sewer line repair methods, process, and FAQ →</Link>
+            </p>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {whyFdzSection && (
+        <ScrollReveal>
+          <section className="section-padding">
+            <div className="section-eye">Why FDZ</div>
+            <h2 className="mb-8">Why {city} Property Owners Choose<br/><em className="h2-accent">FDZ Construction.</em></h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+              {whyFdzSection.points.map((p, i) => (
+                <div key={i} className="bg-stone p-6 md:p-8">
+                  <h3 className="text-base mb-2">{p.title}</h3>
+                  <p className="text-[0.85rem] text-muted-text leading-relaxed font-light">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {projectsPlaceholder && (
+        <ScrollReveal>
+          <section className="section-padding section-alt">
+            <div className="section-eye">Our {city} Projects</div>
+            <h2 className="mb-4">Real Work in<br/><em className="h2-accent">{city}.</em></h2>
+            <p className="prose-muted max-w-[760px] mb-6">{projectsPlaceholder.note}</p>
+            {/* TODO: add real {city} project photos and customer reviews here once available */}
+            <div
+              className="p-8 text-center text-[0.82rem] text-muted-text"
+              style={{ border: "1px dashed hsl(var(--concrete) / 0.2)" }}
+            >
+              Project photos and customer reviews from {city} are coming soon.
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {serviceAreaNote && (
+        <ScrollReveal>
+          <section className="section-padding">
+            <div className="section-eye">Service Area Note</div>
+            <h2 className="mb-4">Scheduling a Project<br/><em className="h2-accent">in {city}.</em></h2>
+            <p className="prose-muted max-w-[760px]" dangerouslySetInnerHTML={{ __html: serviceAreaNote }} />
+          </section>
+        </ScrollReveal>
+      )}
+
       <ScrollReveal>
         <section className="section-padding section-alt">
-          <FAQ items={faq} eyebrow="FAQ" title={`Common Questions About<br/><em class="h2-accent">Concrete in ${city}.</em>`} />
+          <FAQ items={faq} eyebrow="FAQ" title={`Common Questions About<br/><em class="h2-accent">${faqHeadingAccent || `Concrete in ${city}`}.</em>`} />
         </section>
       </ScrollReveal>
 

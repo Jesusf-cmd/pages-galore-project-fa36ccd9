@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import ServicePage from "@/components/ServicePageTemplate";
 
 const PAGE_URL = "https://fdzconstruction.com/sewer-line-repair-oklahoma-city";
-const AREAS_SERVED = ["Oklahoma City", "Edmond", "Norman", "Moore", "Yukon", "Mustang", "Midwest City", "Del City"];
+const AREAS_SERVED = ["Oklahoma City", "Edmond", "Norman", "Moore", "Yukon", "Mustang", "Midwest City", "Del City", "Stillwater"];
 
 function useServiceSchema() {
   useEffect(() => {
@@ -33,6 +33,7 @@ export default function SewerLineRepairOklahomaCity() {
     <ServicePage
       enriched
       currentServiceSlug="sewer-line-repair-oklahoma-city"
+      cityBlockIntro="FDZ Construction LLC provides sewer line repair and installation throughout Oklahoma City and the surrounding metro. We serve <a href='/oklahoma-city-concrete' class='text-orange no-underline'>Oklahoma City</a>, <a href='/edmond-concrete' class='text-orange no-underline'>Edmond</a>, <a href='/norman-ok-concrete' class='text-orange no-underline'>Norman</a>, <a href='/moore-oklahoma-concrete' class='text-orange no-underline'>Moore</a>, <a href='/yukon-oklahoma-concrete' class='text-orange no-underline'>Yukon</a>, <a href='/mustang-oklahoma-concrete' class='text-orange no-underline'>Mustang</a>, <a href='/midwest-city-oklahoma-concrete' class='text-orange no-underline'>Midwest City</a>, and <a href='/del-city-oklahoma-concrete' class='text-orange no-underline'>Del City</a> — same crew, same standards, same free estimate process on every job across the metro. We've also completed concrete and sewer line projects in <a href='/stillwater-oklahoma-concrete' class='text-orange no-underline'>Stillwater</a>, about 65–75 miles from our south OKC shop, available by scheduled appointment."
       metaTitle="Sewer Line Repair & Installation Oklahoma City | FDZ Construction LLC"
       metaDescription="Sewer line repair, replacement & installation in OKC. One crew handles excavation and concrete restoration — no second contractor. (405) 458-4805."
       eyebrow="OKC Metro · Sewer Line Repair & Installation · Licensed & Insured"

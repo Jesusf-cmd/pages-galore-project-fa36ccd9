@@ -40,6 +40,7 @@ const serviceAreaLinks: LinkItem[] = [
   { href: "/mustang-oklahoma-concrete", label: "Mustang" },
   { href: "/midwest-city-oklahoma-concrete", label: "Midwest City" },
   { href: "/del-city-oklahoma-concrete", label: "Del City" },
+  { href: "/stillwater-oklahoma-concrete", label: "Stillwater" },
 ];
 
 function generateRouteHtml(template: string, route: PrerenderRoute): string {

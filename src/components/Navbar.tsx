@@ -47,6 +47,7 @@ const areaLinks = [
   { to: "/moore-oklahoma-concrete", label: "Moore" },
   { to: "/midwest-city-oklahoma-concrete", label: "Midwest City" },
   { to: "/del-city-oklahoma-concrete", label: "Del City" },
+  { to: "/stillwater-oklahoma-concrete", label: "Stillwater" },
 ];
 
 const mobileSections = [

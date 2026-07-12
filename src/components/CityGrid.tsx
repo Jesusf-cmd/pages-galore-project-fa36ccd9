@@ -9,6 +9,7 @@ const cities = [
   { county: "Cleveland County", name: "Moore", to: "/moore-oklahoma-concrete" },
   { county: "Oklahoma County", name: "Midwest City", to: "/midwest-city-oklahoma-concrete" },
   { county: "Oklahoma County", name: "Del City", to: "/del-city-oklahoma-concrete" },
+  { county: "Payne County", name: "Stillwater", to: "/stillwater-oklahoma-concrete" },
 ];
 
 export default function CityGrid() {

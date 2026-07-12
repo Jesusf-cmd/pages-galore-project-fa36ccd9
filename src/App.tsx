@@ -143,6 +143,7 @@ const App = () => (
                 <Route path="/moore-oklahoma-concrete" element={<CityPage slug="moore" />} />
                 <Route path="/midwest-city-oklahoma-concrete" element={<CityPage slug="midwest-city" />} />
                 <Route path="/del-city-oklahoma-concrete" element={<CityPage slug="del-city" />} />
+                <Route path="/stillwater-oklahoma-concrete" element={<CityPage slug="stillwater" />} />
                 <Route path="/driveways-edmond" element={<ServiceInCity slug="driveways-edmond" />} />
                 <Route path="/driveways-norman" element={<ServiceInCity slug="driveways-norman" />} />
                 <Route path="/driveways-yukon" element={<ServiceInCity slug="driveways-yukon" />} />

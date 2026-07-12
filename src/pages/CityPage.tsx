@@ -13,20 +13,38 @@ const ROUTE_BY_SLUG: Record<string, string> = {
   moore: "/moore-oklahoma-concrete",
   "midwest-city": "/midwest-city-oklahoma-concrete",
   "del-city": "/del-city-oklahoma-concrete",
+  stillwater: "/stillwater-oklahoma-concrete",
 };
 
 interface CityData {
   city: string;
   county: string;
   tier: "priority" | "standard";
+  metaTitle?: string;
   metaDescription: string;
   heroBlurb: string;
+  heroTitle?: string;
+  heroTitleAccent?: string;
   intro: string[];
   localTerrainNote: string;
   driveTimeNote: string;
   neighborhoods?: string[];
   linkedServices: { label: string; to: string; blurb: string }[];
   faq: { question: string; answer: string }[];
+  /** Combined services beyond concrete, e.g. sewer line work — affects the per-page Service schema. */
+  serviceTypes?: string[];
+  serviceName?: string;
+  sewerSection?: {
+    intro: string;
+    methods: { title: string; blurb: string }[];
+    signs: string[];
+    localNote: string;
+    linkTo: string;
+  };
+  whyFdzSection?: { points: { title: string; desc: string }[] };
+  projectsPlaceholder?: { note: string };
+  serviceAreaNote?: string;
+  faqHeadingAccent?: string;
 }
 
 const SVC = {
@@ -274,6 +292,81 @@ const cityData: Record<string, CityData> = {
       },
     ],
   },
+  stillwater: {
+    city: "Stillwater",
+    county: "Payne County",
+    tier: "standard",
+    metaTitle: "Concrete & Sewer Line Contractor Stillwater, OK | FDZ Construction LLC",
+    metaDescription:
+      "Concrete & sewer line contractor serving Stillwater, OK — driveways, patios, foundations, and sewer line repair & installation. FDZ Construction LLC. Call (405) 458-4805.",
+    heroBlurb:
+      "Concrete driveways, patios, slabs, foundations, and sewer line repair &amp; installation for <strong>Stillwater, Oklahoma</strong> homeowners and rental property owners. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
+    heroTitle: "Stillwater, OK Concrete",
+    heroTitleAccent: "& Sewer Line Contractor.",
+    intro: [
+      "FDZ Construction LLC is based in south Oklahoma City, but we've completed concrete and sewer line projects for Stillwater homeowners — both are part of the work we actually do here, not just a metro-only sideline.",
+      "Stillwater's housing stock is a mix of older, near-campus homes and student rental properties around Oklahoma State University alongside newer construction on the edges of town — we work on both, from a rental property's driveway repair to a new-build sewer line install.",
+    ],
+    localTerrainNote:
+      "Stillwater sits in Payne County's Sandstone Hills country along the Cimarron River — a different geologic base than the Permian clay and shale under the OKC metro. But the surface soils around Stillwater are still expansive clay loams (Masham silty clay loam is common in the area) that swell and shrink with moisture much the same way OKC's clay does, which is why base prep and drainage still matter here just as much as anywhere else we work.",
+    driveTimeNote: "Stillwater is about 65–75 miles from our south OKC shop — roughly an hour to 90 minutes depending on route and traffic. We serve Stillwater by scheduled appointment rather than same-day OKC-metro response.",
+    linkedServices: [SVC.driveways, SVC.patios, SVC.foundations, SVC.retaining, SVC.sidewalks],
+    serviceTypes: ["Concrete Contracting", "Sewer Line Repair and Installation"],
+    serviceName: "Concrete & Sewer Line Contractor in Stillwater, OK",
+    sewerSection: {
+      intro:
+        "FDZ Construction handles sewer line repair, replacement, and new installation for Stillwater homeowners and rental property owners — using the same one-crew approach we use across the OKC metro: we handle the excavation and the concrete restoration ourselves, so you're not coordinating a plumber and a separate concrete contractor.",
+      methods: [
+        { title: "Trenchless Pipe Bursting", blurb: "Pulls new pipe through the old pipe's path — minimal digging, ideal when the line's path is sound but the pipe itself is worn out." },
+        { title: "Traditional Excavation Repair", blurb: "Digs down to expose and replace a damaged section — often the right call when trenchless access isn't practical." },
+        { title: "Spot Repair", blurb: "Fixes one isolated damaged section without replacing the whole line — the most affordable option when it's genuinely all that's needed." },
+        { title: "Full Replacement & New Installation", blurb: "For lines too old or damaged to repair, and for new construction that needs a line run for the first time — modern installs use PVC, rated for 50+ years." },
+      ],
+      signs: [
+        "Slow or backed-up drains in more than one fixture",
+        "Sewage odor near the yard or inside the house",
+        "Gurgling sounds from toilets or drains",
+        "Soggy or unusually green patches of lawn, even without rain",
+        "Multiple fixtures backing up at the same time",
+        "Standing water near the sewer cleanout",
+      ],
+      localNote:
+        "That same clay-loam soil movement affects buried sewer pipe, not just driveways and foundations — it can shift pipe out of alignment, create low spots where a line sags, and stress joints until they leak. Proper bedding and backfill during a repair matter here just as much as they do on our OKC jobs.",
+      linkTo: "/sewer-line-repair-oklahoma-city",
+    },
+    whyFdzSection: {
+      points: [
+        { title: "One Crew for Excavation & Concrete", desc: "Sewer line work means digging — and usually means restoring a driveway, sidewalk, or slab afterward. We do both ourselves, on OKC jobs and Stillwater jobs alike." },
+        { title: "OKC-Based, Actively Serving Stillwater", desc: "We're not a Stillwater company — we're based in south Oklahoma City and travel to Stillwater for scheduled projects. We're upfront about that rather than pretending otherwise." },
+        { title: "Licensed, Bonded & Insured in Oklahoma", desc: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project, wherever it is." },
+        { title: "2-Year Workmanship Warranty", desc: "Every project — concrete or sewer, OKC or Stillwater — is backed by the same 2-year workmanship warranty." },
+      ],
+    },
+    projectsPlaceholder: {
+      note: "We've completed both concrete and sewer line projects for Stillwater homeowners. We don't have photos or customer reviews from those jobs published yet — this section will be updated with real Stillwater project photos and reviews as they become available.",
+    },
+    serviceAreaNote:
+      "Stillwater is about 65–75 miles from our south OKC shop — roughly an hour to 90 minutes depending on route and traffic. We serve Stillwater by scheduled appointment rather than same-day OKC-metro response, so projects here are typically planned a bit further ahead. Call <a href='tel:4054584805'>(405) 458-4805</a> to check current scheduling for a Stillwater project.",
+    faqHeadingAccent: "Concrete &amp; Sewer Work in Stillwater",
+    faq: [
+      {
+        question: "Do you actually work in Stillwater, or just Oklahoma City?",
+        answer: "We actually work in Stillwater — we've completed both concrete and sewer line projects there. We're based in south Oklahoma City, and Stillwater is one of the areas we travel to for scheduled projects, not just a city we mention on paper.",
+      },
+      {
+        question: "Do you charge extra for travel to Stillwater?",
+        answer: "Because Stillwater is outside our core OKC metro service area, travel is a factor we account for in scheduling and pricing. We'll go over exactly what that means for your project when we give you a written estimate — no surprises after the fact.",
+      },
+      {
+        question: "Do you do both concrete and sewer work, or just one?",
+        answer: "Both. We're a concrete contractor that also handles sewer line repair, replacement, and installation — including the concrete restoration that sewer work usually requires. We've done both types of projects in Stillwater.",
+      },
+      {
+        question: "How do I schedule a project if you're based in OKC?",
+        answer: "Call (405) 458-4805 or request a free estimate — we'll go over your project, confirm we can get a crew out to Stillwater on a timeline that works, and schedule your on-site estimate from there.",
+      },
+    ],
+  },
 };
 
 const NEARBY: Record<string, { name: string; to: string }[]> = {
@@ -296,6 +389,7 @@ const CITY_NAME: Record<string, string> = {
   moore: "Moore",
   "midwest-city": "Midwest City",
   "del-city": "Del City",
+  stillwater: "Stillwater",
 };
 
 export default function CityPage({ slug }: { slug: string }) {
@@ -308,11 +402,12 @@ export default function CityPage({ slug }: { slug: string }) {
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.id = "city-service-schema";
+    const serviceTypes = data.serviceTypes || ["Concrete Contracting"];
     script.text = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Concrete Contracting",
-      "name": `Concrete Contractor in ${cityName}, OK`,
+      "serviceType": serviceTypes.length > 1 ? serviceTypes : serviceTypes[0],
+      "name": data.serviceName || `Concrete Contractor in ${cityName}, OK`,
       "url": pageUrl,
       "provider": { "@id": "https://fdzconstruction.com/#organization" },
       "areaServed": { "@type": "City", "name": cityName, "addressRegion": "OK" },
@@ -320,7 +415,7 @@ export default function CityPage({ slug }: { slug: string }) {
     document.getElementById("city-service-schema")?.remove();
     document.head.appendChild(script);
     return () => { document.getElementById("city-service-schema")?.remove(); };
-  }, [cityName, pageUrl]);
+  }, [cityName, pageUrl, data.serviceTypes, data.serviceName]);
 
   return (
     <CityPageTemplate
@@ -328,6 +423,8 @@ export default function CityPage({ slug }: { slug: string }) {
       county={data.county}
       canonicalUrl={`${BASE}${routePath}`}
       heroBlurb={data.heroBlurb}
+      heroTitle={data.heroTitle}
+      heroTitleAccent={data.heroTitleAccent}
       intro={data.intro}
       localTerrainNote={data.localTerrainNote}
       driveTimeNote={data.driveTimeNote}
@@ -335,7 +432,13 @@ export default function CityPage({ slug }: { slug: string }) {
       linkedServices={data.linkedServices}
       faq={data.faq}
       nearbyLinks={NEARBY[slug]}
+      metaTitle={data.metaTitle}
       metaDescription={data.metaDescription}
+      sewerSection={data.sewerSection}
+      whyFdzSection={data.whyFdzSection}
+      projectsPlaceholder={data.projectsPlaceholder}
+      serviceAreaNote={data.serviceAreaNote}
+      faqHeadingAccent={data.faqHeadingAccent}
     />
   );
 }

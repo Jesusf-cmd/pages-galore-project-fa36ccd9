@@ -26,6 +26,7 @@ const CITY_LINKS = [
   { href: "/mustang-oklahoma-concrete", label: "Mustang" },
   { href: "/midwest-city-oklahoma-concrete", label: "Midwest City" },
   { href: "/del-city-oklahoma-concrete", label: "Del City" },
+  { href: "/stillwater-oklahoma-concrete", label: "Stillwater" },
 ];
 
 export const prerenderBodies: Record<string, string> = {
@@ -624,6 +625,48 @@ export const prerenderBodies: Record<string, string> = {
       { question: "How much does concrete cost in Del City?", answer: "Del City pricing follows our OKC metro rates — roughly $6–$10 per square foot for driveways and slabs — with an exact price after a free on-site estimate." },
     ])}
     <p><strong>Drive time:</strong> Del City is about 15–20 minutes east of the shop, in the same general area as Midwest City.</p>
+    ${trustParagraph()}
+  `,
+
+  "/stillwater-oklahoma-concrete": `
+    <h1>Stillwater, OK Concrete &amp; Sewer Line Contractor</h1>
+    <p>FDZ Construction LLC is based in south Oklahoma City, but we've completed concrete and sewer line projects for Stillwater homeowners — both are part of the work we actually do here, not just a metro-only sideline. Stillwater's housing stock is a mix of older, near-campus homes and student rental properties around Oklahoma State University alongside newer construction on the edges of town — we work on both, from a rental property's driveway repair to a new-build sewer line install.</p>
+    <h2>Stillwater Terrain and Soil</h2>
+    <p>Stillwater sits in Payne County's Sandstone Hills country along the Cimarron River — a different geologic base than the Permian clay and shale under the OKC metro. But the surface soils around Stillwater are still expansive clay loams (Masham silty clay loam is common in the area) that swell and shrink with moisture much the same way OKC's clay does, which is why base prep and drainage still matter here just as much as anywhere else we work.</p>
+    <h2>Concrete Services in Stillwater</h2>
+    ${linkList([
+      { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
+      { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
+      { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
+      { href: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
+      { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
+    ])}
+    <h2>Sewer Line Repair &amp; Installation in Stillwater</h2>
+    <p>FDZ Construction handles sewer line repair, replacement, and new installation for Stillwater homeowners and rental property owners — using the same one-crew approach we use across the OKC metro: we handle the excavation and the concrete restoration ourselves, so you're not coordinating a plumber and a separate concrete contractor.</p>
+    <ul>
+      <li><strong>Trenchless Pipe Bursting</strong> — Pulls new pipe through the old pipe's path — minimal digging, ideal when the line's path is sound but the pipe itself is worn out.</li>
+      <li><strong>Traditional Excavation Repair</strong> — Digs down to expose and replace a damaged section — often the right call when trenchless access isn't practical.</li>
+      <li><strong>Spot Repair</strong> — Fixes one isolated damaged section without replacing the whole line — the most affordable option when it's genuinely all that's needed.</li>
+      <li><strong>Full Replacement &amp; New Installation</strong> — For lines too old or damaged to repair, and for new construction that needs a line run for the first time — modern installs use PVC, rated for 50+ years.</li>
+    </ul>
+    <p>Signs you may need sewer line repair: slow or backed-up drains in more than one fixture, sewage odor near the yard or inside the house, gurgling sounds from toilets or drains, soggy or unusually green patches of lawn, multiple fixtures backing up at the same time, and standing water near the sewer cleanout.</p>
+    <p>See the full <a href="/sewer-line-repair-oklahoma-city">sewer line repair methods, process, and FAQ</a> for more detail.</p>
+    <h2>Why FDZ for Stillwater Projects</h2>
+    <ul>
+      <li>One crew handles both the excavation and the concrete restoration on sewer work — no coordinating two companies</li>
+      <li>We're not a Stillwater company — we're based in south Oklahoma City and travel to Stillwater for scheduled projects, and we're upfront about that</li>
+      <li>Licensed, bonded, and insured in Oklahoma</li>
+      <li>2-year workmanship warranty on every project, wherever it is</li>
+    </ul>
+    <h2>Our Stillwater Projects</h2>
+    <p>We've completed both concrete and sewer line projects for Stillwater homeowners. We don't have photos or customer reviews from those jobs published yet — this section will be updated with real Stillwater project photos and reviews as they become available.</p>
+    ${faqSection("Stillwater FAQ", [
+      { question: "Do you actually work in Stillwater, or just Oklahoma City?", answer: "We actually work in Stillwater — we've completed both concrete and sewer line projects there. We're based in south Oklahoma City, and Stillwater is one of the areas we travel to for scheduled projects, not just a city we mention on paper." },
+      { question: "Do you charge extra for travel to Stillwater?", answer: "Because Stillwater is outside our core OKC metro service area, travel is a factor we account for in scheduling and pricing. We'll go over exactly what that means for your project when we give you a written estimate — no surprises after the fact." },
+      { question: "Do you do both concrete and sewer work, or just one?", answer: "Both. We're a concrete contractor that also handles sewer line repair, replacement, and installation — including the concrete restoration that sewer work usually requires. We've done both types of projects in Stillwater." },
+      { question: "How do I schedule a project if you're based in OKC?", answer: "Call (405) 458-4805 or request a free estimate — we'll go over your project, confirm we can get a crew out to Stillwater on a timeline that works, and schedule your on-site estimate from there." },
+    ])}
+    <p><strong>Drive time:</strong> Stillwater is about 65–75 miles from our south OKC shop — roughly an hour to 90 minutes depending on route and traffic. We serve Stillwater by scheduled appointment rather than same-day OKC-metro response.</p>
     ${trustParagraph()}
   `,
 

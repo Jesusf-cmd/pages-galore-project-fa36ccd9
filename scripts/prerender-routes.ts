@@ -170,6 +170,13 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
     content: "Del City, bordered by Midwest City and south Oklahoma City, shares the same Crutcho Creek and Cherry Creek flood dynamic confirmed by the city's floodplain information, with flat terrain over the metro's expansive clay base. We provide driveway replacement, patio slabs, sidewalk work, and retaining walls. Call (405) 458-4805 for a free estimate.",
   },
   {
+    path: "/stillwater-oklahoma-concrete",
+    title: "Concrete & Sewer Line Contractor Stillwater, OK | FDZ Construction LLC",
+    description: "Concrete & sewer line contractor serving Stillwater, OK — driveways, patios, foundations, and sewer line repair & installation. FDZ Construction LLC. Call (405) 458-4805.",
+    h1: "Stillwater, OK Concrete & Sewer Line Contractor",
+    content: "FDZ Construction LLC is based in south Oklahoma City, but we've completed concrete and sewer line projects for Stillwater homeowners and OSU-area rental property owners. Driveways, patios, foundations, retaining walls, sidewalks, plus sewer line repair, replacement, and new installation — the same one-crew excavation-to-concrete-restoration approach we use across the OKC metro. Stillwater is about 65–75 miles from our shop and served by scheduled appointment. Call (405) 458-4805 for a free estimate.",
+  },
+  {
     path: "/our-projects",
     title: "Our Concrete Projects | FDZ Construction LLC | Oklahoma City",
     description: "View completed concrete projects by FDZ Construction LLC in Oklahoma City, Edmond, Norman, and the OKC metro. Driveways, patios, foundations, and commercial work.",

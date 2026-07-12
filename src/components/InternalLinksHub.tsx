@@ -29,6 +29,7 @@ const ALL_CITIES = [
   { slug: "mustang-oklahoma-concrete", anchor: "concrete contractor in Mustang" },
   { slug: "midwest-city-oklahoma-concrete", anchor: "concrete contractor in Midwest City" },
   { slug: "del-city-oklahoma-concrete", anchor: "concrete contractor in Del City" },
+  { slug: "stillwater-oklahoma-concrete", anchor: "concrete & sewer line contractor in Stillwater" },
 ];
 
 interface InternalLinksHubProps {
