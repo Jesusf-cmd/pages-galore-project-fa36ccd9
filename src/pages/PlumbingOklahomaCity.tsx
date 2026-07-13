@@ -36,9 +36,11 @@ export default function PlumbingOklahomaCity() {
       metaTitle="Plumbing Services Oklahoma City | FDZ Construction LLC"
       metaDescription="Plumbing repair, drain cleaning, water heaters, leak detection & sewer line service in Oklahoma City. Licensed plumbers. Call (405) 458-4805."
       eyebrow="OKC Metro · Plumbing Repair & Installation · Licensed & Insured"
+      badge="gc-managed"
       title="Oklahoma City"
       titleAccent="Plumbing Services."
       description="FDZ Construction's licensed plumbers handle everything from a slow drain to a full sewer line replacement — for homeowners and businesses across the OKC metro, with the same crew that handles the concrete restoration when a job requires it."
+      modelNote="As your general contractor, FDZ manages licensed plumbing specialists on your project — you get one point of contact, one invoice, and one workmanship warranty, without having to vet or coordinate a separate contractor yourself. (Sewer line excavation and concrete restoration remain self-performed by our own crew.)"
       introText="FDZ Construction LLC's plumbing team covers the full range of residential and commercial plumbing — general repair, drain cleaning, water heater service, and leak detection. Sewer line repair and installation is a distinct specialty of ours: see our <a href='/sewer-line-repair-oklahoma-city'>dedicated sewer line repair page</a> for the full breakdown of methods, process, and FAQ."
       localExpertiseNote="Oklahoma's hard water accelerates mineral buildup in pipes and water heaters over time, and the same expansive clay soil that stresses driveways and foundations also stresses buried plumbing lines. Both are conditions we plan around, not surprises we discover halfway through a job."
       subServices={{

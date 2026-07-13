@@ -36,9 +36,11 @@ export default function ElectricalOklahomaCity() {
       metaTitle="Electrical Services Oklahoma City | FDZ Construction LLC"
       metaDescription="Residential & commercial electrical services in Oklahoma City. Panel upgrades, wiring, lighting, generators & EV chargers. Licensed. Call (405) 458-4805."
       eyebrow="OKC Metro · Electrical Repair & Installation · Licensed & Insured"
+      badge="gc-managed"
       title="Oklahoma City"
       titleAccent="Electrical Services."
       description="From a flickering light to a full panel upgrade, FDZ Construction's licensed electricians handle residential and commercial electrical repair and installation across the OKC metro — including emergency service when something can't wait."
+      modelNote="As your general contractor, FDZ manages licensed electrical specialists on your project — you get one point of contact, one invoice, and one workmanship warranty, without having to vet or coordinate a separate contractor yourself."
       introText="FDZ Construction LLC's electrical team handles repair and installation for homes and businesses across the Oklahoma City metro — panel upgrades, wiring and outlet repair, lighting, generator and EV charger installation, and emergency electrical service. Our licensed electricians work to code on every job, residential or commercial."
       localExpertiseNote="Oklahoma City's severe storm season — high winds, hail, and tornado activity — brings real power surge and outage risk. A properly protected panel and, for some homes, a backup generator aren't optional extras here; they're a practical response to conditions this area actually sees every spring."
       subServices={{

@@ -37,9 +37,11 @@ export default function SewerLineRepairOklahomaCity() {
       metaTitle="Sewer Line Repair & Installation Oklahoma City | FDZ Construction LLC"
       metaDescription="Sewer line repair, replacement & installation in OKC. One crew handles excavation and concrete restoration — no second contractor. (405) 458-4805."
       eyebrow="OKC Metro · Sewer Line Repair & Installation · Licensed & Insured"
+      badge="self-performed"
       title="Sewer Line Repair & Installation in"
       titleAccent="Oklahoma City, OK."
       description="Sewer line repair almost always means digging through a driveway, sidewalk, or slab — then someone has to pour it back. Most plumbers subcontract that part or leave you to find a second contractor. FDZ Construction does the excavation and the concrete restoration with the same crew, so nothing gets left half-finished."
+      modelNote="The excavation and concrete restoration on every sewer line project are self-performed by our own crew and equipment — no subcontracted labor for that part of the job."
       introText="FDZ Construction LLC handles sewer line repair, replacement, and new-line installation for homeowners across the Oklahoma City metro — plus new construction and additions that need a fresh line run. Because we're a concrete contractor first, we do the digging and the driveway, sidewalk, or slab restoration ourselves once the pipe work is done. No second phone call, no second contractor, no mismatched patch where the old and new concrete meet."
       localExpertiseNote="Oklahoma City sits on Permian-age clay and shale that expands when wet and shrinks in drought — the same ground movement that cracks driveways also shifts and stresses buried sewer pipe over time. It's a major reason lines that were fine for years suddenly start backing up or sagging."
       subServices={{

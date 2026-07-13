@@ -80,6 +80,13 @@ export const routes: PrerenderRoute[] = [
     content: "FDZ Construction LLC provides 24/7 emergency service across concrete, HVAC, plumbing, and electrical for the Oklahoma City metro. One call handles a collapsed slab, a no-heat or no-cool HVAC failure, an active plumbing leak or sewer line emergency, or an electrical hazard — faster response, one point of contact, no coordinating multiple contractors during a stressful situation. Call (405) 458-4805.",
   },
   {
+    path: "/our-approach",
+    title: "How We Work — Self-Performed Concrete & General Contracted Trades | FDZ Construction LLC",
+    description: "FDZ self-performs all concrete work with our own crews. HVAC, plumbing & electrical are delivered as general contractor, managing licensed specialists under one invoice and warranty.",
+    h1: "Self-Performed Concrete. Managed Trades.",
+    content: "FDZ Construction LLC self-performs all concrete work — driveways, patios, slabs, foundations, retaining walls, sidewalks, and commercial concrete — with our own crews and equipment, no subcontracted labor. For HVAC, plumbing, and electrical work, FDZ acts as your general contractor, managing licensed, vetted trade specialists so you still get one point of contact, one invoice, and one workmanship warranty for the whole project.",
+  },
+  {
     path: "/sidewalks-oklahoma-city",
     title: "Concrete Sidewalks, Curb & Gutter Oklahoma City | FDZ Construction LLC",
     description: "Concrete sidewalk and curb & gutter contractors in Oklahoma City. New construction, city right-of-way, ADA-compliant ramps, city-spec curb work. Free estimate.",

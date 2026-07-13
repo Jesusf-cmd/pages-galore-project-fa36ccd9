@@ -36,9 +36,11 @@ export default function HvacOklahomaCity() {
       metaTitle="HVAC Repair & Installation Oklahoma City | FDZ Construction LLC"
       metaDescription="HVAC repair, installation & emergency service in Oklahoma City. AC, furnace & heat pump specialists. Licensed & insured. Call (405) 458-4805."
       eyebrow="OKC Metro · HVAC Repair, Installation & Emergency Service · Licensed & Insured"
+      badge="gc-managed"
       title="Oklahoma City HVAC Repair,"
       titleAccent="Installation & Emergency Service."
       description="When your AC quits in a 105° OKC summer or your furnace fails on a January cold snap, you need a crew that shows up fast and fixes it right. FDZ Construction's licensed HVAC technicians handle repair, installation, and emergency service for homes and businesses across the metro."
+      modelNote="As your general contractor, FDZ manages licensed HVAC specialists on your project — you get one point of contact, one invoice, and one workmanship warranty, without having to vet or coordinate a separate contractor yourself."
       introText="FDZ Construction LLC's HVAC team handles repair, installation, replacement, and emergency no-heat/no-cool service for residential and commercial properties across the Oklahoma City metro. Whether it's an aging system on its last leg or a full new install for a renovation or addition, our licensed technicians size and service equipment for Oklahoma's actual climate — not a generic spec sheet."
       localExpertiseNote="Oklahoma City summers regularly push past 100°F and winters bring hard freezes and cold snaps — a system that's undersized or poorly installed struggles, or fails outright, exactly when you need it most. We size and install for OKC's real seasonal swings, not a mild-climate average."
       subServices={{

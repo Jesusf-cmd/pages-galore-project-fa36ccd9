@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
+import TradeBadge, { type TradeModel } from "@/components/TradeBadge";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import ServicesFooterGrid from "@/components/ServicesFooterGrid";
@@ -55,6 +56,10 @@ interface ServicePageProps {
   cityBlockIntro?: string;
   /** OKC-specific technical point relevant to this service. Rendered as a highlighted callout. */
   localExpertiseNote?: string;
+  /** "self-performed" (in-house concrete crew) or "gc-managed" (FDZ manages licensed trade partners). Rendered as a small badge in the hero. */
+  badge?: TradeModel;
+  /** 1-2 sentence clarification of the self-performed vs. GC-managed delivery model, shown near the top of the hero. */
+  modelNote?: string;
   /** Experience + warranty line. Pass null to hide; defaults to the confirmed company trust line. */
   trustLine?: string | null;
   /** Sub-services breakdown: H2 section with H3 entries + bullet points. */
@@ -84,7 +89,7 @@ interface ServicePageProps {
   };
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, trustLine, subServices, projectGallery, videoGallery }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery }: ServicePageProps) {
   const seoTitle = metaTitle || `${title} ${titleAccent.replace('.', '')} | FDZ Construction LLC`;
   const seoDescription = metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155);
   const canonical = currentServiceSlug ? `https://fdzconstruction.com/${currentServiceSlug}` : undefined;
@@ -121,8 +126,12 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
       <section className="page-hero">
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">{eyebrow}</span>
+        {badge && <div className="mb-4"><TradeBadge model={badge} /></div>}
         <h1 className="max-w-[820px] mb-5">{title}<br/><span className="text-orange">{titleAccent}</span></h1>
-        <p className="prose-muted max-w-[680px] mb-8" dangerouslySetInnerHTML={{ __html: description }} />
+        <p className={`prose-muted max-w-[680px] ${modelNote ? "mb-4" : "mb-8"}`} dangerouslySetInnerHTML={{ __html: description }} />
+        {modelNote && (
+          <p className="text-[0.78rem] text-muted-text max-w-[680px] mb-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: modelNote }} />
+        )}
         <div className="flex gap-4 flex-wrap">
           <Link to="/#estimate" className="btn-primary">Get Free Estimate →</Link>
           <a href="tel:4054584805" className="btn-outline">📞 (405) 458-4805</a>

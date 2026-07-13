@@ -136,9 +136,11 @@ export default function CommercialConcreteOklahomaCity() {
       metaTitle="Commercial Concrete Contractor Oklahoma City | FDZ Construction LLC"
       metaDescription="Commercial concrete contractors in Oklahoma City. Loading docks, warehouse floors, truck courts, equipment pads, bollards, crane foundations & more. Free estimate: (405) 458-4805."
       eyebrow="OKC Metro · Commercial Concrete · Licensed & Insured"
+      badge="self-performed"
       title="Commercial Concrete in"
       titleAccent="Oklahoma City."
       description='Commercial concrete contractors in Oklahoma City — loading docks, warehouse floors, truck courts, equipment foundations, parking lots, and site work across the OKC metro. <a href="tel:4054584805">(405) 458-4805</a>.'
+      modelNote="This is self-performed work — our own crew and equipment handle every commercial concrete project from start to finish, with no subcontracted labor."
       introText="Commercial concrete is unforgiving — a dock that spalls under loaded trailers or a warehouse floor that fails under forklift traffic shuts down your operation and costs far more to fix than to build right. FDZ Construction LLC handles the full range of commercial and industrial concrete in the OKC metro: from loading dock construction and warehouse floor replacement to truck courts, equipment foundations, and pool decks for commercial properties. We work directly with property managers, warehouse operators, developers, and general contractors. Call <a href='tel:4054584805'>(405) 458-4805</a> to discuss your project."
       serviceLabel="Commercial"
       serviceCards={[

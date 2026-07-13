@@ -2,18 +2,29 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
 import FinalCTA from "@/components/FinalCTA";
+import TradeBadge, { type TradeModel } from "@/components/TradeBadge";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
 
 const PAGE_URL = "https://fdzconstruction.com/emergency-services-oklahoma-city";
 
-const trades = [
+const trades: {
+  icon: string;
+  title: string;
+  desc: string;
+  to: string;
+  linkLabel: string;
+  model: TradeModel;
+  secondaryTo?: string;
+  secondaryLabel?: string;
+}[] = [
   {
     icon: "🧱",
     title: "Concrete Emergencies",
     desc: "A collapsed or heaving slab, a driveway or sidewalk that's become a safety hazard, or storm damage to a concrete structure — we respond and stabilize the situation before doing the full repair.",
     to: "/driveways-oklahoma-city",
     linkLabel: "See Concrete Services",
+    model: "self-performed",
   },
   {
     icon: "🌡️",
@@ -21,6 +32,7 @@ const trades = [
     desc: "No heat during a cold snap or no cooling during peak OKC summer heat isn't a wait-a-few-days problem. Our HVAC technicians prioritize these calls.",
     to: "/hvac-oklahoma-city",
     linkLabel: "See HVAC Services",
+    model: "gc-managed",
   },
   {
     icon: "🚰",
@@ -28,6 +40,7 @@ const trades = [
     desc: "Active leaks, no water, and sewer line failures — including backups, standing water near the cleanout, or a line that's failed outright — get priority response. Sewer emergencies are handled by our dedicated sewer team.",
     to: "/plumbing-oklahoma-city",
     linkLabel: "See Plumbing Services",
+    model: "gc-managed",
     secondaryTo: "/sewer-line-repair-oklahoma-city",
     secondaryLabel: "Sewer Line Repair →",
   },
@@ -37,6 +50,7 @@ const trades = [
     desc: "A burning smell, sparking, or total loss of power is not a wait-and-see situation. Our licensed electricians treat active electrical hazards as priority calls.",
     to: "/electrical-oklahoma-city",
     linkLabel: "See Electrical Services",
+    model: "gc-managed",
   },
 ];
 
@@ -79,8 +93,11 @@ export default function EmergencyServicesOklahomaCity() {
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">OKC Metro · 24/7 Emergency Service · Licensed &amp; Insured</span>
         <h1 className="max-w-[820px] mb-5">24/7 Emergency Services in<br/><span className="text-orange">Oklahoma City.</span></h1>
-        <p className="prose-muted max-w-[680px] mb-8">
+        <p className="prose-muted max-w-[680px] mb-4">
           One call handles concrete, HVAC, plumbing, and electrical emergencies — no juggling separate contractors while you're dealing with an active problem.
+        </p>
+        <p className="text-[0.78rem] text-muted-text max-w-[680px] mb-8 leading-relaxed">
+          Concrete emergencies are handled by our own self-performed crew. For HVAC, plumbing, and electrical emergencies, FDZ acts as your general contractor, managing licensed specialists so you still get one point of contact, one invoice, and one workmanship warranty.
         </p>
         <div className="flex gap-4 flex-wrap">
           <a href="tel:4054584805" className="btn-primary">📞 Call (405) 458-4805</a>
@@ -96,7 +113,10 @@ export default function EmergencyServicesOklahomaCity() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
             {trades.map((t, i) => (
               <div key={i} className="bg-stone p-6 md:p-8">
-                <div className="text-2xl mb-3">{t.icon}</div>
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="text-2xl">{t.icon}</div>
+                  <TradeBadge model={t.model} />
+                </div>
                 <h3 className="text-base mb-2">{t.title}</h3>
                 <p className="text-[0.85rem] text-muted-text leading-relaxed font-light mb-4">{t.desc}</p>
                 <div className="flex flex-col gap-1.5">

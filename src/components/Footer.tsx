@@ -81,6 +81,7 @@ export default function Footer() {
         <div>
           <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3">Company</div>
           <div className="flex flex-col gap-1.5">
+            <Link to="/our-approach" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">How We Work</Link>
             <Link to="/our-projects" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Projects</Link>
             <Link to="/blog" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Tips Blog</Link>
             <span className="text-[0.74rem] text-muted-text">Workmanship Warranty</span>

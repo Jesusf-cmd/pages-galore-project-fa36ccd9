@@ -992,6 +992,33 @@ export const prerenderBodies: Record<string, string> = {
     <p><strong>Call now:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
   `,
+
+  "/our-approach": `
+    <h1>Self-Performed Concrete. Managed Trades.</h1>
+    <p>FDZ Construction LLC delivers every project one of two ways, depending on the trade — and we think you should know exactly which one applies before you hire us.</p>
+    <h2>Concrete — Self-Performed</h2>
+    <p>Concrete is where FDZ Construction started, and it's still 100% self-performed. Driveways, patios, slabs, foundations, retaining walls, sidewalks, sewer line excavation and restoration, and commercial concrete are all poured and finished by our own employees — using our own equipment, on our own schedule. Nothing gets handed off to a subcontractor we don't control.</p>
+    <h2>HVAC, Plumbing &amp; Electrical — General Contracted</h2>
+    <p>For HVAC, plumbing, and electrical work, FDZ Construction acts as your general contractor. We manage licensed, vetted trade specialists on your project so you only have to deal with one company — a single point of contact, a single itemized invoice, and a single workmanship warranty covering the whole job, even though the on-the-tools work is performed by our licensed partner tradespeople, not FDZ's in-house concrete crew.</p>
+    <h2>What to Expect — Concrete</h2>
+    <ol>
+      <li>Free on-site estimate from our own crew</li>
+      <li>Written, itemized quote — no subcontractor markup</li>
+      <li>Our crew handles excavation, base prep, and forming</li>
+      <li>Our crew pours, finishes, and cures the concrete</li>
+      <li>Final walkthrough, backed by our 2-year warranty</li>
+    </ol>
+    <h2>What to Expect — HVAC, Plumbing &amp; Electrical</h2>
+    <ol>
+      <li>You call FDZ — one number for every trade</li>
+      <li>We scope the job and give you a written estimate</li>
+      <li>We schedule a licensed specialist from our vetted partner network</li>
+      <li>FDZ oversees the work through completion</li>
+      <li>You get one invoice and one workmanship warranty from FDZ</li>
+    </ol>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    ${trustParagraph()}
+  `,
 };
 
 export function getPrerenderBody(path: string): string | undefined {

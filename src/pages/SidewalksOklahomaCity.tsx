@@ -56,9 +56,11 @@ export default function SidewalksOklahomaCity() {
       metaTitle="Concrete Sidewalks, Curb & Gutter Oklahoma City | FDZ Construction LLC"
       metaDescription="Concrete sidewalk and curb & gutter contractors in Oklahoma City. New construction, city right-of-way, ADA-compliant ramps, city-spec curb work. Free estimate: (405) 458-4805."
       eyebrow="OKC Metro · Sidewalk & Curb Contractors · Licensed & Insured"
+      badge="self-performed"
       title="Concrete Sidewalks, Curb &"
       titleAccent="Gutter Oklahoma City."
       description='Sidewalks, walkways, curb and gutter installation — city-spec compliant and ADA accessible. Serving OKC metro. Free estimate. <a href="tel:4054584805">(405) 458-4805</a>.'
+      modelNote="This is self-performed work — our own crew and equipment handle every sidewalk, curb, and gutter job from start to finish, with no subcontracted labor."
       introText="<strong>Cracked, heaved, or non-compliant sidewalks are a code problem and a liability problem.</strong> A trip-hazard heave next to a city right-of-way doesn't just fail inspection — it puts the property owner on the hook for any injury that happens because of it. We replace failed walks, install new ones to City of OKC and suburban specs, and build ADA-compliant ramps that pass inspection the first time. 4,000 PSI mix, proper base, graded for drainage. Curb and gutter work to city spec for residential, commercial, and ROW projects across the OKC metro."
       serviceLabel="Sidewalk & Curb"
       serviceCards={[

@@ -58,9 +58,11 @@ export default function RetainingWalls() {
       metaTitle="Concrete Retaining Walls Oklahoma City | FDZ Construction LLC"
       metaDescription="Concrete retaining wall installation and repair in Oklahoma City. Poured concrete and CMU block walls built for OKC's expansive clay soil. Licensed, bonded, insured. Free estimates — (405) 458-4805."
       eyebrow="OKC Metro · Retaining Wall Contractors · Licensed & Insured"
+      badge="self-performed"
       title="Concrete Retaining Wall Contractors in"
       titleAccent="Oklahoma City, OK."
       description={`Poured concrete and CMU block retaining walls built for OKC's expansive clay soil — slope stabilization, drainage, and outdoor living across the OKC metro. <a href="tel:4054584805">(405) 458-4805</a>.`}
+      modelNote="This is self-performed work — our own crew and equipment handle every retaining wall from start to finish, with no subcontracted labor."
       introText="FDZ Construction LLC builds and repairs concrete retaining walls across the Oklahoma City metro. Whether you need a wall to control a sloped yard, protect a foundation from soil movement, create usable outdoor space, or manage drainage, we design each wall around your specific site conditions — not a one-size template. Based in south OKC, licensed, bonded, and insured in Oklahoma, and every wall is backed by a 2-year workmanship warranty."
       serviceLabel="Retaining Wall"
       serviceCards={[

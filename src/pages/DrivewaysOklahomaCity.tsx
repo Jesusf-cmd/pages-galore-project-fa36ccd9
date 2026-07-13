@@ -71,9 +71,11 @@ export default function DrivewaysOklahomaCity() {
       metaTitle="Concrete Driveways Oklahoma City | Installation & Replacement | FDZ Construction"
       metaDescription="Concrete driveway installation & replacement in Oklahoma City. Rebar reinforcement, 30+ year durability. Licensed & insured. Free estimates — call (405) 458-4805."
       eyebrow="OKC Metro · Driveway Contractors · Licensed & Insured"
+      badge="self-performed"
       title="Concrete Driveway Installation & Replacement in"
       titleAccent="Oklahoma City, OK."
       description="Your driveway is the first thing visitors see when they arrive at your home. At FDZ Construction LLC, we specialize in concrete driveway installation, replacement, and repair throughout the Oklahoma City metro area. Whether you need a simple broom-finish driveway or an elegant stamped concrete entrance, our experienced crew delivers quality craftsmanship that stands up to Oklahoma's harsh weather conditions."
+      modelNote="This is self-performed work — our own crew and equipment handle every driveway from start to finish, with no subcontracted labor."
       introText="<strong>Most cracked driveways we tear out failed at the base — not the slab.</strong> Oklahoma's expansive clay swells when wet, shrinks in drought, and pushes against any slab poured on a base that wasn't excavated, compacted, and reinforced for that movement. A driveway that looked fine at year three is a tripping hazard by year ten. We pour driveways that don't get torn out — engineered base, 4,000 PSI mix, rebar at mid-depth, joints cut on time, slope-to-drain detailed. Serving Oklahoma City, Edmond, Norman, Moore, Yukon, and the surrounding metro from our south OKC shop at 7004 S Indiana Ave."
       serviceLabel="Driveway"
       serviceCards={[

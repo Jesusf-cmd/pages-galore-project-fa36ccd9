@@ -22,6 +22,7 @@ const HvacOklahomaCity = lazy(() => import("./pages/HvacOklahomaCity"));
 const PlumbingOklahomaCity = lazy(() => import("./pages/PlumbingOklahomaCity"));
 const ElectricalOklahomaCity = lazy(() => import("./pages/ElectricalOklahomaCity"));
 const EmergencyServicesOklahomaCity = lazy(() => import("./pages/EmergencyServicesOklahomaCity"));
+const OurApproach = lazy(() => import("./pages/OurApproach"));
 const CityPage = lazy(() => import("./pages/CityPage"));
 const OurProjects = lazy(() => import("./pages/OurProjects"));
 const ServiceInCity = lazy(() => import("./pages/ServiceInCity"));
@@ -101,6 +102,7 @@ const App = () => (
                 <Route path="/plumbing-oklahoma-city" element={<PlumbingOklahomaCity />} />
                 <Route path="/electrical-oklahoma-city" element={<ElectricalOklahomaCity />} />
                 <Route path="/emergency-services-oklahoma-city" element={<EmergencyServicesOklahomaCity />} />
+                <Route path="/our-approach" element={<OurApproach />} />
                 <Route path="/pool-deck-oklahoma-city" element={<PoolDeckOklahomaCity />} />
                 <Route path="/bollard-installation-oklahoma-city" element={<BollardInstallation />} />
                 <Route path="/crane-foundation-installation-oklahoma-city" element={<CraneFoundation />} />

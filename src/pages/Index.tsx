@@ -11,6 +11,7 @@ import newDrivewayImg from "@/assets/new-driveway.webp";
 import tiedRebarImg from "@/assets/tied-rebar.webp";
 import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
+import TradeBadge from "@/components/TradeBadge";
 import { useSEO } from "@/hooks/useSEO";
 import { supabase } from "@/integrations/supabase/client";
 import FAQ from "@/components/FAQ";
@@ -22,6 +23,7 @@ import InternalLinksHub from "@/components/InternalLinksHub";
 import ProjectDocumentUpload from "@/components/ProjectDocumentUpload";
 
 const homeFAQ = [
+  { question: "Does FDZ do all the work themselves, or do you subcontract?", answer: "It depends on the trade. Our concrete work — driveways, patios, slabs, foundations, and more — is 100% self-performed by our own crews. For HVAC, plumbing, and electrical work, we serve as your general contractor, managing licensed specialists on your behalf so you still get one point of contact and one warranty for the entire project." },
   { question: "How much does a concrete driveway cost in Oklahoma City?", answer: "In Oklahoma City, a standard concrete driveway typically costs $5,760–$9,600 for a 24×40 ft pour — about $6–$10 per sq ft installed. The concrete cost in Oklahoma City depends on base prep depth, slab thickness, PSI specification, and whether existing pavement needs removal." },
   { question: "What is the cost per square foot for concrete in OKC?", answer: "Concrete in Oklahoma City typically runs $6–$10 per square foot for standard residential slabs and driveways, $9–$14 per sq ft for foundation work, and $15–$22 per sq ft for stamped or decorative finishes." },
   { question: "How thick should a concrete driveway be?", answer: "Most residential concrete driveways in Oklahoma City are poured at 4 inches thick for standard passenger vehicles. If you park heavy trucks, RVs, or trailers, 5–6 inches is recommended." },
@@ -65,6 +67,7 @@ export default function Index() {
       <HeroSection />
       <TrustBar />
       <AboutSection />
+      <HowWeWorkSection />
       <ServicesSection />
       <TradesSection />
       <EmergencyBanner />
@@ -400,6 +403,36 @@ function AboutSection() {
   );
 }
 
+function HowWeWorkSection() {
+  return (
+    <ScrollReveal>
+      <section className="section-padding section-alt">
+        <div className="section-eye">How we work</div>
+        <h2 className="mb-8">Two Trades.<br/><em className="h2-accent">Two Ways We Deliver.</em></h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+          <div className="bg-stone p-6 md:p-8">
+            <div className="mb-4"><TradeBadge model="self-performed" /></div>
+            <h3 className="text-lg mb-3">Our Crews. Our Equipment. Every Pour.</h3>
+            <p className="text-[0.85rem] text-muted-text leading-relaxed font-light">
+              FDZ self-performs all concrete work — driveways, patios, slabs, foundations, retaining walls, sidewalks, and commercial concrete are poured and finished by our own employees, not subcontracted labor. That means direct quality control and accountability from the first shovel to the final finish.
+            </p>
+          </div>
+          <div className="bg-stone p-6 md:p-8">
+            <div className="mb-4"><TradeBadge model="gc-managed" /></div>
+            <h3 className="text-lg mb-3">One Call. One Warranty. Licensed Specialists.</h3>
+            <p className="text-[0.85rem] text-muted-text leading-relaxed font-light">
+              For HVAC, plumbing, and electrical work, FDZ acts as your general contractor — managing and overseeing licensed, vetted trade specialists on your project. You get a single point of contact, a single invoice, and a single workmanship warranty covering the whole job, without having to find and coordinate separate contractors yourself.
+            </p>
+          </div>
+        </div>
+        <p className="prose-muted mt-6">
+          <Link to="/our-approach" className="text-orange no-underline font-medium">More on how we structure every project →</Link>
+        </p>
+      </section>
+    </ScrollReveal>
+  );
+}
+
 function ServicesSection() {
   const services = [
     { num: "01", name: "Concrete Driveways Oklahoma City", desc: "New installation, replacement, and repair of concrete driveways across OKC. Proper thickness, correct mix for Oklahoma weather, and drainage grading on every job.", to: "/driveways-oklahoma-city" },
@@ -421,7 +454,10 @@ function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
           {services.map(s => (
             <div key={s.num} className="bg-darker p-6 group">
-              <div className="font-display text-3xl font-black text-orange/30 mb-3">{s.num}</div>
+              <div className="flex items-start justify-between gap-3 mb-3">
+                <div className="font-display text-3xl font-black text-orange/30">{s.num}</div>
+                <TradeBadge model="self-performed" />
+              </div>
               <div className="font-display text-lg font-extrabold uppercase tracking-[0.04em] mb-2">{s.name}</div>
               <p className="text-[0.82rem] text-muted-text leading-relaxed mb-4">{s.desc}</p>
               <Link to={s.to} className="text-[0.72rem] text-orange font-bold tracking-[0.06em] uppercase no-underline hover:underline">View work →</Link>
@@ -462,7 +498,10 @@ function TradesSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
           {trades.map((t) => (
             <Link key={t.to} to={t.to} className="bg-stone p-6 md:p-8 no-underline block hover:bg-orange/[0.04] transition-colors">
-              <div className="text-2xl mb-3">{t.icon}</div>
+              <div className="flex items-start justify-between gap-3 mb-3">
+                <div className="text-2xl">{t.icon}</div>
+                <TradeBadge model="gc-managed" />
+              </div>
               <div className="font-display text-base font-extrabold uppercase tracking-[0.04em] text-concrete mb-2">{t.name}</div>
               <p className="text-[0.82rem] text-muted-text leading-relaxed mb-4">{t.desc}</p>
               <span className="text-[0.72rem] text-orange font-bold tracking-[0.06em] uppercase">View services →</span>

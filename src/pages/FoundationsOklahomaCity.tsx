@@ -56,9 +56,11 @@ export default function FoundationsOklahomaCity() {
       metaTitle="Concrete Foundations Oklahoma City | Residential & Commercial | FDZ Construction LLC"
       metaDescription="Concrete foundation contractor in Oklahoma City. Slab-on-grade, stem walls, footings, garage pads, and commercial warehouse & retail foundations engineered for clay soil. (405) 458-4805."
       eyebrow="OKC Metro · Foundation Contractors · Licensed & Insured"
+      badge="self-performed"
       title="Concrete Foundations in"
       titleAccent="Oklahoma City."
       description='FDZ Construction LLC builds residential and commercial concrete foundations in Oklahoma City — slab-on-grade, stem walls, footings, and structural pads engineered for Oklahoma clay. <a href="tel:4054584805">(405) 458-4805</a>.'
+      modelNote="This is self-performed work — our own crew and equipment handle every foundation from start to finish, with no subcontracted labor."
       introText="<strong>A failing foundation is the most expensive concrete problem a homeowner ever fixes — and almost every one we evaluate could have been avoided at the original pour.</strong> Oklahoma's expansive clay actively pushes against any foundation poured without proper depth, reinforcement, and drainage. On Edmond fill lots, the failure is usually differential settlement under a slab that should have been a pier-and-thickened-slab. On central OKC clay, it's swell-shrink under an undersized footing. The fix is upstream: read the lot first, spec the right foundation type for the actual soil and grade, and detail drainage around the perimeter. We pour residential and commercial foundations across the OKC metro that outlast the structure on top. Need a slope or grade-change wall instead? See our <a href='/retaining-walls-oklahoma-city'>retaining walls page</a>."
       serviceLabel="Foundation"
       serviceCards={[
