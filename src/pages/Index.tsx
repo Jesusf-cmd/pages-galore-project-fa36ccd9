@@ -23,7 +23,7 @@ import InternalLinksHub from "@/components/InternalLinksHub";
 import ProjectDocumentUpload from "@/components/ProjectDocumentUpload";
 
 const homeFAQ = [
-  { question: "Does FDZ do all the work themselves, or do you subcontract?", answer: "It depends on the trade. Our concrete work — driveways, patios, slabs, foundations, and more — is 100% self-performed by our own crews. For HVAC, plumbing, and electrical work, we serve as your general contractor, managing licensed specialists on your behalf so you still get one point of contact and one warranty for the entire project." },
+  { question: "Do you subcontract any of the work?", answer: "No — our concrete and sewer line work is 100% self-performed by our own crew and equipment, from start to finish. We do not subcontract the excavation, pipe work, or concrete restoration on sewer line jobs." },
   { question: "How much does a concrete driveway cost in Oklahoma City?", answer: "In Oklahoma City, a standard concrete driveway typically costs $5,760–$9,600 for a 24×40 ft pour — about $6–$10 per sq ft installed. The concrete cost in Oklahoma City depends on base prep depth, slab thickness, PSI specification, and whether existing pavement needs removal." },
   { question: "What is the cost per square foot for concrete in OKC?", answer: "Concrete in Oklahoma City typically runs $6–$10 per square foot for standard residential slabs and driveways, $9–$14 per sq ft for foundation work, and $15–$22 per sq ft for stamped or decorative finishes." },
   { question: "How thick should a concrete driveway be?", answer: "Most residential concrete driveways in Oklahoma City are poured at 4 inches thick for standard passenger vehicles. If you park heavy trucks, RVs, or trailers, 5–6 inches is recommended." },
@@ -34,12 +34,12 @@ const homeFAQ = [
 
 export default function Index() {
   useSEO({
-    title: "Concrete, HVAC, Plumbing & Electrical Oklahoma City | FDZ Construction LLC",
-    description: "Oklahoma City concrete, HVAC, plumbing & electrical contractor. Licensed & insured. Serving OKC metro. Call (405) 458-4805 for a free estimate.",
+    title: "Concrete & Sewer Line Contractor Oklahoma City | FDZ Construction LLC",
+    description: "Oklahoma City concrete & sewer line contractor. One crew self-performs every job — driveways, slabs, foundations & sewer repair. Call (405) 458-4805.",
     canonical: "https://fdzconstruction.com/",
     og: {
-      title: "Concrete, HVAC, Plumbing & Electrical Oklahoma City | FDZ Construction LLC",
-      description: "Oklahoma City concrete, HVAC, plumbing & electrical contractor. Free estimates. Call (405) 458-4805.",
+      title: "Concrete & Sewer Line Contractor Oklahoma City | FDZ Construction LLC",
+      description: "One crew handles concrete and sewer line work across the OKC metro. Free estimates. Call (405) 458-4805.",
       type: "website",
       url: "https://fdzconstruction.com/",
     },
@@ -69,8 +69,6 @@ export default function Index() {
       <AboutSection />
       <HowWeWorkSection />
       <ServicesSection />
-      <TradesSection />
-      <EmergencyBanner />
       <WhyUsSection />
       <RecentProjectsSection />
       {/* TODO: re-add once GBP is live with real reviews */}
@@ -94,8 +92,8 @@ export default function Index() {
           <FAQ
             items={homeFAQ}
             eyebrow="FAQ"
-            title='Common Questions About<br/><em class="h2-accent">Concrete in Oklahoma City.</em>'
-            subtitle="Straight answers from a crew that's poured concrete across the OKC metro for years."
+            title='Common Questions About<br/><em class="h2-accent">Concrete &amp; Sewer Line in OKC.</em>'
+            subtitle="Straight answers from a crew that's poured concrete and repaired sewer lines across the OKC metro for years."
           />
         </section>
       </ScrollReveal>
@@ -117,7 +115,7 @@ export default function Index() {
             />
           </div>
           <p className="prose-muted">
-            FDZ Construction LLC provides concrete services throughout Oklahoma City and the surrounding metro. We serve Edmond, Norman, Moore, Yukon, Mustang, Midwest City, Del City, and all surrounding OKC communities.
+            FDZ Construction LLC provides concrete and sewer line services throughout Oklahoma City and the surrounding metro. We serve Edmond, Norman, Moore, Yukon, Mustang, Midwest City, Del City, Stillwater, and all surrounding OKC communities.
           </p>
         </section>
       </ScrollReveal>
@@ -138,12 +136,12 @@ function HeroSection() {
       <div className="hero-glow" style={{ zIndex: 1 }} />
       <div className="relative z-[2]" style={{ padding: 0, border: "none" }}>
         <div>
-          <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">Oklahoma City Concrete, HVAC, Plumbing &amp; Electrical · Licensed &amp; Insured · Locally Owned</span>
+          <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">Oklahoma City Concrete &amp; Sewer Line · Licensed &amp; Insured · Locally Owned</span>
           <h1 className="mb-4 md:mb-6" style={{ fontSize: "clamp(1.9rem, 5vw, 5.2rem)", lineHeight: 1.0 }}>
-            Oklahoma City's Concrete Contractors — Driveways, Patios & More
+            One Crew. Concrete &amp; Sewer Line Done Right.
           </h1>
           <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-5 md:mb-7 leading-[1.7] font-light">
-            FDZ Construction LLC started with concrete — driveways, patios, slabs, and foundations across Oklahoma City. Now our licensed technicians also handle HVAC, plumbing, and electrical work, residential and commercial, across the OKC metro. Licensed, insured, and built for Oklahoma conditions. Call (405) 458-4805 for a free estimate.
+            FDZ Construction self-performs every concrete and sewer line job in the OKC metro — our own crew, our own equipment, start to finish. No subcontractors, ever. Call (405) 458-4805 for a free estimate.
           </p>
           <div className="flex flex-wrap gap-1.5 mb-5 md:mb-8">
             {["Oklahoma City", "Edmond", "Norman", "Mustang", "Moore", "Yukon"].map(city => (
@@ -381,21 +379,20 @@ function AboutSection() {
     <ScrollReveal>
       <section className="section-padding">
         <div className="max-w-[860px]">
-          <div className="section-eye">Concrete Contractors Oklahoma City</div>
+          <div className="section-eye">Concrete &amp; Sewer Line</div>
           <h2 className="mb-7">Built for Oklahoma.<br/><em className="h2-accent">Built to Last.</em></h2>
           <p className="prose-muted mb-6">
-            FDZ Construction LLC is Oklahoma City's concrete specialist. We install and repair concrete <Link to="/driveways-oklahoma-city" className="text-orange no-underline">driveways</Link>, patios, <Link to="/patios-oklahoma-city" className="text-orange no-underline">slabs</Link>, <Link to="/sidewalks-oklahoma-city" className="text-orange no-underline">sidewalks</Link>, and <Link to="/patios-oklahoma-city" className="text-orange no-underline">stamped concrete</Link> surfaces for homeowners and businesses across the OKC metro — including Edmond, Moore, Yukon, Midwest City, Norman, Mustang, and Del City.
+            FDZ Construction LLC is Oklahoma City&apos;s concrete and sewer line specialist. We install and repair concrete <Link to="/driveways-oklahoma-city" className="text-orange no-underline">driveways</Link>, patios, <Link to="/patios-oklahoma-city" className="text-orange no-underline">slabs</Link>, <Link to="/sidewalks-oklahoma-city" className="text-orange no-underline">sidewalks</Link>, and <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundations</Link> — and handle <Link to="/sewer-line-repair-oklahoma-city" className="text-orange no-underline">sewer line repair and installation</Link> with the same crew that restores the driveway or slab afterward.
           </p>
           <p className="prose-muted mb-6">
-            Our team understands Oklahoma's unique conditions. From intense summer heat to winter freeze-thaw cycles and Oklahoma's heavy clay soil, we mix and pour concrete built to handle what this state throws at it. Every job starts with a free, no-obligation estimate. Every job ends with work built to last decades.
+            Our team understands Oklahoma&apos;s unique conditions. From intense summer heat to winter freeze-thaw cycles and Oklahoma&apos;s heavy clay soil, we build concrete and repair sewer lines to handle what this state throws at them. Every job starts with a free, no-obligation estimate.
           </p>
           <p className="prose-muted mb-8">
-            We're not a national franchise. FDZ Construction LLC is your local Oklahoma City concrete company — our own crew handles every project from start to finish. Call us at <a href="tel:4054584805" className="text-orange no-underline font-bold">(405) 458-4805</a> or email <a href="mailto:jesus@fdzconstruction.com" className="text-orange no-underline">jesus@fdzconstruction.com</a> to schedule your free estimate today.
+            We&apos;re not a national franchise. FDZ Construction LLC is your local Oklahoma City company — our own crew handles every concrete and sewer line project from start to finish. Call us at <a href="tel:4054584805" className="text-orange no-underline font-bold">(405) 458-4805</a> or email <a href="mailto:jesus@fdzconstruction.com" className="text-orange no-underline">jesus@fdzconstruction.com</a>.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <Link to="/driveways-oklahoma-city" className="btn-primary text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Driveway Contractors →</Link>
-            <Link to="/patios-oklahoma-city" className="btn-outline text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Patios & Slabs →</Link>
-            <Link to="/foundations-oklahoma-city" className="btn-outline text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Foundations →</Link>
+            <Link to="/driveways-oklahoma-city" className="btn-primary text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Concrete Services →</Link>
+            <Link to="/sewer-line-repair-oklahoma-city" className="btn-outline text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Sewer Line Repair →</Link>
           </div>
         </div>
       </section>
@@ -408,26 +405,29 @@ function HowWeWorkSection() {
     <ScrollReveal>
       <section className="section-padding section-alt">
         <div className="section-eye">How we work</div>
-        <h2 className="mb-8">Two Trades.<br/><em className="h2-accent">Two Ways We Deliver.</em></h2>
+        <h2 className="mb-4">One Crew.<br/><em className="h2-accent">Digging &amp; Concrete Restoration.</em></h2>
+        <p className="prose-muted max-w-[820px] mb-8">
+          Most sewer repairs mean digging through a driveway or slab — then finding a second contractor to pour it back. We don&apos;t split the job. Our own crew handles the excavation and the concrete restoration, start to finish.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
           <div className="bg-stone p-6 md:p-8">
             <div className="mb-4"><TradeBadge model="self-performed" /></div>
-            <h3 className="text-lg mb-3">Our Crews. Our Equipment. Every Pour.</h3>
+            <h3 className="text-lg mb-3">Concrete — Our Crew, Every Pour</h3>
             <p className="text-[0.85rem] text-muted-text leading-relaxed font-light">
-              FDZ self-performs all concrete work — driveways, patios, slabs, foundations, retaining walls, sidewalks, and commercial concrete are poured and finished by our own employees, not subcontracted labor. That means direct quality control and accountability from the first shovel to the final finish.
+              Driveways, patios, slabs, foundations, retaining walls, sidewalks, and commercial concrete are poured and finished by our own employees — not subcontracted labor. Direct quality control from the first shovel to the final finish.
             </p>
           </div>
           <div className="bg-stone p-6 md:p-8">
-            <div className="mb-4"><TradeBadge model="gc-managed" /></div>
-            <h3 className="text-lg mb-3">One Call. One Warranty. Licensed Specialists.</h3>
+            <div className="mb-4"><TradeBadge model="self-performed" /></div>
+            <h3 className="text-lg mb-3">Sewer Line — Same Crew, No Handoff</h3>
             <p className="text-[0.85rem] text-muted-text leading-relaxed font-light">
-              For HVAC, plumbing, and electrical work, FDZ acts as your general contractor — managing and overseeing licensed, vetted trade specialists on your project. You get a single point of contact, a single invoice, and a single workmanship warranty covering the whole job, without having to find and coordinate separate contractors yourself.
+              Sewer line repair almost always disturbs a driveway, sidewalk, or slab. We excavate, complete the pipe work, and restore the concrete ourselves — no second phone call, no mismatched patch where a plumber left off and a concrete crew picked up.
+            </p>
+            <p className="text-[0.82rem] mt-4">
+              <Link to="/sewer-line-repair-oklahoma-city" className="text-orange no-underline font-medium">See sewer line repair methods &amp; process →</Link>
             </p>
           </div>
         </div>
-        <p className="prose-muted mt-6">
-          <Link to="/our-approach" className="text-orange no-underline font-medium">More on how we structure every project →</Link>
-        </p>
       </section>
     </ScrollReveal>
   );
@@ -442,15 +442,31 @@ function ServicesSection() {
     { num: "05", name: "Sidewalks, Curb & Gutter", desc: "Sidewalks, walkways, curb and gutter installation — city-spec compliant and ADA accessible across OKC.", to: "/sidewalks-oklahoma-city" },
     { num: "06", name: "Commercial Concrete OKC", desc: "Warehouse floors, loading docks, retail pads, and commercial slabs for Oklahoma City businesses. We meet commercial specs and pull all required permits.", to: "/commercial-concrete-oklahoma-city" },
     { num: "07", name: "Concrete Parking Lots OKC", desc: "New construction, replacement, and ADA-compliant commercial parking lots — 5–6 inch reinforced slabs built to outlast asphalt across the OKC metro.", to: "/parking-lots-oklahoma-city" },
-    { num: "08", name: "Sewer Line Repair & Installation", desc: "Sewer line repair, replacement, and new installation — plus the driveway, sidewalk, or slab restoration it requires, done by the same crew.", to: "/sewer-line-repair-oklahoma-city" },
   ];
 
   return (
     <ScrollReveal>
       <section id="concrete-services" className="section-padding scroll-mt-24">
         <div className="section-eye">What we do</div>
-        <h2 className="mb-3">Residential &<br/><em className="h2-accent">Commercial Concrete.</em></h2>
-        <p className="prose-muted mb-8">From a single driveway to a full commercial parking lot — same crew, same standards, same guarantee.</p>
+        <h2 className="mb-3">Two Core Services.<br/><em className="h2-accent">One Crew.</em></h2>
+        <p className="prose-muted mb-8">Concrete work and sewer line repair &amp; installation — self-performed across the OKC metro, same standards on every job.</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08] mb-8" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+          <Link to="/#concrete-services" className="bg-stone p-8 md:p-10 no-underline block hover:bg-orange/[0.04] transition-colors">
+            <div className="text-[0.58rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Core Service</div>
+            <div className="font-display text-2xl font-extrabold uppercase tracking-[0.04em] text-concrete mb-3">Concrete Services</div>
+            <p className="text-[0.85rem] text-muted-text leading-relaxed mb-4">Driveways, patios, slabs, foundations, retaining walls, sidewalks, commercial concrete, and parking lots — poured by our own crew.</p>
+            <span className="text-[0.72rem] text-orange font-bold tracking-[0.06em] uppercase">Browse concrete services ↓</span>
+          </Link>
+          <Link to="/sewer-line-repair-oklahoma-city" className="bg-darker p-8 md:p-10 no-underline block hover:bg-orange/[0.06] transition-colors" style={{ borderLeft: "3px solid hsl(var(--orange))" }}>
+            <div className="text-[0.58rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Core Service</div>
+            <div className="font-display text-2xl font-extrabold uppercase tracking-[0.04em] text-concrete mb-3">Sewer Line Repair &amp; Installation</div>
+            <p className="text-[0.85rem] text-muted-text leading-relaxed mb-4">Repair, replacement, and new installs — plus the driveway or slab restoration, done by the same crew that did the digging.</p>
+            <span className="text-[0.72rem] text-orange font-bold tracking-[0.06em] uppercase">See sewer line services →</span>
+          </Link>
+        </div>
+
+        <h3 className="text-lg mb-4">Concrete Services in Detail</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
           {services.map(s => (
             <div key={s.num} className="bg-darker p-6 group">
@@ -478,56 +494,6 @@ function ServicesSection() {
           ))}
         </div>
       </section>
-    </ScrollReveal>
-  );
-}
-
-function TradesSection() {
-  const trades = [
-    { icon: "🌡️", name: "HVAC Repair & Installation", desc: "AC repair and replacement, furnace service, heat pumps, and emergency no-heat/no-cool service for OKC's temperature swings.", to: "/hvac-oklahoma-city" },
-    { icon: "🚰", name: "Plumbing Services", desc: "General plumbing repair, drain cleaning, water heater service, leak detection, and sewer line repair & installation.", to: "/plumbing-oklahoma-city" },
-    { icon: "⚡", name: "Electrical Services", desc: "Panel upgrades, wiring and outlet repair, lighting, generator and EV charger installation, and emergency electrical service.", to: "/electrical-oklahoma-city" },
-  ];
-
-  return (
-    <ScrollReveal>
-      <section className="section-padding section-alt">
-        <div className="section-eye">One call handles it all</div>
-        <h2 className="mb-3">HVAC, Plumbing &<br/><em className="h2-accent">Electrical, Too.</em></h2>
-        <p className="prose-muted mb-8">FDZ Construction LLC has grown beyond concrete — licensed HVAC, plumbing, and electrical technicians now handle residential and commercial projects across the OKC metro, all under one roof.</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-          {trades.map((t) => (
-            <Link key={t.to} to={t.to} className="bg-stone p-6 md:p-8 no-underline block hover:bg-orange/[0.04] transition-colors">
-              <div className="flex items-start justify-between gap-3 mb-3">
-                <div className="text-2xl">{t.icon}</div>
-                <TradeBadge model="gc-managed" />
-              </div>
-              <div className="font-display text-base font-extrabold uppercase tracking-[0.04em] text-concrete mb-2">{t.name}</div>
-              <p className="text-[0.82rem] text-muted-text leading-relaxed mb-4">{t.desc}</p>
-              <span className="text-[0.72rem] text-orange font-bold tracking-[0.06em] uppercase">View services →</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-    </ScrollReveal>
-  );
-}
-
-function EmergencyBanner() {
-  return (
-    <ScrollReveal>
-      <Link
-        to="/emergency-services-oklahoma-city"
-        className="no-underline block bg-orange px-4 md:px-12 py-6 md:py-8 transition-colors hover:bg-orange-light"
-      >
-        <div className="flex flex-col md:flex-row items-center justify-between gap-3 max-w-6xl mx-auto text-center md:text-left">
-          <div>
-            <div className="font-display text-lg md:text-xl font-extrabold uppercase tracking-[0.04em] text-white">🚨 24/7 Emergency Services</div>
-            <p className="text-[0.85rem] text-white/80 mt-1">Concrete, HVAC, plumbing & electrical emergencies — one call, every trade.</p>
-          </div>
-          <span className="text-white font-display text-sm font-extrabold uppercase tracking-[0.06em] whitespace-nowrap">See Emergency Services →</span>
-        </div>
-      </Link>
     </ScrollReveal>
   );
 }

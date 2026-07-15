@@ -17,13 +17,6 @@ const SERVICE_LINKS = [
   { href: "/parking-lots-oklahoma-city", label: "Parking Lots" },
 ];
 
-const TRADE_LINKS = [
-  { href: "/hvac-oklahoma-city", label: "HVAC Repair & Installation" },
-  { href: "/plumbing-oklahoma-city", label: "Plumbing Services" },
-  { href: "/electrical-oklahoma-city", label: "Electrical Services" },
-  { href: "/emergency-services-oklahoma-city", label: "24/7 Emergency Services" },
-];
-
 const CITY_LINKS = [
   { href: "/oklahoma-city-concrete", label: "Oklahoma City" },
   { href: "/edmond-concrete", label: "Edmond" },
@@ -38,15 +31,15 @@ const CITY_LINKS = [
 
 export const prerenderBodies: Record<string, string> = {
   "/": `
-    <h1>One Call Handles It All — Concrete, HVAC, Plumbing & Electrical in Oklahoma City</h1>
-    <p>FDZ Construction LLC is a licensed, bonded, and insured multi-trade contractor based in south Oklahoma City at 7004 S Indiana Ave. We started with concrete — driveways, patios, slabs, foundations, retaining walls, sidewalks, and commercial concrete — and now our licensed technicians also handle HVAC, plumbing, and electrical work, residential and commercial, across the OKC metro. 24/7 emergency service available.</p>
+    <h1>One Crew. Concrete &amp; Sewer Line Done Right.</h1>
+    <p>FDZ Construction LLC self-performs every concrete and sewer line job in the OKC metro — our own crew, our own equipment, start to finish. Based in south Oklahoma City at 7004 S Indiana Ave. Licensed, bonded &amp; insured. No subcontractors on concrete or sewer work.</p>
     ${trustParagraph()}
     <h2>Concrete Services</h2>
     ${linkList(SERVICE_LINKS)}
-    <h2>HVAC, Plumbing & Electrical</h2>
-    ${linkList(TRADE_LINKS)}
+    <h2>Sewer Line Repair &amp; Installation</h2>
+    <p><a href="/sewer-line-repair-oklahoma-city">Sewer line repair, replacement &amp; installation</a> — plus driveway, sidewalk, and slab restoration by the same crew that did the digging.</p>
     <h2>Why Oklahoma City Soil Matters</h2>
-    <p>The OKC metro sits on Permian-age clay and shale that expands when wet and shrinks in drought. That movement is why proper sub-base compaction, reinforcement, and drainage grading matter on every driveway, slab, and foundation here — not just on problem lots.</p>
+    <p>The OKC metro sits on Permian-age clay and shale that expands when wet and shrinks in drought. That movement stresses driveways, foundations, and buried sewer pipe alike — which is why proper sub-base compaction, reinforcement, and drainage grading matter on every job.</p>
     <h2>Service Areas</h2>
     ${linkList(CITY_LINKS)}
     <p><strong>Contact:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
@@ -130,8 +123,18 @@ export const prerenderBodies: Record<string, string> = {
   `,
 
   "/sewer-line-repair-oklahoma-city": `
-    <h1>Sewer Line Repair &amp; Installation in Oklahoma City, OK</h1>
-    <p>Sewer line repair almost always means digging through a driveway, sidewalk, or slab — then someone has to pour it back. Most plumbers subcontract that part or leave you to find a second contractor. FDZ Construction does the excavation and the concrete restoration with the same crew, so nothing gets left half-finished. We handle sewer line repair, replacement, and new-line installation for homeowners across the OKC metro, plus new construction and additions that need a fresh line run.</p>
+    <h1>One Crew. Sewer Repair &amp; Concrete Restoration.</h1>
+    <p>Most sewer repairs mean digging through a driveway, sidewalk, or slab — then finding a second contractor to pour it back. FDZ Construction does the excavation and the concrete restoration with the same crew, so nothing gets left half-finished. We handle sewer line repair, replacement, and new-line installation for homeowners across the OKC metro.</p>
+    <h2>Typical Sewer Line Costs in Oklahoma City (2026)</h2>
+    <p>OKC metro ballpark ranges — your written quote after a camera inspection is the real number. FDZ quotes include concrete restoration when a driveway or slab is disturbed.</p>
+    <ul>
+      <li>Camera inspection: $200 – $500</li>
+      <li>Spot repair: $1,000 – $3,500</li>
+      <li>Traditional excavation repair: $1,500 – $7,000</li>
+      <li>Trenchless pipe bursting: $4,000 – $12,000</li>
+      <li>Full sewer line replacement: $3,000 – $15,000</li>
+      <li>New sewer line installation: $2,500 – $8,000+</li>
+    </ul>
     <h2>Sewer Line Repair &amp; Installation Methods We Offer</h2>
     <h3>Trenchless Pipe Bursting</h3>
     <ul>

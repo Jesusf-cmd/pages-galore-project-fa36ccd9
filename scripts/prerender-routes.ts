@@ -18,10 +18,10 @@ const BASE = "https://fdzconstruction.com";
 export const routes: PrerenderRoute[] = [
   {
     path: "/",
-    title: "Concrete Contractors Oklahoma City | FDZ Construction LLC | Free Estimates",
-    description: "Oklahoma City's concrete contractor for driveways, patios, slabs & more. Licensed & insured. Serving OKC metro. Call (405) 458-4805 for a free estimate.",
-    h1: "Oklahoma City Concrete Contractors",
-    content: "FDZ Construction LLC is a licensed and insured concrete contractor serving the Oklahoma City metro area. We specialize in driveways, patios, slabs, foundations, stamped concrete, retaining walls, sidewalks, and commercial concrete work. Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City. Call (405) 458-4805 for a free estimate.",
+    title: "Concrete & Sewer Line Contractor Oklahoma City | FDZ Construction LLC",
+    description: "Oklahoma City concrete & sewer line contractor. One crew self-performs every job — driveways, slabs, foundations & sewer repair. Call (405) 458-4805.",
+    h1: "One Crew. Concrete & Sewer Line Done Right.",
+    content: "FDZ Construction LLC self-performs concrete and sewer line work across the Oklahoma City metro — driveways, patios, slabs, foundations, retaining walls, sidewalks, commercial concrete, and sewer line repair & installation. One crew handles excavation and concrete restoration on sewer jobs. Licensed, bonded & insured. Call (405) 458-4805 for a free estimate.",
   },
   {
     path: "/driveways-oklahoma-city",
@@ -47,9 +47,9 @@ export const routes: PrerenderRoute[] = [
   {
     path: "/sewer-line-repair-oklahoma-city",
     title: "Sewer Line Repair & Installation Oklahoma City | FDZ Construction LLC",
-    description: "Sewer line repair, replacement & installation in OKC. One crew handles excavation and concrete restoration — no second contractor. (405) 458-4805.",
-    h1: "Sewer Line Repair & Installation in Oklahoma City, OK",
-    content: "FDZ Construction LLC handles sewer line repair, replacement, and new-line installation for homeowners and new construction across the Oklahoma City metro. Most plumbers subcontract the excavation and concrete restoration or leave homeowners to hire a second contractor — we do the digging and the driveway, sidewalk, or slab restoration ourselves, one crew start to finish. Trenchless pipe bursting, traditional excavation repair, spot repair, and full replacement or new installation. Call (405) 458-4805 for a free estimate.",
+    description: "Sewer line repair in OKC from $1,000–$15,000 depending on method. One crew handles excavation and concrete restoration. Free estimate: (405) 458-4805.",
+    h1: "One Crew. Sewer Repair & Concrete Restoration.",
+    content: "FDZ Construction LLC handles sewer line repair, replacement, and new-line installation across the Oklahoma City metro. Most plumbers subcontract excavation and concrete restoration — we do both ourselves, one crew start to finish. Typical OKC pricing: spot repair $1,000–$3,500, traditional excavation repair $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, full line replacement $3,000–$15,000. FDZ quotes include concrete restoration when a driveway or slab is disturbed. Call (405) 458-4805 for a free camera inspection and written estimate.",
   },
   {
     path: "/hvac-oklahoma-city",
@@ -57,6 +57,7 @@ export const routes: PrerenderRoute[] = [
     description: "HVAC repair, installation & emergency service in Oklahoma City. AC, furnace & heat pump specialists. Licensed & insured. Call (405) 458-4805.",
     h1: "Oklahoma City HVAC Repair, Installation & Emergency Service",
     content: "FDZ Construction LLC's licensed HVAC technicians handle repair, installation, replacement, and emergency no-heat/no-cool service for residential and commercial properties across the Oklahoma City metro. AC repair and replacement, furnace repair and replacement, heat pump service, and emergency service for OKC's temperature swings — summers past 100°F and hard winter freezes. Call (405) 458-4805 for a free estimate.",
+    noindex: true,
   },
   {
     path: "/plumbing-oklahoma-city",
@@ -64,6 +65,7 @@ export const routes: PrerenderRoute[] = [
     description: "Plumbing repair, drain cleaning, water heaters, leak detection & sewer line service in Oklahoma City. Licensed plumbers. Call (405) 458-4805.",
     h1: "Oklahoma City Plumbing Services",
     content: "FDZ Construction LLC's licensed plumbers handle general plumbing repair, drain cleaning, water heater repair and installation, leak detection, and sewer line repair and installation for homes and businesses across the Oklahoma City metro. Sewer line work is a distinct specialty — see our dedicated sewer line repair page for full detail. Call (405) 458-4805 for a free estimate.",
+    noindex: true,
   },
   {
     path: "/electrical-oklahoma-city",
@@ -71,6 +73,7 @@ export const routes: PrerenderRoute[] = [
     description: "Residential & commercial electrical services in Oklahoma City. Panel upgrades, wiring, lighting, generators & EV chargers. Licensed. Call (405) 458-4805.",
     h1: "Oklahoma City Electrical Services",
     content: "FDZ Construction LLC's licensed electricians handle panel upgrades and repairs, outlet and wiring repair, lighting installation, generator installation, EV charger installation, and emergency electrical service for homes and businesses across the Oklahoma City metro. OKC's severe storm season makes panel protection and backup power a practical concern here. Call (405) 458-4805 for a free estimate.",
+    noindex: true,
   },
   {
     path: "/emergency-services-oklahoma-city",
@@ -78,6 +81,7 @@ export const routes: PrerenderRoute[] = [
     description: "24/7 emergency concrete, HVAC, plumbing & electrical service in Oklahoma City. One call handles every trade. Call (405) 458-4805.",
     h1: "24/7 Emergency Services in Oklahoma City",
     content: "FDZ Construction LLC provides 24/7 emergency service across concrete, HVAC, plumbing, and electrical for the Oklahoma City metro. One call handles a collapsed slab, a no-heat or no-cool HVAC failure, an active plumbing leak or sewer line emergency, or an electrical hazard — faster response, one point of contact, no coordinating multiple contractors during a stressful situation. Call (405) 458-4805.",
+    noindex: true,
   },
   {
     path: "/our-approach",
@@ -85,6 +89,7 @@ export const routes: PrerenderRoute[] = [
     description: "FDZ self-performs all concrete work with our own crews. HVAC, plumbing & electrical are delivered as general contractor, managing licensed specialists under one invoice and warranty.",
     h1: "Self-Performed Concrete. Managed Trades.",
     content: "FDZ Construction LLC self-performs all concrete work — driveways, patios, slabs, foundations, retaining walls, sidewalks, and commercial concrete — with our own crews and equipment, no subcontracted labor. For HVAC, plumbing, and electrical work, FDZ acts as your general contractor, managing licensed, vetted trade specialists so you still get one point of contact, one invoice, and one workmanship warranty for the whole project.",
+    noindex: true,
   },
   {
     path: "/sidewalks-oklahoma-city",

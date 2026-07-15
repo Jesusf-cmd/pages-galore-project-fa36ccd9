@@ -87,9 +87,13 @@ interface ServicePageProps {
     intro?: string;
     videos: { src: string; poster: string; alt: string }[];
   };
+  /** Urgent-response callout shown below the hero (e.g. sewage backup). */
+  emergencyCallout?: string;
+  /** Hide from search engines while route remains live. */
+  noindex?: boolean;
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex }: ServicePageProps) {
   const seoTitle = metaTitle || `${title} ${titleAccent.replace('.', '')} | FDZ Construction LLC`;
   const seoDescription = metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155);
   const canonical = currentServiceSlug ? `https://fdzconstruction.com/${currentServiceSlug}` : undefined;
@@ -97,6 +101,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
     title: seoTitle,
     description: seoDescription,
     canonical,
+    noindex,
     og: canonical ? { title: seoTitle, description: seoDescription, type: "website", url: canonical } : undefined,
   });
   const faqJsonLd = {
@@ -138,6 +143,18 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         </div>
       </section>
       <TrustBar />
+
+      {emergencyCallout && (
+        <div
+          className="px-4 md:px-12 py-5 bg-orange"
+          style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}
+        >
+          <p
+            className="text-center text-[0.9rem] md:text-base text-white font-medium max-w-3xl mx-auto leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: emergencyCallout }}
+          />
+        </div>
+      )}
 
       {/* Intro text */}
       {introText && (

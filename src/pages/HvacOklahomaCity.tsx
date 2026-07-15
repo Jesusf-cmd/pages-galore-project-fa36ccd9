@@ -32,6 +32,7 @@ export default function HvacOklahomaCity() {
   return (
     <ServicePage
       enriched
+      noindex
       currentServiceSlug="hvac-oklahoma-city"
       metaTitle="HVAC Repair & Installation Oklahoma City | FDZ Construction LLC"
       metaDescription="HVAC repair, installation & emergency service in Oklahoma City. AC, furnace & heat pump specialists. Licensed & insured. Call (405) 458-4805."

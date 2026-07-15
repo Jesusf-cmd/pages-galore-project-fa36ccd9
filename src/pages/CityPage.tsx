@@ -34,6 +34,8 @@ interface CityData {
   /** Combined services beyond concrete, e.g. sewer line work — affects the per-page Service schema. */
   serviceTypes?: string[];
   serviceName?: string;
+  /** Short local sewer line note (2–4 sentences) linking to the main sewer page. */
+  sewerLocalNote?: string;
   sewerSection?: {
     intro: string;
     methods: { title: string; blurb: string }[];
@@ -73,6 +75,8 @@ const cityData: Record<string, CityData> = {
     driveTimeNote: "we're based right here in south OKC, so Oklahoma City gets the fastest response of any area we serve.",
     neighborhoods: ["Nichols Hills"],
     linkedServices: [SVC.driveways, SVC.foundations],
+    sewerLocalNote:
+      "Many established OKC neighborhoods still run on original clay or cast-iron sewer lines that shift and crack as Permian clay swells and shrinks each season. When a line fails under a driveway or slab, we repair the pipe and restore the concrete ourselves — one crew, no second contractor.",
     faq: [
       {
         question: "Do you work throughout all of Oklahoma City?",
@@ -106,6 +110,8 @@ const cityData: Record<string, CityData> = {
       "Edmond sits on the northern part of the Garber-Wellington aquifer, where the underlying formations carry more sandstone than the rest of the metro. In practice, soil here can shift between sandy and clay-heavy across a single lot, and the terrain has more rolling grade than much of the flat OKC metro. That combination makes grading and drainage planning a bigger factor here than on flatter sites — so we evaluate each lot rather than applying a one-size approach.",
     driveTimeNote: "Edmond is about 30–40 minutes north of the shop, across the metro — still one of the areas we serve most regularly.",
     linkedServices: [SVC.foundations, SVC.retaining],
+    sewerLocalNote:
+      "Edmond&apos;s mix of 1970s–90s housing and newer subdivisions means sewer lines range from aging clay pipe to modern PVC — and the area&apos;s sandy-to-clay soil shifts enough to stress buried lines over time. We handle sewer repair across Edmond with the same crew that restores driveways and slabs afterward.",
     faq: [
       {
         question: "Does Edmond's terrain affect foundation or retaining wall work?",
@@ -139,6 +145,8 @@ const cityData: Record<string, CityData> = {
       "Yukon has flatter terrain than Edmond, on the same expansive clay base shared across the region. A lot of the work here is in newer subdivisions built on graded former agricultural land — and on those sites, the quality of the fill and the compaction done during the original grading matters as much as the native soil itself. We check compaction and drainage on these lots specifically.",
     driveTimeNote: "Yukon is about 20–25 minutes west of the shop.",
     linkedServices: [SVC.driveways, SVC.commercial],
+    sewerLocalNote:
+      "Yukon&apos;s fast-growing subdivisions sit on the same expansive clay as the rest of the metro — and sewer lines under driveways are often the first thing to move when that clay swells after heavy rain. We repair and replace lines across Yukon and restore the disturbed concrete in the same job.",
     faq: [
       {
         question: "Is new-construction concrete different in growing areas like Yukon?",
@@ -167,6 +175,8 @@ const cityData: Record<string, CityData> = {
       "Norman's position along the Canadian River means some lots sit on sandier, river-influenced soil that can transition to denser clay within a short distance on the same property. That's a different base-prep call than the more uniform clay sites elsewhere in the metro, so we assess the soil on each lot before we pour.",
     driveTimeNote: "Norman is about 20–25 minutes south of the shop.",
     linkedServices: [SVC.driveways, SVC.foundations],
+    sewerLocalNote:
+      "Norman&apos;s older homes near campus and along the Canadian River corridor often sit on sandier soil that transitions to dense clay within the same lot — conditions that stress sewer joints and encourage root intrusion. We serve Norman homeowners with sewer line repair and concrete restoration handled by one crew.",
     faq: [
       {
         question: "What's different about pouring concrete in Norman?",
@@ -195,6 +205,8 @@ const cityData: Record<string, CityData> = {
       "Moore sits on flat terrain over the same expansive clay base found across the metro, with limited natural runoff in low-lying areas. That makes proper slope-to-drain detailing matter more here than on higher ground — we grade every slab and driveway to move water away from the structure.",
     driveTimeNote: "Moore is among the closest areas we serve, just south of the shop.",
     linkedServices: [SVC.driveways, SVC.foundations],
+    sewerLocalNote:
+      "Much of Moore&apos;s housing stock dates to the 1980s–90s, when clay and cast-iron sewer lines were standard — and repeated storm saturation on flat clay lots can accelerate line sagging and joint failure. We repair sewer lines across Moore and restore driveways and slabs in the same job.",
     faq: [
       {
         question: "Why does drainage matter so much in Moore?",
@@ -223,6 +235,8 @@ const cityData: Record<string, CityData> = {
       "Mustang shares Yukon's flatter west-metro terrain and the region's expansive clay base. Like Yukon, a lot of the work here is on newer subdivisions built on graded former agricultural land, where fill quality and compaction matter as much as the native soil — so we check both before we pour.",
     driveTimeNote: "Mustang is about 20–25 minutes west of the shop.",
     linkedServices: [SVC.driveways, SVC.foundations],
+    sewerLocalNote:
+      "Mustang&apos;s mid-century neighborhoods and newer subdivisions alike sit on expansive clay — and original sewer lines under driveways are a common failure point as that soil moves. We handle repair and replacement across Mustang with our own excavation and concrete restoration crew.",
     faq: [
       {
         question: "Do you work on new-construction lots in Mustang?",
@@ -251,6 +265,8 @@ const cityData: Record<string, CityData> = {
       "Midwest City sits along Crutcho Creek and Cherry Creek, and the area sees increased flood risk along those creeks during sustained rain, when backwater from the North Canadian River slows drainage — per the city's own floodplain information. Otherwise it shares the metro's flat, expansive clay base. For any work near those drainage corridors, grading and drainage are the priority.",
     driveTimeNote: "Midwest City is about 15–20 minutes east of the shop.",
     linkedServices: [SVC.driveways, SVC.sidewalks],
+    sewerLocalNote:
+      "Midwest City&apos;s post-war housing stock often still runs on original sewer lines that have had decades to settle and shift on the metro&apos;s expansive clay. Properties near Crutcho Creek and Cherry Creek see extra soil movement after heavy rain — a common trigger for sewer backups we repair across eastern Oklahoma County.",
     faq: [
       {
         question: "Does flooding near Crutcho Creek or Cherry Creek affect concrete work?",
@@ -279,6 +295,8 @@ const cityData: Record<string, CityData> = {
       "Del City shares the same Crutcho Creek and Cherry Creek flood dynamic as neighboring Midwest City — the city's own floodplain information confirms flood risk rises along those creeks during sustained rain from North Canadian River backwater. That's relevant for any work near those drainage corridors. The terrain is otherwise flat, over the same expansive clay base as the rest of the metro.",
     driveTimeNote: "Del City is about 15–20 minutes east of the shop, in the same general area as Midwest City.",
     linkedServices: [SVC.driveways, SVC.sidewalks],
+    sewerLocalNote:
+      "Del City&apos;s older neighborhoods — many built during the Tinker-area growth years — often have original clay or cast-iron sewer lines nearing the end of their service life. The same clay soil movement that affects driveways also shifts buried pipe; we repair lines and restore concrete across Del City with one crew.",
     faq: [
       {
         question: "Does flood risk near Crutcho Creek or Cherry Creek matter for my project?",
@@ -435,6 +453,7 @@ export default function CityPage({ slug }: { slug: string }) {
       metaTitle={data.metaTitle}
       metaDescription={data.metaDescription}
       sewerSection={data.sewerSection}
+      sewerLocalNote={data.sewerLocalNote}
       whyFdzSection={data.whyFdzSection}
       projectsPlaceholder={data.projectsPlaceholder}
       serviceAreaNote={data.serviceAreaNote}

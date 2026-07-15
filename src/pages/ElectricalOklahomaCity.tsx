@@ -32,6 +32,7 @@ export default function ElectricalOklahomaCity() {
   return (
     <ServicePage
       enriched
+      noindex
       currentServiceSlug="electrical-oklahoma-city"
       metaTitle="Electrical Services Oklahoma City | FDZ Construction LLC"
       metaDescription="Residential & commercial electrical services in Oklahoma City. Panel upgrades, wiring, lighting, generators & EV chargers. Licensed. Call (405) 458-4805."

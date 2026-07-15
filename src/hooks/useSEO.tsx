@@ -12,6 +12,17 @@ interface SEOProps {
   description: string;
   canonical?: string;
   og?: OGTags;
+  noindex?: boolean;
+}
+
+function setMetaName(name: string, content: string) {
+  let el = document.querySelector(`meta[name="${name}"]`);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute("name", name);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
 }
 
 function setMetaProperty(property: string, content: string) {
@@ -24,7 +35,7 @@ function setMetaProperty(property: string, content: string) {
   el.setAttribute("content", content);
 }
 
-export function useSEO({ title, description, canonical, og }: SEOProps) {
+export function useSEO({ title, description, canonical, og, noindex }: SEOProps) {
   useEffect(() => {
     document.title = title;
 
@@ -54,5 +65,11 @@ export function useSEO({ title, description, canonical, og }: SEOProps) {
       if (og.type) setMetaProperty("og:type", og.type);
       if (og.url) setMetaProperty("og:url", og.url);
     }
-  }, [title, description, canonical, og]);
+
+    if (noindex) {
+      setMetaName("robots", "noindex, nofollow");
+    } else {
+      document.querySelector('meta[name="robots"]')?.remove();
+    }
+  }, [title, description, canonical, og, noindex]);
 }

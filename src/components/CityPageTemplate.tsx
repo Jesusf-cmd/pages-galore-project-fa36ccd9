@@ -51,6 +51,8 @@ interface CityPageProps {
   serviceAreaNote?: string;
   /** Override the default "Concrete in {city}" FAQ heading, e.g. for a combined concrete + sewer page. */
   faqHeadingAccent?: string;
+  /** Short local sewer line note (2–4 sentences) linking to the main sewer page. */
+  sewerLocalNote?: string;
 }
 
 export default function CityPageTemplate({
@@ -74,6 +76,7 @@ export default function CityPageTemplate({
   projectsPlaceholder,
   serviceAreaNote,
   faqHeadingAccent,
+  sewerLocalNote,
 }: CityPageProps) {
   const title = metaTitle || `Concrete Contractor in ${city} OK | FDZ Construction LLC`;
   useSEO({
@@ -149,6 +152,19 @@ export default function CityPageTemplate({
           </div>
         </section>
       </ScrollReveal>
+
+      {sewerLocalNote && !sewerSection && (
+        <ScrollReveal>
+          <section className="section-padding section-alt">
+            <div className="section-eye">Sewer Line Repair</div>
+            <h2 className="mb-4">Sewer Lines in<br/><em className="h2-accent">{city}.</em></h2>
+            <p className="prose-muted max-w-[820px] mb-4" dangerouslySetInnerHTML={{ __html: sewerLocalNote }} />
+            <p className="prose-muted">
+              <Link to="/sewer-line-repair-oklahoma-city" className="text-orange no-underline font-medium">Full sewer line repair methods, process &amp; FAQ →</Link>
+            </p>
+          </section>
+        </ScrollReveal>
+      )}
 
       {sewerSection && (
         <ScrollReveal>

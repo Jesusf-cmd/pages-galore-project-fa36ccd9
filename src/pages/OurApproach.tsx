@@ -36,6 +36,7 @@ export default function OurApproach() {
     title,
     description,
     canonical: PAGE_URL,
+    noindex: true,
     og: { title, description, type: "website", url: PAGE_URL },
   });
 

@@ -32,6 +32,7 @@ export default function PlumbingOklahomaCity() {
   return (
     <ServicePage
       enriched
+      noindex
       currentServiceSlug="plumbing-oklahoma-city"
       metaTitle="Plumbing Services Oklahoma City | FDZ Construction LLC"
       metaDescription="Plumbing repair, drain cleaning, water heaters, leak detection & sewer line service in Oklahoma City. Licensed plumbers. Call (405) 458-4805."
