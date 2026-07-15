@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
 import TradeBadge, { type TradeModel } from "@/components/TradeBadge";
@@ -98,9 +99,11 @@ interface ServicePageProps {
   showEeatBlock?: boolean;
   /** Override InternalLinksHub visibility (defaults: hidden when enriched). */
   internalLinks?: { services?: boolean; blogs?: boolean; cities?: boolean };
+  /** Opt-in Service schema.org JSON-LD (areaServed: Oklahoma City metro). Omit to skip — most pages don't set this. */
+  serviceSchema?: { serviceType: string; name: string };
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showEeatBlock, internalLinks }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showEeatBlock, internalLinks, serviceSchema }: ServicePageProps) {
   const seoTitle = metaTitle || `${title} ${titleAccent.replace('.', '')} | FDZ Construction LLC`;
   const seoDescription = metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155);
   const canonical = currentServiceSlug ? `https://fdzconstruction.com/${currentServiceSlug}` : undefined;
@@ -111,6 +114,24 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
     noindex,
     og: canonical ? { title: seoTitle, description: seoDescription, type: "website", url: canonical } : undefined,
   });
+  useEffect(() => {
+    if (!serviceSchema || !canonical) return;
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "service-page-schema";
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      serviceType: serviceSchema.serviceType,
+      name: serviceSchema.name,
+      url: canonical,
+      provider: { "@id": "https://fdzconstruction.com/#organization" },
+      areaServed: { "@type": "City", name: "Oklahoma City", addressRegion: "OK" },
+    });
+    document.getElementById("service-page-schema")?.remove();
+    document.head.appendChild(script);
+    return () => { document.getElementById("service-page-schema")?.remove(); };
+  }, [serviceSchema, canonical]);
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",

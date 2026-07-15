@@ -17,6 +17,8 @@ const primaryNavLinks: LinkItem[] = [
   { href: "/sidewalks-oklahoma-city", label: "Sidewalks" },
   { href: "/commercial-concrete-oklahoma-city", label: "Commercial" },
   { href: "/sewer-line-repair-oklahoma-city", label: "Sewer Line" },
+  { href: "/skid-steer-services-oklahoma-city", label: "Skid Steer" },
+  { href: "/excavator-services-oklahoma-city", label: "Excavator" },
   { href: "/our-projects", label: "Projects" },
   { href: "/blog", label: "Blog" },
 ];
@@ -28,6 +30,8 @@ const serviceLinks: LinkItem[] = [
   { href: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
   { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
   { href: "/sewer-line-repair-oklahoma-city", label: "Sewer Line Repair & Installation" },
+  { href: "/skid-steer-services-oklahoma-city", label: "Skid Steer Services" },
+  { href: "/excavator-services-oklahoma-city", label: "Excavator Services" },
   { href: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
   { href: "/parking-lots-oklahoma-city", label: "Parking Lots" },
 ];

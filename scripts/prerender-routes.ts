@@ -52,6 +52,20 @@ export const routes: PrerenderRoute[] = [
     content: "FDZ Construction LLC handles sewer line repair, replacement, and new-line installation across the Oklahoma City metro. Most plumbers subcontract excavation and concrete restoration — we do both ourselves, one crew start to finish. Typical OKC pricing: spot repair $1,000–$3,500, traditional excavation repair $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, full line replacement $8,000–$15,000. FDZ quotes include concrete restoration when a driveway or slab is disturbed. Call (405) 458-4805 for a free camera inspection and written estimate.",
   },
   {
+    path: "/skid-steer-services-oklahoma-city",
+    title: "Skid Steer Services Oklahoma City | Land Clearing, Grading & Gravel Driveways | FDZ Construction",
+    description: "Skid steer land clearing, dirt work, leveling, gravel grading, gravel driveways & brush hog mowing in OKC. Self-performed, no subcontractors. Free estimate: (405) 458-4805.",
+    h1: "Skid Steer Land Clearing & Site Work in Oklahoma City, OK",
+    content: "FDZ Construction LLC self-performs skid steer land clearing, dirt work, yard and lot leveling, gravel grading, gravel and dirt driveway installation, and brush hog mowing across the Oklahoma City metro — sized for residential lots and acreage up to about 2 acres. Same self-performed crew and equipment as our concrete and sewer line work, no subcontractors. Typical OKC pricing: land clearing $1,000–$2,200/acre, gravel driveways $1,500–$6,000, brush hog mowing $60–$250/acre. Call (405) 458-4805 for a free on-site estimate.",
+  },
+  {
+    path: "/excavator-services-oklahoma-city",
+    title: "Excavator Services Oklahoma City | Land Clearing, Grading & Drainage | FDZ Construction",
+    description: "Excavator land clearing, stump removal, deep grading, drainage work & larger gravel driveways/pads in OKC. Self-performed, no subcontractors. Free estimate: (405) 458-4805.",
+    h1: "Excavator Land Clearing & Heavy Site Work in Oklahoma City, OK",
+    content: "FDZ Construction LLC self-performs excavator land clearing, stump and large tree removal, deep cut-fill grading, drainage work, and larger commercial pads and driveways across the Oklahoma City metro — for acreage and digging beyond skid steer scope. Same self-performed crew and equipment as our concrete and sewer line work, no subcontractors. Typical OKC pricing: land clearing $1,200–$6,000+/acre, excavator hourly $150–$225/hr plus mobilization. Call (405) 458-4805 for a free on-site estimate.",
+  },
+  {
     path: "/hvac-oklahoma-city",
     title: "HVAC Repair & Installation Oklahoma City | FDZ Construction LLC",
     description: "HVAC repair, installation & emergency service in Oklahoma City. AC, furnace & heat pump specialists. Licensed & insured. Call (405) 458-4805.",

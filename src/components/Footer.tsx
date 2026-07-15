@@ -41,6 +41,8 @@ export default function Footer() {
           <div className="flex flex-col gap-1.5">
             <Link to="/#concrete-services" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Services</Link>
             <Link to="/sewer-line-repair-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Sewer Line Repair &amp; Installation</Link>
+            <Link to="/skid-steer-services-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Skid Steer Services</Link>
+            <Link to="/excavator-services-oklahoma-city" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Excavator Services</Link>
           </div>
         </div>
         <div>

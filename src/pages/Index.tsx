@@ -75,6 +75,7 @@ export default function Index() {
       </ScrollReveal>
       <HowWeWorkSection />
       <ServicesSection />
+      <SiteWorkSection />
       <WhyUsSection />
       <RecentProjectsSection />
       {/* TODO: re-add once GBP is live with real reviews */}
@@ -496,6 +497,33 @@ function ServicesSection() {
             <Link key={i} to={c.to} className={`p-4 no-underline block transition-colors ${c.highlight ? "bg-orange/[0.08]" : "bg-stone"} hover:bg-orange/[0.06]`} style={c.highlight ? { borderLeft: "3px solid hsl(var(--orange))" } : {}}>
               <div className="text-[0.58rem] tracking-[0.14em] uppercase text-orange font-bold mb-1">{c.tag}</div>
               <div className={`font-display text-sm font-extrabold uppercase tracking-[0.04em] ${c.highlight ? "text-orange" : "text-concrete"}`}>{c.name}</div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </ScrollReveal>
+  );
+}
+
+function SiteWorkSection() {
+  const services = [
+    { title: "Skid Steer Services", desc: "Land clearing, dirt work, leveling, gravel grading, gravel & dirt driveways, and brush hog mowing — sized for residential lots up to about 2 acres.", to: "/skid-steer-services-oklahoma-city" },
+    { title: "Excavator Services", desc: "Heavier land clearing, stump removal, deep grading, drainage work, and larger commercial pads or driveways.", to: "/excavator-services-oklahoma-city" },
+  ];
+
+  return (
+    <ScrollReveal>
+      <section className="section-padding">
+        <div className="section-eye">Also from our crew</div>
+        <h2 className="mb-3">Site Work,<br/><em className="h2-accent">Before the Concrete Goes In.</em></h2>
+        <p className="prose-muted mb-8">Some projects need ground work before they need concrete — clearing a lot, leveling a yard, or grading a gravel driveway. Same self-performed crew, different equipment.</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+          {services.map(s => (
+            <Link key={s.to} to={s.to} className="bg-stone p-6 md:p-8 no-underline block hover:bg-orange/[0.04] transition-colors">
+              <div className="mb-3"><TradeBadge model="self-performed" /></div>
+              <div className="font-display text-lg font-extrabold uppercase tracking-[0.04em] text-concrete mb-2">{s.title}</div>
+              <p className="text-[0.85rem] text-muted-text leading-relaxed mb-3">{s.desc}</p>
+              <span className="text-[0.72rem] text-orange font-bold tracking-[0.06em] uppercase">Learn more →</span>
             </Link>
           ))}
         </div>
