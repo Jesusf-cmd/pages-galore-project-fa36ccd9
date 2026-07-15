@@ -62,6 +62,8 @@ const mobileSections = [
 const mobilePrimaryLinks = [
   { to: "/", label: "Home" },
   { to: "/sewer-line-repair-oklahoma-city", label: "Sewer Line Repair" },
+  { to: "/skid-steer-services-oklahoma-city", label: "Skid Steer Services" },
+  { to: "/excavator-services-oklahoma-city", label: "Excavator Services" },
   { to: "/our-projects", label: "Projects" },
   { to: "/blog", label: "Blog" },
   { to: "/#contact", label: "Contact" },
@@ -111,6 +113,16 @@ export default function Navbar() {
           <li>
             <Link to="/sewer-line-repair-oklahoma-city" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete whitespace-nowrap">
               Sewer Line
+            </Link>
+          </li>
+          <li>
+            <Link to="/skid-steer-services-oklahoma-city" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete whitespace-nowrap">
+              Skid Steer
+            </Link>
+          </li>
+          <li>
+            <Link to="/excavator-services-oklahoma-city" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete whitespace-nowrap">
+              Excavator
             </Link>
           </li>
           <NavDropdown label="Service Areas" items={areaLinks} />

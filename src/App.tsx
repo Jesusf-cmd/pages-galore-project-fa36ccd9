@@ -18,6 +18,8 @@ const CommercialConcreteOklahomaCity = lazy(() => import("./pages/CommercialConc
 const ParkingLotConcrete = lazy(() => import("./pages/ParkingLotConcrete"));
 const RetainingWalls = lazy(() => import("./pages/RetainingWalls"));
 const SewerLineRepairOklahomaCity = lazy(() => import("./pages/SewerLineRepairOklahomaCity"));
+const SkidSteerServicesOklahomaCity = lazy(() => import("./pages/SkidSteerServicesOklahomaCity"));
+const ExcavatorServicesOklahomaCity = lazy(() => import("./pages/ExcavatorServicesOklahomaCity"));
 const HvacOklahomaCity = lazy(() => import("./pages/HvacOklahomaCity"));
 const PlumbingOklahomaCity = lazy(() => import("./pages/PlumbingOklahomaCity"));
 const ElectricalOklahomaCity = lazy(() => import("./pages/ElectricalOklahomaCity"));
@@ -98,6 +100,8 @@ const App = () => (
                 <Route path="/parking-lots-oklahoma-city" element={<ParkingLotConcrete />} />
                 <Route path="/retaining-walls-oklahoma-city" element={<RetainingWalls />} />
                 <Route path="/sewer-line-repair-oklahoma-city" element={<SewerLineRepairOklahomaCity />} />
+                <Route path="/skid-steer-services-oklahoma-city" element={<SkidSteerServicesOklahomaCity />} />
+                <Route path="/excavator-services-oklahoma-city" element={<ExcavatorServicesOklahomaCity />} />
                 <Route path="/hvac-oklahoma-city" element={<HvacOklahomaCity />} />
                 <Route path="/plumbing-oklahoma-city" element={<PlumbingOklahomaCity />} />
                 <Route path="/electrical-oklahoma-city" element={<ElectricalOklahomaCity />} />

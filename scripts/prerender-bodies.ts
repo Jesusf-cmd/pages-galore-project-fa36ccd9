@@ -38,6 +38,11 @@ export const prerenderBodies: Record<string, string> = {
     ${linkList(SERVICE_LINKS)}
     <h2>Sewer Line Repair &amp; Installation</h2>
     <p><a href="/sewer-line-repair-oklahoma-city">Sewer line repair, replacement &amp; installation</a> — plus driveway, sidewalk, and slab restoration by the same crew that did the digging.</p>
+    <h2>Site Work Services</h2>
+    <ul>
+      <li><a href="/skid-steer-services-oklahoma-city">Skid Steer Services</a> — Land clearing, dirt work, leveling, gravel driveways, and brush hog mowing for lots up to about 2 acres.</li>
+      <li><a href="/excavator-services-oklahoma-city">Excavator Services</a> — Heavier land clearing, deep grading, drainage work, and larger commercial pads or driveways.</li>
+    </ul>
     <h2>Why Oklahoma City Soil Matters</h2>
     <p>The OKC metro sits on Permian-age clay and shale that expands when wet and shrinks in drought. That movement stresses driveways, foundations, and buried sewer pipe alike — which is why proper sub-base compaction, reinforcement, and drainage grading matter on every job.</p>
     <h2>Service Areas</h2>
@@ -208,6 +213,177 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/driveways-oklahoma-city">Concrete Driveways</a> — Restoration after excavation frequently means a driveway repair or full replacement.</li>
       <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; Curb and Gutter</a> — Sidewalk restoration after sewer line access.</li>
       <li><a href="/foundations-oklahoma-city">Foundations</a> — Slab restoration when a line runs under a garage or shop floor.</li>
+    </ul>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    ${trustParagraph()}
+  `,
+
+  "/skid-steer-services-oklahoma-city": `
+    <h1>Skid Steer Land Clearing &amp; Site Work in Oklahoma City, OK</h1>
+    <p>Our skid steer crew handles the site work most concrete contractors send elsewhere — clearing a wooded lot, leveling a backyard, grading a gravel base, or mowing down overgrown brush. Same self-performed crew and equipment as our concrete and sewer line work, sized right for residential lots and smaller acreage, generally under 2 acres. No subcontracted labor. Based at 7004 S Indiana Ave in south OKC.</p>
+    <h2>Skid Steer Pricing in Oklahoma City (2026)</h2>
+    <p>OKC metro ballpark ranges — your written quote after a free on-site walk is the real number.</p>
+    <ul>
+      <li>Land clearing, light brush (per acre): $1,000 – $1,600</li>
+      <li>Land clearing, moderate brush/small trees (per acre): $1,200 – $2,200</li>
+      <li>Dirt work &amp; grading (site prep): $0.80 – $2.00 / sq ft</li>
+      <li>Yard &amp; lot leveling: $1 – $2 / sq ft (typical minimum ~$500)</li>
+      <li>Gravel grading (base prep): $3 – $8 / sq ft</li>
+      <li>Gravel or dirt driveway install: $1,500 – $6,000 typical (or $4–$10 / sq ft)</li>
+      <li>Brush hog mowing: $60 – $250 / acre depending on growth density</li>
+      <li>Skid steer hourly (time &amp; material): $95 – $150 / hr</li>
+    </ul>
+    <h2>Skid Steer Services in Oklahoma City</h2>
+    <h3>Land Clearing</h3>
+    <ul>
+      <li>Clearing brush, saplings, and small-to-medium trees on residential lots and smaller acreage — typically under 2 acres</li>
+      <li>Right-sized for building sites, fence lines, and overgrown backyards, not full timber removal</li>
+      <li>Debris hauled off-site or piled on-site per your preference and local burn rules</li>
+    </ul>
+    <h3>Dirt Work &amp; Site Prep</h3>
+    <ul>
+      <li>Cut-and-fill grading to shape a building pad, shed site, or play area</li>
+      <li>Rough and fine grading for drainage — critical on OKC's expansive clay</li>
+      <li>Hauling fill in or out as needed, coordinated with any concrete or gravel work that follows</li>
+    </ul>
+    <h3>Yard &amp; Lot Leveling</h3>
+    <ul>
+      <li>Leveling uneven ground ahead of new sod, landscaping, or a patio pad</li>
+      <li>Correcting low spots that pond water after Oklahoma spring rains</li>
+    </ul>
+    <h3>Gravel Grading</h3>
+    <ul>
+      <li>Grading and compacting a gravel base ahead of a driveway, parking pad, or outbuilding</li>
+      <li>Proper crown and slope so gravel sheds water instead of washing out</li>
+    </ul>
+    <h3>Gravel &amp; Dirt Driveways</h3>
+    <ul>
+      <li>Full install — clearing, grading, compacting, and placing a gravel or dirt driveway</li>
+      <li>Crowned and sloped to handle OKC clay's seasonal movement</li>
+      <li>Want a poured concrete driveway instead? See our <a href="/driveways-oklahoma-city">concrete driveway page</a>.</li>
+    </ul>
+    <h3>Brush Hog Mowing</h3>
+    <ul>
+      <li>One-time or scheduled bush hogging for overgrown fields, fence lines, and pasture edges</li>
+      <li>Often the right first pass before finer land clearing or grading work begins</li>
+    </ul>
+    ${processSection("From Site Walk to Final Grade", [
+      { title: "Site walk & scope", description: "We walk the property, confirm property lines and access, and call 811 for utility locates before any equipment moves." },
+      { title: "Clearing & demo", description: "Brush cutter, root rake, or bucket attachment — matched to what's actually on the site." },
+      { title: "Grading & shaping", description: "Cutting and filling to the elevations the project needs, with drainage sloped away from structures." },
+      { title: "Gravel placement & compaction", description: "Gravel spread and compacted in lifts — the step most corners get cut on, and the reason gravel driveways rut on OKC clay when it's skipped." },
+      { title: "Final grade & cleanup", description: "Final pass for grade and slope, debris cleared, site left ready for what comes next." },
+      { title: "Walkthrough", description: "We walk the finished site with you before we leave." },
+    ])}
+    <h2>Why Oklahoma City Property Owners Choose FDZ for Site Work</h2>
+    <ul>
+      <li>Licensed, bonded, and insured in Oklahoma</li>
+      <li>Same self-performed crew and equipment we use on concrete and sewer line work — no subcontractors, ever</li>
+      <li>8+ years serving the OKC metro</li>
+      <li>2-year workmanship warranty on all site work</li>
+      <li>Free on-site estimates, no phone quotes</li>
+      <li>One call handles site work and the concrete that follows</li>
+    </ul>
+    <h2>Skid Steer or Excavator?</h2>
+    <p>A skid steer is the right call for most residential jobs: lots under about 2 acres, tight or fenced access, brush and small-tree clearing, yard leveling, gravel base prep, and brush hog mowing. For larger acreage, stump grinding or large tree removal, deeper digging, or bigger commercial pads and driveways, see our <a href="/excavator-services-oklahoma-city">excavator services</a>. Not sure? Call <a href="tel:4054584805">(405) 458-4805</a> and describe the project — we'll tell you which machine fits before we schedule a site walk.</p>
+    ${faqSection("Skid Steer FAQ", [
+      { question: "How much does land clearing cost in Oklahoma City?", answer: "Light brush clearing typically runs $1,000–$1,600 per acre, and moderate brush or small-tree clearing runs $1,200–$2,200 per acre. Heavier clearing is priced through our excavator services. We give an exact number after a free on-site walk." },
+      { question: "What size lot can a skid steer handle?", answer: "Skid steers are best suited to residential-scale lots — generally under about 2 acres — and tight or fenced access a larger machine can't reach." },
+      { question: "Do you haul off debris from land clearing?", answer: "Yes — we haul debris off-site or pile it on-site per your preference and local burn rules." },
+      { question: "Can you grade a lot for a gravel driveway?", answer: "Yes. Gravel grading typically runs $3–$8 per square foot, and a full gravel driveway install runs $1,500–$6,000 for a typical residential driveway." },
+      { question: "What's the difference between a gravel and concrete driveway?", answer: "Gravel driveways cost less upfront but need periodic regrading and gravel top-ups. Concrete costs more upfront but requires far less ongoing maintenance." },
+      { question: "Do you do one-time brush hog mowing, or only full clearing?", answer: "Both. We take on one-time or scheduled bush hogging for overgrown fields, fence lines, and pasture." },
+      { question: "How do I know if I need a skid steer or an excavator?", answer: "Skid steers fit smaller lots (under about 2 acres) and lighter-duty work. Excavators handle larger acreage, stump removal, and deeper digging. Call us and describe the project." },
+      { question: "Do I need a permit for land clearing or grading in Oklahoma City?", answer: "Permit requirements vary by city and project scope. We confirm what's required and handle permit coordination as part of our process." },
+    ])}
+    <h2>Related Services</h2>
+    <ul>
+      <li><a href="/excavator-services-oklahoma-city">Excavator Services</a> — Heavier land clearing, deep grading, drainage work, and larger commercial pads or driveways.</li>
+      <li><a href="/driveways-oklahoma-city">Concrete Driveways</a> — Want a poured concrete driveway instead of gravel or dirt?</li>
+      <li><a href="/sewer-line-repair-oklahoma-city">Sewer Line Repair &amp; Installation</a> — Sewer line work, done by the same self-performed crew.</li>
+    </ul>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    ${trustParagraph()}
+  `,
+
+  "/excavator-services-oklahoma-city": `
+    <h1>Excavator Land Clearing &amp; Heavy Site Work in Oklahoma City, OK</h1>
+    <p>When a job needs more reach, more digging depth, or more acreage than a skid steer can handle, our excavator crew takes over — stump and tree removal, deep cut-fill grading, drainage work, and larger commercial pads and driveways. Same self-performed crew, sized for the bigger jobs. No subcontracted labor. Based at 7004 S Indiana Ave in south OKC.</p>
+    <h2>Excavator Pricing in Oklahoma City (2026)</h2>
+    <p>OKC metro ballpark ranges — your written quote after a free on-site walk is the real number.</p>
+    <ul>
+      <li>Land clearing, moderate (per acre): $1,200 – $2,000</li>
+      <li>Land clearing, heavy/hilly with large trees (per acre): $2,000 – $6,000+</li>
+      <li>Forestry mulching (per acre): $1,200 – $2,000</li>
+      <li>Deep grading &amp; cut-fill / site prep: $0.80 – $2.00 / sq ft (building pad prep $2,000–$10,000)</li>
+      <li>Drainage work (swales, French drains): priced per project after site walk</li>
+      <li>Commercial gravel pad / larger driveway: $4 – $10 / sq ft installed</li>
+      <li>Excavator hourly (time &amp; material): $150 – $225 / hr, plus mobilization</li>
+    </ul>
+    <h2>Excavator Services in Oklahoma City</h2>
+    <h3>Heavy Land Clearing</h3>
+    <ul>
+      <li>Clearing larger acreage — 2+ acres — including stump grinding and removal of larger trees a skid steer can't pull</li>
+      <li>Priced per acre based on vegetation density and terrain</li>
+      <li>Lighter clearing on smaller, tighter-access lots — see our <a href="/skid-steer-services-oklahoma-city">skid steer land clearing</a></li>
+    </ul>
+    <h3>Deep Grading &amp; Cut-Fill</h3>
+    <ul>
+      <li>Shaping larger pads and correcting slope across bigger sites</li>
+      <li>Moving significant volumes of dirt beyond what a skid steer bucket can handle</li>
+    </ul>
+    <h3>Drainage Work</h3>
+    <ul>
+      <li>Digging drainage swales and French drains to move water off larger properties</li>
+      <li>Critical on Oklahoma's expansive clay, where standing water accelerates soil movement</li>
+    </ul>
+    <h3>Commercial Pads &amp; Larger Driveways</h3>
+    <ul>
+      <li>Excavation and grading for commercial gravel pads, storage yards, and extended driveways</li>
+      <li>Want a concrete commercial pad or driveway instead? See our <a href="/commercial-concrete-oklahoma-city">commercial concrete</a> or <a href="/driveways-oklahoma-city">concrete driveway</a> pages.</li>
+    </ul>
+    <h3>Gravel Grading (Larger Sites)</h3>
+    <ul>
+      <li>Base grading and compaction engineered for heavier vehicle and equipment traffic</li>
+    </ul>
+    <h3>Brush Hog &amp; Heavy Mowing</h3>
+    <ul>
+      <li>Bush hogging larger acreage and pasture where terrain or reach calls for an excavator-mounted mower</li>
+    </ul>
+    ${processSection("From Utility Locate to Final Grade", [
+      { title: "Site walk & utility locate", description: "We walk the property and call 811 for utility locates before any digging — non-negotiable on every job." },
+      { title: "Clearing & stump removal", description: "Larger trees and stumps pulled and removed, not just cut down and left." },
+      { title: "Cut-fill grading & drainage", description: "Shaping the site to the elevations the project needs, with drainage engineered to move water off the property." },
+      { title: "Base prep & gravel placement", description: "Gravel spread and compacted in lifts, sized for the load the site will carry." },
+      { title: "Final grade & cleanup", description: "Final pass for grade and slope, debris cleared, site left ready for what comes next." },
+      { title: "Walkthrough", description: "We walk the finished site with you before we leave." },
+    ])}
+    <h2>Why Oklahoma City Property Owners Choose FDZ for Site Work</h2>
+    <ul>
+      <li>Licensed, bonded, and insured in Oklahoma</li>
+      <li>Same self-performed crew and equipment we use on concrete and sewer line work — no subcontractors, ever</li>
+      <li>8+ years serving the OKC metro</li>
+      <li>2-year workmanship warranty on all site work</li>
+      <li>Free on-site estimates — acreage, terrain, and access all affect the price, and we won't guess over the phone</li>
+      <li>One call handles clearing and the concrete that follows</li>
+    </ul>
+    <h2>Excavator or Skid Steer?</h2>
+    <p>An excavator is the right call for larger acreage — 2+ acres — stump grinding or large tree removal, deep digging for drainage or footings, and bigger commercial pads or driveways. For smaller, tighter-access jobs, our <a href="/skid-steer-services-oklahoma-city">skid steer services</a> are usually faster and more affordable. Not sure? Call <a href="tel:4054584805">(405) 458-4805</a> and describe the project — we'll tell you which machine fits before we schedule a site walk.</p>
+    ${faqSection("Excavator FAQ", [
+      { question: "How much does land clearing cost for larger acreage in Oklahoma City?", answer: "Moderate clearing runs $1,200–$2,000 per acre, and heavy or hilly clearing with large trees runs $2,000–$6,000+ per acre. We give an exact number after a free on-site walk." },
+      { question: "What is a mobilization charge?", answer: "Larger or more remote excavator jobs include a mobilization charge to cover transporting the equipment to and from the site. It's disclosed in your written estimate up front." },
+      { question: "Is stump grinding included in land clearing?", answer: "Yes — heavy land clearing includes removal of stumps and larger trees a skid steer can't pull." },
+      { question: "What does drainage work include?", answer: "Drainage swales and French drains to move water off larger properties, tied into existing drainage or storm systems where required." },
+      { question: "How much deeper can an excavator dig than a skid steer?", answer: "Excavators handle significantly deeper cuts than a skid steer bucket, which is why they're the right choice for drainage work, footings, and deep grading." },
+      { question: "Do you need a permit for large-scale land clearing or grading?", answer: "Permit requirements vary by city, county, and project scope — especially on larger acreage. We confirm what's required and handle permit coordination." },
+      { question: "How do I know if I need an excavator or a skid steer?", answer: "Excavators fit larger acreage (2+ acres), stump removal, and deep digging. Skid steers fit smaller lots and lighter-duty work. Call us and describe the project." },
+      { question: "How long does a larger excavation or clearing job take?", answer: "Timeline depends on acreage, vegetation density, and terrain. We give you a realistic schedule as part of your written estimate." },
+    ])}
+    <h2>Related Services</h2>
+    <ul>
+      <li><a href="/skid-steer-services-oklahoma-city">Skid Steer Services</a> — Lighter clearing, leveling, gravel grading, and brush hog mowing for smaller, tighter-access lots.</li>
+      <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Warehouse floors, retail pads, and commercial slabs for the properties we've cleared and graded.</li>
+      <li><a href="/sewer-line-repair-oklahoma-city">Sewer Line Repair &amp; Installation</a> — Sewer line work, done by the same self-performed crew.</li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
