@@ -9,6 +9,7 @@ import ProcessSteps from "@/components/ProcessSteps";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
 import InternalLinksHub from "@/components/InternalLinksHub";
+import EeatBlock from "@/components/EeatBlock";
 
 interface ServicePageProps {
   eyebrow: string;
@@ -31,6 +32,8 @@ interface ServicePageProps {
     stats?: { value: string; label: string }[];
     table?: { headers: string[]; rows: string[][] };
     infoBlock?: string;
+    /** Optional DOM id for in-page anchors (e.g. #warranty). */
+    id?: string;
   }[];
   faq: { question: string; answer: string }[];
   metaTitle?: string;
@@ -91,9 +94,13 @@ interface ServicePageProps {
   emergencyCallout?: string;
   /** Hide from search engines while route remains live. */
   noindex?: boolean;
+  /** Show owner/crew E-E-A-T block below trust bar. */
+  showEeatBlock?: boolean;
+  /** Override InternalLinksHub visibility (defaults: hidden when enriched). */
+  internalLinks?: { services?: boolean; blogs?: boolean; cities?: boolean };
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showEeatBlock, internalLinks }: ServicePageProps) {
   const seoTitle = metaTitle || `${title} ${titleAccent.replace('.', '')} | FDZ Construction LLC`;
   const seoDescription = metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155);
   const canonical = currentServiceSlug ? `https://fdzconstruction.com/${currentServiceSlug}` : undefined;
@@ -143,6 +150,14 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         </div>
       </section>
       <TrustBar />
+
+      {showEeatBlock && (
+        <ScrollReveal>
+          <section className="section-padding section-alt">
+            <EeatBlock />
+          </section>
+        </ScrollReveal>
+      )}
 
       {emergencyCallout && (
         <div
@@ -223,7 +238,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
 
       {sections.map((s, i) => (
         <ScrollReveal key={i}>
-          <section className={`section-padding ${s.alt ? "section-alt" : ""}`}>
+          <section id={s.id} className={`section-padding ${s.alt ? "section-alt" : ""}`}>
             <div className="section-eye">{s.eyebrow}</div>
             <h2 className="mb-4">{s.title}<br/><em className="h2-accent">{s.titleAccent}</em></h2>
             {s.content.map((p, j) => (
@@ -460,7 +475,12 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         </section>
       </ScrollReveal>
 
-      <InternalLinksHub currentServiceSlug={currentServiceSlug} showServices={!enriched} showCities={!enriched} />
+      <InternalLinksHub
+        currentServiceSlug={currentServiceSlug}
+        showServices={internalLinks?.services ?? !enriched}
+        showCities={internalLinks?.cities ?? !enriched}
+        showBlogs={internalLinks?.blogs ?? true}
+      />
 
       <FinalCTA />
     </main>

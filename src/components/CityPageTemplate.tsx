@@ -8,6 +8,11 @@ import { useSEO } from "@/hooks/useSEO";
 const TRUST_LINE =
   "FDZ Construction LLC is licensed, bonded, and insured in Oklahoma — 8+ years of experience serving the OKC metro, and every project is backed by a 2-year workmanship warranty.";
 
+const CITY_BLOG_LINKS = [
+  { to: "/blog/cost-of-concrete-oklahoma-city-2026", label: "Cost of concrete in Oklahoma City (2026 guide)" },
+  { to: "/blog/why-concrete-driveways-crack-oklahoma", label: "Why concrete driveways crack in Oklahoma" },
+];
+
 interface LinkedService {
   label: string;
   to: string;
@@ -86,8 +91,19 @@ export default function CityPageTemplate({
     og: { title, description: metaDescription, type: "website", url: canonicalUrl },
   });
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer.replace(/<[^>]+>/g, "") },
+    })),
+  };
+
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <section className="page-hero">
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">{city} · {county} · Licensed, Bonded & Insured</span>
@@ -226,6 +242,41 @@ export default function CityPageTemplate({
         </ScrollReveal>
       )}
 
+      {(sewerSection || linkedServices.length > 0) && (
+        <ScrollReveal>
+          <section className="section-padding">
+            <div className="section-eye">Explore More</div>
+            <h2 className="mb-4">Sewer, Concrete &amp;<br/><em className="h2-accent">Helpful Guides.</em></h2>
+            <p className="prose-muted max-w-[760px] mb-6">
+              {city} homeowners often need more than one service — a sewer repair that disturbs a driveway, or a new slab that ties into foundation work. These pages connect the full picture.
+            </p>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6" style={{ listStyle: "none", padding: 0 }}>
+              {sewerSection && (
+                <li>
+                  <Link to="/sewer-line-repair-oklahoma-city" className="text-orange no-underline hover:underline text-[0.92rem]">
+                    → Full sewer line repair methods, OKC pricing &amp; FAQ
+                  </Link>
+                </li>
+              )}
+              {linkedServices.slice(0, 4).map((s) => (
+                <li key={s.to}>
+                  <Link to={s.to} className="text-orange no-underline hover:underline text-[0.92rem]">
+                    → {s.label} in the OKC metro
+                  </Link>
+                </li>
+              ))}
+              {CITY_BLOG_LINKS.map((b) => (
+                <li key={b.to}>
+                  <Link to={b.to} className="text-orange no-underline hover:underline text-[0.92rem]">
+                    → {b.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </ScrollReveal>
+      )}
+
       {serviceAreaNote && (
         <ScrollReveal>
           <section className="section-padding">
@@ -247,11 +298,12 @@ export default function CityPageTemplate({
           <section className="section-padding">
             <div className="section-eye">Nearby Service Areas</div>
             <h2 className="mb-4">Nearby Areas<br/><em className="h2-accent">We Serve.</em></h2>
-            <p className="prose-muted mb-4 max-w-[760px]">Our {city} crew also covers the surrounding {county} and OKC metro communities — same crew, same pricing.</p>
+            <p className="prose-muted mb-4 max-w-[760px]">Our {city} crew also covers the surrounding {county} and OKC metro communities — same crew, same pricing. Each city page includes local sewer line and concrete details.</p>
             <ul className="flex flex-wrap gap-4" style={{ listStyle: "none", padding: 0 }}>
               {nearbyLinks.map((n) => (
-                <li key={n.to}><Link to={n.to} className="text-orange no-underline hover:underline">→ Concrete contractor in {n.name}</Link></li>
+                <li key={n.to}><Link to={n.to} className="text-orange no-underline hover:underline">→ Concrete &amp; sewer contractor in {n.name}</Link></li>
               ))}
+              <li><Link to="/sewer-line-repair-oklahoma-city" className="text-orange no-underline hover:underline">→ Main sewer line repair page (OKC metro)</Link></li>
             </ul>
           </section>
         </ScrollReveal>

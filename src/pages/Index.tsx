@@ -21,6 +21,7 @@ import CityGrid from "@/components/CityGrid";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import ProjectDocumentUpload from "@/components/ProjectDocumentUpload";
+import EeatBlock from "@/components/EeatBlock";
 
 const homeFAQ = [
   { question: "Do you subcontract any of the work?", answer: "No — our concrete and sewer line work is 100% self-performed by our own crew and equipment, from start to finish. We do not subcontract the excavation, pipe work, or concrete restoration on sewer line jobs." },
@@ -67,6 +68,11 @@ export default function Index() {
       <HeroSection />
       <TrustBar />
       <AboutSection />
+      <ScrollReveal>
+        <section className="section-padding section-alt">
+          <EeatBlock />
+        </section>
+      </ScrollReveal>
       <HowWeWorkSection />
       <ServicesSection />
       <WhyUsSection />
@@ -500,7 +506,7 @@ function ServicesSection() {
 
 function WhyUsSection() {
   const reasons = [
-    { icon: "🏠", title: "Locally owned & operated", desc: "Based in the OKC metro. We know local soil, city codes, and what Oklahoma homeowners need — because we live here too." },
+    { icon: "🏠", title: "Locally owned by David Fernandez", desc: "FDZ Construction LLC is owner-operated from south OKC — David Fernandez leads the crew on concrete and sewer work, not a franchise or subcontractor network." },
     { icon: "📋", title: "Free on-site estimates", desc: "No ballpark guesses over the phone. We come to your property and give you an accurate price before any work starts." },
     { icon: "🛡", title: "Licensed, bonded & insured", desc: "Fully licensed, bonded, and insured in Oklahoma. Your property and investment are protected on every job." },
     { icon: "✅", title: "No surprise pricing — ever", desc: "The price we quote is the price you pay. No change orders, no hidden fees, no upsells once our crew shows up." },

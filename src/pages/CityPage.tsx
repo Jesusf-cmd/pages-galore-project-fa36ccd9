@@ -1,5 +1,11 @@
 import { useEffect } from "react";
 import CityPageTemplate from "@/components/CityPageTemplate";
+import {
+  buildSewerSection,
+  metroProjectsNote,
+  metroSewerFaqs,
+  metroWhyFdz,
+} from "@/lib/citySewerShared";
 
 const BASE = "https://fdzconstruction.com";
 
@@ -64,9 +70,9 @@ const cityData: Record<string, CityData> = {
     county: "Oklahoma County",
     tier: "priority",
     metaDescription:
-      "Concrete contractor in Oklahoma City, OK — FDZ Construction LLC, based in south OKC. Driveways, patios, slabs & foundations. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
+      "Concrete & sewer line contractor in Oklahoma City, OK — FDZ Construction LLC, based in south OKC. Driveways, patios, slabs, foundations & sewer repair. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
     heroBlurb:
-      "Concrete driveways, patios, slabs, and foundations in <strong>Oklahoma City, Oklahoma</strong> — from our south OKC shop. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
+      "Concrete driveways, patios, slabs, foundations, and sewer line repair &amp; installation in <strong>Oklahoma City, Oklahoma</strong> — from our south OKC shop. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
       "FDZ Construction LLC is based in south Oklahoma City, at 7004 S Indiana Ave — so OKC itself is the area we work most. We pour driveways, patios, slabs, foundations, and commercial concrete across the city, with the fastest response of anywhere we serve.",
     ],
@@ -74,7 +80,7 @@ const cityData: Record<string, CityData> = {
       "Oklahoma City is too large for one soil story — conditions shift from one part of the city to another — but it broadly shares the metro's Permian-age clay and shale base. The terrain is mostly flat, and the North Canadian River corridor runs through the city, so drainage planning matters most on low-lying lots near the river and its tributaries. Because conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city.",
     driveTimeNote: "we're based right here in south OKC, so Oklahoma City gets the fastest response of any area we serve.",
     neighborhoods: ["Nichols Hills"],
-    linkedServices: [SVC.driveways, SVC.foundations],
+    linkedServices: [SVC.driveways, SVC.patios, SVC.foundations, SVC.commercial],
     sewerLocalNote:
       "Many established OKC neighborhoods still run on original clay or cast-iron sewer lines that shift and crack as Permian clay swells and shrinks each season. When a line fails under a driveway or slab, we repair the pipe and restore the concrete ourselves — one crew, no second contractor.",
     faq: [
@@ -100,16 +106,16 @@ const cityData: Record<string, CityData> = {
     county: "Oklahoma County",
     tier: "priority",
     metaDescription:
-      "Concrete contractor in Edmond, OK — driveways, patios, slabs, foundations & retaining walls across Edmond and Oklahoma County. FDZ Construction LLC. Call (405) 458-4805.",
+      "Concrete & sewer line contractor in Edmond, OK — driveways, patios, slabs, foundations & retaining walls. FDZ Construction LLC. Call (405) 458-4805.",
     heroBlurb:
-      "Concrete driveways, patios, slabs, foundations, and retaining walls in <strong>Edmond, Oklahoma</strong>. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
+      "Concrete driveways, patios, slabs, foundations, retaining walls, and sewer line repair in <strong>Edmond, Oklahoma</strong>. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
       "Edmond is one of the areas we work most often outside our south OKC home base. We pour driveways, patios, slabs, foundations, and retaining walls for Edmond homeowners and builders across Oklahoma County.",
     ],
     localTerrainNote:
       "Edmond sits on the northern part of the Garber-Wellington aquifer, where the underlying formations carry more sandstone than the rest of the metro. In practice, soil here can shift between sandy and clay-heavy across a single lot, and the terrain has more rolling grade than much of the flat OKC metro. That combination makes grading and drainage planning a bigger factor here than on flatter sites — so we evaluate each lot rather than applying a one-size approach.",
     driveTimeNote: "Edmond is about 30–40 minutes north of the shop, across the metro — still one of the areas we serve most regularly.",
-    linkedServices: [SVC.foundations, SVC.retaining],
+    linkedServices: [SVC.driveways, SVC.patios, SVC.foundations, SVC.retaining],
     sewerLocalNote:
       "Edmond&apos;s mix of 1970s–90s housing and newer subdivisions means sewer lines range from aging clay pipe to modern PVC — and the area&apos;s sandy-to-clay soil shifts enough to stress buried lines over time. We handle sewer repair across Edmond with the same crew that restores driveways and slabs afterward.",
     faq: [
@@ -135,16 +141,16 @@ const cityData: Record<string, CityData> = {
     county: "Canadian County",
     tier: "priority",
     metaDescription:
-      "Concrete contractor in Yukon, OK — driveways, slabs, foundations & commercial concrete in Canadian County. FDZ Construction LLC. Call (405) 458-4805.",
+      "Concrete & sewer line contractor in Yukon, OK — driveways, patios, slabs, foundations & commercial concrete in Canadian County. FDZ Construction LLC. Call (405) 458-4805.",
     heroBlurb:
-      "Concrete driveways, slabs, foundations, and commercial work in <strong>Yukon, Oklahoma</strong>. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
+      "Concrete driveways, patios, slabs, foundations, commercial work, and sewer line repair in <strong>Yukon, Oklahoma</strong>. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
       "Yukon, on the west side of the metro in Canadian County, is one of the areas we work frequently. We handle driveways, patios, slabs, foundations, and commercial concrete for Yukon homeowners and businesses.",
     ],
     localTerrainNote:
       "Yukon has flatter terrain than Edmond, on the same expansive clay base shared across the region. A lot of the work here is in newer subdivisions built on graded former agricultural land — and on those sites, the quality of the fill and the compaction done during the original grading matters as much as the native soil itself. We check compaction and drainage on these lots specifically.",
     driveTimeNote: "Yukon is about 20–25 minutes west of the shop.",
-    linkedServices: [SVC.driveways, SVC.commercial],
+    linkedServices: [SVC.driveways, SVC.patios, SVC.foundations, SVC.commercial],
     sewerLocalNote:
       "Yukon&apos;s fast-growing subdivisions sit on the same expansive clay as the rest of the metro — and sewer lines under driveways are often the first thing to move when that clay swells after heavy rain. We repair and replace lines across Yukon and restore the disturbed concrete in the same job.",
     faq: [
@@ -165,16 +171,16 @@ const cityData: Record<string, CityData> = {
     county: "Cleveland County",
     tier: "standard",
     metaDescription:
-      "Concrete contractor in Norman, OK serving Cleveland County. Driveways, patios, slabs & foundations built for Norman's soil and drainage. FDZ Construction LLC. (405) 458-4805.",
+      "Concrete & sewer line contractor in Norman, OK serving Cleveland County. Driveways, patios, slabs, foundations & sewer repair. FDZ Construction LLC. (405) 458-4805.",
     heroBlurb:
-      "Concrete driveways, patios, slabs, and foundations in <strong>Norman, Oklahoma</strong>. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
+      "Concrete driveways, patios, slabs, foundations, retaining walls, and sewer line repair in <strong>Norman, Oklahoma</strong>. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
       "FDZ Construction serves Norman and Cleveland County with driveways, patios, slabs, foundations, and retaining walls — the same crew and standards we bring across the OKC metro.",
     ],
     localTerrainNote:
       "Norman's position along the Canadian River means some lots sit on sandier, river-influenced soil that can transition to denser clay within a short distance on the same property. That's a different base-prep call than the more uniform clay sites elsewhere in the metro, so we assess the soil on each lot before we pour.",
     driveTimeNote: "Norman is about 20–25 minutes south of the shop.",
-    linkedServices: [SVC.driveways, SVC.foundations],
+    linkedServices: [SVC.driveways, SVC.patios, SVC.foundations, SVC.retaining],
     sewerLocalNote:
       "Norman&apos;s older homes near campus and along the Canadian River corridor often sit on sandier soil that transitions to dense clay within the same lot — conditions that stress sewer joints and encourage root intrusion. We serve Norman homeowners with sewer line repair and concrete restoration handled by one crew.",
     faq: [
@@ -195,16 +201,16 @@ const cityData: Record<string, CityData> = {
     county: "Cleveland County",
     tier: "standard",
     metaDescription:
-      "Concrete contractor in Moore, OK — driveways, patios, slabs & foundations in Cleveland County. Drainage-conscious flatwork. FDZ Construction LLC. Free estimate: (405) 458-4805.",
+      "Concrete & sewer line contractor in Moore, OK — driveways, patios, slabs, foundations & sidewalks in Cleveland County. FDZ Construction LLC. Free estimate: (405) 458-4805.",
     heroBlurb:
-      "Concrete driveways, patios, slabs, and foundations in <strong>Moore, Oklahoma</strong>. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
+      "Concrete driveways, patios, slabs, foundations, sidewalks, and sewer line repair in <strong>Moore, Oklahoma</strong>. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
       "Moore, just south of Oklahoma City in Cleveland County, is one of the closest areas to our shop. We pour driveways, patios, slabs, foundations, and sidewalks for Moore homeowners.",
     ],
     localTerrainNote:
       "Moore sits on flat terrain over the same expansive clay base found across the metro, with limited natural runoff in low-lying areas. That makes proper slope-to-drain detailing matter more here than on higher ground — we grade every slab and driveway to move water away from the structure.",
     driveTimeNote: "Moore is among the closest areas we serve, just south of the shop.",
-    linkedServices: [SVC.driveways, SVC.foundations],
+    linkedServices: [SVC.driveways, SVC.patios, SVC.foundations, SVC.sidewalks],
     sewerLocalNote:
       "Much of Moore&apos;s housing stock dates to the 1980s–90s, when clay and cast-iron sewer lines were standard — and repeated storm saturation on flat clay lots can accelerate line sagging and joint failure. We repair sewer lines across Moore and restore driveways and slabs in the same job.",
     faq: [
@@ -225,16 +231,16 @@ const cityData: Record<string, CityData> = {
     county: "Canadian County",
     tier: "standard",
     metaDescription:
-      "Concrete contractor in Mustang, OK — driveways, patios, slabs & foundations for homeowners and new-construction subdivisions. FDZ Construction LLC. Call (405) 458-4805.",
+      "Concrete & sewer line contractor in Mustang, OK — driveways, patios, slabs & foundations for homeowners and new-construction subdivisions. FDZ Construction LLC. Call (405) 458-4805.",
     heroBlurb:
-      "Concrete driveways, patios, slabs, and foundations in <strong>Mustang, Oklahoma</strong>. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
+      "Concrete driveways, patios, slabs, foundations, and sewer line repair in <strong>Mustang, Oklahoma</strong>. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
       "Mustang, on the west side of the metro in Canadian County, is an area we serve with driveways, patios, slabs, and foundations for homeowners and new-construction subdivisions.",
     ],
     localTerrainNote:
       "Mustang shares Yukon's flatter west-metro terrain and the region's expansive clay base. Like Yukon, a lot of the work here is on newer subdivisions built on graded former agricultural land, where fill quality and compaction matter as much as the native soil — so we check both before we pour.",
     driveTimeNote: "Mustang is about 20–25 minutes west of the shop.",
-    linkedServices: [SVC.driveways, SVC.foundations],
+    linkedServices: [SVC.driveways, SVC.patios, SVC.foundations],
     sewerLocalNote:
       "Mustang&apos;s mid-century neighborhoods and newer subdivisions alike sit on expansive clay — and original sewer lines under driveways are a common failure point as that soil moves. We handle repair and replacement across Mustang with our own excavation and concrete restoration crew.",
     faq: [
@@ -255,16 +261,16 @@ const cityData: Record<string, CityData> = {
     county: "Oklahoma County",
     tier: "standard",
     metaDescription:
-      "Concrete contractor in Midwest City, OK — driveway replacement, patio slabs & sidewalk work in eastern Oklahoma County. FDZ Construction LLC. Call (405) 458-4805.",
+      "Concrete & sewer line contractor in Midwest City, OK — driveways, patio slabs, sidewalks & foundation work in eastern Oklahoma County. FDZ Construction LLC. Call (405) 458-4805.",
     heroBlurb:
-      "Driveway replacement, patio slabs, sidewalks, and foundation work in <strong>Midwest City, Oklahoma</strong>. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
+      "Driveway replacement, patio slabs, sidewalks, foundation work, and sewer line repair in <strong>Midwest City, Oklahoma</strong>. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
       "FDZ Construction serves Midwest City in eastern Oklahoma County with driveway replacement, patio slabs, sidewalk work, and foundation work.",
     ],
     localTerrainNote:
       "Midwest City sits along Crutcho Creek and Cherry Creek, and the area sees increased flood risk along those creeks during sustained rain, when backwater from the North Canadian River slows drainage — per the city's own floodplain information. Otherwise it shares the metro's flat, expansive clay base. For any work near those drainage corridors, grading and drainage are the priority.",
     driveTimeNote: "Midwest City is about 15–20 minutes east of the shop.",
-    linkedServices: [SVC.driveways, SVC.sidewalks],
+    linkedServices: [SVC.driveways, SVC.patios, SVC.sidewalks, SVC.foundations],
     sewerLocalNote:
       "Midwest City&apos;s post-war housing stock often still runs on original sewer lines that have had decades to settle and shift on the metro&apos;s expansive clay. Properties near Crutcho Creek and Cherry Creek see extra soil movement after heavy rain — a common trigger for sewer backups we repair across eastern Oklahoma County.",
     faq: [
@@ -285,16 +291,16 @@ const cityData: Record<string, CityData> = {
     county: "Oklahoma County",
     tier: "standard",
     metaDescription:
-      "Concrete contractor in Del City, OK — driveway replacement, patio slabs, sidewalks & retaining walls. FDZ Construction LLC. Call (405) 458-4805.",
+      "Concrete & sewer line contractor in Del City, OK — driveways, patio slabs, sidewalks & retaining walls. FDZ Construction LLC. Call (405) 458-4805.",
     heroBlurb:
-      "Driveway replacement, patio slabs, sidewalks, and retaining walls in <strong>Del City, Oklahoma</strong>. Licensed, bonded & insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
+      "Driveway replacement, patio slabs, sidewalks, retaining walls, and sewer line repair in <strong>Del City, Oklahoma</strong>. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
       "Del City, bordered by Midwest City and south Oklahoma City, is an area we serve with driveway replacement, patio slabs, sidewalk work, and retaining walls.",
     ],
     localTerrainNote:
       "Del City shares the same Crutcho Creek and Cherry Creek flood dynamic as neighboring Midwest City — the city's own floodplain information confirms flood risk rises along those creeks during sustained rain from North Canadian River backwater. That's relevant for any work near those drainage corridors. The terrain is otherwise flat, over the same expansive clay base as the rest of the metro.",
     driveTimeNote: "Del City is about 15–20 minutes east of the shop, in the same general area as Midwest City.",
-    linkedServices: [SVC.driveways, SVC.sidewalks],
+    linkedServices: [SVC.driveways, SVC.patios, SVC.sidewalks, SVC.retaining],
     sewerLocalNote:
       "Del City&apos;s older neighborhoods — many built during the Tinker-area growth years — often have original clay or cast-iron sewer lines nearing the end of their service life. The same clay soil movement that affects driveways also shifts buried pipe; we repair lines and restore concrete across Del City with one crew.",
     faq: [
@@ -355,7 +361,7 @@ const cityData: Record<string, CityData> = {
     whyFdzSection: {
       points: [
         { title: "One Crew for Excavation & Concrete", desc: "Sewer line work means digging — and usually means restoring a driveway, sidewalk, or slab afterward. We do both ourselves, on OKC jobs and Stillwater jobs alike." },
-        { title: "OKC-Based, Actively Serving Stillwater", desc: "We're not a Stillwater company — we're based in south Oklahoma City and travel to Stillwater for scheduled projects. We're upfront about that rather than pretending otherwise." },
+        { title: "OKC-Based, Actively Serving Stillwater", desc: "We're not a Stillwater company — owner David Fernandez runs FDZ from south Oklahoma City and travels to Stillwater for scheduled projects. We're upfront about that rather than pretending otherwise." },
         { title: "Licensed, Bonded & Insured in Oklahoma", desc: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project, wherever it is." },
         { title: "2-Year Workmanship Warranty", desc: "Every project — concrete or sewer, OKC or Stillwater — is backed by the same 2-year workmanship warranty." },
       ],
@@ -410,8 +416,46 @@ const CITY_NAME: Record<string, string> = {
   stillwater: "Stillwater",
 };
 
+const METRO_SLUGS = new Set([
+  "oklahoma-city",
+  "edmond",
+  "norman",
+  "yukon",
+  "mustang",
+  "moore",
+  "midwest-city",
+  "del-city",
+]);
+
+function enrichMetroCity(slug: string, entry: CityData): CityData {
+  if (!METRO_SLUGS.has(slug) || !entry.sewerLocalNote) return entry;
+  const city = entry.city;
+  const sewerLocalPlain = entry.sewerLocalNote.replace(/&apos;/g, "'");
+  return {
+    ...entry,
+    metaTitle: entry.metaTitle ?? `Concrete & Sewer Line Contractor ${city}, OK | FDZ Construction LLC`,
+    metaDescription: entry.metaDescription.includes("sewer")
+      ? entry.metaDescription
+      : entry.metaDescription.replace(/^Concrete contractor/, "Concrete & sewer line contractor").replace(/Concrete contractor/, "Concrete & sewer line contractor"),
+    heroTitle: entry.heroTitle ?? `${city} Concrete`,
+    heroTitleAccent: entry.heroTitleAccent ?? "& Sewer Line Contractor.",
+    serviceTypes: ["Concrete Contracting", "Sewer Line Repair and Installation"],
+    serviceName: `Concrete & Sewer Line Contractor in ${city}, OK`,
+    sewerSection: buildSewerSection(city, sewerLocalPlain),
+    whyFdzSection: entry.whyFdzSection ?? metroWhyFdz(city),
+    projectsPlaceholder: entry.projectsPlaceholder ?? { note: metroProjectsNote(city) },
+    faqHeadingAccent: entry.faqHeadingAccent ?? `Concrete &amp; Sewer Work in ${city}`,
+    faq: [...metroSewerFaqs(city), ...entry.faq],
+    sewerLocalNote: undefined,
+  };
+}
+
+const resolvedCityData: Record<string, CityData> = Object.fromEntries(
+  Object.entries(cityData).map(([slug, entry]) => [slug, enrichMetroCity(slug, entry)]),
+);
+
 export default function CityPage({ slug }: { slug: string }) {
-  const data = cityData[slug] || cityData["oklahoma-city"];
+  const data = resolvedCityData[slug] || resolvedCityData["oklahoma-city"];
   const routePath = ROUTE_BY_SLUG[slug] || ROUTE_BY_SLUG["oklahoma-city"];
   const cityName = CITY_NAME[slug] || "Oklahoma City";
   const pageUrl = `${BASE}${routePath}`;

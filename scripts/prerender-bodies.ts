@@ -2,6 +2,7 @@ import {
   TRUST_LINE,
   faqSection,
   linkList,
+  metroCitySewerBlock,
   processSection,
   trustParagraph,
 } from "./prerender-helpers";
@@ -12,7 +13,6 @@ const SERVICE_LINKS = [
   { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
   { href: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
   { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
-  { href: "/sewer-line-repair-oklahoma-city", label: "Sewer Line Repair & Installation" },
   { href: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
   { href: "/parking-lots-oklahoma-city", label: "Parking Lots" },
 ];
@@ -132,7 +132,7 @@ export const prerenderBodies: Record<string, string> = {
       <li>Spot repair: $1,000 – $3,500</li>
       <li>Traditional excavation repair: $1,500 – $7,000</li>
       <li>Trenchless pipe bursting: $4,000 – $12,000</li>
-      <li>Full sewer line replacement: $3,000 – $15,000</li>
+      <li>Full sewer line replacement: $8,000 – $15,000</li>
       <li>New sewer line installation: $2,500 – $8,000+</li>
     </ul>
     <h2>Sewer Line Repair &amp; Installation Methods We Offer</h2>
@@ -181,21 +181,27 @@ export const prerenderBodies: Record<string, string> = {
       { title: "Final walkthrough", description: "We walk the finished work with you before we leave — the pipe repair and the concrete restoration, done together." },
     ])}
     <h2>Why Oklahoma City Homeowners Choose FDZ for Sewer Work</h2>
+    <p>FDZ Construction LLC is owner-operated by <strong>David Fernandez</strong> from our south OKC shop at 7004 S Indiana Ave — 8+ years serving the metro, licensed bonded and insured, with hundreds of residential concrete and sewer projects completed.</p>
     <ul>
       <li>One crew handles both the excavation and the concrete restoration — no coordinating two companies</li>
       <li>Licensed, bonded, and insured in Oklahoma</li>
       <li>8+ years serving the OKC metro</li>
-      <li>2-year workmanship warranty on all sewer line work</li>
+      <li>2-year workmanship warranty on all sewer line work, including concrete restoration</li>
       <li>Free on-site estimates, no phone quotes</li>
       <li>Based in south OKC — fastest response time in the metro</li>
     </ul>
+    <h2 id="warranty">2-Year Workmanship Warranty Explained</h2>
+    <p>Every sewer line repair, replacement, or new installation is backed by a 2-year workmanship warranty on labor — the same warranty that covers our concrete work. Covered: defects in pipe installation, joint connections, bedding and backfill workmanship, and concrete or hardscape restoration we performed as part of the same sewer job. Concrete restoration after excavation is included under the same warranty, not a separate subcontractor warranty. Voided by: third-party excavation after we leave, uncorrected drainage causing new movement, root re-intrusion after we recommended tree removal, or modifications by another contractor after our walkthrough.</p>
     ${faqSection("Sewer Line Repair FAQ", [
+      { question: "How much does sewer line repair cost in Oklahoma City?", answer: "In the OKC metro, spot repairs typically run $1,000–$3,500, traditional excavation repairs $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, and full line replacements $8,000–$15,000 depending on length, depth, and access. A camera inspection ($200–$500) tells us which range applies. FDZ quotes include concrete restoration when a driveway or slab is disturbed." },
       { question: "How do I know if I need sewer repair or full replacement?", answer: "A camera inspection tells us for certain. Isolated damage on an otherwise sound line is usually a spot or trenchless repair. Lines that are old, degraded along their length, or made of clay or cast iron nearing the end of their service life are usually better replaced than repaired." },
       { question: "Does sewer line repair mean my driveway or yard gets torn up?", answer: "Trenchless pipe bursting avoids a long open trench and only needs two access pits. Traditional excavation repair does require digging down to the damaged section, which often means cutting into a driveway, sidewalk, or slab — which is why we handle the concrete restoration ourselves." },
       { question: "How long does sewer line replacement take?", answer: "It depends on the length of the line, the method used, and how much concrete restoration is involved. We give you a specific timeline as part of your written quote after the camera inspection." },
       { question: "Do you handle the concrete repair after the sewer work?", answer: "Yes — we're a concrete contractor that also does sewer line excavation, repair, and installation, so the concrete restoration is done by the same crew that did the digging." },
       { question: "Do you install sewer lines for new construction or additions?", answer: "Yes — we run new sewer lines for new construction and additions in addition to repairing and replacing existing lines." },
       { question: "What causes sewer line damage in Oklahoma City specifically?", answer: "Tree root intrusion, aging or deteriorated pipe material (especially older clay or cast iron), and ground movement from OKC's expansive clay and shale, which can shift pipe alignment and cause sections of the line to sag." },
+      { question: "Does Oklahoma City require a permit for sewer line work?", answer: "Yes — sewer line repair, replacement, and new installation in Oklahoma City typically requires a permit through the City of Oklahoma City Development Services department. FDZ pulls required permits and schedules inspections as part of the job." },
+      { question: "Does homeowners insurance cover sewer line repair?", answer: "Standard homeowners insurance policies usually do not cover sewer line repair or replacement — it's typically treated as maintenance, not a sudden covered loss. Some policies offer optional sewer backup riders. We're happy to provide documentation if you file a claim that might apply." },
     ])}
     <h2>Related Services</h2>
     <ul>
@@ -495,8 +501,8 @@ export const prerenderBodies: Record<string, string> = {
   `,
 
   "/oklahoma-city-concrete": `
-    <h1>Concrete Contractor in Oklahoma City, OK</h1>
-    <p>FDZ Construction LLC is based in south Oklahoma City, at 7004 S Indiana Ave — so OKC itself is the area we work most. We pour driveways, patios, slabs, foundations, and commercial concrete across the city, with the fastest response of anywhere we serve.</p>
+    <h1>Oklahoma City Concrete &amp; Sewer Line Contractor</h1>
+    <p>FDZ Construction LLC is based in south Oklahoma City, at 7004 S Indiana Ave — so OKC itself is the area we work most. We pour driveways, patios, slabs, foundations, and commercial concrete across the city, with the fastest response of anywhere we serve. Owner David Fernandez leads the crew on concrete and sewer line work.</p>
     <h2>Oklahoma City Soil Conditions</h2>
     <p>Oklahoma City broadly shares the metro's Permian-age clay and shale base. The terrain is mostly flat, and the North Canadian River corridor runs through the city, so drainage planning matters most on low-lying lots near the river and its tributaries. Because conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city.</p>
     <h2>Neighborhoods Served</h2>
@@ -506,10 +512,12 @@ export const prerenderBodies: Record<string, string> = {
       { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
       { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
       { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
-      { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
       { href: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
     ])}
+    ${metroCitySewerBlock("Oklahoma City", "Many established OKC neighborhoods still run on original clay or cast-iron sewer lines that shift and crack as Permian clay swells and shrinks each season. When a line fails under a driveway or slab, we repair the pipe and restore the concrete ourselves — one crew, no second contractor.")}
     ${faqSection("FAQ", [
+      { question: "Do you do sewer line repair in Oklahoma City, or just concrete?", answer: "Both. We're a concrete contractor that also handles sewer line repair, replacement, and installation — including driveway or slab restoration. We serve Oklahoma City with the same crew and standards as the rest of the OKC metro." },
+      { question: "How much does sewer line repair cost in Oklahoma City?", answer: "In the OKC metro, spot repairs typically run $1,000–$3,500, traditional excavation repairs $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, and full line replacements $8,000–$15,000. FDZ quotes include concrete restoration when a driveway or slab is disturbed." },
       { question: "Do you work throughout all of Oklahoma City?", answer: "Yes, with a particular concentration in south OKC near our shop. Because the city is large and conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city." },
       { question: "How much does concrete cost in Oklahoma City?", answer: "Standard driveways and slabs generally run $6–$10 per square foot and foundation work $9–$14, depending on thickness, reinforcement, and site conditions. We give an exact price after an on-site look — no phone quotes." },
       { question: "Why does base prep matter so much in Oklahoma City?", answer: "OKC sits on expansive Permian clay that swells when wet and shrinks in drought. Without a properly excavated, compacted aggregate base and adequate reinforcement, concrete is far more likely to crack and move over time." },
@@ -519,16 +527,20 @@ export const prerenderBodies: Record<string, string> = {
   `,
 
   "/edmond-concrete": `
-    <h1>Concrete Contractor in Edmond, OK</h1>
+    <h1>Edmond Concrete &amp; Sewer Line Contractor</h1>
     <p>Edmond is one of the areas we work most often outside our south OKC home base. We pour driveways, patios, slabs, foundations, and retaining walls for Edmond homeowners and builders across Oklahoma County.</p>
     <h2>Edmond's Unique Terrain</h2>
     <p>Edmond sits on the northern part of the Garber-Wellington aquifer, where the underlying formations carry more sandstone than the rest of the metro. In practice, soil here can shift between sandy and clay-heavy across a single lot, and the terrain has more rolling grade than much of the flat OKC metro. That combination makes grading and drainage planning a bigger factor here than on flatter sites — so we evaluate each lot rather than applying a one-size approach.</p>
     <h2>Services Available in Edmond</h2>
     ${linkList([
+      { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
+      { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
       { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
       { href: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
     ])}
+    ${metroCitySewerBlock("Edmond", "Edmond's mix of 1970s–90s housing and newer subdivisions means sewer lines range from aging clay pipe to modern PVC — and the area's sandy-to-clay soil shifts enough to stress buried lines over time. We handle sewer repair across Edmond with the same crew that restores driveways and slabs afterward.")}
     ${faqSection("FAQ", [
+      { question: "Do you do sewer line repair in Edmond, or just concrete?", answer: "Both. We handle sewer line repair, replacement, and installation in Edmond — including concrete restoration when a driveway or slab is disturbed — with the same crew we use across the OKC metro." },
       { question: "Does Edmond's terrain affect foundation or retaining wall work?", answer: "Yes — more than on flatter parts of the metro. The mix of sandy and clay soil and the rolling grade mean we evaluate each site and plan grading and drainage accordingly, rather than applying a one-size approach." },
       { question: "How much does concrete cost in Edmond?", answer: "Edmond pricing follows our OKC metro rates: roughly $6–$10 per square foot for standard driveways and slabs and $9–$14 for foundation work, with an exact price after an on-site estimate." },
       { question: "Do you coordinate with builders on new construction in Edmond?", answer: "Yes — we handle foundation pours, driveways, and flatwork for new builds and coordinate scheduling with builders and inspectors." },
@@ -538,11 +550,20 @@ export const prerenderBodies: Record<string, string> = {
   `,
 
   "/yukon-oklahoma-concrete": `
-    <h1>Concrete Contractor in Yukon, OK</h1>
+    <h1>Yukon Concrete &amp; Sewer Line Contractor</h1>
     <p>Yukon, on the west side of the metro in Canadian County, is one of the areas we work frequently. We handle driveways, patios, slabs, foundations, and commercial concrete for Yukon homeowners and businesses.</p>
     <h2>Yukon Soil and Site Conditions</h2>
     <p>Yukon has flatter terrain than Edmond, on the same expansive clay base shared across the region. A lot of the work here is in newer subdivisions built on graded former agricultural land — and on those sites, the quality of the fill and the compaction done during the original grading matters as much as the native soil itself. We check compaction and drainage on these lots specifically.</p>
+    <h2>Services Available in Yukon</h2>
+    ${linkList([
+      { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
+      { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
+      { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
+      { href: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
+    ])}
+    ${metroCitySewerBlock("Yukon", "Yukon's fast-growing subdivisions sit on the same expansive clay as the rest of the metro — and sewer lines under driveways are often the first thing to move when that clay swells after heavy rain. We repair and replace lines across Yukon and restore the disturbed concrete in the same job.")}
     ${faqSection("FAQ", [
+      { question: "Do you do sewer line repair in Yukon, or just concrete?", answer: "Both. We serve Yukon homeowners with sewer line repair and concrete restoration handled by one crew — the same approach we use across the OKC metro." },
       { question: "Is new-construction concrete different in growing areas like Yukon?", answer: "The base-prep considerations differ slightly, since lots are often on graded fill rather than undisturbed native soil. We check compaction and drainage on these sites specifically before we pour." },
       { question: "How much does concrete cost in Yukon?", answer: "Yukon pricing matches our OKC metro rates — roughly $6–$10 per square foot for standard driveways and slabs — with an exact price after a free on-site estimate." },
     ])}
@@ -551,16 +572,20 @@ export const prerenderBodies: Record<string, string> = {
   `,
 
   "/norman-ok-concrete": `
-    <h1>Concrete Contractor in Norman, OK</h1>
+    <h1>Norman Concrete &amp; Sewer Line Contractor</h1>
     <p>FDZ Construction serves Norman and Cleveland County with driveways, patios, slabs, foundations, and retaining walls — the same crew and standards we bring across the OKC metro.</p>
     <h2>Norman Terrain and Drainage</h2>
     <p>Norman's position along the Canadian River means some lots sit on sandier, river-influenced soil that can transition to denser clay within a short distance on the same property. That's a different base-prep call than the more uniform clay sites elsewhere in the metro, so we assess the soil on each lot before we pour.</p>
     <h2>Services Available in Norman</h2>
     ${linkList([
       { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
+      { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
       { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
+      { href: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
     ])}
+    ${metroCitySewerBlock("Norman", "Norman's older homes near campus and along the Canadian River corridor often sit on sandier soil that transitions to dense clay within the same lot — conditions that stress sewer joints and encourage root intrusion. We serve Norman homeowners with sewer line repair and concrete restoration handled by one crew.")}
     ${faqSection("FAQ", [
+      { question: "Do you do sewer line repair in Norman, or just concrete?", answer: "Both. We handle sewer line repair, replacement, and installation in Norman — including driveway and slab restoration — with one crew." },
       { question: "What's different about pouring concrete in Norman?", answer: "Norman's spot along the Canadian River means some lots have sandier, river-influenced soil that can change to denser clay across a short distance. We evaluate the soil and adjust base prep for each site rather than assuming one approach." },
       { question: "How much does concrete cost in Norman?", answer: "Norman pricing follows our OKC metro rates — roughly $6–$10 per square foot for standard work and $9–$14 for foundations — with an exact price after a free on-site estimate." },
     ])}
@@ -569,16 +594,20 @@ export const prerenderBodies: Record<string, string> = {
   `,
 
   "/moore-oklahoma-concrete": `
-    <h1>Concrete Contractor in Moore, OK</h1>
+    <h1>Moore Concrete &amp; Sewer Line Contractor</h1>
     <p>Moore, just south of Oklahoma City in Cleveland County, is one of the closest areas to our shop. We pour driveways, patios, slabs, foundations, and sidewalks for Moore homeowners.</p>
     <h2>Moore Terrain and Drainage</h2>
     <p>Moore sits on flat terrain over the same expansive clay base found across the metro, with limited natural runoff in low-lying areas. That makes proper slope-to-drain detailing matter more here than on higher ground — we grade every slab and driveway to move water away from the structure.</p>
     <h2>Services Available in Moore</h2>
     ${linkList([
       { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
+      { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
       { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
+      { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
     ])}
+    ${metroCitySewerBlock("Moore", "Much of Moore's housing stock dates to the 1980s–90s, when clay and cast-iron sewer lines were standard — and repeated storm saturation on flat clay lots can accelerate line sagging and joint failure. We repair sewer lines across Moore and restore driveways and slabs in the same job.")}
     ${faqSection("FAQ", [
+      { question: "Do you do sewer line repair in Moore, or just concrete?", answer: "Both. We repair and replace sewer lines across Moore and restore disturbed concrete with the same crew." },
       { question: "Why does drainage matter so much in Moore?", answer: "Moore's flat terrain and clay soil mean water doesn't drain away on its own in low-lying areas. We grade slabs and driveways with a slope that moves water away from the structure, which is critical to preventing pooling and long-term concrete and foundation problems." },
       { question: "How much does concrete cost in Moore?", answer: "Moore pricing follows our OKC metro rates — roughly $6–$10 per square foot for driveways and slabs and $9–$14 for foundations — with an exact price after a free on-site estimate." },
     ])}
@@ -587,16 +616,19 @@ export const prerenderBodies: Record<string, string> = {
   `,
 
   "/mustang-oklahoma-concrete": `
-    <h1>Concrete Contractor in Mustang, OK</h1>
+    <h1>Mustang Concrete &amp; Sewer Line Contractor</h1>
     <p>Mustang, on the west side of the metro in Canadian County, is an area we serve with driveways, patios, slabs, and foundations for homeowners and new-construction subdivisions.</p>
     <h2>Mustang Soil and Site Conditions</h2>
     <p>Mustang shares Yukon's flatter west-metro terrain and the region's expansive clay base. Like Yukon, a lot of the work here is on newer subdivisions built on graded former agricultural land, where fill quality and compaction matter as much as the native soil — so we check both before we pour.</p>
     <h2>Services Available in Mustang</h2>
     ${linkList([
       { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
+      { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
       { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
     ])}
+    ${metroCitySewerBlock("Mustang", "Mustang's mid-century neighborhoods and newer subdivisions alike sit on expansive clay — and original sewer lines under driveways are a common failure point as that soil moves. We handle repair and replacement across Mustang with our own excavation and concrete restoration crew.")}
     ${faqSection("FAQ", [
+      { question: "Do you do sewer line repair in Mustang, or just concrete?", answer: "Both. We handle sewer line work and concrete restoration across Mustang with one crew." },
       { question: "Do you work on new-construction lots in Mustang?", answer: "Yes. Many Mustang lots sit on graded fill rather than undisturbed native soil, so we check compaction and drainage on these sites specifically and coordinate with builders on scheduling." },
       { question: "How much does concrete cost in Mustang?", answer: "Mustang pricing follows our OKC metro rates — roughly $6–$10 per square foot for standard work — with an exact price after a free on-site estimate." },
     ])}
@@ -605,16 +637,20 @@ export const prerenderBodies: Record<string, string> = {
   `,
 
   "/midwest-city-oklahoma-concrete": `
-    <h1>Concrete Contractor in Midwest City, OK</h1>
+    <h1>Midwest City Concrete &amp; Sewer Line Contractor</h1>
     <p>FDZ Construction serves Midwest City in eastern Oklahoma County with driveway replacement, patio slabs, sidewalk work, and foundation work.</p>
     <h2>Midwest City Terrain and Drainage</h2>
     <p>Midwest City sits along Crutcho Creek and Cherry Creek, and the area sees increased flood risk along those creeks during sustained rain, when backwater from the North Canadian River slows drainage — per the city's own floodplain information. Otherwise it shares the metro's flat, expansive clay base. For any work near those drainage corridors, grading and drainage are the priority.</p>
     <h2>Services Available in Midwest City</h2>
     ${linkList([
       { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
+      { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
       { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
+      { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
     ])}
+    ${metroCitySewerBlock("Midwest City", "Midwest City's post-war housing stock often still runs on original sewer lines that have had decades to settle and shift on the metro's expansive clay. Properties near Crutcho Creek and Cherry Creek see extra soil movement after heavy rain — a common trigger for sewer backups we repair across eastern Oklahoma County.")}
     ${faqSection("FAQ", [
+      { question: "Do you do sewer line repair in Midwest City, or just concrete?", answer: "Both. We repair sewer lines across Midwest City and restore driveways and slabs with the same crew." },
       { question: "Does flooding near Crutcho Creek or Cherry Creek affect concrete work?", answer: "It can. The city's floodplain information notes that flood risk along Crutcho Creek and Cherry Creek rises during sustained rain due to backwater from the North Canadian River. For work near those corridors we pay extra attention to grading and drainage so water moves away from the slab." },
       { question: "How much does concrete cost in Midwest City?", answer: "Midwest City pricing follows our OKC metro rates — roughly $6–$10 per square foot for driveways and slabs, with tear-out of existing concrete adding to the cost — and an exact price after a free on-site estimate." },
     ])}
@@ -623,16 +659,20 @@ export const prerenderBodies: Record<string, string> = {
   `,
 
   "/del-city-oklahoma-concrete": `
-    <h1>Concrete Contractor in Del City, OK</h1>
+    <h1>Del City Concrete &amp; Sewer Line Contractor</h1>
     <p>Del City, bordered by Midwest City and south Oklahoma City, is an area we serve with driveway replacement, patio slabs, sidewalk work, and retaining walls.</p>
     <h2>Del City Terrain and Drainage</h2>
     <p>Del City shares the same Crutcho Creek and Cherry Creek flood dynamic as neighboring Midwest City — the city's own floodplain information confirms flood risk rises along those creeks during sustained rain from North Canadian River backwater. That's relevant for any work near those drainage corridors. The terrain is otherwise flat, over the same expansive clay base as the rest of the metro.</p>
     <h2>Services Available in Del City</h2>
     ${linkList([
       { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
+      { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
       { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
+      { href: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
     ])}
+    ${metroCitySewerBlock("Del City", "Del City's older neighborhoods — many built during the Tinker-area growth years — often have original clay or cast-iron sewer lines nearing the end of their service life. The same clay soil movement that affects driveways also shifts buried pipe; we repair lines and restore concrete across Del City with one crew.")}
     ${faqSection("FAQ", [
+      { question: "Do you do sewer line repair in Del City, or just concrete?", answer: "Both. We handle sewer line repair and concrete restoration across Del City with one crew." },
       { question: "Does flood risk near Crutcho Creek or Cherry Creek matter for my project?", answer: "If your property is near those drainage corridors, yes. Del City's floodplain information confirms flood risk along Crutcho Creek and Cherry Creek rises during sustained rain from North Canadian River backwater, so we prioritize grading and drainage on work in those areas." },
       { question: "How much does concrete cost in Del City?", answer: "Del City pricing follows our OKC metro rates — roughly $6–$10 per square foot for driveways and slabs — with an exact price after a free on-site estimate." },
     ])}

@@ -75,7 +75,7 @@ export default function Footer() {
           <div className="flex flex-col gap-1.5">
             <Link to="/our-projects" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Projects</Link>
             <Link to="/blog" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Tips Blog</Link>
-            <span className="text-[0.74rem] text-muted-text">Workmanship Warranty</span>
+            <Link to="/sewer-line-repair-oklahoma-city#warranty" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Workmanship Warranty</Link>
             <a href="tel:4054584805" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">(405) 458-4805</a>
             <a href="mailto:jesus@fdzconstruction.com" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">jesus@fdzconstruction.com</a>
           </div>
