@@ -30,7 +30,7 @@ export function faqSection(
       name: item.question,
       acceptedAnswer: { "@type": "Answer", text: item.answer },
     })),
-  });
+  }).replace(/</g, "\\u003c");
   return `<h2>${title}</h2><dl>${itemsHtml}</dl><script type="application/ld+json">${faqJsonLd}</script>`;
 }
 

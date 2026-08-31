@@ -96,9 +96,29 @@ function generateRouteHtml(template: string, route: PrerenderRoute): string {
     }
   }
 
-  html = html.replace('<div id="root"></div>', `<div id="root">${buildPrerenderMarkup(route)}</div>`);
+  // JSON-LD <script> must not live inside #root. React createRoot() clears that
+  // node, and a parser-inserted script in the container can prevent the SPA from
+  // mounting — leaving only the clipped/empty beige page in the browser.
+  const { markup, headTags } = hoistJsonLdScripts(buildPrerenderMarkup(route));
+  html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+  if (headTags) {
+    html = html.replace("</head>", `${headTags}</head>`);
+  }
 
   return html;
+}
+
+function hoistJsonLdScripts(markup: string): { markup: string; headTags: string } {
+  const tags: string[] = [];
+  const cleaned = markup.replace(
+    /<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi,
+    (_match, json: string) => {
+      const safe = String(json).replace(/</g, "\\u003c");
+      tags.push(`<script type="application/ld+json">${safe}</script>`);
+      return "";
+    },
+  );
+  return { markup: cleaned, headTags: tags.join("") };
 }
 
 function buildPrerenderMarkup(route: PrerenderRoute): string {

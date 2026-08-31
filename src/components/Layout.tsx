@@ -1,5 +1,5 @@
-import { Suspense } from "react";
-import { Outlet } from "react-router-dom";
+import { Component, type ReactNode, Suspense } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -11,14 +11,42 @@ function ContentLoader() {
   );
 }
 
+class RouteErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
+  state = { hasError: false };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-[40vh] flex items-center justify-center p-8 text-center">
+          <p className="text-muted-text">
+            This page failed to load. Call{" "}
+            <a href="tel:4054584805" className="text-orange no-underline">
+              (405) 458-4805
+            </a>{" "}
+            for a free estimate.
+          </p>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 export default function Layout() {
+  const { pathname } = useLocation();
   return (
     <>
       <Navbar />
       <div className="pb-14 nav:pb-0">
-        <Suspense fallback={<ContentLoader />}>
-          <Outlet />
-        </Suspense>
+        <RouteErrorBoundary key={pathname}>
+          <Suspense fallback={<ContentLoader />}>
+            <Outlet />
+          </Suspense>
+        </RouteErrorBoundary>
       </div>
       {/* Sticky mobile call button — hidden on desktop */}
       <a

@@ -444,7 +444,7 @@ function enrichMetroCity(slug: string, entry: CityData): CityData {
     serviceTypes: ["Concrete Contracting", "Sewer Line Repair and Installation"],
     serviceName: `Concrete & Sewer Line Contractor in ${city}, OK`,
     sewerSection: buildSewerSection(city, sewerLocalPlain),
-    whyFdzSection: entry.whyFdzSection ?? metroWhyFdz(city),
+    whyFdzSection: entry.whyFdzSection ?? { points: metroWhyFdz(city) },
     projectsPlaceholder: entry.projectsPlaceholder ?? { note: metroProjectsNote(city) },
     faqHeadingAccent: entry.faqHeadingAccent ?? `Concrete &amp; Sewer Work in ${city}`,
     faq: [...metroSewerFaqs(city), ...entry.faq],
