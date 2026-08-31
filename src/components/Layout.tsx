@@ -1,13 +1,24 @@
+import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+
+function ContentLoader() {
+  return (
+    <div className="min-h-[60vh] flex items-center justify-center">
+      <div className="text-[#888] text-sm tracking-widest uppercase">Loading...</div>
+    </div>
+  );
+}
 
 export default function Layout() {
   return (
     <>
       <Navbar />
       <div className="pb-14 nav:pb-0">
-        <Outlet />
+        <Suspense fallback={<ContentLoader />}>
+          <Outlet />
+        </Suspense>
       </div>
       {/* Sticky mobile call button — hidden on desktop */}
       <a

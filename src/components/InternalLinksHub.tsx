@@ -62,7 +62,7 @@ export default function InternalLinksHub({
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)", listStyle: "none", padding: 0 }}>
               {services.map((s) => (
                 <li key={s.slug} className="bg-stone p-5 md:p-6">
-                  <a href={`/${s.slug}`} className="text-orange font-display text-sm tracking-[0.04em] uppercase no-underline hover:underline">{s.anchor} →</a>
+                  <Link to={`/${s.slug}`} className="text-orange font-display text-sm tracking-[0.04em] uppercase no-underline hover:underline">{s.anchor} →</Link>
                   <p className="text-[0.82rem] text-muted-text mt-2 leading-relaxed font-light">{s.blurb}</p>
                 </li>
               ))}
@@ -82,7 +82,7 @@ export default function InternalLinksHub({
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3" style={{ listStyle: "none", padding: 0 }}>
               {ALL_BLOGS.map((b) => (
                 <li key={b.slug}>
-                  <a href={`/blog/${b.slug}`} className="text-orange no-underline hover:underline text-[0.92rem]">→ Read about the {b.anchor}</a>
+                  <Link to={`/blog/${b.slug}`} className="text-orange no-underline hover:underline text-[0.92rem]">→ Read about the {b.anchor}</Link>
                 </li>
               ))}
             </ul>
@@ -101,7 +101,7 @@ export default function InternalLinksHub({
             <ul className="grid grid-cols-2 md:grid-cols-4 gap-3" style={{ listStyle: "none", padding: 0 }}>
               {ALL_CITIES.map((c) => (
                 <li key={c.slug}>
-                  <a href={`/${c.slug}`} className="text-orange no-underline hover:underline text-[0.88rem]">→ {c.anchor}</a>
+                  <Link to={`/${c.slug}`} className="text-orange no-underline hover:underline text-[0.88rem]">→ {c.anchor}</Link>
                 </li>
               ))}
             </ul>

@@ -86,10 +86,9 @@ const App = () => (
     <TooltipProvider>
       <Sonner />
       <AuthProvider>
-        <BrowserRouter>
+        <BrowserRouter future={{ v7_startTransition: true }}>
           <ScrollToTop />
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
+          <Routes>
               <Route element={<Layout />}>
                 <Route path="/" element={<Index />} />
                 <Route path="/driveways-oklahoma-city" element={<DrivewaysOklahomaCity />} />
@@ -182,11 +181,10 @@ const App = () => (
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
-              <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+              <Route path="/admin" element={<Suspense fallback={<PageLoader />}><ProtectedRoute><AdminDashboard /></ProtectedRoute></Suspense>} />
               {/* Gated builder pricing page — no nav/footer, noindex */}
-              <Route path="/builders" element={<BuilderPricing />} />
+              <Route path="/builders" element={<Suspense fallback={<PageLoader />}><BuilderPricing /></Suspense>} />
             </Routes>
-          </Suspense>
         </BrowserRouter>
       </AuthProvider>
     </TooltipProvider>
