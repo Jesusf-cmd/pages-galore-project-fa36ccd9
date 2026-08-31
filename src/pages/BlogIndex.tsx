@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import FinalCTA from "@/components/FinalCTA";
+import TrustBar from "@/components/TrustBar";
+import InternalLinksHub from "@/components/InternalLinksHub";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { canonicalUrl } from "@/lib/siteUrl";
@@ -13,10 +15,14 @@ const posts = [
 ];
 
 export default function BlogIndex() {
+  const title = "Concrete Tips & Guides for Oklahoma City | FDZ Construction LLC";
+  const description = "Expert concrete guides for Oklahoma City homeowners. Pricing, specifications, soil tips, and maintenance advice from FDZ Construction LLC.";
+  const canonical = canonicalUrl("/blog");
   useSEO({
-    title: "Concrete Tips & Guides for Oklahoma City | FDZ Construction LLC",
-    description: "Expert concrete guides for Oklahoma City homeowners. Pricing, specifications, soil tips, and maintenance advice from FDZ Construction LLC.",
-    canonical: canonicalUrl("/blog"),
+    title,
+    description,
+    canonical,
+    og: { title, description, type: "website", url: canonical },
   });
 
   return (
@@ -26,6 +32,8 @@ export default function BlogIndex() {
         <h1 className="mb-4">Concrete Tips &<br/><em className="text-orange">Local OKC Guides.</em></h1>
         <p className="prose-muted max-w-[560px]">Straight talk about concrete in Oklahoma City — pricing, specifications, soil conditions, and what actually makes <Link to="/driveways-oklahoma-city" className="text-orange no-underline">concrete driveways</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">patios and slabs</Link>, and <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundations</Link> last.</p>
       </section>
+
+      <TrustBar />
 
       <ScrollReveal>
         <section className="section-padding">
@@ -47,6 +55,8 @@ export default function BlogIndex() {
           </div>
         </section>
       </ScrollReveal>
+
+      <InternalLinksHub showBlogs={false} />
 
       <FinalCTA />
     </main>

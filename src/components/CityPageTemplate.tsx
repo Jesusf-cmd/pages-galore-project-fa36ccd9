@@ -4,6 +4,7 @@ import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
+import InternalLinksHub from "@/components/InternalLinksHub";
 
 const TRUST_LINE =
   "FDZ Construction LLC is licensed, bonded, and insured in Oklahoma — 8+ years of experience serving the OKC metro, and every project is backed by a 2-year workmanship warranty.";
@@ -308,6 +309,8 @@ export default function CityPageTemplate({
           </section>
         </ScrollReveal>
       )}
+
+      <InternalLinksHub showCities={false} />
 
       <FinalCTA />
     </main>
