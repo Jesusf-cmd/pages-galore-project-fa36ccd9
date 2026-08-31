@@ -83,10 +83,17 @@ function generateRouteHtml(template: string, route: PrerenderRoute): string {
   );
 
   if (route.noindex) {
-    html = html.replace(
-      '</head>',
-      `<meta name="robots" content="noindex, nofollow" /></head>`
-    );
+    if (/<meta name="robots"/i.test(html)) {
+      html = html.replace(
+        /<meta name="robots" content="[^"]*"\s*\/?>/i,
+        `<meta name="robots" content="noindex, nofollow" />`
+      );
+    } else {
+      html = html.replace(
+        "</head>",
+        `<meta name="robots" content="noindex, nofollow" /></head>`
+      );
+    }
   }
 
   html = html.replace('<div id="root"></div>', `<div id="root">${buildPrerenderMarkup(route)}</div>`);
@@ -187,9 +194,11 @@ export function prerenderPlugin(): Plugin {
             continue;
           }
 
-          const routeDir = path.join(distDir, route.path);
-          fs.mkdirSync(routeDir, { recursive: true });
-          fs.writeFileSync(path.join(routeDir, "index.html"), generateRouteHtml(template, route), "utf-8");
+          // Write path.html (not path/index.html). Cloudflare 308s directory URLs
+          // from /page → /page/, which Search Console then lists as "Page with redirect".
+          const htmlPath = path.join(distDir, `${route.path.replace(/^\//, "")}.html`);
+          fs.mkdirSync(path.dirname(htmlPath), { recursive: true });
+          fs.writeFileSync(htmlPath, generateRouteHtml(template, route), "utf-8");
           count++;
         }
 

@@ -7,7 +7,7 @@ import {
   metroWhyFdz,
 } from "@/lib/citySewerShared";
 
-const BASE = "https://fdzconstruction.com";
+import { canonicalUrl } from "@/lib/siteUrl";
 
 // slug -> live route path (used for canonical + og:url)
 const ROUTE_BY_SLUG: Record<string, string> = {
@@ -460,7 +460,7 @@ export default function CityPage({ slug }: { slug: string }) {
   const data = resolvedCityData[slug] || resolvedCityData["oklahoma-city"];
   const routePath = ROUTE_BY_SLUG[slug] || ROUTE_BY_SLUG["oklahoma-city"];
   const cityName = CITY_NAME[slug] || "Oklahoma City";
-  const pageUrl = `${BASE}${routePath}`;
+  const pageUrl = canonicalUrl(routePath);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -485,7 +485,7 @@ export default function CityPage({ slug }: { slug: string }) {
     <CityPageTemplate
       city={data.city}
       county={data.county}
-      canonicalUrl={`${BASE}${routePath}`}
+      canonicalUrl={pageUrl}
       heroBlurb={data.heroBlurb}
       heroTitle={data.heroTitle}
       heroTitleAccent={data.heroTitleAccent}

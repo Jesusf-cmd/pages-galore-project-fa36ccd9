@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import FinalCTA from "@/components/FinalCTA";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
+import { canonicalUrl } from "@/lib/siteUrl";
 
 const posts = [
   { slug: "why-concrete-driveways-crack-oklahoma", title: "Why Concrete Driveways Crack in Oklahoma", date: "March 15, 2026", time: "7 min read", excerpt: "Five real causes — clay soil, base prep failures, missing reinforcement — and how to prevent them." },
@@ -15,6 +16,7 @@ export default function BlogIndex() {
   useSEO({
     title: "Concrete Tips & Guides for Oklahoma City | FDZ Construction LLC",
     description: "Expert concrete guides for Oklahoma City homeowners. Pricing, specifications, soil tips, and maintenance advice from FDZ Construction LLC.",
+    canonical: canonicalUrl("/blog"),
   });
 
   return (

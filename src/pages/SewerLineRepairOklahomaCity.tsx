@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import ServicePage from "@/components/ServicePageTemplate";
+import { canonicalUrl } from "@/lib/siteUrl";
 
-const PAGE_URL = "https://fdzconstruction.com/sewer-line-repair-oklahoma-city";
+const PAGE_URL = canonicalUrl("/sewer-line-repair-oklahoma-city");
 const AREAS_SERVED = ["Oklahoma City", "Edmond", "Norman", "Moore", "Yukon", "Mustang", "Midwest City", "Del City", "Stillwater"];
 
 function useServiceSchema() {

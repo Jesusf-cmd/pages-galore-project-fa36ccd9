@@ -4,6 +4,8 @@
  * so crawlers see real content instead of an empty <div id="root"></div>.
  */
 
+import { canonicalUrl } from "../src/lib/siteUrl";
+
 export interface PrerenderRoute {
   path: string;
   title: string;
@@ -12,8 +14,6 @@ export interface PrerenderRoute {
   content: string; // key visible text for crawlers
   noindex?: boolean; // set true to inject noindex meta in static HTML
 }
-
-const BASE = "https://fdzconstruction.com";
 
 export const routes: PrerenderRoute[] = [
   {
@@ -556,5 +556,5 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
 ];
 
 export function getCanonical(path: string): string {
-  return `${BASE}${path === "/" ? "" : path}`;
+  return canonicalUrl(path);
 }

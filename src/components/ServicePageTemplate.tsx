@@ -9,6 +9,7 @@ import CityGrid from "@/components/CityGrid";
 import ProcessSteps from "@/components/ProcessSteps";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
+import { canonicalUrl } from "@/lib/siteUrl";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import EeatBlock from "@/components/EeatBlock";
 
@@ -106,7 +107,7 @@ interface ServicePageProps {
 export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showEeatBlock, internalLinks, serviceSchema }: ServicePageProps) {
   const seoTitle = metaTitle || `${title} ${titleAccent.replace('.', '')} | FDZ Construction LLC`;
   const seoDescription = metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155);
-  const canonical = currentServiceSlug ? `https://fdzconstruction.com/${currentServiceSlug}` : undefined;
+  const canonical = currentServiceSlug ? canonicalUrl(`/${currentServiceSlug}`) : undefined;
   useSEO({
     title: seoTitle,
     description: seoDescription,

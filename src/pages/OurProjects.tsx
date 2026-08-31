@@ -3,6 +3,7 @@ import TrustBar from "@/components/TrustBar";
 import FinalCTA from "@/components/FinalCTA";
 import ServicesFooterGrid from "@/components/ServicesFooterGrid";
 import { useSEO } from "@/hooks/useSEO";
+import { canonicalUrl } from "@/lib/siteUrl";
 
 const ROSEDALE_VIDEO = "/videos/shop-foundation-pour-rosedale-oklahoma-web.mp4";
 
@@ -26,6 +27,7 @@ export default function OurProjects() {
   useSEO({
     title: "Our Concrete Projects in Oklahoma City | FDZ Construction LLC",
     description: "Browse completed concrete projects across the OKC metro. Driveways, patios, foundations, commercial pours, and retaining walls by FDZ Construction LLC.",
+    canonical: canonicalUrl("/our-projects"),
   });
 
   return (

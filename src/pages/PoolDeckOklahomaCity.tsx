@@ -4,6 +4,7 @@ import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
+import { canonicalUrl } from "@/lib/siteUrl";
 
 const faqItems = [
   {
@@ -123,13 +124,13 @@ export default function PoolDeckOklahomaCity() {
     title: "Pool Deck Contractor Oklahoma City | FDZ Construction LLC",
     description:
       "Oklahoma City's trusted pool deck contractor. Stamped, decorative & slip-resistant concrete pool decks. Licensed & insured. Free estimates — (405) 458-4805.",
-    canonical: "https://fdzconstruction.com/pool-deck-oklahoma-city",
+    canonical: canonicalUrl("/pool-deck-oklahoma-city"),
     og: {
       title: "Pool Deck Contractor Oklahoma City | FDZ Construction LLC",
       description:
         "Stamped, decorative & slip-resistant concrete pool decks in Oklahoma City. Licensed & insured. Free estimates.",
       type: "website",
-      url: "https://fdzconstruction.com/pool-deck-oklahoma-city",
+      url: canonicalUrl("/pool-deck-oklahoma-city"),
     },
   });
 

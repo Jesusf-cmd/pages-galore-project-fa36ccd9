@@ -1,13 +1,56 @@
-# Old commercial page URLs → new preferred URLs (301 redirects)
-# These MUST come before the SPA fallback, or the catch-all swallows them.
+# Old commercial page URLs → new preferred URLs (301)
+# Specific rules must come before the trailing-slash collapse below.
 /dock-leveler-pits-oklahoma-city /dock-leveler-pit-concrete-oklahoma-city 301
+/dock-leveler-pits-oklahoma-city/ /dock-leveler-pit-concrete-oklahoma-city 301
 /truck-courts-oklahoma-city /truck-court-concrete-oklahoma-city 301
+/truck-courts-oklahoma-city/ /truck-court-concrete-oklahoma-city 301
 /warehouse-floor-replacement-oklahoma-city /warehouse-slab-repair-oklahoma-city 301
+/warehouse-floor-replacement-oklahoma-city/ /warehouse-slab-repair-oklahoma-city 301
 /equipment-foundations-oklahoma-city /equipment-pad-concrete-oklahoma-city 301
+/equipment-foundations-oklahoma-city/ /equipment-pad-concrete-oklahoma-city 301
 /ada-ramps-oklahoma-city /ada-concrete-ramps-oklahoma-city 301
+/ada-ramps-oklahoma-city/ /ada-concrete-ramps-oklahoma-city 301
 /dumpster-pads-oklahoma-city /dumpster-pad-concrete-oklahoma-city 301
+/dumpster-pads-oklahoma-city/ /dumpster-pad-concrete-oklahoma-city 301
 /commercial-curb-gutter-oklahoma-city /commercial-curb-and-gutter-oklahoma-city 301
+/commercial-curb-gutter-oklahoma-city/ /commercial-curb-and-gutter-oklahoma-city 301
 /blog/cost-of-concrete-oklahoma-city /blog/cost-of-concrete-oklahoma-city-2026 301
+/blog/cost-of-concrete-oklahoma-city/ /blog/cost-of-concrete-oklahoma-city-2026 301
 
-# SPA fallback for client-side routes that do not have a prerendered file
-/* /index.html 200
+# Legacy aliases (previously 200'd the homepage via the SPA catch-all)
+/concrete-driveways /driveways-oklahoma-city 301
+/concrete-driveways/ /driveways-oklahoma-city 301
+/concrete-slabs /patios-oklahoma-city 301
+/concrete-slabs/ /patios-oklahoma-city 301
+/stamped-concrete /patios-oklahoma-city 301
+/stamped-concrete/ /patios-oklahoma-city 301
+/concrete-patio-okc /patios-oklahoma-city 301
+/concrete-patio-okc/ /patios-oklahoma-city 301
+/concrete-foundations /foundations-oklahoma-city 301
+/concrete-foundations/ /foundations-oklahoma-city 301
+/retaining-walls /retaining-walls-oklahoma-city 301
+/retaining-walls/ /retaining-walls-oklahoma-city 301
+/concrete-sidewalks /sidewalks-oklahoma-city 301
+/concrete-sidewalks/ /sidewalks-oklahoma-city 301
+/curb-and-gutter /sidewalks-oklahoma-city 301
+/curb-and-gutter/ /sidewalks-oklahoma-city 301
+/curb-gutter /sidewalks-oklahoma-city 301
+/curb-gutter/ /sidewalks-oklahoma-city 301
+/parking-lot-concrete /parking-lots-oklahoma-city 301
+/parking-lot-concrete/ /parking-lots-oklahoma-city 301
+/commercial-concrete-slabs /commercial-concrete-oklahoma-city 301
+/commercial-concrete-slabs/ /commercial-concrete-oklahoma-city 301
+/driveway-repair /driveway-repair-oklahoma-city 301
+/driveway-repair/ /driveway-repair-oklahoma-city 301
+/foundation-repair /foundation-repair-oklahoma-city 301
+/foundation-repair/ /foundation-repair-oklahoma-city 301
+
+# Client-only app routes (no prerendered HTML). Do not add /* /index.html 200.
+/admin /index.html 200
+/admin/ /index.html 200
+/admin/* /index.html 200
+/quote/* /index.html 200
+
+# After moving prerender to *.html, /page/ would 404. Send slash URLs to the 200 URL.
+/blog/:slug/ /blog/:slug 301
+/:page/ /:page 301

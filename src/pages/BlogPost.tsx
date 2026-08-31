@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useSEO } from "@/hooks/useSEO";
+import { canonicalUrl } from "@/lib/siteUrl";
 import FinalCTA from "@/components/FinalCTA";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
@@ -99,6 +100,8 @@ export default function BlogPost() {
   useSEO({
     title: seo?.title || `${post?.title || "Blog"} | FDZ Construction LLC`,
     description: seo?.description || post?.deck || "Concrete tips and guides from FDZ Construction LLC in Oklahoma City.",
+    canonical: post && slug ? canonicalUrl(`/blog/${slug}`) : undefined,
+    noindex: !post,
   });
 
   if (!post) {

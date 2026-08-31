@@ -2,6 +2,7 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import SignatureCanvas from "react-signature-canvas";
 import { supabase } from "@/integrations/supabase/client";
+import { useSEO } from "@/hooks/useSEO";
 import {
   COMPANY,
   formatQuoteNumber,
@@ -54,6 +55,12 @@ function getDisplayStatus(quote: Quote): { label: string; color: string; bg: str
 }
 
 export default function QuotePage() {
+  useSEO({
+    title: "Quote | FDZ Construction LLC",
+    description: "Private project quote from FDZ Construction LLC.",
+    noindex: true,
+  });
+
   // The :id route param now carries the unguessable access token, not the quote's primary id.
   const { id: accessToken } = useParams<{ id: string }>();
   const [quote, setQuote] = useState<Quote | null>(null);

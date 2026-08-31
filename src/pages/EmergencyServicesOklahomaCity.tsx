@@ -5,8 +5,9 @@ import FinalCTA from "@/components/FinalCTA";
 import TradeBadge, { type TradeModel } from "@/components/TradeBadge";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
+import { canonicalUrl } from "@/lib/siteUrl";
 
-const PAGE_URL = "https://fdzconstruction.com/emergency-services-oklahoma-city";
+const PAGE_URL = canonicalUrl("/emergency-services-oklahoma-city");
 
 const trades: {
   icon: string;

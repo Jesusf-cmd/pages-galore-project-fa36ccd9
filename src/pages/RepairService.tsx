@@ -5,8 +5,7 @@ import FinalCTA from "@/components/FinalCTA";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
-
-const BASE = "https://fdzconstruction.com";
+import { canonicalUrl } from "@/lib/siteUrl";
 
 interface RepairData {
   path: string;
@@ -244,6 +243,15 @@ export const REPAIR_SLUGS = Object.keys(data);
 
 export default function RepairService({ slug }: { slug: string }) {
   const d = data[slug];
+  useSEO({
+    title: d?.metaTitle || "Page not found | FDZ Construction LLC",
+    description: d?.metaDescription || "That page does not exist.",
+    canonical: d ? canonicalUrl(d.path) : undefined,
+    noindex: !d,
+    og: d
+      ? { title: d.metaTitle, description: d.metaDescription, type: "website", url: canonicalUrl(d.path) }
+      : undefined,
+  });
   if (!d) {
     return (
       <main className="page-hero">
@@ -252,13 +260,6 @@ export default function RepairService({ slug }: { slug: string }) {
       </main>
     );
   }
-  const canonical = `${BASE}${d.path}`;
-  useSEO({
-    title: d.metaTitle,
-    description: d.metaDescription,
-    canonical,
-    og: { title: d.metaTitle, description: d.metaDescription, type: "website", url: canonical },
-  });
 
   return (
     <main>

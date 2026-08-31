@@ -5,8 +5,7 @@ import FinalCTA from "@/components/FinalCTA";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
-
-const BASE = "https://fdzconstruction.com";
+import { canonicalUrl } from "@/lib/siteUrl";
 
 interface ServiceInCityData {
   // routing + SEO
@@ -1034,11 +1033,20 @@ export const SERVICE_CITY_SLUGS = Object.keys(data);
 
 export function getServiceCityCanonical(slug: string): string | null {
   const d = data[slug];
-  return d ? `${BASE}${d.path}` : null;
+  return d ? canonicalUrl(d.path) : null;
 }
 
 export default function ServiceInCity({ slug }: { slug: string }) {
   const d = data[slug];
+  useSEO({
+    title: d?.metaTitle || "Page not found | FDZ Construction LLC",
+    description: d?.metaDescription || "That page does not exist.",
+    canonical: d ? canonicalUrl(d.path) : undefined,
+    noindex: !d,
+    og: d
+      ? { title: d.metaTitle, description: d.metaDescription, type: "website", url: canonicalUrl(d.path) }
+      : undefined,
+  });
   if (!d) {
     return (
       <main className="page-hero">
@@ -1047,13 +1055,6 @@ export default function ServiceInCity({ slug }: { slug: string }) {
       </main>
     );
   }
-  const canonical = `${BASE}${d.path}`;
-  useSEO({
-    title: d.metaTitle,
-    description: d.metaDescription,
-    canonical,
-    og: { title: d.metaTitle, description: d.metaDescription, type: "website", url: canonical },
-  });
 
   return (
     <main>
