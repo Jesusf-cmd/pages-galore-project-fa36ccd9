@@ -28,7 +28,6 @@ export default function Footer() {
       {/* Licensing / trust section */}
       <div className="max-w-3xl mx-auto mb-8 text-center">
         <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-2">Licensed, Bonded &amp; Insured in Oklahoma</div>
-        <p className="text-[0.72rem] text-muted-text">Concrete Contractor License #: [CONCRETE LICENSE # — TO BE PROVIDED]</p>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-start">
         <div className="col-span-2 md:col-span-1">
