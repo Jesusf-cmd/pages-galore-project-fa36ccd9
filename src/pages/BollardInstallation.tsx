@@ -5,7 +5,7 @@ export default function BollardInstallation() {
     <ServicePage
       enriched
       currentServiceSlug="bollard-installation-oklahoma-city"
-      metaTitle="Bollard Installation Oklahoma City | Concrete Bollards & Protective Posts | FDZ Construction"
+      metaTitle="Bollard Installation Oklahoma City | FDZ Construction"
       metaDescription="Concrete bollard installation in Oklahoma City — protective bollards for storefronts, dumpster enclosures, dock areas, and drive-through lanes. Licensed & insured. Call (405) 458-4805."
       eyebrow="Commercial Concrete · Oklahoma City"
       title="Bollard Installation in"

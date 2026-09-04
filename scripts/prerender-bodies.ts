@@ -119,9 +119,11 @@ export const prerenderBodies: Record<string, string> = {
     ])}
     <h2>Related Services</h2>
     <ul>
-      <li><a href="/patios-oklahoma-city">Patios &amp; Stamped Concrete</a> — Backyard patios, decorative stamped surfaces, and outdoor living slabs.</li>
-      <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Parking lots, warehouse floors, loading docks, and site concrete for commercial properties.</li>
-      <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; Curb and Gutter</a> — Walkways, ADA curb ramps, and curb work to complete your property.</li>
+      <li><a href="/driveway-repair-oklahoma-city">Driveway repair</a> — Crack repair, leveling, joint sealing, and honest repair-vs-replace evaluation.</li>
+      <li><a href="/patios-oklahoma-city">Patios &amp; stamped concrete</a> — Backyard patios, decorative stamped surfaces, and outdoor living slabs.</li>
+      <li><a href="/retaining-walls-oklahoma-city">Retaining wall construction</a> — Slope and drainage walls that often accompany driveway grade changes.</li>
+      <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; curb and gutter</a> — Walkways, ADA curb ramps, and curb work to complete your property.</li>
+      <li>Local driveway pages: <a href="/driveways-edmond">Edmond</a>, <a href="/driveways-norman">Norman</a>, <a href="/driveways-yukon">Yukon</a>, <a href="/driveways-moore">Moore</a>, <a href="/driveways-mustang">Mustang</a>.</li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
@@ -449,8 +451,10 @@ export const prerenderBodies: Record<string, string> = {
     ])}
     <h2>Related Services</h2>
     <ul>
-      <li><a href="/driveways-oklahoma-city">Driveways</a> — New installation, replacement, and stamped decorative driveways.</li>
-      <li><a href="/foundations-oklahoma-city">Foundations &amp; Retaining Walls</a> — Outdoor living slabs on sloped lots often pair with a retaining wall.</li>
+      <li><a href="/driveways-oklahoma-city">Concrete driveway installation</a> — New installation, replacement, and stamped decorative driveways.</li>
+      <li><a href="/retaining-walls-oklahoma-city">Retaining wall construction</a> — Outdoor living slabs on sloped lots often pair with a retaining wall.</li>
+      <li><a href="/pool-deck-oklahoma-city">Pool deck concrete</a> — Slip-resistant pool decks for homes and commercial properties.</li>
+      <li>Local patio pages: <a href="/patios-edmond">Edmond</a>, <a href="/patios-norman">Norman</a>, <a href="/patios-moore">Moore</a>, <a href="/patios-yukon">Yukon</a>.</li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
@@ -532,8 +536,10 @@ export const prerenderBodies: Record<string, string> = {
     ])}
     <h2>Related Services</h2>
     <ul>
-      <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Warehouse floors, retail pads, loading docks, and site concrete for commercial properties.</li>
-      <li><a href="/patios-oklahoma-city">Patios &amp; Stamped Concrete</a> — Outdoor living slabs on sloped lots often pair with a retaining wall.</li>
+      <li><a href="/foundation-repair-oklahoma-city">Foundation repair</a> — Honest repair-vs-replace evaluation when an existing foundation is cracking or settling.</li>
+      <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete services</a> — Warehouse floors, retail pads, loading docks, and site concrete for commercial properties.</li>
+      <li><a href="/retaining-walls-oklahoma-city">Retaining wall construction</a> — Structural walls that often pair with foundation and grade work.</li>
+      <li>Local foundation pages: <a href="/foundations-edmond">Edmond</a>, <a href="/foundations-norman">Norman</a>, <a href="/foundations-yukon">Yukon</a>.</li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
@@ -668,9 +674,17 @@ export const prerenderBodies: Record<string, string> = {
     ])}
     <h2>Related Services</h2>
     <ul>
-      <li><a href="/foundations-oklahoma-city">Foundations</a> — Commercial slab-on-grade and structural foundations for the buildings your site concrete serves.</li>
-      <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; Curb and Gutter</a> — Site sidewalks, ADA ramps, and curb work for commercial developments.</li>
-      <li><a href="/parking-lots-oklahoma-city">Parking Lots</a> — Dedicated page for commercial parking lot design, layout, and construction.</li>
+      <li><a href="/parking-lots-oklahoma-city">Parking lot replacement</a> — Dedicated page for commercial parking lot design, layout, and construction.</li>
+      <li><a href="/foundations-oklahoma-city">Concrete foundations</a> — Commercial slab-on-grade and structural foundations.</li>
+      <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; curb and gutter</a> — Site sidewalks, ADA ramps, and curb work for commercial developments.</li>
+      <li><a href="/commercial-concrete-repair-oklahoma-city">Commercial concrete repair</a> — Spalling, joint failure, and panel replacement for commercial flatwork.</li>
+      <li><a href="/polished-concrete-oklahoma-city">Polished concrete</a> — Ground and polished floors for retail, warehouses, and showrooms.</li>
+      <li><a href="/epoxy-floor-coatings-oklahoma-city">Epoxy floor coatings</a> — Protective and decorative epoxy systems for commercial floors.</li>
+      <li><a href="/retail-restaurant-concrete-oklahoma-city">Retail &amp; restaurant concrete</a> — Pads, entries, and flatwork for retail and restaurant builds.</li>
+      <li><a href="/tilt-wall-concrete-oklahoma-city">Tilt-wall concrete</a> — Footings and slab work coordinated with tilt-up construction.</li>
+      <li><a href="/soil-stabilization-oklahoma-city">Soil stabilization</a> — Base and subgrade stabilization for problem clay sites.</li>
+      <li><a href="/concrete-maintenance-oklahoma-city">Concrete maintenance</a> — Joint sealing, resurfacing, and ongoing commercial slab care.</li>
+      <li><a href="/bollard-installation-oklahoma-city">Bollard installation</a> · <a href="/ada-concrete-ramps-oklahoma-city">ADA concrete ramps</a> · <a href="/equipment-pad-concrete-oklahoma-city">Equipment pads</a></li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
@@ -685,10 +699,12 @@ export const prerenderBodies: Record<string, string> = {
     <p>We work throughout Oklahoma City, including Nichols Hills and surrounding areas.</p>
     <h2>Services Available in Oklahoma City</h2>
     ${linkList([
-      { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
-      { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
-      { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
-      { href: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
+      { href: "/driveways-oklahoma-city", label: "Concrete driveway installation" },
+      { href: "/patios-oklahoma-city", label: "Patios, slabs & stamped concrete" },
+      { href: "/foundations-oklahoma-city", label: "Concrete foundations" },
+      { href: "/commercial-concrete-oklahoma-city", label: "Commercial concrete services" },
+      { href: "/parking-lots-oklahoma-city", label: "Concrete parking lots" },
+      { href: "/sidewalks-oklahoma-city", label: "Sidewalks, curb & gutter" },
     ])}
     ${metroCitySewerBlock("Oklahoma City", "Many established OKC neighborhoods still run on original clay or cast-iron sewer lines that shift and crack as Permian clay swells and shrinks each season. When a line fails under a driveway or slab, we repair the pipe and restore the concrete ourselves — one crew, no second contractor.")}
     ${faqSection("FAQ", [
@@ -709,10 +725,13 @@ export const prerenderBodies: Record<string, string> = {
     <p>Edmond sits on the northern part of the Garber-Wellington aquifer, where the underlying formations carry more sandstone than the rest of the metro. In practice, soil here can shift between sandy and clay-heavy across a single lot, and the terrain has more rolling grade than much of the flat OKC metro. That combination makes grading and drainage planning a bigger factor here than on flatter sites — so we evaluate each lot rather than applying a one-size approach.</p>
     <h2>Services Available in Edmond</h2>
     ${linkList([
-      { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
-      { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
-      { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
-      { href: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
+      { href: "/driveways-edmond", label: "Concrete driveways in Edmond" },
+      { href: "/patios-edmond", label: "Patios & slabs in Edmond" },
+      { href: "/foundations-edmond", label: "Foundations in Edmond" },
+      { href: "/retaining-walls-edmond", label: "Retaining walls in Edmond" },
+      { href: "/commercial-concrete-oklahoma-city", label: "Commercial concrete services" },
+      { href: "/parking-lots-oklahoma-city", label: "Concrete parking lots" },
+      { href: "/sidewalks-oklahoma-city", label: "Sidewalks, curb & gutter" },
     ])}
     ${metroCitySewerBlock("Edmond", "Edmond's mix of 1970s–90s housing and newer subdivisions means sewer lines range from aging clay pipe to modern PVC — and the area's sandy-to-clay soil shifts enough to stress buried lines over time. We handle sewer repair across Edmond with the same crew that restores driveways and slabs afterward.")}
     ${faqSection("FAQ", [
@@ -732,10 +751,12 @@ export const prerenderBodies: Record<string, string> = {
     <p>Yukon has flatter terrain than Edmond, on the same expansive clay base shared across the region. A lot of the work here is in newer subdivisions built on graded former agricultural land — and on those sites, the quality of the fill and the compaction done during the original grading matters as much as the native soil itself. We check compaction and drainage on these lots specifically.</p>
     <h2>Services Available in Yukon</h2>
     ${linkList([
-      { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
-      { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
-      { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
-      { href: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
+      { href: "/driveways-yukon", label: "Concrete driveways in Yukon" },
+      { href: "/patios-yukon", label: "Patios & slabs in Yukon" },
+      { href: "/foundations-yukon", label: "Foundations in Yukon" },
+      { href: "/commercial-concrete-oklahoma-city", label: "Commercial concrete services" },
+      { href: "/parking-lots-oklahoma-city", label: "Concrete parking lots" },
+      { href: "/sidewalks-oklahoma-city", label: "Sidewalks, curb & gutter" },
     ])}
     ${metroCitySewerBlock("Yukon", "Yukon's fast-growing subdivisions sit on the same expansive clay as the rest of the metro — and sewer lines under driveways are often the first thing to move when that clay swells after heavy rain. We repair and replace lines across Yukon and restore the disturbed concrete in the same job.")}
     ${faqSection("FAQ", [
@@ -754,10 +775,13 @@ export const prerenderBodies: Record<string, string> = {
     <p>Norman's position along the Canadian River means some lots sit on sandier, river-influenced soil that can transition to denser clay within a short distance on the same property. That's a different base-prep call than the more uniform clay sites elsewhere in the metro, so we assess the soil on each lot before we pour.</p>
     <h2>Services Available in Norman</h2>
     ${linkList([
-      { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
-      { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
-      { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
-      { href: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
+      { href: "/driveways-norman", label: "Concrete driveways in Norman" },
+      { href: "/patios-norman", label: "Patios & slabs in Norman" },
+      { href: "/foundations-norman", label: "Foundations in Norman" },
+      { href: "/retaining-walls-norman", label: "Retaining walls in Norman" },
+      { href: "/commercial-concrete-oklahoma-city", label: "Commercial concrete services" },
+      { href: "/parking-lots-oklahoma-city", label: "Concrete parking lots" },
+      { href: "/sidewalks-oklahoma-city", label: "Sidewalks, curb & gutter" },
     ])}
     ${metroCitySewerBlock("Norman", "Norman's older homes near campus and along the Canadian River corridor often sit on sandier soil that transitions to dense clay within the same lot — conditions that stress sewer joints and encourage root intrusion. We serve Norman homeowners with sewer line repair and concrete restoration handled by one crew.")}
     ${faqSection("FAQ", [
@@ -776,10 +800,12 @@ export const prerenderBodies: Record<string, string> = {
     <p>Moore sits on flat terrain over the same expansive clay base found across the metro, with limited natural runoff in low-lying areas. That makes proper slope-to-drain detailing matter more here than on higher ground — we grade every slab and driveway to move water away from the structure.</p>
     <h2>Services Available in Moore</h2>
     ${linkList([
-      { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
-      { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
-      { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
-      { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
+      { href: "/driveways-moore", label: "Concrete driveways in Moore" },
+      { href: "/patios-moore", label: "Patios & slabs in Moore" },
+      { href: "/foundations-oklahoma-city", label: "Concrete foundations" },
+      { href: "/sidewalks-oklahoma-city", label: "Sidewalks, curb & gutter" },
+      { href: "/commercial-concrete-oklahoma-city", label: "Commercial concrete services" },
+      { href: "/parking-lots-oklahoma-city", label: "Concrete parking lots" },
     ])}
     ${metroCitySewerBlock("Moore", "Much of Moore's housing stock dates to the 1980s–90s, when clay and cast-iron sewer lines were standard — and repeated storm saturation on flat clay lots can accelerate line sagging and joint failure. We repair sewer lines across Moore and restore driveways and slabs in the same job.")}
     ${faqSection("FAQ", [
@@ -798,9 +824,12 @@ export const prerenderBodies: Record<string, string> = {
     <p>Mustang shares Yukon's flatter west-metro terrain and the region's expansive clay base. Like Yukon, a lot of the work here is on newer subdivisions built on graded former agricultural land, where fill quality and compaction matter as much as the native soil — so we check both before we pour.</p>
     <h2>Services Available in Mustang</h2>
     ${linkList([
-      { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
-      { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
-      { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
+      { href: "/driveways-mustang", label: "Concrete driveways in Mustang" },
+      { href: "/patios-oklahoma-city", label: "Patios, slabs & stamped concrete" },
+      { href: "/foundations-oklahoma-city", label: "Concrete foundations" },
+      { href: "/commercial-concrete-oklahoma-city", label: "Commercial concrete services" },
+      { href: "/parking-lots-oklahoma-city", label: "Concrete parking lots" },
+      { href: "/sidewalks-oklahoma-city", label: "Sidewalks, curb & gutter" },
     ])}
     ${metroCitySewerBlock("Mustang", "Mustang's mid-century neighborhoods and newer subdivisions alike sit on expansive clay — and original sewer lines under driveways are a common failure point as that soil moves. We handle repair and replacement across Mustang with our own excavation and concrete restoration crew.")}
     ${faqSection("FAQ", [
@@ -1060,9 +1089,11 @@ export const prerenderBodies: Record<string, string> = {
     ])}
     <h2>Related Services</h2>
     <ul>
-      <li><a href="/foundations-oklahoma-city">Concrete Foundations</a> — Retaining walls and foundations often go hand-in-hand on sloped lots.</li>
-      <li><a href="/patios-oklahoma-city">Patios &amp; Stamped Concrete</a> — Landscape walls frequently paired with patio or outdoor living projects.</li>
-      <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Retaining walls for commercial site development.</li>
+      <li><a href="/foundations-oklahoma-city">Concrete foundations</a> — Retaining walls and foundations often go hand-in-hand on sloped lots.</li>
+      <li><a href="/patios-oklahoma-city">Patios &amp; stamped concrete</a> — Landscape walls frequently paired with patio or outdoor living projects.</li>
+      <li><a href="/driveways-oklahoma-city">Concrete driveway installation</a> — Grade changes at driveways often need a wall and a new pour together.</li>
+      <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete services</a> — Retaining walls for commercial site development.</li>
+      <li>Local retaining wall pages: <a href="/retaining-walls-edmond">Edmond</a>, <a href="/retaining-walls-norman">Norman</a>.</li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
@@ -1235,6 +1266,75 @@ export const prerenderBodies: Record<string, string> = {
       <li>FDZ oversees the work through completion</li>
       <li>You get one invoice and one workmanship warranty from FDZ</li>
     </ol>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    ${trustParagraph()}
+  `,
+
+  "/bollard-installation-oklahoma-city": `
+    <h1>Bollard Installation in Oklahoma City, OK</h1>
+    <p>Bollards protect buildings, equipment, employees, and customers from vehicle impact — and they're required at most commercial sites where vehicles operate near building facades, overhead doors, dock equipment, or dumpster enclosures. FDZ Construction installs concrete-set bollards for commercial properties, warehouses, distribution centers, retail storefronts, and drive-through facilities across the Oklahoma City metro. We handle core drilling, anchor setting, and sleeve installation in both new concrete and existing slabs.</p>
+    <h2>Bollard Installation Services in Oklahoma City</h2>
+    <h3>Core Drilling &amp; Sleeve Installation</h3>
+    <ul>
+      <li>Core drill existing concrete to bollard sleeve diameter — typically 6" to 10" depending on bollard size</li>
+      <li>Set sleeve with proper depth (typically 36"–48" for standard bollards)</li>
+      <li>Pour non-shrink grout or concrete around the sleeve and finish flush with the existing slab</li>
+    </ul>
+    <h3>New Install, Replacement &amp; Perimeter Runs</h3>
+    <ul>
+      <li>New bollard installation in new slabs or existing concrete</li>
+      <li>Replacement of damaged or missing bollards</li>
+      <li>Dumpster enclosure, dock area, storefront, and drive-through protective bollards</li>
+      <li>Equipment-pad bollards around generators, HVAC units, and transformers</li>
+    </ul>
+    <h2>Local Considerations for OKC Commercial Sites</h2>
+    <p>Oklahoma City commercial properties along major retail corridors face higher vehicle impact risk from drive-through traffic, delivery trucks, and parking lot incidents. OKC clay soil also creates uneven settlement around bollard bases set in inadequately prepared sub-base — proper sleeve installation and compacted backfill prevent lean and tip-over over time.</p>
+    <h2>Related Commercial Services</h2>
+    <ul>
+      <li><a href="/dumpster-pad-concrete-oklahoma-city">Dumpster pad concrete</a></li>
+      <li><a href="/loading-dock-concrete-repair-oklahoma-city">Loading dock concrete repair</a></li>
+      <li><a href="/equipment-pad-concrete-oklahoma-city">Equipment pad concrete</a></li>
+      <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete services</a></li>
+    </ul>
+    ${faqSection("Bollard Installation FAQ", [
+      { question: "How deep should a bollard be set?", answer: "Most commercial bollards are set 36–48 inches deep in a concrete sleeve. Exact depth depends on bollard size, soil conditions, and the impact rating required for the site." },
+      { question: "Can you install bollards in an existing parking lot or slab?", answer: "Yes — we core drill the existing concrete, set the sleeve, and finish flush with the surrounding surface so the new bollard does not create a trip hazard or drainage problem." },
+      { question: "Do you supply the bollards or only install them?", answer: "We can install owner-supplied bollards or source bollards as part of the project scope. Tell us what the site needs and we'll quote accordingly." },
+    ])}
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    ${trustParagraph()}
+  `,
+
+  "/our-projects": `
+    <h1>Our Concrete Work Across Oklahoma</h1>
+    <p>Real jobs for Oklahoma City homeowners and businesses — <a href="/driveways-oklahoma-city">concrete driveways</a>, <a href="/patios-oklahoma-city">patios and stamped concrete</a>, foundations, retaining walls, sidewalks, and commercial pours by FDZ Construction LLC. Licensed, bonded &amp; insured. Call (405) 458-4805 for a free estimate.</p>
+    <h2>Featured Projects</h2>
+    <h3>Star Spencer High School — Spencer, Oklahoma</h3>
+    <p>New concrete stairs and <a href="/sidewalks-oklahoma-city">sidewalks with ADA-compliant ramps</a> for the school district — precision grading, reinforcement, and accessibility compliance completed on schedule.</p>
+    <h3>Shop Foundation Pour — Rosedale, Oklahoma</h3>
+    <p>Self-performed foundation pour with video documentation of forming, reinforcement, and placement by our own crew.</p>
+    <h2>Recent Concrete Projects Across the Metro</h2>
+    <ul>
+      <li><strong>Pier foundation — Edmond, OK</strong> — Piers drilled to undisturbed soil on a fill lot, tied to a thickened slab.</li>
+      <li><strong>Poured concrete retaining wall — Oklahoma City</strong> — Monolithic wall engineered for OKC clay lateral pressure with drainage behind the wall.</li>
+      <li><strong>Forklift ramp — Guthrie, OK</strong> — Reinforced warehouse ramp poured inside a live facility, power-trowel finished flush with the existing floor.</li>
+      <li><strong>Residential foundation — Piedmont, OK</strong> — Slab-on-grade on Oklahoma red clay with compacted aggregate base and engineered rebar.</li>
+      <li><strong>Driveway replacement — Edmond, OK</strong> — Full tear-out and 4" reinforced broom-finish pour.</li>
+      <li><strong>Stamped patio — Norman, OK</strong> — Ashlar slate pattern with custom release and matte sealer.</li>
+      <li><strong>Commercial parking lot — Yukon, OK</strong> — 5" reinforced commercial lot graded for drainage.</li>
+      <li><strong>Residential foundation — Mustang, OK</strong> — Slab-on-grade for a new residential build.</li>
+      <li><strong>Backyard patio — Moore, OK</strong> — Broom-finish patio graded away from the structure.</li>
+      <li><strong>City ROW sidewalk — Edmond, OK</strong> — Permitted sidewalk replacement with ADA curb ramp.</li>
+    </ul>
+    <h2>Services Behind This Work</h2>
+    ${linkList([
+      { href: "/driveways-oklahoma-city", label: "Concrete driveways" },
+      { href: "/foundations-oklahoma-city", label: "Concrete foundations" },
+      { href: "/retaining-walls-oklahoma-city", label: "Retaining walls" },
+      { href: "/commercial-concrete-oklahoma-city", label: "Commercial concrete" },
+      { href: "/parking-lots-oklahoma-city", label: "Parking lots" },
+      { href: "/sidewalks-oklahoma-city", label: "Sidewalks, curb & gutter" },
+    ])}
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
   `,

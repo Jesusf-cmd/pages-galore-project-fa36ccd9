@@ -78,7 +78,7 @@ export default function SkidSteerServicesOklahomaCity() {
         { title: "Final grade & cleanup", description: "Final pass for grade and slope, debris cleared, site left ready for what comes next." },
         { title: "Walkthrough", description: "We walk the finished site with you before we leave." },
       ]}
-      metaTitle="Skid Steer Services Oklahoma City | Land Clearing, Grading & Gravel Driveways | FDZ Construction"
+      metaTitle="Skid Steer Services Oklahoma City | FDZ Construction"
       metaDescription="Skid steer land clearing, dirt work, leveling, gravel grading, gravel driveways & brush hog mowing in OKC. Self-performed, no subcontractors. Free estimate: (405) 458-4805."
       eyebrow="OKC Metro · Skid Steer Services · Self-Performed"
       badge="self-performed"

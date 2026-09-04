@@ -172,8 +172,11 @@ export default function SidewalksOklahomaCity() {
           title: "Other Concrete Services",
           titleAccent: "From FDZ.",
           content: [
-            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete</a> — Parking lots, warehouse floors, site flatwork, and curb &amp; gutter for commercial developments.",
-            "<a href='/driveways-oklahoma-city' class='text-orange no-underline font-medium'>Driveways</a> — Sidewalk work often pairs with new driveway installation or replacement.",
+            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial concrete services</a> — Parking lots, warehouse floors, site flatwork, and curb &amp; gutter for commercial developments.",
+            "<a href='/commercial-curb-and-gutter-oklahoma-city' class='text-orange no-underline font-medium'>Commercial curb &amp; gutter</a> — Parking lot curbing, island curbs, and drive approach cuts.",
+            "<a href='/ada-concrete-ramps-oklahoma-city' class='text-orange no-underline font-medium'>ADA concrete ramps</a> — Accessible curb ramps and detectable warning surfaces.",
+            "<a href='/driveways-oklahoma-city' class='text-orange no-underline font-medium'>Concrete driveway installation</a> — Sidewalk work often pairs with new driveway installation or replacement.",
+            "<a href='/parking-lots-oklahoma-city' class='text-orange no-underline font-medium'>Parking lot replacement</a> — New commercial lots where curb, gutter, and sidewalks are part of the same site package.",
           ],
         },
       ]}

@@ -223,9 +223,11 @@ export default function DrivewaysOklahomaCity() {
           title: "Other Concrete Services",
           titleAccent: "From FDZ.",
           content: [
+            "<a href='/driveway-repair-oklahoma-city' class='text-orange no-underline font-medium'>Driveway Repair</a> — Crack repair, leveling, joint sealing, and honest repair-vs-replace evaluation when a full tear-out isn't needed.",
             "<a href='/patios-oklahoma-city' class='text-orange no-underline font-medium'>Patios &amp; Stamped Concrete</a> — Backyard patios, decorative stamped surfaces, and outdoor living slabs to pair with your new driveway.",
-            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete</a> — Parking lots, warehouse floors, loading dock aprons, and site concrete for commercial properties.",
+            "<a href='/retaining-walls-oklahoma-city' class='text-orange no-underline font-medium'>Retaining Wall Construction</a> — Slope and drainage walls that often accompany driveway and grade changes.",
             "<a href='/sidewalks-oklahoma-city' class='text-orange no-underline font-medium'>Sidewalks &amp; Curb and Gutter</a> — Walkways, ADA curb ramps, and curb work to complete your property.",
+            "Local driveway pages: <a href='/driveways-edmond' class='text-orange no-underline'>Edmond</a>, <a href='/driveways-norman' class='text-orange no-underline'>Norman</a>, <a href='/driveways-yukon' class='text-orange no-underline'>Yukon</a>, <a href='/driveways-moore' class='text-orange no-underline'>Moore</a>, and <a href='/driveways-mustang' class='text-orange no-underline'>Mustang</a>.",
           ],
         },
       ]}

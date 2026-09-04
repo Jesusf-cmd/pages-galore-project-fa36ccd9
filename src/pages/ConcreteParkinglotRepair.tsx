@@ -5,7 +5,7 @@ export default function ConcreteParkinglotRepair() {
     <ServicePage
       enriched
       currentServiceSlug="concrete-parking-lot-repair-oklahoma-city"
-      metaTitle="Concrete Parking Lot Repair Oklahoma City | Commercial Concrete Replacement | FDZ Construction"
+      metaTitle="Concrete Parking Lot Repair OKC | FDZ Construction"
       metaDescription="Concrete parking lot repair in Oklahoma City — panel replacement, trip hazard repair, joint sealing, crack repair, and partial slab replacement. Licensed & insured. Call (405) 458-4805."
       eyebrow="Commercial Concrete · Oklahoma City"
       title="Concrete Parking Lot Repair in"

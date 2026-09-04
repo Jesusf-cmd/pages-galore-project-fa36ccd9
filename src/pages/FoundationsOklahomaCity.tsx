@@ -174,8 +174,11 @@ export default function FoundationsOklahomaCity() {
           title: "Other Concrete Services",
           titleAccent: "From FDZ.",
           content: [
+            "<a href='/foundation-repair-oklahoma-city' class='text-orange no-underline font-medium'>Foundation Repair</a> — Honest repair-vs-replace evaluation when an existing foundation is cracking or settling.",
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete</a> — Warehouse floors, retail pads, loading docks, and site concrete for commercial properties and GC projects.",
-            "<a href='/patios-oklahoma-city' class='text-orange no-underline font-medium'>Patios &amp; Stamped Concrete</a> — Outdoor living slabs on sloped lots often pair with a retaining wall. We handle both.",
+            "<a href='/retaining-walls-oklahoma-city' class='text-orange no-underline font-medium'>Retaining Wall Construction</a> — Structural walls that often pair with foundation and grade work on sloped lots.",
+            "<a href='/patios-oklahoma-city' class='text-orange no-underline font-medium'>Patios &amp; Stamped Concrete</a> — Outdoor living slabs on sloped lots often pair with foundation or retaining work.",
+            "Local foundation pages: <a href='/foundations-edmond' class='text-orange no-underline'>Edmond</a>, <a href='/foundations-norman' class='text-orange no-underline'>Norman</a>, and <a href='/foundations-yukon' class='text-orange no-underline'>Yukon</a>.",
           ],
         },
       ]}

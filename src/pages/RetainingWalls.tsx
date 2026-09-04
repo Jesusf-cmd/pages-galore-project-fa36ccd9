@@ -163,9 +163,11 @@ export default function RetainingWalls() {
           title: "Other Concrete Services",
           titleAccent: "From FDZ.",
           content: [
-            "<a href='/foundations-oklahoma-city' class='text-orange no-underline font-medium'>Concrete Foundations</a> — Retaining walls and foundations often go hand-in-hand on sloped lots.",
-            "<a href='/patios-oklahoma-city' class='text-orange no-underline font-medium'>Patios &amp; Stamped Concrete</a> — Landscape walls frequently paired with patio or outdoor living projects.",
-            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete</a> — Retaining walls for commercial site development and parking lot projects.",
+            "<a href='/foundations-oklahoma-city' class='text-orange no-underline font-medium'>Concrete foundations</a> — Retaining walls and foundations often go hand-in-hand on sloped lots.",
+            "<a href='/patios-oklahoma-city' class='text-orange no-underline font-medium'>Patios &amp; stamped concrete</a> — Landscape walls frequently paired with patio or outdoor living projects.",
+            "<a href='/driveways-oklahoma-city' class='text-orange no-underline font-medium'>Concrete driveway installation</a> — Grade changes at driveways often need a wall and a new pour together.",
+            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial concrete services</a> — Retaining walls for commercial site development and parking lot projects.",
+            "Local retaining wall pages: <a href='/retaining-walls-edmond' class='text-orange no-underline'>Edmond</a> and <a href='/retaining-walls-norman' class='text-orange no-underline'>Norman</a>.",
           ],
         },
       ]}

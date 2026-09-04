@@ -53,7 +53,7 @@ export const routes: PrerenderRoute[] = [
   },
   {
     path: "/skid-steer-services-oklahoma-city",
-    title: "Skid Steer Services Oklahoma City | Land Clearing, Grading & Gravel Driveways | FDZ Construction",
+    title: "Skid Steer Services Oklahoma City | FDZ Construction",
     description: "Skid steer land clearing, dirt work, leveling, gravel grading, gravel driveways & brush hog mowing in OKC. Self-performed, no subcontractors. Free estimate: (405) 458-4805.",
     h1: "Skid Steer Land Clearing & Site Work in Oklahoma City, OK",
     content: "FDZ Construction LLC self-performs skid steer land clearing, dirt work, yard and lot leveling, gravel grading, gravel and dirt driveway installation, and brush hog mowing across the Oklahoma City metro — sized for residential lots and acreage up to about 2 acres. Same self-performed crew and equipment as our concrete and sewer line work, no subcontractors. Typical OKC pricing: land clearing $1,000–$2,200/acre, gravel driveways $1,500–$6,000, brush hog mowing $60–$250/acre. Call (405) 458-4805 for a free on-site estimate.",
@@ -232,10 +232,10 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
   },
   {
     path: "/our-projects",
-    title: "Our Concrete Projects | FDZ Construction LLC | Oklahoma City",
-    description: "View completed concrete projects by FDZ Construction LLC in Oklahoma City, Edmond, Norman, and the OKC metro. Driveways, patios, foundations, and commercial work.",
-    h1: "Our Concrete Projects",
-    content: "View completed concrete projects by FDZ Construction LLC across the Oklahoma City metro area. Featured projects include driveway replacements, stamped concrete patios, commercial parking lots, residential foundations, retaining walls, and sidewalk installations in Edmond, Norman, Yukon, Mustang, Moore, and Oklahoma City. Call (405) 458-4805 for a free estimate.",
+    title: "Our Concrete Projects | FDZ Construction LLC",
+    description: "Browse completed concrete projects across the OKC metro. Driveways, patios, foundations, commercial pours, and retaining walls by FDZ Construction LLC.",
+    h1: "Our Concrete Work Across Oklahoma",
+    content: "Real jobs for Oklahoma City homeowners and businesses — concrete driveways, patios, stamped concrete, foundations, retaining walls, sidewalks, and commercial pours by FDZ Construction LLC. Featured work includes Star Spencer High School ADA ramps and sidewalks, a shop foundation pour in Rosedale, Edmond pier foundations, OKC retaining walls, Guthrie warehouse forklift ramps, and residential work across Edmond, Norman, Yukon, Mustang, and Moore. Call (405) 458-4805 for a free estimate.",
   },
   {
     path: "/blog",
@@ -386,7 +386,7 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
   },
   {
     path: "/bollard-installation-oklahoma-city",
-    title: "Bollard Installation Oklahoma City | Concrete Bollards & Protective Posts | FDZ Construction",
+    title: "Bollard Installation Oklahoma City | FDZ Construction",
     description: "Concrete bollard installation in Oklahoma City — protective bollards for storefronts, dumpster enclosures, dock areas, and drive-through lanes. Licensed & insured. Call (405) 458-4805.",
     h1: "Bollard Installation in Oklahoma City, OK",
     content: "FDZ Construction installs concrete-set bollards for commercial properties, warehouses, distribution centers, retail storefronts, and drive-through facilities across Oklahoma City. We handle core drilling, anchor setting, and sleeve installation in both new concrete and existing slabs. Single bollard or full perimeter. Call (405) 458-4805.",
@@ -449,7 +449,7 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
   },
   {
     path: "/equipment-pad-concrete-oklahoma-city",
-    title: "Equipment Pad Concrete Oklahoma City | Generator, HVAC & Mechanical Pads | FDZ Construction",
+    title: "Equipment Pad Concrete Oklahoma City | FDZ Construction",
     description: "Concrete equipment pads in Oklahoma City — machine pads, generator pads, HVAC slabs, industrial equipment bases. Poured to manufacturer specs. Call (405) 458-4805.",
     h1: "Equipment Pad Concrete in Oklahoma City",
     content: "FDZ Construction LLC pours concrete equipment pads across Oklahoma City — machine pads, generator pads, HVAC equipment pads, transformer pads, compressor and pump bases. Equipment foundations must be poured to the load specs and tolerances required by the equipment manufacturer. Anchor bolt placement from shop drawings, pour to specified PSI and thickness, cure to required strength before equipment set. Generator pads $800–$8,000, machine pads $1,500–$25,000+, HVAC pads $600–$3,000. Call (405) 458-4805.",
@@ -477,7 +477,7 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
   },
   {
     path: "/concrete-parking-lot-repair-oklahoma-city",
-    title: "Concrete Parking Lot Repair Oklahoma City | Commercial Concrete Replacement | FDZ Construction",
+    title: "Concrete Parking Lot Repair OKC | FDZ Construction",
     description: "Concrete parking lot repair in Oklahoma City — panel replacement, trip hazard grinding, joint sealing, crack repair. Sub-base evaluation on every panel replacement. Call (405) 458-4805.",
     h1: "Concrete Parking Lot Repair in Oklahoma City",
     content: "FDZ Construction LLC handles concrete parking lot repair for commercial and retail properties across Oklahoma City. Panel replacement with sub-base evaluation, joint sealing and re-sealing, trip hazard diamond grinding, crack injection and repair, partial slab replacement for areas with widespread failure. Root cause evaluation — honest assessment of repair vs. replacement. Single panel replacement $400–$1,500, joint sealing $1–$4 per linear foot, trip hazard grinding $75–$300. Call (405) 458-4805.",

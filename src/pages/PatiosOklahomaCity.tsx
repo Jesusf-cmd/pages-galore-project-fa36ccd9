@@ -178,8 +178,11 @@ export default function PatiosOklahomaCity() {
           title: "Other Concrete Services",
           titleAccent: "From FDZ.",
           content: [
-            "<a href='/driveways-oklahoma-city' class='text-orange no-underline font-medium'>Driveways</a> — New installation, replacement, and stamped decorative driveways to pair with your patio project.",
-            "<a href='/foundations-oklahoma-city' class='text-orange no-underline font-medium'>Foundations &amp; Retaining Walls</a> — Outdoor living slabs on sloped lots often pair with a retaining wall. We handle both.",
+            "<a href='/driveways-oklahoma-city' class='text-orange no-underline font-medium'>Concrete driveway installation</a> — New installation, replacement, and stamped decorative driveways to pair with your patio project.",
+            "<a href='/retaining-walls-oklahoma-city' class='text-orange no-underline font-medium'>Retaining wall construction</a> — Outdoor living slabs on sloped lots often pair with a retaining wall.",
+            "<a href='/pool-deck-oklahoma-city' class='text-orange no-underline font-medium'>Pool deck concrete</a> — Slip-resistant pool decks for homes, HOAs, and commercial properties.",
+            "<a href='/foundations-oklahoma-city' class='text-orange no-underline font-medium'>Concrete foundations</a> — Garage pads and shop slabs that share the same base-prep standards as patio work.",
+            "Local patio pages: <a href='/patios-edmond' class='text-orange no-underline'>Edmond</a>, <a href='/patios-norman' class='text-orange no-underline'>Norman</a>, <a href='/patios-moore' class='text-orange no-underline'>Moore</a>, and <a href='/patios-yukon' class='text-orange no-underline'>Yukon</a>.",
           ],
         },
       ]}

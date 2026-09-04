@@ -25,7 +25,7 @@ const otherProjects = [
 
 export default function OurProjects() {
   useSEO({
-    title: "Our Concrete Projects in Oklahoma City | FDZ Construction LLC",
+    title: "Our Concrete Projects | FDZ Construction LLC",
     description: "Browse completed concrete projects across the OKC metro. Driveways, patios, foundations, commercial pours, and retaining walls by FDZ Construction LLC.",
     canonical: canonicalUrl("/our-projects"),
   });
