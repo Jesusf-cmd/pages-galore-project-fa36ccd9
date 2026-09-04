@@ -155,6 +155,8 @@ export default function ConcreteParkinglotRepair() {
           title: "Other Commercial Concrete",
           titleAccent: "Services.",
           content: [
+            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — New commercial pours, parking lots, docks, and site flatwork.",
+            "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Crack repair, spalling, trip hazards, and joint failure across commercial properties.",
             "<a href='/commercial-curb-and-gutter-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Curb & Gutter</a> — Curb repair, replacement, and new curb installation for parking lot perimeters and islands.",
             "<a href='/dumpster-pad-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dumpster Pad Concrete</a> — Reinforced dumpster pads for commercial properties — often replaced alongside parking lot repair.",
             "<a href='/truck-court-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Truck Court Concrete</a> — Heavy-duty concrete paving for loading and maneuvering areas adjacent to parking lots.",

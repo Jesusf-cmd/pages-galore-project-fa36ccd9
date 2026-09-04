@@ -160,9 +160,10 @@ export default function CommercialCurbGutter() {
           title: "Other Commercial Concrete",
           titleAccent: "Services.",
           content: [
+            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — Parking lots, docks, warehouse slabs, and commercial site concrete.",
             "<a href='/parking-lots-oklahoma-city' class='text-orange no-underline font-medium'>Parking Lot Concrete</a> — New commercial parking lot installation and full replacement with ADA-compliant layouts throughout OKC.",
-            "<a href='/ada-ramps-oklahoma-city' class='text-orange no-underline font-medium'>ADA Ramps & Compliance</a> — ADA curb ramps, curb cuts, detectable warning surfaces, and accessible route construction.",
-            "<a href='/dumpster-pads-oklahoma-city' class='text-orange no-underline font-medium'>Dumpster Pads</a> — Commercial concrete dumpster pads and trash enclosure coordination for OKC commercial properties.",
+            "<a href='/ada-concrete-ramps-oklahoma-city' class='text-orange no-underline font-medium'>ADA Ramps & Compliance</a> — ADA curb ramps, curb cuts, detectable warning surfaces, and accessible route construction.",
+            "<a href='/dumpster-pad-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dumpster Pads</a> — Commercial concrete dumpster pads and trash enclosure coordination for OKC commercial properties.",
             "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Crack repair, spalling, trip hazard removal, and joint sealing throughout OKC.",
           ],
         },

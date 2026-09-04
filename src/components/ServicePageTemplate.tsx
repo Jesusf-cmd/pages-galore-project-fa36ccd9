@@ -102,9 +102,18 @@ interface ServicePageProps {
   internalLinks?: { services?: boolean; blogs?: boolean; cities?: boolean };
   /** Opt-in Service schema.org JSON-LD (areaServed: Oklahoma City metro). Omit to skip — most pages don't set this. */
   serviceSchema?: { serviceType: string; name: string };
+  /** Hero primary CTA label (still links to /#estimate). */
+  ctaLabel?: string;
+  /** Optional FinalCTA copy override — same estimate path, no separate lead system. */
+  finalCta?: {
+    heading?: string;
+    headingAccent?: string;
+    description?: string;
+    buttonLabel?: string;
+  };
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showEeatBlock, internalLinks, serviceSchema }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showEeatBlock, internalLinks, serviceSchema, ctaLabel, finalCta }: ServicePageProps) {
   const seoTitle = metaTitle || `${title} ${titleAccent.replace('.', '')} | FDZ Construction LLC`;
   const seoDescription = metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155);
   const canonical = currentServiceSlug ? canonicalUrl(`/${currentServiceSlug}`) : undefined;
@@ -167,7 +176,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
           <p className="text-[0.78rem] text-muted-text max-w-[680px] mb-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: modelNote }} />
         )}
         <div className="flex gap-4 flex-wrap">
-          <Link to="/#estimate" className="btn-primary">Get Free Estimate →</Link>
+          <Link to="/#estimate" className="btn-primary">{ctaLabel || "Get Free Estimate →"}</Link>
           <a href="tel:4054584805" className="btn-outline">📞 (405) 458-4805</a>
         </div>
       </section>
@@ -504,7 +513,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         showBlogs={internalLinks?.blogs ?? true}
       />
 
-      <FinalCTA />
+      <FinalCTA {...(finalCta || {})} />
     </main>
   );
 }

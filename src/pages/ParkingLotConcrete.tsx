@@ -179,6 +179,9 @@ export default function ParkingLotConcrete() {
           titleAccent: "From FDZ.",
           content: [
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete</a> — Warehouse slabs, dock pads, retail site concrete, and equipment pads.",
+            "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Crack sealing, spalling, trip hazards, and panel repair when a full lot rebuild is not required.",
+            "<a href='/concrete-parking-lot-repair-oklahoma-city' class='text-orange no-underline font-medium'>Concrete Parking Lot Repair</a> — Panel replacement, joint sealing, and trip hazard grinding for existing lots.",
+            "<a href='/loading-dock-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Concrete Repair</a> — Dock apron, face, and approach slab repairs adjacent to commercial lots.",
             "<a href='/sidewalks-oklahoma-city' class='text-orange no-underline font-medium'>Sidewalks &amp; Curb and Gutter</a> — Often part of the same commercial site scope as parking lot work.",
             "<a href='/foundations-oklahoma-city' class='text-orange no-underline font-medium'>Foundations</a> — Commercial foundation work for the buildings your parking lot serves.",
           ],

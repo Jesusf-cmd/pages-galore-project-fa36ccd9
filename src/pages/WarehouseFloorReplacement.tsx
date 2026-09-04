@@ -129,6 +129,17 @@ export default function WarehouseFloorReplacement() {
             ],
           },
         },
+        {
+          eyebrow: "Related Services",
+          title: "Other Commercial Concrete",
+          titleAccent: "Services.",
+          content: [
+            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — Warehouse floors, docks, parking lots, and commercial site concrete.",
+            "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Localized crack, joint, and panel repair when full floor replacement is not required.",
+            "<a href='/industrial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Industrial Concrete Repair</a> — Forklift damage, joint failure, and heavy-use floor repairs.",
+            "<a href='/loading-dock-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Concrete Repair</a> — Dock apron and approach repairs tied to warehouse operations.",
+          ],
+        },
       ]}
       faq={[
         {

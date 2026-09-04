@@ -114,10 +114,10 @@ export const routes: PrerenderRoute[] = [
   },
   {
     path: "/commercial-concrete-oklahoma-city",
-    title: "Commercial Concrete Contractor Oklahoma City | FDZ Construction LLC",
-    description: "Commercial concrete contractors in Oklahoma City. Loading docks, warehouse slabs, truck courts, equipment pads, bollards, crane foundations, ADA ramps & more. Free estimate: (405) 458-4805.",
+    title: "Commercial Concrete Contractor Oklahoma City | FDZ Construction",
+    description: "Commercial concrete contractor in Oklahoma City. Parking lots, loading docks, warehouse slabs, foundations, equipment pads, ADA, curb & gutter, and commercial repair. Free estimate: (405) 458-4805.",
     h1: "Commercial Concrete Contractor in Oklahoma City",
-    content: "Commercial concrete contractor in Oklahoma City — bollard installation, crane foundations, loading dock repair, dock leveler pit concrete, truck courts, warehouse slab repair, equipment pads, dumpster pads, ADA concrete ramps, curb and gutter, parking lot repair, and more across the OKC metro. COI and bonding available. 4,000+ PSI concrete. Call (405) 458-4805 for a free estimate.",
+    content: "Commercial concrete contractor in Oklahoma City — parking lots, loading docks, warehouse slabs, foundations, equipment pads, ADA ramps, curb and gutter, truck courts, bollards, and commercial repair for GCs, facility managers, and property owners across the OKC metro. COI and bonding available. 4,000+ PSI concrete. Call (405) 458-4805 for a free estimate.",
   },
   {
     path: "/parking-lots-oklahoma-city",
@@ -484,10 +484,10 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
   },
   {
     path: "/commercial-concrete-repair-oklahoma-city",
-    title: "Commercial Concrete Repair Oklahoma City | FDZ Construction LLC",
-    description: "Commercial concrete repair in Oklahoma City — parking lot panel replacement, trip hazard repair, crack sealing, joint repair. Licensed contractor. Call (405) 458-4805.",
+    title: "Commercial Concrete Repair Oklahoma City | FDZ Construction",
+    description: "Commercial concrete repair in Oklahoma City — cracked slabs, spalling, trip hazards, failed joints, parking lots, docks, and warehouse floors. On-site evaluation and written estimate. Call (405) 458-4805.",
     h1: "Commercial Concrete Repair in Oklahoma City",
-    content: "FDZ Construction LLC provides commercial concrete repair for parking lots, retail sites, office properties, and commercial flatwork across Oklahoma City. Services: parking lot panel replacement, trip hazard grinding and repair, crack sealing, joint sealant replacement, spall patching, ADA ramp repair. Root cause evaluation before recommending repair vs. replacement — honest assessment, not upsell. Crack sealing $50–$200/linear foot, panel replacement $400–$1,500, trip hazard grinding $75–$300 per hazard. Call (405) 458-4805.",
+    content: "If you have cracked slabs, spalling, settlement, trip hazards, failed joints, damaged loading areas, parking lot failures, warehouse slab damage, or drainage-related deterioration, FDZ evaluates the problem on site and provides a written commercial concrete repair estimate for Oklahoma City and the metro. Repair, partial panel replacement, or larger replacement — recommended based on cracking, settlement, base condition, drainage, traffic, and downtime. Call (405) 458-4805.",
   },
   {
     path: "/commercial-curb-and-gutter-oklahoma-city",

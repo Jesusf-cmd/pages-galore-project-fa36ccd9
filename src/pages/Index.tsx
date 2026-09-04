@@ -75,6 +75,7 @@ export default function Index() {
       </ScrollReveal>
       <HowWeWorkSection />
       <ServicesSection />
+      <CommercialCapabilitySection />
       <SiteWorkSection />
       <WhyUsSection />
       <RecentProjectsSection />
@@ -501,6 +502,26 @@ function ServicesSection() {
             </Link>
           ))}
         </div>
+      </section>
+    </ScrollReveal>
+  );
+}
+
+function CommercialCapabilitySection() {
+  return (
+    <ScrollReveal>
+      <section className="section-padding section-alt">
+        <div className="section-eye">Commercial concrete</div>
+        <h2 className="mb-3">Built for Commercial<br/><em className="h2-accent">Oklahoma City Sites.</em></h2>
+        <p className="prose-muted mb-6 max-w-[720px]">
+          FDZ pours and repairs commercial concrete for GCs, facility managers, developers, and property owners — parking lots, loading docks, warehouse slabs, foundations, equipment pads, and ADA site work. Self-performed crew, plan/spec coordination, and scheduling around occupied facilities.
+        </p>
+        <Link
+          to="/commercial-concrete-oklahoma-city"
+          className="btn-primary inline-flex"
+        >
+          Commercial Concrete Contractor in Oklahoma City →
+        </Link>
       </section>
     </ScrollReveal>
   );

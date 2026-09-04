@@ -116,6 +116,17 @@ export default function IndustrialConcreteRepair() {
             ],
           },
         },
+        {
+          eyebrow: "Related Services",
+          title: "Other Commercial Concrete",
+          titleAccent: "Services.",
+          content: [
+            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — New pours, replacements, and commercial site flatwork.",
+            "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Crack sealing, spalling, trip hazards, and panel repair for commercial properties.",
+            "<a href='/loading-dock-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Concrete Repair</a> — Dock apron, face, and approach slab repairs.",
+            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Slab Repair</a> — Phased interior floor repair and replacement.",
+          ],
+        },
       ]}
       faq={[
         {

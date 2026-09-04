@@ -134,6 +134,7 @@ const data: Record<string, RepairData> = {
     ],
     parentService: { label: "All Concrete Driveways", to: "/driveways-oklahoma-city" },
     related: [
+      { label: "Commercial Concrete Repair", to: "/commercial-concrete-repair-oklahoma-city" },
       { label: "Foundation Repair", to: "/foundation-repair-oklahoma-city" },
       { label: "Driveways in Edmond", to: "/driveways-edmond" },
       { label: "Driveways in Norman", to: "/driveways-norman" },

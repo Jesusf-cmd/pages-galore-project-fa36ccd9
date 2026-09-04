@@ -120,6 +120,17 @@ export default function LoadingDockConstruction() {
             ],
           },
         },
+        {
+          eyebrow: "Related Services",
+          title: "Other Commercial Concrete",
+          titleAccent: "Services.",
+          content: [
+            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — Parking lots, warehouse slabs, foundations, and commercial site concrete.",
+            "<a href='/loading-dock-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Concrete Repair</a> — Apron, face, and approach repairs when a full rebuild is not required.",
+            "<a href='/loading-dock-replacement-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Replacement</a> — Full demolition and replacement for failed docks.",
+            "<a href='/dock-leveler-pit-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dock Leveler Pit Concrete</a> — New pits and retrofits coordinated with equipment suppliers.",
+          ],
+        },
       ]}
       faq={[
         {

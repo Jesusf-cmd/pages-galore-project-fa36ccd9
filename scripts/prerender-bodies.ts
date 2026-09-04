@@ -606,46 +606,58 @@ export const prerenderBodies: Record<string, string> = {
   `,
 
   "/commercial-concrete-oklahoma-city": `
-    <h1>Commercial Concrete Contractors in Oklahoma City</h1>
-    <p>Commercial concrete contractors in Oklahoma City — FDZ Construction pours warehouse floors, retail pads, equipment slabs, loading docks, and site flatwork for property owners, developers, and general contractors across the OKC metro using 4,000+ PSI mixes and base preparation built for heavy, sustained loads. Based at 7004 S Indiana Ave in south OKC — fastest response for OKC projects.</p>
+    <h1>Commercial Concrete Contractor in Oklahoma City</h1>
+    <p>FDZ Construction is a commercial concrete contractor serving Oklahoma City and the metro — new pours, replacements, and repairs for GCs, property owners, developers, and facility managers. Based at 7004 S Indiana Ave in south OKC — call <a href="tel:4054584805">(405) 458-4805</a>.</p>
     <!-- TODO: add real commercial project photos when available -->
     <h2>Commercial Concrete Services in Oklahoma City</h2>
-    <h3>Parking Lots</h3>
+    <h3>Commercial Parking Lots</h3>
     <ul>
-      <li>Layout for drainage, ADA-accessible parking, and traffic flow</li>
-      <li>High-PSI mix for vehicle loads</li>
-      <li>Expansion joint planning for large-area pours</li>
+      <li>New ADA-compliant commercial parking lots and drive lanes</li>
+      <li>Drainage grading, high-PSI mix, and expansion joint planning for large pours</li>
+      <li><a href="/parking-lots-oklahoma-city">Parking lot construction</a> · <a href="/concrete-parking-lot-repair-oklahoma-city">Parking lot repair</a></li>
     </ul>
-    <h3>Warehouse and Industrial Slabs</h3>
+    <h3>Loading Docks</h3>
     <ul>
-      <li>Flat, level pours for racking systems and forklift traffic</li>
-      <li>Thickness and PSI specified per load requirements</li>
-      <li>Large-area pours coordinated with GC schedule</li>
+      <li>New dock construction, full replacement, and apron/face/pit repairs</li>
+      <li><a href="/loading-dock-construction-oklahoma-city">Dock construction</a> · <a href="/loading-dock-replacement-oklahoma-city">Dock replacement</a> · <a href="/loading-dock-concrete-repair-oklahoma-city">Dock repair</a></li>
     </ul>
-    <h3>Retail Pads and Site Concrete</h3>
+    <h3>Warehouse Concrete</h3>
     <ul>
-      <li>Aprons, drive approaches, sidewalks, and entry pads</li>
-      <li>ADA compliance for accessible routes</li>
-      <li>Coordination with other site work trades</li>
+      <li>Phased interior slab replacement in occupied facilities</li>
+      <li>Laser-screed flatwork for forklift operations</li>
+      <li><a href="/warehouse-slab-repair-oklahoma-city">Warehouse slab repair</a></li>
     </ul>
-    <h3>Dock Pads and Loading Areas</h3>
+    <h3>Commercial &amp; Industrial Concrete Repair</h3>
     <ul>
-      <li>Reinforced for heavy vehicle and equipment loads</li>
-      <li>Drainage away from building entry</li>
+      <li>Crack sealing, spalling, trip hazards, joint failure, and panel repair</li>
+      <li><a href="/commercial-concrete-repair-oklahoma-city">Commercial concrete repair</a> · <a href="/industrial-concrete-repair-oklahoma-city">Industrial concrete repair</a></li>
     </ul>
-    <h3>Commercial Foundations</h3>
+    <h3>Concrete Foundations &amp; Slab-on-Grade</h3>
     <ul>
-      <li>See our <a href="/foundations-oklahoma-city">Foundations page</a> for full detail</li>
-      <li>COI and bonding documentation available for bid process</li>
-      <li>Coordination with GC and inspection schedule</li>
+      <li>Commercial slab-on-grade, footings, and pads</li>
+      <li>Reinforcement and thickness set to load requirements and engineered plans</li>
+      <li><a href="/foundations-oklahoma-city">Commercial foundations</a></li>
     </ul>
-    <h2>Working with General Contractors and Property Managers</h2>
+    <h3>Equipment Pads, ADA, Curb &amp; Gutter</h3>
     <ul>
-      <li>Certificate of insurance and bonding documentation available as part of the bid process</li>
-      <li>We coordinate with your project schedule and other trades on site</li>
-      <li>4,000+ PSI commercial mix standard; adjusted for specific load requirements</li>
-      <li>Free on-site estimates and competitive bid turnaround</li>
-      <li>Licensed, bonded, and insured in Oklahoma</li>
+      <li><a href="/equipment-pad-concrete-oklahoma-city">Equipment pad concrete</a> · <a href="/dumpster-pad-concrete-oklahoma-city">Dumpster pads</a></li>
+      <li><a href="/ada-concrete-ramps-oklahoma-city">ADA ramps</a> · <a href="/sidewalks-oklahoma-city">Sidewalks</a> · <a href="/commercial-curb-and-gutter-oklahoma-city">Curb &amp; gutter</a></li>
+    </ul>
+    <h3>Truck Courts &amp; Bollards</h3>
+    <ul>
+      <li><a href="/truck-court-concrete-oklahoma-city">Truck courts</a> · <a href="/bollard-installation-oklahoma-city">Bollard installation</a></li>
+      <li><a href="/dock-leveler-pit-concrete-oklahoma-city">Dock leveler pits</a> · <a href="/crane-foundation-installation-oklahoma-city">Crane foundations</a></li>
+    </ul>
+    <h2>Commercial Concrete for Oklahoma City Projects</h2>
+    <p>FDZ Construction works with general contractors, facility managers, developers, commercial property managers, building owners, and industrial facilities across the Oklahoma City metro. Whether you are bidding a new pad, replacing a failed dock apron, or repairing trip hazards on an occupied site, we scope the concrete work so it fits the rest of the project.</p>
+    <p>On GC-managed jobs we review plans and specs, confirm slab thickness, reinforcement, and joint layout, and lock pour dates around other trades. Certificate of insurance and bonding documentation is available as part of the bid process. On owner-direct and facility work we schedule around operations — after-hours, weekends, and phased sequences when a dock, warehouse aisle, or parking lane has to stay open.</p>
+    <p>We dig into base conditions before recommending repair or replacement, place rebar per the load requirements on the drawings, and saw-cut and seal joints on schedule. Estimates are written after a site visit or plan review — not over the phone. Call <a href="tel:4054584805">(405) 458-4805</a> with drawings, photos, or a scope list. <a href="/#estimate">Request a commercial concrete estimate</a>.</p>
+    <h2>Verified Commercial Concrete Work Across the OKC Metro</h2>
+    <ul>
+      <li><strong>Guthrie warehouse forklift ramp</strong> — Reinforced ramp poured inside a live warehouse with active racking and inventory; power-trowel finish flush with the existing floor.</li>
+      <li><strong>Rosedale 10,000 sq ft shop foundation</strong> — Commercial foundation pour on expansive clay with engineered rebar and a single coordinated pour. Video on <a href="/our-projects">our projects page</a>.</li>
+      <li><strong>Yukon commercial parking lot</strong> — 4,200 sq ft, 5&quot; reinforced concrete for a retail strip, completed in 5 days. <a href="/parking-lots-oklahoma-city">Commercial parking lot construction</a>.</li>
+      <li><strong>Star Spencer High School (Spencer)</strong> — Stairs and ADA-compliant sidewalks/ramps for a public school project. <a href="/ada-concrete-ramps-oklahoma-city">ADA ramps</a> · <a href="/sidewalks-oklahoma-city">sidewalks</a>.</li>
     </ul>
     ${processSection("From Plans to Sealed Slab", [
       { title: "Scope & coordination", description: "We review plans and specs with your GC and engineer and lock in a pour schedule that fits the other trades." },
@@ -687,6 +699,44 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/bollard-installation-oklahoma-city">Bollard installation</a> · <a href="/ada-concrete-ramps-oklahoma-city">ADA concrete ramps</a> · <a href="/equipment-pad-concrete-oklahoma-city">Equipment pads</a></li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    ${trustParagraph()}
+  `,
+
+  "/commercial-concrete-repair-oklahoma-city": `
+    <h1>Commercial Concrete Repair in Oklahoma City</h1>
+    <p>If you have cracked slabs, spalling, settlement, trip hazards, failed joints, damaged loading areas, parking lot failures, warehouse slab damage, equipment pad damage, or drainage-related deterioration — this page is for an evaluation and written estimate. Call <a href="tel:4054584805">(405) 458-4805</a> or <a href="/#estimate">request a commercial concrete repair estimate</a>.</p>
+    <h2>When Concrete Can Be Repaired vs. When Replacement Makes More Sense</h2>
+    <p>The right answer depends on cracking extent, settlement, base/subgrade condition, drainage, surface deterioration, traffic/loading, downtime, and access. FDZ does not certify structural adequacy — that stays with your design professional when required. We evaluate what we see on site and recommend repair, partial panel replacement, or larger replacement.</p>
+    <ul>
+      <li>Localized cracks, spalling, or failed sealant with a stable slab — often repair</li>
+      <li>Single settled panel — foam lift or partial panel replacement when neighbors are sound</li>
+      <li>Widespread cracking, ongoing settlement, slab flex, or failed subgrade — replacement evaluation</li>
+    </ul>
+    <h2>Commercial Concrete Repair Use Cases</h2>
+    <ul>
+      <li><a href="/concrete-parking-lot-repair-oklahoma-city">Parking lot repair</a> · <a href="/parking-lots-oklahoma-city">Parking lot construction</a></li>
+      <li><a href="/loading-dock-concrete-repair-oklahoma-city">Loading dock concrete repair</a></li>
+      <li><a href="/warehouse-slab-repair-oklahoma-city">Warehouse slab repair</a> · <a href="/industrial-concrete-repair-oklahoma-city">Industrial concrete repair</a></li>
+      <li><a href="/sidewalks-oklahoma-city">Sidewalks</a> · <a href="/ada-concrete-ramps-oklahoma-city">ADA ramps</a></li>
+      <li><a href="/equipment-pad-concrete-oklahoma-city">Equipment pads</a> · <a href="/commercial-curb-and-gutter-oklahoma-city">Curb &amp; gutter</a></li>
+      <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete contractor</a></li>
+    </ul>
+    ${processSection("The Commercial Repair Process", [
+      { title: "On-site evaluation", description: "Walk the damage, note cracking, settlement, joints, drainage, and access — contractor evaluation for estimating, not an engineering inspection." },
+      { title: "Repair vs. replace recommendation", description: "Honest framing of repair, partial replacement, or larger replacement based on site conditions." },
+      { title: "Written scope & estimate", description: "Itemized written estimate — no verbal commercial quotes." },
+      { title: "Prep, repair & documentation", description: "Execute the scoped work and provide completion documentation for property files when applicable." },
+    ])}
+    ${faqSection("Commercial Concrete Repair FAQ", [
+      { question: "Can commercial concrete be repaired instead of replaced?", answer: "Often yes when damage is localized and the base is stable. Widespread cracking, ongoing settlement, slab flex, or failed subgrade usually push toward larger replacement." },
+      { question: "What causes commercial concrete slabs to crack or settle in Oklahoma City?", answer: "Expansive clay, poor base prep, thin slabs for the traffic, failed joint sealant, drainage problems, and heavy loading all accelerate cracking and settlement." },
+      { question: "Can FDZ replace only the damaged section?", answer: "Yes. Partial panel or bay replacement is common when adjacent concrete is still serviceable." },
+      { question: "Can concrete repairs be phased around facility operations?", answer: "Yes — by aisle, dock, or parking bay, including after-hours work when the site must stay open." },
+      { question: "Do you repair loading docks and parking lots?", answer: "Yes. See our loading dock concrete repair and concrete parking lot repair pages for dedicated detail." },
+      { question: "How do you estimate commercial concrete repairs?", answer: "We review photos and problem details, typically walk the site, and provide a written estimate with the recommended method." },
+      { question: "How do I schedule a commercial concrete repair estimate?", answer: "Call (405) 458-4805 or use the estimate form with facility type, location, affected area, problem description, photos, and desired timing." },
+    ])}
+    <p><strong>Request a commercial concrete repair estimate:</strong> <a href="/#estimate">Estimate form</a> · <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
