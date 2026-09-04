@@ -1,6 +1,23 @@
 export const TRUST_LINE =
   "FDZ Construction LLC is licensed, bonded, and insured in Oklahoma — 8+ years of experience serving the OKC metro, and every project is backed by a 2-year workmanship warranty.";
 
+/**
+ * Strip raw business emails / mailto from HTML so Cloudflare Email Address
+ * Obfuscation cannot rewrite them into crawlable /cdn-cgi/l/email-protection links.
+ * Replaces with a site contact-form anchor (no email address in markup).
+ */
+export function withoutCrawlableEmail(html: string): string {
+  return html
+    .replace(
+      /<a\s+[^>]*href=["']mailto:jesus@fdzconstruction\.com["'][^>]*>[\s\S]*?<\/a>/gi,
+      '<a href="/#contact">Email FDZ Construction</a>',
+    )
+    .replace(/mailto:jesus@fdzconstruction\.com/gi, "/#contact")
+    .replace(/\s*or email jesus@fdzconstruction\.com/gi, " or use our contact form")
+    .replace(/email jesus@fdzconstruction\.com/gi, "use our contact form")
+    .replace(/jesus@fdzconstruction\.com/gi, "our contact form");
+}
+
 export function trustParagraph(): string {
   return `<p><strong>${TRUST_LINE}</strong></p>`;
 }

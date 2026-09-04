@@ -12,6 +12,7 @@ import tiedRebarImg from "@/assets/tied-rebar.webp";
 import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
 import TradeBadge from "@/components/TradeBadge";
+import MailtoLink from "@/components/MailtoLink";
 import { useSEO } from "@/hooks/useSEO";
 import { supabase } from "@/integrations/supabase/client";
 import FAQ from "@/components/FAQ";
@@ -396,7 +397,7 @@ function AboutSection() {
             Our team understands Oklahoma&apos;s unique conditions. From intense summer heat to winter freeze-thaw cycles and Oklahoma&apos;s heavy clay soil, we build concrete and repair sewer lines to handle what this state throws at them. Every job starts with a free, no-obligation estimate.
           </p>
           <p className="prose-muted mb-8">
-            We&apos;re not a national franchise. FDZ Construction LLC is your local Oklahoma City company — our own crew handles every concrete and sewer line project from start to finish. Call us at <a href="tel:4054584805" className="text-orange no-underline font-bold">(405) 458-4805</a> or email <a href="mailto:jesus@fdzconstruction.com" className="text-orange no-underline">jesus@fdzconstruction.com</a>.
+            We&apos;re not a national franchise. FDZ Construction LLC is your local Oklahoma City company — our own crew handles every concrete and sewer line project from start to finish. Call us at <a href="tel:4054584805" className="text-orange no-underline font-bold">(405) 458-4805</a> or <MailtoLink className="text-orange no-underline" />.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Link to="/driveways-oklahoma-city" className="btn-primary text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Concrete Services →</Link>

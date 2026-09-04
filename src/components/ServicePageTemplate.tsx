@@ -10,6 +10,7 @@ import ProcessSteps from "@/components/ProcessSteps";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { canonicalUrl } from "@/lib/siteUrl";
+import { withoutCrawlableEmail } from "@/lib/contact";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import EeatBlock from "@/components/EeatBlock";
 
@@ -171,9 +172,9 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         <span className="eyebrow mb-5 block">{eyebrow}</span>
         {badge && <div className="mb-4"><TradeBadge model={badge} /></div>}
         <h1 className="max-w-[820px] mb-5">{title}<br/><span className="text-orange">{titleAccent}</span></h1>
-        <p className={`prose-muted max-w-[680px] ${modelNote ? "mb-4" : "mb-8"}`} dangerouslySetInnerHTML={{ __html: description }} />
+        <p className={`prose-muted max-w-[680px] ${modelNote ? "mb-4" : "mb-8"}`} dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(description) }} />
         {modelNote && (
-          <p className="text-[0.78rem] text-muted-text max-w-[680px] mb-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: modelNote }} />
+          <p className="text-[0.78rem] text-muted-text max-w-[680px] mb-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(modelNote) }} />
         )}
         <div className="flex gap-4 flex-wrap">
           <Link to="/#estimate" className="btn-primary">{ctaLabel || "Get Free Estimate →"}</Link>
@@ -197,7 +198,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         >
           <p
             className="text-center text-[0.9rem] md:text-base text-white font-medium max-w-3xl mx-auto leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: emergencyCallout }}
+            dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(emergencyCallout) }}
           />
         </div>
       )}
@@ -206,7 +207,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
       {introText && (
         <ScrollReveal>
           <section className="section-padding">
-            <p className="prose-muted max-w-[820px]" dangerouslySetInnerHTML={{ __html: introText }} />
+            <p className="prose-muted max-w-[820px]" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(introText) }} />
           </section>
         </ScrollReveal>
       )}
@@ -217,7 +218,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
           <section className="section-padding section-alt">
             <div className="section-eye">Local Expertise</div>
             <h2 className="mb-4">Built for<br/><em className="h2-accent">Oklahoma Soil.</em></h2>
-            <div className="info-block"><p dangerouslySetInnerHTML={{ __html: localExpertiseNote }} /></div>
+            <div className="info-block"><p dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(localExpertiseNote) }} /></div>
           </section>
         </ScrollReveal>
       )}
@@ -256,7 +257,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
                     {item.bullets.map((b, j) => (
                       <li key={j} className="flex items-baseline gap-2 text-[0.88rem] text-muted-text leading-relaxed font-light">
                         <span className="text-orange flex-shrink-0">▸</span>
-                        <span dangerouslySetInnerHTML={{ __html: b }} />
+                        <span dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(b) }} />
                       </li>
                     ))}
                   </ul>
@@ -273,7 +274,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
             <div className="section-eye">{s.eyebrow}</div>
             <h2 className="mb-4">{s.title}<br/><em className="h2-accent">{s.titleAccent}</em></h2>
             {s.content.map((p, j) => (
-              <p key={j} className="prose-muted mb-5" dangerouslySetInnerHTML={{ __html: p }} />
+              <p key={j} className="prose-muted mb-5" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(p) }} />
             ))}
             {s.stats && (
               <div className="grid grid-cols-3 gap-px bg-concrete/[0.08] mt-8" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
@@ -290,13 +291,13 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
                 <thead><tr>{s.table.headers.map((h, k) => <th key={k}>{h}</th>)}</tr></thead>
                 <tbody>
                   {s.table.rows.map((row, k) => (
-                    <tr key={k}>{row.map((cell, l) => <td key={l} dangerouslySetInnerHTML={{ __html: cell }} />)}</tr>
+                    <tr key={k}>{row.map((cell, l) => <td key={l} dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(cell) }} />)}</tr>
                   ))}
                 </tbody>
               </table>
             )}
             {s.infoBlock && (
-              <div className="info-block"><p dangerouslySetInnerHTML={{ __html: s.infoBlock }} /></div>
+              <div className="info-block"><p dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(s.infoBlock) }} /></div>
             )}
           </section>
         </ScrollReveal>
@@ -308,7 +309,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
           <section className="section-padding">
             <div className="section-eye">{projectGallery.eyebrow || "Recent Work"}</div>
             <h2 className="mb-4">{projectGallery.title}<br/><em className="h2-accent">{projectGallery.titleAccent || "By FDZ Construction."}</em></h2>
-            {projectGallery.intro && <p className="prose-muted mb-8 max-w-[820px]" dangerouslySetInnerHTML={{ __html: projectGallery.intro }} />}
+            {projectGallery.intro && <p className="prose-muted mb-8 max-w-[820px]" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(projectGallery.intro) }} />}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
               {projectGallery.photos.map((photo, i) => (
                 <div key={i} className="bg-darker overflow-hidden aspect-[4/3]">
@@ -334,7 +335,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
           <section className="section-padding section-alt">
             <div className="section-eye">{videoGallery.eyebrow || "Watch Our Work"}</div>
             <h2 className="mb-4">{videoGallery.title}<br/><em className="h2-accent">{videoGallery.titleAccent || "In Action."}</em></h2>
-            {videoGallery.intro && <p className="prose-muted mb-8 max-w-[820px]" dangerouslySetInnerHTML={{ __html: videoGallery.intro }} />}
+            {videoGallery.intro && <p className="prose-muted mb-8 max-w-[820px]" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(videoGallery.intro) }} />}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
               {videoGallery.videos.map((v, i) => (
                 <div key={i} className="bg-darker overflow-hidden">
@@ -409,7 +410,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
           <section className="section-padding">
             <div className="section-eye">{projectTypesEyebrow || "Common Project Types"}</div>
             <h2 className="mb-4">{projectTypesTitle || "Projects We"}<br/><em className="h2-accent">{projectTypesTitleAccent || "Take On."}</em></h2>
-            {projectTypesIntro && <p className="prose-muted mb-6 max-w-[820px]" dangerouslySetInnerHTML={{ __html: projectTypesIntro }} />}
+            {projectTypesIntro && <p className="prose-muted mb-6 max-w-[820px]" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(projectTypesIntro) }} />}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
               {projectTypes.map((pt, i) => (
                 <div key={i} className="bg-stone p-5 md:p-6">
@@ -471,7 +472,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
       {resolvedTrustLine && (
         <ScrollReveal>
           <section className="section-padding">
-            <div className="info-block"><p dangerouslySetInnerHTML={{ __html: resolvedTrustLine }} /></div>
+            <div className="info-block"><p dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(resolvedTrustLine) }} /></div>
           </section>
         </ScrollReveal>
       )}
@@ -498,7 +499,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         <section className="section-padding">
           <div className="section-eye">Service Areas We Cover</div>
           <h2 className="mb-4">Serving the Entire<br/><em className="h2-accent">OKC Metro.</em></h2>
-          <p className="prose-muted mb-3" dangerouslySetInnerHTML={{ __html: cityBlockIntro || `FDZ Construction LLC provides this service throughout Oklahoma City and the surrounding metro. We serve <a href="/oklahoma-city-concrete" class="text-orange no-underline">Oklahoma City</a>, <a href="/edmond-concrete" class="text-orange no-underline">Edmond</a>, <a href="/norman-ok-concrete" class="text-orange no-underline">Norman</a>, <a href="/moore-oklahoma-concrete" class="text-orange no-underline">Moore</a>, <a href="/yukon-oklahoma-concrete" class="text-orange no-underline">Yukon</a>, <a href="/mustang-oklahoma-concrete" class="text-orange no-underline">Mustang</a>, <a href="/midwest-city-oklahoma-concrete" class="text-orange no-underline">Midwest City</a>, and <a href="/del-city-oklahoma-concrete" class="text-orange no-underline">Del City</a> — same crew, same standards, same free estimate process on every job across the metro.` }} />
+          <p className="prose-muted mb-3" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(cityBlockIntro || `FDZ Construction LLC provides this service throughout Oklahoma City and the surrounding metro. We serve <a href="/oklahoma-city-concrete" class="text-orange no-underline">Oklahoma City</a>, <a href="/edmond-concrete" class="text-orange no-underline">Edmond</a>, <a href="/norman-ok-concrete" class="text-orange no-underline">Norman</a>, <a href="/moore-oklahoma-concrete" class="text-orange no-underline">Moore</a>, <a href="/yukon-oklahoma-concrete" class="text-orange no-underline">Yukon</a>, <a href="/mustang-oklahoma-concrete" class="text-orange no-underline">Mustang</a>, <a href="/midwest-city-oklahoma-concrete" class="text-orange no-underline">Midwest City</a>, and <a href="/del-city-oklahoma-concrete" class="text-orange no-underline">Del City</a> — same crew, same standards, same free estimate process on every job across the metro.`) }} />
           <p className="text-[0.78rem] text-muted-text mb-6">
             <strong className="text-concrete">OKC metro zip codes served:</strong> 73003, 73012, 73013, 73034 (Edmond) · 73025, 73099 (Yukon/Mustang) · 73069, 73071, 73072 (Norman) · 73160 (Moore) · 73110, 73130 (Midwest City) · 73107, 73109, 73112, 73118, 73120, 73127, 73132, 73142, 73159, 73162 (OKC) and surrounding areas.
           </p>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
+import MailtoLink from "@/components/MailtoLink";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { canonicalUrl } from "@/lib/siteUrl";
@@ -481,7 +482,7 @@ export default function PoolDeckOklahomaCity() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <a href="tel:4054584805" className="btn-primary text-center">📞 (405) 458-4805</a>
-              <a href="mailto:jesus@fdzconstruction.com" className="btn-outline text-center">jesus@fdzconstruction.com</a>
+              <MailtoLink className="btn-outline text-center" />
             </div>
             <p className="text-[0.78rem] text-muted-text">
               7004 S Indiana Ave, Oklahoma City, OK 73159 · Licensed, bonded & insured in Oklahoma · 2-year workmanship warranty on all pool deck work

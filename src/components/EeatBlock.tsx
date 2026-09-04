@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import MailtoLink from "@/components/MailtoLink";
 
 /** Owner and company trust signals — use on homepage, sewer page, and key landers. */
 export default function EeatBlock({ compact }: { compact?: boolean }) {
@@ -24,8 +25,8 @@ export default function EeatBlock({ compact }: { compact?: boolean }) {
       </ul>
       {!compact && (
         <p className="text-[0.78rem] text-muted-text">
-          Questions before you book? Call David&apos;s team at <a href="tel:4054584805" className="text-orange no-underline font-medium">(405) 458-4805</a> or email{" "}
-          <a href="mailto:jesus@fdzconstruction.com" className="text-orange no-underline">jesus@fdzconstruction.com</a>.
+          Questions before you book? Call David&apos;s team at <a href="tel:4054584805" className="text-orange no-underline font-medium">(405) 458-4805</a> or{" "}
+          <MailtoLink className="text-orange no-underline" />.
           {" "}See our <Link to="/sewer-line-repair-oklahoma-city#warranty" className="text-orange no-underline">warranty details</Link> and full{" "}
           <Link to="/sewer-line-repair-oklahoma-city" className="text-orange no-underline">sewer line repair process</Link>.
         </p>

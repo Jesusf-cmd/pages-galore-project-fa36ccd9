@@ -1,6 +1,7 @@
 import type { Plugin } from "vite";
 import { getPrerenderBody, getSkipFooterNav } from "./prerender-bodies";
 import { routes, getCanonical, type PrerenderRoute } from "./prerender-routes";
+import { withoutCrawlableEmail } from "./prerender-helpers";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -145,11 +146,11 @@ function buildPrerenderMarkup(route: PrerenderRoute): string {
             ${renderLinks(serviceAreaLinks)}
           </nav>
         </section>
-        <p><strong>Call:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
+        <p><strong>Call:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="/#contact">Email FDZ Construction</a></p>
       </footer>
     `;
 
-  return `
+  return withoutCrawlableEmail(`
     <header>
       <p>FDZ Construction LLC</p>
       <nav aria-label="Primary navigation">
@@ -160,7 +161,7 @@ function buildPrerenderMarkup(route: PrerenderRoute): string {
       <article>${articleContent}</article>
       ${footerNav}
     </main>
-  `;
+  `);
 }
 
 function fallbackParagraphs(content: string): string {

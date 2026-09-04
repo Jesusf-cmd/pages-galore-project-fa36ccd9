@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
+import MailtoLink from "@/components/MailtoLink";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { canonicalUrl } from "@/lib/siteUrl";
+import { withoutCrawlableEmail } from "@/lib/contact";
 
 interface ServiceInCityData {
   // routing + SEO
@@ -1062,7 +1064,7 @@ export default function ServiceInCity({ slug }: { slug: string }) {
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">{d.eyebrow}</span>
         <h1 className="max-w-[820px] mb-5">{d.h1Lead}<br/><span className="text-orange">{d.h1Accent}</span></h1>
-        <p className="prose-muted max-w-[680px] mb-8" dangerouslySetInnerHTML={{ __html: d.heroBlurbHtml }} />
+        <p className="prose-muted max-w-[680px] mb-8" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(d.heroBlurbHtml) }} />
         <div className="flex gap-4 flex-wrap">
           <Link to="/#estimate" className="btn-primary">Get Free Estimate →</Link>
           <a href="tel:4054584805" className="btn-outline">📞 (405) 458-4805</a>
@@ -1075,7 +1077,7 @@ export default function ServiceInCity({ slug }: { slug: string }) {
           <div className="section-eye">The Real Failure Mode</div>
           <h2 className="mb-4">{d.problemTitle}<br/><em className="h2-accent">{d.problemAccent}</em></h2>
           {d.problemHtml.map((p, i) => (
-            <p key={i} className="prose-muted mb-4 max-w-[820px]" dangerouslySetInnerHTML={{ __html: p }} />
+            <p key={i} className="prose-muted mb-4 max-w-[820px]" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(p) }} />
           ))}
         </section>
       </ScrollReveal>
@@ -1085,7 +1087,7 @@ export default function ServiceInCity({ slug }: { slug: string }) {
           <div className="section-eye">Local Conditions</div>
           <h2 className="mb-4">{d.localConditionsTitle}<br/><em className="h2-accent">{d.localConditionsAccent}</em></h2>
           {d.localConditionsHtml.map((p, i) => (
-            <p key={i} className="prose-muted mb-4 max-w-[820px]" dangerouslySetInnerHTML={{ __html: p }} />
+            <p key={i} className="prose-muted mb-4 max-w-[820px]" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(p) }} />
           ))}
         </section>
       </ScrollReveal>
@@ -1110,8 +1112,8 @@ export default function ServiceInCity({ slug }: { slug: string }) {
           <h2 className="mb-4">{d.midCtaTitle}<br/><em className="h2-accent">{d.midCtaAccent}</em></h2>
           <p className="prose-muted max-w-[560px] mx-auto mb-6">
             Free on-site estimate, clear scope, written quote.
-            Call <a href="tel:4054584805" className="text-orange no-underline">(405) 458-4805</a> or
-            email <a href="mailto:jesus@fdzconstruction.com" className="text-orange no-underline">jesus@fdzconstruction.com</a>.
+            Call <a href="tel:4054584805" className="text-orange no-underline">(405) 458-4805</a> or{" "}
+            <MailtoLink className="text-orange no-underline" />.
           </p>
           <div className="flex gap-4 flex-wrap justify-center">
             <Link to="/#estimate" className="btn-primary">Request Estimate →</Link>
