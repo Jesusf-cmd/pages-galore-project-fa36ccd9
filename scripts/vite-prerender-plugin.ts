@@ -97,6 +97,8 @@ function generateRouteHtml(template: string, route: PrerenderRoute): string {
     }
   }
 
+  // Crawler HTML is written into #root. The client uses createRoot() (not
+  // hydrateRoot), so React replaces this markup on startup instead of hydrating it.
   // JSON-LD <script> must not live inside #root. React createRoot() clears that
   // node, and a parser-inserted script in the container can prevent the SPA from
   // mounting — leaving only the clipped/empty beige page in the browser.

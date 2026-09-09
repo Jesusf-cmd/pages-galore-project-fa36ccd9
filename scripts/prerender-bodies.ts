@@ -6,6 +6,25 @@ import {
   processSection,
   trustParagraph,
 } from "./prerender-helpers";
+import { renderServicePageHtml } from "./service-page-html";
+import { routes } from "./prerender-routes";
+import {
+  BLOG_POSTS,
+  renderBlogIndexHtml,
+  renderBlogPostHtml,
+} from "../src/content/blog";
+import { adaRampsContent } from "../src/content/pages/ada-ramps";
+import { commercialCurbGutterContent } from "../src/content/pages/commercial-curb-gutter";
+import { parkingLotRepairContent } from "../src/content/pages/parking-lot-repair";
+import { loadingDockRepairContent } from "../src/content/pages/loading-dock-repair";
+import { dockLevelerPitsContent } from "../src/content/pages/dock-leveler-pits";
+import { warehouseSlabContent } from "../src/content/pages/warehouse-slab";
+
+function prerenderH1(path: string): string {
+  const route = routes.find((entry) => entry.path === path);
+  if (!route) throw new Error(`Missing prerender route for ${path}`);
+  return route.h1;
+}
 
 const SERVICE_LINKS = [
   { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
@@ -1388,6 +1407,38 @@ export const prerenderBodies: Record<string, string> = {
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
     ${trustParagraph()}
   `,
+
+  "/blog": renderBlogIndexHtml(prerenderH1("/blog")),
+  ...Object.fromEntries(
+    BLOG_POSTS.map((post) => [
+      `/blog/${post.slug}`,
+      renderBlogPostHtml(post, prerenderH1(`/blog/${post.slug}`)),
+    ]),
+  ),
+  "/ada-concrete-ramps-oklahoma-city": renderServicePageHtml(
+    adaRampsContent,
+    prerenderH1("/ada-concrete-ramps-oklahoma-city"),
+  ),
+  "/commercial-curb-and-gutter-oklahoma-city": renderServicePageHtml(
+    commercialCurbGutterContent,
+    prerenderH1("/commercial-curb-and-gutter-oklahoma-city"),
+  ),
+  "/concrete-parking-lot-repair-oklahoma-city": renderServicePageHtml(
+    parkingLotRepairContent,
+    prerenderH1("/concrete-parking-lot-repair-oklahoma-city"),
+  ),
+  "/loading-dock-concrete-repair-oklahoma-city": renderServicePageHtml(
+    loadingDockRepairContent,
+    prerenderH1("/loading-dock-concrete-repair-oklahoma-city"),
+  ),
+  "/dock-leveler-pit-concrete-oklahoma-city": renderServicePageHtml(
+    dockLevelerPitsContent,
+    prerenderH1("/dock-leveler-pit-concrete-oklahoma-city"),
+  ),
+  "/warehouse-slab-repair-oklahoma-city": renderServicePageHtml(
+    warehouseSlabContent,
+    prerenderH1("/warehouse-slab-repair-oklahoma-city"),
+  ),
 };
 
 export function getPrerenderBody(path: string): string | undefined {
