@@ -4,6 +4,7 @@ import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
+import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
 import InternalLinksHub from "@/components/InternalLinksHub";
 
 const TRUST_LINE =
@@ -92,19 +93,10 @@ export default function CityPageTemplate({
     og: { title, description: metaDescription, type: "website", url: canonicalUrl },
   });
 
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faq.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: { "@type": "Answer", text: item.answer.replace(/<[^>]+>/g, "") },
-    })),
-  };
+  useFaqJsonLd(faq);
 
   return (
     <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <section className="page-hero">
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">{city} · {county} · Licensed, Bonded & Insured</span>

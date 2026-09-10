@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { BLOG_POSTS } from "@/content/blog";
 import { getPrerenderBody } from "../../scripts/prerender-bodies";
 import { routes } from "../../scripts/prerender-routes";
+import { FAQ_JSON_LD_SCRIPT_ID, faqJsonLdScriptTag } from "@/lib/faqJsonLd";
 
 const PRIORITY_ROUTES = [
   "/blog",
@@ -197,5 +198,19 @@ describe("prerender content parity for priority routes", () => {
       expect(parsed["@type"]).toBe("FAQPage");
       expect(parsed.mainEntity.length).toBeGreaterThan(0);
     }
+  });
+
+  it("hoists FAQ JSON-LD with a stable script id and leaves other JSON-LD untagged", () => {
+    const faqTag = faqJsonLdScriptTag(
+      JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [{ "@type": "Question", name: "Q", acceptedAnswer: { "@type": "Answer", text: "A" } }],
+      }),
+    );
+    expect(faqTag).toContain(`id="${FAQ_JSON_LD_SCRIPT_ID}"`);
+    expect(faqJsonLdScriptTag(JSON.stringify({ "@type": "GeneralContractor" }))).not.toContain(
+      `id="${FAQ_JSON_LD_SCRIPT_ID}"`,
+    );
   });
 });

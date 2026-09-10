@@ -2,6 +2,7 @@ import type { Plugin } from "vite";
 import { getPrerenderBody, getSkipFooterNav } from "./prerender-bodies";
 import { routes, getCanonical, type PrerenderRoute } from "./prerender-routes";
 import { withoutCrawlableEmail } from "./prerender-helpers";
+import { faqJsonLdScriptTag } from "../src/lib/faqJsonLd";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -116,8 +117,7 @@ function hoistJsonLdScripts(markup: string): { markup: string; headTags: string 
   const cleaned = markup.replace(
     /<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi,
     (_match, json: string) => {
-      const safe = String(json).replace(/</g, "\\u003c");
-      tags.push(`<script type="application/ld+json">${safe}</script>`);
+      tags.push(faqJsonLdScriptTag(json));
       return "";
     },
   );

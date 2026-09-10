@@ -5,6 +5,7 @@ import FinalCTA from "@/components/FinalCTA";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
+import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
 import { canonicalUrl } from "@/lib/siteUrl";
 import { repairPages } from "@/content/repairPages";
 
@@ -12,6 +13,7 @@ const data = repairPages;
 
 export default function RepairService({ slug }: { slug: string }) {
   const d = data[slug];
+  useFaqJsonLd(d?.faq);
   useSEO({
     title: d?.metaTitle || "Page not found | FDZ Construction LLC",
     description: d?.metaDescription || "That page does not exist.",

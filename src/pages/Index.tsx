@@ -14,6 +14,7 @@ import TrustBar from "@/components/TrustBar";
 import TradeBadge from "@/components/TradeBadge";
 import MailtoLink from "@/components/MailtoLink";
 import { useSEO } from "@/hooks/useSEO";
+import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
 import { supabase } from "@/integrations/supabase/client";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
@@ -47,25 +48,10 @@ export default function Index() {
     },
   });
 
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: homeFAQ.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
-  };
+  useFaqJsonLd(homeFAQ);
 
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
       <HeroSection />
       <TrustBar />
       <AboutSection />
