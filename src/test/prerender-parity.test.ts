@@ -16,6 +16,16 @@ const PRIORITY_ROUTES = [
   "/loading-dock-concrete-repair-oklahoma-city",
   "/dock-leveler-pit-concrete-oklahoma-city",
   "/warehouse-slab-repair-oklahoma-city",
+  "/industrial-concrete-repair-oklahoma-city",
+  "/equipment-pad-concrete-oklahoma-city",
+  "/truck-court-concrete-oklahoma-city",
+  "/loading-dock-construction-oklahoma-city",
+  "/loading-dock-replacement-oklahoma-city",
+  "/crane-foundation-installation-oklahoma-city",
+  "/driveway-repair-oklahoma-city",
+  "/foundation-repair-oklahoma-city",
+  "/soil-stabilization-oklahoma-city",
+  "/retail-restaurant-concrete-oklahoma-city",
 ] as const;
 
 const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
@@ -69,6 +79,58 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "href='/industrial-concrete-repair-oklahoma-city'",
     "href='/loading-dock-concrete-repair-oklahoma-city'",
   ],
+  "/industrial-concrete-repair-oklahoma-city": [
+    "What We Repair",
+    "href='/commercial-concrete-oklahoma-city'",
+    "href='/loading-dock-concrete-repair-oklahoma-city'",
+    "href='/warehouse-slab-repair-oklahoma-city'",
+  ],
+  "/equipment-pad-concrete-oklahoma-city": [
+    "What We Pour",
+    "Equipment Foundation Specs",
+    "href=\"/#estimate\"",
+  ],
+  "/truck-court-concrete-oklahoma-city": [
+    "What Makes Truck Court Concrete Different",
+    "href=\"/#estimate\"",
+  ],
+  "/loading-dock-construction-oklahoma-city": [
+    "Loading Dock Concrete Is Different",
+    "href='/loading-dock-concrete-repair-oklahoma-city'",
+    "href='/loading-dock-replacement-oklahoma-city'",
+    "href='/dock-leveler-pit-concrete-oklahoma-city'",
+  ],
+  "/loading-dock-replacement-oklahoma-city": [
+    "When to Replace, Not Repair",
+    "href=\"/#estimate\"",
+  ],
+  "/crane-foundation-installation-oklahoma-city": [
+    "Crane Foundation Concrete Scope",
+    "href='/equipment-pad-concrete-oklahoma-city'",
+    "href='/tilt-wall-concrete-oklahoma-city'",
+    "href='/foundations-oklahoma-city'",
+  ],
+  "/driveway-repair-oklahoma-city": [
+    "Our Repair Scope",
+    "href='/driveways-oklahoma-city'",
+    'href="/foundation-repair-oklahoma-city"',
+  ],
+  "/foundation-repair-oklahoma-city": [
+    "Our Repair Scope",
+    "href='/foundations-oklahoma-city'",
+    'href="/driveway-repair-oklahoma-city"',
+  ],
+  "/soil-stabilization-oklahoma-city": [
+    "Soil Stabilization Methods We Use",
+    "href='/warehouse-floor-replacement-oklahoma-city'",
+    "href='/equipment-foundations-oklahoma-city'",
+  ],
+  "/retail-restaurant-concrete-oklahoma-city": [
+    "Restaurant & Retail Concrete We Install",
+    "href='/ada-ramps-oklahoma-city'",
+    "href='/dumpster-pads-oklahoma-city'",
+    "href='/epoxy-floor-coatings-oklahoma-city'",
+  ],
 };
 
 describe("prerender content parity for priority routes", () => {
@@ -94,6 +156,46 @@ describe("prerender content parity for priority routes", () => {
     for (const post of BLOG_POSTS) {
       expect(hub).toContain(`href="/blog/${post.slug}"`);
       expect(hub).toContain(post.title);
+    }
+  });
+
+  it("keeps crawler H1s that differ from React titles", () => {
+    expect(getPrerenderBody("/equipment-pad-concrete-oklahoma-city")).toContain(
+      "<h1>Equipment Pad Concrete in Oklahoma City</h1>",
+    );
+    expect(getPrerenderBody("/truck-court-concrete-oklahoma-city")).toContain(
+      "<h1>Truck Court Concrete in Oklahoma City</h1>",
+    );
+    expect(getPrerenderBody("/industrial-concrete-repair-oklahoma-city")).toContain(
+      "<h1>Industrial Concrete Repair in Oklahoma City, OK</h1>",
+    );
+  });
+
+  it("emits valid FAQ JSON-LD for phase 2a service pages", () => {
+    const paths = [
+      "/industrial-concrete-repair-oklahoma-city",
+      "/equipment-pad-concrete-oklahoma-city",
+      "/truck-court-concrete-oklahoma-city",
+      "/loading-dock-construction-oklahoma-city",
+      "/loading-dock-replacement-oklahoma-city",
+      "/crane-foundation-installation-oklahoma-city",
+      "/driveway-repair-oklahoma-city",
+      "/foundation-repair-oklahoma-city",
+      "/soil-stabilization-oklahoma-city",
+      "/retail-restaurant-concrete-oklahoma-city",
+    ];
+    for (const path of paths) {
+      const body = getPrerenderBody(path) ?? "";
+      const match = body.match(
+        /<script type="application\/ld\+json">([\s\S]*?)<\/script>/,
+      );
+      expect(match, `${path} missing FAQ JSON-LD`).toBeTruthy();
+      const parsed = JSON.parse(match![1]) as {
+        "@type": string;
+        mainEntity: unknown[];
+      };
+      expect(parsed["@type"]).toBe("FAQPage");
+      expect(parsed.mainEntity.length).toBeGreaterThan(0);
     }
   });
 });

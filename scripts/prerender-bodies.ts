@@ -6,19 +6,28 @@ import {
   processSection,
   trustParagraph,
 } from "./prerender-helpers";
-import { renderServicePageHtml } from "./service-page-html";
+import { renderRepairServiceHtml, renderServicePageHtml } from "./service-page-html";
 import { routes } from "./prerender-routes";
 import {
   BLOG_POSTS,
   renderBlogIndexHtml,
   renderBlogPostHtml,
 } from "../src/content/blog";
+import { repairPages } from "../src/content/repairPages";
 import { adaRampsContent } from "../src/content/pages/ada-ramps";
 import { commercialCurbGutterContent } from "../src/content/pages/commercial-curb-gutter";
 import { parkingLotRepairContent } from "../src/content/pages/parking-lot-repair";
 import { loadingDockRepairContent } from "../src/content/pages/loading-dock-repair";
 import { dockLevelerPitsContent } from "../src/content/pages/dock-leveler-pits";
 import { warehouseSlabContent } from "../src/content/pages/warehouse-slab";
+import { industrialRepairContent } from "../src/content/pages/industrial-repair";
+import { equipmentPadsContent } from "../src/content/pages/equipment-pads";
+import { truckCourtsContent } from "../src/content/pages/truck-courts";
+import { loadingDockConstructionContent } from "../src/content/pages/loading-dock-construction";
+import { loadingDockReplacementContent } from "../src/content/pages/loading-dock-replacement";
+import { craneFoundationContent } from "../src/content/pages/crane-foundation";
+import { soilStabilizationContent } from "../src/content/pages/soil-stabilization";
+import { retailRestaurantContent } from "../src/content/pages/retail-restaurant";
 
 function prerenderH1(path: string): string {
   const route = routes.find((entry) => entry.path === path);
@@ -1438,6 +1447,46 @@ export const prerenderBodies: Record<string, string> = {
   "/warehouse-slab-repair-oklahoma-city": renderServicePageHtml(
     warehouseSlabContent,
     prerenderH1("/warehouse-slab-repair-oklahoma-city"),
+  ),
+  "/industrial-concrete-repair-oklahoma-city": renderServicePageHtml(
+    industrialRepairContent,
+    prerenderH1("/industrial-concrete-repair-oklahoma-city"),
+  ),
+  "/equipment-pad-concrete-oklahoma-city": renderServicePageHtml(
+    equipmentPadsContent,
+    prerenderH1("/equipment-pad-concrete-oklahoma-city"),
+  ),
+  "/truck-court-concrete-oklahoma-city": renderServicePageHtml(
+    truckCourtsContent,
+    prerenderH1("/truck-court-concrete-oklahoma-city"),
+  ),
+  "/loading-dock-construction-oklahoma-city": renderServicePageHtml(
+    loadingDockConstructionContent,
+    prerenderH1("/loading-dock-construction-oklahoma-city"),
+  ),
+  "/loading-dock-replacement-oklahoma-city": renderServicePageHtml(
+    loadingDockReplacementContent,
+    prerenderH1("/loading-dock-replacement-oklahoma-city"),
+  ),
+  "/crane-foundation-installation-oklahoma-city": renderServicePageHtml(
+    craneFoundationContent,
+    prerenderH1("/crane-foundation-installation-oklahoma-city"),
+  ),
+  "/driveway-repair-oklahoma-city": renderRepairServiceHtml(
+    repairPages["driveway-repair-oklahoma-city"],
+    prerenderH1("/driveway-repair-oklahoma-city"),
+  ),
+  "/foundation-repair-oklahoma-city": renderRepairServiceHtml(
+    repairPages["foundation-repair-oklahoma-city"],
+    prerenderH1("/foundation-repair-oklahoma-city"),
+  ),
+  "/soil-stabilization-oklahoma-city": renderServicePageHtml(
+    soilStabilizationContent,
+    prerenderH1("/soil-stabilization-oklahoma-city"),
+  ),
+  "/retail-restaurant-concrete-oklahoma-city": renderServicePageHtml(
+    retailRestaurantContent,
+    prerenderH1("/retail-restaurant-concrete-oklahoma-city"),
   ),
 };
 
