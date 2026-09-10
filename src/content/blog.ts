@@ -46,7 +46,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Cause #2: Missing or Poorly Placed Reinforcement",
         content: [
-          "On Oklahoma clay, rebar is the right call for driveways — placed at mid-depth in the slab on chairs, not lying on the ground. Wire mesh alone doesn't provide enough tensile strength to resist soil movement. For more on reinforcement, see our <a href='/patios-oklahoma-city' class='text-orange no-underline'>concrete slab installation</a> page.",
+          "On Oklahoma clay, rebar is the right call for driveways — placed at mid-depth in the slab on chairs, not lying on the ground. Wire mesh alone doesn't provide enough tensile strength to resist soil movement. For more on reinforcement, see our <a href='/patios-oklahoma-city' class='text-orange no-underline'>concrete slab installation</a> page and the comparison of <a href='/blog/rebar-vs-wire-mesh-concrete-slabs' class='text-orange no-underline'>rebar vs wire mesh for concrete slabs</a>.",
         ],
       },
       {
@@ -163,7 +163,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "The Standard: 4 Inches for Passenger Vehicles",
         content: [
-          "4 inches of <a href='/driveways-oklahoma-city' class='text-orange no-underline'>concrete driveway</a> on a properly prepared base is adequate for standard passenger vehicles — cars, minivans, and light SUVs.",
+          "4 inches of <a href='/driveways-oklahoma-city' class='text-orange no-underline'>concrete driveway</a> on a properly prepared base is adequate for standard passenger vehicles — cars, minivans, and light SUVs. If the original slab was thinner or the base was skipped, that's often why we see the failures covered in <a href='/blog/why-concrete-driveways-crack-oklahoma' class='text-orange no-underline'>why concrete driveways crack in Oklahoma</a>.",
         ],
       },
       {

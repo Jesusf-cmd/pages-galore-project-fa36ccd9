@@ -131,6 +131,16 @@ export const equipmentPadsContent: ServicePageContent = {
             ],
           },
         },
+        {
+          eyebrow: "Related Services",
+          title: "Other Commercial Concrete",
+          titleAccent: "Foundations.",
+          content: [
+            "<a href='/crane-foundation-installation-oklahoma-city' class='text-orange no-underline font-medium'>Crane Foundation Installation</a> — Higher-load crane pads poured per engineered drawings with supplier shop-drawing bolt templates.",
+            "<a href='/foundations-oklahoma-city' class='text-orange no-underline font-medium'>Concrete Foundations</a> — Building slabs, footings, and structural pads on the same Oklahoma clay.",
+            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Hub</a> — Full overview of FDZ commercial concrete services across OKC.",
+          ],
+        },
       ],
   faq: [
         {

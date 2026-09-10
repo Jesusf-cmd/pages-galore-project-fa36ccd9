@@ -174,7 +174,7 @@ export const polishedConcreteContent: ServicePageContent = {
           titleAccent: "Services.",
           content: [
             "<a href='/epoxy-floor-coatings-oklahoma-city' class='text-orange no-underline font-medium'>Epoxy Floor Coatings</a> — Epoxy and urethane coating systems for commercial and industrial floors where polished concrete isn't the right fit.",
-            "<a href='/warehouse-floor-replacement-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Floor Replacement</a> — Full-depth warehouse slab replacement and new industrial floor pours for OKC commercial properties.",
+            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Floor Replacement</a> — Full-depth warehouse slab replacement and new industrial floor pours for OKC commercial properties.",
             "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Crack repair, spalling, and surface damage repair before polishing or as a standalone service.",
             "<a href='/retail-restaurant-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Retail & Restaurant Concrete</a> — Concrete services for retail centers, restaurants, and hospitality spaces including polished floors and exterior flatwork.",
           ],

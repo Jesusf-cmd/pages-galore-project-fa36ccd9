@@ -141,7 +141,7 @@ export default function DrivewaysOklahomaCity() {
           titleAccent: "in Oklahoma City?",
           alt: true,
           content: [
-            "Costs vary by square footage, site conditions, finish type (broom, stamped, or decorative), slab thickness, and whether existing concrete needs removal. We provide free on-site estimates — call <a href='tel:4054584805'>(405) 458-4805</a> or use the quote form above.",
+            "Costs vary by square footage, site conditions, finish type (broom, stamped, or decorative), slab thickness, and whether existing concrete needs removal. For metro ranges, see our guide to the <a href='/blog/cost-of-concrete-oklahoma-city-2026' class='text-orange no-underline'>cost of concrete in Oklahoma City for 2026</a>. We provide free on-site estimates — call <a href='tel:4054584805'>(405) 458-4805</a> or use the quote form above.",
             "What we won't do: give you a number over the phone without seeing your property. OKC clay conditions, drainage, slope, and access all affect the final cost. The estimate is free and comes with no pressure.",
           ],
           infoBlock: "Call <a href='tel:4054584805'>(405) 458-4805</a> or email <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a> to schedule your free on-site estimate.",
@@ -227,6 +227,7 @@ export default function DrivewaysOklahomaCity() {
             "<a href='/patios-oklahoma-city' class='text-orange no-underline font-medium'>Patios &amp; Stamped Concrete</a> — Backyard patios, decorative stamped surfaces, and outdoor living slabs to pair with your new driveway.",
             "<a href='/retaining-walls-oklahoma-city' class='text-orange no-underline font-medium'>Retaining Wall Construction</a> — Slope and drainage walls that often accompany driveway and grade changes.",
             "<a href='/sidewalks-oklahoma-city' class='text-orange no-underline font-medium'>Sidewalks &amp; Curb and Gutter</a> — Walkways, ADA curb ramps, and curb work to complete your property.",
+            "Helpful guides: <a href='/blog/why-concrete-driveways-crack-oklahoma' class='text-orange no-underline'>why concrete driveways crack in Oklahoma</a>, <a href='/blog/how-thick-should-driveway-be-oklahoma' class='text-orange no-underline'>how thick a driveway should be</a>, and the <a href='/blog/best-time-of-year-to-pour-concrete-okc' class='text-orange no-underline'>best time of year to pour concrete in OKC</a>.",
             "Local driveway pages: <a href='/driveways-edmond' class='text-orange no-underline'>Edmond</a>, <a href='/driveways-norman' class='text-orange no-underline'>Norman</a>, <a href='/driveways-yukon' class='text-orange no-underline'>Yukon</a>, <a href='/driveways-moore' class='text-orange no-underline'>Moore</a>, and <a href='/driveways-mustang' class='text-orange no-underline'>Mustang</a>.",
           ],
         },

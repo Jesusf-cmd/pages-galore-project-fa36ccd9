@@ -58,7 +58,7 @@ export default function PatiosOklahomaCity() {
         { title: "Cure", description: "The slab cures before any cleaning or sealing so the finish sets up properly." },
         { title: "Pressure wash & seal", description: "We pressure wash off the release agent and apply sealer — essential in Oklahoma's freeze-thaw climate." },
       ]}
-      metaTitle="Concrete Patios, Slabs & Stamped Concrete Oklahoma City | FDZ Construction LLC"
+      metaTitle="Patios & Stamped Concrete Oklahoma City | FDZ Construction"
       metaDescription="Concrete patio, slab, and stamped concrete contractors in Oklahoma City. Broom, smooth, stamped finishes. Garage floors, shop slabs, decorative patios. Free estimate."
       eyebrow="OKC Metro · Patio & Slab Contractors · Licensed & Insured"
       badge="self-performed"
@@ -147,7 +147,7 @@ export default function PatiosOklahomaCity() {
           alt: true,
           content: [
             "Costs vary by square footage, finish type (broom, stamped, or decorative), slab thickness, site conditions, and whether existing concrete needs removal. We provide free on-site estimates — call <a href='tel:4054584805'>(405) 458-4805</a> or use the quote form above.",
-            "Stamped concrete requires additional steps — color hardener, release agent, stamping, and sealing — which affects the overall cost. On Oklahoma clay, base prep depth is a variable too. The estimate is free and comes with no pressure.",
+            "Stamped concrete requires additional steps — color hardener, release agent, stamping, and sealing — which affects the overall cost. On Oklahoma clay, base prep depth is a variable too. Typical metro ranges are in our <a href='/blog/cost-of-concrete-oklahoma-city-2026' class='text-orange no-underline'>2026 Oklahoma City concrete cost guide</a>. The estimate is free and comes with no pressure.",
           ],
           infoBlock: "Call <a href='tel:4054584805'>(405) 458-4805</a> or email <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a> to schedule your free on-site estimate.",
         },
@@ -182,6 +182,7 @@ export default function PatiosOklahomaCity() {
             "<a href='/retaining-walls-oklahoma-city' class='text-orange no-underline font-medium'>Retaining wall construction</a> — Outdoor living slabs on sloped lots often pair with a retaining wall.",
             "<a href='/pool-deck-oklahoma-city' class='text-orange no-underline font-medium'>Pool deck concrete</a> — Slip-resistant pool decks for homes, HOAs, and commercial properties.",
             "<a href='/foundations-oklahoma-city' class='text-orange no-underline font-medium'>Concrete foundations</a> — Garage pads and shop slabs that share the same base-prep standards as patio work.",
+            "Helpful guides: <a href='/blog/rebar-vs-wire-mesh-concrete-slabs' class='text-orange no-underline'>rebar vs wire mesh for concrete slabs</a> and the <a href='/blog/best-time-of-year-to-pour-concrete-okc' class='text-orange no-underline'>best time of year to pour concrete in OKC</a>.",
             "Local patio pages: <a href='/patios-edmond' class='text-orange no-underline'>Edmond</a>, <a href='/patios-norman' class='text-orange no-underline'>Norman</a>, <a href='/patios-moore' class='text-orange no-underline'>Moore</a>, and <a href='/patios-yukon' class='text-orange no-underline'>Yukon</a>.",
           ],
         },

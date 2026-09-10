@@ -47,6 +47,7 @@ const SERVICE_LINKS = [
   { href: "/patios-oklahoma-city", label: "Patios, Slabs & Stamped Concrete" },
   { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
   { href: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
+  { href: "/pool-deck-oklahoma-city", label: "Pool Deck Concrete" },
   { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
   { href: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
   { href: "/parking-lots-oklahoma-city", label: "Parking Lots" },
@@ -141,7 +142,7 @@ export const prerenderBodies: Record<string, string> = {
     <h2>Oklahoma City Soil and Your Driveway</h2>
     <p>Oklahoma's expansive red clay swells and shrinks with moisture, which is why proper sub-base prep — a compacted gravel base — matters far more here than in stable-soil regions. Skipping or shortcutting it is the single most common cause of driveway cracking in the OKC metro.</p>
     <h2>How Much Does a Concrete Driveway Cost in Oklahoma City?</h2>
-    <p>Costs vary by square footage, site conditions, finish type, and whether existing concrete needs removal. We provide free on-site estimates — call <a href="tel:4054584805">(405) 458-4805</a> or use the quote form above.</p>
+    <p>Costs vary by square footage, site conditions, finish type, and whether existing concrete needs removal. For metro ranges, see our guide to the <a href="/blog/cost-of-concrete-oklahoma-city-2026">cost of concrete in Oklahoma City for 2026</a>. We provide free on-site estimates — call <a href="tel:4054584805">(405) 458-4805</a> or use the quote form above.</p>
     ${faqSection("Driveway FAQ", [
       { question: "How much does a concrete driveway cost in Oklahoma City?", answer: "Costs vary by square footage, site conditions, finish type, and whether existing concrete needs removal. We provide free on-site estimates — call (405) 458-4805 or use the quote form above." },
       { question: "How long does it take to install a concrete driveway?", answer: "Most residential driveways are poured in 1 day. You can walk on new concrete after 24–48 hours, but should wait 7 days before driving on it." },
@@ -158,6 +159,7 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/patios-oklahoma-city">Patios &amp; stamped concrete</a> — Backyard patios, decorative stamped surfaces, and outdoor living slabs.</li>
       <li><a href="/retaining-walls-oklahoma-city">Retaining wall construction</a> — Slope and drainage walls that often accompany driveway grade changes.</li>
       <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; curb and gutter</a> — Walkways, ADA curb ramps, and curb work to complete your property.</li>
+      <li>Helpful guides: <a href="/blog/why-concrete-driveways-crack-oklahoma">why concrete driveways crack in Oklahoma</a>, <a href="/blog/how-thick-should-driveway-be-oklahoma">how thick a driveway should be</a>, and the <a href="/blog/best-time-of-year-to-pour-concrete-okc">best time of year to pour concrete in OKC</a>.</li>
       <li>Local driveway pages: <a href="/driveways-edmond">Edmond</a>, <a href="/driveways-norman">Norman</a>, <a href="/driveways-yukon">Yukon</a>, <a href="/driveways-moore">Moore</a>, <a href="/driveways-mustang">Mustang</a>.</li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
@@ -474,7 +476,7 @@ export const prerenderBodies: Record<string, string> = {
     <h2>Why Sealing Matters in Oklahoma City</h2>
     <p>OKC's freeze-thaw cycles make sealing non-negotiable for stamped concrete — an unsealed decorative surface is far more likely to spall, flake, or fade within a season or two. We seal every stamped pour and give you a resealing schedule to protect the look long-term.</p>
     <h2>How Much Does a Concrete Patio Cost in Oklahoma City?</h2>
-    <p>Costs vary by square footage, finish type (broom, stamped, or decorative), slab thickness, site conditions, and whether existing concrete needs removal. We provide free on-site estimates — call <a href="tel:4054584805">(405) 458-4805</a> or use the quote form above.</p>
+    <p>Costs vary by square footage, finish type (broom, stamped, or decorative), slab thickness, site conditions, and whether existing concrete needs removal. Typical metro ranges are in our <a href="/blog/cost-of-concrete-oklahoma-city-2026">2026 Oklahoma City concrete cost guide</a>. We provide free on-site estimates — call <a href="tel:4054584805">(405) 458-4805</a> or use the quote form above.</p>
     ${faqSection("Patio FAQ", [
       { question: "How much does a concrete patio cost in OKC?", answer: "Costs vary by square footage, finish type, and site conditions. We provide free on-site estimates — call (405) 458-4805 or use the quote form above." },
       { question: "How much does stamped concrete cost in Oklahoma City?", answer: "Stamped concrete requires additional steps — color hardener, release agent, stamping, and sealing — which affects cost. We provide free on-site estimates for your specific project." },
@@ -489,6 +491,7 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/driveways-oklahoma-city">Concrete driveway installation</a> — New installation, replacement, and stamped decorative driveways.</li>
       <li><a href="/retaining-walls-oklahoma-city">Retaining wall construction</a> — Outdoor living slabs on sloped lots often pair with a retaining wall.</li>
       <li><a href="/pool-deck-oklahoma-city">Pool deck concrete</a> — Slip-resistant pool decks for homes and commercial properties.</li>
+      <li>Helpful guides: <a href="/blog/rebar-vs-wire-mesh-concrete-slabs">rebar vs wire mesh for concrete slabs</a> and the <a href="/blog/best-time-of-year-to-pour-concrete-okc">best time of year to pour concrete in OKC</a>.</li>
       <li>Local patio pages: <a href="/patios-edmond">Edmond</a>, <a href="/patios-norman">Norman</a>, <a href="/patios-moore">Moore</a>, <a href="/patios-yukon">Yukon</a>.</li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
@@ -574,6 +577,8 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/foundation-repair-oklahoma-city">Foundation repair</a> — Honest repair-vs-replace evaluation when an existing foundation is cracking or settling.</li>
       <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete services</a> — Warehouse floors, retail pads, loading docks, and site concrete for commercial properties.</li>
       <li><a href="/retaining-walls-oklahoma-city">Retaining wall construction</a> — Structural walls that often pair with foundation and grade work.</li>
+      <li><a href="/soil-stabilization-oklahoma-city">Soil stabilization</a> — Lime and cement treatment for Oklahoma clay before a foundation pour.</li>
+      <li>Helpful guide: <a href="/blog/rebar-vs-wire-mesh-concrete-slabs">rebar vs wire mesh for concrete slabs</a> on expansive clay.</li>
       <li>Local foundation pages: <a href="/foundations-edmond">Edmond</a>, <a href="/foundations-norman">Norman</a>, <a href="/foundations-yukon">Yukon</a>.</li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
@@ -731,6 +736,7 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/tilt-wall-concrete-oklahoma-city">Tilt-wall concrete</a> — Footings and slab work coordinated with tilt-up construction.</li>
       <li><a href="/soil-stabilization-oklahoma-city">Soil stabilization</a> — Base and subgrade stabilization for problem clay sites.</li>
       <li><a href="/concrete-maintenance-oklahoma-city">Concrete maintenance</a> — Joint sealing, resurfacing, and ongoing commercial slab care.</li>
+      <li><a href="/pool-deck-oklahoma-city">Pool deck concrete</a> — Slip-resistant decks for HOAs, hotels, and commercial properties.</li>
       <li><a href="/bollard-installation-oklahoma-city">Bollard installation</a> · <a href="/ada-concrete-ramps-oklahoma-city">ADA concrete ramps</a> · <a href="/equipment-pad-concrete-oklahoma-city">Equipment pads</a></li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
@@ -771,6 +777,13 @@ export const prerenderBodies: Record<string, string> = {
       { question: "How do you estimate commercial concrete repairs?", answer: "We review photos and problem details, typically walk the site, and provide a written estimate with the recommended method." },
       { question: "How do I schedule a commercial concrete repair estimate?", answer: "Call (405) 458-4805 or use the estimate form with facility type, location, affected area, problem description, photos, and desired timing." },
     ])}
+    <h2>Related Services</h2>
+    <ul>
+      <li><a href="/industrial-concrete-repair-oklahoma-city">Industrial concrete repair</a> — Heavy-use floors, dock-related damage, and industrial slab repair.</li>
+      <li><a href="/concrete-parking-lot-repair-oklahoma-city">Concrete parking lot repair</a> — Panel replacement, joint sealing, and trip hazard grinding.</li>
+      <li><a href="/concrete-maintenance-oklahoma-city">Concrete maintenance</a> — Joint sealing and ongoing commercial slab care that prevents small repairs from becoming replacements.</li>
+      <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete contractor in Oklahoma City</a> — New pours and commercial site flatwork.</li>
+    </ul>
     <p><strong>Request a commercial concrete repair estimate:</strong> <a href="/#estimate">Estimate form</a> · <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,

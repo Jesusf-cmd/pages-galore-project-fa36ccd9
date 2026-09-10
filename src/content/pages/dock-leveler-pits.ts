@@ -2,7 +2,7 @@ import type { ServicePageContent } from "../servicePageTypes";
 
 export const dockLevelerPitsContent: ServicePageContent = {
       currentServiceSlug: "dock-leveler-pit-concrete-oklahoma-city",
-      metaTitle: "Dock Leveler Pit Concrete Oklahoma City | Pit Repair & Installation | FDZ Construction",
+      metaTitle: "Dock Leveler Pit Concrete Oklahoma City | FDZ Construction",
       metaDescription: "Dock leveler pit concrete installation and repair in Oklahoma City. Exact dimensions, curb angles, anchor embedments coordinated with equipment suppliers. Call (405) 458-4805.",
       eyebrow: "OKC Metro · Dock Leveler Pits · Licensed & Insured",
       title: "Dock Leveler Pit Construction in",
