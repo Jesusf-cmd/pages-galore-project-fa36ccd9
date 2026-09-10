@@ -9,6 +9,7 @@ import CityGrid from "@/components/CityGrid";
 import ProcessSteps from "@/components/ProcessSteps";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
+import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
 import { canonicalUrl } from "@/lib/siteUrl";
 import { withoutCrawlableEmail } from "@/lib/contact";
 import InternalLinksHub from "@/components/InternalLinksHub";
@@ -143,15 +144,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
     document.head.appendChild(script);
     return () => { document.getElementById("service-page-schema")?.remove(); };
   }, [serviceSchema, canonical]);
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faq.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: { "@type": "Answer", text: item.answer.replace(/<[^>]+>/g, "") },
-    })),
-  };
+  useFaqJsonLd(faq);
   const defaultProcessSteps = [
     { title: "Site prep & excavation", description: "We start by marking the area, calling 811 for utility locates, and excavating to the correct depth for your soil conditions. Problem soil gets flagged before the pour, not after." },
     { title: "Base compaction", description: "We install a compacted aggregate base — minimum 4 inches on standard OKC residential work, 6 inches on problem clay. This is the single biggest factor in whether your slab lasts 5 years or 40." },
@@ -166,7 +159,6 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
 
   return (
     <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <section className="page-hero">
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">{eyebrow}</span>
