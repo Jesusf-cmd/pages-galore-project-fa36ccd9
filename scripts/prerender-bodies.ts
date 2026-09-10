@@ -746,6 +746,14 @@ export const prerenderBodies: Record<string, string> = {
   "/commercial-concrete-repair-oklahoma-city": `
     <h1>Commercial Concrete Repair in Oklahoma City</h1>
     <p>If you have cracked slabs, spalling, settlement, trip hazards, failed joints, damaged loading areas, parking lot failures, warehouse slab damage, equipment pad damage, or drainage-related deterioration — this page is for an evaluation and written estimate. Call <a href="tel:4054584805">(405) 458-4805</a> or <a href="/#estimate">request a commercial concrete repair estimate</a>.</p>
+    <p>For heavy-use industrial floors and dock-related slab damage, see <a href="/industrial-concrete-repair-oklahoma-city">industrial concrete repair</a> — this page covers commercial property repair more broadly.</p>
+    ${processSection("How Commercial Repair Typically Proceeds", [
+      { title: "Share project details and available photos", description: "Use the estimate form or call with facility type, location, affected area, what you are seeing, and desired timing. Photos help. This is a contractor estimate request, not an engineering inspection." },
+      { title: "Evaluate the affected concrete and site conditions", description: "Walk the damage, note cracking, settlement, joints, drainage, and access — contractor evaluation for estimating." },
+      { title: "Receive a proposed repair or replacement scope", description: "Written estimate with the recommended method — repair, partial replacement, or larger replacement. No verbal commercial quotes." },
+      { title: "Coordinate scheduling and access", description: "If you move forward, sequence the work around occupied areas, access, and downtime constraints." },
+    ])}
+    <p><strong>Occupied site?</strong> Include access limits, areas that must stay open, desired timing, and downtime constraints when you request an estimate. After-hours or weekend work can be discussed when a facility has to stay open — it is planned per project, not a promised response window.</p>
     <h2>When Concrete Can Be Repaired vs. When Replacement Makes More Sense</h2>
     <p>The right answer depends on cracking extent, settlement, base/subgrade condition, drainage, surface deterioration, traffic/loading, downtime, and access. FDZ does not certify structural adequacy — that stays with your design professional when required. We evaluate what we see on site and recommend repair, partial panel replacement, or larger replacement.</p>
     <ul>
@@ -762,12 +770,6 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/equipment-pad-concrete-oklahoma-city">Equipment pads</a> · <a href="/commercial-curb-and-gutter-oklahoma-city">Curb &amp; gutter</a></li>
       <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete contractor</a></li>
     </ul>
-    ${processSection("The Commercial Repair Process", [
-      { title: "On-site evaluation", description: "Walk the damage, note cracking, settlement, joints, drainage, and access — contractor evaluation for estimating, not an engineering inspection." },
-      { title: "Repair vs. replace recommendation", description: "Honest framing of repair, partial replacement, or larger replacement based on site conditions." },
-      { title: "Written scope & estimate", description: "Itemized written estimate — no verbal commercial quotes." },
-      { title: "Prep, repair & documentation", description: "Execute the scoped work and provide completion documentation for property files when applicable." },
-    ])}
     ${faqSection("Commercial Concrete Repair FAQ", [
       { question: "Can commercial concrete be repaired instead of replaced?", answer: "Often yes when damage is localized and the base is stable. Widespread cracking, ongoing settlement, slab flex, or failed subgrade usually push toward larger replacement." },
       { question: "What causes commercial concrete slabs to crack or settle in Oklahoma City?", answer: "Expansive clay, poor base prep, thin slabs for the traffic, failed joint sealant, drainage problems, and heavy loading all accelerate cracking and settlement." },
@@ -776,6 +778,7 @@ export const prerenderBodies: Record<string, string> = {
       { question: "Do you repair loading docks and parking lots?", answer: "Yes. See our loading dock concrete repair and concrete parking lot repair pages for dedicated detail." },
       { question: "How do you estimate commercial concrete repairs?", answer: "We review photos and problem details, typically walk the site, and provide a written estimate with the recommended method." },
       { question: "How do I schedule a commercial concrete repair estimate?", answer: "Call (405) 458-4805 or use the estimate form with facility type, location, affected area, problem description, photos, and desired timing." },
+      { question: "Can concrete repairs be matched to the existing color and finish?", answer: "Color matching is approximate — new concrete will not perfectly match weathered existing concrete. Broom or trowel texture can usually be matched closely. Weathering tends to bring repairs closer in appearance over time." },
     ])}
     <h2>Related Services</h2>
     <ul>

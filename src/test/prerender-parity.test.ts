@@ -291,6 +291,34 @@ describe("prerender content parity for priority routes", () => {
     }
   });
 
+  it("places the commercial repair process next to the first estimate CTA", () => {
+    const body = getPrerenderBody("/commercial-concrete-repair-oklahoma-city") ?? "";
+    const estimateCta = body.indexOf('href="/#estimate"');
+    const processHeading = body.indexOf("How Commercial Repair Typically Proceeds");
+    const occupiedPlanning = body.indexOf("Occupied site?");
+    const repairVsReplace = body.indexOf("When Concrete Can Be Repaired vs.");
+    const industrialLink = body.indexOf('href="/industrial-concrete-repair-oklahoma-city"');
+    const parkingLink = body.indexOf('href="/concrete-parking-lot-repair-oklahoma-city"');
+    const dockLink = body.indexOf('href="/loading-dock-concrete-repair-oklahoma-city"');
+
+    expect(body).toContain("<h1>Commercial Concrete Repair in Oklahoma City</h1>");
+    expect(estimateCta).toBeGreaterThan(-1);
+    expect(processHeading).toBeGreaterThan(estimateCta);
+    expect(occupiedPlanning).toBeGreaterThan(processHeading);
+    expect(repairVsReplace).toBeGreaterThan(occupiedPlanning);
+    expect(industrialLink).toBeGreaterThan(-1);
+    expect(parkingLink).toBeGreaterThan(-1);
+    expect(dockLink).toBeGreaterThan(-1);
+    expect(body).toContain("Share project details and available photos");
+    expect(body).toContain("Evaluate the affected concrete and site conditions");
+    expect(body).toContain("Receive a proposed repair or replacement scope");
+    expect(body).toContain("Coordinate scheduling and access");
+    expect(body).not.toContain("free inspection");
+    expect(body).not.toContain("The Commercial Repair Process");
+    expect(body.split("How Commercial Repair Typically Proceeds").length).toBe(2);
+    expect(body).toContain("Can concrete repairs be matched to the existing color and finish?");
+  });
+
   it("keeps crawler H1s that differ from React titles", () => {
     expect(getPrerenderBody("/equipment-pad-concrete-oklahoma-city")).toContain(
       "<h1>Equipment Pad Concrete in Oklahoma City</h1>",
