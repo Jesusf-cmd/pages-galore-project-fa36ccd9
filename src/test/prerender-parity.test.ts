@@ -27,6 +27,26 @@ const PRIORITY_ROUTES = [
   "/foundation-repair-oklahoma-city",
   "/soil-stabilization-oklahoma-city",
   "/retail-restaurant-concrete-oklahoma-city",
+  "/driveways-edmond",
+  "/driveways-norman",
+  "/driveways-yukon",
+  "/driveways-moore",
+  "/driveways-mustang",
+  "/foundations-edmond",
+  "/foundations-norman",
+  "/foundations-yukon",
+  "/retaining-walls-edmond",
+  "/retaining-walls-norman",
+  "/patios-edmond",
+  "/patios-norman",
+  "/patios-moore",
+  "/patios-yukon",
+  "/pool-deck-oklahoma-city",
+  "/dumpster-pad-concrete-oklahoma-city",
+  "/polished-concrete-oklahoma-city",
+  "/epoxy-floor-coatings-oklahoma-city",
+  "/tilt-wall-concrete-oklahoma-city",
+  "/concrete-maintenance-oklahoma-city",
 ] as const;
 
 const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
@@ -132,6 +152,110 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "href='/dumpster-pads-oklahoma-city'",
     "href='/epoxy-floor-coatings-oklahoma-city'",
   ],
+  "/driveways-edmond": [
+    "Edmond Driveways Fail for Two Specific Reasons",
+    "href=\"/driveways-oklahoma-city\"",
+    "href=\"/edmond-concrete\"",
+    "href=\"/foundations-edmond\"",
+    "Garber-Wellington",
+  ],
+  "/driveways-norman": [
+    "Canadian River",
+    "href=\"/norman-ok-concrete\"",
+    "href=\"/patios-norman\"",
+  ],
+  "/driveways-yukon": [
+    "Yukon's Real Driveway Risk",
+    "href=\"/yukon-oklahoma-concrete\"",
+    "href=\"/driveways-edmond\"",
+  ],
+  "/driveways-moore": [
+    "Water Has Nowhere to Go",
+    "href=\"/moore-oklahoma-concrete\"",
+    "href=\"/patios-moore\"",
+  ],
+  "/driveways-mustang": [
+    "Bad Subdivision Fill",
+    "href=\"/mustang-oklahoma-concrete\"",
+    "href=\"/driveways-yukon\"",
+  ],
+  "/foundations-edmond": [
+    "Edmond Fill Lots Need Pier Foundations",
+    "href=\"/foundations-oklahoma-city\"",
+    "href=\"/driveways-edmond\"",
+  ],
+  "/foundations-norman": [
+    "Soil Transitions",
+    "href=\"/foundations-oklahoma-city\"",
+    "href=\"/patios-norman\"",
+  ],
+  "/foundations-yukon": [
+    "What's Underneath",
+    "href=\"/driveways-mustang\"",
+    "href=\"/yukon-oklahoma-concrete\"",
+  ],
+  "/retaining-walls-edmond": [
+    "Drainage — Not the Wall",
+    "href=\"/retaining-walls-oklahoma-city\"",
+    "href=\"/foundations-edmond\"",
+  ],
+  "/retaining-walls-norman": [
+    "Soil Changes",
+    "href=\"/retaining-walls-oklahoma-city\"",
+    "href=\"/foundations-norman\"",
+  ],
+  "/patios-edmond": [
+    "Grade Transition",
+    "href=\"/patios-oklahoma-city\"",
+    "href=\"/driveways-edmond\"",
+  ],
+  "/patios-norman": [
+    "Slab-House Joint",
+    "href=\"/patios-oklahoma-city\"",
+    "href=\"/retaining-walls-norman\"",
+  ],
+  "/patios-moore": [
+    "Pools at the House",
+    "href=\"/driveways-moore\"",
+    "href=\"/moore-oklahoma-concrete\"",
+  ],
+  "/patios-yukon": [
+    "the Base Wasn't Right",
+    "href=\"/driveways-yukon\"",
+    "href=\"/foundations-yukon\"",
+  ],
+  "/pool-deck-oklahoma-city": [
+    "Pool Deck Services We Offer in Oklahoma City",
+    "href=\"/patios-oklahoma-city\"",
+    "href=\"/driveways-oklahoma-city\"",
+    "href=\"/our-projects\"",
+    "Stamped Concrete Pool Deck",
+  ],
+  "/dumpster-pad-concrete-oklahoma-city": [
+    "Dumpster Pad Services in Oklahoma City",
+    "href='/parking-lots-oklahoma-city'",
+    "href='/commercial-curb-gutter-oklahoma-city'",
+  ],
+  "/polished-concrete-oklahoma-city": [
+    "Polished Concrete Finish Levels",
+    "href='/epoxy-floor-coatings-oklahoma-city'",
+    "href='/warehouse-floor-replacement-oklahoma-city'",
+  ],
+  "/epoxy-floor-coatings-oklahoma-city": [
+    "Epoxy Systems We Install",
+    "href='/polished-concrete-oklahoma-city'",
+    "href='/industrial-concrete-repair-oklahoma-city'",
+  ],
+  "/tilt-wall-concrete-oklahoma-city": [
+    "Tilt-Wall Concrete We Provide",
+    "href='/equipment-foundations-oklahoma-city'",
+    "href='/loading-dock-construction-oklahoma-city'",
+  ],
+  "/concrete-maintenance-oklahoma-city": [
+    "Concrete Maintenance We Provide",
+    "href='/industrial-concrete-repair-oklahoma-city'",
+    "href='/driveway-repair-oklahoma-city'",
+  ],
 };
 
 describe("prerender content parity for priority routes", () => {
@@ -172,7 +296,38 @@ describe("prerender content parity for priority routes", () => {
     );
   });
 
-  it("emits valid FAQ JSON-LD for phase 2a service pages", () => {
+  it("keeps crawler H1s that differ from React titles on phase 2b pages", () => {
+    expect(getPrerenderBody("/dumpster-pad-concrete-oklahoma-city")).toContain(
+      "<h1>Dumpster Pad Concrete in Oklahoma City</h1>",
+    );
+    expect(getPrerenderBody("/concrete-maintenance-oklahoma-city")).toContain(
+      "<h1>Concrete Maintenance Programs in Oklahoma City</h1>",
+    );
+    expect(getPrerenderBody("/driveways-edmond")).toContain(
+      "<h1>Concrete Driveway Contractors in Edmond, OK</h1>",
+    );
+  });
+
+  it("selects the correct city and service copy and optional sibling links", () => {
+    const edmond = getPrerenderBody("/driveways-edmond") ?? "";
+    const yukon = getPrerenderBody("/driveways-yukon") ?? "";
+    expect(edmond).toContain("Edmond");
+    expect(edmond).not.toContain("Canadian River corridor");
+    expect(edmond).toContain('href="/retaining-walls-edmond"');
+    expect(yukon).toContain("Canadian County");
+    expect(yukon).toContain('href="/driveways-norman"');
+    expect(yukon).not.toContain('href="/driveways-moore"');
+    expect(getPrerenderBody("/foundations-yukon")).toContain('href="/driveways-mustang"');
+  });
+
+  it("leaves only /builders on the fallback path among prerender routes", () => {
+    const missing = routes
+      .filter((route) => !getPrerenderBody(route.path))
+      .map((route) => route.path);
+    expect(missing).toEqual(["/builders"]);
+  });
+
+  it("emits valid FAQ JSON-LD for phase 2a and 2b pages", () => {
     const paths = [
       "/industrial-concrete-repair-oklahoma-city",
       "/equipment-pad-concrete-oklahoma-city",
@@ -184,6 +339,14 @@ describe("prerender content parity for priority routes", () => {
       "/foundation-repair-oklahoma-city",
       "/soil-stabilization-oklahoma-city",
       "/retail-restaurant-concrete-oklahoma-city",
+      "/driveways-edmond",
+      "/patios-norman",
+      "/pool-deck-oklahoma-city",
+      "/dumpster-pad-concrete-oklahoma-city",
+      "/polished-concrete-oklahoma-city",
+      "/epoxy-floor-coatings-oklahoma-city",
+      "/tilt-wall-concrete-oklahoma-city",
+      "/concrete-maintenance-oklahoma-city",
     ];
     for (const path of paths) {
       const body = getPrerenderBody(path) ?? "";
