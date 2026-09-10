@@ -30,6 +30,7 @@ export default function ParkingLotConcrete() {
               "Joint sealing to prevent water intrusion and further deterioration",
               "Surface restoration where full replacement isn't warranted",
               "We assess the sub-base condition before recommending repair vs. replacement — OKC's expansive clay can cause slab failure from below, not just surface wear",
+              "For panel replacement, joint sealing, and trip hazards on existing lots, see <a href='/concrete-parking-lot-repair-oklahoma-city'>concrete parking lot repair</a>",
             ],
           },
           {
