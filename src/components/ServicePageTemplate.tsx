@@ -113,9 +113,13 @@ interface ServicePageProps {
     description?: string;
     buttonLabel?: string;
   };
+  /** Render the process block after intro (near the hero estimate CTA) instead of later on the page. */
+  processNearCta?: boolean;
+  /** Optional planning note rendered with the process block. */
+  planningCallout?: string;
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showEeatBlock, internalLinks, serviceSchema, ctaLabel, finalCta }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showEeatBlock, internalLinks, serviceSchema, ctaLabel, finalCta, processNearCta, planningCallout }: ServicePageProps) {
   const seoTitle = metaTitle || `${title} ${titleAccent.replace('.', '')} | FDZ Construction LLC`;
   const seoDescription = metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155);
   const canonical = currentServiceSlug ? canonicalUrl(`/${currentServiceSlug}`) : undefined;
@@ -153,6 +157,21 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
     { title: "Curing & sealing", description: "Curing compound is applied immediately after finishing. Sealer is applied after full cure. We do a final walkthrough with you before leaving the job site." },
   ];
   const steps = processSteps && processSteps.length > 0 ? processSteps : defaultProcessSteps;
+  const processBlock = (
+      <ScrollReveal>
+        <section className="section-padding section-alt">
+          <div className="section-eye">{processEyebrow || "Our Concrete Process"}</div>
+          <h2 className="mb-4">{processTitle || "How We Build"}<br/><em className="h2-accent">{processTitleAccent || "Concrete That Lasts."}</em></h2>
+          <p className="prose-muted">{processIntro || "Every job follows the same proven process — because skipping any step is how you end up with concrete that fails in five years on Oklahoma clay."}</p>
+          <ProcessSteps steps={steps} />
+          {planningCallout && (
+            <div className="info-block mt-8">
+              <p dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(planningCallout) }} />
+            </div>
+          )}
+        </section>
+      </ScrollReveal>
+  );
   // TODO: "8+ years" is a placeholder phrasing — replace with the exact figure (or founding year) once confirmed.
   const defaultTrustLine = "FDZ Construction LLC is licensed, bonded, and insured in Oklahoma — 8+ years of experience serving the OKC metro, and every project is backed by a 2-year workmanship warranty.";
   const resolvedTrustLine = trustLine === null ? null : (trustLine ?? defaultTrustLine);
@@ -203,6 +222,8 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
           </section>
         </ScrollReveal>
       )}
+
+      {processNearCta && processBlock}
 
       {/* Local expertise note — OKC-specific technical point */}
       {localExpertiseNote && (
@@ -386,15 +407,8 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         </ScrollReveal>
       )}
 
-      {/* Process */}
-      <ScrollReveal>
-        <section className="section-padding section-alt">
-          <div className="section-eye">{processEyebrow || "Our Concrete Process"}</div>
-          <h2 className="mb-4">{processTitle || "How We Build"}<br/><em className="h2-accent">{processTitleAccent || "Concrete That Lasts."}</em></h2>
-          <p className="prose-muted">{processIntro || "Every job follows the same proven process — because skipping any step is how you end up with concrete that fails in five years on Oklahoma clay."}</p>
-          <ProcessSteps steps={steps} />
-        </section>
-      </ScrollReveal>
+      {/* Process — default placement, skipped when already shown near the hero CTA */}
+      {!processNearCta && processBlock}
 
       {/* Common Project Types */}
       {projectTypes && projectTypes.length > 0 && (

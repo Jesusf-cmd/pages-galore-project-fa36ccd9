@@ -12,7 +12,7 @@ export default function CommercialConcreteRepair() {
       title="Commercial Concrete Repair in"
       titleAccent="Oklahoma City."
       description='If you have cracked slabs, spalling, settlement, trip hazards, failed joints, or damaged parking lots, docks, or warehouse floors — this page is for an evaluation and written estimate. <a href="tel:4054584805">(405) 458-4805</a>.'
-      introText="Commercial concrete problems do not get cheaper by waiting. Cracked slabs, spalling surfaces, settlement, trip hazards, failed joints, damaged loading areas, parking lot failures, warehouse slab damage, equipment pad damage, and drainage-related deterioration all create liability, downtime, and accelerating repair costs. FDZ Construction evaluates the damage on site, explains whether repair, partial replacement, or full replacement makes sense for your conditions, and provides a written estimate — not a phone guess. For new commercial pours see our <a href='/commercial-concrete-oklahoma-city'>commercial concrete contractor page</a>."
+      introText="Commercial concrete problems do not get cheaper by waiting. Cracked slabs, spalling surfaces, settlement, trip hazards, failed joints, damaged loading areas, parking lot failures, warehouse slab damage, equipment pad damage, and drainage-related deterioration all create liability, downtime, and accelerating repair costs. FDZ Construction evaluates the damage on site, explains whether repair, partial replacement, or full replacement makes sense for your conditions, and provides a written estimate — not a phone guess. For heavy-use industrial floors and dock-related slab damage, see <a href='/industrial-concrete-repair-oklahoma-city'>industrial concrete repair</a> — this page covers commercial property repair more broadly. For new commercial pours see our <a href='/commercial-concrete-oklahoma-city'>commercial concrete contractor page</a>."
       modelNote="Self-performed repair work — our own crew handles assessment, prep, and the repair pour. Request a commercial concrete repair estimate below or call <a href='tel:4054584805'>(405) 458-4805</a>."
       ctaLabel="Request a Commercial Concrete Repair Estimate →"
       finalCta={{
@@ -132,34 +132,31 @@ export default function CommercialConcreteRepair() {
         ],
       }}
       processEyebrow="How It Works"
-      processTitle="The Commercial Repair"
-      processTitleAccent="Process."
-      processIntro="From first look at the damage to a written scope — built for facility managers, property managers, and GCs who need a clear repair-vs-replace recommendation."
+      processTitle="How Commercial Repair"
+      processTitleAccent="Typically Proceeds."
+      processNearCta
+      processIntro="Four steps from first contact to a written scope — for facility managers, property managers, and GCs who need a clear repair-vs-replace recommendation."
+      planningCallout="<strong>Occupied site?</strong> Include access limits, areas that must stay open, desired timing, and downtime constraints when you request an estimate. After-hours or weekend work can be discussed when a facility has to stay open — it is planned per project, not a promised response window."
       processSteps={[
         {
-          title: "On-site evaluation",
+          title: "Share project details and available photos",
           description:
-            "We walk the affected area, note cracking, settlement, joints, drainage, and visible base conditions, and talk through traffic, access, and downtime constraints. This is a contractor evaluation for estimating — not a structural engineering inspection.",
+            "Use the estimate form or call with facility type, location, affected area, what you are seeing, and desired timing. Photos of the damage help us prepare. This is a contractor estimate request — not an engineering inspection.",
         },
         {
-          title: "Repair vs. replace recommendation",
+          title: "Evaluate the affected concrete and site conditions",
           description:
-            "Honest framing of repair, partial panel replacement, or larger replacement based on what we see on site. We recommend repair when it is the better answer — even when replacement would be more revenue.",
+            "We walk the area, note cracking, settlement, joints, drainage, and visible base conditions, and talk through traffic and access. The recommendation is based on what we can see on site.",
         },
         {
-          title: "Written scope & estimate",
+          title: "Receive a proposed repair or replacement scope",
           description:
-            "Itemized written estimate with method, materials approach, and schedule considerations — no verbal commercial quotes.",
+            "You get a written estimate with the recommended method — repair, partial panel replacement, or larger replacement. No verbal commercial quotes.",
         },
         {
-          title: "Prep & execution",
+          title: "Coordinate scheduling and access",
           description:
-            "Grinding, saw-cutting, cleaning, base correction where needed, and the repair or panel pour — sequenced around your operations when required.",
-        },
-        {
-          title: "Documentation",
-          description:
-            "Before/after photos and completion notes available for property liability and maintenance files on trip-hazard and commercial repair work.",
+            "If you move forward, we sequence the work around your operations. Tell us about occupied areas, access, and downtime constraints so the plan can fit the site.",
         },
       ]}
       sections={[
@@ -213,8 +210,8 @@ export default function CommercialConcreteRepair() {
           titleAccent: "Concrete Repair Estimate.",
           alt: true,
           content: [
-            "Tell us the facility type (warehouse, retail, office, industrial, school, etc.), project location in the OKC metro, approximate affected area, a short problem description, and desired timing. Photos help — upload them with the estimate form. We prepare a written estimate after reviewing the information and, when needed, walking the site.",
-            "This path uses the same estimate system as the rest of the site. It is a contractor assessment for scoping and pricing repair work — not a licensed engineering inspection or structural certification.",
+            "Use the estimate form or call with the facility type, location, affected area, and photos of the damage. The steps above describe how a commercial repair estimate is requested and scoped.",
+            "This uses the same estimate system as the rest of the site. It is a contractor assessment for scoping and pricing repair work — not a licensed engineering inspection or structural certification.",
           ],
           infoBlock: "<a href='/#estimate' class='text-orange no-underline font-medium'>Request a Commercial Concrete Repair Estimate →</a> &nbsp;·&nbsp; 📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
         },
