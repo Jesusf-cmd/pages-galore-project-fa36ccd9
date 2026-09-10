@@ -400,7 +400,7 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
   },
   {
     path: "/loading-dock-concrete-repair-oklahoma-city",
-    title: "Loading Dock Repair Oklahoma City | FDZ Construction",
+    title: "Loading Dock Concrete Repair Oklahoma City | FDZ Construction",
     description: "Loading dock concrete repair in Oklahoma City — dock apron repair, dock face replacement, pit wall repair, approach slab patching. Licensed & insured. Call (405) 458-4805.",
     h1: "Loading Dock Concrete Repair in Oklahoma City, OK",
     content: "FDZ Construction repairs loading dock concrete for warehouses, distribution centers, cold storage, and manufacturing facilities across Oklahoma City. Cracked dock aprons, spalled dock faces, failing pit walls, approach slab patching. We work around your receiving schedule — after-hours, weekends, and phased sequences. Call (405) 458-4805.",

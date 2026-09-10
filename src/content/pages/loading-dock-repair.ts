@@ -2,7 +2,7 @@ import type { ServicePageContent } from "../servicePageTypes";
 
 export const loadingDockRepairContent: ServicePageContent = {
       currentServiceSlug: "loading-dock-concrete-repair-oklahoma-city",
-      metaTitle: "Loading Dock Repair Oklahoma City | FDZ Construction",
+      metaTitle: "Loading Dock Concrete Repair Oklahoma City | FDZ Construction",
       metaDescription: "Loading dock concrete repair in Oklahoma City — dock apron repair, dock face replacement, pit wall repair, approach slab patching. Licensed & insured. Call (405) 458-4805.",
       eyebrow: "Commercial Concrete · Oklahoma City",
       title: "Loading Dock Concrete Repair in",

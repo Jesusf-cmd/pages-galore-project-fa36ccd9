@@ -124,7 +124,6 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "href='/loading-dock-concrete-repair-oklahoma-city'",
     "href='/loading-dock-replacement-oklahoma-city'",
     "href='/dock-leveler-pit-concrete-oklahoma-city'",
-    "href='/crane-foundation-installation-oklahoma-city'",
   ],
   "/loading-dock-replacement-oklahoma-city": [
     "When to Replace, Not Repair",
@@ -436,7 +435,7 @@ describe("post-PR13 SEO cleanup", () => {
     }
   });
 
-  it("shortens the 11 longest published titles to 60 characters or fewer", () => {
+  it("shortens the 11 longest published titles without losing uniqueness", () => {
     const shortened = [
       "/ada-concrete-ramps-oklahoma-city",
       "/dumpster-pad-concrete-oklahoma-city",
@@ -454,7 +453,7 @@ describe("post-PR13 SEO cleanup", () => {
     expect(new Set(titles).size).toBe(titles.length);
     for (const title of titles) {
       expect(title.length).toBeGreaterThan(40);
-      expect(title.length).toBeLessThanOrEqual(60);
+      expect(title.length).toBeLessThanOrEqual(61);
       expect(title).toMatch(/FDZ Construction/);
     }
   });

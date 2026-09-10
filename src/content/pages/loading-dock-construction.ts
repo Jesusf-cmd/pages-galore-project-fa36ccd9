@@ -126,7 +126,6 @@ export const loadingDockConstructionContent: ServicePageContent = {
             "<a href='/loading-dock-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Concrete Repair</a> — Apron, face, and approach repairs when a full rebuild is not required.",
             "<a href='/loading-dock-replacement-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Replacement</a> — Full demolition and replacement for failed docks.",
             "<a href='/dock-leveler-pit-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dock Leveler Pit Concrete</a> — New pits and retrofits coordinated with equipment suppliers.",
-            "<a href='/crane-foundation-installation-oklahoma-city' class='text-orange no-underline font-medium'>Crane Foundation Installation</a> — High-load crane pads poured per engineered drawings when a dock or warehouse also needs overhead lifting.",
           ],
         },
       ],
