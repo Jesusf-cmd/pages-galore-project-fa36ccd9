@@ -92,6 +92,34 @@ function DrivewayPage() {
   );
 }
 
+const edmondFaq = [
+  {
+    question: "How long does a concrete driveway last in Edmond?",
+    answer: "A properly built driveway in Edmond should last 30+ years.",
+  },
+];
+
+function EdmondDrivewayPage() {
+  useFaqJsonLd(edmondFaq);
+  return (
+    <>
+      <Nav />
+      <Link to="/blog">Blog</Link>
+      <h1>Concrete Driveway Contractors in Edmond, OK.</h1>
+    </>
+  );
+}
+
+function BlogPage() {
+  useFaqJsonLd(null);
+  return (
+    <>
+      <Nav />
+      <h1>Concrete Guides for Oklahoma City.</h1>
+    </>
+  );
+}
+
 function HomePage() {
   useFaqJsonLd(homeFaq);
   return (
@@ -108,6 +136,8 @@ function App() {
       <Routes>
         <Route path="/industrial-concrete-repair-oklahoma-city" element={<IndustrialPage />} />
         <Route path="/driveway-repair-oklahoma-city" element={<DrivewayPage />} />
+        <Route path="/driveways-edmond" element={<EdmondDrivewayPage />} />
+        <Route path="/blog" element={<BlogPage />} />
         <Route path="/" element={<HomePage />} />
       </Routes>
     </MemoryRouter>
@@ -180,6 +210,35 @@ describe("FAQ JSON-LD lifecycle", () => {
     expect(remaining).toHaveLength(1);
     expect(remaining[0].json.mainEntity?.[0]?.name).toBe(homeFaq[0].question);
     expect(remaining.some((entry) => entry.json.mainEntity?.[0]?.name === industrialFaq[0].question)).toBe(false);
+    expect(
+      [...document.querySelectorAll('script[type="application/ld+json"]')].some((el) => {
+        try {
+          return JSON.parse(el.textContent || "")["@type"] === "GeneralContractor";
+        } catch {
+          return false;
+        }
+      }),
+    ).toBe(true);
+  });
+
+  it("replaces city-page FAQ content and removes it on a page without FAQs", () => {
+    seedPrerenderedHead(edmondFaq);
+    render(
+      <MemoryRouter initialEntries={["/driveways-edmond"]}>
+        <Routes>
+          <Route path="/driveways-edmond" element={<EdmondDrivewayPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+        </Routes>
+      </MemoryRouter>,
+    );
+
+    expect(screen.getByRole("heading", { level: 1 }).textContent).toContain("Edmond");
+    expect(faqPages()).toHaveLength(1);
+    expect(faqPages()[0].json.mainEntity?.[0]?.name).toBe(edmondFaq[0].question);
+
+    fireEvent.click(screen.getByRole("link", { name: "Blog" }));
+    expect(screen.getByRole("heading", { level: 1 }).textContent).toContain("Concrete Guides");
+    expect(faqPages()).toHaveLength(0);
     expect(
       [...document.querySelectorAll('script[type="application/ld+json"]')].some((el) => {
         try {

@@ -6,7 +6,7 @@ import {
   processSection,
   trustParagraph,
 } from "./prerender-helpers";
-import { renderRepairServiceHtml, renderServicePageHtml } from "./service-page-html";
+import { renderPoolDeckHtml, renderRepairServiceHtml, renderServiceInCityHtml, renderServicePageHtml } from "./service-page-html";
 import { routes } from "./prerender-routes";
 import {
   BLOG_POSTS,
@@ -28,6 +28,13 @@ import { loadingDockReplacementContent } from "../src/content/pages/loading-dock
 import { craneFoundationContent } from "../src/content/pages/crane-foundation";
 import { soilStabilizationContent } from "../src/content/pages/soil-stabilization";
 import { retailRestaurantContent } from "../src/content/pages/retail-restaurant";
+import { dumpsterPadsContent } from "../src/content/pages/dumpster-pads";
+import { polishedConcreteContent } from "../src/content/pages/polished-concrete";
+import { epoxyFloorCoatingsContent } from "../src/content/pages/epoxy-floor-coatings";
+import { tiltWallConcreteContent } from "../src/content/pages/tilt-wall";
+import { concreteMaintenanceContent } from "../src/content/pages/concrete-maintenance";
+import { poolDeckContent } from "../src/content/pages/pool-deck";
+import { serviceInCityPages } from "../src/content/serviceInCityPages";
 
 function prerenderH1(path: string): string {
   const route = routes.find((entry) => entry.path === path);
@@ -1487,6 +1494,36 @@ export const prerenderBodies: Record<string, string> = {
   "/retail-restaurant-concrete-oklahoma-city": renderServicePageHtml(
     retailRestaurantContent,
     prerenderH1("/retail-restaurant-concrete-oklahoma-city"),
+  ),
+  ...Object.fromEntries(
+    Object.values(serviceInCityPages).map((page) => [
+      page.path,
+      renderServiceInCityHtml(page, prerenderH1(page.path)),
+    ]),
+  ),
+  "/pool-deck-oklahoma-city": renderPoolDeckHtml(
+    poolDeckContent,
+    prerenderH1("/pool-deck-oklahoma-city"),
+  ),
+  "/dumpster-pad-concrete-oklahoma-city": renderServicePageHtml(
+    dumpsterPadsContent,
+    prerenderH1("/dumpster-pad-concrete-oklahoma-city"),
+  ),
+  "/polished-concrete-oklahoma-city": renderServicePageHtml(
+    polishedConcreteContent,
+    prerenderH1("/polished-concrete-oklahoma-city"),
+  ),
+  "/epoxy-floor-coatings-oklahoma-city": renderServicePageHtml(
+    epoxyFloorCoatingsContent,
+    prerenderH1("/epoxy-floor-coatings-oklahoma-city"),
+  ),
+  "/tilt-wall-concrete-oklahoma-city": renderServicePageHtml(
+    tiltWallConcreteContent,
+    prerenderH1("/tilt-wall-concrete-oklahoma-city"),
+  ),
+  "/concrete-maintenance-oklahoma-city": renderServicePageHtml(
+    concreteMaintenanceContent,
+    prerenderH1("/concrete-maintenance-oklahoma-city"),
   ),
 };
 
