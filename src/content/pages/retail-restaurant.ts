@@ -111,8 +111,8 @@ export const retailRestaurantContent: ServicePageContent = {
           title: "Other Commercial",
           titleAccent: "Concrete Services.",
           content: [
-            "<a href='/ada-ramps-oklahoma-city' class='text-orange no-underline font-medium'>ADA Ramps & Accessibility</a> — Full ADA compliance work including ramps, detectable warning surfaces, and accessible routes.",
-            "<a href='/dumpster-pads-oklahoma-city' class='text-orange no-underline font-medium'>Dumpster Pads</a> — Heavy-duty dumpster enclosure pads for commercial properties.",
+            "<a href='/ada-concrete-ramps-oklahoma-city' class='text-orange no-underline font-medium'>ADA Ramps & Accessibility</a> — Full ADA compliance work including ramps, detectable warning surfaces, and accessible routes.",
+            "<a href='/dumpster-pad-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dumpster Pads</a> — Heavy-duty dumpster enclosure pads for commercial properties.",
             "<a href='/epoxy-floor-coatings-oklahoma-city' class='text-orange no-underline font-medium'>Epoxy Floor Coatings</a> — Commercial kitchen quartz broadcast epoxy — NSF-compliant, non-porous, cleanable.",
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>All Commercial Concrete</a> — Full range of commercial and industrial concrete services in OKC.",
           ],

@@ -2,7 +2,7 @@ import type { ServicePageContent } from "../servicePageTypes";
 
 export const warehouseSlabContent: ServicePageContent = {
       currentServiceSlug: "warehouse-slab-repair-oklahoma-city",
-      metaTitle: "Warehouse Slab Repair Oklahoma City | Interior Concrete Replacement | FDZ Construction",
+      metaTitle: "Warehouse Slab Repair Oklahoma City | FDZ Construction",
       metaDescription: "Warehouse slab repair and floor replacement in Oklahoma City. Phased pours, flatness tolerances for forklifts, 8&quot;+ reinforced concrete. Licensed commercial contractor. Call (405) 458-4805.",
       eyebrow: "OKC Metro · Warehouse Floor Replacement · Licensed & Insured",
       title: "Warehouse Floor Replacement in",
@@ -135,6 +135,7 @@ export const warehouseSlabContent: ServicePageContent = {
             "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Localized crack, joint, and panel repair when full floor replacement is not required.",
             "<a href='/industrial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Industrial Concrete Repair</a> — Forklift damage, joint failure, and heavy-use floor repairs.",
             "<a href='/loading-dock-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Concrete Repair</a> — Dock apron and approach repairs tied to warehouse operations.",
+            "<a href='/soil-stabilization-oklahoma-city' class='text-orange no-underline font-medium'>Soil Stabilization</a> — Lime and cement treatment for OKC clay so a replacement warehouse floor doesn't fail from the subgrade up.",
           ],
         },
       ],

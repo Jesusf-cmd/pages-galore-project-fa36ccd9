@@ -55,7 +55,7 @@ export const repairPages: Record<string, RepairData> = {
     problemHtml: [
       "<strong>Most quick driveway repairs we see — caulk over a crack, mudjacking under a sunken slab, surface patches — don't address the reason the driveway failed in the first place.</strong> The base moved. The drainage was wrong. The original joints weren't cut on time. The crack is the symptom; the cause is upstream.",
       "We do real repairs that solve real problems. That sometimes means joint sealing and section replacement. Sometimes it means slab leveling. And honestly — sometimes it means recommending replacement instead of repair, because the base is gone and a repair is throwing money at a slab that's going to fail again in two years.",
-      "Every driveway repair we quote starts with a free on-site evaluation: what's the actual failure mode, is the base still sound, and what's the cheapest fix that will actually last. We give you the answer, even if it's not a job we end up doing.",
+      "Every driveway repair we quote starts with a free on-site evaluation: what's the actual failure mode, is the base still sound, and what's the cheapest fix that will actually last. We give you the answer, even if it's not a job we end up doing. For the upstream causes, see <a href='/blog/why-concrete-driveways-crack-oklahoma' class='text-orange no-underline'>why concrete driveways crack in Oklahoma</a>.",
     ],
     diagnosticTitle: "Repair or Replace?",
     diagnosticAccent: "Here's How We Decide.",
@@ -129,6 +129,7 @@ export const repairPages: Record<string, RepairData> = {
     related: [
       { label: "Commercial Concrete Repair", to: "/commercial-concrete-repair-oklahoma-city" },
       { label: "Foundation Repair", to: "/foundation-repair-oklahoma-city" },
+      { label: "Why Oklahoma driveways crack", to: "/blog/why-concrete-driveways-crack-oklahoma" },
       { label: "Driveways in Edmond", to: "/driveways-edmond" },
       { label: "Driveways in Norman", to: "/driveways-norman" },
       { label: "Driveways in Yukon", to: "/driveways-yukon" },

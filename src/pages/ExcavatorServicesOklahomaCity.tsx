@@ -75,7 +75,7 @@ export default function ExcavatorServicesOklahomaCity() {
         { title: "Final grade & cleanup", description: "Final pass for grade and slope, debris cleared, site left ready for what comes next." },
         { title: "Walkthrough", description: "We walk the finished site with you before we leave." },
       ]}
-      metaTitle="Excavator Services Oklahoma City | Land Clearing, Grading & Drainage | FDZ Construction"
+      metaTitle="Excavator Services Oklahoma City | FDZ Construction"
       metaDescription="Excavator land clearing, stump removal, deep grading, drainage work & larger gravel driveways/pads in OKC. Self-performed, no subcontractors. Free estimate: (405) 458-4805."
       eyebrow="OKC Metro · Excavator Services · Self-Performed"
       badge="self-performed"

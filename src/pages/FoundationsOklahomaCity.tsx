@@ -53,7 +53,7 @@ export default function FoundationsOklahomaCity() {
           },
         ],
       }}
-      metaTitle="Concrete Foundations Oklahoma City | Residential & Commercial | FDZ Construction LLC"
+      metaTitle="Concrete Foundations Oklahoma City | FDZ Construction"
       metaDescription="Concrete foundation contractor in Oklahoma City. Slab-on-grade, stem walls, footings, garage pads, and commercial warehouse & retail foundations engineered for clay soil. (405) 458-4805."
       eyebrow="OKC Metro · Foundation Contractors · Licensed & Insured"
       badge="self-performed"
@@ -178,6 +178,8 @@ export default function FoundationsOklahomaCity() {
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete</a> — Warehouse floors, retail pads, loading docks, and site concrete for commercial properties and GC projects.",
             "<a href='/retaining-walls-oklahoma-city' class='text-orange no-underline font-medium'>Retaining Wall Construction</a> — Structural walls that often pair with foundation and grade work on sloped lots.",
             "<a href='/patios-oklahoma-city' class='text-orange no-underline font-medium'>Patios &amp; Stamped Concrete</a> — Outdoor living slabs on sloped lots often pair with foundation or retaining work.",
+            "<a href='/soil-stabilization-oklahoma-city' class='text-orange no-underline font-medium'>Soil Stabilization</a> — Lime and cement treatment for Oklahoma clay before a foundation pour.",
+            "Helpful guide: <a href='/blog/rebar-vs-wire-mesh-concrete-slabs' class='text-orange no-underline'>rebar vs wire mesh for concrete slabs</a> on expansive clay.",
             "Local foundation pages: <a href='/foundations-edmond' class='text-orange no-underline'>Edmond</a>, <a href='/foundations-norman' class='text-orange no-underline'>Norman</a>, and <a href='/foundations-yukon' class='text-orange no-underline'>Yukon</a>.",
           ],
         },

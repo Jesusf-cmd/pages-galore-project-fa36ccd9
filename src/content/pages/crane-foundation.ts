@@ -2,7 +2,7 @@ import type { ServicePageContent } from "../servicePageTypes";
 
 export const craneFoundationContent: ServicePageContent = {
   currentServiceSlug: "crane-foundation-installation-oklahoma-city",
-  metaTitle: "Crane Foundation Installation Oklahoma City | Concrete Crane Pads | FDZ Construction",
+  metaTitle: "Crane Foundation Installation OKC | FDZ Construction",
   metaDescription: "Crane foundation installation in Oklahoma City — concrete crane pads, anchor bolt coordination, and reinforcement placed per engineered drawings. Licensed & insured. Call (405) 458-4805.",
   eyebrow: "Commercial Concrete · Oklahoma City",
   title: "Crane Foundation Installation in",

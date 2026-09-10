@@ -85,6 +85,7 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "Parking Lot Repair Services in Oklahoma City",
     "href='/parking-lots-oklahoma-city'",
     "href='/commercial-concrete-repair-oklahoma-city'",
+    "href='/concrete-maintenance-oklahoma-city'",
   ],
   "/loading-dock-concrete-repair-oklahoma-city": [
     "Loading Dock Concrete Repair Scope",
@@ -99,17 +100,20 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "Floor Flatness & Levelness (FF/FL)",
     "href='/industrial-concrete-repair-oklahoma-city'",
     "href='/loading-dock-concrete-repair-oklahoma-city'",
+    "href='/soil-stabilization-oklahoma-city'",
   ],
   "/industrial-concrete-repair-oklahoma-city": [
     "What We Repair",
     "href='/commercial-concrete-oklahoma-city'",
     "href='/loading-dock-concrete-repair-oklahoma-city'",
     "href='/warehouse-slab-repair-oklahoma-city'",
+    "href='/concrete-maintenance-oklahoma-city'",
   ],
   "/equipment-pad-concrete-oklahoma-city": [
     "What We Pour",
     "Equipment Foundation Specs",
     "href=\"/#estimate\"",
+    "href='/crane-foundation-installation-oklahoma-city'",
   ],
   "/truck-court-concrete-oklahoma-city": [
     "What Makes Truck Court Concrete Different",
@@ -120,6 +124,7 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "href='/loading-dock-concrete-repair-oklahoma-city'",
     "href='/loading-dock-replacement-oklahoma-city'",
     "href='/dock-leveler-pit-concrete-oklahoma-city'",
+    "href='/crane-foundation-installation-oklahoma-city'",
   ],
   "/loading-dock-replacement-oklahoma-city": [
     "When to Replace, Not Repair",
@@ -135,6 +140,7 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "Our Repair Scope",
     "href='/driveways-oklahoma-city'",
     'href="/foundation-repair-oklahoma-city"',
+    "href='/blog/why-concrete-driveways-crack-oklahoma'",
   ],
   "/foundation-repair-oklahoma-city": [
     "Our Repair Scope",
@@ -143,13 +149,13 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
   ],
   "/soil-stabilization-oklahoma-city": [
     "Soil Stabilization Methods We Use",
-    "href='/warehouse-floor-replacement-oklahoma-city'",
-    "href='/equipment-foundations-oklahoma-city'",
+    "href='/warehouse-slab-repair-oklahoma-city'",
+    "href='/equipment-pad-concrete-oklahoma-city'",
   ],
   "/retail-restaurant-concrete-oklahoma-city": [
     "Restaurant & Retail Concrete We Install",
-    "href='/ada-ramps-oklahoma-city'",
-    "href='/dumpster-pads-oklahoma-city'",
+    "href='/ada-concrete-ramps-oklahoma-city'",
+    "href='/dumpster-pad-concrete-oklahoma-city'",
     "href='/epoxy-floor-coatings-oklahoma-city'",
   ],
   "/driveways-edmond": [
@@ -158,6 +164,7 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "href=\"/edmond-concrete\"",
     "href=\"/foundations-edmond\"",
     "Garber-Wellington",
+    "href='/blog/how-thick-should-driveway-be-oklahoma'",
   ],
   "/driveways-norman": [
     "Canadian River",
@@ -234,12 +241,12 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
   "/dumpster-pad-concrete-oklahoma-city": [
     "Dumpster Pad Services in Oklahoma City",
     "href='/parking-lots-oklahoma-city'",
-    "href='/commercial-curb-gutter-oklahoma-city'",
+    "href='/commercial-curb-and-gutter-oklahoma-city'",
   ],
   "/polished-concrete-oklahoma-city": [
     "Polished Concrete Finish Levels",
     "href='/epoxy-floor-coatings-oklahoma-city'",
-    "href='/warehouse-floor-replacement-oklahoma-city'",
+    "href='/warehouse-slab-repair-oklahoma-city'",
   ],
   "/epoxy-floor-coatings-oklahoma-city": [
     "Epoxy Systems We Install",
@@ -248,8 +255,9 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
   ],
   "/tilt-wall-concrete-oklahoma-city": [
     "Tilt-Wall Concrete We Provide",
-    "href='/equipment-foundations-oklahoma-city'",
+    "href='/equipment-pad-concrete-oklahoma-city'",
     "href='/loading-dock-construction-oklahoma-city'",
+    "href='/crane-foundation-installation-oklahoma-city'",
   ],
   "/concrete-maintenance-oklahoma-city": [
     "Concrete Maintenance We Provide",
@@ -375,5 +383,79 @@ describe("prerender content parity for priority routes", () => {
     expect(faqJsonLdScriptTag(JSON.stringify({ "@type": "GeneralContractor" }))).not.toContain(
       `id="${FAQ_JSON_LD_SCRIPT_ID}"`,
     );
+  });
+});
+
+describe("post-PR13 SEO cleanup", () => {
+  const redirectAliases = [
+    "/warehouse-floor-replacement-oklahoma-city",
+    "/equipment-foundations-oklahoma-city",
+    "/ada-ramps-oklahoma-city",
+    "/dumpster-pads-oklahoma-city",
+    "/commercial-curb-gutter-oklahoma-city",
+  ];
+
+  it("does not emit redirect-alias hrefs in prerender bodies", () => {
+    for (const route of routes) {
+      const body = getPrerenderBody(route.path);
+      if (!body) continue;
+      for (const alias of redirectAliases) {
+        expect(body, `${route.path} still links to ${alias}`).not.toContain(`href='${alias}'`);
+        expect(body, `${route.path} still links to ${alias}`).not.toContain(`href="${alias}"`);
+      }
+    }
+  });
+
+  it("adds crawlable contextual links to thin-inbound destinations", () => {
+    const inbound: Array<{ source: string; dest: string; anchor: string }> = [
+      { source: "/driveways-oklahoma-city", dest: "/blog/why-concrete-driveways-crack-oklahoma", anchor: "why concrete driveways crack in Oklahoma" },
+      { source: "/driveway-repair-oklahoma-city", dest: "/blog/why-concrete-driveways-crack-oklahoma", anchor: "why concrete driveways crack in Oklahoma" },
+      { source: "/driveways-oklahoma-city", dest: "/blog/cost-of-concrete-oklahoma-city-2026", anchor: "cost of concrete in Oklahoma City for 2026" },
+      { source: "/patios-oklahoma-city", dest: "/blog/cost-of-concrete-oklahoma-city-2026", anchor: "2026 Oklahoma City concrete cost guide" },
+      { source: "/driveways-oklahoma-city", dest: "/blog/how-thick-should-driveway-be-oklahoma", anchor: "how thick a driveway should be" },
+      { source: "/driveways-edmond", dest: "/blog/how-thick-should-driveway-be-oklahoma", anchor: "how thick a driveway should be in Oklahoma" },
+      { source: "/patios-oklahoma-city", dest: "/blog/rebar-vs-wire-mesh-concrete-slabs", anchor: "rebar vs wire mesh for concrete slabs" },
+      { source: "/foundations-oklahoma-city", dest: "/blog/rebar-vs-wire-mesh-concrete-slabs", anchor: "rebar vs wire mesh for concrete slabs" },
+      { source: "/driveways-oklahoma-city", dest: "/blog/best-time-of-year-to-pour-concrete-okc", anchor: "best time of year to pour concrete in OKC" },
+      { source: "/patios-oklahoma-city", dest: "/blog/best-time-of-year-to-pour-concrete-okc", anchor: "best time of year to pour concrete in OKC" },
+      { source: "/industrial-concrete-repair-oklahoma-city", dest: "/concrete-maintenance-oklahoma-city", anchor: "Concrete Maintenance" },
+      { source: "/commercial-concrete-repair-oklahoma-city", dest: "/concrete-maintenance-oklahoma-city", anchor: "Concrete maintenance" },
+      { source: "/equipment-pad-concrete-oklahoma-city", dest: "/crane-foundation-installation-oklahoma-city", anchor: "Crane Foundation Installation" },
+      { source: "/tilt-wall-concrete-oklahoma-city", dest: "/crane-foundation-installation-oklahoma-city", anchor: "Crane Foundation Installation" },
+      { source: "/", dest: "/pool-deck-oklahoma-city", anchor: "Pool Deck Concrete" },
+      { source: "/commercial-concrete-oklahoma-city", dest: "/pool-deck-oklahoma-city", anchor: "Pool deck concrete" },
+      { source: "/foundations-oklahoma-city", dest: "/soil-stabilization-oklahoma-city", anchor: "Soil stabilization" },
+      { source: "/warehouse-slab-repair-oklahoma-city", dest: "/soil-stabilization-oklahoma-city", anchor: "Soil Stabilization" },
+    ];
+
+    for (const { source, dest, anchor } of inbound) {
+      const body = getPrerenderBody(source) ?? "";
+      const linked = body.includes(`href="${dest}"`) || body.includes(`href='${dest}'`);
+      expect(linked, `${source} missing href to ${dest}`).toBe(true);
+      expect(body, `${source} missing anchor "${anchor}"`).toContain(anchor);
+    }
+  });
+
+  it("shortens the 11 longest published titles to 60 characters or fewer", () => {
+    const shortened = [
+      "/ada-concrete-ramps-oklahoma-city",
+      "/dumpster-pad-concrete-oklahoma-city",
+      "/excavator-services-oklahoma-city",
+      "/commercial-curb-and-gutter-oklahoma-city",
+      "/warehouse-slab-repair-oklahoma-city",
+      "/dock-leveler-pit-concrete-oklahoma-city",
+      "/foundations-oklahoma-city",
+      "/crane-foundation-installation-oklahoma-city",
+      "/loading-dock-concrete-repair-oklahoma-city",
+      "/truck-court-concrete-oklahoma-city",
+      "/patios-oklahoma-city",
+    ];
+    const titles = shortened.map((path) => routes.find((route) => route.path === path)?.title ?? "");
+    expect(new Set(titles).size).toBe(titles.length);
+    for (const title of titles) {
+      expect(title.length).toBeGreaterThan(40);
+      expect(title.length).toBeLessThanOrEqual(60);
+      expect(title).toMatch(/FDZ Construction/);
+    }
   });
 });

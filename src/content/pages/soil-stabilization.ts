@@ -110,9 +110,9 @@ export const soilStabilizationContent: ServicePageContent = {
           title: "Other Concrete",
           titleAccent: "Foundation Services.",
           content: [
-            "<a href='/warehouse-floor-replacement-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Floor Replacement</a> — Full slab replacement with proper subgrade treatment for OKC industrial facilities.",
+            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Floor Replacement</a> — Full slab replacement with proper subgrade treatment for OKC industrial facilities.",
             "<a href='/tilt-wall-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Tilt-Wall Concrete</a> — Casting slabs, grade beams, and interior slabs — all requiring proper subgrade treatment.",
-            "<a href='/equipment-foundations-oklahoma-city' class='text-orange no-underline font-medium'>Equipment Foundations</a> — Isolated machine foundations where subgrade bearing capacity is critical.",
+            "<a href='/equipment-pad-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Equipment Pad Concrete</a> — Isolated machine foundations where subgrade bearing capacity is critical.",
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>All Commercial Concrete</a> — Full range of commercial and industrial concrete services in OKC.",
           ],
         },

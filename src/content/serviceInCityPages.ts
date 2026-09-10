@@ -63,7 +63,7 @@ export const serviceInCityPages: Record<string, ServiceInCityData> = {
     localConditionsHtml: [
       "Edmond's terrain has more rolling grade than much of the flat OKC metro, so two driveways on the same street can need very different base prep. Sandier sections need careful compaction so the base doesn't migrate; clay-heavy sections need depth and adequate aggregate so swell-shrink doesn't crack the slab.",
       "On rolling lots, we grade the apron and slab so water sheds away from the garage and the house — not toward them. On flatter Edmond lots near the older parts of town, we still pitch a minimum 1/8\" per foot away from structures. Drainage is the variable that decides whether the slab is still flat in 15 years.",
-      "Every Edmond driveway we pour gets an on-site soil read before we quote depth or rebar layout — we don't assume a one-size answer from a satellite photo.",
+      "Every Edmond driveway we pour gets an on-site soil read before we quote depth or rebar layout — we don't assume a one-size answer from a satellite photo. For the metro spec, see <a href='/blog/how-thick-should-driveway-be-oklahoma'>how thick a driveway should be in Oklahoma</a>.",
     ],
     scopeBullets: [
       { title: "Tear-out & disposal", body: "Full removal of failed slab, haul-off included. We don't pour over a slab that's already moving." },

@@ -133,7 +133,7 @@ export const epoxyFloorCoatingsContent: ServicePageContent = {
           titleAccent: "Concrete Services.",
           content: [
             "<a href='/polished-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Polished Concrete Floors</a> — Diamond-ground and polished concrete from industrial matte to high-gloss mirror finish.",
-            "<a href='/warehouse-floor-replacement-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Floor Replacement</a> — Full phased floor replacement with flatness tolerances for forklift operations.",
+            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Floor Replacement</a> — Full phased floor replacement with flatness tolerances for forklift operations.",
             "<a href='/industrial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Industrial Concrete Repair</a> — Forklift damage, spalling, joint failure — rapid return to service.",
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete</a> — Full range of commercial and industrial concrete services in OKC.",
           ],

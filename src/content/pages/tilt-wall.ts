@@ -110,9 +110,11 @@ export const tiltWallConcreteContent: ServicePageContent = {
           title: "Other Industrial",
           titleAccent: "Concrete Services.",
           content: [
-            "<a href='/warehouse-floor-replacement-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Floor Replacement</a> — Phased floor replacement with flatness tolerances for rack storage and forklift operations.",
+            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Slab Repair</a> — Phased floor replacement with flatness tolerances for rack storage and forklift operations.",
             "<a href='/loading-dock-construction-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Construction</a> — Dock pits, aprons, truck courts, and dock leveler pocket construction.",
-            "<a href='/equipment-foundations-oklahoma-city' class='text-orange no-underline font-medium'>Equipment Foundations</a> — Isolated machine foundations and anchor bolt pours for industrial equipment.",
+            "<a href='/equipment-pad-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Equipment Pad Concrete</a> — Isolated machine foundations and anchor bolt pours for industrial equipment.",
+            "<a href='/crane-foundation-installation-oklahoma-city' class='text-orange no-underline font-medium'>Crane Foundation Installation</a> — High-load crane pads poured per engineered drawings with anchor bolt coordination.",
+            "<a href='/soil-stabilization-oklahoma-city' class='text-orange no-underline font-medium'>Soil Stabilization</a> — Lime and cement treatment for OKC clay before tilt-wall slabs and grade beams.",
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>All Commercial Concrete</a> — Full range of commercial and industrial concrete services in OKC.",
           ],
         },

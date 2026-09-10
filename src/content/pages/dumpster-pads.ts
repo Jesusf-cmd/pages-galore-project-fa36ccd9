@@ -2,7 +2,7 @@ import type { ServicePageContent } from "../servicePageTypes";
 
 export const dumpsterPadsContent: ServicePageContent = {
   currentServiceSlug: "dumpster-pad-concrete-oklahoma-city",
-      metaTitle: "Dumpster Pad Concrete Oklahoma City | Trash Enclosure Slabs & Bollards | FDZ Construction",
+      metaTitle: "Dumpster Pad Concrete Oklahoma City | FDZ Construction",
       metaDescription: "Concrete dumpster pads & trash enclosures in Oklahoma City. Commercial-grade, properly sloped, built for heavy containers. Free estimates — (405) 458-4805.",
       eyebrow: "OKC Metro · Commercial Concrete · Licensed & Insured",
       title: "Concrete Dumpster Pads & Trash Enclosures in",
@@ -134,7 +134,7 @@ export const dumpsterPadsContent: ServicePageContent = {
           content: [
             "<a href='/parking-lots-oklahoma-city' class='text-orange no-underline font-medium'>Parking Lot Concrete</a> — New commercial parking lot installation, repair, and full replacement with ADA-compliant layouts.",
             "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Crack repair, spalling, trip hazard removal, and joint sealing for commercial properties.",
-            "<a href='/commercial-curb-gutter-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Curb & Gutter</a> — Parking lot curbing, island curbs, and drive approach cuts throughout OKC.",
+            "<a href='/commercial-curb-and-gutter-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Curb & Gutter</a> — Parking lot curbing, island curbs, and drive approach cuts throughout OKC.",
             "<a href='/retail-restaurant-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Retail & Restaurant Concrete</a> — Concrete services tailored for retail centers, restaurants, and multi-tenant commercial properties.",
           ],
         },

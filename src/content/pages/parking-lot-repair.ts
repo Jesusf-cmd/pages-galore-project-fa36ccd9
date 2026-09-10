@@ -157,6 +157,7 @@ export const parkingLotRepairContent: ServicePageContent = {
             "<a href='/commercial-curb-and-gutter-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Curb & Gutter</a> — Curb repair, replacement, and new curb installation for parking lot perimeters and islands.",
             "<a href='/dumpster-pad-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dumpster Pad Concrete</a> — Reinforced dumpster pads for commercial properties — often replaced alongside parking lot repair.",
             "<a href='/truck-court-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Truck Court Concrete</a> — Heavy-duty concrete paving for loading and maneuvering areas adjacent to parking lots.",
+            "<a href='/concrete-maintenance-oklahoma-city' class='text-orange no-underline font-medium'>Concrete Maintenance</a> — Scheduled joint sealing and trip-hazard grinding that keeps a repaired lot from slipping back into panel failure.",
             "<a href='/parking-lots-oklahoma-city' class='text-orange no-underline font-medium'>New Parking Lot Construction</a> — Full new parking lot installation and complete replacement for lots beyond repair.",
           ],
         },
