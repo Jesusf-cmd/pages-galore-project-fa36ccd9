@@ -778,6 +778,7 @@ export const prerenderBodies: Record<string, string> = {
       { question: "Do you repair loading docks and parking lots?", answer: "Yes. See our loading dock concrete repair and concrete parking lot repair pages for dedicated detail." },
       { question: "How do you estimate commercial concrete repairs?", answer: "We review photos and problem details, typically walk the site, and provide a written estimate with the recommended method." },
       { question: "How do I schedule a commercial concrete repair estimate?", answer: "Call (405) 458-4805 or use the estimate form with facility type, location, affected area, problem description, photos, and desired timing." },
+      { question: "Can concrete repairs be matched to the existing color and finish?", answer: "Color matching is approximate — new concrete will not perfectly match weathered existing concrete. Broom or trowel texture can usually be matched closely. Weathering tends to bring repairs closer in appearance over time." },
     ])}
     <h2>Related Services</h2>
     <ul>

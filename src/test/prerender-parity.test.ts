@@ -316,6 +316,7 @@ describe("prerender content parity for priority routes", () => {
     expect(body).not.toContain("free inspection");
     expect(body).not.toContain("The Commercial Repair Process");
     expect(body.split("How Commercial Repair Typically Proceeds").length).toBe(2);
+    expect(body).toContain("Can concrete repairs be matched to the existing color and finish?");
   });
 
   it("keeps crawler H1s that differ from React titles", () => {
