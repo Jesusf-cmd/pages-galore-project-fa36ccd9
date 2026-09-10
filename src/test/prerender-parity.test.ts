@@ -319,6 +319,17 @@ describe("prerender content parity for priority routes", () => {
     expect(body).toContain("Can concrete repairs be matched to the existing color and finish?");
   });
 
+  it("links parking lot construction repair copy to the dedicated repair page", () => {
+    const body = getPrerenderBody("/parking-lots-oklahoma-city") ?? "";
+    const section = body.indexOf("Parking Lot Repair and Partial Replacement");
+    const repairLink = body.indexOf('href="/concrete-parking-lot-repair-oklahoma-city"');
+    const fullReplacement = body.indexOf("Full Parking Lot Replacement");
+    expect(section).toBeGreaterThan(-1);
+    expect(repairLink).toBeGreaterThan(section);
+    expect(fullReplacement).toBeGreaterThan(repairLink);
+    expect(body).toContain(">concrete parking lot repair</a>");
+  });
+
   it("keeps crawler H1s that differ from React titles", () => {
     expect(getPrerenderBody("/equipment-pad-concrete-oklahoma-city")).toContain(
       "<h1>Equipment Pad Concrete in Oklahoma City</h1>",

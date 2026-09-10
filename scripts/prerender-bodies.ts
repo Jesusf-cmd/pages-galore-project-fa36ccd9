@@ -1046,6 +1046,7 @@ export const prerenderBodies: Record<string, string> = {
       <li>Section removal and replacement for cracked or failed areas</li>
       <li>Joint sealing to prevent water intrusion and further deterioration</li>
       <li>We assess the sub-base condition before recommending repair vs. replacement — OKC's expansive clay can cause slab failure from below, not just surface wear</li>
+      <li>For panel replacement, joint sealing, and trip hazards on existing lots, see <a href="/concrete-parking-lot-repair-oklahoma-city">concrete parking lot repair</a></li>
     </ul>
     <h3>Full Parking Lot Replacement</h3>
     <ul>
