@@ -58,6 +58,10 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
   "/blog/cost-of-concrete-oklahoma-city-2026": [
     "Typical Project Costs in Oklahoma City (2026)",
     "href='/foundations-oklahoma-city'",
+    "What These Ranges Assume",
+    "planning ranges",
+    "href='/commercial-concrete-repair-oklahoma-city'",
+    'href="/?from=cost-of-concrete-oklahoma-city-2026#estimate"',
   ],
   "/blog/rebar-vs-wire-mesh-concrete-slabs": [
     "What Rebar Does That Wire Mesh Doesn't",
@@ -293,7 +297,7 @@ describe("prerender content parity for priority routes", () => {
 
   it("places the commercial repair process next to the first estimate CTA", () => {
     const body = getPrerenderBody("/commercial-concrete-repair-oklahoma-city") ?? "";
-    const estimateCta = body.indexOf('href="/#estimate"');
+    const estimateCta = body.indexOf("#estimate");
     const processHeading = body.indexOf("How Commercial Repair Typically Proceeds");
     const occupiedPlanning = body.indexOf("Occupied site?");
     const repairVsReplace = body.indexOf("When Concrete Can Be Repaired vs.");
@@ -317,6 +321,23 @@ describe("prerender content parity for priority routes", () => {
     expect(body).not.toContain("The Commercial Repair Process");
     expect(body.split("How Commercial Repair Typically Proceeds").length).toBe(2);
     expect(body).toContain("Can concrete repairs be matched to the existing color and finish?");
+    expect(body).toContain("Who This Page Is For");
+    expect(body).toContain("What to Include When Requesting an Estimate");
+    expect(body).toContain("Related Project Evidence");
+    expect(body).toContain('href="/?from=commercial-concrete-repair-oklahoma-city#estimate"');
+  });
+
+  it("aligns bollard prerender with commercial scope and estimate origin", () => {
+    const body = getPrerenderBody("/bollard-installation-oklahoma-city") ?? "";
+    const route = routes.find((entry) => entry.path === "/bollard-installation-oklahoma-city");
+    expect(body).toContain(`<h1>Bollard Installation in Oklahoma City</h1>`);
+    expect(route?.h1).toBe("Bollard Installation in Oklahoma City");
+    expect(route?.title).toBe("Commercial Bollard Installation Oklahoma City | FDZ Construction");
+    expect(body).not.toContain("<h1>Bollard Installation in Oklahoma City, OK</h1>");
+    expect(body).not.toContain("impact rating required");
+    expect(body).toContain("What We Need to Quote");
+    expect(body).toContain("Access, Occupied Sites, and Coordination");
+    expect(body).toContain('href="/?from=bollard-installation-oklahoma-city#estimate"');
   });
 
   it("links parking lot construction repair copy to the dedicated repair page", () => {

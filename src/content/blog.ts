@@ -1,3 +1,5 @@
+import { estimatePath } from "../lib/estimatePath";
+
 export type BlogSection = {
   heading: string;
   content: string[];
@@ -76,16 +78,24 @@ export const BLOG_POSTS: BlogPost[] = [
     displayDate: "March 10, 2026",
     time: "8 min read",
     tags: ["Concrete Cost OKC", "Pricing Guide", "2026"],
-    deck: "Per square foot rates, typical project totals, and what drives price in the OKC market — updated for 2026.",
-    excerpt: "Per square foot rates, typical project totals, and what drives price in the OKC market.",
+    deck: "Planning ranges for typical Oklahoma City projects — per square foot rates, example totals, and what drives price. A written estimate is site-specific.",
+    excerpt: "Planning ranges for typical OKC projects — per square foot rates, example totals, and what drives price.",
     seoTitle: "Cost of Concrete in Oklahoma City 2026 | FDZ Construction LLC",
     seoDescription:
-      "Updated 2026 concrete pricing for Oklahoma City. Per square foot rates, typical project costs, and what drives price in the OKC market.",
+      "Typical 2026 concrete cost ranges in Oklahoma City — per square foot rates and example project totals for planning. A written estimate follows a site visit. Call (405) 458-4805.",
     sections: [
       {
         heading: "The Short Answer: $6–$10 Per Square Foot",
         content: [
-          "Standard residential concrete in OKC — driveways, patios, garage slabs — runs $6–$10 per square foot installed. Foundation work runs $9–$14. Stamped concrete runs $15–$22.",
+          "These figures are planning ranges for typical Oklahoma City work — not a final proposal. Standard residential concrete in OKC — <a href='/driveways-oklahoma-city' class='text-orange no-underline'>driveways</a>, <a href='/patios-oklahoma-city' class='text-orange no-underline'>patios</a>, garage slabs — runs $6–$10 per square foot installed. Foundation work runs $9–$14. Stamped concrete runs $15–$22.",
+          "A written estimate is based on a site visit: soil, access, grade, thickness, and scope. The estimator on this site is a planning tool, not a commercial bid. <a href='/?from=cost-of-concrete-oklahoma-city-2026#estimate' class='text-orange no-underline'>Request a concrete estimate</a> or call <a href='tel:4054584805'>(405) 458-4805</a>.",
+        ],
+      },
+      {
+        heading: "What These Ranges Assume",
+        content: [
+          "The $6–$10 residential range is for a standard installed slab on a typical lot — the same planning band used on our driveway and patio pages. It is an installed average, not a materials-only price.",
+          "It does not cover every job. Costs go up with deep excavation on problem clay, a pump because truck access is tight, a 4,000 PSI mix upgrade, a stamped finish, or extra forming on a slope. Tear-out of failed concrete and drainage work also sit outside a simple square-foot average.",
         ],
       },
       {
@@ -98,12 +108,13 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "Typical Project Costs in Oklahoma City (2026)",
         content: [
           "Standard <a href='/driveways-oklahoma-city' class='text-orange no-underline'>driveway installation</a> in Oklahoma City (24×40): $5,760–$9,600. <a href='/patios-oklahoma-city' class='text-orange no-underline'>Patio slab OKC</a> (20×20): $2,400–$4,000. Stamped patio (400 sq ft): $6,000–$8,800. <a href='/foundations-oklahoma-city' class='text-orange no-underline'>Foundation work</a> in OKC (1,200 sq ft): $10,800–$16,800.",
+          "Commercial work is scoped from the site, not this residential average. See <a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline'>commercial concrete</a>, <a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline'>commercial concrete repair</a>, <a href='/parking-lots-oklahoma-city' class='text-orange no-underline'>parking lots</a>, and <a href='/sidewalks-oklahoma-city' class='text-orange no-underline'>sidewalks</a> for those scopes.",
         ],
       },
       {
-        heading: "Getting an Accurate Quote",
+        heading: "Getting a Site-Specific Estimate",
         content: [
-          "Phone estimates aren't reliable for concrete. Every project needs a site visit to assess soil conditions, access, grade, and scope. We provide free on-site estimates within one business day.",
+          "Phone estimates are not reliable for concrete. Every project needs a look at soil conditions, access, grade, and scope before a written estimate. Use the <a href='/?from=cost-of-concrete-oklahoma-city-2026#estimate' class='text-orange no-underline'>estimate form</a> or call <a href='tel:4054584805'>(405) 458-4805</a> — the range in the form is a planning figure until we see the site.",
         ],
       },
     ],
@@ -251,12 +262,17 @@ export function renderBlogPostHtml(post: BlogPost, h1: string): string {
       return `<h2>${section.heading}</h2>${paragraphs}`;
     })
     .join("");
+  const estimateHref = estimatePath(
+    post.slug === "cost-of-concrete-oklahoma-city-2026" ? post.slug : undefined,
+  );
+  const estimateLabel =
+    post.slug === "cost-of-concrete-oklahoma-city-2026" ? "Request a Concrete Estimate" : "Get Free Estimate";
   return `
     <h1>${h1}</h1>
     <p>${post.deck}</p>
     <p>${post.displayDate} · ${post.time} · By FDZ Construction LLC</p>
     ${sections}
     <p>${BLOG_POST_CONTRACTOR_LINKS}</p>
-    <p><a href="/blog">All articles</a> · <a href="/#estimate">Get Free Estimate</a> · <a href="tel:4054584805">(405) 458-4805</a></p>
+    <p><a href="/blog">All articles</a> · <a href="${estimateHref}">${estimateLabel}</a> · <a href="tel:4054584805">(405) 458-4805</a></p>
   `;
 }

@@ -5,6 +5,7 @@ import FinalCTA from "@/components/FinalCTA";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { BLOG_POST_CONTRACTOR_LINKS, BLOG_POSTS_BY_SLUG } from "@/content/blog";
+import { estimatePath } from "@/lib/estimatePath";
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -61,14 +62,26 @@ export default function BlogPost() {
           </div>
           <div className="flex gap-4 flex-wrap mt-12 pt-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <Link to="/blog" className="btn-outline text-sm">← All Articles</Link>
-            <Link to="/#estimate" className="btn-primary text-sm">Get Free Estimate →</Link>
+            <Link to={estimatePath(post.slug === "cost-of-concrete-oklahoma-city-2026" ? post.slug : undefined)} className="btn-primary text-sm">
+              {post.slug === "cost-of-concrete-oklahoma-city-2026" ? "Request a Concrete Estimate →" : "Get Free Estimate →"}
+            </Link>
           </div>
         </article>
       </ScrollReveal>
 
       <InternalLinksHub showCities={false} />
 
-      <FinalCTA />
+      <FinalCTA
+        {...(post.slug === "cost-of-concrete-oklahoma-city-2026"
+          ? {
+              heading: "Need a Site-Specific Number?",
+              headingAccent: "Request a Concrete Estimate.",
+              description: "The ranges in this guide are for planning. Use the existing estimate form or call — a written estimate follows a look at the site.",
+              buttonLabel: "Request a Concrete Estimate →",
+              to: estimatePath("cost-of-concrete-oklahoma-city-2026"),
+            }
+          : {})}
+      />
     </main>
   );
 }

@@ -69,8 +69,17 @@ function PageLoader() {
 }
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const id = decodeURIComponent(hash.slice(1));
+      const scrollToHash = () => document.getElementById(id)?.scrollIntoView();
+      scrollToHash();
+      const timer = window.setTimeout(scrollToHash, 50);
+      return () => window.clearTimeout(timer);
+    }
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
   return null;
 }
 

@@ -1,10 +1,14 @@
 import ServicePage from "@/components/ServicePageTemplate";
+import { estimatePath } from "@/lib/estimatePath";
+
+const ESTIMATE_HREF = estimatePath("commercial-concrete-repair-oklahoma-city");
 
 export default function CommercialConcreteRepair() {
   return (
     <ServicePage
       enriched
       currentServiceSlug="commercial-concrete-repair-oklahoma-city"
+      estimateHref={ESTIMATE_HREF}
       metaTitle="Commercial Concrete Repair Oklahoma City | FDZ Construction"
       metaDescription="Commercial concrete repair in Oklahoma City — cracked slabs, spalling, trip hazards, failed joints, parking lots, docks, and warehouse floors. On-site evaluation and written estimate. Call (405) 458-4805."
       eyebrow="OKC Metro · Commercial Concrete Repair · Licensed & Insured"
@@ -189,7 +193,7 @@ export default function CommercialConcreteRepair() {
           titleAccent: "Cost Ranges.",
           content: [
             "Commercial concrete repair pricing varies by damage type, area, access, and method. Most localized repairs cost less than tearing out a full section — but a cheap patch on a failed base is money wasted. Ranges below are typical starting points, not bids.",
-            "Call <a href='tel:4054584805'>(405) 458-4805</a> or <a href='/#estimate'>request a commercial concrete repair estimate</a> after photos or a site visit.",
+            "Call <a href='tel:4054584805'>(405) 458-4805</a> or <a href='/?from=commercial-concrete-repair-oklahoma-city#estimate'>request a commercial concrete repair estimate</a> after photos or a site visit.",
           ],
           table: {
             headers: ["Repair Type", "Typical Range"],
@@ -210,10 +214,11 @@ export default function CommercialConcreteRepair() {
           titleAccent: "Concrete Repair Estimate.",
           alt: true,
           content: [
-            "Use the estimate form or call with the facility type, location, affected area, and photos of the damage. The steps above describe how a commercial repair estimate is requested and scoped.",
+            "Use the estimate form or call. Include:",
+            "• Facility type (warehouse, retail, office, industrial, school, or similar)  • Project location in the OKC metro  • Approximate affected area  • What you are seeing (cracks, spalling, settlement, trip hazards, failed joints)  • Desired timing and access limits  • Photos of the damage — upload them on the same estimate page",
             "This uses the same estimate system as the rest of the site. It is a contractor assessment for scoping and pricing repair work — not a licensed engineering inspection or structural certification.",
           ],
-          infoBlock: "<a href='/#estimate' class='text-orange no-underline font-medium'>Request a Commercial Concrete Repair Estimate →</a> &nbsp;·&nbsp; 📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
+          infoBlock: "<a href='/?from=commercial-concrete-repair-oklahoma-city#estimate' class='text-orange no-underline font-medium'>Request a Commercial Concrete Repair Estimate →</a> &nbsp;·&nbsp; 📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
         },
         {
           eyebrow: "Related Services",
@@ -233,10 +238,43 @@ export default function CommercialConcreteRepair() {
             "<a href='/foundations-oklahoma-city' class='text-orange no-underline font-medium'>Foundations</a> — Commercial slab-on-grade and structural foundations when repair scope becomes replacement.",
             "<a href='/driveway-repair-oklahoma-city' class='text-orange no-underline font-medium'>Driveway / Concrete Crack Repair</a> — Residential driveway crack repair, leveling, and section replacement.",
             "<a href='/concrete-maintenance-oklahoma-city' class='text-orange no-underline font-medium'>Concrete Maintenance</a> — Joint sealing and ongoing commercial slab care.",
-            "<a href='/our-projects' class='text-orange no-underline font-medium'>Projects &amp; Case Studies</a> — Photos and video from completed commercial work.",
+            "<a href='/our-projects' class='text-orange no-underline font-medium'>Projects &amp; Case Studies</a> — Photos and video from completed commercial work, including the Guthrie warehouse forklift ramp, Yukon parking lot, and Star Spencer ADA sidewalks.",
           ],
         },
       ]}
+      projectTypesEyebrow="Who This Page Is For"
+      projectTypesTitle="Commercial Repair"
+      projectTypesTitleAccent="Customers."
+      projectTypesIntro="This page is for occupied commercial sites that need a contractor evaluation — not a new commercial pour. For new work see <a href='/commercial-concrete-oklahoma-city'>commercial concrete in Oklahoma City</a>."
+      projectTypes={[
+        {
+          title: "Facility and property managers",
+          description:
+            "Parking lots, sidewalks, docks, and warehouse floors that need a repair-vs-replace recommendation and a written estimate.",
+        },
+        {
+          title: "General contractors",
+          description:
+            "Photo- or plan-based repair scopes, including occupied sites that need access and schedule coordination.",
+        },
+        {
+          title: "Owners and operators",
+          description:
+            "Warehouses, retail, offices, schools, and industrial sites in the OKC metro with localized damage or failed panels.",
+        },
+      ]}
+      projectGallery={{
+        eyebrow: "Verified Commercial Work",
+        title: "Related Project Evidence",
+        titleAccent: "in the OKC Metro.",
+        intro:
+          "A concrete forklift ramp poured inside a live warehouse in Guthrie, Oklahoma — the same occupied-site conditions that show up on warehouse slab and dock repairs. Other verified commercial work includes a Yukon parking lot and Star Spencer High School ADA sidewalks. More photos are on our <a href='/our-projects'>projects page</a>.",
+        photos: [
+          { src: "/images/projects/forklift-ramp-pour-guthrie-oklahoma-1.webp", alt: "Power trowel finishing a concrete forklift ramp pour inside a warehouse in Guthrie, Oklahoma" },
+          { src: "/images/projects/forklift-ramp-pour-guthrie-oklahoma-2.webp", alt: "Crew troweling concrete forklift ramp in Guthrie, OK warehouse — forms and fresh pour visible" },
+          { src: "/images/projects/forklift-ramp-finished-guthrie-oklahoma.webp", alt: "Finished concrete forklift ramp in Guthrie, Oklahoma — smooth trowel finish flush with warehouse floor" },
+        ],
+      }}
       faq={[
         {
           question: "Can commercial concrete be repaired instead of replaced?",

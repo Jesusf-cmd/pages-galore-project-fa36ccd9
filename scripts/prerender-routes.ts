@@ -254,9 +254,9 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
   {
     path: "/blog/cost-of-concrete-oklahoma-city-2026",
     title: "Cost of Concrete in Oklahoma City 2026 | FDZ Construction LLC",
-    description: "Updated 2026 concrete pricing for Oklahoma City. Per square foot rates, typical project costs, and what drives price in the OKC market.",
+    description: "Typical 2026 concrete cost ranges in Oklahoma City — per square foot rates and example project totals for planning. A written estimate follows a site visit. Call (405) 458-4805.",
     h1: "Cost of Concrete in Oklahoma City (2026 Guide)",
-    content: "Standard residential concrete in OKC runs $6–$10 per square foot installed. Foundation work runs $9–$14. Stamped concrete runs $15–$22. Standard driveway installation in Oklahoma City (24×40): $5,760–$9,600. Patio slab OKC (20×20): $2,400–$4,000. Stamped patio (400 sq ft): $6,000–$8,800.",
+    content: "Planning ranges — not a final proposal. Standard residential concrete in OKC runs $6–$10 per square foot installed. Foundation work runs $9–$14. Stamped concrete runs $15–$22. Standard driveway installation in Oklahoma City (24×40): $5,760–$9,600. Patio slab OKC (20×20): $2,400–$4,000. Stamped patio (400 sq ft): $6,000–$8,800.",
   },
   {
     path: "/blog/rebar-vs-wire-mesh-concrete-slabs",
@@ -386,10 +386,10 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
   },
   {
     path: "/bollard-installation-oklahoma-city",
-    title: "Bollard Installation Oklahoma City | FDZ Construction",
-    description: "Concrete bollard installation in Oklahoma City — protective bollards for storefronts, dumpster enclosures, dock areas, and drive-through lanes. Licensed & insured. Call (405) 458-4805.",
-    h1: "Bollard Installation in Oklahoma City, OK",
-    content: "FDZ Construction installs concrete-set bollards for commercial properties, warehouses, distribution centers, retail storefronts, and drive-through facilities across Oklahoma City. We handle core drilling, anchor setting, and sleeve installation in both new concrete and existing slabs. Single bollard or full perimeter. Call (405) 458-4805.",
+    title: "Commercial Bollard Installation Oklahoma City | FDZ Construction",
+    description: "Commercial bollard installation in Oklahoma City — concrete-set bollards for storefronts, dumpster enclosures, dock areas, and drive-through lanes. Written estimate. Call (405) 458-4805.",
+    h1: "Bollard Installation in Oklahoma City",
+    content: "FDZ Construction installs concrete-set bollards for commercial properties, warehouses, distribution centers, retail storefronts, and drive-through facilities across Oklahoma City. We handle core drilling, sleeve installation, and replacement in both new concrete and existing slabs. Request a written estimate with site address, bollard count, and access notes. Call (405) 458-4805.",
   },
   {
     path: "/crane-foundation-installation-oklahoma-city",
