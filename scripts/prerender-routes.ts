@@ -553,6 +553,14 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
     content: "Builder pricing for Oklahoma City concrete contractors. Foundation labor rates, pad preparation, retaining walls.",
     noindex: true,
   },
+  {
+    path: "/quote",
+    title: "Quote | FDZ Construction LLC",
+    description: "Private project quote from FDZ Construction LLC.",
+    h1: "Quote",
+    content: "Private project quote from FDZ Construction LLC.",
+    noindex: true,
+  },
 ];
 
 export function getCanonical(path: string): string {

@@ -45,11 +45,14 @@
 /foundation-repair /foundation-repair-oklahoma-city 301
 /foundation-repair/ /foundation-repair-oklahoma-city 301
 
-# Client-only app routes (no prerendered HTML). Do not add /* /index.html 200.
+# Client-only app routes. Do not add /* /index.html 200.
+# Proxy to a pretty URL (/quote), never /index.html: Cloudflare 308s /index.html → /,
+# so a 200 rewrite to /index.html never keeps /quote/:id and the request falls through
+# to static 404.html.
 /admin /index.html 200
 /admin/ /index.html 200
 /admin/* /index.html 200
-/quote/* /index.html 200
+/quote/:id /quote 200
 
 # After moving prerender to *.html, /page/ would 404. Send slash URLs to the 200 URL.
 /blog/:slug/ /blog/:slug 301

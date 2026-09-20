@@ -270,8 +270,8 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
 };
 
 describe("prerender content parity for priority routes", () => {
-  it("prerenders 71 routes", () => {
-    expect(routes).toHaveLength(71);
+  it("prerenders 72 routes", () => {
+    expect(routes).toHaveLength(72);
   });
 
   it("exposes page-specific sections and crawlable links in generated bodies", () => {
@@ -387,11 +387,17 @@ describe("prerender content parity for priority routes", () => {
     expect(getPrerenderBody("/foundations-yukon")).toContain('href="/driveways-mustang"');
   });
 
-  it("leaves only /builders on the fallback path among prerender routes", () => {
+  it("leaves only /builders and /quote on the fallback path among prerender routes", () => {
     const missing = routes
       .filter((route) => !getPrerenderBody(route.path))
       .map((route) => route.path);
-    expect(missing).toEqual(["/builders"]);
+    expect(missing).toEqual(["/builders", "/quote"]);
+  });
+
+  it("proxies /quote/:id to the noindex quote shell instead of /index.html", () => {
+    const quote = routes.find((route) => route.path === "/quote");
+    expect(quote?.noindex).toBe(true);
+    expect(quote?.title).toBe("Quote | FDZ Construction LLC");
   });
 
   it("emits valid FAQ JSON-LD for phase 2a and 2b pages", () => {
