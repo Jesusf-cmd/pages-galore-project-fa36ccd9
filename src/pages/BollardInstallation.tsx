@@ -1,17 +1,28 @@
 import ServicePage from "@/components/ServicePageTemplate";
+import { estimatePath } from "@/lib/estimatePath";
+
+const ESTIMATE_HREF = estimatePath("bollard-installation-oklahoma-city");
 
 export default function BollardInstallation() {
   return (
     <ServicePage
       enriched
       currentServiceSlug="bollard-installation-oklahoma-city"
-      metaTitle="Bollard Installation Oklahoma City | FDZ Construction"
-      metaDescription="Concrete bollard installation in Oklahoma City — protective bollards for storefronts, dumpster enclosures, dock areas, and drive-through lanes. Licensed & insured. Call (405) 458-4805."
+      estimateHref={ESTIMATE_HREF}
+      metaTitle="Commercial Bollard Installation Oklahoma City | FDZ Construction"
+      metaDescription="Commercial bollard installation in Oklahoma City — concrete-set bollards for storefronts, dumpster enclosures, dock areas, and drive-through lanes. Written estimate. Call (405) 458-4805."
       eyebrow="Commercial Concrete · Oklahoma City"
       title="Bollard Installation in"
       titleAccent="Oklahoma City."
       description='Concrete-set bollards for storefronts, loading areas, dumpster enclosures, and drive-through lanes across the OKC metro. <a href="tel:4054584805">(405) 458-4805</a>.'
-      introText="Bollards protect buildings, equipment, employees, and customers from vehicle impact — and they're required at most commercial sites where vehicles operate near building facades, overhead doors, dock equipment, or dumpster enclosures. FDZ Construction installs concrete-set bollards for commercial properties, warehouses, distribution centers, retail storefronts, and drive-through facilities across the Oklahoma City metro. We handle core drilling, anchor setting, and sleeve installation in both new concrete and existing slabs. Call (405) 458-4805 to discuss your project."
+      introText="Bollards protect buildings, equipment, employees, and customers from vehicle impact at commercial sites where vehicles operate near building facades, overhead doors, dock equipment, or dumpster enclosures. FDZ Construction installs concrete-set bollards for commercial properties, warehouses, distribution centers, retail storefronts, and drive-through facilities across the Oklahoma City metro. We handle core drilling, sleeve installation, and replacement in both new concrete and existing slabs. This page is for facility managers, property managers, GCs, and business owners who need a written bollard estimate — call (405) 458-4805 or use the estimate form."
+      ctaLabel="Request a Bollard Installation Estimate →"
+      finalCta={{
+        heading: "Need Protective Bollards?",
+        headingAccent: "Request a Bollard Installation Estimate.",
+        description: "Use the existing estimate form. Include site address, bollard count, new vs replacement, whether the slab already exists, vehicle access, and schedule limits. Photos or a layout help. This is a contractor estimate — not an engineering specification.",
+        buttonLabel: "Request a Bollard Installation Estimate →",
+      }}
       localExpertiseNote="Oklahoma City commercial properties along major retail corridors — Penn Ave, Western Ave, May Ave, NW Expressway, S Memorial — face higher vehicle impact risk from drive-through traffic, delivery trucks, and parking lot incidents. OKC's clay soil also creates uneven settlement around bollard bases set in inadequately prepared sub-base; proper sleeve installation and compacted backfill prevent lean and tip-over over time."
       serviceLabel="Commercial"
       serviceCards={[
@@ -125,12 +136,12 @@ export default function BollardInstallation() {
       ]}
       sections={[
         {
-          eyebrow: "Commercial Trust",
-          title: "Set Up to Work with",
-          titleAccent: "General Contractors & Facility Managers.",
+          eyebrow: "Site Conditions",
+          title: "Access, Occupied Sites,",
+          titleAccent: "and Coordination.",
           content: [
-            "FDZ Construction LLC is set up to work with general contractors, facility managers, property managers, builders, and business owners. We can review plans, photos, repair scopes, access limitations, and scheduling before pricing.",
-            "• COI available upon request  • Bonding available for qualified projects  • Plan-based estimates  • Phased scheduling for active facilities  • After-hours and weekend options  • Demo, haul-off, forming, reinforcement, placement, and finish  • Subgrade and drainage review before placement  • Coordination with GCs, owners, managers, and other trades",
+            "Bollard work is affected by whether we are core-drilling an existing slab or pouring a new base, whether a concrete truck or core drill can reach the locations, and whether the site has to stay open. We review those conditions before pricing.",
+            "FDZ can review plans, photos, or a layout; provide COI on request; and coordinate with general contractors, facility managers, and other trades. Phased scheduling and after-hours or weekend options can be discussed when a facility has to stay open — planned per project, not a promised response window.",
           ],
         },
         {
@@ -147,7 +158,7 @@ export default function BollardInstallation() {
           title: "Bollard Installation",
           titleAccent: "Cost Ranges.",
           content: [
-            "Bollard pricing depends on bollard type, core drilling vs. new base, quantity, and access. Call (405) 458-4805 for a free on-site estimate.",
+            "Bollard pricing depends on bollard type, core drilling vs. new base, quantity, and access. Ranges below are typical starting points, not bids. <a href='/?from=bollard-installation-oklahoma-city#estimate'>Request a bollard installation estimate</a> or call (405) 458-4805.",
           ],
           table: {
             headers: ["Service", "Typical Range"],
@@ -173,19 +184,20 @@ export default function BollardInstallation() {
         },
         {
           eyebrow: "Send Plans or Scope",
-          title: "Request a",
-          titleAccent: "Commercial Estimate.",
+          title: "What We Need",
+          titleAccent: "to Quote Bollard Work.",
           content: [
-            "FDZ Construction can review bollard plans, photos, or installation scopes and provide a clear estimate. Call (405) 458-4805 or email jesus@fdzconstruction.com.",
+            "Include the site address, how many bollards, new install versus replacement, whether the slab already exists, vehicle access for core drilling or a concrete truck, and any occupied-site constraints. Photos or a simple layout help. We can install owner-supplied bollards or source them as part of the scope.",
+            "Use the estimate form or call (405) 458-4805. The form's square-foot range is a planning figure — bollard work is quoted from the site conditions above.",
           ],
-          infoBlock: "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
+          infoBlock: "<a href='/?from=bollard-installation-oklahoma-city#estimate' class='text-orange no-underline font-medium'>Request a Bollard Installation Estimate →</a> &nbsp;·&nbsp; 📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
         },
       ]}
       faq={[
         {
           question: "How deep should a bollard be set in concrete?",
           answer:
-            "Standard bollards should be set 36\"–48\" below grade in a concrete sleeve. Shallower installation reduces impact resistance significantly. FDZ sets all bollards at proper depth — not the minimum that fits in the sleeve.",
+            "Standard bollards should be set 36\"–48\" below grade in a concrete sleeve. Shallower installation reduces impact resistance. FDZ sets bollards at proper depth for the sleeve — we do not assign a catalog impact rating.",
         },
         {
           question: "Can you core drill bollards into existing concrete?",

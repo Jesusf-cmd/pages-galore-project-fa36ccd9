@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import {
+  applyEstimateOriginToDetails,
+  detailsLimitError,
+  parseEstimateOrigin,
+} from "@/lib/estimatePath";
 import {
   SERVICE_TYPES,
   FINISH_TYPES,
@@ -184,6 +189,8 @@ function HeroSection() {
 
 function EstimateForm() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const origin = parseEstimateOrigin(searchParams.get("from"));
   const [step, setStep] = useState(1);
   const [projectType, setProjectType] = useState("slab");
   const [length, setLength] = useState(20);
@@ -216,6 +223,11 @@ function EstimateForm() {
       setError("Please enter a valid email address.");
       return;
     }
+    const detailsError = detailsLimitError(details);
+    if (detailsError) {
+      setError(detailsError);
+      return;
+    }
     setError("");
     setSubmitting(true);
 
@@ -225,7 +237,8 @@ function EstimateForm() {
 
       const { data, error: fnError } = await supabase.functions.invoke("submit-quote", {
         body: {
-          name, email, phone, address, details,
+          name, email, phone, address,
+          details: applyEstimateOriginToDetails(searchParams.get("from"), details),
           projectType, finishType: finish,
           lengthFt: length, widthFt: width, sqft,
           estimateLow: range.low, estimateHigh: range.high,
@@ -269,6 +282,13 @@ function EstimateForm() {
         <span className="font-display text-base font-extrabold tracking-[0.1em] uppercase text-white">Instant Estimate</span>
         <span className="bg-white/20 text-white text-[0.63rem] tracking-[0.1em] uppercase px-2.5 py-1 font-bold">Step {step} of 3</span>
       </div>
+      {origin && (
+        <div className="px-4 md:px-5 py-3 bg-concrete/[0.04]" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.1)" }}>
+          <p className="text-[0.78rem] text-concrete leading-relaxed">
+            You&apos;re requesting a <strong>{origin.formLabel}</strong> estimate. Pick the closest project type for a planning range, then describe the actual scope in the details step. The range is not a site-specific bid.
+          </p>
+        </div>
+      )}
 
       {step === 1 && (
         <div className="p-4 md:p-5">
@@ -348,7 +368,7 @@ function EstimateForm() {
           </div>
           <div className="mb-4">
             <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Project Details</label>
-            <textarea value={details} onChange={e => setDetails(e.target.value)} placeholder="Tell us about your project scope, timeline, special requirements..." rows={3} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none resize-y min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+            <textarea value={details} onChange={e => setDetails(e.target.value)} placeholder={origin?.placeholder || "Tell us about your project scope, timeline, special requirements..."} rows={3} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none resize-y min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
           </div>
           {error && (
             <div className="bg-destructive/20 text-destructive text-sm p-3 mb-4" style={{ border: "1px solid hsl(0 60% 40% / 0.3)" }}>{error}</div>

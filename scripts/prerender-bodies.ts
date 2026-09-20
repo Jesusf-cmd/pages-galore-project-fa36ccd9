@@ -745,8 +745,14 @@ export const prerenderBodies: Record<string, string> = {
 
   "/commercial-concrete-repair-oklahoma-city": `
     <h1>Commercial Concrete Repair in Oklahoma City</h1>
-    <p>If you have cracked slabs, spalling, settlement, trip hazards, failed joints, damaged loading areas, parking lot failures, warehouse slab damage, equipment pad damage, or drainage-related deterioration — this page is for an evaluation and written estimate. Call <a href="tel:4054584805">(405) 458-4805</a> or <a href="/#estimate">request a commercial concrete repair estimate</a>.</p>
+    <p>If you have cracked slabs, spalling, settlement, trip hazards, failed joints, damaged loading areas, parking lot failures, warehouse slab damage, equipment pad damage, or drainage-related deterioration — this page is for an evaluation and written estimate. Call <a href="tel:4054584805">(405) 458-4805</a> or <a href="/?from=commercial-concrete-repair-oklahoma-city#estimate">request a commercial concrete repair estimate</a>.</p>
     <p>For heavy-use industrial floors and dock-related slab damage, see <a href="/industrial-concrete-repair-oklahoma-city">industrial concrete repair</a> — this page covers commercial property repair more broadly.</p>
+    <h2>Who This Page Is For</h2>
+    <ul>
+      <li>Facility and property managers — parking lots, sidewalks, docks, and warehouse floors that need a repair-vs-replace recommendation</li>
+      <li>General contractors — photo- or plan-based repair scopes, including occupied sites that need access and schedule coordination</li>
+      <li>Owners and operators — warehouses, retail, offices, schools, and industrial sites in the OKC metro</li>
+    </ul>
     ${processSection("How Commercial Repair Typically Proceeds", [
       { title: "Share project details and available photos", description: "Use the estimate form or call with facility type, location, affected area, what you are seeing, and desired timing. Photos help. This is a contractor estimate request, not an engineering inspection." },
       { title: "Evaluate the affected concrete and site conditions", description: "Walk the damage, note cracking, settlement, joints, drainage, and access — contractor evaluation for estimating." },
@@ -761,6 +767,12 @@ export const prerenderBodies: Record<string, string> = {
       <li>Single settled panel — foam lift or partial panel replacement when neighbors are sound</li>
       <li>Widespread cracking, ongoing settlement, slab flex, or failed subgrade — replacement evaluation</li>
     </ul>
+    <h2>What to Include When Requesting an Estimate</h2>
+    <ul>
+      <li>Facility type, project location, approximate affected area, what you are seeing, desired timing, and photos of the damage</li>
+    </ul>
+    <h2>Related Project Evidence</h2>
+    <p>A concrete forklift ramp poured inside a live warehouse in Guthrie, Oklahoma — occupied-site warehouse work. Other verified commercial work includes a Yukon parking lot and Star Spencer High School ADA sidewalks. <a href="/our-projects">See completed projects</a>.</p>
     <h2>Commercial Concrete Repair Use Cases</h2>
     <ul>
       <li><a href="/concrete-parking-lot-repair-oklahoma-city">Parking lot repair</a> · <a href="/parking-lots-oklahoma-city">Parking lot construction</a></li>
@@ -787,7 +799,7 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/concrete-maintenance-oklahoma-city">Concrete maintenance</a> — Joint sealing and ongoing commercial slab care that prevents small repairs from becoming replacements.</li>
       <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete contractor in Oklahoma City</a> — New pours and commercial site flatwork.</li>
     </ul>
-    <p><strong>Request a commercial concrete repair estimate:</strong> <a href="/#estimate">Estimate form</a> · <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
+    <p><strong>Request a commercial concrete repair estimate:</strong> <a href="/?from=commercial-concrete-repair-oklahoma-city#estimate">Estimate form</a> · <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
@@ -1373,8 +1385,15 @@ export const prerenderBodies: Record<string, string> = {
   `,
 
   "/bollard-installation-oklahoma-city": `
-    <h1>Bollard Installation in Oklahoma City, OK</h1>
-    <p>Bollards protect buildings, equipment, employees, and customers from vehicle impact — and they're required at most commercial sites where vehicles operate near building facades, overhead doors, dock equipment, or dumpster enclosures. FDZ Construction installs concrete-set bollards for commercial properties, warehouses, distribution centers, retail storefronts, and drive-through facilities across the Oklahoma City metro. We handle core drilling, anchor setting, and sleeve installation in both new concrete and existing slabs.</p>
+    <h1>Bollard Installation in Oklahoma City</h1>
+    <p>FDZ Construction installs concrete-set bollards for commercial properties, warehouses, distribution centers, retail storefronts, dumpster enclosures, dock areas, and drive-through facilities across the Oklahoma City metro. We handle core drilling, sleeve installation, and replacement in both new concrete and existing slabs. This page is for facility managers, property managers, GCs, and business owners who need a written bollard estimate.</p>
+    <h2>Who This Page Is For</h2>
+    <ul>
+      <li>Retail storefronts and drive-through lanes</li>
+      <li>Dumpster enclosure entries and corners</li>
+      <li>Dock doors, overhead doors, and equipment pads</li>
+      <li>New install, replacement, or a perimeter run</li>
+    </ul>
     <h2>Bollard Installation Services in Oklahoma City</h2>
     <h3>Core Drilling &amp; Sleeve Installation</h3>
     <ul>
@@ -1389,6 +1408,10 @@ export const prerenderBodies: Record<string, string> = {
       <li>Dumpster enclosure, dock area, storefront, and drive-through protective bollards</li>
       <li>Equipment-pad bollards around generators, HVAC units, and transformers</li>
     </ul>
+    <h2>Access, Occupied Sites, and Coordination</h2>
+    <p>Bollard work is affected by whether we are core-drilling an existing slab or pouring a new base, whether a concrete truck or core drill can reach the locations, and whether the site has to stay open. We review those conditions before pricing. COI is available on request. Phased scheduling and after-hours options can be discussed when a facility has to stay open — planned per project, not a promised response window.</p>
+    <h2>What We Need to Quote</h2>
+    <p>Include the site address, how many bollards, new install versus replacement, whether the slab already exists, vehicle access, and any occupied-site constraints. Photos or a simple layout help. We can install owner-supplied bollards or source them as part of the scope. <a href="/?from=bollard-installation-oklahoma-city#estimate">Request a bollard installation estimate</a>.</p>
     <h2>Local Considerations for OKC Commercial Sites</h2>
     <p>Oklahoma City commercial properties along major retail corridors face higher vehicle impact risk from drive-through traffic, delivery trucks, and parking lot incidents. OKC clay soil also creates uneven settlement around bollard bases set in inadequately prepared sub-base — proper sleeve installation and compacted backfill prevent lean and tip-over over time.</p>
     <h2>Related Commercial Services</h2>
@@ -1399,11 +1422,14 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete services</a></li>
     </ul>
     ${faqSection("Bollard Installation FAQ", [
-      { question: "How deep should a bollard be set?", answer: "Most commercial bollards are set 36–48 inches deep in a concrete sleeve. Exact depth depends on bollard size, soil conditions, and the impact rating required for the site." },
-      { question: "Can you install bollards in an existing parking lot or slab?", answer: "Yes — we core drill the existing concrete, set the sleeve, and finish flush with the surrounding surface so the new bollard does not create a trip hazard or drainage problem." },
-      { question: "Do you supply the bollards or only install them?", answer: "We can install owner-supplied bollards or source bollards as part of the project scope. Tell us what the site needs and we'll quote accordingly." },
+      { question: "How deep should a bollard be set in concrete?", answer: "Standard bollards should be set 36\"–48\" below grade in a concrete sleeve. Shallower installation reduces impact resistance. FDZ sets bollards at proper depth for the sleeve — not an invented site impact rating." },
+      { question: "Can you core drill bollards into existing concrete?", answer: "Yes. Diamond core drilling allows precise holes to the correct sleeve diameter in existing slabs without damaging the surrounding concrete. Most bollards can be installed in existing concrete in one day." },
+      { question: "What type of bollard is best for storefronts?", answer: "For storefronts, 4\"–6\" diameter steel pipe bollards set in concrete sleeves are standard. Decorative covers are available in various colors and finishes. The bollard type matters less than the depth and quality of the concrete sleeve." },
+      { question: "Do you install bollards around dumpster enclosures?", answer: "Yes. We install bollards at dumpster enclosure entries and corners to protect enclosure walls from collection trucks. We also pour the dumpster pad itself — see our dumpster pad page for full details." },
+      { question: "How long does bollard installation take?", answer: "Single bollard installations typically complete in one day, including core drilling and concrete. Multi-bollard projects and new bases may require concrete cure time before bollards are set — typically 24–48 hours." },
+      { question: "Do you work as a sub-contractor for bollard installation on GC projects?", answer: "Yes. FDZ provides COI and bonding documentation for the bid process and coordinates with GC schedules on commercial sites. Call (405) 458-4805 to discuss." },
     ])}
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Request a bollard installation estimate:</strong> <a href="/?from=bollard-installation-oklahoma-city#estimate">Estimate form</a> · <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 

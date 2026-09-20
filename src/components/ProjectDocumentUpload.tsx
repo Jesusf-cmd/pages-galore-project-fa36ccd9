@@ -1,5 +1,7 @@
 import { useCallback, useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Upload, X } from "lucide-react";
+import { applyEstimateOriginToDetails, detailsLimitError } from "@/lib/estimatePath";
 
 const MAX_FILES = 5;
 const MAX_FILE_BYTES = 10 * 1024 * 1024;
@@ -43,6 +45,7 @@ function validateClientFile(file: File, existingCount: number): string | null {
 }
 
 export default function ProjectDocumentUpload() {
+  const [searchParams] = useSearchParams();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [files, setFiles] = useState<File[]>([]);
   const [dragActive, setDragActive] = useState(false);
@@ -95,6 +98,11 @@ export default function ProjectDocumentUpload() {
       setError("Please enter a valid email address.");
       return;
     }
+    const detailsError = detailsLimitError(details);
+    if (detailsError) {
+      setError(detailsError);
+      return;
+    }
 
     setError("");
     setSubmitting(true);
@@ -105,7 +113,7 @@ export default function ProjectDocumentUpload() {
       formData.append("phone", phone.trim());
       formData.append("email", email.trim());
       formData.append("address", address.trim());
-      formData.append("details", details.trim());
+      formData.append("details", applyEstimateOriginToDetails(searchParams.get("from"), details));
       formData.append("company_website", honeypot);
       files.forEach((file) => formData.append("files", file));
 
