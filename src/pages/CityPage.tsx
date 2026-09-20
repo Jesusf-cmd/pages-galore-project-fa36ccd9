@@ -1,3 +1,4 @@
+import { yukonConcrete, yukonEstimateHtml } from "@/content/yukonConcrete";
 import { useEffect } from "react";
 import CityPageTemplate from "@/components/CityPageTemplate";
 import {
@@ -51,6 +52,7 @@ interface CityData {
   };
   whyFdzSection?: { points: { title: string; desc: string }[] };
   projectsPlaceholder?: { note: string };
+  estimateSectionHtml?: string;
   serviceAreaNote?: string;
   faqHeadingAccent?: string;
 }
@@ -161,17 +163,20 @@ const cityData: Record<string, CityData> = {
     city: "Yukon",
     county: "Canadian County",
     tier: "priority",
-    metaDescription:
-      "Concrete & sewer line contractor in Yukon, OK — driveways, patios, slabs, foundations & commercial concrete in Canadian County. FDZ Construction LLC. Call (405) 458-4805.",
-    heroBlurb:
-      "Concrete driveways, patios, slabs, foundations, commercial work, and sewer line repair in <strong>Yukon, Oklahoma</strong>. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
-    intro: [
-      "Yukon, on the west side of the metro in Canadian County, is one of the areas we work frequently. We handle driveways, patios, slabs, foundations, and commercial concrete for Yukon homeowners and businesses.",
-    ],
+    metaTitle: yukonConcrete.title,
+    metaDescription: yukonConcrete.description,
+    heroTitle: "Yukon Concrete",
+    heroTitleAccent: "Contractors.",
+    heroBlurb: "Concrete installation, replacement and repair for homes and businesses in <strong>Yukon, Oklahoma</strong>. Driveways, patios, foundations and commercial concrete. <a href='tel:4054584805'>(405) 458-4805</a>.",
+    intro: [yukonConcrete.intro],
+    estimateSectionHtml: yukonEstimateHtml,
     localTerrainNote:
       "Yukon has flatter terrain than Edmond, on the same expansive clay base shared across the region. A lot of the work here is in newer subdivisions built on graded former agricultural land — and on those sites, the quality of the fill and the compaction done during the original grading matters as much as the native soil itself. We check compaction and drainage on these lots specifically.",
     driveTimeNote: "Yukon is about 20–25 minutes west of the shop.",
-    linkedServices: [LOCAL.drivewaysYukon, LOCAL.patiosYukon, LOCAL.foundationsYukon, SVC.commercial, SVC.parking, SVC.sidewalks],
+    linkedServices: [LOCAL.drivewaysYukon, LOCAL.patiosYukon, LOCAL.foundationsYukon, SVC.commercial, SVC.parking, SVC.sidewalks,
+      { label: "Commercial Concrete Repair", to: "/commercial-concrete-repair-oklahoma-city", blurb: "Repair options for cracked slabs, spalling and trip hazards at Yukon commercial properties." },
+      { label: "Concrete Parking Lot Repair", to: "/concrete-parking-lot-repair-oklahoma-city", blurb: "Repair damaged parking areas and review replacement options where needed." },
+    ],
     sewerLocalNote:
       "Yukon&apos;s fast-growing subdivisions sit on the same expansive clay as the rest of the metro — and sewer lines under driveways are often the first thing to move when that clay swells after heavy rain. We repair and replace lines across Yukon and restore the disturbed concrete in the same job.",
     faq: [
@@ -521,6 +526,7 @@ export default function CityPage({ slug }: { slug: string }) {
       sewerLocalNote={data.sewerLocalNote}
       whyFdzSection={data.whyFdzSection}
       projectsPlaceholder={data.projectsPlaceholder}
+      estimateSectionHtml={data.estimateSectionHtml}
       serviceAreaNote={data.serviceAreaNote}
       faqHeadingAccent={data.faqHeadingAccent}
     />
