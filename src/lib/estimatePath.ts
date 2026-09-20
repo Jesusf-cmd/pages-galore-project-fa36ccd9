@@ -37,12 +37,12 @@ export function detailsLimitError(details: string): string | null {
 }
 
 export function estimatePath(from?: string | null): string {
-  if (!from || !(from in ESTIMATE_ORIGINS)) return ESTIMATE_PATH;
+  if (!parseEstimateOrigin(from)) return ESTIMATE_PATH;
   return `/?from=${encodeURIComponent(from)}#${ESTIMATE_HASH}`;
 }
 
 export function parseEstimateOrigin(from: string | null | undefined) {
-  if (!from) return undefined;
+  if (!from || !Object.prototype.hasOwnProperty.call(ESTIMATE_ORIGINS, from)) return undefined;
   return ESTIMATE_ORIGINS[from as EstimateOriginId];
 }
 

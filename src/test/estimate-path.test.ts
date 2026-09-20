@@ -109,3 +109,14 @@ describe("detailsLimitError and request construction", () => {
     expect(constructDetailsPayload("unknown", "keep me").details).toBe("keep me");
   });
 });
+
+describe("origin allowlist own properties", () => {
+  for (const from of ["constructor", "toString", "__proto__"]) {
+    it(`ignores inherited property ${from} in links, banners, and notes`, () => {
+      expect(estimatePath(from)).toBe(ESTIMATE_PATH);
+      expect(parseEstimateOrigin(from)).toBeUndefined();
+      expect(applyEstimateOriginToDetails(from, "Customer scope")).toBe("Customer scope");
+      expect(applyEstimateOriginToDetails(from, "")).toBe("");
+    });
+  }
+});
