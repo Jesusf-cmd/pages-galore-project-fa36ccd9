@@ -1,3 +1,4 @@
+import { yukonConcrete, yukonEstimateHtml } from "../src/content/yukonConcrete";
 import {
   TRUST_LINE,
   faqSection,
@@ -858,8 +859,8 @@ export const prerenderBodies: Record<string, string> = {
   `,
 
   "/yukon-oklahoma-concrete": `
-    <h1>Yukon Concrete &amp; Sewer Line Contractor</h1>
-    <p>Yukon, on the west side of the metro in Canadian County, is one of the areas we work frequently. We handle driveways, patios, slabs, foundations, and commercial concrete for Yukon homeowners and businesses.</p>
+    <h1>${yukonConcrete.heading}</h1>
+    <p>${yukonConcrete.intro}</p>
     <h2>Yukon Soil and Site Conditions</h2>
     <p>Yukon has flatter terrain than Edmond, on the same expansive clay base shared across the region. A lot of the work here is in newer subdivisions built on graded former agricultural land — and on those sites, the quality of the fill and the compaction done during the original grading matters as much as the native soil itself. We check compaction and drainage on these lots specifically.</p>
     <h2>Services Available in Yukon</h2>
@@ -870,6 +871,8 @@ export const prerenderBodies: Record<string, string> = {
       { href: "/commercial-concrete-oklahoma-city", label: "Commercial concrete services" },
       { href: "/parking-lots-oklahoma-city", label: "Concrete parking lots" },
       { href: "/sidewalks-oklahoma-city", label: "Sidewalks, curb & gutter" },
+      { href: "/commercial-concrete-repair-oklahoma-city", label: "Commercial Concrete Repair" },
+      { href: "/concrete-parking-lot-repair-oklahoma-city", label: "Concrete Parking Lot Repair" },
     ])}
     ${metroCitySewerBlock("Yukon", "Yukon's fast-growing subdivisions sit on the same expansive clay as the rest of the metro — and sewer lines under driveways are often the first thing to move when that clay swells after heavy rain. We repair and replace lines across Yukon and restore the disturbed concrete in the same job.")}
     ${faqSection("FAQ", [
@@ -879,6 +882,7 @@ export const prerenderBodies: Record<string, string> = {
     ])}
     <p><strong>Drive time:</strong> Yukon is about 20–25 minutes west of the shop.</p>
     ${trustParagraph()}
+    ${yukonEstimateHtml}
   `,
 
   "/norman-ok-concrete": `
