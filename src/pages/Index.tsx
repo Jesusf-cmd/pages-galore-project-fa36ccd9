@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   applyEstimateOriginToDetails,
+  detailsLimitError,
   parseEstimateOrigin,
 } from "@/lib/estimatePath";
 import {
@@ -220,6 +221,11 @@ function EstimateForm() {
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError("Please enter a valid email address.");
+      return;
+    }
+    const detailsError = detailsLimitError(details);
+    if (detailsError) {
+      setError(detailsError);
       return;
     }
     setError("");

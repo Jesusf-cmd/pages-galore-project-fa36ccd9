@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Upload, X } from "lucide-react";
-import { applyEstimateOriginToDetails } from "@/lib/estimatePath";
+import { applyEstimateOriginToDetails, detailsLimitError } from "@/lib/estimatePath";
 
 const MAX_FILES = 5;
 const MAX_FILE_BYTES = 10 * 1024 * 1024;
@@ -96,6 +96,11 @@ export default function ProjectDocumentUpload() {
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError("Please enter a valid email address.");
+      return;
+    }
+    const detailsError = detailsLimitError(details);
+    if (detailsError) {
+      setError(detailsError);
       return;
     }
 

@@ -27,6 +27,15 @@ export const ESTIMATE_ORIGINS = {
 
 export type EstimateOriginId = keyof typeof ESTIMATE_ORIGINS;
 
+/** Existing submit-quote / submit-project-documents details cap. */
+export const DETAILS_MAX_LENGTH = 2000;
+export const DETAILS_LIMIT_ERROR =
+  "Project details must be 2,000 characters or fewer. Shorten your notes to continue.";
+
+export function detailsLimitError(details: string): string | null {
+  return details.trim().length > DETAILS_MAX_LENGTH ? DETAILS_LIMIT_ERROR : null;
+}
+
 export function estimatePath(from?: string | null): string {
   if (!from || !(from in ESTIMATE_ORIGINS)) return ESTIMATE_PATH;
   return `/?from=${encodeURIComponent(from)}#${ESTIMATE_HASH}`;
@@ -44,7 +53,8 @@ export function applyEstimateOriginToDetails(
   const origin = parseEstimateOrigin(from);
   if (!origin) return details;
   const trimmed = details.trim();
-  if (trimmed.includes(origin.detailsPrefix)) return trimmed.slice(0, 2000);
-  const combined = trimmed ? `${origin.detailsPrefix}\n${trimmed}` : origin.detailsPrefix;
-  return combined.slice(0, 2000);
+  if (trimmed.includes(origin.detailsPrefix)) return trimmed;
+  if (!trimmed) return origin.detailsPrefix;
+  const combined = `${origin.detailsPrefix}\n${trimmed}`;
+  return combined.length <= DETAILS_MAX_LENGTH ? combined : trimmed;
 }
