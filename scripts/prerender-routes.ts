@@ -1,3 +1,4 @@
+import { mustangConcrete } from "../src/content/mustangConcrete";
 import { yukonConcrete } from "../src/content/yukonConcrete";
 /**
  * Route metadata for static prerendering.
@@ -198,10 +199,10 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
   },
   {
     path: "/mustang-oklahoma-concrete",
-    title: "Concrete & Sewer Line Contractor Mustang, OK | FDZ Construction LLC",
-    description: "Concrete & sewer line contractor in Mustang, OK — driveways, patios, slabs & foundations. FDZ Construction LLC. Call (405) 458-4805.",
-    h1: "Mustang Concrete & Sewer Line Contractor",
-    content: "Mustang sits on the west side of the metro in Canadian County and shares Yukon's flatter terrain and the region's expansive clay base. A lot of the work here is on newer subdivisions built on graded former agricultural land, where fill quality and compaction matter as much as the native soil. We pour driveways, patios, slabs, and foundations. Call (405) 458-4805 for a free estimate.",
+    title: mustangConcrete.title,
+    description: mustangConcrete.description,
+    h1: mustangConcrete.heading,
+    content: mustangConcrete.opening,
   },
   {
     path: "/moore-oklahoma-concrete",

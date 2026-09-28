@@ -1,3 +1,4 @@
+import { mustangConcrete, mustangOpeningHtml } from "@/content/mustangConcrete";
 import { yukonConcrete, yukonEstimateHtml } from "@/content/yukonConcrete";
 import { useEffect } from "react";
 import CityPageTemplate from "@/components/CityPageTemplate";
@@ -256,13 +257,12 @@ const cityData: Record<string, CityData> = {
     city: "Mustang",
     county: "Canadian County",
     tier: "standard",
-    metaDescription:
-      "Concrete & sewer line contractor in Mustang, OK — driveways, patios, slabs & foundations for homeowners and new-construction subdivisions. FDZ Construction LLC. Call (405) 458-4805.",
-    heroBlurb:
-      "Concrete driveways, patios, slabs, foundations, and sewer line repair in <strong>Mustang, Oklahoma</strong>. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
-    intro: [
-      "Mustang, on the west side of the metro in Canadian County, is an area we serve with driveways, patios, slabs, and foundations for homeowners and new-construction subdivisions.",
-    ],
+    metaTitle: mustangConcrete.title,
+    metaDescription: mustangConcrete.description,
+    heroTitle: mustangConcrete.heroTitle,
+    heroTitleAccent: mustangConcrete.heroTitleAccent,
+    heroBlurb: mustangOpeningHtml,
+    intro: [mustangConcrete.opening],
     localTerrainNote:
       "Mustang shares Yukon's flatter west-metro terrain and the region's expansive clay base. Like Yukon, a lot of the work here is on newer subdivisions built on graded former agricultural land, where fill quality and compaction matter as much as the native soil — so we check both before we pour.",
     driveTimeNote: "Mustang is about 20–25 minutes west of the shop.",
