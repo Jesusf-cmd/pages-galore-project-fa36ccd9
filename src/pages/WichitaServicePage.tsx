@@ -13,7 +13,6 @@ export default function WichitaServicePage({ page }: { page: WichitaPageContent 
       metaTitle={page.metaTitle}
       metaDescription={page.metaDescription}
       eyebrow={page.eyebrow}
-      badge="self-performed"
       title={page.title}
       titleAccent={page.titleAccent}
       description={page.description}
