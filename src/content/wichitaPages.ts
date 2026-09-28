@@ -278,7 +278,7 @@ export const commercialConcreteWichita: WichitaPageContent = {
     {
       question: "Does FDZ have a crew in Wichita?",
       answer:
-        "Yes. FDZ has a concrete crew in the Wichita area. Call 316-531-9583 about Kansas projects. No public street address is listed for Wichita.",
+        "Yes. FDZ has a concrete crew in the Wichita area. Call 316-531-9583 to discuss a Kansas project.",
     },
     {
       question: "What commercial concrete work do you take in Wichita?",
