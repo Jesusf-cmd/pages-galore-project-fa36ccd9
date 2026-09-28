@@ -1,7 +1,11 @@
 /** Homepage estimate form destination. Query `from` is an allowlisted originating page. */
 
+import { KANSAS_PHONE, OKLAHOMA_PHONE, WICHITA_PATHS } from "./phones";
+
 export const ESTIMATE_HASH = "estimate";
 export const ESTIMATE_PATH = "/#estimate";
+
+const KANSAS_ORIGIN_IDS = new Set(WICHITA_PATHS.map((path) => path.slice(1)));
 
 export const ESTIMATE_ORIGINS = {
   "commercial-concrete-repair-oklahoma-city": {
@@ -91,4 +95,32 @@ export function applyEstimateOriginToDetails(
   if (!trimmed) return origin.detailsPrefix;
   const combined = `${origin.detailsPrefix}\n${trimmed}`;
   return combined.length <= DETAILS_MAX_LENGTH ? combined : trimmed;
+}
+
+/** Recognized Wichita `from` values only. Oklahoma, unknown, and missing origins stay on the OKC number. */
+export function isKansasEstimateOrigin(from: string | null | undefined): boolean {
+  return !!from && KANSAS_ORIGIN_IDS.has(from) && !!parseEstimateOrigin(from);
+}
+
+export function phoneForEstimateOrigin(from: string | null | undefined) {
+  return isKansasEstimateOrigin(from) ? KANSAS_PHONE : OKLAHOMA_PHONE;
+}
+
+export const QUOTE_SUBMIT_CALL_PREFIX = "Something went wrong. Please call us at";
+export const UPLOAD_SUBMIT_CALL_PREFIX =
+  "Something went wrong uploading your files. Please try again or call";
+
+export function isServerPhoneError(message: string): boolean {
+  return /\(405\)\s*458-4805|4054584805|316-531-9583|3165319583/.test(message);
+}
+
+export function quoteSubmitCallFailure(from: string | null | undefined) {
+  return { prefix: QUOTE_SUBMIT_CALL_PREFIX, phone: phoneForEstimateOrigin(from) };
+}
+
+export function uploadSubmitCallFailure(from: string | null | undefined, serverMessage?: string) {
+  if (serverMessage && !isServerPhoneError(serverMessage)) {
+    return { prefix: serverMessage, phone: null as ReturnType<typeof phoneForEstimateOrigin> | null };
+  }
+  return { prefix: UPLOAD_SUBMIT_CALL_PREFIX, phone: phoneForEstimateOrigin(from) };
 }

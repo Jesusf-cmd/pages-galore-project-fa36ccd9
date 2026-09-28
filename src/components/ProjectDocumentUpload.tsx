@@ -1,7 +1,8 @@
 import { useCallback, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Upload, X } from "lucide-react";
-import { applyEstimateOriginToDetails, detailsLimitError, estimateAddressPlaceholder, parseEstimateOrigin } from "@/lib/estimatePath";
+import { applyEstimateOriginToDetails, detailsLimitError, estimateAddressPlaceholder, parseEstimateOrigin, uploadSubmitCallFailure } from "@/lib/estimatePath";
+import { EstimateCallError, EstimateCallFollowUp } from "@/components/EstimateCallLink";
 
 const MAX_FILES = 5;
 const MAX_FILE_BYTES = 10 * 1024 * 1024;
@@ -57,11 +58,14 @@ export default function ProjectDocumentUpload() {
   const [details, setDetails] = useState("");
   const [honeypot, setHoneypot] = useState("");
   const [error, setError] = useState("");
+  const [errorCallsPhone, setErrorCallsPhone] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const originFrom = searchParams.get("from");
 
   const addFiles = useCallback((incoming: FileList | File[]) => {
     setError("");
+    setErrorCallsPhone(false);
     const next = [...files];
     for (const file of Array.from(incoming)) {
       if (next.length >= MAX_FILES) {
@@ -84,28 +88,34 @@ export default function ProjectDocumentUpload() {
   const removeFile = (index: number) => {
     setFiles((current) => current.filter((_, i) => i !== index));
     setError("");
+    setErrorCallsPhone(false);
   };
 
   const handleSubmit = async () => {
     if (files.length === 0) {
+      setErrorCallsPhone(false);
       setError("Please attach at least one PDF, JPG, or PNG file.");
       return;
     }
     if (!name.trim() || !phone.trim() || !email.trim()) {
+      setErrorCallsPhone(false);
       setError("Please fill in your name, phone, and email.");
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setErrorCallsPhone(false);
       setError("Please enter a valid email address.");
       return;
     }
     const detailsError = detailsLimitError(details);
     if (detailsError) {
+      setErrorCallsPhone(false);
       setError(detailsError);
       return;
     }
 
     setError("");
+    setErrorCallsPhone(false);
     setSubmitting(true);
 
     try {
@@ -141,11 +151,12 @@ export default function ProjectDocumentUpload() {
       setSubmitted(true);
     } catch (err) {
       console.error("Document upload error:", err);
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Something went wrong uploading your files. Please try again or call (405) 458-4805."
+      const failure = uploadSubmitCallFailure(
+        originFrom,
+        err instanceof Error ? err.message : undefined,
       );
+      setError(failure.prefix);
+      setErrorCallsPhone(!!failure.phone);
     } finally {
       setSubmitting(false);
     }
@@ -163,10 +174,7 @@ export default function ProjectDocumentUpload() {
           <p className="text-muted-text text-sm mb-3">
             Thanks! We&apos;ll review your documents and get back to you within 24 hours.
           </p>
-          <p className="text-muted-text text-sm">
-            Or call us now at{" "}
-            <a href="tel:4054584805" className="text-orange font-bold no-underline">(405) 458-4805</a>.
-          </p>
+          <EstimateCallFollowUp from={originFrom} />
         </div>
       </div>
     );
@@ -343,7 +351,7 @@ export default function ProjectDocumentUpload() {
             className="bg-destructive/20 text-destructive text-sm p-3 mb-4"
             style={{ border: "1px solid hsl(0 60% 40% / 0.3)" }}
           >
-            {error}
+            {errorCallsPhone ? <EstimateCallError prefix={error} from={originFrom} /> : error}
           </div>
         )}
 

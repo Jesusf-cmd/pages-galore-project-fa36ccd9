@@ -5,7 +5,9 @@ import {
   estimateAddressPlaceholder,
   detailsLimitError,
   parseEstimateOrigin,
+  quoteSubmitCallFailure,
 } from "@/lib/estimatePath";
+import { EstimateCallError, EstimateCallFollowUp } from "@/components/EstimateCallLink";
 import {
   SERVICE_TYPES,
   FINISH_TYPES,
@@ -205,6 +207,8 @@ function EstimateForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [errorCallsPhone, setErrorCallsPhone] = useState(false);
+  const originFrom = searchParams.get("from");
 
   const sqft = length * width;
   const range = calculateRange(projectType, finish, sqft);
@@ -217,19 +221,23 @@ function EstimateForm() {
 
   const handleSubmit = async () => {
     if (!name.trim() || !phone.trim() || !email.trim()) {
+      setErrorCallsPhone(false);
       setError("Please fill in your name, phone, and email.");
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setErrorCallsPhone(false);
       setError("Please enter a valid email address.");
       return;
     }
     const detailsError = detailsLimitError(details);
     if (detailsError) {
+      setErrorCallsPhone(false);
       setError(detailsError);
       return;
     }
     setError("");
+    setErrorCallsPhone(false);
     setSubmitting(true);
 
     try {
@@ -255,7 +263,8 @@ function EstimateForm() {
       }
     } catch (err) {
       console.error("Submission error:", err);
-      setError("Something went wrong. Please call us at (405) 458-4805.");
+      setError(quoteSubmitCallFailure(originFrom).prefix);
+      setErrorCallsPhone(true);
     } finally {
       setSubmitting(false);
     }
@@ -271,7 +280,7 @@ function EstimateForm() {
           <div className="text-4xl mb-4">✅</div>
           <h3 className="text-concrete mb-2">Thank You, {name}!</h3>
           <p className="text-muted-text text-sm mb-3">Your quote has been created. Check your email for details.</p>
-          <p className="text-muted-text text-sm">Or call us now at <a href="tel:4054584805" className="text-orange font-bold no-underline">(405) 458-4805</a>.</p>
+          <EstimateCallFollowUp from={originFrom} />
         </div>
       </div>
     );
@@ -372,7 +381,9 @@ function EstimateForm() {
             <textarea value={details} onChange={e => setDetails(e.target.value)} placeholder={origin?.placeholder || "Tell us about your project scope, timeline, special requirements..."} rows={3} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none resize-y min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
           </div>
           {error && (
-            <div className="bg-destructive/20 text-destructive text-sm p-3 mb-4" style={{ border: "1px solid hsl(0 60% 40% / 0.3)" }}>{error}</div>
+            <div className="bg-destructive/20 text-destructive text-sm p-3 mb-4" style={{ border: "1px solid hsl(0 60% 40% / 0.3)" }}>
+              {errorCallsPhone ? <EstimateCallError prefix={error} from={originFrom} /> : error}
+            </div>
           )}
           <div className="bg-concrete/[0.03] p-3 mb-4 text-center" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
             <div className="font-display text-xl font-black text-orange">${range.low.toLocaleString()} – ${range.high.toLocaleString()}</div>

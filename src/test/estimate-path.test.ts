@@ -7,7 +7,11 @@ import {
   ESTIMATE_PATH,
   estimatePath,
   parseEstimateOrigin,
+  phoneForEstimateOrigin,
+  quoteSubmitCallFailure,
+  uploadSubmitCallFailure,
 } from "@/lib/estimatePath";
+import { KANSAS_PHONE, OKLAHOMA_PHONE } from "@/lib/phones";
 
 const REPAIR = "commercial-concrete-repair-oklahoma-city";
 const BOLLARD = "bollard-installation-oklahoma-city";
@@ -136,4 +140,60 @@ describe("origin allowlist own properties", () => {
       expect(applyEstimateOriginToDetails(from, "")).toBe("");
     });
   }
+});
+
+describe("phoneForEstimateOrigin and call messages", () => {
+  const wichita = [
+    "commercial-concrete-wichita",
+    "industrial-concrete-wichita",
+    "retaining-walls-wichita",
+    "stamped-concrete-wichita",
+  ] as const;
+  const oklahoma = [
+    "commercial-concrete-repair-oklahoma-city",
+    "bollard-installation-oklahoma-city",
+    "cost-of-concrete-oklahoma-city-2026",
+  ] as const;
+
+  it("uses 316-531-9583 for every recognized Wichita from value", () => {
+    for (const from of wichita) {
+      expect(phoneForEstimateOrigin(from)).toEqual(KANSAS_PHONE);
+      const quote = quoteSubmitCallFailure(from);
+      expect(quote.prefix).toContain("Please call us at");
+      expect(quote.phone).toEqual(KANSAS_PHONE);
+      expect(quote.phone.display).toBe("316-531-9583");
+      expect(quote.phone.tel).toBe("3165319583");
+      const upload = uploadSubmitCallFailure(from);
+      expect(upload.phone).toEqual(KANSAS_PHONE);
+      const remapped = uploadSubmitCallFailure(
+        from,
+        "Something went wrong. Please try again or call (405) 458-4805.",
+      );
+      expect(remapped.phone).toEqual(KANSAS_PHONE);
+      expect(remapped.prefix).not.toContain("405");
+    }
+  });
+
+  it("keeps (405) 458-4805 for Oklahoma, missing, and unrecognized origins", () => {
+    for (const from of [...oklahoma, null, "unknown", "constructor"]) {
+      expect(phoneForEstimateOrigin(from)).toEqual(OKLAHOMA_PHONE);
+      expect(quoteSubmitCallFailure(from).phone).toEqual(OKLAHOMA_PHONE);
+      expect(uploadSubmitCallFailure(from).phone).toEqual(OKLAHOMA_PHONE);
+    }
+  });
+
+  it("does not rewrite non-phone upload validation errors", () => {
+    const failure = uploadSubmitCallFailure(
+      "commercial-concrete-wichita",
+      "Please attach at least one PDF, JPG, or PNG file.",
+    );
+    expect(failure.phone).toBeNull();
+    expect(failure.prefix).toBe("Please attach at least one PDF, JPG, or PNG file.");
+  });
+
+  it("does not change quote or upload detail prefixes when selecting a call number", () => {
+    const details = applyEstimateOriginToDetails("stamped-concrete-wichita", "ashlar patio");
+    expect(details).toContain("Requested from /stamped-concrete-wichita");
+    expect(quoteSubmitCallFailure("stamped-concrete-wichita").prefix).not.toContain("submit-quote");
+  });
 });
