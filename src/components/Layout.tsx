@@ -1,7 +1,9 @@
-import { Component, type ReactNode, Suspense } from "react";
+import { Component, type ReactNode, Suspense, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { organizationJsonLdForPath } from "@/lib/organizationSchema";
+import { phoneForPath } from "@/lib/phones";
 
 function ContentLoader() {
   return (
@@ -11,7 +13,7 @@ function ContentLoader() {
   );
 }
 
-class RouteErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
+class RouteErrorBoundary extends Component<{ children: ReactNode; phoneDisplay: string; phoneTel: string }, { hasError: boolean }> {
   state = { hasError: false };
 
   static getDerivedStateFromError() {
@@ -24,8 +26,8 @@ class RouteErrorBoundary extends Component<{ children: ReactNode }, { hasError: 
         <div className="min-h-[40vh] flex items-center justify-center p-8 text-center">
           <p className="text-muted-text">
             This page failed to load. Call{" "}
-            <a href="tel:4054584805" className="text-orange no-underline">
-              (405) 458-4805
+            <a href={`tel:${this.props.phoneTel}`} className="text-orange no-underline">
+              {this.props.phoneDisplay}
             </a>{" "}
             for a free estimate.
           </p>
@@ -38,11 +40,23 @@ class RouteErrorBoundary extends Component<{ children: ReactNode }, { hasError: 
 
 export default function Layout() {
   const { pathname } = useLocation();
+  const phone = phoneForPath(pathname);
+  useEffect(() => {
+    document.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]').forEach((script) => {
+      try {
+        const data = JSON.parse(script.textContent || "");
+        if (data["@type"] !== "GeneralContractor") return;
+        script.textContent = JSON.stringify(organizationJsonLdForPath(data, pathname));
+      } catch {
+        // Leave unrelated or malformed structured data alone.
+      }
+    });
+  }, [pathname]);
   return (
     <>
       <Navbar />
       <div className="pb-14 nav:pb-0">
-        <RouteErrorBoundary key={pathname}>
+        <RouteErrorBoundary key={pathname} phoneDisplay={phone.display} phoneTel={phone.tel}>
           <Suspense fallback={<ContentLoader />}>
             <Outlet />
           </Suspense>
@@ -50,7 +64,7 @@ export default function Layout() {
       </div>
       {/* Sticky mobile call button — hidden on desktop */}
       <a
-        href="tel:4054584805"
+        href={`tel:${phone.tel}`}
         className="fixed bottom-0 left-0 right-0 z-[90] flex items-center justify-center gap-2 py-4 text-white font-display text-base font-extrabold tracking-[0.06em] uppercase nav:hidden"
         style={{
           background: "hsl(var(--orange))",
@@ -59,7 +73,7 @@ export default function Layout() {
         }}
         aria-label="Call FDZ Construction LLC"
       >
-        📞 Call (405) 458-4805 — Free Estimate
+        📞 Call {phone.display} — Free Estimate
       </a>
       <Footer />
     </>

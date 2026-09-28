@@ -15,6 +15,10 @@ const PatiosOklahomaCity = lazy(() => import("./pages/PatiosOklahomaCity"));
 const FoundationsOklahomaCity = lazy(() => import("./pages/FoundationsOklahomaCity"));
 const SidewalksOklahomaCity = lazy(() => import("./pages/SidewalksOklahomaCity"));
 const CommercialConcreteOklahomaCity = lazy(() => import("./pages/CommercialConcreteOklahomaCity"));
+const CommercialConcreteWichita = lazy(() => import("./pages/CommercialConcreteWichita"));
+const IndustrialConcreteWichita = lazy(() => import("./pages/IndustrialConcreteWichita"));
+const RetainingWallsWichita = lazy(() => import("./pages/RetainingWallsWichita"));
+const StampedConcreteWichita = lazy(() => import("./pages/StampedConcreteWichita"));
 const ParkingLotConcrete = lazy(() => import("./pages/ParkingLotConcrete"));
 const RetainingWalls = lazy(() => import("./pages/RetainingWalls"));
 const SewerLineRepairOklahomaCity = lazy(() => import("./pages/SewerLineRepairOklahomaCity"));
@@ -105,6 +109,10 @@ const App = () => (
                 <Route path="/foundations-oklahoma-city" element={<FoundationsOklahomaCity />} />
                 <Route path="/sidewalks-oklahoma-city" element={<SidewalksOklahomaCity />} />
                 <Route path="/commercial-concrete-oklahoma-city" element={<CommercialConcreteOklahomaCity />} />
+                <Route path="/commercial-concrete-wichita" element={<CommercialConcreteWichita />} />
+                <Route path="/industrial-concrete-wichita" element={<IndustrialConcreteWichita />} />
+                <Route path="/retaining-walls-wichita" element={<RetainingWallsWichita />} />
+                <Route path="/stamped-concrete-wichita" element={<StampedConcreteWichita />} />
                 <Route path="/parking-lots-oklahoma-city" element={<ParkingLotConcrete />} />
                 <Route path="/retaining-walls-oklahoma-city" element={<RetainingWalls />} />
                 <Route path="/sewer-line-repair-oklahoma-city" element={<SewerLineRepairOklahomaCity />} />
