@@ -54,6 +54,8 @@ interface CityPageProps {
   projectsPlaceholder?: {
     note: string;
   };
+  /** Authored estimate guidance, replacing the project placeholder when provided. */
+  estimateSectionHtml?: string;
   /** Honest travel/scheduling note for areas outside the core OKC metro. */
   serviceAreaNote?: string;
   /** Override the default "Concrete in {city}" FAQ heading, e.g. for a combined concrete + sewer page. */
@@ -81,6 +83,7 @@ export default function CityPageTemplate({
   sewerSection,
   whyFdzSection,
   projectsPlaceholder,
+  estimateSectionHtml,
   serviceAreaNote,
   faqHeadingAccent,
   sewerLocalNote,
@@ -218,7 +221,13 @@ export default function CityPageTemplate({
         </ScrollReveal>
       )}
 
-      {projectsPlaceholder && (
+      {estimateSectionHtml && (
+        <ScrollReveal>
+          <section className="section-padding section-alt" dangerouslySetInnerHTML={{ __html: estimateSectionHtml }} />
+        </ScrollReveal>
+      )}
+
+      {projectsPlaceholder && !estimateSectionHtml && (
         <ScrollReveal>
           <section className="section-padding section-alt">
             <div className="section-eye">Our {city} Projects</div>
