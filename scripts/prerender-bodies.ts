@@ -37,6 +37,8 @@ import { tiltWallConcreteContent } from "../src/content/pages/tilt-wall";
 import { concreteMaintenanceContent } from "../src/content/pages/concrete-maintenance";
 import { poolDeckContent } from "../src/content/pages/pool-deck";
 import { serviceInCityPages } from "../src/content/serviceInCityPages";
+import { WICHITA_PAGES } from "../src/content/wichitaPages";
+import { renderWichitaPageHtml } from "./wichita-html";
 
 function prerenderH1(path: string): string {
   const route = routes.find((entry) => entry.path === path);
@@ -1574,6 +1576,9 @@ export const prerenderBodies: Record<string, string> = {
   "/concrete-maintenance-oklahoma-city": renderServicePageHtml(
     concreteMaintenanceContent,
     prerenderH1("/concrete-maintenance-oklahoma-city"),
+  ),
+  ...Object.fromEntries(
+    WICHITA_PAGES.map((page) => [page.path, renderWichitaPageHtml(page, prerenderH1(page.path))]),
   ),
 };
 

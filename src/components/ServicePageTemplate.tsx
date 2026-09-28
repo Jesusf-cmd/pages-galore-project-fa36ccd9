@@ -10,6 +10,7 @@ import ProcessSteps from "@/components/ProcessSteps";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
+import { useRegionalPhone } from "@/hooks/useRegionalPhone";
 import { canonicalUrl } from "@/lib/siteUrl";
 import { withoutCrawlableEmail } from "@/lib/contact";
 import InternalLinksHub from "@/components/InternalLinksHub";
@@ -98,12 +99,32 @@ interface ServicePageProps {
   emergencyCallout?: string;
   /** Hide from search engines while route remains live. */
   noindex?: boolean;
+  /** Shared trust badges. Wichita pages pass false so OKC-only claims stay off those routes. */
+  showTrustBar?: boolean;
+  /** Replaces the default "Services in Oklahoma City" heading. */
+  serviceCardsTitle?: string;
+  serviceCardsTitleAccent?: string;
+  /** Replaces the default OKC property-owner FAQ heading. */
+  faqTitle?: string;
+  /** Replaces the OKC metro service-area block. Omit to keep the existing block. */
+  serviceArea?: {
+    eyebrow: string;
+    title: string;
+    titleAccent: string;
+    introHtml: string;
+    footnoteHtml?: string;
+  };
+  /** Service JSON-LD. areaServed defaults to Oklahoma City when omitted. */
+  serviceSchema?: {
+    serviceType: string;
+    name: string;
+    areaServed?: { name: string; addressRegion: string };
+    telephone?: string;
+  };
   /** Show owner/crew E-E-A-T block below trust bar. */
   showEeatBlock?: boolean;
   /** Override InternalLinksHub visibility (defaults: hidden when enriched). */
   internalLinks?: { services?: boolean; blogs?: boolean; cities?: boolean };
-  /** Opt-in Service schema.org JSON-LD (areaServed: Oklahoma City metro). Omit to skip — most pages don't set this. */
-  serviceSchema?: { serviceType: string; name: string };
   /** Hero primary CTA label (still links to the homepage estimator). */
   ctaLabel?: string;
   /** Homepage estimator href. Defaults to /#estimate; pass estimatePath(slug) to retain origin. */
@@ -121,7 +142,8 @@ interface ServicePageProps {
   planningCallout?: string;
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showEeatBlock, internalLinks, serviceSchema, ctaLabel, estimateHref, finalCta, processNearCta, planningCallout }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showTrustBar = true, serviceCardsTitle, serviceCardsTitleAccent, faqTitle, serviceArea, showEeatBlock, internalLinks, serviceSchema, ctaLabel, estimateHref, finalCta, processNearCta, planningCallout }: ServicePageProps) {
+  const phone = useRegionalPhone();
   const resolvedEstimateHref = estimateHref || "/#estimate";
   const seoTitle = metaTitle || `${title} ${titleAccent.replace('.', '')} | FDZ Construction LLC`;
   const seoDescription = metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155);
@@ -145,9 +167,23 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
       name: serviceSchema.name,
       url: canonical,
       provider: { "@id": "https://fdzconstruction.com/#organization" },
-      areaServed: { "@type": "City", name: "Oklahoma City", addressRegion: "OK" },
+      areaServed: serviceSchema.areaServed
+        ? { "@type": "City", name: serviceSchema.areaServed.name, addressRegion: serviceSchema.areaServed.addressRegion }
+        : { "@type": "City", name: "Oklahoma City", addressRegion: "OK" },
+      ...(serviceSchema.telephone ? { telephone: serviceSchema.telephone } : {}),
     });
-    document.getElementById("service-page-schema")?.remove();
+    document.querySelectorAll('script[type="application/ld+json"]').forEach((el) => {
+      if (el.id === "service-page-schema") {
+        el.remove();
+        return;
+      }
+      try {
+        const parsed = JSON.parse(el.textContent || "");
+        if (parsed["@type"] === "Service") el.remove();
+      } catch {
+        /* leave unrelated JSON-LD in place */
+      }
+    });
     document.head.appendChild(script);
     return () => { document.getElementById("service-page-schema")?.remove(); };
   }, [serviceSchema, canonical]);
@@ -192,10 +228,10 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         )}
         <div className="flex gap-4 flex-wrap">
           <Link to={resolvedEstimateHref} className="btn-primary">{ctaLabel || "Get Free Estimate →"}</Link>
-          <a href="tel:4054584805" className="btn-outline">📞 (405) 458-4805</a>
+          <a href={`tel:${phone.tel}`} className="btn-outline">📞 {phone.display}</a>
         </div>
       </section>
-      <TrustBar />
+      {showTrustBar && <TrustBar />}
 
       {showEeatBlock && (
         <ScrollReveal>
@@ -244,7 +280,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         <ScrollReveal>
           <section className="section-padding section-alt">
             <div className="section-eye">Our Services</div>
-            <h2 className="mb-8">{serviceLabel || "Our"} Services in<br/><em className="h2-accent">Oklahoma City.</em></h2>
+            <h2 className="mb-8">{serviceCardsTitle ?? `${serviceLabel || "Our"} Services in`}<br/><em className="h2-accent">{serviceCardsTitleAccent ?? "Oklahoma City."}</em></h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
               {serviceCards.map((card, i) => (
                 <div key={i} className="bg-stone p-6 md:p-8">
@@ -488,7 +524,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
 
       <ScrollReveal>
         <section className="section-padding">
-          <FAQ items={faq} eyebrow="FAQ" title='Common Questions<br/><em class="h2-accent">From OKC Property Owners.</em>' />
+          <FAQ items={faq} eyebrow="FAQ" title={faqTitle ?? 'Common Questions<br/><em class="h2-accent">From OKC Property Owners.</em>'} />
         </section>
       </ScrollReveal>
 
@@ -503,17 +539,28 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         </ScrollReveal>
       )}
 
-      {/* City / metro block — single instance, names every served suburb with links */}
+      {/* City / metro block — Oklahoma pages keep the OKC grid; Wichita pages pass serviceArea. */}
       <ScrollReveal>
-        <section className="section-padding">
-          <div className="section-eye">Service Areas We Cover</div>
-          <h2 className="mb-4">Serving the Entire<br/><em className="h2-accent">OKC Metro.</em></h2>
-          <p className="prose-muted mb-3" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(cityBlockIntro || `FDZ Construction LLC provides this service throughout Oklahoma City and the surrounding metro. We serve <a href="/oklahoma-city-concrete" class="text-orange no-underline">Oklahoma City</a>, <a href="/edmond-concrete" class="text-orange no-underline">Edmond</a>, <a href="/norman-ok-concrete" class="text-orange no-underline">Norman</a>, <a href="/moore-oklahoma-concrete" class="text-orange no-underline">Moore</a>, <a href="/yukon-oklahoma-concrete" class="text-orange no-underline">Yukon</a>, <a href="/mustang-oklahoma-concrete" class="text-orange no-underline">Mustang</a>, <a href="/midwest-city-oklahoma-concrete" class="text-orange no-underline">Midwest City</a>, and <a href="/del-city-oklahoma-concrete" class="text-orange no-underline">Del City</a> — same crew, same standards, same free estimate process on every job across the metro.`) }} />
-          <p className="text-[0.78rem] text-muted-text mb-6">
-            <strong className="text-concrete">OKC metro zip codes served:</strong> 73003, 73012, 73013, 73034 (Edmond) · 73025, 73099 (Yukon/Mustang) · 73069, 73071, 73072 (Norman) · 73160 (Moore) · 73110, 73130 (Midwest City) · 73107, 73109, 73112, 73118, 73120, 73127, 73132, 73142, 73159, 73162 (OKC) and surrounding areas.
-          </p>
-          <CityGrid />
-        </section>
+        {serviceArea ? (
+          <section className="section-padding">
+            <div className="section-eye">{serviceArea.eyebrow}</div>
+            <h2 className="mb-4">{serviceArea.title}<br/><em className="h2-accent">{serviceArea.titleAccent}</em></h2>
+            <p className="prose-muted mb-3" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(serviceArea.introHtml) }} />
+            {serviceArea.footnoteHtml && (
+              <p className="text-[0.78rem] text-muted-text" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(serviceArea.footnoteHtml) }} />
+            )}
+          </section>
+        ) : (
+          <section className="section-padding">
+            <div className="section-eye">Service Areas We Cover</div>
+            <h2 className="mb-4">Serving the Entire<br/><em className="h2-accent">OKC Metro.</em></h2>
+            <p className="prose-muted mb-3" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(cityBlockIntro || `FDZ Construction LLC provides this service throughout Oklahoma City and the surrounding metro. We serve <a href="/oklahoma-city-concrete" class="text-orange no-underline">Oklahoma City</a>, <a href="/edmond-concrete" class="text-orange no-underline">Edmond</a>, <a href="/norman-ok-concrete" class="text-orange no-underline">Norman</a>, <a href="/moore-oklahoma-concrete" class="text-orange no-underline">Moore</a>, <a href="/yukon-oklahoma-concrete" class="text-orange no-underline">Yukon</a>, <a href="/mustang-oklahoma-concrete" class="text-orange no-underline">Mustang</a>, <a href="/midwest-city-oklahoma-concrete" class="text-orange no-underline">Midwest City</a>, and <a href="/del-city-oklahoma-concrete" class="text-orange no-underline">Del City</a> — same crew, same standards, same free estimate process on every job across the metro.`) }} />
+            <p className="text-[0.78rem] text-muted-text mb-6">
+              <strong className="text-concrete">OKC metro zip codes served:</strong> 73003, 73012, 73013, 73034 (Edmond) · 73025, 73099 (Yukon/Mustang) · 73069, 73071, 73072 (Norman) · 73160 (Moore) · 73110, 73130 (Midwest City) · 73107, 73109, 73112, 73118, 73120, 73127, 73132, 73142, 73159, 73162 (OKC) and surrounding areas.
+            </p>
+            <CityGrid />
+          </section>
+        )}
       </ScrollReveal>
 
       <InternalLinksHub

@@ -7,6 +7,7 @@ import { yukonConcrete } from "../src/content/yukonConcrete";
  */
 
 import { canonicalUrl } from "../src/lib/siteUrl";
+import { WICHITA_PAGES } from "../src/content/wichitaPages";
 
 export interface PrerenderRoute {
   path: string;
@@ -563,6 +564,13 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
     content: "Private project quote from FDZ Construction LLC.",
     noindex: true,
   },
+  ...WICHITA_PAGES.map((page) => ({
+    path: page.path,
+    title: page.metaTitle,
+    description: page.metaDescription,
+    h1: page.h1,
+    content: page.introText.replace(/<[^>]+>/g, ""),
+  })),
 ];
 
 export function getCanonical(path: string): string {

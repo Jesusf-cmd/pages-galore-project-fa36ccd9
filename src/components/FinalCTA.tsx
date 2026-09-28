@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useRegionalPhone } from "@/hooks/useRegionalPhone";
 
 type FinalCTAProps = {
   heading?: string;
@@ -16,6 +17,7 @@ export default function FinalCTA({
   buttonLabel = "Get Free Estimate →",
   to = "/#estimate",
 }: FinalCTAProps = {}) {
+  const phone = useRegionalPhone();
   return (
     <div className="bg-orange px-4 md:px-12 py-16 md:py-20 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-center">
       <div>
@@ -30,7 +32,7 @@ export default function FinalCTA({
       <div className="flex flex-col gap-3 md:items-end">
         <Link to={to} className="btn-white text-center">{buttonLabel}</Link>
         <div className="text-[0.75rem] text-white/70 text-center">
-          or call <a href="tel:4054584805" className="text-white font-bold no-underline">(405) 458-4805</a>
+          or call <a href={`tel:${phone.tel}`} className="text-white font-bold no-underline">{phone.display}</a>
         </div>
       </div>
     </div>

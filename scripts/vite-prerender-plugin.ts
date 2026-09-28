@@ -3,6 +3,7 @@ import { getPrerenderBody, getSkipFooterNav } from "./prerender-bodies";
 import { routes, getCanonical, type PrerenderRoute } from "./prerender-routes";
 import { withoutCrawlableEmail } from "./prerender-helpers";
 import { faqJsonLdScriptTag } from "../src/lib/faqJsonLd";
+import { phoneForPath } from "../src/lib/phones";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -48,6 +49,7 @@ const serviceAreaLinks: LinkItem[] = [
   { href: "/midwest-city-oklahoma-concrete", label: "Midwest City" },
   { href: "/del-city-oklahoma-concrete", label: "Del City" },
   { href: "/stillwater-oklahoma-concrete", label: "Stillwater" },
+  { href: "/commercial-concrete-wichita", label: "Wichita, KS" },
 ];
 
 function generateRouteHtml(template: string, route: PrerenderRoute): string {
@@ -127,6 +129,7 @@ function hoistJsonLdScripts(markup: string): { markup: string; headTags: string 
 function buildPrerenderMarkup(route: PrerenderRoute): string {
   const bodyHtml = getPrerenderBody(route.path);
   const skipFooterNav = getSkipFooterNav(route.path);
+  const phone = phoneForPath(route.path);
 
   const articleContent =
     bodyHtml ??
@@ -148,7 +151,7 @@ function buildPrerenderMarkup(route: PrerenderRoute): string {
             ${renderLinks(serviceAreaLinks)}
           </nav>
         </section>
-        <p><strong>Call:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="/#contact">Email FDZ Construction</a></p>
+        <p><strong>Call:</strong> <a href="tel:${phone.tel}">${phone.display}</a> · <a href="/#contact">Email FDZ Construction</a></p>
       </footer>
     `;
 
