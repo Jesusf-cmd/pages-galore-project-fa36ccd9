@@ -70,15 +70,15 @@ export const commercialConcreteWichita: WichitaPageContent = {
   path: "/commercial-concrete-wichita",
   metaTitle: "Commercial Concrete Contractor Wichita KS | FDZ Construction",
   metaDescription:
-    "Commercial concrete contractor for Wichita, KS. Parking lots, paving, curb and gutter, sidewalks, and site slabs. Crews mobilize from Oklahoma City. Call 316-531-9583.",
+    "Commercial concrete contractor for Wichita, KS. Parking lots, paving, curb and gutter, sidewalks, and site slabs. Wichita-area crew. Call 316-531-9583.",
   h1: "Commercial Concrete Contractor in Wichita, Kansas",
   eyebrow: "Wichita, Kansas · Commercial Concrete",
   title: "Commercial Concrete Contractor in",
   titleAccent: "Wichita, Kansas.",
-  description: `Commercial concrete for Wichita and Sedgwick County — parking lots, paving, curb and gutter, sidewalks, and site slabs, scheduled from FDZ's Oklahoma City crew. Call ${ksCall}.`,
+  description: `Commercial concrete for Wichita and Sedgwick County — parking lots, paving, curb and gutter, sidewalks, and site slabs, handled by FDZ's Wichita-area crew. Call ${ksCall}.`,
   modelNote:
-    "Commercial concrete is self-performed by FDZ's own crew. Wichita projects are planned mobilizations from Oklahoma City.",
-  introText: `FDZ Construction LLC takes commercial concrete projects in Wichita when the scope is large enough to schedule a crew from Oklahoma City. The work on this page is site concrete for general contractors, property owners, developers, and facility managers: parking lots and drive lanes, concrete paving, curb and gutter, sidewalks, building slabs, and loading or access areas that are part of a commercial site. Heavier warehouse slabs, equipment foundations, and dock structures are grouped on the <a href="/industrial-concrete-wichita">Wichita industrial concrete</a> page so this one stays focused on commercial site work. Call ${ksCall} to start a written estimate.`,
+    "FDZ's Wichita-area concrete crew handles local commercial projects. Scope and schedule are confirmed during estimating.",
+  introText: `FDZ Construction LLC handles commercial concrete projects in Wichita with its Wichita-area crew. The work on this page is site concrete for general contractors, property owners, developers, and facility managers: parking lots and drive lanes, concrete paving, curb and gutter, sidewalks, building slabs, and loading or access areas that are part of a commercial site. Heavier warehouse slabs, equipment foundations, and dock structures are grouped on the <a href="/industrial-concrete-wichita">Wichita industrial concrete</a> page so this one stays focused on commercial site work. Call ${ksCall} to start a written estimate.`,
   ctaLabel: "Request a Commercial Estimate →",
   serviceSchema: {
     serviceType: "Commercial concrete construction",
@@ -171,9 +171,9 @@ export const commercialConcreteWichita: WichitaPageContent = {
     {
       eyebrow: "Who this is for",
       title: "Commercial projects that can",
-      titleAccent: "carry a mobilization.",
+      titleAccent: "need coordinated concrete work.",
       content: [
-        "Wichita commercial work is aimed at jobs a crew can plan around: a parking field, a building pad with site paving, a curb-and-sidewalk package, or a combination of those on one site. A single small patch is usually a poor fit for a trip from Oklahoma City. If the concrete is mostly interior warehouse slab, equipment bases, or a loading dock, start with the industrial page and link the site paving back here.",
+        "Wichita commercial work is aimed at jobs a crew can plan around: a parking field, a building pad with site paving, a curb-and-sidewalk package, or a combination of those on one site. For a small repair, share the approximate area so the crew can confirm fit and availability. If the concrete is mostly interior warehouse slab, equipment bases, or a loading dock, start with the industrial page and link the site paving back here.",
         "Typical callers are general contractors bidding a Wichita site, owners replacing failed lot panels, and facility managers adding access concrete around an existing building. FDZ reviews the drawings or walks the site before writing a number. The estimate form on this website is the same form used for the rest of FDZ's commercial work.",
       ],
     },
@@ -222,7 +222,7 @@ export const commercialConcreteWichita: WichitaPageContent = {
   processTitle: "From drawings to a",
   processTitleAccent: "sealed commercial slab.",
   processIntro:
-    "Wichita commercial pours follow the same crew sequence FDZ uses on commercial sites. Dates are scheduled around mobilization, access, and the other trades on the job.",
+    "Wichita commercial pours follow the same crew sequence FDZ uses on commercial sites. Dates are scheduled around access and the other trades on the job.",
   processSteps: [
     {
       title: "Plan or site review",
@@ -254,7 +254,7 @@ export const commercialConcreteWichita: WichitaPageContent = {
   projectTypesTitle: "Commercial sites this",
   projectTypesTitleAccent: "page is built for.",
   projectTypesIntro:
-    "These are the kinds of Wichita commercial scopes that justify bringing a crew up from Oklahoma City.",
+    "These are the Wichita commercial scopes FDZ's local crew can discuss and estimate.",
   projectTypes: [
     {
       title: "Retail and office parking",
@@ -276,9 +276,9 @@ export const commercialConcreteWichita: WichitaPageContent = {
   faqTitle: 'Questions About<br/><em class="h2-accent">Wichita Commercial Concrete.</em>',
   faq: [
     {
-      question: "Does FDZ have a Wichita office?",
+      question: "Does FDZ have a crew in Wichita?",
       answer:
-        "No. FDZ Construction LLC is based in Oklahoma City. Wichita commercial projects are scheduled as crew mobilizations. Calls about Kansas work use 316-531-9583.",
+        "Yes. FDZ has a concrete crew in the Wichita area. Call 316-531-9583 about Kansas projects. No public street address is listed for Wichita.",
     },
     {
       question: "What commercial concrete work do you take in Wichita?",
@@ -286,9 +286,9 @@ export const commercialConcreteWichita: WichitaPageContent = {
         "Parking lots, concrete paving, curb and gutter, sidewalks, commercial slabs, and site access concrete. Warehouse slabs, equipment pads, and loading docks are on the industrial concrete page.",
     },
     {
-      question: "Will a small sidewalk repair justify a trip to Wichita?",
+      question: "Can I request a small sidewalk repair in Wichita?",
       answer:
-        "Usually not. The Kansas expansion is aimed at commercial scopes large enough to plan a mobilization. Include the approximate area when you request an estimate so that can be judged up front.",
+        "Send the approximate area and photos with your request. The Wichita-area crew can confirm whether the repair fits its schedule.",
     },
     {
       question: "Do you provide the engineering for a Wichita commercial site?",
@@ -309,9 +309,9 @@ export const commercialConcreteWichita: WichitaPageContent = {
   serviceArea: {
     eyebrow: "Service area",
     title: "Wichita commercial work,",
-    titleAccent: "scheduled from Oklahoma City.",
+    titleAccent: "served by a Wichita-area crew.",
     introHtml:
-      "This page is for commercial concrete in Wichita and nearby Sedgwick County — sites along the retail and industrial corridors where parking, paving, and building pads are the concrete package. FDZ's published business address remains in Oklahoma City. The crew is scheduled for Wichita when the project can carry that trip.",
+      "This page is for commercial concrete in Wichita and nearby Sedgwick County — sites along the retail and industrial corridors where parking, paving, and building pads are the concrete package. FDZ's Wichita-area concrete crew handles local projects. Request an estimate with the site location and scope.",
     footnoteHtml: `Kansas project line ${ksCall}. Oklahoma City line ${okCall}.`,
   },
   finalCta: {
@@ -332,10 +332,10 @@ export const industrialConcreteWichita: WichitaPageContent = {
   eyebrow: "Wichita, Kansas · Industrial Concrete",
   title: "Industrial Concrete Contractor in",
   titleAccent: "Wichita, Kansas.",
-  description: `Industrial slabs, equipment pads, loading docks, and heavy-use paving for Wichita facilities. FDZ schedules this work from Oklahoma City. Call ${ksCall}.`,
+  description: `Industrial slabs, equipment pads, loading docks, and heavy-use paving for Wichita facilities. FDZ's Wichita-area concrete crew handles this work. Call ${ksCall}.`,
   modelNote:
-    "Industrial concrete is self-performed by FDZ's own crew and scheduled as a mobilization from Oklahoma City.",
-  introText: `Wichita's manufacturing and distribution buildings need concrete that carries forklifts, racking, trucks, and fixed equipment — not a standard parking-lot section. FDZ Construction LLC takes that industrial scope in Wichita when the pour is large enough to bring a crew from Oklahoma City. One page covers the related work: warehouse and industrial slabs, equipment foundations and machine pads, loading areas and docks, and heavy-use paving. Separate thin pages for each pad type are not part of this expansion. Commercial parking, curb, and sidewalk packages live on the <a href="/commercial-concrete-wichita">Wichita commercial concrete</a> page. Call ${ksCall}.`,
+    "FDZ's Wichita-area concrete crew handles local industrial projects to the project drawings.",
+  introText: `Wichita's manufacturing and distribution buildings need concrete that carries forklifts, racking, trucks, and fixed equipment — not a standard parking-lot section. FDZ Construction LLC handles that industrial scope in Wichita with its Wichita-area concrete crew. One page covers the related work: warehouse and industrial slabs, equipment foundations and machine pads, loading areas and docks, and heavy-use paving. Separate thin pages for each pad type are not part of this expansion. Commercial parking, curb, and sidewalk packages live on the <a href="/commercial-concrete-wichita">Wichita commercial concrete</a> page. Call ${ksCall}.`,
   ctaLabel: "Request an Industrial Estimate →",
   serviceSchema: {
     serviceType: "Industrial concrete construction",
@@ -430,7 +430,7 @@ export const industrialConcreteWichita: WichitaPageContent = {
       title: "Pads, slabs, and docks are",
       titleAccent: "one industrial scope.",
       content: [
-        "A Wichita plant or warehouse rarely needs only one of these items. The floor, the dock, and the equipment pads are bid together, scheduled together, and they fail together if the base is wrong. Splitting them into separate city pages would repeat the same mobilization story without helping an owner or a GC describe the job. Send the full industrial package — slab, pads, dock, and paving — in one estimate request.",
+        "A Wichita plant or warehouse rarely needs only one of these items. The floor, the dock, and the equipment pads are bid together, scheduled together, and they fail together if the base is wrong. Sending the complete scope helps the crew plan the work and give a useful estimate. Send the full industrial package — slab, pads, dock, and paving — in one estimate request.",
         "If the project is mostly a parking lot, curb, and public sidewalk, use the <a href='/commercial-concrete-wichita'>commercial concrete page</a>. If a grade wall holds the yard or the dock approach, add <a href='/retaining-walls-wichita'>retaining walls</a>.",
       ],
     },
@@ -477,7 +477,7 @@ export const industrialConcreteWichita: WichitaPageContent = {
   processTitle: "How industrial concrete",
   processTitleAccent: "gets placed.",
   processIntro:
-    "The sequence is document-first. A Wichita industrial mobilization is not scheduled until the loads, access, and pour breaks are clear.",
+    "The sequence is document-first. The Wichita crew plans the work after the loads, access, and pour breaks are clear.",
   processSteps: [
     {
       title: "Document review",
@@ -556,17 +556,17 @@ export const industrialConcreteWichita: WichitaPageContent = {
         "Call 316-531-9583 or use the estimate form. Send the address, area, equipment or dock type, and the drawings you have.",
     },
     {
-      question: "Where is FDZ based if the project is in Wichita?",
+      question: "Does FDZ have a Wichita concrete crew?",
       answer:
-        "FDZ is based in Oklahoma City and mobilizes for Wichita industrial projects that are large enough to schedule. There is no Wichita office.",
+        "Yes. FDZ has a Wichita-area concrete crew for local industrial projects. Call the Kansas project line to discuss the scope.",
     },
   ],
   serviceArea: {
     eyebrow: "Service area",
     title: "Wichita industrial sites,",
-    titleAccent: "crews from Oklahoma City.",
+    titleAccent: "served by a Wichita-area crew.",
     introHtml:
-      "Industrial calls for this page are facilities in Wichita and the surrounding Sedgwick County area — manufacturing, distribution, and yard concrete where slab, dock, and equipment pads are the job. FDZ's office address is in Oklahoma City. The Kansas phone number is only for these projects.",
+      "Industrial calls for this page are facilities in Wichita and the surrounding Sedgwick County area — manufacturing, distribution, and yard concrete where slab, dock, and equipment pads are the job. FDZ's Wichita-area crew handles these projects. Call the Kansas project line for local work.",
     footnoteHtml: `Kansas project line ${ksCall}. Oklahoma City line ${okCall}.`,
   },
   finalCta: {
@@ -589,8 +589,8 @@ export const retainingWallsWichita: WichitaPageContent = {
   titleAccent: "Wichita, Kansas.",
   description: `Poured concrete and concrete-block retaining walls for Wichita grade changes, commercial sites, and wall repairs. Call ${ksCall}.`,
   modelNote:
-    "Retaining wall concrete is self-performed by FDZ's crew. Stamped structural design, when a project needs it, stays with the project engineer.",
-  introText: `FDZ Construction LLC builds and repairs concrete retaining walls for Wichita projects that are more than a garden edge. The work is poured concrete or concrete masonry walls that hold grade at a building pad, a parking area, a dock approach, or a sloped site, plus repairs where an existing wall has moved. Lower landscape walls can be part of a larger concrete project, but this page is for substantial wall construction, installation, and repair. FDZ is based in Oklahoma City and schedules Wichita walls as mobilizations. Call ${ksCall}.`,
+    "FDZ's Wichita-area concrete crew handles retaining wall work. Stamped structural design, when a project needs it, stays with the project engineer.",
+  introText: `FDZ Construction LLC builds and repairs concrete retaining walls for Wichita projects that are more than a garden edge. The work is poured concrete or concrete masonry walls that hold grade at a building pad, a parking area, a dock approach, or a sloped site, plus repairs where an existing wall has moved. Lower landscape walls can be part of a larger concrete project, but this page is for substantial wall construction, installation, and repair. FDZ's Wichita-area crew handles local wall projects. Call ${ksCall}.`,
   ctaLabel: "Request a Wall Estimate →",
   serviceSchema: {
     serviceType: "Concrete retaining wall construction",
@@ -682,7 +682,7 @@ export const retainingWallsWichita: WichitaPageContent = {
       title: "Where a Wichita retaining wall",
       titleAccent: "actually gets used.",
       content: [
-        "The walls that fit a mobilization are the ones doing structural work: holding a building pad above the street, keeping a parking bay from sloughing, separating a dock from a lower yard, or replacing a wall that is already leaning. A short decorative bed wall by itself is a weak match for this service. If that low wall is part of a patio or entry, it can be discussed with the <a href='/stamped-concrete-wichita'>stamped concrete</a> scope.",
+        "The wall projects described here do structural work: holding a building pad above the street, keeping a parking bay from sloughing, separating a dock from a lower yard, or replacing a wall that is already leaning. A short decorative bed wall by itself is a weak match for this service. If that low wall is part of a patio or entry, it can be discussed with the <a href='/stamped-concrete-wichita'>stamped concrete</a> scope.",
         "Water behind a wall is what pushes it over. Every wall FDZ builds includes a drainage path — free-draining backfill and weep holes or a drain line — because a wall face without a way for water to leave is a wall that will move.",
       ],
     },
@@ -729,7 +729,7 @@ export const retainingWallsWichita: WichitaPageContent = {
   processTitle: "From grade check to",
   processTitleAccent: "a drained wall.",
   processIntro:
-    "A retaining wall mobilization starts with the grades and the drainage, then the footing, then the wall. The face is the last thing that matters.",
+    "A retaining wall project starts with the grades and the drainage, then the footing, then the wall. The face is the last thing that matters.",
   processSteps: [
     {
       title: "Grades and drawings",
@@ -816,9 +816,9 @@ export const retainingWallsWichita: WichitaPageContent = {
   serviceArea: {
     eyebrow: "Service area",
     title: "Wichita wall projects,",
-    titleAccent: "not a Wichita storefront.",
+    titleAccent: "served by a local crew.",
     introHtml:
-      "Retaining wall requests on this page are for Wichita and nearby Sedgwick County sites. FDZ's business address is in Oklahoma City. The crew comes to Wichita for wall projects that are large enough to schedule, especially when the wall is tied to other site concrete.",
+      "Retaining wall requests on this page are for Wichita and nearby Sedgwick County sites. FDZ's Wichita-area concrete crew handles local wall projects, including walls tied to other site concrete.",
     footnoteHtml: `Kansas project line ${ksCall}. Oklahoma City line ${okCall}.`,
   },
   finalCta: {
@@ -841,8 +841,8 @@ export const stampedConcreteWichita: WichitaPageContent = {
   titleAccent: "Wichita, Kansas.",
   description: `Stamped and decorative concrete for Wichita patios, driveways, walkways, entries, and courtyards. Residential and commercial. Call ${ksCall}.`,
   modelNote:
-    "Stamped concrete is self-performed by FDZ's crew. Pattern and color are chosen for the specific project.",
-  introText: `FDZ Construction LLC places stamped and decorative concrete for homes and commercial properties in Wichita. The work is flatwork with a patterned surface: patios, driveways, walkways, building entries, and courtyards. It is a separate service from structural site paving. A commercial lot belongs on the <a href="/commercial-concrete-wichita">Wichita commercial concrete</a> page; a decorative entry or courtyard that sits next to that lot belongs here. Crews mobilize from Oklahoma City, so the project needs to be large enough to schedule. Call ${ksCall}.`,
+    "FDZ's Wichita-area concrete crew handles stamped concrete work. Pattern and color are chosen for the specific project.",
+  introText: `FDZ Construction LLC places stamped and decorative concrete for homes and commercial properties in Wichita. The work is flatwork with a patterned surface: patios, driveways, walkways, building entries, and courtyards. It is a separate service from structural site paving. A commercial lot belongs on the <a href="/commercial-concrete-wichita">Wichita commercial concrete</a> page; a decorative entry or courtyard that sits next to that lot belongs here. FDZ's Wichita-area concrete crew handles local projects; share the size and finish when requesting an estimate. Call ${ksCall}.`,
   ctaLabel: "Request a Stamped Estimate →",
   serviceSchema: {
     serviceType: "Stamped and decorative concrete",
@@ -933,7 +933,7 @@ export const stampedConcreteWichita: WichitaPageContent = {
       title: "Decorative concrete on",
       titleAccent: "both kinds of property.",
       content: [
-        "Homeowners use stamped concrete for a patio or a drive they want to look like stone or brick without a unit-paver installation. Commercial owners use it at an entry, a courtyard, or a pedestrian plaza where appearance matters and the structural lot behind it can stay a broom finish. Both are in scope here. The difference is size and access, which is what determines whether a trip from Oklahoma City makes sense.",
+        "Homeowners use stamped concrete for a patio or a drive they want to look like stone or brick without a unit-paver installation. Commercial owners use it at an entry, a courtyard, or a pedestrian plaza where appearance matters and the structural lot behind it can stay a broom finish. Both are in scope here. Project size, access, and finish choice guide the estimate and schedule.",
         "If the same property also needs a wall to create the flat area, include <a href='/retaining-walls-wichita'>retaining walls</a> in the request. If the property needs a parking field, that scope stays on the commercial page so the decorative work is not priced like a truck lot.",
       ],
     },
@@ -1067,9 +1067,9 @@ export const stampedConcreteWichita: WichitaPageContent = {
   serviceArea: {
     eyebrow: "Service area",
     title: "Wichita decorative concrete,",
-    titleAccent: "mobilized from Oklahoma City.",
+    titleAccent: "served by a Wichita-area crew.",
     introHtml:
-      "Stamped concrete on this page is for properties in Wichita and nearby Sedgwick County. FDZ does not keep a Wichita showroom or a local office. The crew is scheduled from Oklahoma City when the patio, drive, walk, or entry is large enough to plan.",
+      "Stamped concrete on this page is for properties in Wichita and nearby Sedgwick County. FDZ's Wichita-area concrete crew handles these local projects. Pattern and timing are confirmed during estimating.",
     footnoteHtml: `Kansas project line ${ksCall}. Oklahoma City line ${okCall}.`,
   },
   finalCta: {
