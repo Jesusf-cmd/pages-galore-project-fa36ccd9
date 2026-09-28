@@ -262,7 +262,7 @@ const cityData: Record<string, CityData> = {
     heroTitle: mustangConcrete.heroTitle,
     heroTitleAccent: mustangConcrete.heroTitleAccent,
     heroBlurb: mustangOpeningHtml,
-    intro: [mustangConcrete.opening],
+    intro: [mustangConcrete.intro],
     localTerrainNote:
       "Mustang shares Yukon's flatter west-metro terrain and the region's expansive clay base. Like Yukon, a lot of the work here is on newer subdivisions built on graded former agricultural land, where fill quality and compaction matter as much as the native soil — so we check both before we pour.",
     driveTimeNote: "Mustang is about 20–25 minutes west of the shop.",
