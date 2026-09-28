@@ -1,3 +1,4 @@
+import { mustangConcrete, mustangOpeningHtml } from "../src/content/mustangConcrete";
 import { yukonConcrete, yukonEstimateHtml } from "../src/content/yukonConcrete";
 import {
   TRUST_LINE,
@@ -935,8 +936,10 @@ export const prerenderBodies: Record<string, string> = {
   `,
 
   "/mustang-oklahoma-concrete": `
-    <h1>Mustang Concrete &amp; Sewer Line Contractor</h1>
-    <p>Mustang, on the west side of the metro in Canadian County, is an area we serve with driveways, patios, slabs, and foundations for homeowners and new-construction subdivisions.</p>
+    <h1>${mustangConcrete.heading}</h1>
+    <p>${mustangOpeningHtml}</p>
+    <h2>Local Knowledge</h2>
+    <p>${mustangConcrete.intro}</p>
     <h2>Mustang Soil and Site Conditions</h2>
     <p>Mustang shares Yukon's flatter west-metro terrain and the region's expansive clay base. Like Yukon, a lot of the work here is on newer subdivisions built on graded former agricultural land, where fill quality and compaction matter as much as the native soil — so we check both before we pour.</p>
     <h2>Services Available in Mustang</h2>
