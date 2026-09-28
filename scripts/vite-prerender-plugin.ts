@@ -3,7 +3,7 @@ import { getPrerenderBody, getSkipFooterNav } from "./prerender-bodies";
 import { routes, getCanonical, type PrerenderRoute } from "./prerender-routes";
 import { withoutCrawlableEmail } from "./prerender-helpers";
 import { faqJsonLdScriptTag } from "../src/lib/faqJsonLd";
-import { phoneForPath } from "../src/lib/phones";
+import { isKansasPath, phoneForPath } from "../src/lib/phones";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -105,6 +105,22 @@ function generateRouteHtml(template: string, route: PrerenderRoute): string {
   // JSON-LD <script> must not live inside #root. React createRoot() clears that
   // node, and a parser-inserted script in the container can prevent the SPA from
   // mounting — leaving only the clipped/empty beige page in the browser.
+  if (isKansasPath(route.path)) {
+    html = html.replace(
+      /(<script type="application\\/ld\\+json">)([\\s\\S]*?)(<\\/script>)/gi,
+      (full, open: string, json: string, close: string) => {
+        try {
+          const data = JSON.parse(json);
+          if (data["@type"] !== "GeneralContractor") return full;
+          delete data.address;
+          delete data.geo;
+          return `${open}${JSON.stringify(data)}${close}`;
+        } catch {
+          return full;
+        }
+      },
+    );
+  }
   const { markup, headTags } = hoistJsonLdScripts(buildPrerenderMarkup(route));
   html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
   if (headTags) {
