@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Upload, X } from "lucide-react";
-import { applyEstimateOriginToDetails, detailsLimitError } from "@/lib/estimatePath";
+import { applyEstimateOriginToDetails, detailsLimitError, estimateAddressPlaceholder, parseEstimateOrigin } from "@/lib/estimatePath";
 
 const MAX_FILES = 5;
 const MAX_FILE_BYTES = 10 * 1024 * 1024;
@@ -46,6 +46,7 @@ function validateClientFile(file: File, existingCount: number): string | null {
 
 export default function ProjectDocumentUpload() {
   const [searchParams] = useSearchParams();
+  const origin = parseEstimateOrigin(searchParams.get("from"));
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [files, setFiles] = useState<File[]>([]);
   const [dragActive, setDragActive] = useState(false);
@@ -303,7 +304,7 @@ export default function ProjectDocumentUpload() {
               <input
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                placeholder="123 Main St, Oklahoma City, OK"
+                placeholder={estimateAddressPlaceholder(searchParams.get("from")) || "123 Main St, Oklahoma City, OK"}
                 className={inputClass}
                 style={inputStyle}
               />
@@ -313,7 +314,7 @@ export default function ProjectDocumentUpload() {
               <textarea
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
-                placeholder="Tell us about your project scope, timeline, special requirements..."
+                placeholder={origin?.placeholder || "Tell us about your project scope, timeline, special requirements..."}
                 rows={3}
                 className={`${inputClass} resize-y`}
                 style={inputStyle}

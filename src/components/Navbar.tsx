@@ -4,6 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
 import { useRegionalPhone } from "@/hooks/useRegionalPhone";
+import { estimatePath } from "@/lib/estimatePath";
+import { isKansasPath, normalizePath } from "@/lib/phones";
 
 const serviceLinks = [
   { to: "/driveways-oklahoma-city", label: "Concrete Driveways" },
@@ -81,6 +83,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const phone = useRegionalPhone();
+  const estimateTo = isKansasPath(location.pathname)
+    ? estimatePath(normalizePath(location.pathname).replace(/^\//, ""))
+    : "/#estimate";
 
   useEffect(() => {
     setMobileOpen(false);
@@ -156,7 +161,7 @@ export default function Navbar() {
             <span className="text-[0.56rem] tracking-[0.14em] uppercase text-muted-text">Free Estimate</span>
             <a href={`tel:${phone.tel}`} className="font-display text-lg font-extrabold text-orange no-underline leading-tight">{phone.display}</a>
           </div>
-          <Link to="/#estimate" className="bg-orange text-white px-5 py-2 font-display text-[0.8rem] font-extrabold tracking-[0.08em] uppercase no-underline transition-colors hover:bg-orange-light whitespace-nowrap">
+          <Link to={estimateTo} className="bg-orange text-white px-5 py-2 font-display text-[0.8rem] font-extrabold tracking-[0.08em] uppercase no-underline transition-colors hover:bg-orange-light whitespace-nowrap">
             Get Quote →
           </Link>
         </div>
@@ -180,7 +185,7 @@ export default function Navbar() {
 
       {mobileOpen && typeof document !== "undefined"
         ? createPortal(
-            <MobileMenuOverlay onClose={() => setMobileOpen(false)} phoneDisplay={phone.display} phoneTel={phone.tel} />,
+            <MobileMenuOverlay onClose={() => setMobileOpen(false)} phoneDisplay={phone.display} phoneTel={phone.tel} estimateTo={estimateTo} />,
             document.body,
           )
         : null}
@@ -192,10 +197,12 @@ function MobileMenuOverlay({
   onClose,
   phoneDisplay,
   phoneTel,
+  estimateTo,
 }: {
   onClose: () => void;
   phoneDisplay: string;
   phoneTel: string;
+  estimateTo: string;
 }) {
   return (
     <div
@@ -246,7 +253,7 @@ function MobileMenuOverlay({
               <a href={`tel:${phoneTel}`} className="btn-primary w-full py-4 text-center text-base">
                 📞 {phoneDisplay}
               </a>
-              <Link to="/#estimate" onClick={onClose} className="btn-outline w-full py-4 text-center text-base">
+              <Link to={estimateTo} onClick={onClose} className="btn-outline w-full py-4 text-center text-base">
                 Get Free Estimate →
               </Link>
             </div>

@@ -1,5 +1,6 @@
 import ServicePage from "@/components/ServicePageTemplate";
 import type { WichitaPageContent } from "@/content/wichitaPages";
+import { estimatePath } from "@/lib/estimatePath";
 
 export default function WichitaServicePage({ page }: { page: WichitaPageContent }) {
   return (
@@ -19,6 +20,7 @@ export default function WichitaServicePage({ page }: { page: WichitaPageContent 
       modelNote={page.modelNote}
       introText={page.introText}
       ctaLabel={page.ctaLabel}
+      estimateHref={estimatePath(page.path.replace(/^\//, ""))}
       serviceSchema={{
         serviceType: page.serviceSchema.serviceType,
         name: page.serviceSchema.name,

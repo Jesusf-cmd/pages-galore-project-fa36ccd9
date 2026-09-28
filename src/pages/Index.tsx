@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   applyEstimateOriginToDetails,
+  estimateAddressPlaceholder,
   detailsLimitError,
   parseEstimateOrigin,
 } from "@/lib/estimatePath";
@@ -364,7 +365,7 @@ function EstimateForm() {
           </div>
           <div className="mb-3">
             <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Project Address</label>
-            <input value={address} onChange={e => setAddress(e.target.value)} placeholder="123 Main St, Oklahoma City, OK" className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
+            <input value={address} onChange={e => setAddress(e.target.value)} placeholder={estimateAddressPlaceholder(searchParams.get("from")) || "123 Main St, Oklahoma City, OK"} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
           </div>
           <div className="mb-4">
             <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Project Details</label>

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { WICHITA_PAGES } from "@/content/wichitaPages";
+import { estimatePath } from "@/lib/estimatePath";
 import { KANSAS_PHONE, OKLAHOMA_PHONE, isKansasPath, phoneForPath } from "@/lib/phones";
 import { getPrerenderBody } from "../../scripts/prerender-bodies";
 import { routes } from "../../scripts/prerender-routes";
@@ -28,6 +29,8 @@ describe("Wichita phone scoping", () => {
         expect(body).toContain('"addressRegion":"KS"');
         expect(body).not.toContain("Wichita-based");
         expect(body).not.toContain("our Wichita office");
+        expect(body).toContain(`href="${estimatePath(route.path.replace(/^\//, ""))}"`);
+        expect(body).not.toContain('href="/#estimate"');
       } else {
         expect(body).not.toContain("316-531-9583");
         expect(body).not.toContain("3165319583");

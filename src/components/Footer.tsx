@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import MailtoLink from "./MailtoLink";
 import { useRegionalPhone } from "@/hooks/useRegionalPhone";
+import { isKansasPath } from "@/lib/phones";
 
 export default function Footer() {
   const phone = useRegionalPhone();
+  const location = useLocation();
+  const labelOklahomaOffice = isKansasPath(location.pathname);
   return (
     <footer className="bg-darker px-4 md:px-12 py-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
       {/* HubSpot Contact Form */}
@@ -25,7 +28,10 @@ export default function Footer() {
             <MailtoLink className="text-orange text-sm font-medium no-underline hover:underline" />
             <a href={`tel:${phone.tel}`} className="text-orange text-sm font-medium no-underline hover:underline">{phone.display}</a>
           </div>
-          <address className="not-italic text-[0.74rem] text-muted-text mt-2">7004 S Indiana Ave, Oklahoma City, OK 73159</address>
+          <address className="not-italic text-[0.74rem] text-muted-text mt-2">
+            {labelOklahomaOffice ? "Oklahoma City office: " : null}
+            7004 S Indiana Ave, Oklahoma City, OK 73159
+          </address>
         </div>
       </div>
       {/* Licensing / trust section */}

@@ -1,4 +1,5 @@
 import { canonicalUrl } from "../src/lib/siteUrl";
+import { estimatePath } from "../src/lib/estimatePath";
 import { KANSAS_PHONE } from "../src/lib/phones";
 import type { WichitaPageContent } from "../src/content/wichitaPages";
 import { faqSection, processSection } from "./prerender-helpers";
@@ -23,13 +24,14 @@ function serviceJsonLd(page: WichitaPageContent): string {
 
 /** Crawler HTML for a Wichita page. Kansas phone only. No Oklahoma trust-line claims. */
 export function renderWichitaPageHtml(page: WichitaPageContent, h1: string): string {
+  const estimateHref = estimatePath(page.path.replace(/^\//, ""));
   const parts: string[] = [];
   parts.push(`<h1>${h1}</h1>`);
   parts.push(`<p>${page.description}</p>`);
   parts.push(`<p>${page.modelNote}</p>`);
   parts.push(`<p>${page.introText}</p>`);
   parts.push(
-    `<p><a href="/#estimate">${page.ctaLabel.replace(/ →$/, "")}</a> · <a href="tel:${KANSAS_PHONE.tel}">${KANSAS_PHONE.display}</a></p>`,
+    `<p><a href="${estimateHref}">${page.ctaLabel.replace(/ →$/, "")}</a> · <a href="tel:${KANSAS_PHONE.tel}">${KANSAS_PHONE.display}</a></p>`,
   );
   parts.push(`<h2>${heading(page.serviceCardsTitle, page.serviceCardsTitleAccent)}</h2><ul>`);
   for (const card of page.serviceCards) {
@@ -67,7 +69,7 @@ export function renderWichitaPageHtml(page: WichitaPageContent, h1: string): str
   parts.push(faqSection("Frequently Asked Questions", page.faq));
   parts.push(serviceJsonLd(page));
   parts.push(
-    `<p><strong>Kansas project line:</strong> <a href="tel:${KANSAS_PHONE.tel}">${KANSAS_PHONE.display}</a> · <a href="/#estimate">Estimate form</a></p>`,
+    `<p><strong>Kansas project line:</strong> <a href="tel:${KANSAS_PHONE.tel}">${KANSAS_PHONE.display}</a> · <a href="${estimateHref}">Estimate form</a></p>`,
   );
   return parts.join("\n");
 }

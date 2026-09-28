@@ -26,6 +26,23 @@ describe("estimatePath", () => {
     expect(estimatePath("not-a-page")).toBe(ESTIMATE_PATH);
   });
 
+  it("retains Wichita route and service on the existing /#estimate destination", () => {
+    const origins = [
+      ["commercial-concrete-wichita", "commercial concrete, Wichita KS"],
+      ["industrial-concrete-wichita", "industrial concrete, Wichita KS"],
+      ["retaining-walls-wichita", "retaining walls, Wichita KS"],
+      ["stamped-concrete-wichita", "stamped concrete, Wichita KS"],
+    ] as const;
+    for (const [slug, service] of origins) {
+      expect(estimatePath(slug)).toBe(`/?from=${slug}#estimate`);
+      const origin = parseEstimateOrigin(slug);
+      expect(origin?.formLabel.toLowerCase()).toContain("wichita");
+      const details = applyEstimateOriginToDetails(slug, "site notes");
+      expect(details).toBe(`Requested from /${slug} (${service}).\nsite notes`);
+      expect(details).not.toContain("submit-quote");
+    }
+  });
+
   it("retains allowlisted originating pages on the existing /#estimate destination", () => {
     expect(estimatePath(REPAIR)).toBe(`/?from=${REPAIR}#estimate`);
     expect(estimatePath(BOLLARD)).toBe(`/?from=${BOLLARD}#estimate`);

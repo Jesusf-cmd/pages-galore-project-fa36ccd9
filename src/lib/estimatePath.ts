@@ -23,6 +23,34 @@ export const ESTIMATE_ORIGINS = {
       "Project type (driveway, patio, foundation, or commercial), address, approximate size, and site access notes...",
     detailsPrefix: "Requested from /blog/cost-of-concrete-oklahoma-city-2026 (concrete cost guide).",
   },
+  "commercial-concrete-wichita": {
+    formLabel: "Wichita commercial concrete",
+    placeholder:
+      "Wichita-area address, approximate area, parking or paving scope, and any drawings or schedule limits...",
+    addressPlaceholder: "Job address in Wichita, KS",
+    detailsPrefix: "Requested from /commercial-concrete-wichita (commercial concrete, Wichita KS).",
+  },
+  "industrial-concrete-wichita": {
+    formLabel: "Wichita industrial concrete",
+    placeholder:
+      "Wichita facility address, slab or paving area, equipment or dock scope, and drawings you already have...",
+    addressPlaceholder: "Facility address in Wichita, KS",
+    detailsPrefix: "Requested from /industrial-concrete-wichita (industrial concrete, Wichita KS).",
+  },
+  "retaining-walls-wichita": {
+    formLabel: "Wichita retaining wall",
+    placeholder:
+      "Wichita address, approximate wall length and height, photos, and any drawings...",
+    addressPlaceholder: "Wall address in Wichita, KS",
+    detailsPrefix: "Requested from /retaining-walls-wichita (retaining walls, Wichita KS).",
+  },
+  "stamped-concrete-wichita": {
+    formLabel: "Wichita stamped concrete",
+    placeholder:
+      "Wichita address, areas to stamp, and any pattern direction you already have...",
+    addressPlaceholder: "Property address in Wichita, KS",
+    detailsPrefix: "Requested from /stamped-concrete-wichita (stamped concrete, Wichita KS).",
+  },
 } as const;
 
 export type EstimateOriginId = keyof typeof ESTIMATE_ORIGINS;
@@ -44,6 +72,12 @@ export function estimatePath(from?: string | null): string {
 export function parseEstimateOrigin(from: string | null | undefined) {
   if (!from || !Object.prototype.hasOwnProperty.call(ESTIMATE_ORIGINS, from)) return undefined;
   return ESTIMATE_ORIGINS[from as EstimateOriginId];
+}
+
+export function estimateAddressPlaceholder(from: string | null | undefined): string | undefined {
+  const origin = parseEstimateOrigin(from);
+  if (!origin || !("addressPlaceholder" in origin)) return undefined;
+  return origin.addressPlaceholder;
 }
 
 export function applyEstimateOriginToDetails(
