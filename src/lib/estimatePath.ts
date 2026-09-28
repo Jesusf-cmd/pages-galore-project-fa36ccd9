@@ -124,3 +124,9 @@ export function uploadSubmitCallFailure(from: string | null | undefined, serverM
   }
   return { prefix: UPLOAD_SUBMIT_CALL_PREFIX, phone: phoneForEstimateOrigin(from) };
 }
+
+export function quoteFollowUpPath(accessToken: string, from: string | null | undefined): string {
+  const path = `/quote/${accessToken}`;
+  if (!parseEstimateOrigin(from)) return path;
+  return `${path}?from=${encodeURIComponent(from)}`;
+}

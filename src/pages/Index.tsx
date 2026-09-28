@@ -5,6 +5,7 @@ import {
   estimateAddressPlaceholder,
   detailsLimitError,
   parseEstimateOrigin,
+  quoteFollowUpPath,
   quoteSubmitCallFailure,
 } from "@/lib/estimatePath";
 import { EstimateCallError, EstimateCallFollowUp } from "@/components/EstimateCallLink";
@@ -257,7 +258,7 @@ function EstimateForm() {
 
       if (fnError) throw fnError;
       if (data?.accessToken) {
-        navigate(`/quote/${data.accessToken}`);
+        navigate(quoteFollowUpPath(data.accessToken, originFrom));
       } else {
         setSubmitted(true);
       }

@@ -8,6 +8,7 @@ import {
   estimatePath,
   parseEstimateOrigin,
   phoneForEstimateOrigin,
+  quoteFollowUpPath,
   quoteSubmitCallFailure,
   uploadSubmitCallFailure,
 } from "@/lib/estimatePath";
@@ -195,5 +196,13 @@ describe("phoneForEstimateOrigin and call messages", () => {
     const details = applyEstimateOriginToDetails("stamped-concrete-wichita", "ashlar patio");
     expect(details).toContain("Requested from /stamped-concrete-wichita");
     expect(quoteSubmitCallFailure("stamped-concrete-wichita").prefix).not.toContain("submit-quote");
+  });
+
+  it("keeps Wichita origin on the quote follow-up URL without changing storage", () => {
+    expect(quoteFollowUpPath("token-1", "commercial-concrete-wichita")).toBe(
+      "/quote/token-1?from=commercial-concrete-wichita",
+    );
+    expect(quoteFollowUpPath("token-1", null)).toBe("/quote/token-1");
+    expect(quoteFollowUpPath("token-1", "unknown")).toBe("/quote/token-1");
   });
 });

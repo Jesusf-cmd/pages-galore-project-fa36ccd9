@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
+import { phoneForEstimateOrigin } from "@/lib/estimatePath";
 import SignatureCanvas from "react-signature-canvas";
 import { supabase } from "@/integrations/supabase/client";
 import { useSEO } from "@/hooks/useSEO";
@@ -63,6 +64,8 @@ export default function QuotePage() {
 
   // The :id route param now carries the unguessable access token, not the quote's primary id.
   const { id: accessToken } = useParams<{ id: string }>();
+  const [searchParams] = useSearchParams();
+  const followUpPhone = phoneForEstimateOrigin(searchParams.get("from"));
   const [quote, setQuote] = useState<Quote | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -246,7 +249,7 @@ export default function QuotePage() {
           <div className="bg-[#fef2f2] border border-[#fecaca] rounded px-5 py-4 text-center">
             <div className="text-[#dc2626] text-sm font-bold mb-1">This quote has expired.</div>
             <div className="text-[#555] text-xs">
-              Please contact us at <a href="tel:4054584805" className="text-[#c45c26] font-bold">(405) 458-4805</a> for an updated estimate.
+              Please contact us at <a href={`tel:${followUpPhone.tel}`} className="text-[#c45c26] font-bold">{followUpPhone.display}</a> for an updated estimate.
             </div>
           </div>
         </div>
