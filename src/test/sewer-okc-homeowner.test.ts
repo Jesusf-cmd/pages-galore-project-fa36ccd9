@@ -42,7 +42,8 @@ describe("residential sewer page", () => {
     expect(route?.path).toBe("/sewer-line-repair-oklahoma-city");
     expect(route?.title).toBe("Residential Sewer Line Repair Oklahoma City | FDZ Construction LLC");
     expect(route?.h1).toBe("Residential Sewer Line Repair in Oklahoma City.");
-    expect(route?.description).toContain("Camera $200–$500");
+    expect(route?.description).toContain("Camera inspection $200–$500");
+    expect(route?.description).toContain("estimates");
     expect(route?.description).not.toMatch(/free camera/i);
     expect(body).toContain("<h1>Residential Sewer Line Repair in Oklahoma City.</h1>");
     expect(body).toContain("href=\"/#estimate\"");
@@ -60,6 +61,10 @@ describe("residential sewer page", () => {
     expect(body).not.toContain("urgent response");
     expect(body).not.toContain("8+ years");
     expect(body).not.toContain("hundreds of residential");
+    expect(body).not.toMatch(/published range/i);
+    expect(body).toMatch(/estimates/i);
+    expect(body).toContain("written quote");
+    expect(body).toContain("two-year workmanship warranty");
   });
 
   it("is linked from driveway and sidewalk prerender bodies", () => {
@@ -69,5 +74,14 @@ describe("residential sewer page", () => {
     expect(driveways).toContain('href="/sewer-line-repair-oklahoma-city"');
     expect(sidewalks).toContain('href="/sewer-line-repair-oklahoma-city"');
     expect(home).toContain('href="/sewer-line-repair-oklahoma-city"');
+  });
+
+  it("does not claim licensed plumbers or publish a plumbing license number", () => {
+    const plumbing = getPrerenderBody("/plumbing-oklahoma-city") ?? "";
+    const plumbingRoute = routes.find((entry) => entry.path === "/plumbing-oklahoma-city");
+    expect(plumbing).not.toMatch(/licensed plumbers/i);
+    expect(plumbing).not.toContain("75456");
+    expect(plumbingRoute?.description).not.toMatch(/licensed plumbers/i);
+    expect(plumbingRoute?.content).not.toMatch(/licensed plumbers/i);
   });
 });

@@ -36,13 +36,13 @@ export default function PlumbingOklahomaCity() {
       noindex
       currentServiceSlug="plumbing-oklahoma-city"
       metaTitle="Plumbing Services Oklahoma City | FDZ Construction LLC"
-      metaDescription="Plumbing repair, drain cleaning, water heaters, leak detection & sewer line service in Oklahoma City. Licensed plumbers. Call (405) 458-4805."
-      eyebrow="OKC Metro · Plumbing Repair & Installation · Licensed & Insured"
+      metaDescription="Plumbing repair, drain cleaning, water heaters, leak detection & sewer line service in Oklahoma City. Call (405) 458-4805."
+      eyebrow="OKC Metro · Plumbing Repair & Installation"
       badge="gc-managed"
       title="Oklahoma City"
       titleAccent="Plumbing Services."
-      description="FDZ Construction's licensed plumbers handle everything from a slow drain to a full sewer line replacement — for homeowners and businesses across the OKC metro, with the same crew that handles the concrete restoration when a job requires it."
-      modelNote="As your general contractor, FDZ manages licensed plumbing specialists on your project — you get one point of contact, one invoice, and one workmanship warranty, without having to vet or coordinate a separate contractor yourself. (Sewer line excavation and concrete restoration remain self-performed by our own crew.)"
+      description="FDZ Construction handles everything from a slow drain to a full sewer line replacement — for homeowners and businesses across the OKC metro, with the same crew that handles the concrete restoration when a job requires it."
+      modelNote="As your general contractor, FDZ coordinates plumbing work on your project — you get one point of contact, one invoice, and one workmanship warranty, without having to vet or coordinate a separate contractor yourself. (Sewer line pipe work, excavation, and concrete restoration remain self-performed by our own crew.)"
       introText="FDZ Construction LLC's plumbing team covers the full range of residential and commercial plumbing — general repair, drain cleaning, water heater service, and leak detection. Sewer line repair and installation is a distinct specialty of ours: see our <a href='/sewer-line-repair-oklahoma-city'>dedicated sewer line repair page</a> for the full breakdown of methods, process, and FAQ."
       localExpertiseNote="Oklahoma's hard water accelerates mineral buildup in pipes and water heaters over time, and the same expansive clay soil that stresses driveways and foundations also stresses buried plumbing lines. Both are conditions we plan around, not surprises we discover halfway through a job."
       subServices={{
@@ -101,14 +101,13 @@ export default function PlumbingOklahomaCity() {
         },
       ]}
       whyChooseUs={[
-        { icon: "🔧", title: "Licensed Plumbers", description: "Fully licensed plumbers in Oklahoma. License #: 75456." },
         { icon: "🧰", title: "Part of a Multi-Trade Team", description: "A water heater replacement often touches plumbing, electrical, and gas. We coordinate that internally instead of sending you to find separate contractors." },
         { icon: "🚧", title: "Sewer Line Specialists", description: "Our sewer line repair work is handled by the same crew that does the excavation and the concrete restoration — no handoff to a second contractor." },
         { icon: "🔒", title: "2-Year Workmanship Warranty", description: "Every plumbing repair or installation we complete is backed by the same 2-year workmanship warranty as the rest of our work." },
         { icon: "📋", title: "Free On-Site Estimates", description: "No phone quotes for plumbing work. We inspect the issue and give you a written estimate before work starts." },
         { icon: "📍", title: "Based in Oklahoma City", description: "Based in Oklahoma City. We schedule work across the OKC metro." },
       ]}
-      trustLine="FDZ Construction LLC's plumbers are licensed, bonded, and insured in Oklahoma, backed by the same 2-year workmanship warranty as our concrete, HVAC, and electrical work."
+      trustLine="FDZ Construction LLC handles plumbing repair and installation in Oklahoma City, backed by the same 2-year workmanship warranty as our concrete work."
       processEyebrow="Our Plumbing Process"
       processTitle="How We Handle"
       processTitleAccent="Every Plumbing Call."

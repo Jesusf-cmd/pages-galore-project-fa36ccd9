@@ -174,16 +174,16 @@ export const prerenderBodies: Record<string, string> = {
   "/sewer-line-repair-oklahoma-city": `
     <h1>Residential Sewer Line Repair in Oklahoma City.</h1>
     <p>Recurring backups, several slow fixtures, sewer odor, roots in the line, or a pipe you already know is damaged — those are the reasons Oklahoma City homeowners call FDZ. We look at the line first, then tell you whether a repair or a replacement is the honest next step. A clog in one drain does not automatically mean excavation.</p>
-    <p>First step: call <a href="tel:4054584805">(405) 458-4805</a> or <a href="/#estimate">request an estimate</a>. Send photos of the backup, a camera video if you already have one, and where the line sits relative to the driveway or slab. Expect a camera inspection at $200–$500, then a written quote before any digging. Excavation and concrete restoration are self-performed by our own crew.</p>
-    <h2>Typical Sewer Line Costs in Oklahoma City (2026)</h2>
-    <p>OKC metro ballpark ranges — your written quote after a camera inspection is the real number. FDZ quotes include concrete restoration when a driveway or slab is disturbed.</p>
+    <p>First step: call <a href="tel:4054584805">(405) 458-4805</a> or <a href="/#estimate">request an estimate</a>. Send photos of the backup, a camera video if you already have one, and where the line sits relative to the driveway or slab. Camera inspection is $200–$500. After that, you get a written quote before any digging. FDZ does the sewer pipe work, the excavation, and the concrete restoration.</p>
+    <h2>Estimated Sewer Line Costs in Oklahoma City</h2>
+    <p>Camera inspection is $200–$500. The job prices below are estimates, not official quotes. The written quote after the camera inspection sets the actual scope and price. FDZ quotes include concrete restoration when a driveway or slab is disturbed.</p>
     <ul>
-      <li>Camera inspection: $200 – $500</li>
-      <li>Spot repair: $1,000 – $3,500</li>
-      <li>Traditional excavation repair: $1,500 – $7,000</li>
-      <li>Trenchless pipe bursting: $4,000 – $12,000</li>
-      <li>Full sewer line replacement: $8,000 – $15,000</li>
-      <li>New sewer line installation: $2,500 – $8,000+</li>
+      <li>Camera inspection (fee): $200 – $500</li>
+      <li>Spot repair (estimate): $1,000 – $3,500</li>
+      <li>Traditional excavation repair (estimate): $1,500 – $7,000</li>
+      <li>Trenchless pipe bursting (estimate): $4,000 – $12,000</li>
+      <li>Full sewer line replacement (estimate): $8,000 – $15,000</li>
+      <li>New sewer line installation (estimate): $2,500 – $8,000+</li>
     </ul>
     <h2>Sewer Line Repair &amp; Installation Methods We Offer</h2>
     <h3>Trenchless Pipe Bursting</h3>
@@ -224,25 +224,26 @@ export const prerenderBodies: Record<string, string> = {
     <h2>Why Oklahoma City Soil Matters for Sewer Lines</h2>
     <p>The OKC metro sits on Permian-age clay and shale that expands when wet and shrinks in drought — sometimes moving several inches across a single season. That movement shifts buried sewer pipe out of alignment, creates low spots where the line sags, and stresses joints until they leak or separate. Bedding and backfill matter as much as the pipe itself during a repair — we bed and backfill every repair the same way we'd prep a sub-base for a driveway, so it doesn't have to be redone. Beyond soil movement, the most common causes of sewer line damage we see are tree root intrusion, aging or deteriorated pipe material (especially older clay or cast iron), and pipe bellying or settling from clay movement.</p>
     ${processSection("From Camera Inspection to Final Walkthrough", [
-      { title: "Camera inspection", description: "We run a camera through the line first. The published range is $200–$500. That look tells us whether this is a repair, a replacement, or not a sewer line problem at all." },
-      { title: "Diagnosis & quote", description: "Based on what the camera shows, we tell you plainly whether this is a spot repair, a full repair, or a replacement — and give you a written quote before any digging starts." },
+      { title: "Camera inspection", description: "We run a camera through the line first. Camera inspection is $200–$500. That look tells us whether this is a repair, a replacement, or not a sewer line problem at all." },
+      { title: "Diagnosis & quote", description: "Based on what the camera shows, we tell you whether this is a spot repair, a full repair, or a replacement — and give you a written quote before any digging starts. The written quote sets the actual scope and price." },
       { title: "Repair or replacement", description: "We excavate and complete the pipe work using the method that matches what the inspection found." },
       { title: "Concrete & surface restoration", description: "Same crew — we restore the driveway, sidewalk, or slab that was disturbed, instead of leaving you to find a second contractor." },
       { title: "Final walkthrough", description: "We walk the finished work with you before we leave — the pipe repair and the concrete restoration, done together." },
     ])}
     <h2>Why Oklahoma City Homeowners Choose FDZ for Sewer Work</h2>
-    <p>FDZ Construction LLC is based in Oklahoma City. Owner <strong>David Fernandez</strong> leads the crew. We handle residential sewer line repair and the concrete restoration the job requires with one crew.</p>
+    <p>FDZ Construction LLC is based in Oklahoma City. Owner <strong>David Fernandez</strong> leads the crew. We handle the sewer pipe work, the excavation, and the concrete restoration with one crew.</p>
     <ul>
-      <li>One crew handles both the excavation and the concrete restoration — no coordinating two companies</li>
-      <li>Camera inspection ($200–$500) first, then a written quote before digging</li>
-      <li>Driveway and slab restoration included when the trench cuts through hardscape</li>
+      <li>FDZ does the sewer pipe work, including trenchless pipe bursting when that method fits the line</li>
+      <li>One crew handles excavation and concrete restoration — no coordinating two companies</li>
+      <li>Camera inspection is $200–$500, then a written quote before digging. Job prices on this page are estimates; the written quote sets the actual scope and price</li>
+      <li>Two-year workmanship warranty on completed sewer work, including concrete restoration we pour. Terms are in your contract</li>
       <li>Based in Oklahoma City</li>
     </ul>
     <h2 id="warranty">2-Year Workmanship Warranty</h2>
-    <p>Sewer work we complete is covered by FDZ's 2-year workmanship warranty, including concrete restoration we pour after excavation. Ask for the written terms when you request a quote — we do not publish a separate warranty contract on this page.</p>
+    <p>Sewer work we complete is covered by a two-year workmanship warranty, including concrete restoration we pour after excavation. The warranty terms are in your contract.</p>
     ${faqSection("Sewer Line Repair FAQ", [
-      { question: "How much does sewer line repair cost in Oklahoma City?", answer: "In the OKC metro, spot repairs typically run $1,000–$3,500, traditional excavation repairs $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, and full line replacements $8,000–$15,000 depending on length, depth, and access. A camera inspection ($200–$500) tells us which range applies. FDZ quotes include concrete restoration when a driveway or slab is disturbed." },
-      { question: "Is the camera inspection free?", answer: "No. The published camera inspection range on this page is $200–$500. That look is how we decide repair versus replacement. A written estimate follows the inspection." },
+      { question: "How much does sewer line repair cost in Oklahoma City?", answer: "Camera inspection is $200–$500. Estimated job prices in the OKC metro are spot repair $1,000–$3,500, traditional excavation repair $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, and full line replacement $8,000–$15,000, depending on length, depth, and access. Those job prices are estimates, not official quotes. The written quote after the camera inspection sets the actual scope and price. FDZ quotes include concrete restoration when a driveway or slab is disturbed." },
+      { question: "Is the camera inspection free?", answer: "No. Camera inspection is $200–$500. That look is how we decide repair versus replacement. A written quote follows the inspection and sets the job price." },
       { question: "What should I send when I contact FDZ?", answer: "Call (405) 458-4805 or use the estimate form. Send photos of the backup, a camera video if you already have one, and where the line sits relative to the driveway, sidewalk, or slab. We will tell you the next step from there." },
       { question: "Does every clog mean you have to dig up my yard?", answer: "No. A clog in one fixture is often a drain issue, not a sewer line. Recurring backups in several fixtures, sewer odor, roots, or a known damaged line are the cases we evaluate. A camera look tells us whether excavation is actually needed." },
       { question: "How do I know if I need sewer repair or full replacement?", answer: "A camera inspection tells us. Isolated damage on an otherwise sound line is usually a spot or trenchless repair. Lines that are old, degraded along their length, or made of clay or cast iron nearing the end of their service life are usually better replaced than repaired." },
@@ -253,6 +254,7 @@ export const prerenderBodies: Record<string, string> = {
       { question: "What causes sewer line damage in Oklahoma City specifically?", answer: "Tree root intrusion, aging or deteriorated pipe material (especially older clay or cast iron), and ground movement from OKC's expansive clay and shale, which can shift pipe alignment and cause sections of the line to sag." },
       { question: "Does Oklahoma City require a permit for sewer line work?", answer: "Permit requirements depend on the City of Oklahoma City and the scope of the work. We'll tell you what applies after we see the job." },
       { question: "Does homeowners insurance cover sewer line repair?", answer: "Standard homeowners insurance policies usually do not cover sewer line repair or replacement — it's typically treated as maintenance, not a sudden covered loss. Some policies offer optional sewer backup riders. We're happy to provide documentation if you file a claim that might apply." },
+      { question: "Do you warranty sewer line work?", answer: "Yes. Sewer work we complete is covered by a two-year workmanship warranty, including concrete restoration we pour after excavation. The warranty terms are in your contract." },
     ])}
     <h2>Related Services</h2>
     <ul>
@@ -830,7 +832,7 @@ export const prerenderBodies: Record<string, string> = {
     ${metroCitySewerBlock("Oklahoma City", "Many established OKC neighborhoods still run on original clay or cast-iron sewer lines that shift and crack as Permian clay swells and shrinks each season. When a line fails under a driveway or slab, we repair the pipe and restore the concrete ourselves — one crew, no second contractor.")}
     ${faqSection("FAQ", [
       { question: "Do you do sewer line repair in Oklahoma City, or just concrete?", answer: "Both. We're a concrete contractor that also handles sewer line repair, replacement, and installation — including driveway or slab restoration. We serve Oklahoma City with the same crew and standards as the rest of the OKC metro." },
-      { question: "How much does sewer line repair cost in Oklahoma City?", answer: "In the OKC metro, spot repairs typically run $1,000–$3,500, traditional excavation repairs $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, and full line replacements $8,000–$15,000. FDZ quotes include concrete restoration when a driveway or slab is disturbed." },
+      { question: "How much does sewer line repair cost in Oklahoma City?", answer: "Camera inspection is $200–$500. Estimated job prices in the OKC metro are spot repair $1,000–$3,500, traditional excavation repair $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, and full line replacement $8,000–$15,000. Those job prices are estimates; the written quote after the camera inspection sets the actual scope and price. FDZ quotes include concrete restoration when a driveway or slab is disturbed." },
       { question: "Do you work throughout all of Oklahoma City?", answer: "Yes. Oklahoma City is our home market. Because the city is large and conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city." },
       { question: "How much does concrete cost in Oklahoma City?", answer: "Standard driveways and slabs generally run $6–$10 per square foot and foundation work $9–$14, depending on thickness, reinforcement, and site conditions. We give an exact price after an on-site look — no phone quotes." },
       { question: "Why does base prep matter so much in Oklahoma City?", answer: "OKC sits on expansive Permian clay that swells when wet and shrinks in drought. Without a properly excavated, compacted aggregate base and adequate reinforcement, concrete is far more likely to crack and move over time." },
@@ -1272,7 +1274,7 @@ export const prerenderBodies: Record<string, string> = {
 
   "/plumbing-oklahoma-city": `
     <h1>Oklahoma City Plumbing Services</h1>
-    <p>FDZ Construction LLC's licensed plumbers cover the full range of residential and commercial plumbing — general repair, drain cleaning, water heater service, and leak detection. Sewer line repair and installation is a distinct specialty of ours — see our <a href="/sewer-line-repair-oklahoma-city">dedicated sewer line repair page</a> for the full breakdown of methods, process, and FAQ.</p>
+    <p>FDZ Construction LLC covers the full range of residential and commercial plumbing — general repair, drain cleaning, water heater service, and leak detection. Sewer line repair and installation is a distinct specialty of ours — see our <a href="/sewer-line-repair-oklahoma-city">dedicated sewer line repair page</a> for the full breakdown of methods, process, and FAQ.</p>
     <h2>Plumbing Services We Offer</h2>
     <ul>
       <li><strong>General Plumbing Repair</strong> — Leak repair, fixture repair and replacement, and general troubleshooting.</li>
@@ -1293,7 +1295,6 @@ export const prerenderBodies: Record<string, string> = {
     <p>Oklahoma's hard water accelerates mineral buildup in pipes and water heaters over time, and the same expansive clay soil that stresses driveways and foundations also stresses buried plumbing lines. See our <a href="/sewer-line-repair-oklahoma-city">sewer line repair page</a> for more on how OKC soil affects underground lines.</p>
     <h2>Why FDZ for Plumbing</h2>
     <ul>
-      <li>Licensed plumbers in Oklahoma. License #: 75456</li>
       <li>Part of a multi-trade team — a water heater replacement often touches plumbing, electrical, and gas</li>
       <li>Sewer line work handled by the same crew that does the excavation and concrete restoration</li>
       <li>2-year workmanship warranty on all plumbing work</li>

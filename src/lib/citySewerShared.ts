@@ -41,7 +41,7 @@ export function metroSewerFaqs(city: string): { question: string; answer: string
     },
     {
       question: `How much does sewer line repair cost in ${city}?`,
-      answer: `In the OKC metro, spot repairs typically run $1,000–$3,500, traditional excavation repairs $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, and full line replacements $8,000–$15,000 depending on length, depth, and access. A camera inspection ($200–$500) tells us which range applies. FDZ quotes include concrete restoration when a driveway or slab is disturbed.`,
+      answer: `Camera inspection is $200–$500. Estimated job prices in the OKC metro are spot repair $1,000–$3,500, traditional excavation repair $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, and full line replacement $8,000–$15,000, depending on length, depth, and access. Those job prices are estimates; the written quote after the camera inspection sets the actual scope and price. FDZ quotes include concrete restoration when a driveway or slab is disturbed.`,
     },
     {
       question: `Does ${city}'s soil affect sewer lines?`,
@@ -49,7 +49,7 @@ export function metroSewerFaqs(city: string): { question: string; answer: string
     },
     {
       question: `How do I get a sewer or concrete estimate in ${city}?`,
-      answer: `Call (405) 458-4805 or request a free estimate through our site. We'll schedule an on-site visit, run a camera inspection if it's a sewer issue, and give you a written quote before any digging starts.`,
+      answer: `Call (405) 458-4805 or request an estimate through our site. For sewer issues, camera inspection is $200–$500. After that look, we give you a written quote that sets the actual scope and price before any digging starts.`,
     },
   ];
 }

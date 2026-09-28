@@ -50,9 +50,9 @@ export const routes: PrerenderRoute[] = [
   {
     path: "/sewer-line-repair-oklahoma-city",
     title: "Residential Sewer Line Repair Oklahoma City | FDZ Construction LLC",
-    description: "Residential sewer line repair in OKC. Spot repair $1,000–$3,500; replacement $8,000–$15,000. Camera $200–$500, then a written quote. Call (405) 458-4805.",
+    description: "Residential sewer line repair in OKC. Camera inspection $200–$500. Job prices are estimates; the written quote sets the scope and price. Call (405) 458-4805.",
     h1: "Residential Sewer Line Repair in Oklahoma City.",
-    content: "FDZ Construction LLC handles residential sewer line repair and replacement across the Oklahoma City metro. Recurring backups, several slow fixtures, sewer odor, or a damaged line are the reasons homeowners call. A camera inspection ($200–$500) comes first, then a written quote — not every clog needs excavation. Typical OKC pricing: spot repair $1,000–$3,500, traditional excavation repair $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, full line replacement $8,000–$15,000. FDZ quotes include concrete restoration when a driveway or slab is disturbed. Call (405) 458-4805.",
+    content: "FDZ Construction LLC handles residential sewer line repair and replacement across the Oklahoma City metro, including the sewer pipe work, excavation, and concrete restoration. Recurring backups, several slow fixtures, sewer odor, or a damaged line are the reasons homeowners call. Camera inspection is $200–$500, then a written quote — not every clog needs excavation. Estimated job prices: spot repair $1,000–$3,500, traditional excavation repair $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, full line replacement $8,000–$15,000. Those job prices are estimates; the written quote sets the actual scope and price. Call (405) 458-4805.",
   },
   {
     path: "/skid-steer-services-oklahoma-city",
@@ -79,9 +79,9 @@ export const routes: PrerenderRoute[] = [
   {
     path: "/plumbing-oklahoma-city",
     title: "Plumbing Services Oklahoma City | FDZ Construction LLC",
-    description: "Plumbing repair, drain cleaning, water heaters, leak detection & sewer line service in Oklahoma City. Licensed plumbers. Call (405) 458-4805.",
+    description: "Plumbing repair, drain cleaning, water heaters, leak detection & sewer line service in Oklahoma City. Call (405) 458-4805.",
     h1: "Oklahoma City Plumbing Services",
-    content: "FDZ Construction LLC's licensed plumbers handle general plumbing repair, drain cleaning, water heater repair and installation, leak detection, and sewer line repair and installation for homes and businesses across the Oklahoma City metro. Sewer line work is a distinct specialty — see our dedicated sewer line repair page for full detail. Call (405) 458-4805 for a free estimate.",
+    content: "FDZ Construction LLC handles general plumbing repair, drain cleaning, water heater repair and installation, leak detection, and sewer line repair and installation for homes and businesses across the Oklahoma City metro. Sewer line work is a distinct specialty — see our dedicated sewer line repair page for full detail. Call (405) 458-4805 for a free estimate.",
     noindex: true,
   },
   {
