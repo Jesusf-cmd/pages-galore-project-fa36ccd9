@@ -2,22 +2,24 @@ import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import MailtoLink from "./MailtoLink";
 import { useRegionalPhone } from "@/hooks/useRegionalPhone";
-import { isKansasPath } from "@/lib/phones";
+import { isKansasPath, normalizePath } from "@/lib/phones";
+import { estimatePath } from "@/lib/estimatePath";
 
 export default function Footer() {
   const phone = useRegionalPhone();
   const location = useLocation();
   return (
     <footer className="bg-darker px-4 md:px-12 py-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
-      {/* HubSpot Contact Form */}
-      <div id="contact" className="max-w-xl mx-auto mb-8 scroll-mt-24">
-        <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3 text-center">Get In Touch</div>
-        <div
-          className="hs-form-frame"
-          data-region="na1"
-          data-form-id="b4b62043-9569-4050-aee6-30622dda3654"
-          data-portal-id="51244012"
-        />
+      {/* Direct contact and the existing estimate form */}
+      <div id="contact" className="max-w-xl mx-auto mb-8 scroll-mt-24 text-center">
+        <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3">Get In Touch</div>
+        <p className="text-sm text-muted-text mb-5">Tell us about your project and we’ll follow up with an estimate.</p>
+        <Link
+          to={isKansasPath(location.pathname) ? estimatePath(normalizePath(location.pathname).slice(1)) : "/#estimate"}
+          className="btn-primary inline-block"
+        >
+          Request an Estimate →
+        </Link>
       </div>
       {/* Contact info */}
       <div className="flex flex-wrap gap-6 justify-center mb-6 text-center">
