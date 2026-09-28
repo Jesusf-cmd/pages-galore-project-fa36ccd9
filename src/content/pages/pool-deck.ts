@@ -64,7 +64,7 @@ export const poolDeckContent: PoolDeckContent = {
   problemHtml: [
     '<strong class="text-concrete">Oklahoma hits 100°F+ for weeks at a time.</strong> Dark concrete or unsealed pavers in direct OKC sun can reach 140–150°F at the surface — hot enough to burn bare feet in seconds. And a pool deck that\'s smooth, faded, or sealed with the wrong product becomes a slip hazard the moment water hits it.',
     "As a pool deck contractor in Oklahoma City, we build for this climate specifically. Light-colored finishes. Non-slip sealers rated for pool chemical exposure. Sub-base preparation that accounts for OKC's expansive clay soil — because a deck that's poured on unstabilized clay will crack and heave within a few years, no matter how good the surface looks on day one.",
-    "Whether you're installing a new pool deck, replacing a cracked one, or resurfacing faded concrete with stamped decorative concrete, we do the whole job — base prep, pour, finish, and sealing — with one crew, no subcontractors. From our shop at 7004 S Indiana Ave, we serve Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, and the rest of the OKC metro.",
+    "Whether you're installing a new pool deck, replacing a cracked one, or resurfacing faded concrete with stamped decorative concrete, we do the whole job — base prep, pour, finish, and sealing — with one crew, no subcontractors. Based in Oklahoma City, we serve the city, Edmond, Norman, Moore, Yukon, Mustang, and the rest of the OKC metro.",
   ],
   whyTitle: "Why Concrete Beats Pavers, Wood & Tile",
   whyAccent: "For Oklahoma Pool Decks.",
@@ -252,7 +252,7 @@ export const poolDeckContent: PoolDeckContent = {
   serviceAreaIntro:
     "FDZ Construction installs and resurfaces pool decks throughout the Oklahoma City metro. We run one crew — no subcontractors — so the same team that gives your estimate does the work. Below is where we operate regularly.",
   cities: [
-    { city: "Oklahoma City", note: "Our home base at 7004 S Indiana Ave. We work OKC neighborhoods from Nichols Hills to south OKC regularly." },
+    { city: "Oklahoma City", note: "Based in Oklahoma City. We work OKC neighborhoods from Nichols Hills to south OKC regularly." },
     { city: "Edmond", note: "About 25–30 minutes north. We install pool decks in Edmond regularly — Edmond's newer construction often means pool decks on fill lots that need extra base attention." },
     { city: "Norman", note: "Norman pool deck work is a consistent part of our schedule. The University of Oklahoma area through east Norman keeps us busy." },
     { city: "Moore", note: "Moore homeowners rebuilding or improving outdoor living areas make up a solid part of our residential work." },

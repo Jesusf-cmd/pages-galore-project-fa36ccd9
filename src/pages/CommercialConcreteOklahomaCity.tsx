@@ -107,7 +107,7 @@ export default function CommercialConcreteOklahomaCity() {
       titleAccent="Oklahoma City."
       description='FDZ Construction is a commercial concrete contractor serving Oklahoma City and the metro — new pours, replacements, and repairs for GCs, property owners, developers, and facility managers. <a href="tel:4054584805">(405) 458-4805</a>.'
       modelNote="This is self-performed work — our own crew and equipment handle every commercial concrete project from start to finish, with no subcontracted labor."
-      introText="FDZ Construction LLC pours and repairs commercial concrete across the Oklahoma City metro for general contractors, facility managers, developers, commercial property managers, and industrial operators. Typical scopes include <a href='/parking-lots-oklahoma-city'>commercial parking lot construction</a>, loading docks, <a href='/warehouse-slab-repair-oklahoma-city'>warehouse slab work</a>, <a href='/foundations-oklahoma-city'>commercial concrete foundations and slabs</a>, equipment pads, <a href='/ada-concrete-ramps-oklahoma-city'>ADA ramps</a>, sidewalks, curb and gutter, truck courts, and <a href='/commercial-concrete-repair-oklahoma-city'>commercial concrete repair</a>. Based at 7004 S Indiana Ave in south OKC — call <a href='tel:4054584805'>(405) 458-4805</a> to discuss plans, schedule a site visit, or request a written estimate."
+      introText="FDZ Construction LLC pours and repairs commercial concrete across the Oklahoma City metro for general contractors, facility managers, developers, commercial property managers, and industrial operators. Typical scopes include <a href='/parking-lots-oklahoma-city'>commercial parking lot construction</a>, loading docks, <a href='/warehouse-slab-repair-oklahoma-city'>warehouse slab work</a>, <a href='/foundations-oklahoma-city'>commercial concrete foundations and slabs</a>, equipment pads, <a href='/ada-concrete-ramps-oklahoma-city'>ADA ramps</a>, sidewalks, curb and gutter, truck courts, and <a href='/commercial-concrete-repair-oklahoma-city'>commercial concrete repair</a>. Based in Oklahoma City — call <a href='tel:4054584805'>(405) 458-4805</a> to discuss plans, schedule a site visit, or request a written estimate."
       ctaLabel="Request a Commercial Concrete Estimate →"
       finalCta={{
         heading: "Need Commercial Concrete?",
@@ -241,7 +241,7 @@ export default function CommercialConcreteOklahomaCity() {
           titleAccent: "Concrete Estimate.",
           alt: true,
           content: [
-            "We serve commercial properties across Oklahoma City (home base — fastest response), Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro including Norman, Moore, Mustang, Midwest City, and Del City. Based at 7004 S Indiana Ave in south OKC.",
+            "We serve commercial properties across Oklahoma City (home base — fastest response), Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro including Norman, Moore, Mustang, Midwest City, and Del City. Based in Oklahoma City.",
             "Use the existing estimate form to start — include your company, project location, approximate area, project stage, desired schedule, and a short description. If you have plans or site photos, upload them on the same page (PDF/JPG/PNG). We do not quote commercial work over the phone.",
           ],
           infoBlock: "<a href='/#estimate' class='text-orange no-underline font-medium'>Request a Commercial Concrete Estimate →</a> &nbsp;·&nbsp; 📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
@@ -326,7 +326,7 @@ export default function CommercialConcreteOklahomaCity() {
         { question: "How quickly can you turn around a bid for a commercial project?", answer: "Contact us with project details and we'll schedule an on-site visit promptly. Bid turnaround depends on project complexity." },
         { question: "Do you work as a sub-contractor on GC-managed projects?", answer: "Yes. We're set up to work within a GC's project schedule, coordinate with other trades on site, and provide required documentation (COI, bonding) as part of the sub process." },
         { question: "Can you pour commercial concrete year-round in Oklahoma?", answer: "Yes — with proper cold-weather or hot-weather protocols. We adjust mix designs, curing methods, and scheduling to ensure quality in all seasons." },
-        { question: "What areas do you serve for commercial work?", answer: "We serve the entire OKC metro including Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City. Based at 7004 S Indiana Ave in south OKC — fastest response for OKC projects." },
+        { question: "What areas do you serve for commercial work?", answer: "We serve the entire OKC metro including Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City. Based in Oklahoma City — fastest response for OKC projects." },
       ]}
     />
   );

@@ -59,22 +59,28 @@ describe("Wichita phone scoping", () => {
     }
   });
 
-  it("omits the street address on Wichita pages and restores it for Oklahoma", () => {
+  it("omits the street address and coordinates on every public path", () => {
     const organization = {
       "@type": "GeneralContractor",
-      address: { streetAddress: "7004 S Indiana Ave" },
-      geo: { latitude: 35.4676 },
+      address: { streetAddress: "7004 S Indiana Ave", addressLocality: "Oklahoma City", postalCode: "73159" },
+      geo: { latitude: 35.4676, longitude: -97.5164 },
     };
     const wichita = organizationJsonLdForPath(organization, "/commercial-concrete-wichita");
     expect(wichita.address).toBeUndefined();
     expect(wichita.geo).toBeUndefined();
-    const restored = organizationJsonLdForPath(wichita, "/commercial-concrete-oklahoma-city");
-    expect(restored.address).toMatchObject({ streetAddress: "7004 S Indiana Ave", addressLocality: "Oklahoma City" });
-    expect(restored.geo).toMatchObject({ latitude: 35.4676, longitude: -97.5164 });
+    const oklahoma = organizationJsonLdForPath(organization, "/commercial-concrete-oklahoma-city");
+    expect(oklahoma.address).toMatchObject({ addressLocality: "Oklahoma City", addressRegion: "OK" });
+    expect(oklahoma.address).not.toHaveProperty("streetAddress");
+    expect(oklahoma.address).not.toHaveProperty("postalCode");
+    expect(oklahoma.geo).toBeUndefined();
 
-    const html = `<script type="application/ld+json">${JSON.stringify(organization)}</script><p>7004 S Indiana Ave, Oklahoma City, OK 73159</p>`;
-    const stripped = stripWichitaStreetAddressHtml(html, "/stamped-concrete-wichita");
-    expect(stripped).not.toContain("7004");
-    expect(stripWichitaStreetAddressHtml(html, "/")).toBe(html);
+    const html = `<script type="application/ld+json">${JSON.stringify(organization)}</script><p>7004 S Indiana Ave, Oklahoma City, OK 73159</p><meta name="geo.position" content="35.4676;-97.5164" />`;
+    const strippedOk = stripWichitaStreetAddressHtml(html, "/");
+    expect(strippedOk).not.toContain("7004");
+    expect(strippedOk).not.toContain("35.4676");
+    expect(strippedOk).not.toContain("streetAddress");
+    const strippedKs = stripWichitaStreetAddressHtml(html, "/stamped-concrete-wichita");
+    expect(strippedKs).not.toContain("7004");
+    expect(strippedKs).not.toContain("addressLocality");
   });
 });

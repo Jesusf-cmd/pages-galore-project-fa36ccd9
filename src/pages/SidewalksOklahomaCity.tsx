@@ -107,7 +107,7 @@ export default function SidewalksOklahomaCity() {
         { icon: "🛡️", title: "Licensed, Bonded & Insured in Oklahoma", description: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project." },
         { icon: "📅", title: "8+ Years Serving the OKC Metro", description: /* TODO: confirm exact figure or founding year */ "Over 8 years of experience with OKC's clay soil, ADA requirements, and city-spec sidewalk and curb work." },
         { icon: "🔒", title: "2-Year Workmanship Warranty", description: "Every sidewalk and curb project we pour is backed by a 2-year workmanship warranty." },
-        { icon: "📍", title: "Based in South OKC — Fastest Response", description: "We're at 7004 S Indiana Ave. OKC gets our fastest response of anywhere we serve." },
+        { icon: "📍", title: "Based in Oklahoma City", description: "Based in Oklahoma City. We schedule work across the OKC metro." },
         { icon: "♿", title: "Code Compliant", description: "ADA-compliant ramps, proper slopes, and city-spec curb profiles on every project. We know OKC, Edmond, Norman, and Moore specifications." },
         { icon: "📋", title: "Free On-Site Estimates", description: "Written estimates with clear pricing. We handle permits and inspector coordination." },
       ]}
@@ -162,7 +162,7 @@ export default function SidewalksOklahomaCity() {
           titleAccent: "Sidewalk Estimate.",
           alt: true,
           content: [
-            "We provide free on-site estimates for sidewalks and curb work across Oklahoma City, Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro. Based at 7004 S Indiana Ave in south OKC.",
+            "We provide free on-site estimates for sidewalks and curb work across Oklahoma City, Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro. Based in Oklahoma City.",
           ],
           // TODO: embed quote form here once document-upload feature ships
           infoBlock: "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
@@ -175,7 +175,7 @@ export default function SidewalksOklahomaCity() {
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial concrete services</a> — Parking lots, warehouse floors, site flatwork, and curb &amp; gutter for commercial developments.",
             "<a href='/commercial-curb-and-gutter-oklahoma-city' class='text-orange no-underline font-medium'>Commercial curb &amp; gutter</a> — Parking lot curbing, island curbs, and drive approach cuts.",
             "<a href='/ada-concrete-ramps-oklahoma-city' class='text-orange no-underline font-medium'>ADA concrete ramps</a> — Accessible curb ramps and detectable warning surfaces.",
-            "<a href='/driveways-oklahoma-city' class='text-orange no-underline font-medium'>Concrete driveway installation</a> — Sidewalk work often pairs with new driveway installation or replacement.",
+            "<a href='/sewer-line-repair-oklahoma-city' class='text-orange no-underline font-medium'>Residential sewer line repair</a> — Sidewalk restoration after sewer line access, done by the same crew that did the digging.",
             "<a href='/parking-lots-oklahoma-city' class='text-orange no-underline font-medium'>Parking lot replacement</a> — New commercial lots where curb, gutter, and sidewalks are part of the same site package.",
           ],
         },

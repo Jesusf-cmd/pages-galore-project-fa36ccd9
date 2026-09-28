@@ -30,9 +30,7 @@ export default function Footer() {
             <a href={`tel:${phone.tel}`} className="text-orange text-sm font-medium no-underline hover:underline">{phone.display}</a>
           </div>
           {!isKansasPath(location.pathname) && (
-            <address className="not-italic text-[0.74rem] text-muted-text mt-2">
-              7004 S Indiana Ave, Oklahoma City, OK 73159
-            </address>
+            <p className="text-[0.74rem] text-muted-text mt-2">Based in Oklahoma City</p>
           )}
         </div>
       </div>

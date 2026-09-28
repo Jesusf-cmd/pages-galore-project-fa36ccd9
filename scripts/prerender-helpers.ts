@@ -74,7 +74,7 @@ export function metroCitySewerBlock(city: string, localNote: string): string {
     </ul>
     <p><strong>Signs you may need sewer line repair:</strong> ${SEWER_SIGNS_HTML}</p>
     <p>${localNote}</p>
-    <p>See the full <a href="/sewer-line-repair-oklahoma-city">sewer line repair methods, OKC pricing, and FAQ</a> — including typical ranges: spot repair $1,000–$3,500, excavation repair $1,500–$7,000, trenchless bursting $4,000–$12,000, full replacement $8,000–$15,000.</p>
+    <p>See the full <a href="/sewer-line-repair-oklahoma-city">residential sewer line repair page for Oklahoma City</a> — camera inspection $200–$500; estimated job prices: spot repair $1,000–$3,500, excavation repair $1,500–$7,000, trenchless bursting $4,000–$12,000, full replacement $8,000–$15,000. Job prices are estimates; the written quote sets the actual scope and price.</p>
     <h2>Our ${city} Projects</h2>
     <p>We've completed concrete and sewer line projects across the OKC metro, including ${city}. We don't have ${city}-specific project photos or customer reviews published yet — this section will be updated with real project photos and reviews as they become available.</p>
   `;

@@ -121,7 +121,7 @@ export default function PatiosOklahomaCity() {
         { icon: "🛡️", title: "Licensed, Bonded & Insured in Oklahoma", description: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project." },
         { icon: "📅", title: "8+ Years Serving the OKC Metro", description: /* TODO: confirm exact figure or founding year */ "Over 8 years of experience with OKC's clay soil, drainage conditions, and weather challenges." },
         { icon: "🔒", title: "2-Year Workmanship Warranty", description: "Every patio and slab we pour is backed by a 2-year workmanship warranty." },
-        { icon: "📍", title: "Based in South OKC — Fastest Response", description: "We're at 7004 S Indiana Ave. OKC gets our fastest response and tightest scheduling of anywhere we serve." },
+        { icon: "📍", title: "Based in Oklahoma City", description: "Based in Oklahoma City. We schedule concrete and sewer work across the OKC metro." },
         { icon: "📋", title: "Free On-Site Estimates", description: "No phone quotes, no pressure. We come to your property, measure the project, and give you a written estimate." },
         { icon: "❄️", title: "OKC Freeze-Thaw Expertise", description: "OKC's freeze-thaw cycles can damage an unsealed stamped surface within a season or two — we don't cut corners on sealing." },
       ]}
@@ -168,7 +168,7 @@ export default function PatiosOklahomaCity() {
           titleAccent: "Patio Estimate.",
           alt: true,
           content: [
-            "We provide free on-site estimates for patios and slabs across Oklahoma City, Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro including Norman, Moore, Mustang, Midwest City, and Del City. Based at 7004 S Indiana Ave in south OKC.",
+            "We provide free on-site estimates for patios and slabs across Oklahoma City, Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro including Norman, Moore, Mustang, Midwest City, and Del City. Based in Oklahoma City.",
           ],
           // TODO: embed quote form here once document-upload feature ships
           infoBlock: "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",

@@ -83,7 +83,7 @@ export default function ExcavatorServicesOklahomaCity() {
       titleAccent="Oklahoma City, OK."
       description="When a job needs more reach, more digging depth, or more acreage than a skid steer can handle, our excavator crew takes over — stump and tree removal, deep cut-fill grading, drainage work, and larger commercial pads and driveways. Same self-performed crew, sized for the bigger jobs."
       modelNote="This is self-performed work — our own crew and excavator equipment handle every job, start to finish, with no subcontracted labor."
-      introText="An excavator earns its keep on the jobs a skid steer can't finish — tracts over about 2 acres, stumps and larger trees that need pulling instead of just cutting, digging deeper than a bucket's reach for drainage or footings, and bigger commercial pads or driveways. If your project is smaller, tighter on access, or lighter-duty — a backyard leveling job, gravel prep, or brush hogging — our <a href='/skid-steer-services-oklahoma-city' class='text-orange no-underline'>skid steer services</a> are usually the faster, more affordable fit. Serving Oklahoma City, Edmond, Norman, Moore, Yukon, and the surrounding metro from our south OKC shop at 7004 S Indiana Ave."
+      introText="An excavator earns its keep on the jobs a skid steer can't finish — tracts over about 2 acres, stumps and larger trees that need pulling instead of just cutting, digging deeper than a bucket's reach for drainage or footings, and bigger commercial pads or driveways. If your project is smaller, tighter on access, or lighter-duty — a backyard leveling job, gravel prep, or brush hogging — our <a href='/skid-steer-services-oklahoma-city' class='text-orange no-underline'>skid steer services</a> are usually the faster, more affordable fit. Serving Oklahoma City, Edmond, Norman, Moore, Yukon, and the surrounding metro. Based in Oklahoma City."
       serviceLabel="Excavator"
       serviceCards={[
         {
@@ -182,7 +182,7 @@ export default function ExcavatorServicesOklahomaCity() {
           title: "Request a Free",
           titleAccent: "Excavator Estimate.",
           content: [
-            "We provide free on-site estimates for excavator work across Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, and the full OKC metro. Based at 7004 S Indiana Ave in south OKC.",
+            "We provide free on-site estimates for excavator work across Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, and the full OKC metro. Based in Oklahoma City.",
           ],
           infoBlock: "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
         },

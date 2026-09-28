@@ -11,11 +11,7 @@ export default function EeatBlock({ compact }: { compact?: boolean }) {
       <div className="text-[0.66rem] tracking-[0.12em] uppercase text-orange font-bold mb-3">Who We Are</div>
       <h3 className="text-base md:text-lg mb-3">Owner-Led. Oklahoma Licensed.</h3>
       <p className="text-[0.85rem] text-muted-text leading-relaxed font-light mb-4">
-        <strong className="text-concrete">David Fernandez</strong> owns and operates FDZ Construction LLC from our south Oklahoma City shop at{" "}
-        <a href="https://www.google.com/maps/search/?api=1&query=7004+S+Indiana+Ave,+Oklahoma+City,+OK+73159" className="text-orange no-underline" rel="noopener noreferrer">
-          7004 S Indiana Ave
-        </a>
-        . David leads the crew on concrete and sewer line work across the OKC metro — not a dispatcher, not a subcontractor network.
+        <strong className="text-concrete">David Fernandez</strong> owns and operates FDZ Construction LLC in Oklahoma City. David leads the crew on concrete and sewer line work across the OKC metro — not a dispatcher, not a subcontractor network.
       </p>
       <ul className="text-[0.82rem] text-muted-text leading-relaxed font-light space-y-2 mb-4" style={{ listStyle: "none", padding: 0 }}>
         <li>▸ <strong className="text-concrete">8+ years</strong> serving Oklahoma City, Edmond, Norman, Moore, and surrounding communities</li>

@@ -86,7 +86,7 @@ export default function SkidSteerServicesOklahomaCity() {
       titleAccent="Oklahoma City, OK."
       description="Our skid steer crew handles the site work most concrete contractors send elsewhere — clearing a wooded lot, leveling a backyard, grading a gravel base, or mowing down overgrown brush. Same self-performed crew and equipment as our concrete and sewer line work, sized right for residential lots and smaller acreage."
       modelNote="This is self-performed work — our own crew and skid steer equipment handle every job, start to finish, with no subcontracted labor."
-      introText="A skid steer is the right machine for tight, residential-scale ground work — compact enough to fit through a standard gate or side yard, versatile enough to swap attachments for clearing, grading, or mowing in the same afternoon. If you're clearing a lot under about 2 acres, leveling a yard, prepping a gravel driveway, or need brush hogged before it takes over your fence line, this is usually the right page. For larger acreage, deeper digging, stump and tree removal, or drainage work, see our <a href='/excavator-services-oklahoma-city' class='text-orange no-underline'>excavator services</a> instead. Serving Oklahoma City, Edmond, Norman, Moore, Yukon, and the surrounding metro from our south OKC shop at 7004 S Indiana Ave."
+      introText="A skid steer is the right machine for tight, residential-scale ground work — compact enough to fit through a standard gate or side yard, versatile enough to swap attachments for clearing, grading, or mowing in the same afternoon. If you're clearing a lot under about 2 acres, leveling a yard, prepping a gravel driveway, or need brush hogged before it takes over your fence line, this is usually the right page. For larger acreage, deeper digging, stump and tree removal, or drainage work, see our <a href='/excavator-services-oklahoma-city' class='text-orange no-underline'>excavator services</a> instead. Serving Oklahoma City, Edmond, Norman, Moore, Yukon, and the surrounding metro. Based in Oklahoma City."
       serviceLabel="Skid Steer"
       serviceCards={[
         {
@@ -186,7 +186,7 @@ export default function SkidSteerServicesOklahomaCity() {
           title: "Request a Free",
           titleAccent: "Skid Steer Estimate.",
           content: [
-            "We provide free on-site estimates for skid steer work across Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, and the full OKC metro. Based at 7004 S Indiana Ave in south OKC.",
+            "We provide free on-site estimates for skid steer work across Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, and the full OKC metro. Based in Oklahoma City.",
           ],
           infoBlock: "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
         },

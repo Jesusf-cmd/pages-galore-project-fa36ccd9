@@ -63,7 +63,7 @@ export default function RetainingWalls() {
       titleAccent="Oklahoma City, OK."
       description={`Poured concrete and CMU block retaining walls built for OKC's expansive clay soil — slope stabilization, drainage, and outdoor living across the OKC metro. <a href="tel:4054584805">(405) 458-4805</a>.`}
       modelNote="This is self-performed work — our own crew and equipment handle every retaining wall from start to finish, with no subcontracted labor."
-      introText="FDZ Construction LLC builds and repairs concrete retaining walls across the Oklahoma City metro. Whether you need a wall to control a sloped yard, protect a foundation from soil movement, create usable outdoor space, or manage drainage, we design each wall around your specific site conditions — not a one-size template. Based in south OKC, licensed, bonded, and insured in Oklahoma, and every wall is backed by a 2-year workmanship warranty."
+      introText="FDZ Construction LLC builds and repairs concrete retaining walls across the Oklahoma City metro. Whether you need a wall to control a sloped yard, protect a foundation from soil movement, create usable outdoor space, or manage drainage, we design each wall around your specific site conditions — not a one-size template. Based in Oklahoma City, licensed, bonded, and insured in Oklahoma, and every wall is backed by a 2-year workmanship warranty."
       serviceLabel="Retaining Wall"
       serviceCards={[
         {
@@ -113,7 +113,7 @@ export default function RetainingWalls() {
         { icon: "🔒", title: "2-Year Workmanship Warranty", description: "Every retaining wall we build is backed by a 2-year workmanship warranty on all work." },
         { icon: "💧", title: "Drainage Evaluated Before Design", description: "We don't design the wall and figure out drainage later. Drainage planning comes first — before footing depth, before material choice, before cost." },
         { icon: "📋", title: "Free On-Site Estimates", description: "No phone quotes, no pressure. We evaluate your specific slope, soil, and drainage conditions and give you a written estimate." },
-        { icon: "📍", title: "Based in South OKC — Full Metro Service", description: "We're at 7004 S Indiana Ave. Serving OKC, Edmond, Yukon, Norman, Moore, Mustang, Midwest City, and Del City." },
+        { icon: "📍", title: "Based in Oklahoma City", description: "Based in Oklahoma City. Serving OKC, Edmond, Yukon, Norman, Moore, Mustang, Midwest City, and Del City." },
       ]}
       sections={[
         {
@@ -154,7 +154,7 @@ export default function RetainingWalls() {
           titleAccent: "Retaining Wall Estimate.",
           alt: true,
           content: [
-            "We provide free on-site estimates across Oklahoma City, Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro including Norman, Moore, Mustang, Midwest City, and Del City. Based at 7004 S Indiana Ave in south OKC.",
+            "We provide free on-site estimates across Oklahoma City, Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro including Norman, Moore, Mustang, Midwest City, and Del City. Based in Oklahoma City.",
           ],
           infoBlock: "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
         },
@@ -216,7 +216,7 @@ export default function RetainingWalls() {
         { question: "Can you repair a leaning retaining wall, or does it need to be replaced?", answer: "Depends on how far it's leaned and what caused it. Minor movement with a repairable drainage issue can often be stabilized. Significant structural displacement usually requires rebuild. We evaluate this on-site at no charge." },
         { question: "Do you build retaining walls for commercial properties?", answer: "Yes — we build retaining walls for commercial sites, parking lots, and site development projects across the OKC metro, in addition to residential work." },
         { question: "How much does a retaining wall cost in Oklahoma City?", answer: "Cost depends on wall height and length, material choice, site drainage requirements, soil conditions, equipment access, and whether engineering is required. We provide free on-site estimates with a clear scope before any work begins — call (405) 458-4805." },
-        { question: "What areas do you serve for retaining walls?", answer: "We serve the entire OKC metro including Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City. Based at 7004 S Indiana Ave in south OKC." },
+        { question: "What areas do you serve for retaining walls?", answer: "We serve the entire OKC metro including Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City. Based in Oklahoma City." },
       ]}
     />
   );
