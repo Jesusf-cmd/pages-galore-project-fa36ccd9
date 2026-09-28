@@ -36,12 +36,12 @@ export default function Footer() {
       </div>
       {/* Licensing / trust section */}
       <div className="max-w-3xl mx-auto mb-8 text-center">
-        <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-2">Licensed, Bonded &amp; Insured in Oklahoma</div>
+        <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-2">{isKansasPath(location.pathname) ? "Wichita-area concrete crew" : "Licensed, Bonded &amp; Insured in Oklahoma"}</div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-start">
         <div className="col-span-2 md:col-span-1">
           <Logo className="h-12 w-auto opacity-90 mb-3" />
-          <p className="text-[0.74rem] text-muted-text">Oklahoma City&apos;s concrete &amp; sewer line contractor. Licensed &amp; insured in Oklahoma.</p>
+          <p className="text-[0.74rem] text-muted-text">{isKansasPath(location.pathname) ? "Concrete work in Wichita and nearby Sedgwick County." : "Oklahoma City's concrete & sewer line contractor. Licensed & insured in Oklahoma."}</p>
           <p className="text-[0.74rem] text-muted-text mt-2">© {new Date().getFullYear()} FDZ Construction LLC. All rights reserved.</p>
         </div>
         <div>
