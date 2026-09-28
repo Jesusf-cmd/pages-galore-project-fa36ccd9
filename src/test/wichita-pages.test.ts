@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { WICHITA_PAGES } from "@/content/wichitaPages";
 import { estimatePath } from "@/lib/estimatePath";
+import { organizationJsonLdForPath, stripWichitaStreetAddressHtml } from "@/lib/organizationSchema";
 import { KANSAS_PHONE, OKLAHOMA_PHONE, isKansasPath, phoneForPath } from "@/lib/phones";
 import { getPrerenderBody } from "../../scripts/prerender-bodies";
 import { routes } from "../../scripts/prerender-routes";
@@ -31,6 +32,8 @@ describe("Wichita phone scoping", () => {
         expect(body).not.toContain("our Wichita office");
         expect(body).toContain(`href="${estimatePath(route.path.replace(/^\//, ""))}"`);
         expect(body).not.toContain('href="/#estimate"');
+        expect(body).not.toContain("7004 S Indiana");
+        expect(body.toLowerCase()).not.toContain("from oklahoma");
       } else {
         expect(body).not.toContain("316-531-9583");
         expect(body).not.toContain("3165319583");
@@ -54,5 +57,24 @@ describe("Wichita phone scoping", () => {
       expect(route?.h1).toBe(page.h1);
       expect(route?.noindex).toBeUndefined();
     }
+  });
+
+  it("omits the street address on Wichita pages and restores it for Oklahoma", () => {
+    const organization = {
+      "@type": "GeneralContractor",
+      address: { streetAddress: "7004 S Indiana Ave" },
+      geo: { latitude: 35.4676 },
+    };
+    const wichita = organizationJsonLdForPath(organization, "/commercial-concrete-wichita");
+    expect(wichita.address).toBeUndefined();
+    expect(wichita.geo).toBeUndefined();
+    const restored = organizationJsonLdForPath(wichita, "/commercial-concrete-oklahoma-city");
+    expect(restored.address).toMatchObject({ streetAddress: "7004 S Indiana Ave", addressLocality: "Oklahoma City" });
+    expect(restored.geo).toMatchObject({ latitude: 35.4676, longitude: -97.5164 });
+
+    const html = `<script type="application/ld+json">${JSON.stringify(organization)}</script><p>7004 S Indiana Ave, Oklahoma City, OK 73159</p>`;
+    const stripped = stripWichitaStreetAddressHtml(html, "/stamped-concrete-wichita");
+    expect(stripped).not.toContain("7004");
+    expect(stripWichitaStreetAddressHtml(html, "/")).toBe(html);
   });
 });
