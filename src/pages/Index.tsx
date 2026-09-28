@@ -108,7 +108,7 @@ export default function Index() {
           <div className="mb-6 overflow-hidden" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
             {/* TODO: swap to Place ID embed once GBP is claimed */}
             <iframe
-              src="https://www.google.com/maps?q=7004+S+Indiana+Ave,+Oklahoma+City,+OK+73159&output=embed"
+              src="https://www.google.com/maps?q=Oklahoma+City,+OK&output=embed"
               width="100%"
               height="400"
               style={{ border: 0 }}
@@ -452,7 +452,7 @@ function HowWeWorkSection() {
               Sewer line repair almost always disturbs a driveway, sidewalk, or slab. We excavate, complete the pipe work, and restore the concrete ourselves — no second phone call, no mismatched patch where a plumber left off and a concrete crew picked up.
             </p>
             <p className="text-[0.82rem] mt-4">
-              <Link to="/sewer-line-repair-oklahoma-city" className="text-orange no-underline font-medium">See sewer line repair methods &amp; process →</Link>
+              <Link to="/sewer-line-repair-oklahoma-city" className="text-orange no-underline font-medium">Residential sewer line repair in Oklahoma City →</Link>
             </p>
           </div>
         </div>
@@ -489,8 +489,8 @@ function ServicesSection() {
           </Link>
           <Link to="/sewer-line-repair-oklahoma-city" className="bg-darker p-8 md:p-10 no-underline block hover:bg-orange/[0.06] transition-colors" style={{ borderLeft: "3px solid hsl(var(--orange))" }}>
             <div className="text-[0.58rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Core Service</div>
-            <div className="font-display text-2xl font-extrabold uppercase tracking-[0.04em] text-concrete mb-3">Sewer Line Repair &amp; Installation</div>
-            <p className="text-[0.85rem] text-muted-text leading-relaxed mb-4">Repair, replacement, and new installs — plus the driveway or slab restoration, done by the same crew that did the digging.</p>
+            <div className="font-display text-2xl font-extrabold uppercase tracking-[0.04em] text-concrete mb-3">Residential Sewer Line Repair</div>
+            <p className="text-[0.85rem] text-muted-text leading-relaxed mb-4">Repair and replacement for Oklahoma City homeowners — plus the driveway or slab restoration, done by the same crew that did the digging.</p>
             <span className="text-[0.72rem] text-orange font-bold tracking-[0.06em] uppercase">See sewer line services →</span>
           </Link>
         </div>

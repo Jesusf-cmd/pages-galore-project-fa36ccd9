@@ -301,7 +301,7 @@ export default function PoolDeckOklahomaCity() {
               <MailtoLink className="btn-outline text-center" />
             </div>
             <p className="text-[0.78rem] text-muted-text">
-              7004 S Indiana Ave, Oklahoma City, OK 73159 · Licensed, bonded & insured in Oklahoma · 2-year workmanship warranty on all pool deck work
+               · Licensed, bonded & insured in Oklahoma · 2-year workmanship warranty on all pool deck work
             </p>
           </div>
         </section>

@@ -49,10 +49,10 @@ export const routes: PrerenderRoute[] = [
   },
   {
     path: "/sewer-line-repair-oklahoma-city",
-    title: "Sewer Line Repair & Installation Oklahoma City | FDZ Construction LLC",
-    description: "Sewer line repair in OKC from $1,000–$15,000 depending on method. Full replacements $8,000–$15,000. One crew handles excavation and concrete restoration. Free estimate: (405) 458-4805.",
-    h1: "One Crew. Sewer Repair & Concrete Restoration.",
-    content: "FDZ Construction LLC handles sewer line repair, replacement, and new-line installation across the Oklahoma City metro. Most plumbers subcontract excavation and concrete restoration — we do both ourselves, one crew start to finish. Typical OKC pricing: spot repair $1,000–$3,500, traditional excavation repair $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, full line replacement $8,000–$15,000. FDZ quotes include concrete restoration when a driveway or slab is disturbed. Call (405) 458-4805 for a free camera inspection and written estimate.",
+    title: "Residential Sewer Line Repair Oklahoma City | FDZ Construction LLC",
+    description: "Residential sewer line repair in OKC. Spot repair $1,000–$3,500; replacement $8,000–$15,000. Camera $200–$500, then a written quote. Call (405) 458-4805.",
+    h1: "Residential Sewer Line Repair in Oklahoma City.",
+    content: "FDZ Construction LLC handles residential sewer line repair and replacement across the Oklahoma City metro. Recurring backups, several slow fixtures, sewer odor, or a damaged line are the reasons homeowners call. A camera inspection ($200–$500) comes first, then a written quote — not every clog needs excavation. Typical OKC pricing: spot repair $1,000–$3,500, traditional excavation repair $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, full line replacement $8,000–$15,000. FDZ quotes include concrete restoration when a driveway or slab is disturbed. Call (405) 458-4805.",
   },
   {
     path: "/skid-steer-services-oklahoma-city",
@@ -143,18 +143,18 @@ Process: On-site assessment — we walk the property, evaluate existing conditio
 
 FAQ: We work as sub-contractors on GC-managed projects. Certificate of insurance and bonding documentation available as part of the bid process. ADA stall count, van-accessible placement, curb ramp slopes, and accessible route continuity are part of every parking lot layout. New concrete parking lots typically require 7 days minimum before light vehicle traffic and up to 28 days for full structural cure. OKC parking lot failures usually trace back to sub-base issues — Oklahoma's expansive clay soil moves significantly with moisture, and if the sub-base wasn't properly compacted, failure starts from below the slab surface.
 
-Serving Oklahoma City (home base — fastest response), Edmond (~30–40 min north), Yukon (~20–25 min west), Norman, Moore, Mustang, Midwest City, and Del City. Based at 7004 S Indiana Ave in south OKC. Call (405) 458-4805 or email jesus@fdzconstruction.com.`,
+Serving Oklahoma City (home base — fastest response), Edmond (~30–40 min north), Yukon (~20–25 min west), Norman, Moore, Mustang, Midwest City, and Del City. Based in Oklahoma City. Call (405) 458-4805 or email jesus@fdzconstruction.com.`,
   },
   {
     path: "/retaining-walls-oklahoma-city",
     title: "Concrete Retaining Walls Oklahoma City | FDZ Construction LLC",
     description: "Concrete retaining wall installation and repair in Oklahoma City. Poured concrete and CMU block walls built for OKC's expansive clay soil — drainage-first design. Licensed, bonded, insured. Free estimates — (405) 458-4805.",
     h1: "Concrete Retaining Wall Contractors in Oklahoma City, OK",
-    content: `FDZ Construction LLC builds and repairs concrete retaining walls across the Oklahoma City metro — poured concrete and CMU block walls designed around site conditions, slope, drainage, and soil type. Based in south OKC, licensed, bonded, and insured in Oklahoma. Every wall is backed by a 2-year workmanship warranty.
+    content: `FDZ Construction LLC builds and repairs concrete retaining walls across the Oklahoma City metro — poured concrete and CMU block walls designed around site conditions, slope, drainage, and soil type. Based in Oklahoma City, licensed, bonded, and insured in Oklahoma. Every wall is backed by a 2-year workmanship warranty.
 
 Retaining Wall Services: New retaining wall installation — site evaluation for slope, soil, and drainage before any design decisions; footing sized to wall height, load, and soil type; drainage planning including gravel backfill, weep holes, and French drain where needed; wall construction in poured concrete or CMU block depending on scope; backfill compacted in lifts. Retaining wall repair — leaning or bowing walls are almost always a drainage failure, not a material failure; we evaluate the cause before recommending repair vs. replacement; drainage correction included where inadequate drainage caused the original failure. Poured concrete retaining walls — monolithic structure with no block joints to shift or crack over time; best for taller walls, higher-load applications, and sites with severe soil movement; can be formed to follow curves and grade changes. CMU block retaining walls — concrete masonry unit construction, durable and cost-effective for mid-height walls; requires the same drainage planning as poured concrete. Decorative and landscape walls — lower-height walls for garden beds, landscape separation, and outdoor living areas; drainage planning is not skipped even on smaller walls.
 
-Why Choose FDZ Construction: Licensed, bonded, and insured in Oklahoma with liability and workers comp on every project. Over 8 years of experience building retaining walls in Oklahoma's expansive clay soil. 2-year workmanship warranty on all retaining wall work. Drainage planning comes before footing depth, material choice, and cost — not after. Free on-site estimates: we evaluate your specific slope, soil, and drainage conditions. Based at 7004 S Indiana Ave in south OKC, serving the full metro.
+Why Choose FDZ Construction: Licensed, bonded, and insured in Oklahoma with liability and workers comp on every project. Over 8 years of experience building retaining walls in Oklahoma's expansive clay soil. 2-year workmanship warranty on all retaining wall work. Drainage planning comes before footing depth, material choice, and cost — not after. Free on-site estimates: we evaluate your specific slope, soil, and drainage conditions. Based in Oklahoma City, serving the full metro.
 
 Oklahoma City Soil: Oklahoma's Permian-age clay and shale base is among the most expansive soil in the country — it swells when wet and shrinks when dry, sometimes moving several inches across a single season. On any sloped lot, that movement creates lateral pressure against the wall constantly, not just during rain events. The biggest variable in retaining wall longevity in OKC is not the wall material — it is the drainage behind it. Water pressure that builds up in the soil behind an inadequately drained wall is the leading cause of wall failure in this region.
 
@@ -168,21 +168,21 @@ Process: Site evaluation — assess slope, soil type, drainage patterns, and wha
 
 FAQ: Retaining wall failures are almost always drainage failures — water pressure builds up in the soil behind a wall with inadequate drainage and pushes it out of place over time. Many areas require an engineer's stamp for walls over 4 feet — we confirm the specific requirement for your project location. Poured concrete creates a monolithic structure with no joints, preferred for taller walls and severe soil movement; CMU block is faster and more cost-effective for mid-height walls where load and height don't require a monolithic pour. A properly built wall with adequate drainage can last 50+ years. We handle the full scope — drainage plan, gravel backfill, weep holes, French drain where needed, and the wall itself.
 
-Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City. Based at 7004 S Indiana Ave in south OKC. Call (405) 458-4805 or email jesus@fdzconstruction.com for a free on-site estimate.`,
+Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and Del City. Based in Oklahoma City. Call (405) 458-4805 or email jesus@fdzconstruction.com for a free on-site estimate.`,
   },
   {
     path: "/oklahoma-city-concrete",
     title: "Concrete & Sewer Line Contractor Oklahoma City, OK | FDZ Construction LLC",
-    description: "Concrete & sewer line contractor in Oklahoma City, OK — FDZ Construction LLC, based in south OKC. Driveways, patios, slabs, foundations & sewer repair. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
+    description: "Concrete & sewer line contractor in Oklahoma City, OK — FDZ Construction LLC, based in Oklahoma City. Driveways, patios, slabs, foundations & sewer repair. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
     h1: "Oklahoma City Concrete & Sewer Line Contractor",
-    content: "FDZ Construction LLC is based in south Oklahoma City at 7004 S Indiana Ave, so OKC is the area we work most. We pour driveways, patios, slabs, foundations, and commercial concrete across the city. Oklahoma City broadly shares the metro's Permian-age clay and shale base, with flat terrain and the North Canadian River corridor running through, so drainage planning matters most on low-lying lots near the river. Call (405) 458-4805 for a free estimate.",
+    content: "FDZ Construction LLC is based in Oklahoma City, so OKC is the area we work most. We pour driveways, patios, slabs, foundations, and commercial concrete across the city. Oklahoma City broadly shares the metro's Permian-age clay and shale base, with flat terrain and the North Canadian River corridor running through, so drainage planning matters most on low-lying lots near the river. Call (405) 458-4805 for a free estimate.",
   },
   {
     path: "/edmond-concrete",
     title: "Concrete & Sewer Line Contractor Edmond, OK | FDZ Construction LLC",
     description: "Concrete & sewer line contractor in Edmond, OK — driveways, patios, slabs, foundations & retaining walls. FDZ Construction LLC. Call (405) 458-4805.",
     h1: "Edmond Concrete & Sewer Line Contractor",
-    content: "Edmond is one of the areas FDZ Construction works most outside our south OKC base. Edmond sits on the northern part of the Garber-Wellington aquifer, where the formations carry more sandstone than the rest of the metro, so soil can shift between sandy and clay-heavy across a single lot and the terrain has more rolling grade. We pour driveways, patios, slabs, foundations, and retaining walls. Call (405) 458-4805 for a free estimate.",
+    content: "Edmond is one of the areas FDZ Construction works most outside Oklahoma City. Edmond sits on the northern part of the Garber-Wellington aquifer, where the formations carry more sandstone than the rest of the metro, so soil can shift between sandy and clay-heavy across a single lot and the terrain has more rolling grade. We pour driveways, patios, slabs, foundations, and retaining walls. Call (405) 458-4805 for a free estimate.",
   },
   {
     path: "/norman-ok-concrete",
@@ -231,7 +231,7 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
     title: "Concrete & Sewer Line Contractor Stillwater, OK | FDZ Construction LLC",
     description: "Concrete & sewer line contractor serving Stillwater, OK — driveways, patios, foundations, and sewer line repair & installation. FDZ Construction LLC. Call (405) 458-4805.",
     h1: "Stillwater, OK Concrete & Sewer Line Contractor",
-    content: "FDZ Construction LLC is based in south Oklahoma City, but we've completed concrete and sewer line projects for Stillwater homeowners and OSU-area rental property owners. Driveways, patios, foundations, retaining walls, sidewalks, plus sewer line repair, replacement, and new installation — the same one-crew excavation-to-concrete-restoration approach we use across the OKC metro. Stillwater is about 65–75 miles from our shop and served by scheduled appointment. Call (405) 458-4805 for a free estimate.",
+    content: "FDZ Construction LLC is based in south Oklahoma City, but we've completed concrete and sewer line projects for Stillwater homeowners and OSU-area rental property owners. Driveways, patios, foundations, retaining walls, sidewalks, plus sewer line repair, replacement, and new installation — the same one-crew excavation-to-concrete-restoration approach we use across the OKC metro. Stillwater is about 65–75 miles from Oklahoma City and served by scheduled appointment. Call (405) 458-4805 for a free estimate.",
   },
   {
     path: "/our-projects",

@@ -170,7 +170,7 @@ export default function ParkingLotConcrete() {
           titleAccent: "Parking Lot Bid.",
           alt: true,
           content: [
-            "We serve commercial properties across Oklahoma City (home base — fastest response), Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro including Norman, Moore, Mustang, Midwest City, and Del City. Based at 7004 S Indiana Ave in south OKC.",
+            "We serve commercial properties across Oklahoma City (home base — fastest response), Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro including Norman, Moore, Mustang, Midwest City, and Del City. Based in Oklahoma City.",
           ],
           infoBlock: "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
         },

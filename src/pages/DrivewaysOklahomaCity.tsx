@@ -76,7 +76,7 @@ export default function DrivewaysOklahomaCity() {
       titleAccent="Oklahoma City, OK."
       description="Your driveway is the first thing visitors see when they arrive at your home. At FDZ Construction LLC, we specialize in concrete driveway installation, replacement, and repair throughout the Oklahoma City metro area. Whether you need a simple broom-finish driveway or an elegant stamped concrete entrance, our experienced crew delivers quality craftsmanship that stands up to Oklahoma's harsh weather conditions."
       modelNote="This is self-performed work — our own crew and equipment handle every driveway from start to finish, with no subcontracted labor."
-      introText="<strong>Most cracked driveways we tear out failed at the base — not the slab.</strong> Oklahoma's expansive clay swells when wet, shrinks in drought, and pushes against any slab poured on a base that wasn't excavated, compacted, and reinforced for that movement. A driveway that looked fine at year three is a tripping hazard by year ten. We pour driveways that don't get torn out — engineered base, 4,000 PSI mix, rebar at mid-depth, joints cut on time, slope-to-drain detailed. Serving Oklahoma City, Edmond, Norman, Moore, Yukon, and the surrounding metro from our south OKC shop at 7004 S Indiana Ave."
+      introText="<strong>Most cracked driveways we tear out failed at the base — not the slab.</strong> Oklahoma's expansive clay swells when wet, shrinks in drought, and pushes against any slab poured on a base that wasn't excavated, compacted, and reinforced for that movement. A driveway that looked fine at year three is a tripping hazard by year ten. We pour driveways that don't get torn out — engineered base, 4,000 PSI mix, rebar at mid-depth, joints cut on time, slope-to-drain detailed. Serving Oklahoma City, Edmond, Norman, Moore, Yukon, and the surrounding metro. Based in Oklahoma City. If a sewer line repair cut through your driveway, we restore that concrete as part of the <a href='/sewer-line-repair-oklahoma-city' class='text-orange no-underline'>residential sewer line repair</a> job — same crew."
       serviceLabel="Driveway"
       serviceCards={[
         {
@@ -130,7 +130,7 @@ export default function DrivewaysOklahomaCity() {
         { icon: "🛡️", title: "Licensed, Bonded & Insured in Oklahoma", description: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project." },
         { icon: "📅", title: "8+ Years Serving the OKC Metro", description: /* TODO: confirm exact figure or founding year */ "Over 8 years of experience with OKC's clay soil, drainage conditions, and weather challenges." },
         { icon: "🔒", title: "2-Year Workmanship Warranty", description: "Every driveway we pour is backed by a 2-year workmanship warranty on all work." },
-        { icon: "📍", title: "Based in South OKC — Fastest Response", description: "We're at 7004 S Indiana Ave. OKC gets our fastest response and tightest scheduling of anywhere we serve." },
+        { icon: "📍", title: "Based in Oklahoma City", description: "Based in Oklahoma City. We schedule concrete and sewer work across the OKC metro." },
         { icon: "📋", title: "Free On-Site Estimates", description: "No phone quotes, no pressure. We come to your property, measure the project, and give you a written estimate." },
         { icon: "🧱", title: "Site-Specific Base Prep", description: "OKC's expansive clay means base prep decisions aren't one-size-fits-all. We evaluate your specific site conditions before we pour." },
       ]}
@@ -213,7 +213,7 @@ export default function DrivewaysOklahomaCity() {
           titleAccent: "Driveway Estimate.",
           alt: true,
           content: [
-            "We provide free on-site driveway estimates across Oklahoma City, Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro including Norman, Moore, Mustang, Midwest City, and Del City. Based at 7004 S Indiana Ave in south OKC.",
+            "We provide free on-site driveway estimates across Oklahoma City, Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro including Norman, Moore, Mustang, Midwest City, and Del City. Based in Oklahoma City.",
           ],
           // TODO: embed quote form here once document-upload feature ships
           infoBlock: "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
@@ -223,7 +223,7 @@ export default function DrivewaysOklahomaCity() {
           title: "Other Concrete Services",
           titleAccent: "From FDZ.",
           content: [
-            "<a href='/driveway-repair-oklahoma-city' class='text-orange no-underline font-medium'>Driveway Repair</a> — Crack repair, leveling, joint sealing, and honest repair-vs-replace evaluation when a full tear-out isn't needed.",
+            "<a href='/sewer-line-repair-oklahoma-city' class='text-orange no-underline font-medium'>Residential sewer line repair</a> — When a sewer trench cuts through a driveway, we restore that concrete as part of the same job.",
             "<a href='/patios-oklahoma-city' class='text-orange no-underline font-medium'>Patios &amp; Stamped Concrete</a> — Backyard patios, decorative stamped surfaces, and outdoor living slabs to pair with your new driveway.",
             "<a href='/retaining-walls-oklahoma-city' class='text-orange no-underline font-medium'>Retaining Wall Construction</a> — Slope and drainage walls that often accompany driveway and grade changes.",
             "<a href='/sidewalks-oklahoma-city' class='text-orange no-underline font-medium'>Sidewalks &amp; Curb and Gutter</a> — Walkways, ADA curb ramps, and curb work to complete your property.",

@@ -124,7 +124,7 @@ export default function ElectricalOklahomaCity() {
         { icon: "🔒", title: "2-Year Workmanship Warranty", description: "Every electrical repair or installation we complete is backed by the same 2-year workmanship warranty as the rest of our work." },
         { icon: "📋", title: "Free On-Site Estimates", description: "No phone quotes for electrical work. We inspect the site and give you a written estimate before work starts." },
         { icon: "🛡️", title: "Licensed, Bonded & Insured in Oklahoma", description: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project." },
-        { icon: "📍", title: "Based in South OKC", description: "We're at 7004 S Indiana Ave — OKC gets our fastest response of anywhere we serve." },
+        { icon: "📍", title: "Based in Oklahoma City", description: "Based in Oklahoma City. We schedule work across the OKC metro." },
       ]}
       trustLine="FDZ Construction LLC's electricians are licensed, bonded, and insured in Oklahoma, backed by the same 2-year workmanship warranty as our concrete, HVAC, and plumbing work."
       faq={[

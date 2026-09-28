@@ -106,7 +106,7 @@ export default function PlumbingOklahomaCity() {
         { icon: "🚧", title: "Sewer Line Specialists", description: "Our sewer line repair work is handled by the same crew that does the excavation and the concrete restoration — no handoff to a second contractor." },
         { icon: "🔒", title: "2-Year Workmanship Warranty", description: "Every plumbing repair or installation we complete is backed by the same 2-year workmanship warranty as the rest of our work." },
         { icon: "📋", title: "Free On-Site Estimates", description: "No phone quotes for plumbing work. We inspect the issue and give you a written estimate before work starts." },
-        { icon: "📍", title: "Based in South OKC", description: "We're at 7004 S Indiana Ave — OKC gets our fastest response of anywhere we serve." },
+        { icon: "📍", title: "Based in Oklahoma City", description: "Based in Oklahoma City. We schedule work across the OKC metro." },
       ]}
       trustLine="FDZ Construction LLC's plumbers are licensed, bonded, and insured in Oklahoma, backed by the same 2-year workmanship warranty as our concrete, HVAC, and electrical work."
       processEyebrow="Our Plumbing Process"

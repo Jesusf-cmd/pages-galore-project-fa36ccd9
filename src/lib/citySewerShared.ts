@@ -23,7 +23,7 @@ export function metroSewerIntro(city: string): string {
 export function metroWhyFdz(city: string): { title: string; desc: string }[] {
   return [
     { title: "One Crew for Excavation & Concrete", desc: `Sewer line work means digging — and usually means restoring a driveway, sidewalk, or slab afterward. We do both ourselves on ${city} jobs, not two separate companies.` },
-    { title: "Based in South OKC", desc: "We're at 7004 S Indiana Ave. David Fernandez leads FDZ Construction LLC — owner-operated, not a national franchise or call center." },
+    { title: "Based in Oklahoma City", desc: "David Fernandez leads FDZ Construction LLC — owner-operated, not a national franchise or call center." },
     { title: "Licensed, Bonded & Insured in Oklahoma", desc: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project." },
     { title: "2-Year Workmanship Warranty", desc: "Every project — concrete or sewer — is backed by the same 2-year workmanship warranty, including concrete restoration after sewer work." },
   ];

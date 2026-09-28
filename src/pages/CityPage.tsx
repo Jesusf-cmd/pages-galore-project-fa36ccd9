@@ -94,15 +94,15 @@ const cityData: Record<string, CityData> = {
     county: "Oklahoma County",
     tier: "priority",
     metaDescription:
-      "Concrete & sewer line contractor in Oklahoma City, OK — FDZ Construction LLC, based in south OKC. Driveways, patios, slabs, foundations & sewer repair. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
+      "Concrete & sewer line contractor in Oklahoma City, OK — FDZ Construction LLC, based in Oklahoma City. Driveways, patios, slabs, foundations & sewer repair. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
     heroBlurb:
-      "Concrete driveways, patios, slabs, foundations, and sewer line repair &amp; installation in <strong>Oklahoma City, Oklahoma</strong> — from our south OKC shop. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
+      "Concrete driveways, patios, slabs, foundations, and sewer line repair &amp; installation in <strong>Oklahoma City, Oklahoma</strong>. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
-      "FDZ Construction LLC is based in south Oklahoma City, at 7004 S Indiana Ave — so OKC itself is the area we work most. We pour driveways, patios, slabs, foundations, and commercial concrete across the city, with the fastest response of anywhere we serve.",
+      "FDZ Construction LLC is based in Oklahoma City — so OKC itself is the area we work most. We pour driveways, patios, slabs, foundations, and commercial concrete across the city.",
     ],
     localTerrainNote:
       "Oklahoma City is too large for one soil story — conditions shift from one part of the city to another — but it broadly shares the metro's Permian-age clay and shale base. The terrain is mostly flat, and the North Canadian River corridor runs through the city, so drainage planning matters most on low-lying lots near the river and its tributaries. Because conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city.",
-    driveTimeNote: "we're based right here in south OKC, so Oklahoma City gets the fastest response of any area we serve.",
+    driveTimeNote: "We're based in Oklahoma City and serve the metro from here.",
     neighborhoods: ["Nichols Hills"],
     linkedServices: [SVC.driveways, SVC.patios, SVC.foundations, SVC.commercial, SVC.parking, SVC.sidewalks],
     sewerLocalNote:
@@ -111,7 +111,7 @@ const cityData: Record<string, CityData> = {
       {
         question: "Do you work throughout all of Oklahoma City?",
         answer:
-          "Yes, with a particular concentration in south OKC near our shop. Because the city is large and conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city.",
+          "Yes. Oklahoma City is our home market. Because the city is large and conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city.",
       },
       {
         question: "How much does concrete cost in Oklahoma City?",
@@ -134,11 +134,11 @@ const cityData: Record<string, CityData> = {
     heroBlurb:
       "Concrete driveways, patios, slabs, foundations, retaining walls, and sewer line repair in <strong>Edmond, Oklahoma</strong>. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
-      "Edmond is one of the areas we work most often outside our south OKC home base. We pour driveways, patios, slabs, foundations, and retaining walls for Edmond homeowners and builders across Oklahoma County.",
+      "Edmond is one of the areas we work most often outside Oklahoma City. We pour driveways, patios, slabs, foundations, and retaining walls for Edmond homeowners and builders across Oklahoma County.",
     ],
     localTerrainNote:
       "Edmond sits on the northern part of the Garber-Wellington aquifer, where the underlying formations carry more sandstone than the rest of the metro. In practice, soil here can shift between sandy and clay-heavy across a single lot, and the terrain has more rolling grade than much of the flat OKC metro. That combination makes grading and drainage planning a bigger factor here than on flatter sites — so we evaluate each lot rather than applying a one-size approach.",
-    driveTimeNote: "Edmond is about 30–40 minutes north of the shop, across the metro — still one of the areas we serve most regularly.",
+    driveTimeNote: "Edmond is about 30–40 minutes north of Oklahoma City, across the metro — still one of the areas we serve most regularly.",
     linkedServices: [LOCAL.drivewaysEdmond, LOCAL.patiosEdmond, LOCAL.foundationsEdmond, LOCAL.retainingEdmond, SVC.commercial, SVC.parking, SVC.sidewalks],
     sewerLocalNote:
       "Edmond&apos;s mix of 1970s–90s housing and newer subdivisions means sewer lines range from aging clay pipe to modern PVC — and the area&apos;s sandy-to-clay soil shifts enough to stress buried lines over time. We handle sewer repair across Edmond with the same crew that restores driveways and slabs afterward.",
@@ -173,7 +173,7 @@ const cityData: Record<string, CityData> = {
     estimateSectionHtml: yukonEstimateHtml,
     localTerrainNote:
       "Yukon has flatter terrain than Edmond, on the same expansive clay base shared across the region. A lot of the work here is in newer subdivisions built on graded former agricultural land — and on those sites, the quality of the fill and the compaction done during the original grading matters as much as the native soil itself. We check compaction and drainage on these lots specifically.",
-    driveTimeNote: "Yukon is about 20–25 minutes west of the shop.",
+    driveTimeNote: "Yukon is about 20–25 minutes west of Oklahoma City.",
     linkedServices: [LOCAL.drivewaysYukon, LOCAL.patiosYukon, LOCAL.foundationsYukon, SVC.commercial, SVC.parking, SVC.sidewalks,
       { label: "Commercial Concrete Repair", to: "/commercial-concrete-repair-oklahoma-city", blurb: "Repair options for cracked slabs, spalling and trip hazards at Yukon commercial properties." },
       { label: "Concrete Parking Lot Repair", to: "/concrete-parking-lot-repair-oklahoma-city", blurb: "Repair damaged parking areas and review replacement options where needed." },
@@ -206,7 +206,7 @@ const cityData: Record<string, CityData> = {
     ],
     localTerrainNote:
       "Norman's position along the Canadian River means some lots sit on sandier, river-influenced soil that can transition to denser clay within a short distance on the same property. That's a different base-prep call than the more uniform clay sites elsewhere in the metro, so we assess the soil on each lot before we pour.",
-    driveTimeNote: "Norman is about 20–25 minutes south of the shop.",
+    driveTimeNote: "Norman is about 20–25 minutes south of Oklahoma City.",
     linkedServices: [LOCAL.drivewaysNorman, LOCAL.patiosNorman, LOCAL.foundationsNorman, LOCAL.retainingNorman, SVC.commercial, SVC.parking, SVC.sidewalks],
     sewerLocalNote:
       "Norman&apos;s older homes near campus and along the Canadian River corridor often sit on sandier soil that transitions to dense clay within the same lot — conditions that stress sewer joints and encourage root intrusion. We serve Norman homeowners with sewer line repair and concrete restoration handled by one crew.",
@@ -232,11 +232,11 @@ const cityData: Record<string, CityData> = {
     heroBlurb:
       "Concrete driveways, patios, slabs, foundations, sidewalks, and sewer line repair in <strong>Moore, Oklahoma</strong>. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
-      "Moore, just south of Oklahoma City in Cleveland County, is one of the closest areas to our shop. We pour driveways, patios, slabs, foundations, and sidewalks for Moore homeowners.",
+      "Moore, just south of Oklahoma City in Cleveland County, is one of the closest areas we serve. We pour driveways, patios, slabs, foundations, and sidewalks for Moore homeowners.",
     ],
     localTerrainNote:
       "Moore sits on flat terrain over the same expansive clay base found across the metro, with limited natural runoff in low-lying areas. That makes proper slope-to-drain detailing matter more here than on higher ground — we grade every slab and driveway to move water away from the structure.",
-    driveTimeNote: "Moore is among the closest areas we serve, just south of the shop.",
+    driveTimeNote: "Moore is among the closest areas we serve, just south of Oklahoma City.",
     linkedServices: [LOCAL.drivewaysMoore, LOCAL.patiosMoore, SVC.foundations, SVC.sidewalks, SVC.commercial, SVC.parking],
     sewerLocalNote:
       "Much of Moore&apos;s housing stock dates to the 1980s–90s, when clay and cast-iron sewer lines were standard — and repeated storm saturation on flat clay lots can accelerate line sagging and joint failure. We repair sewer lines across Moore and restore driveways and slabs in the same job.",
@@ -265,7 +265,7 @@ const cityData: Record<string, CityData> = {
     intro: [mustangConcrete.intro],
     localTerrainNote:
       "Mustang shares Yukon's flatter west-metro terrain and the region's expansive clay base. Like Yukon, a lot of the work here is on newer subdivisions built on graded former agricultural land, where fill quality and compaction matter as much as the native soil — so we check both before we pour.",
-    driveTimeNote: "Mustang is about 20–25 minutes west of the shop.",
+    driveTimeNote: "Mustang is about 20–25 minutes west of Oklahoma City.",
     linkedServices: [LOCAL.drivewaysMustang, SVC.patios, SVC.foundations, SVC.commercial, SVC.parking, SVC.sidewalks],
     sewerLocalNote:
       "Mustang&apos;s mid-century neighborhoods and newer subdivisions alike sit on expansive clay — and original sewer lines under driveways are a common failure point as that soil moves. We handle repair and replacement across Mustang with our own excavation and concrete restoration crew.",
@@ -295,7 +295,7 @@ const cityData: Record<string, CityData> = {
     ],
     localTerrainNote:
       "Midwest City sits along Crutcho Creek and Cherry Creek, and the area sees increased flood risk along those creeks during sustained rain, when backwater from the North Canadian River slows drainage — per the city's own floodplain information. Otherwise it shares the metro's flat, expansive clay base. For any work near those drainage corridors, grading and drainage are the priority.",
-    driveTimeNote: "Midwest City is about 15–20 minutes east of the shop.",
+    driveTimeNote: "Midwest City is about 15–20 minutes east of Oklahoma City.",
     linkedServices: [SVC.driveways, SVC.patios, SVC.sidewalks, SVC.foundations, SVC.commercial, SVC.parking],
     sewerLocalNote:
       "Midwest City&apos;s post-war housing stock often still runs on original sewer lines that have had decades to settle and shift on the metro&apos;s expansive clay. Properties near Crutcho Creek and Cherry Creek see extra soil movement after heavy rain — a common trigger for sewer backups we repair across eastern Oklahoma County.",
@@ -325,7 +325,7 @@ const cityData: Record<string, CityData> = {
     ],
     localTerrainNote:
       "Del City shares the same Crutcho Creek and Cherry Creek flood dynamic as neighboring Midwest City — the city's own floodplain information confirms flood risk rises along those creeks during sustained rain from North Canadian River backwater. That's relevant for any work near those drainage corridors. The terrain is otherwise flat, over the same expansive clay base as the rest of the metro.",
-    driveTimeNote: "Del City is about 15–20 minutes east of the shop, in the same general area as Midwest City.",
+    driveTimeNote: "Del City is about 15–20 minutes east of Oklahoma City, in the same general area as Midwest City.",
     linkedServices: [SVC.driveways, SVC.patios, SVC.sidewalks, SVC.retaining, SVC.commercial, SVC.parking],
     sewerLocalNote:
       "Del City&apos;s older neighborhoods — many built during the Tinker-area growth years — often have original clay or cast-iron sewer lines nearing the end of their service life. The same clay soil movement that affects driveways also shifts buried pipe; we repair lines and restore concrete across Del City with one crew.",
@@ -359,7 +359,7 @@ const cityData: Record<string, CityData> = {
     ],
     localTerrainNote:
       "Stillwater sits in Payne County's Sandstone Hills country along the Cimarron River — a different geologic base than the Permian clay and shale under the OKC metro. But the surface soils around Stillwater are still expansive clay loams (Masham silty clay loam is common in the area) that swell and shrink with moisture much the same way OKC's clay does, which is why base prep and drainage still matter here just as much as anywhere else we work.",
-    driveTimeNote: "Stillwater is about 65–75 miles from our south OKC shop — roughly an hour to 90 minutes depending on route and traffic. We serve Stillwater by scheduled appointment rather than same-day OKC-metro response.",
+    driveTimeNote: "Stillwater is about 65–75 miles from Oklahoma City — roughly an hour to 90 minutes depending on route and traffic. We serve Stillwater by scheduled appointment rather than same-day OKC-metro response.",
     linkedServices: [SVC.driveways, SVC.patios, SVC.foundations, SVC.retaining, SVC.sidewalks],
     serviceTypes: ["Concrete Contracting", "Sewer Line Repair and Installation"],
     serviceName: "Concrete & Sewer Line Contractor in Stillwater, OK",
@@ -396,7 +396,7 @@ const cityData: Record<string, CityData> = {
       note: "We've completed both concrete and sewer line projects for Stillwater homeowners. We don't have photos or customer reviews from those jobs published yet — this section will be updated with real Stillwater project photos and reviews as they become available.",
     },
     serviceAreaNote:
-      "Stillwater is about 65–75 miles from our south OKC shop — roughly an hour to 90 minutes depending on route and traffic. We serve Stillwater by scheduled appointment rather than same-day OKC-metro response, so projects here are typically planned a bit further ahead. Call <a href='tel:4054584805'>(405) 458-4805</a> to check current scheduling for a Stillwater project.",
+      "Stillwater is about 65–75 miles from Oklahoma City — roughly an hour to 90 minutes depending on route and traffic. We serve Stillwater by scheduled appointment rather than same-day OKC-metro response, so projects here are typically planned a bit further ahead. Call <a href='tel:4054584805'>(405) 458-4805</a> to check current scheduling for a Stillwater project.",
     faqHeadingAccent: "Concrete &amp; Sewer Work in Stillwater",
     faq: [
       {

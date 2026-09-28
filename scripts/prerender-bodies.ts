@@ -72,12 +72,12 @@ const CITY_LINKS = [
 export const prerenderBodies: Record<string, string> = {
   "/": `
     <h1>One Crew. Concrete &amp; Sewer Line Done Right.</h1>
-    <p>FDZ Construction LLC self-performs every concrete and sewer line job in the OKC metro — our own crew, our own equipment, start to finish. Based in south Oklahoma City at 7004 S Indiana Ave. Licensed, bonded &amp; insured. No subcontractors on concrete or sewer work.</p>
+    <p>FDZ Construction LLC self-performs every concrete and sewer line job in the OKC metro — our own crew, our own equipment, start to finish. Based in Oklahoma City. Licensed, bonded &amp; insured. No subcontractors on concrete or sewer work.</p>
     ${trustParagraph()}
     <h2>Concrete Services</h2>
     ${linkList(SERVICE_LINKS)}
     <h2>Sewer Line Repair &amp; Installation</h2>
-    <p><a href="/sewer-line-repair-oklahoma-city">Sewer line repair, replacement &amp; installation</a> — plus driveway, sidewalk, and slab restoration by the same crew that did the digging.</p>
+    <p><a href="/sewer-line-repair-oklahoma-city">Residential sewer line repair in Oklahoma City</a> — repair and replacement, plus driveway, sidewalk, and slab restoration by the same crew that did the digging.</p>
     <h2>Site Work Services</h2>
     <ul>
       <li><a href="/skid-steer-services-oklahoma-city">Skid Steer Services</a> — Land clearing, dirt work, leveling, gravel driveways, and brush hog mowing for lots up to about 2 acres.</li>
@@ -87,12 +87,12 @@ export const prerenderBodies: Record<string, string> = {
     <p>The OKC metro sits on Permian-age clay and shale that expands when wet and shrinks in drought. That movement stresses driveways, foundations, and buried sewer pipe alike — which is why proper sub-base compaction, reinforcement, and drainage grading matter on every job.</p>
     <h2>Service Areas</h2>
     ${linkList(CITY_LINKS)}
-    <p><strong>Contact:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Contact:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
   `,
 
   "/driveways-oklahoma-city": `
     <h1>Concrete Driveway Installation in Oklahoma City, OK</h1>
-    <p>FDZ Construction LLC provides professional concrete driveway installation in Oklahoma City and surrounding areas. We build durable, long-lasting driveways for homeowners, builders, and property owners who need dependable concrete work done right. Every project starts with proper ground preparation and includes reinforcement for Oklahoma clay. Based at 7004 S Indiana Ave in south OKC — about 20–25 min from Yukon and 30–40 min from Edmond.</p>
+    <p>FDZ Construction LLC provides professional concrete driveway installation in Oklahoma City and surrounding areas. We build durable, long-lasting driveways for homeowners, builders, and property owners who need dependable concrete work done right. Every project starts with proper ground preparation and includes reinforcement for Oklahoma clay. Based in Oklahoma City — about 20–25 min from Yukon and 30–40 min from Edmond.</p>
     <h2>Concrete Driveway Services in Oklahoma City</h2>
     <h3>New Driveway Installation</h3>
     <ul>
@@ -139,7 +139,7 @@ export const prerenderBodies: Record<string, string> = {
       <li>Licensed, bonded, and insured in Oklahoma</li>
       <li>8+ years serving the OKC metro</li>
       <li>2-year workmanship warranty on all driveway work</li>
-      <li>Based in south OKC — fastest response time in the metro</li>
+      <li>Based in Oklahoma City</li>
       <li>Free on-site estimates, no pressure</li>
       <li>We evaluate your specific site conditions — OKC's expansive clay soil means base prep decisions aren't one-size-fits-all</li>
     </ul>
@@ -159,6 +159,7 @@ export const prerenderBodies: Record<string, string> = {
     ])}
     <h2>Related Services</h2>
     <ul>
+      <li><a href="/sewer-line-repair-oklahoma-city">Residential sewer line repair</a> — When a sewer trench cuts through a driveway, we restore that concrete as part of the same job.</li>
       <li><a href="/driveway-repair-oklahoma-city">Driveway repair</a> — Crack repair, leveling, joint sealing, and honest repair-vs-replace evaluation.</li>
       <li><a href="/patios-oklahoma-city">Patios &amp; stamped concrete</a> — Backyard patios, decorative stamped surfaces, and outdoor living slabs.</li>
       <li><a href="/retaining-walls-oklahoma-city">Retaining wall construction</a> — Slope and drainage walls that often accompany driveway grade changes.</li>
@@ -166,13 +167,14 @@ export const prerenderBodies: Record<string, string> = {
       <li>Helpful guides: <a href="/blog/why-concrete-driveways-crack-oklahoma">why concrete driveways crack in Oklahoma</a>, <a href="/blog/how-thick-should-driveway-be-oklahoma">how thick a driveway should be</a>, and the <a href="/blog/best-time-of-year-to-pour-concrete-okc">best time of year to pour concrete in OKC</a>.</li>
       <li>Local driveway pages: <a href="/driveways-edmond">Edmond</a>, <a href="/driveways-norman">Norman</a>, <a href="/driveways-yukon">Yukon</a>, <a href="/driveways-moore">Moore</a>, <a href="/driveways-mustang">Mustang</a>.</li>
     </ul>
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
   "/sewer-line-repair-oklahoma-city": `
-    <h1>One Crew. Sewer Repair &amp; Concrete Restoration.</h1>
-    <p>Most sewer repairs mean digging through a driveway, sidewalk, or slab — then finding a second contractor to pour it back. FDZ Construction does the excavation and the concrete restoration with the same crew, so nothing gets left half-finished. We handle sewer line repair, replacement, and new-line installation for homeowners across the OKC metro.</p>
+    <h1>Residential Sewer Line Repair in Oklahoma City.</h1>
+    <p>Recurring backups, several slow fixtures, sewer odor, roots in the line, or a pipe you already know is damaged — those are the reasons Oklahoma City homeowners call FDZ. We look at the line first, then tell you whether a repair or a replacement is the honest next step. A clog in one drain does not automatically mean excavation.</p>
+    <p>First step: call <a href="tel:4054584805">(405) 458-4805</a> or <a href="/#estimate">request an estimate</a>. Send photos of the backup, a camera video if you already have one, and where the line sits relative to the driveway or slab. Expect a camera inspection at $200–$500, then a written quote before any digging. Excavation and concrete restoration are self-performed by our own crew.</p>
     <h2>Typical Sewer Line Costs in Oklahoma City (2026)</h2>
     <p>OKC metro ballpark ranges — your written quote after a camera inspection is the real number. FDZ quotes include concrete restoration when a driveway or slab is disturbed.</p>
     <ul>
@@ -222,33 +224,34 @@ export const prerenderBodies: Record<string, string> = {
     <h2>Why Oklahoma City Soil Matters for Sewer Lines</h2>
     <p>The OKC metro sits on Permian-age clay and shale that expands when wet and shrinks in drought — sometimes moving several inches across a single season. That movement shifts buried sewer pipe out of alignment, creates low spots where the line sags, and stresses joints until they leak or separate. Bedding and backfill matter as much as the pipe itself during a repair — we bed and backfill every repair the same way we'd prep a sub-base for a driveway, so it doesn't have to be redone. Beyond soil movement, the most common causes of sewer line damage we see are tree root intrusion, aging or deteriorated pipe material (especially older clay or cast iron), and pipe bellying or settling from clay movement.</p>
     ${processSection("From Camera Inspection to Final Walkthrough", [
-      { title: "Camera inspection", description: "We run a camera through the line first. Guessing at what's wrong underground leads to the wrong fix." },
+      { title: "Camera inspection", description: "We run a camera through the line first. The published range is $200–$500. That look tells us whether this is a repair, a replacement, or not a sewer line problem at all." },
       { title: "Diagnosis & quote", description: "Based on what the camera shows, we tell you plainly whether this is a spot repair, a full repair, or a replacement — and give you a written quote before any digging starts." },
       { title: "Repair or replacement", description: "We excavate and complete the pipe work using the method that matches what the inspection found." },
       { title: "Concrete & surface restoration", description: "Same crew — we restore the driveway, sidewalk, or slab that was disturbed, instead of leaving you to find a second contractor." },
       { title: "Final walkthrough", description: "We walk the finished work with you before we leave — the pipe repair and the concrete restoration, done together." },
     ])}
     <h2>Why Oklahoma City Homeowners Choose FDZ for Sewer Work</h2>
-    <p>FDZ Construction LLC is owner-operated by <strong>David Fernandez</strong> from our south OKC shop at 7004 S Indiana Ave — 8+ years serving the metro, licensed bonded and insured, with hundreds of residential concrete and sewer projects completed.</p>
+    <p>FDZ Construction LLC is based in Oklahoma City. Owner <strong>David Fernandez</strong> leads the crew. We handle residential sewer line repair and the concrete restoration the job requires with one crew.</p>
     <ul>
       <li>One crew handles both the excavation and the concrete restoration — no coordinating two companies</li>
-      <li>Licensed, bonded, and insured in Oklahoma</li>
-      <li>8+ years serving the OKC metro</li>
-      <li>2-year workmanship warranty on all sewer line work, including concrete restoration</li>
-      <li>Free on-site estimates, no phone quotes</li>
-      <li>Based in south OKC — fastest response time in the metro</li>
+      <li>Camera inspection ($200–$500) first, then a written quote before digging</li>
+      <li>Driveway and slab restoration included when the trench cuts through hardscape</li>
+      <li>Based in Oklahoma City</li>
     </ul>
-    <h2 id="warranty">2-Year Workmanship Warranty Explained</h2>
-    <p>Every sewer line repair, replacement, or new installation is backed by a 2-year workmanship warranty on labor — the same warranty that covers our concrete work. Covered: defects in pipe installation, joint connections, bedding and backfill workmanship, and concrete or hardscape restoration we performed as part of the same sewer job. Concrete restoration after excavation is included under the same warranty, not a separate subcontractor warranty. Voided by: third-party excavation after we leave, uncorrected drainage causing new movement, root re-intrusion after we recommended tree removal, or modifications by another contractor after our walkthrough.</p>
+    <h2 id="warranty">2-Year Workmanship Warranty</h2>
+    <p>Sewer work we complete is covered by FDZ's 2-year workmanship warranty, including concrete restoration we pour after excavation. Ask for the written terms when you request a quote — we do not publish a separate warranty contract on this page.</p>
     ${faqSection("Sewer Line Repair FAQ", [
       { question: "How much does sewer line repair cost in Oklahoma City?", answer: "In the OKC metro, spot repairs typically run $1,000–$3,500, traditional excavation repairs $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, and full line replacements $8,000–$15,000 depending on length, depth, and access. A camera inspection ($200–$500) tells us which range applies. FDZ quotes include concrete restoration when a driveway or slab is disturbed." },
-      { question: "How do I know if I need sewer repair or full replacement?", answer: "A camera inspection tells us for certain. Isolated damage on an otherwise sound line is usually a spot or trenchless repair. Lines that are old, degraded along their length, or made of clay or cast iron nearing the end of their service life are usually better replaced than repaired." },
+      { question: "Is the camera inspection free?", answer: "No. The published camera inspection range on this page is $200–$500. That look is how we decide repair versus replacement. A written estimate follows the inspection." },
+      { question: "What should I send when I contact FDZ?", answer: "Call (405) 458-4805 or use the estimate form. Send photos of the backup, a camera video if you already have one, and where the line sits relative to the driveway, sidewalk, or slab. We will tell you the next step from there." },
+      { question: "Does every clog mean you have to dig up my yard?", answer: "No. A clog in one fixture is often a drain issue, not a sewer line. Recurring backups in several fixtures, sewer odor, roots, or a known damaged line are the cases we evaluate. A camera look tells us whether excavation is actually needed." },
+      { question: "How do I know if I need sewer repair or full replacement?", answer: "A camera inspection tells us. Isolated damage on an otherwise sound line is usually a spot or trenchless repair. Lines that are old, degraded along their length, or made of clay or cast iron nearing the end of their service life are usually better replaced than repaired." },
       { question: "Does sewer line repair mean my driveway or yard gets torn up?", answer: "Trenchless pipe bursting avoids a long open trench and only needs two access pits. Traditional excavation repair does require digging down to the damaged section, which often means cutting into a driveway, sidewalk, or slab — which is why we handle the concrete restoration ourselves." },
       { question: "How long does sewer line replacement take?", answer: "It depends on the length of the line, the method used, and how much concrete restoration is involved. We give you a specific timeline as part of your written quote after the camera inspection." },
       { question: "Do you handle the concrete repair after the sewer work?", answer: "Yes — we're a concrete contractor that also does sewer line excavation, repair, and installation, so the concrete restoration is done by the same crew that did the digging." },
       { question: "Do you install sewer lines for new construction or additions?", answer: "Yes — we run new sewer lines for new construction and additions in addition to repairing and replacing existing lines." },
       { question: "What causes sewer line damage in Oklahoma City specifically?", answer: "Tree root intrusion, aging or deteriorated pipe material (especially older clay or cast iron), and ground movement from OKC's expansive clay and shale, which can shift pipe alignment and cause sections of the line to sag." },
-      { question: "Does Oklahoma City require a permit for sewer line work?", answer: "Yes — sewer line repair, replacement, and new installation in Oklahoma City typically requires a permit through the City of Oklahoma City Development Services department. FDZ pulls required permits and schedules inspections as part of the job." },
+      { question: "Does Oklahoma City require a permit for sewer line work?", answer: "Permit requirements depend on the City of Oklahoma City and the scope of the work. We'll tell you what applies after we see the job." },
       { question: "Does homeowners insurance cover sewer line repair?", answer: "Standard homeowners insurance policies usually do not cover sewer line repair or replacement — it's typically treated as maintenance, not a sudden covered loss. Some policies offer optional sewer backup riders. We're happy to provide documentation if you file a claim that might apply." },
     ])}
     <h2>Related Services</h2>
@@ -257,13 +260,13 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; Curb and Gutter</a> — Sidewalk restoration after sewer line access.</li>
       <li><a href="/foundations-oklahoma-city">Foundations</a> — Slab restoration when a line runs under a garage or shop floor.</li>
     </ul>
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
-    ${trustParagraph()}
+    <p><strong>Call or estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="/#estimate">Request a sewer estimate</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
+    <p>FDZ Construction LLC is based in Oklahoma City. We handle residential sewer line repair and the concrete restoration the job requires with one crew.</p>
   `,
 
   "/skid-steer-services-oklahoma-city": `
     <h1>Skid Steer Land Clearing &amp; Site Work in Oklahoma City, OK</h1>
-    <p>Our skid steer crew handles the site work most concrete contractors send elsewhere — clearing a wooded lot, leveling a backyard, grading a gravel base, or mowing down overgrown brush. Same self-performed crew and equipment as our concrete and sewer line work, sized right for residential lots and smaller acreage, generally under 2 acres. No subcontracted labor. Based at 7004 S Indiana Ave in south OKC.</p>
+    <p>Our skid steer crew handles the site work most concrete contractors send elsewhere — clearing a wooded lot, leveling a backyard, grading a gravel base, or mowing down overgrown brush. Same self-performed crew and equipment as our concrete and sewer line work, sized right for residential lots and smaller acreage, generally under 2 acres. No subcontracted labor. Based in Oklahoma City.</p>
     <h2>Skid Steer Pricing in Oklahoma City (2026)</h2>
     <p>OKC metro ballpark ranges — your written quote after a free on-site walk is the real number.</p>
     <ul>
@@ -345,13 +348,13 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/driveways-oklahoma-city">Concrete Driveways</a> — Want a poured concrete driveway instead of gravel or dirt?</li>
       <li><a href="/sewer-line-repair-oklahoma-city">Sewer Line Repair &amp; Installation</a> — Sewer line work, done by the same self-performed crew.</li>
     </ul>
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
   "/excavator-services-oklahoma-city": `
     <h1>Excavator Land Clearing &amp; Heavy Site Work in Oklahoma City, OK</h1>
-    <p>When a job needs more reach, more digging depth, or more acreage than a skid steer can handle, our excavator crew takes over — stump and tree removal, deep cut-fill grading, drainage work, and larger commercial pads and driveways. Same self-performed crew, sized for the bigger jobs. No subcontracted labor. Based at 7004 S Indiana Ave in south OKC.</p>
+    <p>When a job needs more reach, more digging depth, or more acreage than a skid steer can handle, our excavator crew takes over — stump and tree removal, deep cut-fill grading, drainage work, and larger commercial pads and driveways. Same self-performed crew, sized for the bigger jobs. No subcontracted labor. Based in Oklahoma City.</p>
     <h2>Excavator Pricing in Oklahoma City (2026)</h2>
     <p>OKC metro ballpark ranges — your written quote after a free on-site walk is the real number.</p>
     <ul>
@@ -428,7 +431,7 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Warehouse floors, retail pads, and commercial slabs for the properties we've cleared and graded.</li>
       <li><a href="/sewer-line-repair-oklahoma-city">Sewer Line Repair &amp; Installation</a> — Sewer line work, done by the same self-performed crew.</li>
     </ul>
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
@@ -473,7 +476,7 @@ export const prerenderBodies: Record<string, string> = {
       <li>Licensed, bonded, and insured in Oklahoma</li>
       <li>8+ years serving the OKC metro</li>
       <li>2-year workmanship warranty on all patio and slab work</li>
-      <li>Based in south OKC — fastest response time in the metro</li>
+      <li>Based in Oklahoma City</li>
       <li>Free on-site estimates, no pressure</li>
       <li>OKC's freeze-thaw cycles can damage an unsealed stamped surface within a season or two — we don't cut corners on sealing</li>
     </ul>
@@ -498,7 +501,7 @@ export const prerenderBodies: Record<string, string> = {
       <li>Helpful guides: <a href="/blog/rebar-vs-wire-mesh-concrete-slabs">rebar vs wire mesh for concrete slabs</a> and the <a href="/blog/best-time-of-year-to-pour-concrete-okc">best time of year to pour concrete in OKC</a>.</li>
       <li>Local patio pages: <a href="/patios-edmond">Edmond</a>, <a href="/patios-norman">Norman</a>, <a href="/patios-moore">Moore</a>, <a href="/patios-yukon">Yukon</a>.</li>
     </ul>
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
@@ -553,7 +556,7 @@ export const prerenderBodies: Record<string, string> = {
       <li>Licensed, bonded, and insured in Oklahoma</li>
       <li>8+ years serving the OKC metro</li>
       <li>2-year workmanship warranty on all foundation and retaining wall work</li>
-      <li>Based in south OKC — fastest response time in the metro</li>
+      <li>Based in Oklahoma City</li>
       <li>Free on-site estimates, no pressure</li>
       <li>COI and bonding documentation available for commercial bid process</li>
     </ul>
@@ -585,7 +588,7 @@ export const prerenderBodies: Record<string, string> = {
       <li>Helpful guide: <a href="/blog/rebar-vs-wire-mesh-concrete-slabs">rebar vs wire mesh for concrete slabs</a> on expansive clay.</li>
       <li>Local foundation pages: <a href="/foundations-edmond">Edmond</a>, <a href="/foundations-norman">Norman</a>, <a href="/foundations-yukon">Yukon</a>.</li>
     </ul>
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
@@ -627,7 +630,7 @@ export const prerenderBodies: Record<string, string> = {
       <li>Licensed, bonded, and insured in Oklahoma</li>
       <li>8+ years serving the OKC metro</li>
       <li>2-year workmanship warranty on all sidewalk and curb work</li>
-      <li>Based in south OKC — fastest response time in the metro</li>
+      <li>Based in Oklahoma City</li>
       <li>ADA-compliant ramps, proper slopes, and city-spec curb profiles on every project</li>
       <li>Free on-site estimates, no pressure</li>
     </ul>
@@ -642,16 +645,17 @@ export const prerenderBodies: Record<string, string> = {
     ])}
     <h2>Related Services</h2>
     <ul>
+      <li><a href="/sewer-line-repair-oklahoma-city">Residential sewer line repair</a> — Sidewalk restoration after sewer line access, done by the same crew that did the digging.</li>
       <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Parking lots, warehouse floors, site flatwork, and curb &amp; gutter for commercial developments.</li>
       <li><a href="/driveways-oklahoma-city">Driveways</a> — Sidewalk work often pairs with new driveway installation or replacement.</li>
     </ul>
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
   "/commercial-concrete-oklahoma-city": `
     <h1>Commercial Concrete Contractor in Oklahoma City</h1>
-    <p>FDZ Construction is a commercial concrete contractor serving Oklahoma City and the metro — new pours, replacements, and repairs for GCs, property owners, developers, and facility managers. Based at 7004 S Indiana Ave in south OKC — call <a href="tel:4054584805">(405) 458-4805</a>.</p>
+    <p>FDZ Construction is a commercial concrete contractor serving Oklahoma City and the metro — new pours, replacements, and repairs for GCs, property owners, developers, and facility managers. Based in Oklahoma City — call <a href="tel:4054584805">(405) 458-4805</a>.</p>
     <!-- TODO: add real commercial project photos when available -->
     <h2>Commercial Concrete Services in Oklahoma City</h2>
     <h3>Commercial Parking Lots</h3>
@@ -743,7 +747,7 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/pool-deck-oklahoma-city">Pool deck concrete</a> — Slip-resistant decks for HOAs, hotels, and commercial properties.</li>
       <li><a href="/bollard-installation-oklahoma-city">Bollard installation</a> · <a href="/ada-concrete-ramps-oklahoma-city">ADA concrete ramps</a> · <a href="/equipment-pad-concrete-oklahoma-city">Equipment pads</a></li>
     </ul>
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
@@ -809,7 +813,7 @@ export const prerenderBodies: Record<string, string> = {
 
   "/oklahoma-city-concrete": `
     <h1>Oklahoma City Concrete &amp; Sewer Line Contractor</h1>
-    <p>FDZ Construction LLC is based in south Oklahoma City, at 7004 S Indiana Ave — so OKC itself is the area we work most. We pour driveways, patios, slabs, foundations, and commercial concrete across the city, with the fastest response of anywhere we serve. Owner David Fernandez leads the crew on concrete and sewer line work.</p>
+    <p>FDZ Construction LLC is based in Oklahoma City — so OKC itself is the area we work most. We pour driveways, patios, slabs, foundations, and commercial concrete across the city. Owner David Fernandez leads the crew on concrete and sewer line work.</p>
     <h2>Oklahoma City Soil Conditions</h2>
     <p>Oklahoma City broadly shares the metro's Permian-age clay and shale base. The terrain is mostly flat, and the North Canadian River corridor runs through the city, so drainage planning matters most on low-lying lots near the river and its tributaries. Because conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city.</p>
     <h2>Neighborhoods Served</h2>
@@ -827,17 +831,17 @@ export const prerenderBodies: Record<string, string> = {
     ${faqSection("FAQ", [
       { question: "Do you do sewer line repair in Oklahoma City, or just concrete?", answer: "Both. We're a concrete contractor that also handles sewer line repair, replacement, and installation — including driveway or slab restoration. We serve Oklahoma City with the same crew and standards as the rest of the OKC metro." },
       { question: "How much does sewer line repair cost in Oklahoma City?", answer: "In the OKC metro, spot repairs typically run $1,000–$3,500, traditional excavation repairs $1,500–$7,000, trenchless pipe bursting $4,000–$12,000, and full line replacements $8,000–$15,000. FDZ quotes include concrete restoration when a driveway or slab is disturbed." },
-      { question: "Do you work throughout all of Oklahoma City?", answer: "Yes, with a particular concentration in south OKC near our shop. Because the city is large and conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city." },
+      { question: "Do you work throughout all of Oklahoma City?", answer: "Yes. Oklahoma City is our home market. Because the city is large and conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city." },
       { question: "How much does concrete cost in Oklahoma City?", answer: "Standard driveways and slabs generally run $6–$10 per square foot and foundation work $9–$14, depending on thickness, reinforcement, and site conditions. We give an exact price after an on-site look — no phone quotes." },
       { question: "Why does base prep matter so much in Oklahoma City?", answer: "OKC sits on expansive Permian clay that swells when wet and shrinks in drought. Without a properly excavated, compacted aggregate base and adequate reinforcement, concrete is far more likely to crack and move over time." },
     ])}
-    <p><strong>Drive time:</strong> We're based right here in south OKC, so Oklahoma City gets the fastest response of any area we serve.</p>
+    <p><strong>Drive time:</strong> We're based in Oklahoma City and serve the metro from here.</p>
     ${trustParagraph()}
   `,
 
   "/edmond-concrete": `
     <h1>Edmond Concrete &amp; Sewer Line Contractor</h1>
-    <p>Edmond is one of the areas we work most often outside our south OKC home base. We pour driveways, patios, slabs, foundations, and retaining walls for Edmond homeowners and builders across Oklahoma County.</p>
+    <p>Edmond is one of the areas we work most often outside Oklahoma City. We pour driveways, patios, slabs, foundations, and retaining walls for Edmond homeowners and builders across Oklahoma County.</p>
     <h2>Edmond's Unique Terrain</h2>
     <p>Edmond sits on the northern part of the Garber-Wellington aquifer, where the underlying formations carry more sandstone than the rest of the metro. In practice, soil here can shift between sandy and clay-heavy across a single lot, and the terrain has more rolling grade than much of the flat OKC metro. That combination makes grading and drainage planning a bigger factor here than on flatter sites — so we evaluate each lot rather than applying a one-size approach.</p>
     <h2>Services Available in Edmond</h2>
@@ -857,7 +861,7 @@ export const prerenderBodies: Record<string, string> = {
       { question: "How much does concrete cost in Edmond?", answer: "Edmond pricing follows our OKC metro rates: roughly $6–$10 per square foot for standard driveways and slabs and $9–$14 for foundation work, with an exact price after an on-site estimate." },
       { question: "Do you coordinate with builders on new construction in Edmond?", answer: "Yes — we handle foundation pours, driveways, and flatwork for new builds and coordinate scheduling with builders and inspectors." },
     ])}
-    <p><strong>Drive time:</strong> Edmond is about 30–40 minutes north of the shop, across the metro — still one of the areas we serve most regularly.</p>
+    <p><strong>Drive time:</strong> Edmond is about 30–40 minutes north of Oklahoma City, across the metro — still one of the areas we serve most regularly.</p>
     ${trustParagraph()}
   `,
 
@@ -883,7 +887,7 @@ export const prerenderBodies: Record<string, string> = {
       { question: "Is new-construction concrete different in growing areas like Yukon?", answer: "The base-prep considerations differ slightly, since lots are often on graded fill rather than undisturbed native soil. We check compaction and drainage on these sites specifically before we pour." },
       { question: "How much does concrete cost in Yukon?", answer: "Yukon pricing matches our OKC metro rates — roughly $6–$10 per square foot for standard driveways and slabs — with an exact price after a free on-site estimate." },
     ])}
-    <p><strong>Drive time:</strong> Yukon is about 20–25 minutes west of the shop.</p>
+    <p><strong>Drive time:</strong> Yukon is about 20–25 minutes west of Oklahoma City.</p>
     ${trustParagraph()}
     ${yukonEstimateHtml}
   `,
@@ -909,13 +913,13 @@ export const prerenderBodies: Record<string, string> = {
       { question: "What's different about pouring concrete in Norman?", answer: "Norman's spot along the Canadian River means some lots have sandier, river-influenced soil that can change to denser clay across a short distance. We evaluate the soil and adjust base prep for each site rather than assuming one approach." },
       { question: "How much does concrete cost in Norman?", answer: "Norman pricing follows our OKC metro rates — roughly $6–$10 per square foot for standard work and $9–$14 for foundations — with an exact price after a free on-site estimate." },
     ])}
-    <p><strong>Drive time:</strong> Norman is about 20–25 minutes south of the shop.</p>
+    <p><strong>Drive time:</strong> Norman is about 20–25 minutes south of Oklahoma City.</p>
     ${trustParagraph()}
   `,
 
   "/moore-oklahoma-concrete": `
     <h1>Moore Concrete &amp; Sewer Line Contractor</h1>
-    <p>Moore, just south of Oklahoma City in Cleveland County, is one of the closest areas to our shop. We pour driveways, patios, slabs, foundations, and sidewalks for Moore homeowners.</p>
+    <p>Moore, just south of Oklahoma City in Cleveland County, is one of the closest areas we serve. We pour driveways, patios, slabs, foundations, and sidewalks for Moore homeowners.</p>
     <h2>Moore Terrain and Drainage</h2>
     <p>Moore sits on flat terrain over the same expansive clay base found across the metro, with limited natural runoff in low-lying areas. That makes proper slope-to-drain detailing matter more here than on higher ground — we grade every slab and driveway to move water away from the structure.</p>
     <h2>Services Available in Moore</h2>
@@ -933,7 +937,7 @@ export const prerenderBodies: Record<string, string> = {
       { question: "Why does drainage matter so much in Moore?", answer: "Moore's flat terrain and clay soil mean water doesn't drain away on its own in low-lying areas. We grade slabs and driveways with a slope that moves water away from the structure, which is critical to preventing pooling and long-term concrete and foundation problems." },
       { question: "How much does concrete cost in Moore?", answer: "Moore pricing follows our OKC metro rates — roughly $6–$10 per square foot for driveways and slabs and $9–$14 for foundations — with an exact price after a free on-site estimate." },
     ])}
-    <p><strong>Drive time:</strong> Moore is among the closest areas we serve, just south of the shop.</p>
+    <p><strong>Drive time:</strong> Moore is among the closest areas we serve, just south of Oklahoma City.</p>
     ${trustParagraph()}
   `,
 
@@ -959,7 +963,7 @@ export const prerenderBodies: Record<string, string> = {
       { question: "Do you work on new-construction lots in Mustang?", answer: "Yes. Many Mustang lots sit on graded fill rather than undisturbed native soil, so we check compaction and drainage on these sites specifically and coordinate with builders on scheduling." },
       { question: "How much does concrete cost in Mustang?", answer: "Mustang pricing follows our OKC metro rates — roughly $6–$10 per square foot for standard work — with an exact price after a free on-site estimate." },
     ])}
-    <p><strong>Drive time:</strong> Mustang is about 20–25 minutes west of the shop.</p>
+    <p><strong>Drive time:</strong> Mustang is about 20–25 minutes west of Oklahoma City.</p>
     ${trustParagraph()}
   `,
 
@@ -981,7 +985,7 @@ export const prerenderBodies: Record<string, string> = {
       { question: "Does flooding near Crutcho Creek or Cherry Creek affect concrete work?", answer: "It can. The city's floodplain information notes that flood risk along Crutcho Creek and Cherry Creek rises during sustained rain due to backwater from the North Canadian River. For work near those corridors we pay extra attention to grading and drainage so water moves away from the slab." },
       { question: "How much does concrete cost in Midwest City?", answer: "Midwest City pricing follows our OKC metro rates — roughly $6–$10 per square foot for driveways and slabs, with tear-out of existing concrete adding to the cost — and an exact price after a free on-site estimate." },
     ])}
-    <p><strong>Drive time:</strong> Midwest City is about 15–20 minutes east of the shop.</p>
+    <p><strong>Drive time:</strong> Midwest City is about 15–20 minutes east of Oklahoma City.</p>
     ${trustParagraph()}
   `,
 
@@ -1003,7 +1007,7 @@ export const prerenderBodies: Record<string, string> = {
       { question: "Does flood risk near Crutcho Creek or Cherry Creek matter for my project?", answer: "If your property is near those drainage corridors, yes. Del City's floodplain information confirms flood risk along Crutcho Creek and Cherry Creek rises during sustained rain from North Canadian River backwater, so we prioritize grading and drainage on work in those areas." },
       { question: "How much does concrete cost in Del City?", answer: "Del City pricing follows our OKC metro rates — roughly $6–$10 per square foot for driveways and slabs — with an exact price after a free on-site estimate." },
     ])}
-    <p><strong>Drive time:</strong> Del City is about 15–20 minutes east of the shop, in the same general area as Midwest City.</p>
+    <p><strong>Drive time:</strong> Del City is about 15–20 minutes east of Oklahoma City, in the same general area as Midwest City.</p>
     ${trustParagraph()}
   `,
 
@@ -1045,7 +1049,7 @@ export const prerenderBodies: Record<string, string> = {
       { question: "Do you do both concrete and sewer work, or just one?", answer: "Both. We're a concrete contractor that also handles sewer line repair, replacement, and installation — including the concrete restoration that sewer work usually requires. We've done both types of projects in Stillwater." },
       { question: "How do I schedule a project if you're based in OKC?", answer: "Call (405) 458-4805 or request a free estimate — we'll go over your project, confirm we can get a crew out to Stillwater on a timeline that works, and schedule your on-site estimate from there." },
     ])}
-    <p><strong>Drive time:</strong> Stillwater is about 65–75 miles from our south OKC shop — roughly an hour to 90 minutes depending on route and traffic. We serve Stillwater by scheduled appointment rather than same-day OKC-metro response.</p>
+    <p><strong>Drive time:</strong> Stillwater is about 65–75 miles from Oklahoma City — roughly an hour to 90 minutes depending on route and traffic. We serve Stillwater by scheduled appointment rather than same-day OKC-metro response.</p>
     ${trustParagraph()}
   `,
 
@@ -1130,7 +1134,7 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; Curb and Gutter</a> — Often part of the same commercial site scope as parking lot work.</li>
       <li><a href="/foundations-oklahoma-city">Foundations</a> — Commercial foundation work for the buildings your parking lot serves.</li>
     </ul>
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
@@ -1193,7 +1197,7 @@ export const prerenderBodies: Record<string, string> = {
       <li>2-year workmanship warranty on all retaining wall work</li>
       <li>We evaluate drainage before design — not after the wall fails</li>
       <li>Free on-site estimates, no pressure</li>
-      <li>Based in south OKC — serving OKC, Edmond, Yukon, Norman, Moore, Mustang, Midwest City, Del City</li>
+      <li>Based in Oklahoma City — serving OKC, Edmond, Yukon, Norman, Moore, Mustang, Midwest City, Del City</li>
     </ul>
     <h2>How Much Does a Retaining Wall Cost in Oklahoma City?</h2>
     <p>Cost depends on wall height and length, material choice (poured concrete vs. CMU block), site drainage requirements, soil conditions, equipment access, and whether engineering is required. We provide free on-site estimates with a clear scope before any work begins. Call <a href="tel:4054584805">(405) 458-4805</a> or email <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a>.</p>
@@ -1218,7 +1222,7 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete services</a> — Retaining walls for commercial site development.</li>
       <li>Local retaining wall pages: <a href="/retaining-walls-edmond">Edmond</a>, <a href="/retaining-walls-norman">Norman</a>.</li>
     </ul>
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
@@ -1262,7 +1266,7 @@ export const prerenderBodies: Record<string, string> = {
       { question: "Do you install new systems for additions or new construction?", answer: "Yes — we size and install HVAC systems for additions, new construction, and full system replacements." },
       { question: "Do you work on both AC and furnace systems?", answer: "Yes — AC systems, furnaces, and heat pumps, so you're not calling a separate company for heating versus cooling." },
     ])}
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
@@ -1300,7 +1304,7 @@ export const prerenderBodies: Record<string, string> = {
       { question: "Can you replace a water heater that involves electrical or gas work?", answer: "Yes — we coordinate plumbing, electrical, and gas work internally rather than requiring separate contractors." },
       { question: "How does Oklahoma's hard water affect my plumbing?", answer: "Hard water accelerates mineral buildup inside pipes and water heaters, which can reduce lifespan and water pressure over time." },
     ])}
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
@@ -1345,7 +1349,7 @@ export const prerenderBodies: Record<string, string> = {
       { question: "Can you check if my panel can handle a new HVAC system or EV charger?", answer: "Yes — panel capacity checks are routine before installing a new HVAC system, generator, or EV charger." },
       { question: "Do you install generators and EV chargers?", answer: "Yes — including the panel and transfer switch work both require." },
     ])}
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
@@ -1362,7 +1366,7 @@ export const prerenderBodies: Record<string, string> = {
     <p>A burning smell, sparking, or total loss of power. <a href="/electrical-oklahoma-city">See Electrical Services →</a></p>
     <h2>Why One Company for Every Trade</h2>
     <p>FDZ Construction LLC covers concrete, HVAC, plumbing, and electrical under one roof — faster response, one point of contact, no coordinating multiple contractors during an already stressful situation. Every technician is licensed in their trade, and every job is backed by the same 2-year workmanship warranty.</p>
-    <p><strong>Call now:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Call now:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
@@ -1389,7 +1393,7 @@ export const prerenderBodies: Record<string, string> = {
       <li>FDZ oversees the work through completion</li>
       <li>You get one invoice and one workmanship warranty from FDZ</li>
     </ol>
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 
@@ -1472,7 +1476,7 @@ export const prerenderBodies: Record<string, string> = {
       { href: "/parking-lots-oklahoma-city", label: "Parking lots" },
       { href: "/sidewalks-oklahoma-city", label: "Sidewalks, curb & gutter" },
     ])}
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a> · 7004 S Indiana Ave, Oklahoma City, OK 73159</p>
+    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
     ${trustParagraph()}
   `,
 

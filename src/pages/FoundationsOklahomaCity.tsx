@@ -109,7 +109,7 @@ export default function FoundationsOklahomaCity() {
         { icon: "🛡️", title: "Licensed, Bonded & Insured in Oklahoma", description: "Fully licensed Oklahoma contractor with liability and workers comp insurance on every project." },
         { icon: "📅", title: "8+ Years Serving the OKC Metro", description: /* TODO: confirm exact figure or founding year */ "Oklahoma's Permian-age clay is highly expansive — it swells when wet and shrinks when dry. Most foundation and retaining wall problems in this region trace back to inadequate drainage or footings that didn't account for this movement. We've been working in this soil for 8+ years and know what it takes to build structures that last." },
         { icon: "🔒", title: "2-Year Workmanship Warranty", description: "Every foundation and retaining wall we pour is backed by a 2-year workmanship warranty." },
-        { icon: "📍", title: "Based in South OKC — Fastest Response", description: "We're at 7004 S Indiana Ave. OKC gets our fastest response and tightest scheduling of anywhere we serve." },
+        { icon: "📍", title: "Based in Oklahoma City", description: "Based in Oklahoma City. We schedule concrete and sewer work across the OKC metro." },
         { icon: "📋", title: "Free On-Site Estimates", description: "No phone quotes, no pressure. We evaluate your specific site conditions and give you a written estimate." },
         { icon: "🤝", title: "GC & Builder Coordination", description: "COI and bonding documentation available for commercial bid process. We coordinate with your schedule and other trades on site." },
       ]}
@@ -164,7 +164,7 @@ export default function FoundationsOklahomaCity() {
           titleAccent: "Foundation Estimate.",
           alt: true,
           content: [
-            "We provide free on-site estimates for foundations and retaining walls across Oklahoma City, Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro. Based at 7004 S Indiana Ave in south OKC.",
+            "We provide free on-site estimates for foundations and retaining walls across Oklahoma City, Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro. Based in Oklahoma City.",
           ],
           // TODO: embed quote form here once document-upload feature ships
           infoBlock: "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
@@ -235,7 +235,7 @@ export default function FoundationsOklahomaCity() {
         { question: "How long before I can build on a new foundation?", answer: "Forms can usually be stripped in 1–2 days and framing often starts around 7 days, but concrete reaches full design strength at about 28 days. We'll give you a clear schedule based on your mix and the weather." },
         { question: "What concrete strength do you use for foundations?", answer: "We specify 4,000 PSI minimum for residential foundations and 5,000+ PSI for commercial and industrial work, with reinforcement per engineered plans." },
         { question: "Do you handle permits and inspections?", answer: "Yes — we coordinate all necessary permits and inspections for foundation projects across the OKC metro." },
-        { question: "Do you serve areas outside Oklahoma City?", answer: "Yes. We serve Edmond (~30–40 min north), Yukon (~20–25 min west), Norman, Moore, Mustang, Midwest City, and Del City — based at 7004 S Indiana Ave in south OKC." },
+        { question: "Do you serve areas outside Oklahoma City?", answer: "Yes. We serve Edmond (~30–40 min north), Yukon (~20–25 min west), Norman, Moore, Mustang, Midwest City, and Del City — based in Oklahoma City." },
       ]}
     />
   );
