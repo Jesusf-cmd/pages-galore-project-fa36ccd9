@@ -1303,7 +1303,7 @@ export const prerenderBodies: Record<string, string> = {
       <li><strong>Poured concrete retaining wall — Oklahoma City</strong> — Monolithic wall engineered for OKC clay lateral pressure with drainage behind the wall.</li>
       <li><strong>Forklift ramp — Guthrie, OK</strong> — Reinforced warehouse ramp poured inside a live facility, power-trowel finished flush with the existing floor.</li>
       <li><strong>Residential foundation — Piedmont, OK</strong> — Slab-on-grade on Oklahoma red clay with compacted aggregate base and engineered rebar.</li>
-      <li><strong>Driveway replacement — Edmond, OK</strong> — Full tear-out and 4" reinforced broom-finish pour.</li>
+      <li><strong>New driveway &amp; approach — Edmond, OK</strong> — 6" thick, 24' wide concrete drive with a new approach.</li>
       <li><strong>Stamped patio — Norman, OK</strong> — Ashlar slate pattern with custom release and matte sealer.</li>
       <li><strong>Commercial parking lot — Yukon, OK</strong> — 5" reinforced commercial lot graded for drainage.</li>
       <li><strong>Residential foundation — Mustang, OK</strong> — Slab-on-grade for a new residential build.</li>

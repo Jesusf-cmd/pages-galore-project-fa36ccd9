@@ -40,14 +40,12 @@ export const PROJECTS: Project[] = [
     details: "New concrete stairs and sidewalks with ADA-compliant ramps",
     images: [
       {
-        // Existing asset on /our-projects (retaining-wall photo reused historically for this slot).
-        // TODO(FDZ): photo — replace with Star Spencer-specific images when available
-        src: "/images/projects/poured-concrete-retaining-wall-oklahoma-city.webp",
-        alt: alt(
-          "New concrete stairs and sidewalks with ADA-compliant ramps",
-          "Star Spencer High School",
-          "Spencer, OK",
-        ),
+        src: "/images/projects/concrete-sidewalk-star-spencer-high-school-spencer-ok.webp",
+        alt: "New concrete sidewalk leading to the covered entrance at Star Spencer High School, Spencer, OK",
+      },
+      {
+        src: "/images/projects/ada-concrete-ramp-star-spencer-high-school-spencer-ok.webp",
+        alt: "Freshly poured ADA-compliant concrete curb ramp with detectable warning area at Star Spencer High School, Spencer, OK",
       },
     ],
     sqft: null, // TODO(FDZ)
@@ -194,16 +192,21 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "edmond-driveway",
-    title: "Driveway replacement",
+    title: "New driveway & approach",
     city: "Edmond, OK",
     service: "driveways",
     ownerPath: "/driveways-oklahoma-city",
-    details: '4" reinforced, broom finish',
-    images: [], // TODO(FDZ): photo
+    details: `6" thick, 24' wide concrete drive with new approach`,
+    images: [
+      {
+        src: "/images/projects/new-concrete-driveway-approach-6-inch-24-ft-wide-oklahoma.webp",
+        alt: "New 6-inch thick, 24-foot wide concrete driveway and approach being finished by the FDZ Construction crew",
+      },
+    ],
     sqft: null, // TODO(FDZ)
     year: null, // TODO(FDZ)
     featured: false,
-    sizeLabel: "24×40",
+    sizeLabel: "24' wide",
     timeLabel: "2 days",
   },
   {
