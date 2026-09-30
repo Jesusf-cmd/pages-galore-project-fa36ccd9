@@ -62,6 +62,8 @@ interface CityData {
   estimateSectionHtml?: string;
   serviceAreaNote?: string;
   faqHeadingAccent?: string;
+  /** Optional project ids for a ProjectGrid (e.g. OKC-city projects). */
+  projectIds?: string[];
 }
 
 const SVC = {
@@ -105,6 +107,7 @@ const cityData: Record<string, CityData> = {
       "Concrete driveways, patios, slabs, foundations, and sewer line repair &amp; installation in <strong>Oklahoma City, Oklahoma</strong>. Licensed, bonded &amp; insured. <a href='tel:4054584805'>(405) 458-4805</a>.",
     intro: [
       "FDZ Construction LLC is based in Oklahoma City — so OKC itself is the area we work most. We pour driveways, patios, slabs, foundations, and commercial concrete across the city.",
+      'Looking for metro-wide contractor guidance? See our homepage for <a href="/">concrete contractors in Oklahoma City</a>.',
     ],
     localTerrainNote:
       "Oklahoma City broadly shares the metro's Permian-age clay and shale base. The terrain is mostly flat, and the North Canadian River corridor runs through the city, so drainage planning matters most on low-lying lots near the river and its tributaries. Because conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city.",
@@ -114,6 +117,8 @@ const cityData: Record<string, CityData> = {
     driveTimeNote: "We're based in Oklahoma City and serve the metro from here.",
     neighborhoods: ["Nichols Hills"],
     linkedServices: [SVC.driveways, SVC.patios, SVC.foundations, SVC.commercial, SVC.parking, SVC.sidewalks],
+    projectIds: ["okc-retaining-wall"],
+    // TODO(FDZ): add another OKC project (ProjectGrid currently has 1 OKC-city id)
     sewerLocalNote:
       "Many established OKC neighborhoods still run on original clay or cast-iron sewer lines that shift and crack as Permian clay swells and shrinks each season. When a line fails under a driveway or slab, we repair the pipe and restore the concrete ourselves — one crew, no second contractor.",
     faq: [
@@ -537,6 +542,7 @@ export default function CityPage({ slug }: { slug: string }) {
       estimateSectionHtml={data.estimateSectionHtml}
       serviceAreaNote={data.serviceAreaNote}
       faqHeadingAccent={data.faqHeadingAccent}
+      projectIds={data.projectIds}
     />
   );
 }

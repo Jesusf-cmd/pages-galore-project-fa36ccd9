@@ -1,70 +1,78 @@
 import commercialFoundationImg from "@/assets/commercial-concrete-foundation-okc.webp";
-import newDrivewayImg from "@/assets/new-driveway.webp";
-import tiedRebarImg from "@/assets/tied-rebar.webp";
 import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
 import TradeBadge from "@/components/TradeBadge";
-import MailtoLink from "@/components/MailtoLink";
 import { usePageSEO } from "@/hooks/useSEO";
 import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
-import ServicesFooterGrid from "@/components/ServicesFooterGrid";
 import CityGrid from "@/components/CityGrid";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import ProjectDocumentUpload from "@/components/ProjectDocumentUpload";
-import EeatBlock from "@/components/EeatBlock";
 import EstimateForm from "@/components/EstimateForm";
+import ProjectGrid from "@/components/ProjectGrid";
+
+const HOME_PROJECT_IDS = [
+  "guthrie-forklift-ramp",
+  "yukon-parking-lot",
+  "star-spencer-hs",
+  "edmond-driveway",
+  "norman-stamped-patio",
+  "okc-retaining-wall",
+] as const;
 
 const homeFAQ = [
-  { question: "Do you subcontract any of the work?", answer: "No — our concrete and sewer line work is 100% self-performed by our own crew and equipment, from start to finish. We do not subcontract the excavation, pipe work, or concrete restoration on sewer line jobs." },
-  { question: "How much does a concrete driveway cost in Oklahoma City?", answer: "In Oklahoma City, a standard concrete driveway typically costs $5,760–$9,600 for a 24×40 ft pour — about $6–$10 per sq ft installed. The concrete cost in Oklahoma City depends on base prep depth, slab thickness, PSI specification, and whether existing pavement needs removal." },
-  { question: "What is the cost per square foot for concrete in OKC?", answer: "Concrete in Oklahoma City typically runs $6–$10 per square foot for standard residential slabs and driveways, $9–$14 per sq ft for foundation work, and $15–$22 per sq ft for stamped or decorative finishes." },
-  { question: "How thick should a concrete driveway be?", answer: "Most residential concrete driveways in Oklahoma City are poured at 4 inches thick for standard passenger vehicles. If you park heavy trucks, RVs, or trailers, 5–6 inches is recommended." },
-  { question: "Do I need rebar or wire mesh in concrete?", answer: "For most residential concrete Oklahoma City projects, rebar is strongly recommended — especially given the area's expansive clay soil. Rebar provides structural tensile strength to resist soil movement." },
-  { question: "How long does concrete take to cure?", answer: "Concrete reaches about 70% of its design strength within 7 days and full cure at 28 days. You can typically walk on a fresh pour after 24–48 hours and drive on a residential driveway after 7 days." },
-  { question: "How long will a concrete driveway last in Oklahoma?", answer: "A properly installed concrete driveway in Oklahoma should last 30–50 years with minimal maintenance. The key factors are base preparation, adequate thickness, proper reinforcement, and control joints." },
+  {
+    question: "Do you subcontract any of the work?",
+    answer:
+      "No — our concrete and sewer line work is 100% self-performed by our own crew and equipment, from start to finish. We do not subcontract the excavation, pipe work, or concrete restoration on sewer line jobs.",
+  },
+  {
+    question: "How much does a concrete driveway cost in Oklahoma City?",
+    answer:
+      "In Oklahoma City, a standard concrete driveway typically costs $5,760–$9,600 for a 24×40 ft pour — about $6–$10 per sq ft installed. The concrete cost in Oklahoma City depends on base prep depth, slab thickness, PSI specification, and whether existing pavement needs removal.",
+  },
+  {
+    question: "What is the cost per square foot for concrete in OKC?",
+    answer:
+      "Concrete in Oklahoma City typically runs $6–$10 per square foot for standard residential slabs and driveways, $9–$14 per sq ft for foundation work, and $15–$22 per sq ft for stamped or decorative finishes.",
+  },
+  {
+    question: "How thick should a concrete driveway be?",
+    answer:
+      "Most residential concrete driveways in Oklahoma City are poured at 4 inches thick for standard passenger vehicles. If you park heavy trucks, RVs, or trailers, 5–6 inches is recommended.",
+  },
+  {
+    question: "Do I need rebar or wire mesh in concrete?",
+    answer:
+      "For most residential concrete Oklahoma City projects, rebar is strongly recommended — especially given the area's expansive clay soil. Rebar provides structural tensile strength to resist soil movement.",
+  },
+  {
+    question: "How long does concrete take to cure?",
+    answer:
+      "Concrete reaches about 70% of its design strength within 7 days and full cure at 28 days. You can typically walk on a fresh pour after 24–48 hours and drive on a residential driveway after 7 days.",
+  },
+  {
+    question: "How long will a concrete driveway last in Oklahoma?",
+    answer:
+      "A properly installed concrete driveway in Oklahoma should last 30–50 years with minimal maintenance. The key factors are base preparation, adequate thickness, proper reinforcement, and control joints.",
+  },
 ];
 
 export default function Index() {
   const seo = usePageSEO("/");
-
   useFaqJsonLd(homeFAQ);
 
   return (
     <main>
       <HeroSection h1={seo.h1} />
-      <TrustBar />
-      <AboutSection />
-      <ScrollReveal>
-        <section className="section-padding section-alt">
-          <EeatBlock />
-        </section>
-      </ScrollReveal>
+      <BuyerPathsSection />
       <HowWeWorkSection />
-      <ServicesSection />
-      <CommercialCapabilitySection />
+      <ProjectProofSection />
+      <BuyerGuideSection />
       <SiteWorkSection />
-      <SoilMattersSection />
-      <WhyUsSection />
-      <RecentProjectsSection />
-      {/* TODO: re-add once GBP is live with real reviews */}
-      <ScrollReveal>
-        <section className="section-padding">
-          <div className="section-eye">Service areas</div>
-          <h2 className="mb-3">We Come To<br/><em className="h2-accent">You.</em></h2>
-          <p className="prose-muted mb-6">FDZ Construction LLC serves the greater Oklahoma City metro. Click your city for local info and area-specific services.</p>
-          <CityGrid />
-          <p className="prose-muted mt-8 text-[0.82rem]">
-            <strong className="text-concrete">Why local expertise matters for Oklahoma concrete:</strong> Oklahoma's expansive clay soil is among the most challenging in the country for flatwork. A crew that knows the OKC metro — our frost lines, drainage patterns, and soil behavior — will build you a <Link to="/patios-oklahoma-city" className="text-orange no-underline">slab</Link> or <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundation</Link> that lasts decades. FDZ Construction has seen what happens when contractors cut corners on Oklahoma clay. We don't do it.
-          </p>
-          <p className="text-[0.78rem] text-muted-text mt-4">
-            <strong className="text-concrete">OKC metro zip codes we serve:</strong> 73003, 73012, 73013, 73034 (Edmond) · 73025, 73099 (Yukon/Mustang) · 73069, 73071, 73072 (Norman) · 73160 (Moore) · 73107, 73109, 73112, 73118, 73120, 73127, 73132, 73142, 73159, 73162 (OKC) and surrounding areas.
-          </p>
-        </section>
-      </ScrollReveal>
-      <ServiceAreasDetailSection />
+      <ServiceAreaSection />
       <ScrollReveal>
         <section className="section-padding">
           <FAQ
@@ -75,28 +83,6 @@ export default function Index() {
           />
         </section>
       </ScrollReveal>
-      <ScrollReveal>
-        <section className="section-padding">
-          <div className="section-eye">Service Area</div>
-          <h2 className="mb-3">Serving All of<br/><em className="h2-accent">Oklahoma City Metro.</em></h2>
-          <div className="mb-6 overflow-hidden" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-            {/* TODO: swap to Place ID embed once GBP is claimed */}
-            <iframe
-              src="https://www.google.com/maps?q=Oklahoma+City,+OK&output=embed"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="FDZ Construction LLC service area map — Oklahoma City concrete contractor"
-            />
-          </div>
-          <p className="prose-muted">
-            FDZ Construction LLC provides concrete and sewer line services throughout Oklahoma City and the surrounding metro. We serve Edmond, Norman, Moore, Yukon, Mustang, Midwest City, Del City, Stillwater, and all surrounding OKC communities.
-          </p>
-        </section>
-      </ScrollReveal>
       <InternalLinksHub showServices={false} showCities={false} />
       <FinalCTA />
     </main>
@@ -105,57 +91,57 @@ export default function Index() {
 
 function HeroSection({ h1 }: { h1: string }) {
   return (
-    <section className="grid grid-cols-1 nav:grid-cols-[1.15fr_0.85fr] gap-6 nav:gap-12 px-4 md:px-12 pt-20 pb-8 md:pt-32 md:pb-16 nav:min-h-screen relative overflow-hidden" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
-      {/* Background image */}
+    <section
+      className="grid grid-cols-1 nav:grid-cols-[1.15fr_0.85fr] gap-6 nav:gap-12 px-4 md:px-12 pt-20 pb-8 md:pt-32 md:pb-16 relative overflow-hidden"
+      style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}
+    >
       <div className="absolute inset-0 z-0">
-        <img src={commercialFoundationImg} alt="Commercial concrete foundation project in Oklahoma City by FDZ Construction LLC" className="w-full h-full object-cover opacity-[0.55]" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(var(--darker) / 0.85) 30%, hsl(var(--darker) / 0.4) 100%)" }} />
+        <img
+          src={commercialFoundationImg}
+          alt="Commercial concrete foundation project in Oklahoma City by FDZ Construction LLC"
+          className="w-full h-full object-cover opacity-[0.55]"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, hsl(var(--darker) / 0.85) 30%, hsl(var(--darker) / 0.4) 100%)",
+          }}
+        />
       </div>
       <div className="hero-glow" style={{ zIndex: 1 }} />
-      <div className="relative z-[2]" style={{ padding: 0, border: "none" }}>
-        <div>
-          <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">Oklahoma City Concrete &amp; Sewer Line · Licensed &amp; Insured · Locally Owned</span>
-          <h1 className="mb-4 md:mb-6" style={{ fontSize: "clamp(1.9rem, 5vw, 5.2rem)", lineHeight: 1.0 }}>
-            {h1}
-          </h1>
-          <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-5 md:mb-7 leading-[1.7] font-light">
-            FDZ Construction self-performs every concrete and sewer line job in the OKC metro — our own crew, our own equipment, start to finish. No subcontractors, ever. Call (405) 458-4805 for a free estimate.
-          </p>
-          <div className="flex flex-wrap gap-1.5 mb-5 md:mb-8">
-            {["Oklahoma City", "Edmond", "Norman", "Mustang", "Moore", "Yukon"].map(city => (
-              <span key={city} className="text-[0.6rem] md:text-[0.66rem] tracking-[0.1em] uppercase py-1 px-2.5 md:px-3 text-orange font-semibold" style={{ border: "1px solid hsl(var(--orange) / 0.4)", background: "hsl(var(--orange) / 0.05)" }}>
-                {city}
-              </span>
-            ))}
-          </div>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 md:mb-10">
-            <a href="#estimate" className="btn-primary text-center w-full sm:w-auto">Get Your Free OKC Estimate →</a>
-            <a href="tel:4054584805" className="btn-outline text-center w-full sm:w-auto">📞 (405) 458-4805</a>
-          </div>
-          <div className="flex gap-5 md:gap-8 pt-6 md:pt-8 flex-wrap" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
-            <div>
-              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">5<span className="text-orange">★</span></div>
-              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Google rated</div>
-            </div>
-            <div>
-              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">2<span className="text-orange">yr</span></div>
-              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Workmanship warranty</div>
-            </div>
-            <div>
-              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">8<span className="text-orange">+</span></div>
-              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Years experience</div>
-            </div>
-            <div>
-              <div className="font-display text-2xl md:text-3xl font-black text-concrete leading-none">$0<span className="text-orange">↓</span></div>
-              <div className="text-[0.58rem] md:text-[0.66rem] text-muted-text mt-1 tracking-[0.06em] uppercase">Financing available</div>
-            </div>
-          </div>
+      <div className="relative z-[2]">
+        <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">
+          Oklahoma City · Licensed, Bonded &amp; Insured · Locally Owned
+        </span>
+        <h1 className="mb-4 md:mb-6" style={{ fontSize: "clamp(1.9rem, 5vw, 5.2rem)", lineHeight: 1 }}>
+          {h1}
+        </h1>
+        <p className="text-sm md:text-base text-muted-text max-w-[540px] mb-5 md:mb-6 leading-[1.7] font-light">
+          FDZ Construction LLC is an Oklahoma City concrete contractor serving homeowners and businesses across the
+          OKC metro — Edmond, Norman, Moore, Yukon, Mustang, Midwest City, Del City, and Stillwater. We are a locally
+          owned concrete company: our own crew self-performs every pour and sewer line job, licensed, bonded, and
+          insured, with 8+ years of experience and a written 2-year workmanship warranty on every project.
+        </p>
+        <TrustBar />
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 md:mt-8">
+          <a href="tel:4054584805" className="btn-outline text-center w-full sm:w-auto">
+            📞 (405) 458-4805
+          </a>
+          <a href="#estimate" className="btn-primary text-center w-full sm:w-auto">
+            Get Your Free OKC Estimate →
+          </a>
         </div>
       </div>
       <div id="estimate" className="pt-2 nav:pt-0 relative z-[2]">
-        <div className="bg-stone p-4 md:p-5" style={{ border: "1px solid hsl(var(--concrete) / 0.1)", borderBottom: "none" }}>
+        <div
+          className="bg-stone p-4 md:p-5"
+          style={{ border: "1px solid hsl(var(--concrete) / 0.1)", borderBottom: "none" }}
+        >
           <p className="text-[0.75rem] md:text-[0.78rem] text-muted-text leading-[1.7] font-light">
-            The <strong className="text-concrete">concrete cost in Oklahoma City</strong> typically runs <strong className="text-concrete">$6–$10 per sq ft</strong> for a standard driveway or patio slab, and $9–$14 for foundation work. Use the estimator below for an instant price.
+            Standard driveways and slabs in Oklahoma City typically run{" "}
+            <strong className="text-concrete">$6–$10 per sq ft</strong>; foundation work often lands around $9–$14.
+            Request a written estimate below — no phone quotes.
           </p>
         </div>
         <EstimateForm />
@@ -165,25 +151,66 @@ function HeroSection({ h1 }: { h1: string }) {
   );
 }
 
-function AboutSection() {
+function BuyerPathsSection() {
+  const homeowners = [
+    { to: "/driveways-oklahoma-city", label: "concrete driveways" },
+    { to: "/patios-oklahoma-city", label: "patios & stamped concrete" },
+    { to: "/sidewalks-oklahoma-city", label: "sidewalks, curb & gutter" },
+    { to: "/foundations-oklahoma-city", label: "concrete foundations" },
+    { to: "/retaining-walls-oklahoma-city", label: "retaining walls" },
+  ];
+  const commercial = [
+    { to: "/commercial-concrete-oklahoma-city", label: "commercial concrete" },
+    { to: "/parking-lots-oklahoma-city", label: "concrete parking lots" },
+    { to: "/commercial-concrete-repair-oklahoma-city", label: "commercial concrete repair" },
+    { to: "/industrial-concrete-repair-oklahoma-city", label: "industrial concrete repair" },
+    { to: "/loading-dock-concrete-repair-oklahoma-city", label: "loading dock concrete repair" },
+  ];
+
   return (
     <ScrollReveal>
-      <section className="section-padding">
-        <div className="max-w-[860px]">
-          <div className="section-eye">Concrete &amp; Sewer Line</div>
-          <h2 className="mb-7">Built for Oklahoma.<br/><em className="h2-accent">Built to Last.</em></h2>
-          <p className="prose-muted mb-6">
-            FDZ Construction LLC is Oklahoma City&apos;s concrete and sewer line specialist. We install and repair concrete <Link to="/driveways-oklahoma-city" className="text-orange no-underline">driveways</Link>, patios, <Link to="/patios-oklahoma-city" className="text-orange no-underline">slabs</Link>, <Link to="/sidewalks-oklahoma-city" className="text-orange no-underline">sidewalks</Link>, and <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundations</Link> — and handle <Link to="/sewer-line-repair-oklahoma-city" className="text-orange no-underline">sewer line repair and installation</Link> with the same crew that restores the driveway or slab afterward.
-          </p>
-          <p className="prose-muted mb-6">
-            Our team understands Oklahoma&apos;s unique conditions. From intense summer heat to winter freeze-thaw cycles and Oklahoma&apos;s heavy clay soil, we build concrete and repair sewer lines to handle what this state throws at them. Every job starts with a free, no-obligation estimate.
-          </p>
-          <p className="prose-muted mb-8">
-            We&apos;re not a national franchise. FDZ Construction LLC is your local Oklahoma City company — our own crew handles every concrete and sewer line project from start to finish. Call us at <a href="tel:4054584805" className="text-orange no-underline font-bold">(405) 458-4805</a> or <MailtoLink className="text-orange no-underline" />.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <Link to="/driveways-oklahoma-city" className="btn-primary text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Concrete Services →</Link>
-            <Link to="/sewer-line-repair-oklahoma-city" className="btn-outline text-[0.82rem] py-3 px-6 text-center w-full sm:w-auto">Sewer Line Repair →</Link>
+      <section id="concrete-services" className="section-padding scroll-mt-24">
+        <div className="section-eye">Who we help</div>
+        <h2 className="mb-3">
+          Two Paths.
+          <br />
+          <em className="h2-accent">One Self-Performing Crew.</em>
+        </h2>
+        <p className="prose-muted mb-8 max-w-[760px]">
+          Whether you need a residential pour or commercial flatwork, FDZ self-performs the work — same crew,
+          same standards across the metro.
+        </p>
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08]"
+          style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}
+        >
+          <div className="bg-stone p-6 md:p-8">
+            <div className="text-[0.58rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Homeowners</div>
+            <h3 className="text-lg mb-4">Residential concrete</h3>
+            <ul className="space-y-2" style={{ listStyle: "none", padding: 0 }}>
+              {homeowners.map((item) => (
+                <li key={item.to}>
+                  <Link to={item.to} className="text-orange no-underline hover:underline text-[0.92rem]">
+                    → {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-stone p-6 md:p-8">
+            <div className="text-[0.58rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">
+              Commercial &amp; GCs
+            </div>
+            <h3 className="text-lg mb-4">Commercial &amp; industrial</h3>
+            <ul className="space-y-2" style={{ listStyle: "none", padding: 0 }}>
+              {commercial.map((item) => (
+                <li key={item.to}>
+                  <Link to={item.to} className="text-orange no-underline hover:underline text-[0.92rem]">
+                    → {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -196,27 +223,45 @@ function HowWeWorkSection() {
     <ScrollReveal>
       <section className="section-padding section-alt">
         <div className="section-eye">How we work</div>
-        <h2 className="mb-4">One Crew.<br/><em className="h2-accent">Digging &amp; Concrete Restoration.</em></h2>
-        <p className="prose-muted max-w-[820px] mb-8">
-          Most sewer repairs mean digging through a driveway or slab — then finding a second contractor to pour it back. We don&apos;t split the job. Our own crew handles the excavation and the concrete restoration, start to finish.
+        <h2 className="mb-4">
+          One Crew.
+          <br />
+          <em className="h2-accent">Digging &amp; Concrete Restoration.</em>
+        </h2>
+        <p className="prose-muted max-w-[820px] mb-6">
+          Most sewer repairs mean digging through a driveway or slab — then finding a second contractor to pour it
+          back. We don&apos;t split the job. Our own crew handles the excavation and the concrete restoration, start
+          to finish.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08]"
+          style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}
+        >
           <div className="bg-stone p-6 md:p-8">
-            <div className="mb-4"><TradeBadge model="self-performed" /></div>
+            <div className="mb-4">
+              <TradeBadge model="self-performed" />
+            </div>
             <h3 className="text-lg mb-3">Concrete — Our Crew, Every Pour</h3>
             <p className="text-[0.85rem] text-muted-text leading-relaxed font-light">
-              Driveways, patios, slabs, foundations, retaining walls, sidewalks, and commercial concrete are poured and finished by our own employees — not subcontracted labor. Direct quality control from the first shovel to the final finish.
+              Driveways, patios, slabs, foundations, retaining walls, sidewalks, and commercial concrete are poured
+              and finished by our own employees — not subcontracted labor.
             </p>
           </div>
           <div className="bg-stone p-6 md:p-8">
-            <div className="mb-4"><TradeBadge model="self-performed" /></div>
+            <div className="mb-4">
+              <TradeBadge model="self-performed" />
+            </div>
             <h3 className="text-lg mb-3">Sewer Line — Same Crew, No Handoff</h3>
-            <p className="text-[0.85rem] text-muted-text leading-relaxed font-light">
-              Sewer line repair almost always disturbs a driveway, sidewalk, or slab. We excavate, complete the pipe work, and restore the concrete ourselves — no second phone call, no mismatched patch where a plumber left off and a concrete crew picked up.
+            <p className="text-[0.85rem] text-muted-text leading-relaxed font-light mb-4">
+              We excavate, complete the pipe work, and restore the concrete ourselves — no second phone call for the
+              patch.
             </p>
-            <p className="text-[0.82rem] mt-4">
-              <Link to="/sewer-line-repair-oklahoma-city" className="text-orange no-underline font-medium">Residential sewer line repair in Oklahoma City →</Link>
-            </p>
+            <Link
+              to="/sewer-line-repair-oklahoma-city"
+              className="text-orange no-underline font-medium text-[0.82rem]"
+            >
+              Residential sewer line repair in Oklahoma City →
+            </Link>
           </div>
         </div>
       </section>
@@ -224,87 +269,72 @@ function HowWeWorkSection() {
   );
 }
 
-function ServicesSection() {
-  const services = [
-    { num: "01", name: "Concrete Driveways Oklahoma City", desc: "New installation, replacement, and repair of concrete driveways across OKC. Proper thickness, correct mix for Oklahoma weather, and drainage grading on every job.", to: "/driveways-oklahoma-city" },
-    { num: "02", name: "Concrete Patios & Slabs OKC", desc: "Custom concrete patios, garage floors, shop slabs, and stamped decorative concrete — built to survive Oklahoma's heat and freeze cycles.", to: "/patios-oklahoma-city" },
-    { num: "03", name: "Concrete Foundations OKC", desc: "Residential and commercial foundations — slab-on-grade, stem walls, footings, and structural pads engineered for Oklahoma's expansive clay soil.", to: "/foundations-oklahoma-city" },
-    { num: "04", name: "Retaining Walls OKC", desc: "Poured concrete, CMU block, and interlocking retaining walls with proper drainage for slopes, erosion control, and outdoor living areas.", to: "/retaining-walls-oklahoma-city" },
-    { num: "05", name: "Sidewalks, Curb & Gutter", desc: "Sidewalks, walkways, curb and gutter installation — city-spec compliant and ADA accessible across OKC.", to: "/sidewalks-oklahoma-city" },
-    { num: "06", name: "Pool Deck Concrete OKC", desc: "Slip-resistant pool decks for homes, HOAs, and commercial properties — drained and finished for Oklahoma sun and freeze-thaw.", to: "/pool-deck-oklahoma-city" },
-    { num: "07", name: "Commercial Concrete OKC", desc: "Warehouse floors, loading docks, retail pads, and commercial slabs for Oklahoma City businesses. We meet commercial specs and pull all required permits.", to: "/commercial-concrete-oklahoma-city" },
-    { num: "08", name: "Concrete Parking Lots OKC", desc: "New construction, replacement, and ADA-compliant commercial parking lots — 5–6 inch reinforced slabs built to outlast asphalt across the OKC metro.", to: "/parking-lots-oklahoma-city" },
-  ];
-
+function ProjectProofSection() {
   return (
     <ScrollReveal>
-      <section id="concrete-services" className="section-padding scroll-mt-24">
-        <div className="section-eye">What we do</div>
-        <h2 className="mb-3">Two Core Services.<br/><em className="h2-accent">One Crew.</em></h2>
-        <p className="prose-muted mb-8">Concrete work and sewer line repair &amp; installation — self-performed across the OKC metro, same standards on every job.</p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08] mb-8" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-          <Link to="/#concrete-services" className="bg-stone p-8 md:p-10 no-underline block hover:bg-orange/[0.04] transition-colors">
-            <div className="text-[0.58rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Core Service</div>
-            <div className="font-display text-2xl font-extrabold uppercase tracking-[0.04em] text-concrete mb-3">Concrete Services</div>
-            <p className="text-[0.85rem] text-muted-text leading-relaxed mb-4">Driveways, patios, slabs, foundations, retaining walls, sidewalks, commercial concrete, and parking lots — poured by our own crew.</p>
-            <span className="text-[0.72rem] text-orange font-bold tracking-[0.06em] uppercase">Browse concrete services ↓</span>
+      <section className="section-padding">
+        <div className="section-eye">Our work</div>
+        <h2 className="mb-3">Recent concrete projects across the OKC metro</h2>
+        <p className="prose-muted mb-8 max-w-[760px]">
+          Real pours for Oklahoma homeowners and businesses — from{" "}
+          <Link to="/driveways-oklahoma-city" className="text-orange no-underline">
+            concrete driveways
+          </Link>{" "}
+          to commercial slabs. See more on{" "}
+          <Link to="/our-projects" className="text-orange no-underline">
+            our projects
           </Link>
-          <Link to="/sewer-line-repair-oklahoma-city" className="bg-darker p-8 md:p-10 no-underline block hover:bg-orange/[0.06] transition-colors" style={{ borderLeft: "3px solid hsl(var(--orange))" }}>
-            <div className="text-[0.58rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">Core Service</div>
-            <div className="font-display text-2xl font-extrabold uppercase tracking-[0.04em] text-concrete mb-3">Residential Sewer Line Repair</div>
-            <p className="text-[0.85rem] text-muted-text leading-relaxed mb-4">Repair and replacement for Oklahoma City homeowners — plus the driveway or slab restoration, done by the same crew that did the digging.</p>
-            <span className="text-[0.72rem] text-orange font-bold tracking-[0.06em] uppercase">See sewer line services →</span>
+          .
+        </p>
+        <ProjectGrid ids={[...HOME_PROJECT_IDS]} />
+        <div className="mt-6 text-center">
+          <Link to="/our-projects" className="btn-outline text-sm py-3 px-8">
+            View all projects →
           </Link>
-        </div>
-
-        <h3 className="text-lg mb-4">Concrete Services in Detail</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-          {services.map(s => (
-            <div key={s.num} className="bg-darker p-6 group">
-              <div className="flex items-start justify-between gap-3 mb-3">
-                <div className="font-display text-3xl font-black text-orange/30">{s.num}</div>
-                <TradeBadge model="self-performed" />
-              </div>
-              <div className="font-display text-lg font-extrabold uppercase tracking-[0.04em] mb-2">{s.name}</div>
-              <p className="text-[0.82rem] text-muted-text leading-relaxed mb-4">{s.desc}</p>
-              <Link to={s.to} className="text-[0.72rem] text-orange font-bold tracking-[0.06em] uppercase no-underline hover:underline">View work →</Link>
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-concrete/[0.08] mt-px" style={{ border: "1px solid hsl(var(--concrete) / 0.08)", borderTop: "none" }}>
-          {[
-            { tag: "Commercial", name: "Commercial Concrete", to: "/commercial-concrete-oklahoma-city" },
-            { tag: "Residential", name: "Sidewalks & Curb", to: "/sidewalks-oklahoma-city" },
-            { tag: "Res & Commercial", name: "Concrete Repair", to: "/#estimate" },
-            { tag: "Not sure?", name: "Get a Free Quote →", to: "/#estimate", highlight: true },
-          ].map((c, i) => (
-            <Link key={i} to={c.to} className={`p-4 no-underline block transition-colors ${c.highlight ? "bg-orange/[0.08]" : "bg-stone"} hover:bg-orange/[0.06]`} style={c.highlight ? { borderLeft: "3px solid hsl(var(--orange))" } : {}}>
-              <div className="text-[0.58rem] tracking-[0.14em] uppercase text-orange font-bold mb-1">{c.tag}</div>
-              <div className={`font-display text-sm font-extrabold uppercase tracking-[0.04em] ${c.highlight ? "text-orange" : "text-concrete"}`}>{c.name}</div>
-            </Link>
-          ))}
         </div>
       </section>
     </ScrollReveal>
   );
 }
 
-function CommercialCapabilitySection() {
+function BuyerGuideSection() {
   return (
     <ScrollReveal>
       <section className="section-padding section-alt">
-        <div className="section-eye">Commercial concrete</div>
-        <h2 className="mb-3">Built for Commercial<br/><em className="h2-accent">Oklahoma City Sites.</em></h2>
-        <p className="prose-muted mb-6 max-w-[720px]">
-          FDZ pours and repairs commercial concrete for GCs, facility managers, developers, and property owners — parking lots, loading docks, warehouse slabs, foundations, equipment pads, and ADA site work. Self-performed crew, plan/spec coordination, and scheduling around occupied facilities.
+        <div className="section-eye">Buying advice</div>
+        <h2 className="mb-4">How to choose a concrete contractor in Oklahoma City</h2>
+        <p className="prose-muted mb-6 max-w-[820px]">
+          A long-lasting pour in Oklahoma depends less on the surface finish and more on decisions made before the
+          truck arrives. Use these checkpoints when you compare written scopes.
         </p>
-        <Link
-          to="/commercial-concrete-oklahoma-city"
-          className="btn-primary inline-flex"
-        >
-          Commercial Concrete Contractor in Oklahoma City →
-        </Link>
+        <ol className="max-w-[820px] space-y-5" style={{ paddingLeft: "1.25rem" }}>
+          <li className="text-[0.9rem] text-muted-text leading-relaxed font-light">
+            <strong className="text-concrete">Base prep on expansive red clay.</strong> OKC sits on clay that swells
+            when wet and shrinks in drought. Compacted aggregate base and correct drainage grading do more for
+            lifespan than any sealer applied later.
+          </li>
+          <li className="text-[0.9rem] text-muted-text leading-relaxed font-light">
+            <strong className="text-concrete">Reinforcement matched to the load.</strong> Passenger driveways and
+            light slabs often use rebar or mesh by design; heavier traffic needs a deliberate choice. Read our guide
+            to{" "}
+            <Link to="/blog/rebar-vs-wire-mesh-concrete-slabs" className="text-orange no-underline">
+              rebar vs wire mesh for concrete slabs
+            </Link>
+            .
+          </li>
+          <li className="text-[0.9rem] text-muted-text leading-relaxed font-light">
+            <strong className="text-concrete">A written scope and estimate.</strong> Ask for thickness, base depth,
+            reinforcement, joint layout, and finish in writing — not a verbal number over the phone.
+          </li>
+          <li className="text-[0.9rem] text-muted-text leading-relaxed font-light">
+            <strong className="text-concrete">License and insurance on file.</strong> Confirm the company is licensed,
+            bonded, and insured in Oklahoma before work starts.
+          </li>
+          <li className="text-[0.9rem] text-muted-text leading-relaxed font-light">
+            <strong className="text-concrete">A workmanship warranty in writing.</strong> FDZ backs every project with
+            a 2-year workmanship warranty documented in the estimate package.
+          </li>
+        </ol>
       </section>
     </ScrollReveal>
   );
@@ -316,140 +346,75 @@ function SiteWorkSection() {
       <section className="section-padding">
         <div className="section-eye">Also from our crew</div>
         <h2 className="mb-3">Site Work Services</h2>
-        <p className="prose-muted mb-5 max-w-[820px]">
-          <Link to="/skid-steer-services-oklahoma-city" className="text-orange no-underline font-medium">Skid Steer Services</Link>
-          {" "}— Land clearing, dirt work, leveling, gravel driveways, and brush hog mowing for lots up to about 2 acres.{" "}
-          <Link to="/excavator-services-oklahoma-city" className="text-orange no-underline font-medium">Excavator Services</Link>
-          {" "}— Heavier land clearing, deep grading, drainage work, and larger commercial pads or driveways.{" "}
-          The same crew also handles{" "}
-          <Link to="/sewer-line-repair-oklahoma-city" className="text-orange no-underline font-medium">residential sewer line repair</Link>
-          {" "}— repair and replacement, plus driveway, sidewalk, and slab restoration by the crew that did the digging.
-        </p>
-      </section>
-    </ScrollReveal>
-  );
-}
-
-function SoilMattersSection() {
-  return (
-    <ScrollReveal>
-      <section className="section-padding section-alt">
-        <div className="section-eye">Oklahoma clay</div>
-        <h2 className="mb-3">Why Oklahoma City Soil Matters</h2>
         <p className="prose-muted max-w-[820px]">
-          The OKC metro sits on Permian-age clay and shale that expands when wet and shrinks in drought. That movement stresses driveways, foundations, and buried sewer pipe alike — which is why proper sub-base compaction, reinforcement, and drainage grading matter on every job.
+          <Link to="/skid-steer-services-oklahoma-city" className="text-orange no-underline font-medium">
+            Skid Steer Services
+          </Link>{" "}
+          — land clearing, dirt work, leveling, gravel driveways, and brush hog mowing for lots up to about 2 acres.{" "}
+          <Link to="/excavator-services-oklahoma-city" className="text-orange no-underline font-medium">
+            Excavator Services
+          </Link>{" "}
+          — heavier clearing, deep grading, drainage, and larger pads. The same crew also handles{" "}
+          <Link to="/sewer-line-repair-oklahoma-city" className="text-orange no-underline font-medium">
+            residential sewer line repair
+          </Link>
+          .
         </p>
       </section>
     </ScrollReveal>
   );
 }
 
-function WhyUsSection() {
-  const reasons = [
-    { icon: "🏠", title: "Locally owned by David Fernandez", desc: "FDZ Construction LLC is owner-operated from south OKC — David Fernandez leads the crew on concrete and sewer work, not a franchise or subcontractor network." },
-    { icon: "📋", title: "Free on-site estimates", desc: "No ballpark guesses over the phone. We come to your property and give you an accurate price before any work starts." },
-    { icon: "🛡", title: "Licensed, bonded & insured", desc: "Fully licensed, bonded, and insured in Oklahoma. Your property and investment are protected on every job." },
-    { icon: "✅", title: "No surprise pricing — ever", desc: "The price we quote is the price you pay. No change orders, no hidden fees, no upsells once our crew shows up." },
-    { icon: "📅", title: "8+ Years of Experience", desc: "Years of hands-on concrete work across the OKC metro — we know what Oklahoma soil, weather, and homeowners need." },
-    { icon: "🤝", title: "2-Year Workmanship Warranty", desc: "Every project is backed by a 2-year workmanship warranty. If something isn't right, we come back and make it right." },
-    { icon: "🌡", title: "Oklahoma Clay Soil Experts", desc: "Every pour accounts for local soil movement, frost lines, and drainage — because Oklahoma clay is unforgiving." },
-    { icon: "⚡", title: "24-Hour Estimate Response", desc: "Submit your project and hear back within one business day. No waiting weeks just to get a quote." },
-  ];
-
-  return (
-    <ScrollReveal>
-      <section className="section-padding section-alt relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src={tiedRebarImg} alt="Tied rebar reinforcement for concrete slab in Oklahoma City by FDZ Construction LLC" className="w-full h-full object-cover opacity-[0.04]" />
-          <div className="absolute inset-0 bg-stone" style={{ opacity: 0.92 }} />
-        </div>
-        <div className="relative z-[1]">
-        <div className="section-eye">Why FDZ Construction</div>
-        <h2 className="mb-3">Local Crew.<br/><em className="h2-accent">Real Results.</em></h2>
-        <p className="text-[0.8rem] text-orange font-semibold uppercase tracking-[0.08em] mb-4">Licensed, bonded &amp; insured · 8+ years of experience · 2-year workmanship warranty</p>
-        <p className="prose-muted mb-8">We're not a national franchise. FDZ Construction LLC is a locally owned OKC business — and we know exactly what Oklahoma soil, weather, and homeowners actually need for <Link to="/driveways-oklahoma-city" className="text-orange no-underline">driveways</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">slabs</Link>, and <Link to="/foundations-oklahoma-city" className="text-orange no-underline">foundations</Link> that last.</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-          {reasons.map((r, i) => (
-            <div key={i} className="bg-stone p-6">
-              <div className="text-2xl mb-3">{r.icon}</div>
-              <h3 className="mb-2 text-sm">{r.title}</h3>
-              <p className="text-[0.78rem] text-muted-text leading-relaxed">{r.desc}</p>
-            </div>
-          ))}
-        </div>
-        </div>
-      </section>
-    </ScrollReveal>
-  );
-}
-
-function RecentProjectsSection() {
-  const projects = [
-    { title: "Driveway Replacement", location: "Edmond, OK", desc: "Full tear-out and 4\" reinforced pour. Custom expansion joints, broom finish, and sealed surface included.", size: "24×40", time: "2 days", link: "/driveways-oklahoma-city", linkText: "See driveway work →" },
-    { title: "Stamped Concrete Patio", location: "Norman, OK", desc: "Ashlar slate pattern with custom release color and matte sealer. Covered extension with integrated steps.", size: "580 sq ft", time: "3 days", link: "/patios-oklahoma-city", linkText: "See stamped work →" },
-    { title: "Parking Lot — Commercial", location: "Yukon, OK", desc: "Commercial concrete slab pour for a retail strip. Graded for drainage, reinforced for heavy traffic, striped and sealed.", size: "4,200 sq ft", time: "5 days", link: "/commercial-concrete-oklahoma-city", linkText: "See commercial work →" },
-  ];
-
-  return (
-    <ScrollReveal>
-      <section className="section-padding">
-        <div className="section-eye">Our work</div>
-        <h2 className="mb-3">Recent Projects<br/><em className="h2-accent">Across the Metro.</em></h2>
-        <p className="prose-muted mb-8">Real jobs for real Oklahoma homeowners and businesses. Every project — from <Link to="/driveways-oklahoma-city" className="text-orange no-underline">concrete driveways</Link> to <Link to="/patios-oklahoma-city" className="text-orange no-underline">stamped patios</Link> — backed by the FDZ Construction guarantee.</p>
-        <div className="mb-6 overflow-hidden" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-          <img src={newDrivewayImg} alt="Completed concrete driveway project in Edmond Oklahoma by FDZ Construction LLC" className="w-full h-[280px] md:h-[360px] object-cover" />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-          {projects.map((p, i) => (
-            <div key={i} className="bg-darker p-6">
-              <div className="font-display text-lg font-extrabold uppercase tracking-[0.04em] text-concrete mb-1">{p.title}</div>
-              <div className="text-[0.66rem] tracking-[0.1em] uppercase text-orange font-semibold mb-3">{p.location}</div>
-              <p className="text-[0.82rem] text-muted-text leading-relaxed mb-4">{p.desc} <Link to={p.link} className="text-orange no-underline">{p.linkText}</Link></p>
-              <div className="flex gap-6">
-                <div>
-                  <div className="font-display text-xl font-black text-concrete">{p.size}</div>
-                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Square feet</div>
-                </div>
-                <div>
-                  <div className="font-display text-xl font-black text-concrete">{p.time}</div>
-                  <div className="text-[0.6rem] text-muted-text tracking-[0.08em] uppercase">Completed in</div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="mt-6 text-center">
-          <Link to="/our-projects" className="btn-outline text-sm py-3 px-8">View All Projects →</Link>
-        </div>
-      </section>
-    </ScrollReveal>
-  );
-}
-
-function ServiceAreasDetailSection() {
+function ServiceAreaSection() {
   return (
     <ScrollReveal>
       <section className="section-padding section-alt">
-        <div className="section-eye">Service Areas</div>
-        <h2 className="mb-4">Concrete Services in<br/><em className="h2-accent">Oklahoma City Metro.</em></h2>
-        <p className="prose-muted mb-6">
-          FDZ Construction LLC provides full-service residential and commercial concrete work across the greater OKC metro. Our <Link to="/oklahoma-city-concrete" className="text-orange no-underline">Oklahoma City concrete contractors</Link> handle everything from driveway replacements in established neighborhoods to commercial slab pours in new developments — with the same crew, same standards, every time. In the north metro, our <Link to="/edmond-concrete" className="text-orange no-underline">Edmond concrete contractors</Link> work across all of Oklahoma County, serving both new construction and older properties where Oklahoma clay has done its damage over the years. South of OKC, our <Link to="/norman-ok-concrete" className="text-orange no-underline">Norman concrete contractors</Link> serve Cleveland County homeowners and businesses with driveways, patios, slabs, and foundations built for the area's specific soil and drainage conditions. To the west, our <Link to="/yukon-oklahoma-concrete" className="text-orange no-underline">Yukon concrete contractors</Link> and <Link to="/mustang-oklahoma-concrete" className="text-orange no-underline">Mustang concrete contractors</Link> cover Canadian County — one of the fastest-growing parts of the metro and an area where proper base prep and reinforcement are non-negotiable on expanding soil. We also serve <Link to="/moore-oklahoma-concrete" className="text-orange no-underline">Moore</Link> across Cleveland County, including repair and replacement work in neighborhoods that took storm damage over the years. No matter which part of the metro your project is in, you're getting the same process: proper subgrade, correct mix design, adequate reinforcement, and a crew that stands behind what they pour.
+        <div className="section-eye">Service areas</div>
+        <h2 className="mb-3">
+          We Come To
+          <br />
+          <em className="h2-accent">You.</em>
+        </h2>
+        <p className="prose-muted mb-6 max-w-[820px]">
+          FDZ serves the greater Oklahoma City metro from our base in the city. Start with the{" "}
+          <Link to="/oklahoma-city-concrete" className="text-orange no-underline">
+            Oklahoma City service area
+          </Link>{" "}
+          page for local soil and neighborhoods, or pick your suburb below for city-specific concrete and sewer
+          details.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-          {[
-            { county: "Oklahoma County", city: "Oklahoma City", to: "/oklahoma-city-concrete" },
-            { county: "Oklahoma County", city: "Edmond", to: "/edmond-concrete" },
-            { county: "Cleveland County", city: "Norman", to: "/norman-ok-concrete" },
-            { county: "Canadian County", city: "Yukon", to: "/yukon-oklahoma-concrete" },
-            { county: "Canadian County", city: "Mustang", to: "/mustang-oklahoma-concrete" },
-            { county: "Cleveland County", city: "Moore", to: "/moore-oklahoma-concrete" },
-          ].map((a, i) => (
-            <Link key={i} to={a.to} className="bg-stone p-4 no-underline block hover:bg-orange/[0.04] transition-colors">
-              <div className="text-[0.58rem] tracking-[0.14em] uppercase text-orange font-bold mb-1">{a.county}</div>
-              <div className="font-display text-sm font-extrabold uppercase tracking-[0.04em] text-concrete">{a.city} →</div>
-            </Link>
-          ))}
-        </div>
+        <CityGrid />
+        <p className="prose-muted mt-8 text-[0.85rem] max-w-[820px]">
+          Looking for a specific service? See{" "}
+          <Link to="/driveways-oklahoma-city" className="text-orange no-underline">
+            concrete driveways
+          </Link>
+          ,{" "}
+          <Link to="/patios-oklahoma-city" className="text-orange no-underline">
+            patios &amp; stamped concrete
+          </Link>
+          ,{" "}
+          <Link to="/sidewalks-oklahoma-city" className="text-orange no-underline">
+            sidewalks
+          </Link>
+          ,{" "}
+          <Link to="/foundations-oklahoma-city" className="text-orange no-underline">
+            foundations
+          </Link>
+          ,{" "}
+          <Link to="/commercial-concrete-oklahoma-city" className="text-orange no-underline">
+            commercial concrete
+          </Link>
+          ,{" "}
+          <Link to="/sewer-line-repair-oklahoma-city" className="text-orange no-underline">
+            sewer line repair
+          </Link>
+          , and{" "}
+          <Link to="/our-projects" className="text-orange no-underline">
+            our projects
+          </Link>
+          .
+        </p>
       </section>
     </ScrollReveal>
   );

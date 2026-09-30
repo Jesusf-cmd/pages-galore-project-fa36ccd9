@@ -1,13 +1,13 @@
 [
   {
     "path": "/",
-    "title": "Concrete & Sewer Line Contractor Oklahoma City | FDZ Construction LLC",
-    "description": "Oklahoma City concrete & sewer line contractor. One crew self-performs every job — driveways, slabs, foundations & sewer repair. Call (405) 458-4805.",
-    "h1": "One Crew. Concrete & Sewer Line Done Right.",
+    "title": "Concrete Contractors in Oklahoma City, OK | FDZ Construction",
+    "description": "Licensed, bonded and insured OKC concrete company. Driveways, patios, foundations, commercial and repair — one self-performing crew, 2-year warranty.",
+    "h1": "Concrete Contractors in Oklahoma City",
     "render": "react",
     "canonical": "https://fdzconstruction.com/",
     "mustContain": [
-      "One Crew. Concrete & Sewer Line Done Right."
+      "Concrete Contractors in Oklahoma City"
     ]
   },
   {
@@ -182,13 +182,13 @@
   },
   {
     "path": "/oklahoma-city-concrete",
-    "title": "Concrete & Sewer Line Contractor Oklahoma City, OK | FDZ Construction LLC",
-    "description": "Concrete & sewer line contractor in Oklahoma City, OK — FDZ Construction LLC, based in Oklahoma City. Driveways, patios, slabs, foundations & sewer repair. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
-    "h1": "Oklahoma City Concrete & Sewer Line Contractor",
+    "title": "Concrete Services Across Oklahoma City | FDZ Construction",
+    "description": "Driveways, patios, foundations, commercial concrete, and sewer line repair across Oklahoma City from FDZ Construction LLC. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
+    "h1": "Concrete Services Across Oklahoma City",
     "render": "react",
     "canonical": "https://fdzconstruction.com/oklahoma-city-concrete",
     "mustContain": [
-      "Oklahoma City Concrete & Sewer Line Contractor"
+      "Concrete Services Across Oklahoma City"
     ]
   },
   {

@@ -7,6 +7,7 @@ import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { usePageSEO } from "@/hooks/useSEO";
 import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
 import InternalLinksHub from "@/components/InternalLinksHub";
+import ProjectGrid from "@/components/ProjectGrid";
 
 const TRUST_LINE =
   "FDZ Construction LLC is licensed, bonded, and insured in Oklahoma — 8+ years of experience serving the OKC metro, and every project is backed by a 2-year workmanship warranty.";
@@ -65,6 +66,8 @@ interface CityPageProps {
   faqHeadingAccent?: string;
   /** Short local sewer line note (2–4 sentences) linking to the main sewer page. */
   sewerLocalNote?: string;
+  /** Optional project ids for a ProjectGrid under local content. */
+  projectIds?: string[];
 }
 
 export default function CityPageTemplate({
@@ -89,6 +92,7 @@ export default function CityPageTemplate({
   serviceAreaNote,
   faqHeadingAccent,
   sewerLocalNote,
+  projectIds,
 }: CityPageProps) {
   const seo = usePageSEO(seoPath);
 
@@ -252,7 +256,27 @@ export default function CityPageTemplate({
         </ScrollReveal>
       )}
 
-      {projectsPlaceholder && !estimateSectionHtml && (
+      {projectIds && projectIds.length > 0 && (
+        <ScrollReveal>
+          <section className="section-padding section-alt">
+            <div className="section-eye">Our {city} Projects</div>
+            <h2 className="mb-4">
+              Real Work in
+              <br />
+              <em className="h2-accent">{city}.</em>
+            </h2>
+            <ProjectGrid ids={projectIds} />
+            {/* When projectIds.length < 2, leave a TODO(FDZ) at the call site (e.g. OKC). */}
+            <p className="mt-6">
+              <Link to="/our-projects" className="text-orange no-underline font-medium">
+                View all projects →
+              </Link>
+            </p>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {projectsPlaceholder && !estimateSectionHtml && !(projectIds && projectIds.length > 0) && (
         <ScrollReveal>
           <section className="section-padding section-alt">
             <div className="section-eye">Our {city} Projects</div>
