@@ -22,6 +22,10 @@ export const LOCAL_BUSINESS_CITIES = [
 export const BUSINESS_JSON_LD_ID = "fdz-business-jsonld";
 export const BUSINESS_ENTITY_ID = `${SITE_ORIGIN}/#business`;
 
+/** Public Google Maps listing for FDZ Construction LLC, confirmed from the owner share link. */
+export const GOOGLE_BUSINESS_PROFILE_URL =
+  "https://www.google.com/maps/place/FDZ+Construction+LLC/data=!4m2!3m1!1s0x0:0xdc647a2f54d16b2b";
+
 /** Paths that emit the full business node (not a reference). */
 export const FULL_BUSINESS_PATHS = new Set(["/", "/oklahoma-city-concrete"]);
 
@@ -84,10 +88,10 @@ export function buildBusinessJsonLd() {
       opens: "08:00",
       closes: "17:00",
     },
-    // TODO(FDZ): confirm Google Business Profile URL; add BBB when claimed
+    // TODO(FDZ): add BBB when claimed
     sameAs: [
       "https://www.facebook.com/fdzconstruction",
-      "https://www.google.com/maps/place/FDZ+Construction+LLC",
+      GOOGLE_BUSINESS_PROFILE_URL,
     ],
     areaServed: LOCAL_BUSINESS_CITIES.map((name) => ({
       "@type": "City",
