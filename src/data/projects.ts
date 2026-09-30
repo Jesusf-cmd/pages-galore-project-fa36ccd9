@@ -192,16 +192,21 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "edmond-driveway",
-    title: "Driveway replacement",
+    title: "New driveway & approach",
     city: "Edmond, OK",
     service: "driveways",
     ownerPath: "/driveways-oklahoma-city",
-    details: '4" reinforced, broom finish',
-    images: [], // TODO(FDZ): photo
+    details: `6" thick, 24' wide concrete drive with new approach`,
+    images: [
+      {
+        src: "/images/projects/new-concrete-driveway-approach-6-inch-24-ft-wide-oklahoma.webp",
+        alt: "New 6-inch thick, 24-foot wide concrete driveway and approach being finished by the FDZ Construction crew",
+      },
+    ],
     sqft: null, // TODO(FDZ)
     year: null, // TODO(FDZ)
     featured: false,
-    sizeLabel: "24×40",
+    sizeLabel: "24' wide",
     timeLabel: "2 days",
   },
   {
