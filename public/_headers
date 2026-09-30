@@ -1,9 +1,12 @@
-# Fingerprinted Vite assets — safe for long-lived immutable cache
+# Fingerprinted Vite assets — long-lived cache.
+# Detach Cache-Control first: Cloudflare combines every matching _headers rule,
+# so without this, /* also applies max-age=0, must-revalidate to /assets/*.
 /assets/*
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 
-# All HTML (pretty URLs and .html) must revalidate so removals/deploys show up immediately.
-# Without this, extensionless paths default to s-maxage=604800 and can serve deleted pages.
+# HTML / pretty URLs must revalidate so removals and deploys show up immediately.
+# Without a sitewide rule, extensionless paths default to s-maxage=604800.
 /*
   Cache-Control: public, max-age=0, must-revalidate
 
