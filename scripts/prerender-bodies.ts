@@ -38,6 +38,7 @@ import { concreteMaintenanceContent } from "../src/content/pages/concrete-mainte
 import { poolDeckContent } from "../src/content/pages/pool-deck";
 import { serviceInCityPages } from "../src/content/serviceInCityPages";
 import { WICHITA_PAGES } from "../src/content/wichitaPages";
+import { renderEstimateFormHtml } from "../src/lib/estimateFormHtml";
 import { renderWichitaPageHtml } from "./wichita-html";
 
 function prerenderH1(path: string): string {
@@ -87,6 +88,7 @@ export const prerenderBodies: Record<string, string> = {
     <p>The OKC metro sits on Permian-age clay and shale that expands when wet and shrinks in drought. That movement stresses driveways, foundations, and buried sewer pipe alike — which is why proper sub-base compaction, reinforcement, and drainage grading matter on every job.</p>
     <h2>Service Areas</h2>
     ${linkList(CITY_LINKS)}
+    ${renderEstimateFormHtml({ fromPath: "/" })}
     <p><strong>Contact:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
   `,
 
@@ -838,6 +840,7 @@ export const prerenderBodies: Record<string, string> = {
       { question: "Why does base prep matter so much in Oklahoma City?", answer: "OKC sits on expansive Permian clay that swells when wet and shrinks in drought. Without a properly excavated, compacted aggregate base and adequate reinforcement, concrete is far more likely to crack and move over time." },
     ])}
     <p><strong>Drive time:</strong> We're based in Oklahoma City and serve the metro from here.</p>
+    ${renderEstimateFormHtml({ fromPath: "/oklahoma-city-concrete" })}
     ${trustParagraph()}
   `,
 

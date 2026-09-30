@@ -7,6 +7,85 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
+/** Same shape as a real success so bots can't fingerprint spam rejection. */
+function silentSuccess() {
+  return new Response(JSON.stringify({ success: true }), {
+    status: 200,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
+}
+
+const MIN_FILL_MS = 3000;
+
+type RejectLog = {
+  reason: string;
+  payload: Record<string, unknown>;
+  clientIp: string | null;
+  userAgent: string | null;
+};
+
+async function logRejection(
+  supabase: ReturnType<typeof createClient>,
+  entry: RejectLog,
+): Promise<void> {
+  console.warn("[submit-quote] rejected_lead", entry.reason, {
+    clientIp: entry.clientIp,
+    email: entry.payload.email,
+    name: entry.payload.name,
+  });
+  try {
+    const { error } = await supabase.from("rejected_leads").insert({
+      reason: entry.reason,
+      payload: entry.payload,
+      client_ip: entry.clientIp,
+      user_agent: entry.userAgent,
+    });
+    if (error) console.error("[submit-quote] rejected_leads insert failed:", error);
+  } catch (err) {
+    console.error("[submit-quote] rejected_leads insert threw:", err);
+  }
+}
+
+/** Redact for storage — keep enough to recover a mistaken block. */
+function rejectPayload(body: Record<string, unknown>): Record<string, unknown> {
+  return {
+    name: body.name ?? null,
+    email: body.email ?? null,
+    phone: body.phone ?? null,
+    address: body.address ?? null,
+    projectType: body.projectType ?? null,
+    from: body.from ?? null,
+    propertyType: body.propertyType ?? null,
+    ownerProjectType: body.ownerProjectType ?? null,
+    formStartedAt: body.formStartedAt ?? null,
+    hasHoneypot: typeof body.company_website === "string" && String(body.company_website).trim().length > 0,
+    hasTurnstileToken: Boolean(body.turnstileToken),
+  };
+}
+
+async function verifyTurnstile(token: string | undefined, ip: string | null): Promise<"ok" | "fail" | "skip"> {
+  // TODO(FDZ): TURNSTILE_SITE_KEY / TURNSTILE_SECRET — set TURNSTILE_SECRET to enforce.
+  const secret = Deno.env.get("TURNSTILE_SECRET");
+  if (!secret) return "skip"; // flag off until owner supplies keys
+  // Backward compatible: if the client never sent a token (old site), skip.
+  if (token === undefined || token === null || token === "") return "skip";
+  try {
+    const form = new URLSearchParams();
+    form.set("secret", secret);
+    form.set("response", token);
+    if (ip) form.set("remoteip", ip);
+    const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      body: form,
+    });
+    const data = await res.json();
+    return data?.success ? "ok" : "fail";
+  } catch (err) {
+    console.error("Turnstile verify error:", err);
+    return "fail";
+  }
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -18,7 +97,57 @@ Deno.serve(async (req) => {
       name, email, phone, address, details,
       projectType, finishType, lengthFt, widthFt, sqft,
       estimateLow, estimateHigh, lineItems, siteUrl,
+      company_website: honeypot,
+      formStartedAt,
+      turnstileToken,
+      propertyType,
+      customerRole,
+      ownerProjectType,
+      approxSize,
+      biddingStatus,
     } = body;
+
+    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    const clientIp =
+      req.headers.get("cf-connecting-ip") ||
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      null;
+    const userAgent = req.headers.get("user-agent");
+
+    const reject = async (reason: string) => {
+      await logRejection(supabase, {
+        reason,
+        payload: rejectPayload(body),
+        clientIp,
+        userAgent,
+      });
+      return silentSuccess();
+    };
+
+    // Spam controls — only enforce fields the client actually sent (old site ↔ new function).
+    // Honeypot: reject only when the field is present and non-empty.
+    if (typeof honeypot === "string" && honeypot.trim()) {
+      return await reject("honeypot_filled");
+    }
+    // Fill-time: reject only when formStartedAt is present and too fast / invalid.
+    // Missing formStartedAt = legacy client → allow.
+    if (formStartedAt !== undefined && formStartedAt !== null && formStartedAt !== "") {
+      const started = typeof formStartedAt === "number" ? formStartedAt : Number(formStartedAt);
+      if (!Number.isFinite(started)) {
+        return await reject("form_started_at_invalid");
+      }
+      const elapsed = Date.now() - started;
+      if (elapsed < MIN_FILL_MS) {
+        return await reject(`fill_too_fast_${elapsed}ms`);
+      }
+    }
+    const turnstile = await verifyTurnstile(turnstileToken, clientIp);
+    if (turnstile === "fail") {
+      return await reject("turnstile_failed");
+    }
 
     if (!name || !email || !phone || !projectType || !lengthFt || !widthFt) {
       return new Response(JSON.stringify({ error: "Missing required fields" }), {
@@ -31,9 +160,21 @@ Deno.serve(async (req) => {
       });
     }
 
-    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-    const supabase = createClient(supabaseUrl, supabaseKey);
+    const leadMeta = [
+      propertyType && `Property type: ${propertyType}`,
+      customerRole && `Role: ${customerRole}`,
+      ownerProjectType && `Owner project type: ${ownerProjectType}`,
+      approxSize && `Approximate size: ${approxSize}`,
+      biddingStatus && `Bidding status: ${biddingStatus}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+    const detailsWithMeta =
+      leadMeta && details && !String(details).includes("Property type:")
+        ? `${String(details).trim()}\n\n${leadMeta}`
+        : leadMeta && !details
+          ? leadMeta
+          : details;
 
     const { data: quote, error: dbError } = await supabase
       .from("quotes")
@@ -42,7 +183,7 @@ Deno.serve(async (req) => {
         customer_email: email.trim().slice(0, 255),
         customer_phone: phone.trim().slice(0, 20),
         customer_address: (address || "").trim().slice(0, 500),
-        project_details: details ? details.trim().slice(0, 2000) : null,
+        project_details: detailsWithMeta ? String(detailsWithMeta).trim().slice(0, 2000) : null,
         project_type: projectType,
         finish_type: finishType || null,
         length_ft: lengthFt,
@@ -150,7 +291,7 @@ Deno.serve(async (req) => {
       <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:4px;padding:10px 16px;margin:0 0 24px;">
         <div style="color:#c45c26;font-size:12px;font-weight:bold;">Expires: ${expiresDate}</div>
       </div>
-      ${details ? `<h2 style="color:#1a1a1a;font-size:16px;margin:0 0 8px;border-bottom:2px solid #c45c26;padding-bottom:8px;">Project Notes</h2><p style="color:#555;font-size:14px;line-height:1.6;white-space:pre-wrap;">${details}</p>` : ""}
+      ${detailsWithMeta ? `<h2 style="color:#1a1a1a;font-size:16px;margin:0 0 8px;border-bottom:2px solid #c45c26;padding-bottom:8px;">Project Notes</h2><p style="color:#555;font-size:14px;line-height:1.6;white-space:pre-wrap;">${detailsWithMeta}</p>` : ""}
       <div style="text-align:center;margin-top:24px;">
         <a href="${quoteUrl}" style="display:inline-block;background:#c45c26;color:#fff;text-decoration:none;padding:12px 28px;font-size:13px;font-weight:bold;border-radius:4px;margin-right:8px;">VIEW QUOTE</a>
         <a href="${baseUrl}/admin" style="display:inline-block;background:#1a1a1a;color:#fff;text-decoration:none;padding:12px 28px;font-size:13px;font-weight:bold;border-radius:4px;">ADMIN DASHBOARD</a>

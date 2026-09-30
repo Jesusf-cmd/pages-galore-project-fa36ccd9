@@ -1,20 +1,3 @@
-import { useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import {
-  applyEstimateOriginToDetails,
-  estimateAddressPlaceholder,
-  detailsLimitError,
-  parseEstimateOrigin,
-  quoteFollowUpPath,
-  quoteSubmitCallFailure,
-} from "@/lib/estimatePath";
-import { EstimateCallError, EstimateCallFollowUp } from "@/components/EstimateCallLink";
-import {
-  SERVICE_TYPES,
-  FINISH_TYPES,
-  buildLineItems,
-  calculateRange,
-} from "@/lib/pricingConfig";
 import commercialFoundationImg from "@/assets/commercial-concrete-foundation-okc.webp";
 import newDrivewayImg from "@/assets/new-driveway.webp";
 import tiedRebarImg from "@/assets/tied-rebar.webp";
@@ -24,7 +7,6 @@ import TradeBadge from "@/components/TradeBadge";
 import MailtoLink from "@/components/MailtoLink";
 import { usePageSEO } from "@/hooks/useSEO";
 import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
-import { supabase } from "@/integrations/supabase/client";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import ServicesFooterGrid from "@/components/ServicesFooterGrid";
@@ -33,6 +15,7 @@ import { ScrollReveal } from "@/hooks/useScrollReveal";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import ProjectDocumentUpload from "@/components/ProjectDocumentUpload";
 import EeatBlock from "@/components/EeatBlock";
+import EstimateForm from "@/components/EstimateForm";
 
 const homeFAQ = [
   { question: "Do you subcontract any of the work?", answer: "No — our concrete and sewer line work is 100% self-performed by our own crew and equipment, from start to finish. We do not subcontract the excavation, pipe work, or concrete restoration on sewer line jobs." },
@@ -178,217 +161,6 @@ function HeroSection({ h1 }: { h1: string }) {
         <ProjectDocumentUpload />
       </div>
     </section>
-  );
-}
-
-function EstimateForm() {
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  const origin = parseEstimateOrigin(searchParams.get("from"));
-  const [step, setStep] = useState(1);
-  const [projectType, setProjectType] = useState("slab");
-  const [length, setLength] = useState(20);
-  const [width, setWidth] = useState(20);
-  const [finish, setFinish] = useState("broom");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
-  const [details, setDetails] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState("");
-  const [errorCallsPhone, setErrorCallsPhone] = useState(false);
-  const originFrom = searchParams.get("from");
-
-  const sqft = length * width;
-  const range = calculateRange(projectType, finish, sqft);
-
-  const types = Object.values(SERVICE_TYPES).map((s) => ({
-    id: s.id,
-    name: s.name,
-    sub: s.description,
-  }));
-
-  const handleSubmit = async () => {
-    if (!name.trim() || !phone.trim() || !email.trim()) {
-      setErrorCallsPhone(false);
-      setError("Please fill in your name, phone, and email.");
-      return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setErrorCallsPhone(false);
-      setError("Please enter a valid email address.");
-      return;
-    }
-    const detailsError = detailsLimitError(details);
-    if (detailsError) {
-      setErrorCallsPhone(false);
-      setError(detailsError);
-      return;
-    }
-    setError("");
-    setErrorCallsPhone(false);
-    setSubmitting(true);
-
-    try {
-      const lineItems = buildLineItems(projectType, finish, sqft);
-      const siteUrl = window.location.origin;
-
-      const { data, error: fnError } = await supabase.functions.invoke("submit-quote", {
-        body: {
-          name, email, phone, address,
-          details: applyEstimateOriginToDetails(searchParams.get("from"), details),
-          projectType, finishType: finish,
-          lengthFt: length, widthFt: width, sqft,
-          estimateLow: range.low, estimateHigh: range.high,
-          lineItems, siteUrl,
-        },
-      });
-
-      if (fnError) throw fnError;
-      if (data?.accessToken) {
-        navigate(quoteFollowUpPath(data.accessToken, originFrom));
-      } else {
-        setSubmitted(true);
-      }
-    } catch (err) {
-      console.error("Submission error:", err);
-      setError(quoteSubmitCallFailure(originFrom).prefix);
-      setErrorCallsPhone(true);
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
-  if (submitted) {
-    return (
-      <div className="bg-stone" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}>
-        <div className="bg-orange p-4 flex justify-between items-center">
-          <span className="font-display text-base font-extrabold tracking-[0.1em] uppercase text-white">Quote Submitted</span>
-        </div>
-        <div className="p-6 text-center">
-          <div className="text-4xl mb-4">✅</div>
-          <h3 className="text-concrete mb-2">Thank You, {name}!</h3>
-          <p className="text-muted-text text-sm mb-3">Your quote has been created. Check your email for details.</p>
-          <EstimateCallFollowUp from={originFrom} />
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="bg-stone" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}>
-      <div className="bg-orange p-4 flex justify-between items-center">
-        <span className="font-display text-base font-extrabold tracking-[0.1em] uppercase text-white">Instant Estimate</span>
-        <span className="bg-white/20 text-white text-[0.63rem] tracking-[0.1em] uppercase px-2.5 py-1 font-bold">Step {step} of 3</span>
-      </div>
-      {origin && (
-        <div className="px-4 md:px-5 py-3 bg-concrete/[0.04]" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.1)" }}>
-          <p className="text-[0.78rem] text-concrete leading-relaxed">
-            You&apos;re requesting a <strong>{origin.formLabel}</strong> estimate. Pick the closest project type for a planning range, then describe the actual scope in the details step. The range is not a site-specific bid.
-          </p>
-        </div>
-      )}
-
-      {step === 1 && (
-        <div className="p-4 md:p-5">
-          <div className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold mb-2.5">Select project type</div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
-            {types.map(t => (
-              <button
-                key={t.id}
-                onClick={() => setProjectType(t.id)}
-                className={`text-left p-3 md:p-3 transition-colors cursor-pointer min-h-[48px] ${projectType === t.id ? "bg-orange/10 border-orange" : "bg-concrete/[0.03] border-concrete/10"}`}
-                style={{ border: `1px solid hsl(var(--${projectType === t.id ? "orange" : "concrete"}) / ${projectType === t.id ? "0.5" : "0.1"})` }}
-              >
-                <div className="font-display text-xs font-extrabold uppercase tracking-[0.04em] text-concrete">{t.name}</div>
-                <div className="text-[0.65rem] text-muted-text mt-0.5">{t.sub}</div>
-              </button>
-            ))}
-          </div>
-          <button onClick={() => setStep(2)} className="btn-primary w-full text-sm py-3.5 min-h-[48px]">Next: Enter Dimensions →</button>
-        </div>
-      )}
-
-      {step === 2 && (
-        <div className="p-4 md:p-5">
-          <div className="grid grid-cols-2 gap-3 mb-3">
-            <div>
-              <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Length (ft)</label>
-              <input type="number" value={length === 0 ? "" : length} onChange={e => setLength(e.target.value === "" ? 0 : +e.target.value)} onFocus={e => e.target.select()} placeholder="Enter feet" min={1} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none transition-colors focus:border-orange min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
-            </div>
-            <div>
-              <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
-                {projectType === "wall" ? "Height (ft)" : "Width (ft)"}
-              </label>
-              <input type="number" value={width === 0 ? "" : width} onChange={e => setWidth(e.target.value === "" ? 0 : +e.target.value)} onFocus={e => e.target.select()} placeholder="Enter feet" min={1} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none transition-colors focus:border-orange min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
-            </div>
-          </div>
-          {projectType !== "wall" && (
-            <div className="mb-3">
-              <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Finish type</label>
-              <select value={finish} onChange={e => setFinish(e.target.value)} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none cursor-pointer min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}>
-                {Object.values(FINISH_TYPES).map(f => (
-                  <option key={f.id} value={f.id} className="bg-stone text-concrete">{f.name} — {f.description}</option>
-                ))}
-              </select>
-            </div>
-          )}
-          <div className="bg-concrete/[0.03] p-4 mt-4 mb-4" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-            <div className="text-[0.6rem] tracking-[0.14em] uppercase text-muted-text font-bold mb-2">Estimated Range</div>
-            <div className="font-display text-2xl md:text-3xl font-black text-orange leading-none">
-              ${range.low.toLocaleString()} – ${range.high.toLocaleString()}
-            </div>
-            <div className="text-[0.7rem] text-muted-text mt-1">{sqft} sq ft · ${range.perFtLow}–${range.perFtHigh}/sq ft installed</div>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-2">
-            <button onClick={() => setStep(1)} className="btn-outline text-sm py-3.5 min-h-[48px] flex-1 w-full sm:w-auto">← Back</button>
-            <button onClick={() => setStep(3)} className="btn-primary text-sm py-3.5 min-h-[48px] flex-1 w-full sm:w-auto">Next: Your Info →</button>
-          </div>
-        </div>
-      )}
-
-      {step === 3 && (
-        <div className="p-4 md:p-5">
-          <div className="mb-3">
-            <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Your Name</label>
-            <input value={name} onChange={e => setName(e.target.value)} placeholder="Full name" className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
-          </div>
-          <div className="mb-3">
-            <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Phone</label>
-            <input value={phone} onChange={e => setPhone(e.target.value)} placeholder="(405) 000-0000" type="tel" className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
-          </div>
-          <div className="mb-3">
-            <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Email</label>
-            <input value={email} onChange={e => setEmail(e.target.value)} placeholder="email@example.com" type="email" className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
-          </div>
-          <div className="mb-3">
-            <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Project Address</label>
-            <input value={address} onChange={e => setAddress(e.target.value)} placeholder={estimateAddressPlaceholder(searchParams.get("from")) || "123 Main St, Oklahoma City, OK"} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
-          </div>
-          <div className="mb-4">
-            <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">Project Details</label>
-            <textarea value={details} onChange={e => setDetails(e.target.value)} placeholder={origin?.placeholder || "Tell us about your project scope, timeline, special requirements..."} rows={3} className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none resize-y min-h-[48px]" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }} />
-          </div>
-          {error && (
-            <div className="bg-destructive/20 text-destructive text-sm p-3 mb-4" style={{ border: "1px solid hsl(0 60% 40% / 0.3)" }}>
-              {errorCallsPhone ? <EstimateCallError prefix={error} from={originFrom} /> : error}
-            </div>
-          )}
-          <div className="bg-concrete/[0.03] p-3 mb-4 text-center" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-            <div className="font-display text-xl font-black text-orange">${range.low.toLocaleString()} – ${range.high.toLocaleString()}</div>
-            <div className="text-[0.65rem] text-muted-text">{sqft} sq ft · {projectType}</div>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-2">
-            <button onClick={() => setStep(2)} className="btn-outline text-sm py-3.5 min-h-[48px] flex-1 w-full sm:w-auto">← Back</button>
-            <button onClick={handleSubmit} disabled={submitting} className="btn-primary text-sm py-3.5 min-h-[48px] flex-1 w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed">
-              {submitting ? "Creating Quote..." : "Get Your Quote →"}
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
   );
 }
 

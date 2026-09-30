@@ -145,3 +145,44 @@ PASS  /this-page-should-not-exist-xyz → 404
 PASS  *.html → redirect or 404 (all registry paths)
 live probes done — 0 failed
 ```
+
+---
+
+# Phase 2 — Shared building blocks (2026-09-29)
+
+## Delivered
+
+| Block | Location |
+|-------|----------|
+| Projects data | `src/data/projects.ts` (12 seeded jobs; `sqft`/`year` null + `TODO(FDZ)`) |
+| `ProjectCard` / `ProjectGrid` | `src/components/ProjectCard.tsx`, `ProjectGrid.tsx` |
+| `TrustBar` | Updated: licensed/bonded · 8+ years · 2-year warranty · self-performing crew; Google rating slot only when `googleRating` prop set (`TODO(FDZ)` — never hard-coded) |
+| `EstimateForm` | `src/components/EstimateForm.tsx` (extracted from homepage); auto `from` = current path; new optional lead fields |
+| Spam | Honeypot + min 3s fill time + Turnstile behind flag in `submit-quote`; silent success on reject |
+| dataLayer | `generate_lead` on form success; `phone_click` on any `tel:` (Layout) |
+| LocalBusiness | `src/lib/localBusinessSchema.ts` — prerendered on `/` and `/oklahoma-city-concrete` only (`HomeAndConstructionBusiness`) |
+
+## Notes
+
+- Photo upload on EstimateForm skipped — `submit-quote` is JSON-only (`TODO(FDZ): enable photo upload`). Use `ProjectDocumentUpload` for files.
+- Turnstile off until `VITE_TURNSTILE_SITE_KEY` + `TURNSTILE_SECRET` (`TODO(FDZ)`).
+- `/our-projects` renders from `projects.ts`; three unseeded legacy cards (OKC retaining+patio combo, Yukon garage reslab, Norman RV pad) dropped to match the Phase 2 seed list.
+- Estimate form markup is in prerendered HTML for `/` and `/oklahoma-city-concrete`.
+- **Owner:** redeploy Supabase function `submit-quote` so honeypot / timing / Turnstile checks go live.
+
+### Spam-check rollout (compat + logging)
+
+- Missing `company_website` / `formStartedAt` / `turnstileToken` → **allowed** (old site + new function).
+- Present honeypot filled, or `formStartedAt` present and &lt; 3s, or Turnstile token present and fails → silent success + row in `rejected_leads` (+ function log).
+- Migration: `supabase/migrations/20260930010000_rejected_leads.sql`
+- Review weekly: `select * from rejected_leads order by created_at desc;`
+
+## Verify
+
+```
+npm run build
+npm run seo-check -- --dist
+→ 76/76 passed (0 failed)
+```
+
+Confirmed in dist: `HomeAndConstructionBusiness` on `/` + `/oklahoma-city-concrete` only; estimate `<form>` fields present without JS.

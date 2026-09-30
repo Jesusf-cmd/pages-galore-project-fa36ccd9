@@ -4,6 +4,8 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { organizationJsonLdForPath } from "@/lib/organizationSchema";
 import { phoneForPath } from "@/lib/phones";
+import { trackPhoneClick } from "@/lib/dataLayer";
+import { syncLocalBusinessJsonLd } from "@/lib/localBusinessSchema";
 
 function ContentLoader() {
   return (
@@ -51,7 +53,21 @@ export default function Layout() {
         // Leave unrelated or malformed structured data alone.
       }
     });
+    syncLocalBusinessJsonLd(pathname);
   }, [pathname]);
+
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const anchor = target.closest("a[href^='tel:']");
+      if (!anchor) return;
+      trackPhoneClick(pathname);
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, [pathname]);
+
   return (
     <>
       <Navbar />

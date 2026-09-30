@@ -4,6 +4,10 @@ import { routes, getCanonical, type PrerenderRoute } from "./prerender-routes";
 import { withoutCrawlableEmail } from "./prerender-helpers";
 import { faqJsonLdScriptTag } from "../src/lib/faqJsonLd";
 import { stripWichitaStreetAddressHtml } from "../src/lib/organizationSchema";
+import {
+  LOCAL_BUSINESS_PATHS,
+  localBusinessJsonLdScriptTag,
+} from "../src/lib/localBusinessSchema";
 import { phoneForPath } from "../src/lib/phones";
 import * as fs from "fs";
 import * as path from "path";
@@ -109,8 +113,11 @@ function generateRouteHtml(template: string, route: PrerenderRoute): string {
   html = stripWichitaStreetAddressHtml(html, route.path);
   const { markup, headTags } = hoistJsonLdScripts(buildPrerenderMarkup(route));
   html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
-  if (headTags) {
-    html = html.replace("</head>", `${headTags}</head>`);
+  const localBusinessTag = LOCAL_BUSINESS_PATHS.has(route.path)
+    ? localBusinessJsonLdScriptTag()
+    : "";
+  if (headTags || localBusinessTag) {
+    html = html.replace("</head>", `${headTags}${localBusinessTag}</head>`);
   }
 
   return html;
