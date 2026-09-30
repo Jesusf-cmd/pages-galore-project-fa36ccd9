@@ -3,7 +3,7 @@ import TrustBar from "@/components/TrustBar";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
-import { useSEO } from "@/hooks/useSEO";
+import { usePageSEO } from "@/hooks/useSEO";
 import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
 import InternalLinksHub from "@/components/InternalLinksHub";
 
@@ -24,11 +24,9 @@ interface LinkedService {
 interface CityPageProps {
   city: string;
   county: string;
-  canonicalUrl: string;
+  /** Registry path, e.g. /oklahoma-city-concrete */
+  seoPath: string;
   heroBlurb: string;
-  /** Override the default "{city} Concrete" / "Contractors." hero title split. */
-  heroTitle?: string;
-  heroTitleAccent?: string;
   intro: string[];
   localTerrainNote: string;
   driveTimeNote: string;
@@ -36,8 +34,6 @@ interface CityPageProps {
   linkedServices: LinkedService[];
   faq: { question: string; answer: string }[];
   nearbyLinks?: { name: string; to: string }[];
-  metaTitle?: string;
-  metaDescription: string;
   /** Sewer line repair/installation summary — links back to the full OKC sewer page rather than duplicating it. */
   sewerSection?: {
     intro: string;
@@ -67,10 +63,8 @@ interface CityPageProps {
 export default function CityPageTemplate({
   city,
   county,
-  canonicalUrl,
+  seoPath,
   heroBlurb,
-  heroTitle,
-  heroTitleAccent,
   intro,
   localTerrainNote,
   driveTimeNote,
@@ -78,8 +72,6 @@ export default function CityPageTemplate({
   linkedServices,
   faq,
   nearbyLinks,
-  metaTitle,
-  metaDescription,
   sewerSection,
   whyFdzSection,
   projectsPlaceholder,
@@ -88,13 +80,7 @@ export default function CityPageTemplate({
   faqHeadingAccent,
   sewerLocalNote,
 }: CityPageProps) {
-  const title = metaTitle || `Concrete Contractor in ${city} OK | FDZ Construction LLC`;
-  useSEO({
-    title,
-    description: metaDescription,
-    canonical: canonicalUrl,
-    og: { title, description: metaDescription, type: "website", url: canonicalUrl },
-  });
+  const seo = usePageSEO(seoPath);
 
   useFaqJsonLd(faq);
 
@@ -103,7 +89,7 @@ export default function CityPageTemplate({
       <section className="page-hero">
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">{city} · {county} · Licensed, Bonded & Insured</span>
-        <h1 className="max-w-[820px] mb-5">{heroTitle || `${city} Concrete`}<br/><span className="text-orange">{heroTitleAccent || "Contractors."}</span></h1>
+        <h1 className="max-w-[820px] mb-5">{seo.h1}</h1>
         <p className="prose-muted max-w-[680px] mb-8" dangerouslySetInnerHTML={{ __html: heroBlurb }} />
         <div className="flex gap-4 flex-wrap">
           <Link to="/#estimate" className="btn-primary">Get Free Estimate →</Link>

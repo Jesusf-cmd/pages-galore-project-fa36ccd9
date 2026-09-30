@@ -8,13 +8,13 @@ import ServicesFooterGrid from "@/components/ServicesFooterGrid";
 import CityGrid from "@/components/CityGrid";
 import ProcessSteps from "@/components/ProcessSteps";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
-import { useSEO } from "@/hooks/useSEO";
+import { usePageSEO } from "@/hooks/useSEO";
 import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
 import { useRegionalPhone } from "@/hooks/useRegionalPhone";
-import { canonicalUrl } from "@/lib/siteUrl";
 import { withoutCrawlableEmail } from "@/lib/contact";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import EeatBlock from "@/components/EeatBlock";
+import { requireSeoPage } from "@/seo/pages";
 
 interface ServicePageProps {
   eyebrow: string;
@@ -142,19 +142,18 @@ interface ServicePageProps {
   planningCallout?: string;
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle, metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showTrustBar = true, serviceCardsTitle, serviceCardsTitleAccent, faqTitle, serviceArea, showEeatBlock, internalLinks, serviceSchema, ctaLabel, estimateHref, finalCta, processNearCta, planningCallout }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle: _metaTitle, metaDescription: _metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showTrustBar = true, serviceCardsTitle, serviceCardsTitleAccent, faqTitle, serviceArea, showEeatBlock, internalLinks, serviceSchema, ctaLabel, estimateHref, finalCta, processNearCta, planningCallout }: ServicePageProps) {
   const phone = useRegionalPhone();
   const resolvedEstimateHref = estimateHref || "/#estimate";
-  const seoTitle = metaTitle || `${title} ${titleAccent.replace('.', '')} | FDZ Construction LLC`;
-  const seoDescription = metaDescription || description.replace(/<[^>]+>/g, "").slice(0, 155);
-  const canonical = currentServiceSlug ? canonicalUrl(`/${currentServiceSlug}`) : undefined;
-  useSEO({
-    title: seoTitle,
-    description: seoDescription,
-    canonical,
-    noindex,
-    og: canonical ? { title: seoTitle, description: seoDescription, type: "website", url: canonical } : undefined,
-  });
+  if (!currentServiceSlug) {
+    throw new Error("ServicePage requires currentServiceSlug so SEO comes from src/seo/pages.ts");
+  }
+  const seoPath = `/${currentServiceSlug}`;
+  // Ensure registry entry exists at render time (throws if missing).
+  requireSeoPage(seoPath);
+  const seo = usePageSEO(seoPath, noindex !== undefined ? { noindex } : undefined);
+  const canonical = seo.canonical;
+  const pageH1 = seo.h1;
   useEffect(() => {
     if (!serviceSchema || !canonical) return;
     const script = document.createElement("script");
@@ -221,7 +220,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">{eyebrow}</span>
         {badge && <div className="mb-4"><TradeBadge model={badge} /></div>}
-        <h1 className="max-w-[820px] mb-5">{title}<br/><span className="text-orange">{titleAccent}</span></h1>
+        <h1 className="max-w-[820px] mb-5">{pageH1}</h1>
         <p className={`prose-muted max-w-[680px] ${modelNote ? "mb-4" : "mb-8"}`} dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(description) }} />
         {modelNote && (
           <p className="text-[0.78rem] text-muted-text max-w-[680px] mb-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(modelNote) }} />

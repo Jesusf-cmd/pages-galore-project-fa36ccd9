@@ -7,6 +7,7 @@ import { yukonConcrete } from "../src/content/yukonConcrete";
  */
 
 import { canonicalUrl } from "../src/lib/siteUrl";
+import { getSeoPage } from "../src/seo/pages";
 import { WICHITA_PAGES } from "../src/content/wichitaPages";
 
 export interface PrerenderRoute {
@@ -18,7 +19,8 @@ export interface PrerenderRoute {
   noindex?: boolean; // set true to inject noindex meta in static HTML
 }
 
-export const routes: PrerenderRoute[] = [
+/** Raw route table — title/description/h1/noindex are overridden from `src/seo/pages.ts`. */
+const rawRoutes: PrerenderRoute[] = [
   {
     path: "/",
     title: "Concrete & Sewer Line Contractor Oklahoma City | FDZ Construction LLC",
@@ -573,6 +575,20 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
   })),
 ];
 
+export const routes: PrerenderRoute[] = rawRoutes.map((route) => {
+  const seo = getSeoPage(route.path);
+  if (!seo) {
+    throw new Error(`SEO registry missing entry for ${route.path}`);
+  }
+  return {
+    ...route,
+    title: seo.title,
+    description: seo.description,
+    h1: seo.h1,
+    noindex: seo.noindex,
+  };
+});
+
 export function getCanonical(path: string): string {
-  return canonicalUrl(path);
+  return getSeoPage(path)?.canonical ?? canonicalUrl(path);
 }

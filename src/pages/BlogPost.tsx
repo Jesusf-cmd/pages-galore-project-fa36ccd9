@@ -1,6 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { useSEO } from "@/hooks/useSEO";
-import { canonicalUrl } from "@/lib/siteUrl";
+import { usePageSEO, useSEO } from "@/hooks/useSEO";
 import FinalCTA from "@/components/FinalCTA";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
@@ -10,29 +9,39 @@ import { estimatePath } from "@/lib/estimatePath";
 export default function BlogPost() {
   const { slug } = useParams();
   const post = BLOG_POSTS_BY_SLUG[slug || ""];
+  if (!post || !slug) return <BlogPostMissing />;
+  return <BlogPostBody path={`/blog/${slug}`} />;
+}
 
+function BlogPostMissing() {
   useSEO({
-    title: post?.seoTitle || `${post?.title || "Blog"} | FDZ Construction LLC`,
-    description: post?.seoDescription || post?.deck || "Concrete tips and guides from FDZ Construction LLC in Oklahoma City.",
-    canonical: post && slug ? canonicalUrl(`/blog/${slug}`) : undefined,
-    noindex: !post,
+    title: "Blog | FDZ Construction LLC",
+    description: "Concrete tips and guides from FDZ Construction LLC in Oklahoma City.",
+    noindex: true,
   });
+  return (
+    <main className="page-hero">
+      <h1>Post Not Found</h1>
+      <Link to="/blog" className="btn-primary mt-8">
+        ← Back to Blog
+      </Link>
+    </main>
+  );
+}
 
-  if (!post) {
-    return (
-      <main className="page-hero">
-        <h1>Post Not Found</h1>
-        <Link to="/blog" className="btn-primary mt-8">← Back to Blog</Link>
-      </main>
-    );
-  }
+function BlogPostBody({ path }: { path: string }) {
+  const seo = usePageSEO(path);
+  const slug = path.replace(/^\/blog\//, "");
+  const post = BLOG_POSTS_BY_SLUG[slug]!;
 
   return (
     <main>
       <section className="page-hero">
         <span className="eyebrow mb-5 block">OKC Concrete Blog</span>
-        <h1 className="mb-4">{post.title}</h1>
-        <p className="prose-muted max-w-[600px] mb-4" style={{ fontSize: "1.1rem" }}>{post.deck}</p>
+        <h1 className="mb-4">{seo.h1}</h1>
+        <p className="prose-muted max-w-[600px] mb-4" style={{ fontSize: "1.1rem" }}>
+          {post.deck}
+        </p>
         <div className="flex gap-4 text-[0.75rem] text-muted-text mb-4">
           <span>📅 {post.date}</span>
           <span>⏱ {post.time}</span>
@@ -40,7 +49,11 @@ export default function BlogPost() {
         </div>
         <div className="flex gap-2 flex-wrap">
           {post.tags.map((tag) => (
-            <span key={tag} className="text-[0.62rem] tracking-[0.1em] uppercase py-1 px-3 text-orange font-semibold" style={{ border: "1px solid hsl(var(--orange) / 0.35)" }}>
+            <span
+              key={tag}
+              className="text-[0.62rem] tracking-[0.1em] uppercase py-1 px-3 text-orange font-semibold"
+              style={{ border: "1px solid hsl(var(--orange) / 0.35)" }}
+            >
               {tag}
             </span>
           ))}
@@ -51,7 +64,12 @@ export default function BlogPost() {
         <article className="section-padding max-w-[780px]">
           {post.sections.map((section, i) => (
             <div key={i} className="mb-10">
-              <h2 className="mb-4 text-xl" dangerouslySetInnerHTML={{ __html: section.heading.replace(/:\s*(.+)$/, ': <em class="h2-accent">$1</em>') }} />
+              <h2
+                className="mb-4 text-xl"
+                dangerouslySetInnerHTML={{
+                  __html: section.heading.replace(/:\s*(.+)$/, ': <em class="h2-accent">$1</em>'),
+                }}
+              />
               {section.content.map((paragraph, j) => (
                 <p key={j} className="prose-muted mb-4" dangerouslySetInnerHTML={{ __html: paragraph }} />
               ))}
@@ -60,10 +78,20 @@ export default function BlogPost() {
           <div className="mt-10 mb-8">
             <p className="prose-muted" dangerouslySetInnerHTML={{ __html: BLOG_POST_CONTRACTOR_LINKS }} />
           </div>
-          <div className="flex gap-4 flex-wrap mt-12 pt-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
-            <Link to="/blog" className="btn-outline text-sm">← All Articles</Link>
-            <Link to={estimatePath(post.slug === "cost-of-concrete-oklahoma-city-2026" ? post.slug : undefined)} className="btn-primary text-sm">
-              {post.slug === "cost-of-concrete-oklahoma-city-2026" ? "Request a Concrete Estimate →" : "Get Free Estimate →"}
+          <div
+            className="flex gap-4 flex-wrap mt-12 pt-8"
+            style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}
+          >
+            <Link to="/blog" className="btn-outline text-sm">
+              ← All Articles
+            </Link>
+            <Link
+              to={estimatePath(post.slug === "cost-of-concrete-oklahoma-city-2026" ? post.slug : undefined)}
+              className="btn-primary text-sm"
+            >
+              {post.slug === "cost-of-concrete-oklahoma-city-2026"
+                ? "Request a Concrete Estimate →"
+                : "Get Free Estimate →"}
             </Link>
           </div>
         </article>
@@ -76,7 +104,8 @@ export default function BlogPost() {
           ? {
               heading: "Need a Site-Specific Number?",
               headingAccent: "Request a Concrete Estimate.",
-              description: "The ranges in this guide are for planning. Use the existing estimate form or call — a written estimate follows a look at the site.",
+              description:
+                "The ranges in this guide are for planning. Use the existing estimate form or call — a written estimate follows a look at the site.",
               buttonLabel: "Request a Concrete Estimate →",
               to: estimatePath("cost-of-concrete-oklahoma-city-2026"),
             }

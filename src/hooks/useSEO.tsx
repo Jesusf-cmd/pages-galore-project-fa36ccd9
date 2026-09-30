@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { getSeoPage, type SeoPage } from "@/seo/pages";
 
 interface OGTags {
   title?: string;
@@ -72,4 +73,26 @@ export function useSEO({ title, description, canonical, og, noindex }: SEOProps)
       document.querySelector('meta[name="robots"]')?.remove();
     }
   }, [title, description, canonical, og, noindex]);
+}
+
+/** Head tags from `src/seo/pages.ts` — single source of truth with prerender. */
+export function usePageSEO(path: string, overrides?: Partial<Pick<SeoPage, "noindex">>) {
+  const page = getSeoPage(path);
+  if (!page) {
+    throw new Error(`usePageSEO: missing SEO registry entry for ${path}`);
+  }
+  const noindex = overrides?.noindex ?? page.noindex;
+  useSEO({
+    title: page.title,
+    description: page.description,
+    canonical: page.canonical,
+    noindex,
+    og: {
+      title: page.title,
+      description: page.description,
+      type: "website",
+      url: page.canonical,
+    },
+  });
+  return page;
 }

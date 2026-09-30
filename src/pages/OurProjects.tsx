@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
 import FinalCTA from "@/components/FinalCTA";
 import ServicesFooterGrid from "@/components/ServicesFooterGrid";
-import { useSEO } from "@/hooks/useSEO";
-import { canonicalUrl } from "@/lib/siteUrl";
+import { usePageSEO } from "@/hooks/useSEO";
 
 const ROSEDALE_VIDEO = "/videos/shop-foundation-pour-rosedale-oklahoma-web.mp4";
 
@@ -24,18 +23,14 @@ const otherProjects = [
 ];
 
 export default function OurProjects() {
-  useSEO({
-    title: "Our Concrete Projects | FDZ Construction LLC",
-    description: "Browse completed concrete projects across the OKC metro. Driveways, patios, foundations, commercial pours, and retaining walls by FDZ Construction LLC.",
-    canonical: canonicalUrl("/our-projects"),
-  });
+  const seo = usePageSEO("/our-projects");
 
   return (
     <main>
       <section className="page-hero">
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">OKC Metro · Real Projects · Real Results</span>
-        <h1 className="max-w-[820px] mb-5">Our Concrete Work<br/><span className="text-orange">Across Oklahoma.</span></h1>
+        <h1 className="max-w-[820px] mb-5">{seo.h1}</h1>
         <p className="prose-muted max-w-[680px] mb-8">Real jobs for <strong>Oklahoma City homeowners and businesses</strong> — <Link to="/driveways-oklahoma-city" className="text-orange no-underline">concrete driveways</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">patios</Link>, <Link to="/patios-oklahoma-city" className="text-orange no-underline">stamped concrete</Link>, foundations, and commercial pours.</p>
         <div className="flex gap-4 flex-wrap">
           <Link to="/#estimate" className="btn-primary">Get Your Free Estimate →</Link>

@@ -1,0 +1,138 @@
+# SEO Changelog — Phase 1 (Technical)
+
+Date: 2026-09-29
+
+## 1. Prerender vs runtime keep table
+
+Decision rule (revised Phase 1):
+
+- **Phase 1 retitles** (`/parking-lots-oklahoma-city`, `/industrial-concrete-repair-oklahoma-city`): use new Phase 1 values.
+- **Phase 3/4 retitle candidates** (homepage, `/oklahoma-city-concrete`, driveways, patios): keep **prerender** for now; those phases change them later.
+- **Every other page**: keep **prerender** (what crawlers already see). Registry + `usePageSEO` + page `<h1>` all read `src/seo/pages.ts`.
+
+| path | prerender title / H1 (pre-unification) | runtime title / H1 (pre-unification) | kept |
+|------|----------------------------------------|--------------------------------------|------|
+| `/` | Concrete & Sewer Line Contractor Oklahoma City \| FDZ Construction LLC / One Crew. Concrete & Sewer Line Done Right. | (homepage SPA varied) | prerender (Phase 3/4 later) |
+| `/driveways-oklahoma-city` | Concrete Driveways Oklahoma City \| FDZ Construction LLC / Concrete Driveway Installation in Oklahoma City, OK | …Installation & Replacement… / Concrete Driveway Installation & Replacement… | **prerender** |
+| `/patios-oklahoma-city` | Patios & Stamped Concrete Oklahoma City \| FDZ Construction / Patios, Slabs & Stamped Concrete in Oklahoma City | same title / Concrete Patios, Slabs & Stamped Concrete OKC. | **prerender** |
+| `/sidewalks-oklahoma-city` | Concrete Sidewalks, Curb & Gutter Oklahoma City \| FDZ Construction LLC / Sidewalks, Curb & Gutter in Oklahoma City | same title / Concrete Sidewalks, Curb & Gutter Oklahoma City. | **prerender** |
+| `/ada-concrete-ramps-oklahoma-city` | ADA Concrete Ramps Oklahoma City \| FDZ Construction / ADA Concrete Ramps in Oklahoma City | same title / ADA Ramps & Concrete Compliance in Oklahoma City. | **prerender** |
+| `/parking-lots-oklahoma-city` | Concrete Parking Lot Contractors… / Concrete Parking Lot Contractors in Oklahoma City, OK. | same | **Phase 1 new**: title `New Concrete Parking Lots in Oklahoma City \| FDZ`; H1 `Concrete Parking Lot Construction in Oklahoma City` |
+| `/industrial-concrete-repair-oklahoma-city` | Industrial Concrete Repair Oklahoma City \| FDZ Construction LLC / …in Oklahoma City, OK | same title / …in Oklahoma City. | **Phase 1**: keep title + OK H1; **new description** (forklift/spall/crack/dock-face; scheduled around operations) |
+| All other registry paths (70) | = prerender HTML | = or drifted toward SPA | **prerender** → now identical via registry |
+
+Owner review: confirm the kept column, especially Phase 3/4 candidates that still use prerender wording.
+
+## 2. seo-check — before baseline
+
+First `--dist` run after wiring the registry (before H1 keep-table alignment):
+
+```
+FAIL  /patios-oklahoma-city
+  H1: got "Patios, Slabs & Stamped Concrete in Oklahoma City"
+       want "Concrete Patios, Slabs & Stamped Concrete OKC"
+FAIL  /sidewalks-oklahoma-city
+  H1: got "Sidewalks, Curb & Gutter in Oklahoma City"
+       want "Concrete Sidewalks, Curb & Gutter Oklahoma City"
+
+74/76 passed (2 failed)
+```
+
+Root cause: registry initially used former SPA H1s; prerender bodies already had the crawler H1s. Fixed by keeping prerender H1s in the registry (per keep rule above).
+
+Pre-Phase-1 (from `SEO_RECON.md`): SPA `useSEO` / page props often disagreed with prerender HTML on driveways, patios, sidewalks, ADA, parking, industrial — Google saw prerender; JS hydration swapped tags.
+
+## 3. Redirects, 404, historical URLs
+
+### Multi-segment trailing slashes
+
+Added above the single-segment rule in `public/_redirects`:
+
+```
+/blog/:slug/ /blog/:slug 301
+/:page/ /:page 301
+```
+
+No `/* /index.html 200` catch-all (already absent). Soft-404 risk avoided.
+
+### Client-only routes (kept; do not remove)
+
+SPA fallbacks that must stay (not every app route is prerendered):
+
+| rule | purpose |
+|------|---------|
+| `/admin`, `/admin/`, `/admin/*` → `/index.html` 200 | admin app |
+| `/quote/:id` → `/quote` 200 | quote viewer (pretty URL; avoids `/index.html` 308→`/` trap) |
+
+Stopped here for catch-all removal: those client-only routes remain; no sitewide `/*` SPA fallback was present to delete.
+
+### Follow-up: keep admin/quote out of the index
+
+| control | status |
+|---------|--------|
+| `public/_headers` `X-Robots-Tag: noindex, nofollow` on `/admin`, `/admin/*`, `/quote`, `/quote/*` | added |
+| `sitemap.xml` contains `/admin` or `/quote` | none (verified) |
+| `robots.txt` `Disallow: /admin` | already present; **not** Disallow `/quote/` (so crawlers can see the noindex header) |
+| Registry | `/quote` is `noindex: true`; admin is not a registry/prerender route |
+
+### Real 404s
+
+`public/404.html` (and build output): `noindex`, links to home, key services, estimate form (`/#estimate`).
+
+### Historical sidewalk / cement / ADA (recon item 8)
+
+All historical URLs already 301 in `_redirects` / `App.tsx` to the two live pages or related commercial curb page. **No additional historical sidewalk/cement/ADA slugs found in code** beyond those already redirected. Cement-as-route: none found in code.
+
+## 4. Content changes (Phase 1)
+
+### `/parking-lots-oklahoma-city`
+
+- Title / H1 / description: new-construction + full replacement only (no “repair” in meta).
+- Former “Parking Lot Repair and Partial Replacement” → short bridge + link **concrete parking lot repair** → `/concrete-parking-lot-repair-oklahoma-city`.
+- Kept **Full Parking Lot Replacement**.
+
+### `/industrial-concrete-repair-oklahoma-city`
+
+- Removed duplicate Commercial Services card list (`serviceCards: undefined`).
+- H2 renamed to **Industrial Floor and Dock Repairs We Handle**.
+- Description + intro: forklift joint, spall, crack, dock-face; scheduled around operations — no “fast return to service” / rapid-response marketing.
+
+## 5. seo-check — after
+
+```
+npm run build
+npm run seo-check -- --dist
+→ 76/76 passed (0 failed)
+```
+
+Re-run after admin/quote noindex headers follow-up (2026-09-29): **76/76 passed (0 failed)** again.
+Warnings only (title > 60 or description outside 140–160 on many long-tail pages; Phase 3/4 may shorten). Full transcript saved during verify as `seo-check-after.txt` then folded here:
+
+- **PASS** including `/parking-lots-oklahoma-city` (clean title/desc/H1/canonical).
+- **WARN** examples: `/` title 69; `/driveways-oklahoma-city` desc 168; `/retaining-walls-wichita` desc 161; `/builders` / `/quote` short noindex-style desc.
+- Registry ↔ `dist/**/*.html` coverage: no orphans.
+- Exactly one `<h1>` per checked file; LD+JSON parses; no trailing-slash internal hrefs (except `/` / `#`).
+
+## 6. Request indexing
+
+Submit in Google Search Console (changed or newly corrected canonicals):
+
+1. `https://fdzconstruction.com/parking-lots-oklahoma-city`
+2. `https://fdzconstruction.com/concrete-parking-lot-repair-oklahoma-city` (inbound link target from parking page)
+3. `https://fdzconstruction.com/industrial-concrete-repair-oklahoma-city`
+4. `https://fdzconstruction.com/blog/cost-of-concrete-oklahoma-city-2026` (slash URL should 301; confirm preferred no-slash)
+5. `https://fdzconstruction.com/driveways-oklahoma-city`
+6. `https://fdzconstruction.com/patios-oklahoma-city`
+7. `https://fdzconstruction.com/sidewalks-oklahoma-city`
+8. `https://fdzconstruction.com/ada-concrete-ramps-oklahoma-city`
+9. `https://fdzconstruction.com/` (unified head tags)
+
+Optional bulk: any other registry URL that previously showed SPA/prerender title mismatch in Search Console.
+
+## 7. Post-deploy command (owner)
+
+```bash
+npm run seo-check -- --live https://fdzconstruction.com
+```
+
+Expects: path → 200; `path/` → one 301/308 to path; `path.html` → redirect or 404 (not 200 duplicate); blog cost article slash → no-slash; unknown path → 404.

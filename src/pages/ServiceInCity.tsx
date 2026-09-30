@@ -5,43 +5,53 @@ import FinalCTA from "@/components/FinalCTA";
 import MailtoLink from "@/components/MailtoLink";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
-import { useSEO } from "@/hooks/useSEO";
+import { useSEO, usePageSEO } from "@/hooks/useSEO";
 import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
-import { canonicalUrl } from "@/lib/siteUrl";
 import { withoutCrawlableEmail } from "@/lib/contact";
 import { serviceInCityPages } from "@/content/serviceInCityPages";
 
 export default function ServiceInCity({ slug }: { slug: string }) {
   const d = serviceInCityPages[slug];
-  useFaqJsonLd(d?.faq);
+  if (!d) return <ServiceInCityMissing />;
+  return <ServiceInCityBody path={d.path} slug={slug} />;
+}
+
+function ServiceInCityMissing() {
+  useFaqJsonLd(undefined);
   useSEO({
-    title: d?.metaTitle || "Page not found | FDZ Construction LLC",
-    description: d?.metaDescription || "That page does not exist.",
-    canonical: d ? canonicalUrl(d.path) : undefined,
-    noindex: !d,
-    og: d
-      ? { title: d.metaTitle, description: d.metaDescription, type: "website", url: canonicalUrl(d.path) }
-      : undefined,
+    title: "Page not found | FDZ Construction LLC",
+    description: "That page does not exist.",
+    noindex: true,
   });
-  if (!d) {
-    return (
-      <main className="page-hero">
-        <h1>Page Not Found</h1>
-        <Link to="/" className="btn-primary mt-8">← Back home</Link>
-      </main>
-    );
-  }
+  return (
+    <main className="page-hero">
+      <h1>Page Not Found</h1>
+      <Link to="/" className="btn-primary mt-8">
+        ← Back home
+      </Link>
+    </main>
+  );
+}
+
+function ServiceInCityBody({ path, slug }: { path: string; slug: string }) {
+  const d = serviceInCityPages[slug]!;
+  useFaqJsonLd(d.faq);
+  const seo = usePageSEO(path);
 
   return (
     <main>
       <section className="page-hero">
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">{d.eyebrow}</span>
-        <h1 className="max-w-[820px] mb-5">{d.h1Lead}<br/><span className="text-orange">{d.h1Accent}</span></h1>
+        <h1 className="max-w-[820px] mb-5">{seo.h1}</h1>
         <p className="prose-muted max-w-[680px] mb-8" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(d.heroBlurbHtml) }} />
         <div className="flex gap-4 flex-wrap">
-          <Link to="/#estimate" className="btn-primary">Get Free Estimate →</Link>
-          <a href="tel:4054584805" className="btn-outline">📞 (405) 458-4805</a>
+          <Link to="/#estimate" className="btn-primary">
+            Get Free Estimate →
+          </Link>
+          <a href="tel:4054584805" className="btn-outline">
+            📞 (405) 458-4805
+          </a>
         </div>
       </section>
       <TrustBar />
@@ -49,7 +59,11 @@ export default function ServiceInCity({ slug }: { slug: string }) {
       <ScrollReveal>
         <section className="section-padding">
           <div className="section-eye">The Real Failure Mode</div>
-          <h2 className="mb-4">{d.problemTitle}<br/><em className="h2-accent">{d.problemAccent}</em></h2>
+          <h2 className="mb-4">
+            {d.problemTitle}
+            <br />
+            <em className="h2-accent">{d.problemAccent}</em>
+          </h2>
           {d.problemHtml.map((p, i) => (
             <p key={i} className="prose-muted mb-4 max-w-[820px]" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(p) }} />
           ))}

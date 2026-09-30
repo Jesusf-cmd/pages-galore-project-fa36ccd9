@@ -509,10 +509,8 @@ export default function CityPage({ slug }: { slug: string }) {
     <CityPageTemplate
       city={data.city}
       county={data.county}
-      canonicalUrl={pageUrl}
+      seoPath={routePath}
       heroBlurb={data.heroBlurb}
-      heroTitle={data.heroTitle}
-      heroTitleAccent={data.heroTitleAccent}
       intro={data.intro}
       localTerrainNote={data.localTerrainNote}
       driveTimeNote={data.driveTimeNote}
@@ -520,8 +518,6 @@ export default function CityPage({ slug }: { slug: string }) {
       linkedServices={data.linkedServices}
       faq={data.faq}
       nearbyLinks={NEARBY[slug]}
-      metaTitle={data.metaTitle}
-      metaDescription={data.metaDescription}
       sewerSection={data.sewerSection}
       sewerLocalNote={data.sewerLocalNote}
       whyFdzSection={data.whyFdzSection}

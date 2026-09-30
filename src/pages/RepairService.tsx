@@ -4,44 +4,54 @@ import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import InternalLinksHub from "@/components/InternalLinksHub";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
-import { useSEO } from "@/hooks/useSEO";
+import { usePageSEO, useSEO } from "@/hooks/useSEO";
 import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
-import { canonicalUrl } from "@/lib/siteUrl";
 import { repairPages } from "@/content/repairPages";
 
 const data = repairPages;
 
 export default function RepairService({ slug }: { slug: string }) {
   const d = data[slug];
-  useFaqJsonLd(d?.faq);
+  if (!d) return <RepairMissing />;
+  return <RepairBody path={d.path} slug={slug} />;
+}
+
+function RepairMissing() {
+  useFaqJsonLd(undefined);
   useSEO({
-    title: d?.metaTitle || "Page not found | FDZ Construction LLC",
-    description: d?.metaDescription || "That page does not exist.",
-    canonical: d ? canonicalUrl(d.path) : undefined,
-    noindex: !d,
-    og: d
-      ? { title: d.metaTitle, description: d.metaDescription, type: "website", url: canonicalUrl(d.path) }
-      : undefined,
+    title: "Page not found | FDZ Construction LLC",
+    description: "That page does not exist.",
+    noindex: true,
   });
-  if (!d) {
-    return (
-      <main className="page-hero">
-        <h1>Page Not Found</h1>
-        <Link to="/" className="btn-primary mt-8">← Back home</Link>
-      </main>
-    );
-  }
+  return (
+    <main className="page-hero">
+      <h1>Page Not Found</h1>
+      <Link to="/" className="btn-primary mt-8">
+        ← Back home
+      </Link>
+    </main>
+  );
+}
+
+function RepairBody({ path, slug }: { path: string; slug: string }) {
+  const d = data[slug]!;
+  useFaqJsonLd(d.faq);
+  const seo = usePageSEO(path);
 
   return (
     <main>
       <section className="page-hero">
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">{d.eyebrow}</span>
-        <h1 className="max-w-[820px] mb-5">{d.h1Lead}<br/><span className="text-orange">{d.h1Accent}</span></h1>
+        <h1 className="max-w-[820px] mb-5">{seo.h1}</h1>
         <p className="prose-muted max-w-[680px] mb-8" dangerouslySetInnerHTML={{ __html: d.heroBlurbHtml }} />
         <div className="flex gap-4 flex-wrap">
-          <Link to="/#estimate" className="btn-primary">Free On-Site Evaluation →</Link>
-          <a href="tel:4054584805" className="btn-outline">📞 (405) 458-4805</a>
+          <Link to="/#estimate" className="btn-primary">
+            Free On-Site Evaluation →
+          </Link>
+          <a href="tel:4054584805" className="btn-outline">
+            📞 (405) 458-4805
+          </a>
         </div>
       </section>
       <TrustBar />
@@ -49,7 +59,11 @@ export default function RepairService({ slug }: { slug: string }) {
       <ScrollReveal>
         <section className="section-padding">
           <div className="section-eye">The Honest Conversation</div>
-          <h2 className="mb-4">{d.problemTitle}<br/><em className="h2-accent">{d.problemAccent}</em></h2>
+          <h2 className="mb-4">
+            {d.problemTitle}
+            <br />
+            <em className="h2-accent">{d.problemAccent}</em>
+          </h2>
           {d.problemHtml.map((p, i) => (
             <p key={i} className="prose-muted mb-4 max-w-[820px]" dangerouslySetInnerHTML={{ __html: p }} />
           ))}

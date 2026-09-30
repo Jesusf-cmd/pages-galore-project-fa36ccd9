@@ -5,7 +5,7 @@ export default function ParkingLotConcrete() {
     <ServicePage
       enriched
       currentServiceSlug="parking-lots-oklahoma-city"
-      localExpertiseNote="OKC's expansive clay subgrade moves with moisture — if the sub-base wasn't properly compacted and the slab wasn't designed for that movement, parking lot failure starts from below the surface, not above it. We evaluate sub-base conditions before recommending repair or replacement."
+      localExpertiseNote="OKC's expansive clay subgrade moves with moisture — if the sub-base wasn't properly compacted and the slab wasn't designed for that movement, parking lot failure starts from below the surface, not above it. We evaluate sub-base conditions before recommending a new pour or full replacement."
       subServices={{
         sectionEyebrow: "Service Types",
         sectionTitle: "Concrete Parking Lot Services in Oklahoma City",
@@ -24,13 +24,10 @@ export default function ParkingLotConcrete() {
             ],
           },
           {
-            title: "Parking Lot Repair and Partial Replacement",
+            title: "Parking lot repair",
             bullets: [
-              "Section removal and replacement for cracked or failed areas",
-              "Joint sealing to prevent water intrusion and further deterioration",
-              "Surface restoration where full replacement isn't warranted",
-              "We assess the sub-base condition before recommending repair vs. replacement — OKC's expansive clay can cause slab failure from below, not just surface wear",
-              "For panel replacement, joint sealing, and trip hazards on existing lots, see <a href='/concrete-parking-lot-repair-oklahoma-city'>concrete parking lot repair</a>",
+              "Most cracked or settled panels on an existing lot belong on our dedicated repair page — not a full rebuild.",
+              'For panel replacement, joint sealing, and trip hazards, see <a href="/concrete-parking-lot-repair-oklahoma-city">concrete parking lot repair</a>.',
             ],
           },
           {
@@ -72,15 +69,15 @@ export default function ParkingLotConcrete() {
           },
         ],
       }}
-      metaTitle="Concrete Parking Lot Contractors Oklahoma City | FDZ Construction LLC"
-      metaDescription="Commercial concrete parking lot installation and repair in Oklahoma City. ADA-compliant layouts, 4,000+ PSI mix, curb and gutter, striping coordination. Licensed, bonded, insured. Call (405) 458-4805."
+      metaTitle="New Concrete Parking Lots in Oklahoma City | FDZ"
+      metaDescription="New concrete parking lot construction and full replacement in Oklahoma City. ADA layouts, 4,000+ PSI pours, curb and gutter. Call (405) 458-4805."
       eyebrow="OKC Metro · Commercial Parking Lots · Licensed & Insured"
       badge="self-performed"
-      title="Concrete Parking Lot Contractors in"
-      titleAccent="Oklahoma City, OK."
-      description='Commercial concrete parking lot installation, repair, and replacement — ADA-compliant layouts, 4,000+ PSI mix, curb and gutter. Serving OKC metro. <a href="tel:4054584805">(405) 458-4805</a>.'
+      title="Concrete Parking Lot Construction in"
+      titleAccent="Oklahoma City."
+      description='New concrete parking lot construction and full replacement — ADA-compliant layouts, 4,000+ PSI mix, curb and gutter. Serving OKC metro. <a href="tel:4054584805">(405) 458-4805</a>.'
       modelNote="This is self-performed work — our own crew and equipment handle every parking lot project from start to finish, with no subcontracted labor."
-      introText="<strong>A failed parking lot doesn't just look bad — it costs your business in liability claims, ADA violations, and customer turnover.</strong> Crumbling apron edges, ponding water that ices in winter, missing ADA-compliant stalls, faded striping over hairline cracks — every one of these is solvable upstream with the right base prep, drainage, joint layout, and PSI for the loads you actually carry. We pour and rebuild commercial parking lots across the OKC metro for property managers, business owners, and GCs. Engineered base, 4,000+ PSI mix, ADA-compliant layout, curb and gutter to city spec, striping coordination. Licensed, bonded, and insured in Oklahoma — COI and bonding documentation as part of the bid process."
+      introText="<strong>A failed parking lot doesn't just look bad — it costs your business in liability claims, ADA violations, and customer turnover.</strong> We design and pour new commercial parking lots and full replacements across the OKC metro for property managers, business owners, and GCs. Engineered base, 4,000+ PSI mix, ADA-compliant layout, curb and gutter to city spec, striping coordination. Licensed, bonded, and insured in Oklahoma — COI and bonding documentation as part of the bid process."
       serviceLabel="Parking Lot"
       serviceCards={[
         {

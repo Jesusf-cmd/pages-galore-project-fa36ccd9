@@ -17,3 +17,16 @@
 
 /llms.txt
   Cache-Control: public, max-age=3600, must-revalidate
+
+# Client-only app routes — keep out of search indexes
+/admin
+  X-Robots-Tag: noindex, nofollow
+
+/admin/*
+  X-Robots-Tag: noindex, nofollow
+
+/quote
+  X-Robots-Tag: noindex, nofollow
+
+/quote/*
+  X-Robots-Tag: noindex, nofollow

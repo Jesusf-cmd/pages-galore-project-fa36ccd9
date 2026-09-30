@@ -22,7 +22,7 @@ import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
 import TradeBadge from "@/components/TradeBadge";
 import MailtoLink from "@/components/MailtoLink";
-import { useSEO } from "@/hooks/useSEO";
+import { usePageSEO } from "@/hooks/useSEO";
 import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
 import { supabase } from "@/integrations/supabase/client";
 import FAQ from "@/components/FAQ";
@@ -45,23 +45,13 @@ const homeFAQ = [
 ];
 
 export default function Index() {
-  useSEO({
-    title: "Concrete & Sewer Line Contractor Oklahoma City | FDZ Construction LLC",
-    description: "Oklahoma City concrete & sewer line contractor. One crew self-performs every job — driveways, slabs, foundations & sewer repair. Call (405) 458-4805.",
-    canonical: "https://fdzconstruction.com/",
-    og: {
-      title: "Concrete & Sewer Line Contractor Oklahoma City | FDZ Construction LLC",
-      description: "One crew handles concrete and sewer line work across the OKC metro. Free estimates. Call (405) 458-4805.",
-      type: "website",
-      url: "https://fdzconstruction.com/",
-    },
-  });
+  const seo = usePageSEO("/");
 
   useFaqJsonLd(homeFAQ);
 
   return (
     <main>
-      <HeroSection />
+      <HeroSection h1={seo.h1} />
       <TrustBar />
       <AboutSection />
       <ScrollReveal>
@@ -129,7 +119,7 @@ export default function Index() {
   );
 }
 
-function HeroSection() {
+function HeroSection({ h1 }: { h1: string }) {
   return (
     <section className="grid grid-cols-1 nav:grid-cols-[1.15fr_0.85fr] gap-6 nav:gap-12 px-4 md:px-12 pt-20 pb-8 md:pt-32 md:pb-16 nav:min-h-screen relative overflow-hidden" style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}>
       {/* Background image */}
@@ -142,7 +132,7 @@ function HeroSection() {
         <div>
           <span className="eyebrow mb-3 md:mb-5 block text-[0.6rem] md:text-xs">Oklahoma City Concrete &amp; Sewer Line · Licensed &amp; Insured · Locally Owned</span>
           <h1 className="mb-4 md:mb-6" style={{ fontSize: "clamp(1.9rem, 5vw, 5.2rem)", lineHeight: 1.0 }}>
-            One Crew. Concrete &amp; Sewer Line Done Right.
+            {h1}
           </h1>
           <p className="text-sm md:text-base text-muted-text max-w-[460px] mb-5 md:mb-7 leading-[1.7] font-light">
             FDZ Construction self-performs every concrete and sewer line job in the OKC metro — our own crew, our own equipment, start to finish. No subcontractors, ever. Call (405) 458-4805 for a free estimate.

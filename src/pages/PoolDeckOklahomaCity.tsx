@@ -4,34 +4,20 @@ import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import MailtoLink from "@/components/MailtoLink";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
-import { useSEO } from "@/hooks/useSEO";
+import { usePageSEO } from "@/hooks/useSEO";
 import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
-import { canonicalUrl } from "@/lib/siteUrl";
 import { poolDeckContent as d } from "@/content/pages/pool-deck";
 
 export default function PoolDeckOklahomaCity() {
   useFaqJsonLd(d.faq);
-  useSEO({
-    title: d.metaTitle,
-    description: d.metaDescription,
-    canonical: canonicalUrl(d.path),
-    og: {
-      title: d.metaTitle,
-      description: d.ogDescription,
-      type: "website",
-      url: canonicalUrl(d.path),
-    },
-  });
+  const seo = usePageSEO(d.path);
 
   return (
     <main>
       <section className="page-hero">
         <div className="hero-glow" />
         <span className="eyebrow mb-5 block">{d.eyebrow}</span>
-        <h1 className="max-w-[820px] mb-5">
-          {d.h1Lead}<br />
-          <span className="text-orange">{d.h1Accent}</span>
-        </h1>
+        <h1 className="max-w-[820px] mb-5">{seo.h1}</h1>
         <p className="prose-muted max-w-[680px] mb-4">{d.heroParagraphs[0]}</p>
         <p className="prose-muted max-w-[680px] mb-8">
           Call <a href="tel:4054584805" className="text-orange no-underline font-semibold">(405) 458-4805</a> for a free on-site estimate. Licensed, bonded, and insured in Oklahoma.

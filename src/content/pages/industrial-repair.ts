@@ -3,25 +3,18 @@ import type { ServicePageContent } from "../servicePageTypes";
 export const industrialRepairContent: ServicePageContent = {
   currentServiceSlug: "industrial-concrete-repair-oklahoma-city",
   metaTitle: "Industrial Concrete Repair Oklahoma City | FDZ Construction LLC",
-  metaDescription: "Industrial concrete repair in Oklahoma City — forklift damage, spalling, joint failure, dock repairs. Fast return to service. Licensed &amp; insured. Call (405) 458-4805.",
+  metaDescription: "Industrial concrete repair in Oklahoma City — forklift joints, spalls, cracks, and dock-face repair, scheduled around operations. Call (405) 458-4805.",
   eyebrow: "OKC Metro · Industrial Concrete Repair · Licensed & Insured",
   title: "Industrial Concrete Repair in",
   titleAccent: "Oklahoma City.",
-  description: 'Fast, durable industrial concrete repair for warehouses, loading docks, and manufacturing facilities. Call <a href="tel:4054584805">(405) 458-4805</a> to schedule.',
-  introText: "Industrial floors and loading docks take punishment that residential concrete never sees — forklifts, pallet jacks, chemical spills, heavy point loads, and constant traffic. When damage appears, slow response makes it worse and more expensive. FDZ provides rapid industrial concrete repair using materials rated for heavy industrial environments and methods matched to the type and extent of damage. Call (405) 458-4805 to discuss rapid response scheduling.",
+  description: 'Industrial concrete repair for warehouses, loading docks, and manufacturing facilities — scheduled around your operations. Call <a href="tel:4054584805">(405) 458-4805</a>.',
+  introText: "Industrial floors and loading docks take punishment that residential concrete never sees — forklifts, pallet jacks, chemical spills, heavy point loads, and constant traffic. When damage appears, delaying work makes it worse and more expensive. FDZ provides industrial concrete repair using materials rated for heavy industrial environments and methods matched to the type and extent of damage. Call (405) 458-4805 to schedule repairs around your operations.",
   localExpertiseNote: "Industrial facilities in Oklahoma City also deal with OKC's soil-related damage mechanisms — clay-induced sub-base settlement, moisture infiltration through failed joints during wet Oklahoma winters, and freeze-thaw cycling that enlarges existing cracks. FDZ evaluates whether damage is surface-only or driven by sub-base movement before recommending repair methods.",
   serviceLabel: "Commercial",
-  serviceCards: [
-        { icon: "🔧", title: "Forklift Damage Repair", description: "Joint spalling from forklift impact is the most common industrial floor failure. FDZ fills and reinforces joints and installs armored joint systems where needed." },
-        { icon: "🪨", title: "Spalling & Surface Repair", description: "Delamination from freeze-thaw, chemical exposure, or rebar corrosion. Polymer-modified patching materials rated for industrial loads." },
-        { icon: "🔲", title: "Joint Replacement", description: "Failed joint sealant allows water to reach sub-base. Catching joint failure early prevents far more expensive repair later." },
-        { icon: "〰️", title: "Crack Repair", description: "Epoxy injection for structural cracks. Routing and sealing for working cracks. Repair method matched to crack classification." },
-        { icon: "🏭", title: "Loading Dock Face Repair", description: "Dock face spalling from trailer impact and bumper wear. High-strength patching with dock height verification after repair." },
-        { icon: "📐", title: "Full-Depth Panel Repair", description: "For areas beyond surface repair. Saw-cut panel boundaries, full-depth removal, sub-base inspection, and flush new pour." },
-      ],
+  serviceCards: undefined,
   subServices: {
         sectionEyebrow: "Repair Services",
-        sectionTitle: "What We Repair",
+        sectionTitle: "Industrial Floor and Dock Repairs We Handle",
         items: [
           {
             title: "Forklift Damage Repair",
@@ -99,7 +92,7 @@ export const industrialRepairContent: ServicePageContent = {
           titleAccent: "Cost Ranges.",
           content: [
             "Industrial concrete repair pricing varies widely based on damage type, area, and repair method required.",
-            "For rapid response or after-hours scheduling, call (405) 458-4805.",
+            "For after-hours or phased scheduling around your operations, call (405) 458-4805.",
           ],
           table: {
             headers: ["Repair Type", "Typical Range"],

@@ -107,7 +107,7 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "href='/soil-stabilization-oklahoma-city'",
   ],
   "/industrial-concrete-repair-oklahoma-city": [
-    "What We Repair",
+    "Industrial Floor and Dock Repairs We Handle",
     "href='/commercial-concrete-oklahoma-city'",
     "href='/loading-dock-concrete-repair-oklahoma-city'",
     "href='/warehouse-slab-repair-oklahoma-city'",
@@ -342,13 +342,14 @@ describe("prerender content parity for priority routes", () => {
 
   it("links parking lot construction repair copy to the dedicated repair page", () => {
     const body = getPrerenderBody("/parking-lots-oklahoma-city") ?? "";
-    const section = body.indexOf("Parking Lot Repair and Partial Replacement");
+    const section = body.indexOf("Parking lot repair");
     const repairLink = body.indexOf('href="/concrete-parking-lot-repair-oklahoma-city"');
     const fullReplacement = body.indexOf("Full Parking Lot Replacement");
     expect(section).toBeGreaterThan(-1);
     expect(repairLink).toBeGreaterThan(section);
     expect(fullReplacement).toBeGreaterThan(repairLink);
     expect(body).toContain(">concrete parking lot repair</a>");
+    expect(body).not.toContain("Parking Lot Repair and Partial Replacement");
   });
 
   it("keeps crawler H1s that differ from React titles", () => {
