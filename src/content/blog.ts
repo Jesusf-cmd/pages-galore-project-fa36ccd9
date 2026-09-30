@@ -93,7 +93,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "The Short Answer: $6–$10 Per Square Foot",
         content: [
-          "These figures are planning ranges for typical Oklahoma City work — not a final proposal. Standard residential concrete in OKC — work from <a href='/driveways-oklahoma-city' class='text-orange no-underline'>concrete driveway contractors in OKC</a>, broom patios, garage slabs — runs $6–$10 per square foot installed. Foundation work runs $9–$14. <a href='/patios-oklahoma-city' class='text-orange no-underline'>stamped concrete patios</a> run $15–$22.",
+          "These figures are planning ranges for typical Oklahoma City work — not a final proposal. Standard residential concrete in OKC — driveways, broom-finish patios, garage slabs — runs $6–$10 per square foot installed; see our <a href='/driveways-oklahoma-city' class='text-orange no-underline'>concrete driveway contractors in OKC</a> page for driveway specifics. Foundation work runs $9–$14. For decorative work, <a href='/patios-oklahoma-city' class='text-orange no-underline'>stamped concrete patios</a> run $15–$22.",
           "A written estimate is based on a site visit: soil, access, grade, thickness, and scope. The estimator on this site is a planning tool, not a commercial bid. <a href='/?from=cost-of-concrete-oklahoma-city-2026#estimate' class='text-orange no-underline'>Request a concrete estimate</a> or call <a href='tel:4054584805'>(405) 458-4805</a>.",
         ],
       },
