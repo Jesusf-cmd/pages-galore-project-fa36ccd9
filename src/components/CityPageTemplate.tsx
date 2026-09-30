@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import TrustBar from "@/components/TrustBar";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
+import EstimateForm from "@/components/EstimateForm";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { usePageSEO } from "@/hooks/useSEO";
 import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
@@ -298,6 +299,25 @@ export default function CityPageTemplate({
       )}
 
       <InternalLinksHub showCities={false} />
+
+      <ScrollReveal>
+        <section id="estimate" className="section-padding section-alt">
+          <div className="section-eye">Free Estimate</div>
+          <h2 className="mb-4">
+            Request a Quote
+            <br />
+            <em className="h2-accent">for {city}.</em>
+          </h2>
+          <p className="prose-muted mb-6 max-w-[760px]">
+            Planning range first — a written estimate follows an on-site visit. Call{" "}
+            <a href="tel:4054584805" className="text-orange no-underline">
+              (405) 458-4805
+            </a>
+            .
+          </p>
+          <EstimateForm fromPath={seoPath} />
+        </section>
+      </ScrollReveal>
 
       <FinalCTA />
     </main>
