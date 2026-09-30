@@ -1,3 +1,136 @@
+# SEO hand-off (Phases 0–6)
+
+**Last deploy before Phase 6 QA:** `ff8f460`. Phase 6 **FIX** shortened 33 template titles (`… | FDZ Construction [LLC]` → `| FDZ`) — deploy required so live titles match dist.
+
+## What changed per phase
+
+| Phase | What shipped |
+|-------|----------------|
+| 0 | `SEO_RECON.md` (read-only stack/routing/risk report) |
+| 1 | SEO registry (`pages.ts` / `registry.json`), `seo-check`, redirects/404/headers, parking + industrial intent cleanup |
+| 2 | Shared EstimateForm + lead fields/`from`, TrustBar, projects data, LocalBusiness schema, `generate_lead` / `phone_click` dataLayer, submit-quote spam compat |
+| 2b | React prerender for 13 priority routes; one business JSON-LD entity |
+| 3 | Homepage + `/oklahoma-city-concrete` retarget for “concrete contractors OKC”; GC trade pages unpublished |
+| 3b | Build order `build:ssr && vite build`; Cache-Control; GC paths → 410 |
+| 4 | Driveways + patios near-win copy/H2 topics; React render |
+| 5 | Cost-article hub links, sidewalks light touch, Yukon parking link; cost short-answer clarify (`ff8f460`) |
+| 6 | QA + hand-off docs; template title length FIX; no render-mode switches |
+
+## Request indexing (full list — Search Console)
+
+1. `/`
+2. `/oklahoma-city-concrete`
+3. `/driveways-oklahoma-city`
+4. `/patios-oklahoma-city`
+5. `/sidewalks-oklahoma-city`
+6. `/ada-concrete-ramps-oklahoma-city`
+7. `/parking-lots-oklahoma-city`
+8. `/concrete-parking-lot-repair-oklahoma-city`
+9. `/industrial-concrete-repair-oklahoma-city`
+10. `/blog/cost-of-concrete-oklahoma-city-2026`
+11. `/blog/why-concrete-driveways-crack-oklahoma`
+12. `/blog/rebar-vs-wire-mesh-concrete-slabs`
+13. `/yukon-oklahoma-concrete`
+14. `/sewer-line-repair-oklahoma-city`
+
+Also request indexing for any template URL whose title shortened in Phase 6 after deploy (see `SEO_HEAD_REPORT.md`).
+
+## GTM events to map
+
+| Event | When | Key fields |
+|-------|------|------------|
+| `generate_lead` | Estimate form submit success | `from`, lead field payload |
+| `phone_click` | `tel:` click via `trackPhoneClick` | `link_location` (path) |
+
+Container: `GTM-TGRCW89C` (in `index.html`).
+
+## Companion docs
+
+- [SEO_HEAD_REPORT.md](./SEO_HEAD_REPORT.md) — title/meta/H1/canonical + flags
+- [OWNER_TODO.md](./OWNER_TODO.md) — every `TODO(FDZ)` for the owner
+- [PHASE6_TEMPLATE_BATCH.md](./PHASE6_TEMPLATE_BATCH.md) — 56 template routes still to port (days 31–60; **do not switch in Phase 6**)
+
+---
+
+# SEO Changelog — Phase 6 (QA and hand-off)
+
+Date: 2026-09-30
+
+## 1. Full check
+
+```
+npm run build
+npm run seo-check -- --dist
+→ 72/72 passed (0 failed)
+
+npm run seo-check -- --live https://fdzconstruction.com
+→ live probes done — 0 failed
+```
+
+(Pre-title-FIX live check on `ff8f460`. Post-deploy re-run after template title FIX.)
+
+## 2. Head-tag FIX
+
+- Exact duplicate titles / metas / H1s: **none**
+- Template titles > 60: shortened **33** registry titles (`FDZ Construction` / `FDZ Construction LLC` → `FDZ` in brand suffix)
+- React titles > 60, meta length, off-owner cluster phrases: **owner review** in `SEO_HEAD_REPORT.md` (not retitled)
+
+## 3. Crawl hygiene
+
+- Sitemap lists exactly the **69** indexable registry paths — no `/admin`, `/quote`, noindex, retired GC, or `/our-approach`
+- Every sitemap URL → **200** with self-referencing canonical (0 failures)
+- Retired GC paths → **410**; unknown → **404**; trailing-slash and `.html` → one-hop redirect
+- `robots.txt` Disallow `/admin` only — does not block sitemap URLs
+- Exactly **one** business-type JSON-LD site-wide (**2** pages emit the full node: `/` and `/oklahoma-city-concrete`); FAQPage questions match visible FAQ on driveways/patios/sidewalks/sewer
+- HTML `Cache-Control: public, max-age=0, must-revalidate`; `/assets/*` immutable one-year
+
+## 4. Template batch
+
+56 routes still `render: 'template'` — all **port first** (none safe). See `PHASE6_TEMPLATE_BATCH.md`.
+
+## 5. Owner TODOs + dist
+
+See `OWNER_TODO.md`. Dist HTML: **0** visible `TODO(FDZ)` strings.
+
+## 6. Invented-content audit (`1f7fff7~1`..HEAD)
+
+| Category | Finding |
+|----------|---------|
+| Ratings / testimonials / client logos | No new star ratings invented. Pre-Phase-0 TrustBar had hard-coded “5-Star Google Rated”; Phase 2+ only shows rating when `googleRating` prop set (`TODO(FDZ)`). Named jobs (Star Spencer, Yukon lot, Guthrie ramp) were already on `/our-projects`. |
+| Awards / memberships | Lucide `Award` icon used for **2-year warranty** label (not a membership claim). No Angie/HomeAdvisor/chamber claims added. |
+| Prices / % | Dollar ranges in sewer, skid steer, excavator, ADA, curb, cost article, equipment pads — **pre-existing** planning/estimate bands (Phase 5 reused `$6–$10` / stamped bands already on site). ADA slope % are code specs, not marketing claims. |
+| License | “Licensed, bonded & insured” wording pre-existed; no new license numbers invented. |
+| Forbidden trades | HVAC/plumbing/electrical/**24/7 multi-trade** service pages **unpublished** (410). Remaining “HVAC” / “plumbing” mentions are equipment-pad concrete or trade-coordination copy that existed before Phase 0 — not service offers. |
+
+**FIX:** none required beyond prior phase unpublish. No new invented ratings/prices/trade claims introduced in Phases 1–6.
+
+## 7. Forms and tracking (dev / mock — not production)
+
+Vitest `src/test/phase6-form-tracking.test.tsx` (mocked `submit-quote`):
+
+- Paths `/`, `/driveways-oklahoma-city`, `/sidewalks-oklahoma-city`
+- Payload includes `from`, `propertyType`, `customerRole`, `ownerProjectType`, `approxSize`
+- `generate_lead` pushed to `window.dataLayer`
+- `phone_click` via `trackPhoneClick` reaches dataLayer
+
+**4/4 tests passed.**
+
+## 8. Performance (Lighthouse mobile, live — report only)
+
+| URL | Perf | LCP | CLS | Weight | Flag |
+|-----|-----:|----:|----:|-------:|------|
+| `/` | 63 | 5.3s | 0 | ~711 KB | under 70 / LCP > 3s |
+| `/driveways-oklahoma-city` | 46 | 5.3s | 0.33 | ~466 KB | under 70 / LCP > 3s |
+| `/patios-oklahoma-city` | 45 | 5.4s | 0.33 | ~464 KB | under 70 / LCP > 3s |
+
+Main cause: **main-thread / unused JS** delaying LCP (~155–159 KiB unused JS opportunity; 2.4–2.9s main-thread work). Homepage also loads large hero/project WebPs (~131 KB foundation hero). CLS on service pages ~0.33 (likely late-laid-out media/fonts). Not fixed in Phase 6.
+
+## 9. Deploy note
+
+Template title FIX changes crawler-visible `<title>` → deploy + `npm run seo-check -- --live https://fdzconstruction.com`.
+
+---
+
 # SEO Changelog — Phase 1 (Technical)
 
 Date: 2026-09-29
