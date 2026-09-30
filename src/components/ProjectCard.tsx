@@ -3,9 +3,11 @@ import type { Project } from "@/data/projects";
 
 type ProjectCardProps = {
   project: Project;
+  /** Optional finish/type label (e.g. "Stamped" vs "Broom finish"). */
+  badge?: string;
 };
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, badge }: ProjectCardProps) {
   const image = project.images[0];
 
   return (
@@ -28,6 +30,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         )}
       </div>
+      {badge && (
+        <div className="text-[0.6rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">{badge}</div>
+      )}
       <h3 className="font-display text-base font-extrabold uppercase tracking-[0.04em] mb-1">
         {project.title}
       </h3>

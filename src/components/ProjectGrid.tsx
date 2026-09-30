@@ -8,6 +8,8 @@ type ProjectGridProps = {
   limit?: number;
   projects?: Project[];
   className?: string;
+  /** Optional per-project finish/type labels keyed by project id. */
+  badgeById?: Record<string, string>;
 };
 
 export default function ProjectGrid({
@@ -17,8 +19,15 @@ export default function ProjectGrid({
   limit,
   projects,
   className,
+  badgeById,
 }: ProjectGridProps) {
-  const list = projects ?? filterProjects({ service, ids, featured, limit });
+  let list = projects ?? filterProjects({ service, ids, featured, limit });
+
+  // Prefer explicit id order when provided (e.g. featured project first).
+  if (!projects && ids?.length) {
+    const byId = new Map(list.map((p) => [p.id, p]));
+    list = ids.map((id) => byId.get(id)).filter((p): p is Project => Boolean(p));
+  }
 
   if (!list.length) return null;
 
@@ -31,7 +40,7 @@ export default function ProjectGrid({
       style={className ? undefined : { border: "1px solid hsl(var(--concrete) / 0.08)" }}
     >
       {list.map((project) => (
-        <ProjectCard key={project.id} project={project} />
+        <ProjectCard key={project.id} project={project} badge={badgeById?.[project.id]} />
       ))}
     </div>
   );

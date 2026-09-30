@@ -398,3 +398,73 @@ Confirm the four retired paths PASS as 404.
 1. Pages → filter/search for “hvac”, “plumbing”, “electrical”, “emergency”.
 2. If any of those URLs were indexed → Removals → New request for each.
 
+---
+
+# SEO Changelog — Phase 4 (Driveway & patio near-wins)
+
+Date: 2026-09-30
+
+## Goal
+
+Retarget `/driveways-oklahoma-city` and `/patios-oklahoma-city` for near-win contractor / stamped keywords. Add proof (ProjectGrid), driveway spec table, stamped consolidation, FAQ honesty, on-page EstimateForm — without growing past post-2b React baselines (~2,820 driveways / ~2,490 patios).
+
+## Head tags
+
+| path | title | H1 | meta |
+|------|-------|----|------|
+| `/driveways-oklahoma-city` | Concrete Driveway Contractors Oklahoma City \| FDZ | Concrete Driveway Contractors in Oklahoma City | Leads with “concrete driveway contractors… replacement and installation”; 2-year warranty |
+| `/patios-oklahoma-city` | Stamped Concrete & Patios in Oklahoma City \| FDZ | Concrete Patio & Stamped Concrete Contractors in Oklahoma City | Leads with stamped concrete and patios in OKC |
+
+Both remain `render: "react"`. Registry synced from `src/seo/pages.ts`.
+
+## Driveways changes
+
+- H2 **Our driveway spec** (thickness, rebar/mesh by soil/load, compacted gravel, joints 8–10 ft, broom standard, 3/7/28-day cure).
+- **Recent driveway projects** → `<ProjectGrid service="driveways">` featuring `edmond-driveway`.
+- Gallery slot present in code with empty photos (renders nothing); `TODO(FDZ): add 6–10 driveway photos`.
+- **Repair or replace your driveway?** with repair vs replace columns + link anchor **driveway repair**.
+- FAQ: merged permit questions; added color-match (commercial-repair wording) and old-driveway removal (already claimed on page).
+- Links: **stamped concrete** → patios; **concrete driveway cost in OKC** → cost article; **our projects**.
+- `<TrustBar>` under H1 intro; `<EstimateForm>` at `#estimate` (replaces homepage form link-out).
+- Cut overlapping Why FDZ / soil / Get Started / serviceCards bulk for word budget.
+
+## Patios changes
+
+- H2 **Stamped concrete in OKC** consolidates pattern / color-release / sealing / freeze-thaw (patterns already named + Ashlar Slate from Norman).
+- **Recent patio projects** → `<ProjectGrid>` ids `norman-stamped-patio` (Stamped) + `moore-patio` (Broom finish).
+- Pattern gallery slot empty + `TODO(FDZ): add stamped pattern photos labeled by pattern name`.
+- Example size table 12×12 / 16×20 with broom $6–$10 and stamped $15–$22 ranges from cost guide; **Get a price for this size** → `#estimate`.
+- Links: **concrete driveways**; **concrete patio cost in Oklahoma City**; **our projects**.
+- Same TrustBar + EstimateForm placement. No separate stamped-concrete OKC page.
+
+## Word counts (parity method: `#root` minus nav/header/footer)
+
+| path | post-2b baseline | Phase 4 | status |
+|------|------------------|---------|--------|
+| `/driveways-oklahoma-city` | ~2,820 | **1,848** | ≤ baseline |
+| `/patios-oklahoma-city` | ~2,490 | **1,638** | ≤ baseline |
+
+## Verify
+
+```
+npm run build
+npm run seo-check -- --dist
+→ 72/72 passed (0 failed)
+```
+
+## Request indexing (after deploy)
+
+Priority (Search Console quota):
+
+1. `/driveways-oklahoma-city`
+2. `/patios-oklahoma-city`
+3. `/blog/cost-of-concrete-oklahoma-city-2026`
+4. `/our-projects`
+5. `/driveway-repair-oklahoma-city`
+
+Then as quota allows:
+
+6. `/`
+7. `/oklahoma-city-concrete`
+8. `/sidewalks-oklahoma-city`
+

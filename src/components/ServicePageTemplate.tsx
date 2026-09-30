@@ -4,6 +4,8 @@ import TrustBar from "@/components/TrustBar";
 import TradeBadge, { type TradeModel } from "@/components/TradeBadge";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
+import EstimateForm from "@/components/EstimateForm";
+import ProjectGrid from "@/components/ProjectGrid";
 import ServicesFooterGrid from "@/components/ServicesFooterGrid";
 import CityGrid from "@/components/CityGrid";
 import ProcessSteps from "@/components/ProcessSteps";
@@ -25,8 +27,24 @@ interface ServicePageProps {
   serviceLabel?: string;
   serviceCards?: { icon: string; title: string; description: string }[];
   specs?: { label: string; value: string }[];
+  /** Override default specs H2 ("Specs & Build Standards."). */
+  specsTitle?: string;
+  specsTitleAccent?: string;
   finishOptions?: { title: string; description: string }[];
   finishLabel?: string;
+  /** Project proof grid (Recent projects). Empty list renders nothing. */
+  proof?: {
+    eyebrow?: string;
+    title: string;
+    titleAccent?: string;
+    intro?: string;
+    service?: string;
+    ids?: string[];
+    badgeById?: Record<string, string>;
+    limit?: number;
+  };
+  /** Replace FinalCTA link-out with an on-page EstimateForm near the end. */
+  embedEstimateForm?: boolean;
   whyChooseUs?: { icon: string; title: string; description: string }[];
   sections: {
     eyebrow: string;
@@ -144,7 +162,7 @@ interface ServicePageProps {
   planningCallout?: string;
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle: _metaTitle, metaDescription: _metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, localExpertiseHeading, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showTrustBar = true, serviceCardsTitle, serviceCardsTitleAccent, faqTitle, serviceArea, showEeatBlock, internalLinks, serviceSchema, ctaLabel, estimateHref, finalCta, processNearCta, planningCallout }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, specsTitle, specsTitleAccent, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle: _metaTitle, metaDescription: _metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, localExpertiseHeading, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, proof, emergencyCallout, noindex, showTrustBar = true, serviceCardsTitle, serviceCardsTitleAccent, faqTitle, serviceArea, showEeatBlock, internalLinks, serviceSchema, ctaLabel, estimateHref, finalCta, processNearCta, planningCallout, embedEstimateForm }: ServicePageProps) {
   const phone = useRegionalPhone();
   const resolvedEstimateHref = estimateHref || "/#estimate";
   if (!currentServiceSlug) {
@@ -366,7 +384,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         </ScrollReveal>
       ))}
 
-      {/* Real project photo gallery */}
+      {/* Real project photo gallery — empty photos array renders nothing publicly */}
       {projectGallery && projectGallery.photos.length > 0 && (
         <ScrollReveal>
           <section className="section-padding">
@@ -387,6 +405,25 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
             </div>
             <p className="prose-muted mt-6">
               <Link to="/our-projects" className="text-orange no-underline font-medium">See more completed projects across the OKC metro →</Link>
+            </p>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {proof && (
+        <ScrollReveal>
+          <section className="section-padding">
+            <div className="section-eye">{proof.eyebrow || "Recent Work"}</div>
+            <h2 className="mb-4">{proof.title}{proof.titleAccent ? <><br/><em className="h2-accent">{proof.titleAccent}</em></> : null}</h2>
+            {proof.intro && <p className="prose-muted mb-8 max-w-[820px]" dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(proof.intro) }} />}
+            <ProjectGrid
+              service={proof.service}
+              ids={proof.ids}
+              limit={proof.limit}
+              badgeById={proof.badgeById}
+            />
+            <p className="prose-muted mt-6">
+              <Link to="/our-projects" className="text-orange no-underline font-medium">See more on our projects page →</Link>
             </p>
           </section>
         </ScrollReveal>
@@ -426,7 +463,24 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         <ScrollReveal>
           <section className="section-padding">
             <div className="section-eye">Specs That Matter</div>
-            <h2 className="mb-8">Specs &<br/><em className="h2-accent">Build Standards.</em></h2>
+            <h2 className="mb-8">
+              {specsTitle ? (
+                <>
+                  {specsTitle}
+                  {specsTitleAccent ? (
+                    <>
+                      <br />
+                      <em className="h2-accent">{specsTitleAccent}</em>
+                    </>
+                  ) : null}
+                </>
+              ) : (
+                <>
+                  Specs &<br />
+                  <em className="h2-accent">Build Standards.</em>
+                </>
+              )}
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
               {specs.map((spec, i) => (
                 <div key={i} className="bg-stone p-5 md:p-6">
@@ -581,7 +635,25 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         showBlogs={internalLinks?.blogs ?? true}
       />
 
-      <FinalCTA to={resolvedEstimateHref} {...(finalCta || {})} />
+      {embedEstimateForm ? (
+        <ScrollReveal>
+          <section id="estimate" className="section-padding section-alt">
+            <div className="section-eye">Free Estimate</div>
+            <h2 className="mb-4">
+              Request a Free
+              <br />
+              <em className="h2-accent">On-Site Estimate.</em>
+            </h2>
+            <p className="prose-muted mb-8 max-w-[680px]">
+              We visit your property before quoting — no phone estimates. Or call{" "}
+              <a href={`tel:${phone.tel}`} className="text-orange no-underline font-medium">{phone.display}</a>.
+            </p>
+            <EstimateForm />
+          </section>
+        </ScrollReveal>
+      ) : (
+        <FinalCTA to={resolvedEstimateHref} {...(finalCta || {})} />
+      )}
     </main>
   );
 }
