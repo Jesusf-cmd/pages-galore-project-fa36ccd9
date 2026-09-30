@@ -40,14 +40,12 @@ export const PROJECTS: Project[] = [
     details: "New concrete stairs and sidewalks with ADA-compliant ramps",
     images: [
       {
-        // Existing asset on /our-projects (retaining-wall photo reused historically for this slot).
-        // TODO(FDZ): photo — replace with Star Spencer-specific images when available
-        src: "/images/projects/poured-concrete-retaining-wall-oklahoma-city.webp",
-        alt: alt(
-          "New concrete stairs and sidewalks with ADA-compliant ramps",
-          "Star Spencer High School",
-          "Spencer, OK",
-        ),
+        src: "/images/projects/concrete-sidewalk-star-spencer-high-school-spencer-ok.webp",
+        alt: "New concrete sidewalk leading to the covered entrance at Star Spencer High School, Spencer, OK",
+      },
+      {
+        src: "/images/projects/ada-concrete-ramp-star-spencer-high-school-spencer-ok.webp",
+        alt: "Freshly poured ADA-compliant concrete curb ramp with detectable warning area at Star Spencer High School, Spencer, OK",
       },
     ],
     sqft: null, // TODO(FDZ)

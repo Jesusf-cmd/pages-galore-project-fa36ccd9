@@ -45,7 +45,7 @@ const FEATURED_COPY: Record<
       { value: "Stairs", label: "& Sidewalks" },
       { value: "Public", label: "School project" },
     ],
-    media: "single",
+    media: "grid",
   },
   "rosedale-shop": {
     eyebrow: "Commercial · Rosedale, Oklahoma",
