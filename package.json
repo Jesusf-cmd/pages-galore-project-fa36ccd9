@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run build:ssr && vite build",
     "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist-ssr --emptyOutDir",
     "prerender:parity": "npm run build:ssr && npx tsx scripts/prerender-parity-report.ts",
     "build:dev": "vite build --mode development",
