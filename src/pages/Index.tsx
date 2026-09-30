@@ -332,7 +332,7 @@ function BuyerGuideSection() {
           </li>
           <li className="text-[0.9rem] text-muted-text leading-relaxed font-light">
             <strong className="text-concrete">A workmanship warranty in writing.</strong> FDZ backs every project with
-            a 2-year workmanship warranty documented in the estimate package.
+            a 2-year workmanship warranty in writing.
           </li>
         </ol>
       </section>

@@ -108,7 +108,7 @@ const RAW: Omit<SeoPage, "canonical">[] = [
     path: "/oklahoma-city-concrete",
     title: "Concrete Services Across Oklahoma City | FDZ Construction",
     description:
-      "Driveways, patios, foundations, commercial concrete, and sewer line repair across Oklahoma City from FDZ Construction LLC. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
+      "Driveways, patios, foundations, commercial concrete and sewer line repair across Oklahoma City. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
     h1: "Concrete Services Across Oklahoma City",
     render: "react",
   },
