@@ -316,6 +316,24 @@ async function runLive(baseUrl) {
     },
   });
 
+  for (const retired of [
+    "/hvac-oklahoma-city",
+    "/plumbing-oklahoma-city",
+    "/electrical-oklahoma-city",
+    "/emergency-services-oklahoma-city",
+  ]) {
+    probes.push({
+      label: `${retired} → 404`,
+      run: async () => {
+        const chain = await follow(`${base}${retired}`);
+        const last = chain[chain.length - 1];
+        if (last.status === 200) return "soft 404 (200) — page still published";
+        if (last.status !== 404) return `expected 404, got ${JSON.stringify(chain)}`;
+        return null;
+      },
+    });
+  }
+
   for (const probe of probes) {
     try {
       const err = await probe.run();

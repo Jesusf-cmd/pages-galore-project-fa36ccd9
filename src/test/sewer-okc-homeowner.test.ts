@@ -77,11 +77,11 @@ describe("residential sewer page", () => {
   });
 
   it("does not claim licensed plumbers or publish a plumbing license number", () => {
-    const plumbing = getPrerenderBody("/plumbing-oklahoma-city") ?? "";
-    const plumbingRoute = routes.find((entry) => entry.path === "/plumbing-oklahoma-city");
-    expect(plumbing).not.toMatch(/licensed plumbers/i);
-    expect(plumbing).not.toContain("75456");
-    expect(plumbingRoute?.description).not.toMatch(/licensed plumbers/i);
-    expect(plumbingRoute?.content).not.toMatch(/licensed plumbers/i);
+    const sewer = getPrerenderBody("/sewer-line-repair-oklahoma-city") ?? "";
+    const sewerRoute = routes.find((entry) => entry.path === "/sewer-line-repair-oklahoma-city");
+    expect(sewer).not.toMatch(/licensed plumbers/i);
+    expect(sewer).not.toContain("75456");
+    expect(sewerRoute?.description).not.toMatch(/licensed plumbers/i);
+    expect(sewerRoute?.content).not.toMatch(/licensed plumbers/i);
   });
 });

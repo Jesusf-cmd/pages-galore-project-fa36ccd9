@@ -72,38 +72,11 @@ const RAW: Omit<SeoPage, "canonical">[] = [
     h1: "Excavator Land Clearing & Heavy Site Work in Oklahoma City, OK",
   },
   {
-    path: "/hvac-oklahoma-city",
-    title: "HVAC Repair & Installation Oklahoma City | FDZ Construction LLC",
-    description: "HVAC repair, installation & emergency service in Oklahoma City. AC, furnace & heat pump specialists. Licensed & insured. Call (405) 458-4805.",
-    h1: "Oklahoma City HVAC Repair, Installation & Emergency Service",
-    noindex: true,
-  },
-  {
-    path: "/plumbing-oklahoma-city",
-    title: "Plumbing Services Oklahoma City | FDZ Construction LLC",
-    description: "Plumbing repair, drain cleaning, water heaters, leak detection & sewer line service in Oklahoma City. Call (405) 458-4805.",
-    h1: "Oklahoma City Plumbing Services",
-    noindex: true,
-  },
-  {
-    path: "/electrical-oklahoma-city",
-    title: "Electrical Services Oklahoma City | FDZ Construction LLC",
-    description: "Residential & commercial electrical services in Oklahoma City. Panel upgrades, wiring, lighting, generators & EV chargers. Licensed. Call (405) 458-4805.",
-    h1: "Oklahoma City Electrical Services",
-    noindex: true,
-  },
-  {
-    path: "/emergency-services-oklahoma-city",
-    title: "24/7 Emergency Services Oklahoma City | Concrete, HVAC, Plumbing & Electrical | FDZ Construction LLC",
-    description: "24/7 emergency concrete, HVAC, plumbing & electrical service in Oklahoma City. One call handles every trade. Call (405) 458-4805.",
-    h1: "24/7 Emergency Services in Oklahoma City",
-    noindex: true,
-  },
-  {
     path: "/our-approach",
-    title: "How We Work — Self-Performed Concrete & General Contracted Trades | FDZ Construction LLC",
-    description: "FDZ self-performs all concrete work with our own crews. HVAC, plumbing & electrical are delivered as general contractor, managing licensed specialists under one invoice and warranty.",
-    h1: "Self-Performed Concrete. Managed Trades.",
+    title: "How We Work — Self-Performed Concrete & Sewer | FDZ Construction LLC",
+    description:
+      "FDZ self-performs concrete, sewer line, skid steer, and excavator work with our own crew and equipment — one company accountable from estimate to warranty.",
+    h1: "Self-Performed Concrete & Sewer Line.",
     noindex: true,
   },
   {

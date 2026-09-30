@@ -2,7 +2,11 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# HTML and SEO files should revalidate so deploys are visible quickly
+# All HTML (pretty URLs and .html) must revalidate so removals/deploys show up immediately.
+# Without this, extensionless paths default to s-maxage=604800 and can serve deleted pages.
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
