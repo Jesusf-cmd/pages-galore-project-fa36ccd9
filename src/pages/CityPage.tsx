@@ -35,6 +35,12 @@ interface CityData {
   heroTitleAccent?: string;
   intro: string[];
   localTerrainNote: string;
+  /** Override terrain H2 (e.g. template "Oklahoma City Soil Conditions"). */
+  terrainHeading?: string;
+  /** Override services H2 (e.g. template "Services Available in Oklahoma City"). */
+  servicesHeading?: string;
+  /** Plain-sentence neighborhoods section under template H2. */
+  neighborhoodsNote?: string;
   driveTimeNote: string;
   neighborhoods?: string[];
   linkedServices: { label: string; to: string; blurb: string }[];
@@ -101,7 +107,10 @@ const cityData: Record<string, CityData> = {
       "FDZ Construction LLC is based in Oklahoma City — so OKC itself is the area we work most. We pour driveways, patios, slabs, foundations, and commercial concrete across the city.",
     ],
     localTerrainNote:
-      "Oklahoma City is too large for one soil story — conditions shift from one part of the city to another — but it broadly shares the metro's Permian-age clay and shale base. The terrain is mostly flat, and the North Canadian River corridor runs through the city, so drainage planning matters most on low-lying lots near the river and its tributaries. Because conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city.",
+      "Oklahoma City broadly shares the metro's Permian-age clay and shale base. The terrain is mostly flat, and the North Canadian River corridor runs through the city, so drainage planning matters most on low-lying lots near the river and its tributaries. Because conditions vary block to block, we evaluate soil and grading on a per-site basis rather than assuming one answer fits the whole city.",
+    terrainHeading: "Oklahoma City Soil Conditions",
+    servicesHeading: "Services Available in Oklahoma City",
+    neighborhoodsNote: "We work throughout Oklahoma City, including Nichols Hills and surrounding areas.",
     driveTimeNote: "We're based in Oklahoma City and serve the metro from here.",
     neighborhoods: ["Nichols Hills"],
     linkedServices: [SVC.driveways, SVC.patios, SVC.foundations, SVC.commercial, SVC.parking, SVC.sidewalks],
@@ -497,7 +506,7 @@ export default function CityPage({ slug }: { slug: string }) {
       "serviceType": serviceTypes.length > 1 ? serviceTypes : serviceTypes[0],
       "name": data.serviceName || `Concrete Contractor in ${cityName}, OK`,
       "url": pageUrl,
-      "provider": { "@id": "https://fdzconstruction.com/#organization" },
+      "provider": { "@id": "https://fdzconstruction.com/#business" },
       "areaServed": { "@type": "City", "name": cityName, "addressRegion": "OK" },
     });
     document.getElementById("city-service-schema")?.remove();
@@ -513,6 +522,9 @@ export default function CityPage({ slug }: { slug: string }) {
       heroBlurb={data.heroBlurb}
       intro={data.intro}
       localTerrainNote={data.localTerrainNote}
+      terrainHeading={data.terrainHeading}
+      servicesHeading={data.servicesHeading}
+      neighborhoodsNote={data.neighborhoodsNote}
       driveTimeNote={data.driveTimeNote}
       neighborhoods={data.neighborhoods}
       linkedServices={data.linkedServices}

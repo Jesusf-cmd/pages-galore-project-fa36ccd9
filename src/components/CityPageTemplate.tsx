@@ -30,6 +30,12 @@ interface CityPageProps {
   heroBlurb: string;
   intro: string[];
   localTerrainNote: string;
+  /** When set, replaces the default “Built for {city} Ground” H2. */
+  terrainHeading?: string;
+  /** When set, replaces the default “What We Pour in {city}” H2. */
+  servicesHeading?: string;
+  /** Plain-sentence neighborhoods copy under an H2 (template wording). */
+  neighborhoodsNote?: string;
   driveTimeNote: string;
   neighborhoods?: string[];
   linkedServices: LinkedService[];
@@ -68,6 +74,9 @@ export default function CityPageTemplate({
   heroBlurb,
   intro,
   localTerrainNote,
+  terrainHeading,
+  servicesHeading,
+  neighborhoodsNote,
   driveTimeNote,
   neighborhoods,
   linkedServices,
@@ -108,7 +117,7 @@ export default function CityPageTemplate({
               {intro.map((p, i) => (
                 <p key={i} className="prose-muted mb-5" dangerouslySetInnerHTML={{ __html: p }} />
               ))}
-              {neighborhoods && neighborhoods.length > 0 && (
+              {!neighborhoodsNote && neighborhoods && neighborhoods.length > 0 && (
                 <p className="prose-muted mb-5">
                   Areas we serve in {city} include {neighborhoods.join(", ")}.
                 </p>
@@ -124,10 +133,29 @@ export default function CityPageTemplate({
         </section>
       </ScrollReveal>
 
+      {neighborhoodsNote && (
+        <ScrollReveal>
+          <section className="section-padding section-alt">
+            <h2 className="mb-4">Neighborhoods Served</h2>
+            <p className="prose-muted max-w-[760px]">{neighborhoodsNote}</p>
+          </section>
+        </ScrollReveal>
+      )}
+
       <ScrollReveal>
         <section className="section-padding section-alt">
           <div className="section-eye">Local Terrain & Soil</div>
-          <h2 className="mb-4">Built for<br/><em className="h2-accent">{city} Ground.</em></h2>
+          <h2 className="mb-4">
+            {terrainHeading ? (
+              terrainHeading
+            ) : (
+              <>
+                Built for
+                <br />
+                <em className="h2-accent">{city} Ground.</em>
+              </>
+            )}
+          </h2>
           <p className="prose-muted max-w-[760px] mb-6" dangerouslySetInnerHTML={{ __html: localTerrainNote }} />
           <p className="prose-muted max-w-[760px] mb-6"><strong className="text-concrete">Getting to {city}:</strong> {driveTimeNote}</p>
           <p className="text-[0.8rem] text-orange font-semibold uppercase tracking-[0.06em] max-w-[760px]">{TRUST_LINE}</p>
@@ -137,7 +165,17 @@ export default function CityPageTemplate({
       <ScrollReveal>
         <section className="section-padding">
           <div className="section-eye">Concrete Services in {city}</div>
-          <h2 className="mb-4">What We Pour<br/><em className="h2-accent">in {city}.</em></h2>
+          <h2 className="mb-4">
+            {servicesHeading ? (
+              servicesHeading
+            ) : (
+              <>
+                What We Pour
+                <br />
+                <em className="h2-accent">in {city}.</em>
+              </>
+            )}
+          </h2>
           <p className="prose-muted mb-8 max-w-[760px]">
             We bring the same crew, materials, and standards to {city} that we use across the OKC metro. The work most requested here:
           </p>

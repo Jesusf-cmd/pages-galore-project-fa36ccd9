@@ -64,6 +64,8 @@ interface ServicePageProps {
   cityBlockIntro?: string;
   /** OKC-specific technical point relevant to this service. Rendered as a highlighted callout. */
   localExpertiseNote?: string;
+  /** Override the local-expertise H2 (default: Built for / Oklahoma Soil.). */
+  localExpertiseHeading?: string;
   /** "self-performed" (in-house concrete crew) or "gc-managed" (FDZ manages licensed trade partners). Rendered as a small badge in the hero. */
   badge?: TradeModel;
   /** 1-2 sentence clarification of the self-performed vs. GC-managed delivery model, shown near the top of the hero. */
@@ -142,7 +144,7 @@ interface ServicePageProps {
   planningCallout?: string;
 }
 
-export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle: _metaTitle, metaDescription: _metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showTrustBar = true, serviceCardsTitle, serviceCardsTitleAccent, faqTitle, serviceArea, showEeatBlock, internalLinks, serviceSchema, ctaLabel, estimateHref, finalCta, processNearCta, planningCallout }: ServicePageProps) {
+export default function ServicePage({ eyebrow, title, titleAccent, description, introText, serviceLabel, serviceCards, specs, finishOptions, finishLabel, whyChooseUs, sections, faq, metaTitle: _metaTitle, metaDescription: _metaDescription, currentServiceSlug, enriched, processEyebrow, processTitle, processTitleAccent, processIntro, processSteps, projectTypes, projectTypesEyebrow, projectTypesTitle, projectTypesTitleAccent, projectTypesIntro, cityBlockIntro, localExpertiseNote, localExpertiseHeading, badge, modelNote, trustLine, subServices, projectGallery, videoGallery, emergencyCallout, noindex, showTrustBar = true, serviceCardsTitle, serviceCardsTitleAccent, faqTitle, serviceArea, showEeatBlock, internalLinks, serviceSchema, ctaLabel, estimateHref, finalCta, processNearCta, planningCallout }: ServicePageProps) {
   const phone = useRegionalPhone();
   const resolvedEstimateHref = estimateHref || "/#estimate";
   if (!currentServiceSlug) {
@@ -165,7 +167,7 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
       serviceType: serviceSchema.serviceType,
       name: serviceSchema.name,
       url: canonical,
-      provider: { "@id": "https://fdzconstruction.com/#organization" },
+      provider: { "@id": "https://fdzconstruction.com/#business" },
       areaServed: serviceSchema.areaServed
         ? { "@type": "City", name: serviceSchema.areaServed.name, addressRegion: serviceSchema.areaServed.addressRegion }
         : { "@type": "City", name: "Oklahoma City", addressRegion: "OK" },
@@ -268,7 +270,17 @@ export default function ServicePage({ eyebrow, title, titleAccent, description, 
         <ScrollReveal>
           <section className="section-padding section-alt">
             <div className="section-eye">Local Expertise</div>
-            <h2 className="mb-4">Built for<br/><em className="h2-accent">Oklahoma Soil.</em></h2>
+            <h2 className="mb-4">
+              {localExpertiseHeading ? (
+                localExpertiseHeading
+              ) : (
+                <>
+                  Built for
+                  <br />
+                  <em className="h2-accent">Oklahoma Soil.</em>
+                </>
+              )}
+            </h2>
             <div className="info-block"><p dangerouslySetInnerHTML={{ __html: withoutCrawlableEmail(localExpertiseNote) }} /></div>
           </section>
         </ScrollReveal>

@@ -18,7 +18,7 @@ function useServiceSchema() {
       description:
         "General plumbing repair, drain cleaning, water heater service, leak detection, and sewer line repair across the Oklahoma City metro.",
       url: PAGE_URL,
-      provider: { "@id": "https://fdzconstruction.com/#organization" },
+      provider: { "@id": "https://fdzconstruction.com/#business" },
       areaServed: AREAS_SERVED.map((name) => ({ "@type": "City", name, addressRegion: "OK" })),
     });
     document.getElementById("plumbing-service-schema")?.remove();

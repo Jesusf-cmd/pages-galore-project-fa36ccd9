@@ -18,7 +18,7 @@ function useServiceSchema() {
       description:
         "Residential sewer line repair and replacement in Oklahoma City, including camera inspection, excavation, and concrete restoration by the same crew.",
       url: PAGE_URL,
-      provider: { "@id": "https://fdzconstruction.com/#organization" },
+      provider: { "@id": "https://fdzconstruction.com/#business" },
       areaServed: AREAS_SERVED.map((name) => ({ "@type": "City", name, addressRegion: "OK" })),
     });
     document.getElementById("sewer-line-service-schema")?.remove();

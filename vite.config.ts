@@ -33,4 +33,8 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  ssr: {
+    // Bundle app code; leave heavy node builtins external by default.
+    noExternal: ["react-router-dom"],
+  },
 }));

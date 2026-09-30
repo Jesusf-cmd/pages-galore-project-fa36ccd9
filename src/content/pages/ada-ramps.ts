@@ -10,6 +10,8 @@ export const adaRampsContent: ServicePageContent = {
       description: 'ADA-compliant concrete ramps, curb cuts, and accessible surfaces in Oklahoma City — fast response to violations and proactive upgrades. <a href="tel:4054584805">(405) 458-4805</a>.',
       introText: "The Americans with Disabilities Act requires accessible concrete surfaces at every commercial property — parking lots, entrances, sidewalks, and curb transitions. Non-compliant properties face fines, lawsuits, and liability exposure. FDZ builds and repairs ADA-compliant concrete ramps, curb cuts, and accessible surfaces throughout the OKC metro. Whether you received a violation notice, failed an inspection, or are proactively upgrading your property, we provide fast, code-compliant installation with documentation you can present to inspectors and tenants.",
       localExpertiseNote: "Commercial properties along Penn Ave, May Ave, NW Expressway, and in downtown OKC are actively inspected for ADA compliance. Newly permitted projects require ADA-compliant accessible routes as a condition of certificate of occupancy. OKC's expansive clay also creates a secondary challenge: accessible surfaces that were compliant when poured can become non-compliant as clay movement creates cross-slopes exceeding the 2% ADA limit.",
+      localExpertiseHeading: "Oklahoma City Conditions",
+      faqTitle: "Frequently Asked Questions",
       serviceLabel: "Commercial",
       serviceCards: [
         {

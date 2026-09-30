@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { StaticRouter } from "react-router-dom/server";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Layout from "@/components/Layout";
@@ -62,7 +63,15 @@ const SoilStabilization = lazy(() => import("./pages/SoilStabilization"));
 const ConcreteMaintenance = lazy(() => import("./pages/ConcreteMaintenance"));
 const BuilderPricing = lazy(() => import("./pages/BuilderPricing"));
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // SSR renders must not suspend on network.
+      retry: false,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 function PageLoader() {
   return (
@@ -75,6 +84,7 @@ function PageLoader() {
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (typeof window === "undefined") return;
     if (hash) {
       const id = decodeURIComponent(hash.slice(1));
       const scrollToHash = () => document.getElementById(id)?.scrollIntoView();
@@ -94,118 +104,146 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Sonner />
-      <AuthProvider>
-        <BrowserRouter future={{ v7_startTransition: true }}>
+function AppRoutes() {
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Index />} />
+        <Route path="/driveways-oklahoma-city" element={<DrivewaysOklahomaCity />} />
+        <Route path="/patios-oklahoma-city" element={<PatiosOklahomaCity />} />
+        <Route path="/foundations-oklahoma-city" element={<FoundationsOklahomaCity />} />
+        <Route path="/sidewalks-oklahoma-city" element={<SidewalksOklahomaCity />} />
+        <Route path="/commercial-concrete-oklahoma-city" element={<CommercialConcreteOklahomaCity />} />
+        <Route path="/commercial-concrete-wichita" element={<CommercialConcreteWichita />} />
+        <Route path="/industrial-concrete-wichita" element={<IndustrialConcreteWichita />} />
+        <Route path="/retaining-walls-wichita" element={<RetainingWallsWichita />} />
+        <Route path="/stamped-concrete-wichita" element={<StampedConcreteWichita />} />
+        <Route path="/parking-lots-oklahoma-city" element={<ParkingLotConcrete />} />
+        <Route path="/retaining-walls-oklahoma-city" element={<RetainingWalls />} />
+        <Route path="/sewer-line-repair-oklahoma-city" element={<SewerLineRepairOklahomaCity />} />
+        <Route path="/skid-steer-services-oklahoma-city" element={<SkidSteerServicesOklahomaCity />} />
+        <Route path="/excavator-services-oklahoma-city" element={<ExcavatorServicesOklahomaCity />} />
+        <Route path="/hvac-oklahoma-city" element={<HvacOklahomaCity />} />
+        <Route path="/plumbing-oklahoma-city" element={<PlumbingOklahomaCity />} />
+        <Route path="/electrical-oklahoma-city" element={<ElectricalOklahomaCity />} />
+        <Route path="/emergency-services-oklahoma-city" element={<EmergencyServicesOklahomaCity />} />
+        <Route path="/our-approach" element={<OurApproach />} />
+        <Route path="/pool-deck-oklahoma-city" element={<PoolDeckOklahomaCity />} />
+        <Route path="/bollard-installation-oklahoma-city" element={<BollardInstallation />} />
+        <Route path="/crane-foundation-installation-oklahoma-city" element={<CraneFoundation />} />
+        <Route path="/loading-dock-concrete-repair-oklahoma-city" element={<LoadingDockConcreteRepair />} />
+        <Route path="/loading-dock-construction-oklahoma-city" element={<LoadingDockConstruction />} />
+        <Route path="/loading-dock-replacement-oklahoma-city" element={<LoadingDockReplacement />} />
+        <Route path="/dock-leveler-pit-concrete-oklahoma-city" element={<DockLevelerPits />} />
+        <Route path="/truck-court-concrete-oklahoma-city" element={<TruckCourts />} />
+        <Route path="/industrial-concrete-repair-oklahoma-city" element={<IndustrialConcreteRepair />} />
+        <Route path="/warehouse-slab-repair-oklahoma-city" element={<WarehouseFloorReplacement />} />
+        <Route path="/equipment-pad-concrete-oklahoma-city" element={<EquipmentFoundations />} />
+        <Route path="/ada-concrete-ramps-oklahoma-city" element={<ADACompliance />} />
+        <Route path="/dumpster-pad-concrete-oklahoma-city" element={<DumpsterPads />} />
+        <Route path="/concrete-parking-lot-repair-oklahoma-city" element={<ConcreteParkinglotRepair />} />
+        <Route path="/commercial-concrete-repair-oklahoma-city" element={<CommercialConcreteRepair />} />
+        <Route path="/commercial-curb-and-gutter-oklahoma-city" element={<CommercialCurbGutter />} />
+        <Route path="/dock-leveler-pits-oklahoma-city" element={<Navigate to="/dock-leveler-pit-concrete-oklahoma-city" replace />} />
+        <Route path="/truck-courts-oklahoma-city" element={<Navigate to="/truck-court-concrete-oklahoma-city" replace />} />
+        <Route path="/warehouse-floor-replacement-oklahoma-city" element={<Navigate to="/warehouse-slab-repair-oklahoma-city" replace />} />
+        <Route path="/equipment-foundations-oklahoma-city" element={<Navigate to="/equipment-pad-concrete-oklahoma-city" replace />} />
+        <Route path="/ada-ramps-oklahoma-city" element={<Navigate to="/ada-concrete-ramps-oklahoma-city" replace />} />
+        <Route path="/dumpster-pads-oklahoma-city" element={<Navigate to="/dumpster-pad-concrete-oklahoma-city" replace />} />
+        <Route path="/commercial-curb-gutter-oklahoma-city" element={<Navigate to="/commercial-curb-and-gutter-oklahoma-city" replace />} />
+        <Route path="/polished-concrete-oklahoma-city" element={<PolishedConcrete />} />
+        <Route path="/epoxy-floor-coatings-oklahoma-city" element={<EpoxyFloorCoatings />} />
+        <Route path="/retail-restaurant-concrete-oklahoma-city" element={<RetailRestaurantConcrete />} />
+        <Route path="/tilt-wall-concrete-oklahoma-city" element={<TiltWallConcrete />} />
+        <Route path="/soil-stabilization-oklahoma-city" element={<SoilStabilization />} />
+        <Route path="/concrete-maintenance-oklahoma-city" element={<ConcreteMaintenance />} />
+        <Route path="/concrete-driveways" element={<Navigate to="/driveways-oklahoma-city" replace />} />
+        <Route path="/concrete-slabs" element={<Navigate to="/patios-oklahoma-city" replace />} />
+        <Route path="/stamped-concrete" element={<Navigate to="/patios-oklahoma-city" replace />} />
+        <Route path="/concrete-patio-okc" element={<Navigate to="/patios-oklahoma-city" replace />} />
+        <Route path="/concrete-foundations" element={<Navigate to="/foundations-oklahoma-city" replace />} />
+        <Route path="/retaining-walls" element={<Navigate to="/retaining-walls-oklahoma-city" replace />} />
+        <Route path="/concrete-sidewalks" element={<Navigate to="/sidewalks-oklahoma-city" replace />} />
+        <Route path="/curb-and-gutter" element={<Navigate to="/sidewalks-oklahoma-city" replace />} />
+        <Route path="/curb-gutter" element={<Navigate to="/sidewalks-oklahoma-city" replace />} />
+        <Route path="/parking-lot-concrete" element={<Navigate to="/parking-lots-oklahoma-city" replace />} />
+        <Route path="/commercial-concrete-slabs" element={<Navigate to="/commercial-concrete-oklahoma-city" replace />} />
+        <Route path="/oklahoma-city-concrete" element={<CityPage slug="oklahoma-city" />} />
+        <Route path="/edmond-concrete" element={<CityPage slug="edmond" />} />
+        <Route path="/norman-ok-concrete" element={<CityPage slug="norman" />} />
+        <Route path="/yukon-oklahoma-concrete" element={<CityPage slug="yukon" />} />
+        <Route path="/mustang-oklahoma-concrete" element={<CityPage slug="mustang" />} />
+        <Route path="/moore-oklahoma-concrete" element={<CityPage slug="moore" />} />
+        <Route path="/midwest-city-oklahoma-concrete" element={<CityPage slug="midwest-city" />} />
+        <Route path="/del-city-oklahoma-concrete" element={<CityPage slug="del-city" />} />
+        <Route path="/stillwater-oklahoma-concrete" element={<CityPage slug="stillwater" />} />
+        <Route path="/driveways-edmond" element={<ServiceInCity slug="driveways-edmond" />} />
+        <Route path="/driveways-norman" element={<ServiceInCity slug="driveways-norman" />} />
+        <Route path="/driveways-yukon" element={<ServiceInCity slug="driveways-yukon" />} />
+        <Route path="/foundations-edmond" element={<ServiceInCity slug="foundations-edmond" />} />
+        <Route path="/retaining-walls-edmond" element={<ServiceInCity slug="retaining-walls-edmond" />} />
+        <Route path="/patios-norman" element={<ServiceInCity slug="patios-norman" />} />
+        <Route path="/patios-edmond" element={<ServiceInCity slug="patios-edmond" />} />
+        <Route path="/foundations-norman" element={<ServiceInCity slug="foundations-norman" />} />
+        <Route path="/foundations-yukon" element={<ServiceInCity slug="foundations-yukon" />} />
+        <Route path="/driveways-moore" element={<ServiceInCity slug="driveways-moore" />} />
+        <Route path="/patios-moore" element={<ServiceInCity slug="patios-moore" />} />
+        <Route path="/driveways-mustang" element={<ServiceInCity slug="driveways-mustang" />} />
+        <Route path="/retaining-walls-norman" element={<ServiceInCity slug="retaining-walls-norman" />} />
+        <Route path="/patios-yukon" element={<ServiceInCity slug="patios-yukon" />} />
+        <Route path="/driveway-repair-oklahoma-city" element={<RepairService slug="driveway-repair-oklahoma-city" />} />
+        <Route path="/foundation-repair-oklahoma-city" element={<RepairService slug="foundation-repair-oklahoma-city" />} />
+        <Route path="/driveway-repair" element={<Navigate to="/driveway-repair-oklahoma-city" replace />} />
+        <Route path="/foundation-repair" element={<Navigate to="/foundation-repair-oklahoma-city" replace />} />
+        <Route path="/our-projects" element={<OurProjects />} />
+        <Route path="/quote/:id" element={<QuotePage />} />
+        <Route path="/blog" element={<BlogIndex />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+      <Route
+        path="/admin"
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          </Suspense>
+        }
+      />
+      <Route
+        path="/builders"
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <BuilderPricing />
+          </Suspense>
+        }
+      />
+    </Routes>
+  );
+}
+
+/** Shared providers + routes. Pass `url` for StaticRouter SSR. */
+export function App({ url }: { url?: string }) {
+  const tree = (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        {typeof window !== "undefined" ? <Sonner /> : null}
+        <AuthProvider>
           <ScrollToTop />
-          <Routes>
-              <Route element={<Layout />}>
-                <Route path="/" element={<Index />} />
-                <Route path="/driveways-oklahoma-city" element={<DrivewaysOklahomaCity />} />
-                <Route path="/patios-oklahoma-city" element={<PatiosOklahomaCity />} />
-                <Route path="/foundations-oklahoma-city" element={<FoundationsOklahomaCity />} />
-                <Route path="/sidewalks-oklahoma-city" element={<SidewalksOklahomaCity />} />
-                <Route path="/commercial-concrete-oklahoma-city" element={<CommercialConcreteOklahomaCity />} />
-                <Route path="/commercial-concrete-wichita" element={<CommercialConcreteWichita />} />
-                <Route path="/industrial-concrete-wichita" element={<IndustrialConcreteWichita />} />
-                <Route path="/retaining-walls-wichita" element={<RetainingWallsWichita />} />
-                <Route path="/stamped-concrete-wichita" element={<StampedConcreteWichita />} />
-                <Route path="/parking-lots-oklahoma-city" element={<ParkingLotConcrete />} />
-                <Route path="/retaining-walls-oklahoma-city" element={<RetainingWalls />} />
-                <Route path="/sewer-line-repair-oklahoma-city" element={<SewerLineRepairOklahomaCity />} />
-                <Route path="/skid-steer-services-oklahoma-city" element={<SkidSteerServicesOklahomaCity />} />
-                <Route path="/excavator-services-oklahoma-city" element={<ExcavatorServicesOklahomaCity />} />
-                <Route path="/hvac-oklahoma-city" element={<HvacOklahomaCity />} />
-                <Route path="/plumbing-oklahoma-city" element={<PlumbingOklahomaCity />} />
-                <Route path="/electrical-oklahoma-city" element={<ElectricalOklahomaCity />} />
-                <Route path="/emergency-services-oklahoma-city" element={<EmergencyServicesOklahomaCity />} />
-                <Route path="/our-approach" element={<OurApproach />} />
-                <Route path="/pool-deck-oklahoma-city" element={<PoolDeckOklahomaCity />} />
-                <Route path="/bollard-installation-oklahoma-city" element={<BollardInstallation />} />
-                <Route path="/crane-foundation-installation-oklahoma-city" element={<CraneFoundation />} />
-                <Route path="/loading-dock-concrete-repair-oklahoma-city" element={<LoadingDockConcreteRepair />} />
-                <Route path="/loading-dock-construction-oklahoma-city" element={<LoadingDockConstruction />} />
-                <Route path="/loading-dock-replacement-oklahoma-city" element={<LoadingDockReplacement />} />
-                {/* New preferred URLs for moved pages */}
-                <Route path="/dock-leveler-pit-concrete-oklahoma-city" element={<DockLevelerPits />} />
-                <Route path="/truck-court-concrete-oklahoma-city" element={<TruckCourts />} />
-                <Route path="/industrial-concrete-repair-oklahoma-city" element={<IndustrialConcreteRepair />} />
-                <Route path="/warehouse-slab-repair-oklahoma-city" element={<WarehouseFloorReplacement />} />
-                <Route path="/equipment-pad-concrete-oklahoma-city" element={<EquipmentFoundations />} />
-                <Route path="/ada-concrete-ramps-oklahoma-city" element={<ADACompliance />} />
-                <Route path="/dumpster-pad-concrete-oklahoma-city" element={<DumpsterPads />} />
-                <Route path="/concrete-parking-lot-repair-oklahoma-city" element={<ConcreteParkinglotRepair />} />
-                <Route path="/commercial-concrete-repair-oklahoma-city" element={<CommercialConcreteRepair />} />
-                <Route path="/commercial-curb-and-gutter-oklahoma-city" element={<CommercialCurbGutter />} />
-                {/* 301 redirects: old URLs → new preferred URLs */}
-                <Route path="/dock-leveler-pits-oklahoma-city" element={<Navigate to="/dock-leveler-pit-concrete-oklahoma-city" replace />} />
-                <Route path="/truck-courts-oklahoma-city" element={<Navigate to="/truck-court-concrete-oklahoma-city" replace />} />
-                <Route path="/warehouse-floor-replacement-oklahoma-city" element={<Navigate to="/warehouse-slab-repair-oklahoma-city" replace />} />
-                <Route path="/equipment-foundations-oklahoma-city" element={<Navigate to="/equipment-pad-concrete-oklahoma-city" replace />} />
-                <Route path="/ada-ramps-oklahoma-city" element={<Navigate to="/ada-concrete-ramps-oklahoma-city" replace />} />
-                <Route path="/dumpster-pads-oklahoma-city" element={<Navigate to="/dumpster-pad-concrete-oklahoma-city" replace />} />
-                <Route path="/commercial-curb-gutter-oklahoma-city" element={<Navigate to="/commercial-curb-and-gutter-oklahoma-city" replace />} />
-                <Route path="/polished-concrete-oklahoma-city" element={<PolishedConcrete />} />
-                <Route path="/epoxy-floor-coatings-oklahoma-city" element={<EpoxyFloorCoatings />} />
-                <Route path="/retail-restaurant-concrete-oklahoma-city" element={<RetailRestaurantConcrete />} />
-                <Route path="/tilt-wall-concrete-oklahoma-city" element={<TiltWallConcrete />} />
-                <Route path="/soil-stabilization-oklahoma-city" element={<SoilStabilization />} />
-                <Route path="/concrete-maintenance-oklahoma-city" element={<ConcreteMaintenance />} />
-                <Route path="/concrete-driveways" element={<Navigate to="/driveways-oklahoma-city" replace />} />
-                <Route path="/concrete-slabs" element={<Navigate to="/patios-oklahoma-city" replace />} />
-                <Route path="/stamped-concrete" element={<Navigate to="/patios-oklahoma-city" replace />} />
-                <Route path="/concrete-patio-okc" element={<Navigate to="/patios-oklahoma-city" replace />} />
-                <Route path="/concrete-foundations" element={<Navigate to="/foundations-oklahoma-city" replace />} />
-                <Route path="/retaining-walls" element={<Navigate to="/retaining-walls-oklahoma-city" replace />} />
-                <Route path="/concrete-sidewalks" element={<Navigate to="/sidewalks-oklahoma-city" replace />} />
-                <Route path="/curb-and-gutter" element={<Navigate to="/sidewalks-oklahoma-city" replace />} />
-                <Route path="/curb-gutter" element={<Navigate to="/sidewalks-oklahoma-city" replace />} />
-                <Route path="/parking-lot-concrete" element={<Navigate to="/parking-lots-oklahoma-city" replace />} />
-                <Route path="/commercial-concrete-slabs" element={<Navigate to="/commercial-concrete-oklahoma-city" replace />} />
-                <Route path="/oklahoma-city-concrete" element={<CityPage slug="oklahoma-city" />} />
-                <Route path="/edmond-concrete" element={<CityPage slug="edmond" />} />
-                <Route path="/norman-ok-concrete" element={<CityPage slug="norman" />} />
-                <Route path="/yukon-oklahoma-concrete" element={<CityPage slug="yukon" />} />
-                <Route path="/mustang-oklahoma-concrete" element={<CityPage slug="mustang" />} />
-                <Route path="/moore-oklahoma-concrete" element={<CityPage slug="moore" />} />
-                <Route path="/midwest-city-oklahoma-concrete" element={<CityPage slug="midwest-city" />} />
-                <Route path="/del-city-oklahoma-concrete" element={<CityPage slug="del-city" />} />
-                <Route path="/stillwater-oklahoma-concrete" element={<CityPage slug="stillwater" />} />
-                <Route path="/driveways-edmond" element={<ServiceInCity slug="driveways-edmond" />} />
-                <Route path="/driveways-norman" element={<ServiceInCity slug="driveways-norman" />} />
-                <Route path="/driveways-yukon" element={<ServiceInCity slug="driveways-yukon" />} />
-                <Route path="/foundations-edmond" element={<ServiceInCity slug="foundations-edmond" />} />
-                <Route path="/retaining-walls-edmond" element={<ServiceInCity slug="retaining-walls-edmond" />} />
-                <Route path="/patios-norman" element={<ServiceInCity slug="patios-norman" />} />
-                <Route path="/patios-edmond" element={<ServiceInCity slug="patios-edmond" />} />
-                <Route path="/foundations-norman" element={<ServiceInCity slug="foundations-norman" />} />
-                <Route path="/foundations-yukon" element={<ServiceInCity slug="foundations-yukon" />} />
-                <Route path="/driveways-moore" element={<ServiceInCity slug="driveways-moore" />} />
-                <Route path="/patios-moore" element={<ServiceInCity slug="patios-moore" />} />
-                <Route path="/driveways-mustang" element={<ServiceInCity slug="driveways-mustang" />} />
-                <Route path="/retaining-walls-norman" element={<ServiceInCity slug="retaining-walls-norman" />} />
-                <Route path="/patios-yukon" element={<ServiceInCity slug="patios-yukon" />} />
-                <Route path="/driveway-repair-oklahoma-city" element={<RepairService slug="driveway-repair-oklahoma-city" />} />
-                <Route path="/foundation-repair-oklahoma-city" element={<RepairService slug="foundation-repair-oklahoma-city" />} />
-                <Route path="/driveway-repair" element={<Navigate to="/driveway-repair-oklahoma-city" replace />} />
-                <Route path="/foundation-repair" element={<Navigate to="/foundation-repair-oklahoma-city" replace />} />
-                <Route path="/our-projects" element={<OurProjects />} />
-                <Route path="/quote/:id" element={<QuotePage />} />
-                <Route path="/blog" element={<BlogIndex />} />
-                <Route path="/blog/:slug" element={<BlogPost />} />
-                <Route path="*" element={<NotFound />} />
-              </Route>
-              <Route path="/admin" element={<Suspense fallback={<PageLoader />}><ProtectedRoute><AdminDashboard /></ProtectedRoute></Suspense>} />
-              {/* Gated builder pricing page — no nav/footer, noindex */}
-              <Route path="/builders" element={<Suspense fallback={<PageLoader />}><BuilderPricing /></Suspense>} />
-            </Routes>
-        </BrowserRouter>
-      </AuthProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+          <AppRoutes />
+        </AuthProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+
+  if (url !== undefined) {
+    return <StaticRouter location={url}>{tree}</StaticRouter>;
+  }
+
+  return (
+    <BrowserRouter future={{ v7_startTransition: true }}>{tree}</BrowserRouter>
+  );
+}
 
 export default App;

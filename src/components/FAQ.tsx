@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toFaqPageJsonLd, FAQ_JSON_LD_SCRIPT_ID, type FaqJsonLdItem } from "@/lib/faqJsonLd";
 
 interface FAQItemData {
   question: string;
@@ -6,8 +7,17 @@ interface FAQItemData {
 }
 
 export default function FAQ({ items, title, subtitle, eyebrow }: { items: FAQItemData[]; title?: string; subtitle?: string; eyebrow?: string }) {
+  const jsonLd = items.length ? JSON.stringify(toFaqPageJsonLd(items as FaqJsonLdItem[])).replace(/</g, "\\u003c") : null;
+
   return (
     <div className="max-w-[820px]">
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          id={FAQ_JSON_LD_SCRIPT_ID}
+          dangerouslySetInnerHTML={{ __html: jsonLd }}
+        />
+      )}
       {eyebrow && <div className="section-eye">{eyebrow}</div>}
       {title && <h2 className="mb-2" dangerouslySetInnerHTML={{ __html: title }} />}
       {subtitle && <p className="prose-muted mb-8">{subtitle}</p>}
@@ -40,6 +50,7 @@ function FAQItem({ item, defaultOpen }: { item: FAQItemData; defaultOpen?: boole
           +
         </span>
       </button>
+      {/* Keep answers in the HTML for crawlers even when visually collapsed */}
       <div
         className="overflow-hidden transition-all duration-300"
         style={{ maxHeight: open ? "500px" : "0" }}

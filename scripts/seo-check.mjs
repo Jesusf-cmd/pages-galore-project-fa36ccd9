@@ -76,6 +76,42 @@ function distFileFor(pagePath) {
   return path.join(root, "dist", `${pagePath.replace(/^\//, "")}.html`);
 }
 
+/** Schema.org LocalBusiness and common subtypes we emit. */
+const LOCAL_BUSINESS_TYPES = new Set([
+  "LocalBusiness",
+  "HomeAndConstructionBusiness",
+  "GeneralContractor",
+  "ProfessionalService",
+]);
+
+function isLocalBusinessType(type) {
+  if (typeof type === "string") return LOCAL_BUSINESS_TYPES.has(type);
+  if (Array.isArray(type)) return type.some((t) => typeof t === "string" && LOCAL_BUSINESS_TYPES.has(t));
+  return false;
+}
+
+/** Count top-level LocalBusiness-type nodes across all JSON-LD blocks (incl. @graph). */
+function countLocalBusinessNodes(blocks) {
+  let count = 0;
+  const visit = (node) => {
+    if (!node || typeof node !== "object") return;
+    if (Array.isArray(node)) {
+      node.forEach(visit);
+      return;
+    }
+    if (isLocalBusinessType(node["@type"])) count++;
+    if (node["@graph"]) visit(node["@graph"]);
+  };
+  for (const block of blocks) {
+    try {
+      visit(JSON.parse(block));
+    } catch {
+      // parse errors reported separately
+    }
+  }
+  return count;
+}
+
 function pathFromDistFile(file) {
   const rel = path.relative(path.join(root, "dist"), file).replace(/\\/g, "/");
   if (rel === "index.html") return "/";
@@ -147,6 +183,23 @@ async function runDist() {
         JSON.parse(block);
       } catch (e) {
         fails.push(`json-ld[${i}] parse error: ${e.message}`);
+      }
+    }
+
+    {
+      const localBusinessCount = countLocalBusinessNodes(head.jsonLd);
+      if (localBusinessCount > 1) {
+        fails.push(`more than one LocalBusiness-type node (${localBusinessCount})`);
+      }
+    }
+
+    if (Array.isArray(page.mustContain)) {
+      const searchable = stripTags(decodeEntities(html));
+      for (const needle of page.mustContain) {
+        if (!needle) continue;
+        if (!searchable.includes(needle) && !html.includes(needle)) {
+          fails.push(`mustContain missing: ${JSON.stringify(needle)}`);
+        }
       }
     }
 

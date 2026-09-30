@@ -16,7 +16,7 @@ function serviceJsonLd(page: WichitaPageContent): string {
     name: page.serviceSchema.name,
     url: canonicalUrl(page.path),
     telephone: page.serviceSchema.telephone,
-    provider: { "@id": "https://fdzconstruction.com/#organization" },
+    provider: { "@id": "https://fdzconstruction.com/#business" },
     areaServed: { "@type": "City", name: "Wichita", addressRegion: "KS" },
   }).replace(/</g, "\\u003c");
   return `<script type="application/ld+json">${json}</script>`;

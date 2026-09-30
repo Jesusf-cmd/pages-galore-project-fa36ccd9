@@ -46,6 +46,7 @@ export default function Index() {
       <ServicesSection />
       <CommercialCapabilitySection />
       <SiteWorkSection />
+      <SoilMattersSection />
       <WhyUsSection />
       <RecentProjectsSection />
       {/* TODO: re-add once GBP is live with real reviews */}
@@ -310,27 +311,34 @@ function CommercialCapabilitySection() {
 }
 
 function SiteWorkSection() {
-  const services = [
-    { title: "Skid Steer Services", desc: "Land clearing, dirt work, leveling, gravel grading, gravel & dirt driveways, and brush hog mowing — sized for residential lots up to about 2 acres.", to: "/skid-steer-services-oklahoma-city" },
-    { title: "Excavator Services", desc: "Heavier land clearing, stump removal, deep grading, drainage work, and larger commercial pads or driveways.", to: "/excavator-services-oklahoma-city" },
-  ];
-
   return (
     <ScrollReveal>
       <section className="section-padding">
         <div className="section-eye">Also from our crew</div>
-        <h2 className="mb-3">Site Work,<br/><em className="h2-accent">Before the Concrete Goes In.</em></h2>
-        <p className="prose-muted mb-8">Some projects need ground work before they need concrete — clearing a lot, leveling a yard, or grading a gravel driveway. Same self-performed crew, different equipment.</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-concrete/[0.08]" style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}>
-          {services.map(s => (
-            <Link key={s.to} to={s.to} className="bg-stone p-6 md:p-8 no-underline block hover:bg-orange/[0.04] transition-colors">
-              <div className="mb-3"><TradeBadge model="self-performed" /></div>
-              <div className="font-display text-lg font-extrabold uppercase tracking-[0.04em] text-concrete mb-2">{s.title}</div>
-              <p className="text-[0.85rem] text-muted-text leading-relaxed mb-3">{s.desc}</p>
-              <span className="text-[0.72rem] text-orange font-bold tracking-[0.06em] uppercase">Learn more →</span>
-            </Link>
-          ))}
-        </div>
+        <h2 className="mb-3">Site Work Services</h2>
+        <p className="prose-muted mb-5 max-w-[820px]">
+          <Link to="/skid-steer-services-oklahoma-city" className="text-orange no-underline font-medium">Skid Steer Services</Link>
+          {" "}— Land clearing, dirt work, leveling, gravel driveways, and brush hog mowing for lots up to about 2 acres.{" "}
+          <Link to="/excavator-services-oklahoma-city" className="text-orange no-underline font-medium">Excavator Services</Link>
+          {" "}— Heavier land clearing, deep grading, drainage work, and larger commercial pads or driveways.{" "}
+          The same crew also handles{" "}
+          <Link to="/sewer-line-repair-oklahoma-city" className="text-orange no-underline font-medium">residential sewer line repair</Link>
+          {" "}— repair and replacement, plus driveway, sidewalk, and slab restoration by the crew that did the digging.
+        </p>
+      </section>
+    </ScrollReveal>
+  );
+}
+
+function SoilMattersSection() {
+  return (
+    <ScrollReveal>
+      <section className="section-padding section-alt">
+        <div className="section-eye">Oklahoma clay</div>
+        <h2 className="mb-3">Why Oklahoma City Soil Matters</h2>
+        <p className="prose-muted max-w-[820px]">
+          The OKC metro sits on Permian-age clay and shale that expands when wet and shrinks in drought. That movement stresses driveways, foundations, and buried sewer pipe alike — which is why proper sub-base compaction, reinforcement, and drainage grading matter on every job.
+        </p>
       </section>
     </ScrollReveal>
   );

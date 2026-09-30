@@ -197,3 +197,84 @@ npm run seo-check -- --dist
 ```
 
 Confirmed in dist: `HomeAndConstructionBusiness` on `/` + `/oklahoma-city-concrete` only; estimate `<form>` fields present without JS.
+
+---
+
+# SEO Changelog — Phase 2b Step 6 (One content pipeline + schema merge)
+
+Date: 2026-09-30
+
+## Routes switched to `render: 'react'` (13)
+
+Static HTML for these paths is now React `renderToPipeableStream` output (still `createRoot` on the client — no `hydrateRoot` this phase). Head tags still come from `src/seo/pages.ts` via the prerender plugin. All other indexable routes remain `render: 'template'`.
+
+| path | Content ported / covered |
+|------|--------------------------|
+| `/` | Ported **Site Work Services** (skid steer, excavator, sewer links) and **Why Oklahoma City Soil Matters** (template wording). Concrete Services / Sewer / Service Areas covered by existing React sections; CTA covered by `<EstimateForm>`. |
+| `/oklahoma-city-concrete` | Ported **Oklahoma City Soil Conditions**, **Neighborhoods Served**, **Services Available in Oklahoma City** (template wording). FAQ / sewer / projects / CTA covered or EstimateForm. |
+| `/driveways-oklahoma-city` | Added template internal link to `/driveway-repair-oklahoma-city`. Process / soil / Why FDZ / FAQ / Related covered by React H2s. FAQs already included template questions. |
+| `/patios-oklahoma-city` | No new copy — stamped process, sealing, Why FDZ, FAQ, Related covered under React headings. |
+| `/sidewalks-oklahoma-city` | No new copy — Process / Why FDZ / FAQ / Related covered under React headings. |
+| `/ada-concrete-ramps-oklahoma-city` | Renamed local-expertise H2 to **Oklahoma City Conditions**; FAQ titled **Frequently Asked Questions**. Shared `adaRampsContent` already held template FAQs/body. |
+| `/our-projects` | Ported **Services Behind This Work** (owner-page links). Featured PROJECTS titles surfaced so `mustContain` passes. Featured / Recent covered by React H2s. |
+| `/blog` | Switch only (already safe). |
+| `/blog/why-concrete-driveways-crack-oklahoma` | Switch only. |
+| `/blog/cost-of-concrete-oklahoma-city-2026` | Switch only. |
+| `/blog/rebar-vs-wire-mesh-concrete-slabs` | Switch only. |
+| `/blog/how-thick-should-driveway-be-oklahoma` | Switch only. |
+| `/blog/best-time-of-year-to-pour-concrete-okc` | Switch only. |
+
+Also: FAQ accordion answers stay in the HTML when collapsed; FAQPage JSON-LD is SSR-emitted from `<FAQ>` and hoisted to `<head>`.
+
+## Schema merge — one business entity
+
+**Problem:** Every page had a `GeneralContractor` (`#organization`) from `index.html`, and `/` + `/oklahoma-city-concrete` also had a separate `HomeAndConstructionBusiness` (`#localbusiness`).
+
+**Fix:** Merge into one `GeneralContractor` node:
+
+- `@id`: `https://fdzconstruction.com/#business`
+- Combined fields: name, url, telephone, email, image, logo, priceRange, description, address (city-level), openingHoursSpecification, sameAs (Facebook + Maps; TODO(FDZ) for GBP/BBB), areaServed, hasOfferCatalog
+- Full node emitted **only** on `/` and `/oklahoma-city-concrete`
+- Other pages: entity omitted; Service / provider refs use `{"@id":"https://fdzconstruction.com/#business"}`
+- FAQPage blocks unchanged
+- `seo-check --dist` fails if any page has more than one LocalBusiness-type node
+
+## Request indexing (after deploy)
+
+Start with (Search Console daily quota):
+
+1. `/`
+2. `/driveways-oklahoma-city`
+3. `/patios-oklahoma-city`
+4. `/sidewalks-oklahoma-city`
+5. `/blog/cost-of-concrete-oklahoma-city-2026`
+
+Then the rest of the switched set:
+
+6. `/oklahoma-city-concrete`
+7. `/ada-concrete-ramps-oklahoma-city`
+8. `/our-projects`
+9. `/blog`
+10. `/blog/why-concrete-driveways-crack-oklahoma`
+11. `/blog/rebar-vs-wire-mesh-concrete-slabs`
+12. `/blog/how-thick-should-driveway-be-oklahoma`
+13. `/blog/best-time-of-year-to-pour-concrete-okc`
+
+## Post-deploy checks
+
+```
+npm run seo-check -- --live https://fdzconstruction.com
+```
+
+- Search Console → URL Inspection on `/` and `/driveways-oklahoma-city` → Test live URL → View tested page (full copy in HTML).
+- Google Rich Results Test on `/` → one business, no errors.
+- Request indexing for the list above (quota-aware).
+
+## Verify (this step)
+
+```
+npm run build
+npm run seo-check -- --dist
+→ 76/76 passed (0 failed); ≤1 LocalBusiness-type node per page
+```
+

@@ -48,6 +48,8 @@ export type ServicePageContent = {
   description: string;
   introText?: string;
   localExpertiseNote?: string;
+  localExpertiseHeading?: string;
+  faqTitle?: string;
   serviceLabel?: string;
   serviceCards?: ServiceCard[];
   subServices?: {

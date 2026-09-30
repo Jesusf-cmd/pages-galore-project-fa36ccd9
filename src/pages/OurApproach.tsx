@@ -21,7 +21,7 @@ function useApproachSchema() {
       description:
         "FDZ Construction LLC self-performs all concrete work with its own crews and equipment. HVAC, plumbing, and electrical work is delivered as general contractor, managing licensed trade specialists under one invoice and one warranty.",
       url: PAGE_URL,
-      isPartOf: { "@id": "https://fdzconstruction.com/#organization" },
+      isPartOf: { "@id": "https://fdzconstruction.com/#business" },
     });
     document.getElementById("our-approach-schema")?.remove();
     document.head.appendChild(script);

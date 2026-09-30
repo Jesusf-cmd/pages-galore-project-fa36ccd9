@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
 import TrustBar from "@/components/TrustBar";
 import FinalCTA from "@/components/FinalCTA";
-import ServicesFooterGrid from "@/components/ServicesFooterGrid";
 import { usePageSEO } from "@/hooks/useSEO";
 import {
   PROJECTS,
@@ -331,6 +330,7 @@ export default function OurProjects() {
               <div className="text-[0.6rem] tracking-[0.14em] uppercase text-orange font-bold mb-2">
                 {copy.eyebrow}
               </div>
+              <p className="text-[0.78rem] text-muted-text mb-2">{project.title}</p>
               <h3 className="font-display text-[clamp(1.4rem,2.5vw,2rem)] font-black uppercase leading-[1.05] mb-4">
                 {copy.headline}
               </h3>
@@ -442,12 +442,23 @@ export default function OurProjects() {
 
       <section className="section-padding">
         <div className="section-eye">Our Concrete Services</div>
-        <h2 className="mb-4">
-          Every Concrete Service
-          <br />
-          <em className="h2-accent">OKC Homeowners Need.</em>
-        </h2>
-        <ServicesFooterGrid />
+        <h2 className="mb-4">Services Behind This Work</h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3" style={{ listStyle: "none", padding: 0 }}>
+          {[
+            { href: "/driveways-oklahoma-city", label: "Concrete driveways" },
+            { href: "/foundations-oklahoma-city", label: "Concrete foundations" },
+            { href: "/retaining-walls-oklahoma-city", label: "Retaining walls" },
+            { href: "/commercial-concrete-oklahoma-city", label: "Commercial concrete" },
+            { href: "/parking-lots-oklahoma-city", label: "Parking lots" },
+            { href: "/sidewalks-oklahoma-city", label: "Sidewalks, curb & gutter" },
+          ].map((s) => (
+            <li key={s.href}>
+              <Link to={s.href} className="text-orange no-underline hover:underline text-[0.92rem]">
+                → {s.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <FinalCTA />

@@ -2,7 +2,6 @@ import { Component, type ReactNode, Suspense, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { organizationJsonLdForPath } from "@/lib/organizationSchema";
 import { phoneForPath } from "@/lib/phones";
 import { trackPhoneClick } from "@/lib/dataLayer";
 import { syncLocalBusinessJsonLd } from "@/lib/localBusinessSchema";
@@ -44,15 +43,7 @@ export default function Layout() {
   const { pathname } = useLocation();
   const phone = phoneForPath(pathname);
   useEffect(() => {
-    document.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]').forEach((script) => {
-      try {
-        const data = JSON.parse(script.textContent || "");
-        if (data["@type"] !== "GeneralContractor") return;
-        script.textContent = JSON.stringify(organizationJsonLdForPath(data, pathname));
-      } catch {
-        // Leave unrelated or malformed structured data alone.
-      }
-    });
+    // Single GeneralContractor#business on / and /oklahoma-city-concrete; omit elsewhere.
     syncLocalBusinessJsonLd(pathname);
   }, [pathname]);
 

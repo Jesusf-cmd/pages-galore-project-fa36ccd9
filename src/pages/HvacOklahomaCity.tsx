@@ -18,7 +18,7 @@ function useServiceSchema() {
       description:
         "HVAC repair, installation, replacement, and emergency service for residential and commercial properties across the Oklahoma City metro.",
       url: PAGE_URL,
-      provider: { "@id": "https://fdzconstruction.com/#organization" },
+      provider: { "@id": "https://fdzconstruction.com/#business" },
       areaServed: AREAS_SERVED.map((name) => ({ "@type": "City", name, addressRegion: "OK" })),
     });
     document.getElementById("hvac-service-schema")?.remove();

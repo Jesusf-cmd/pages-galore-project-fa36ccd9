@@ -1,5 +1,6 @@
 /** Single source of truth for page head tags + H1. Prerender and useSEO both read this. */
 import { SITE_ORIGIN } from "../lib/siteUrl";
+import { PROJECTS } from "../data/projects";
 
 export type SeoPage = {
   path: string;
@@ -9,6 +10,10 @@ export type SeoPage = {
   canonical: string;
   ogImage?: string;
   noindex?: boolean;
+  /** Strings that must appear in dist static HTML (seo-check --dist). */
+  mustContain?: string[];
+  /** Prerender source. Default template until Phase 2b switches routes. */
+  render?: "template" | "react";
 };
 
 function canonicalFromPath(path: string): string {
@@ -17,24 +22,29 @@ function canonicalFromPath(path: string): string {
   return `${SITE_ORIGIN}${withLeading.replace(/\/+$/, "")}`;
 }
 
+const PROJECT_TITLES = [...new Set(PROJECTS.map((p) => p.title))];
+
 const RAW: Omit<SeoPage, "canonical">[] = [
   {
     path: "/",
     title: "Concrete & Sewer Line Contractor Oklahoma City | FDZ Construction LLC",
     description: "Oklahoma City concrete & sewer line contractor. One crew self-performs every job — driveways, slabs, foundations & sewer repair. Call (405) 458-4805.",
     h1: "One Crew. Concrete & Sewer Line Done Right.",
+    render: "react",
   },
   {
     path: "/driveways-oklahoma-city",
     title: "Concrete Driveways Oklahoma City | FDZ Construction LLC",
     description: "Professional concrete driveway installation in Oklahoma City. Licensed & insured. Broom finish, stamped, and reinforced driveways. Free estimates — call (405) 458-4805.",
     h1: "Concrete Driveway Installation in Oklahoma City, OK",
+    render: "react",
   },
   {
     path: "/patios-oklahoma-city",
     title: "Patios & Stamped Concrete Oklahoma City | FDZ Construction",
     description: "Concrete patio, slab, and stamped concrete contractors in Oklahoma City. Broom, smooth, stamped finishes. Garage floors, shop slabs, decorative patios. Free estimate.",
     h1: "Patios, Slabs & Stamped Concrete in Oklahoma City",
+    render: "react",
   },
   {
     path: "/foundations-oklahoma-city",
@@ -100,6 +110,7 @@ const RAW: Omit<SeoPage, "canonical">[] = [
     title: "Concrete Sidewalks, Curb & Gutter Oklahoma City | FDZ Construction LLC",
     description: "Concrete sidewalk and curb & gutter contractors in Oklahoma City. New construction, city right-of-way, ADA-compliant ramps, city-spec curb work. Free estimate.",
     h1: "Sidewalks, Curb & Gutter in Oklahoma City",
+    render: "react",
   },
   {
     path: "/commercial-concrete-oklahoma-city",
@@ -124,6 +135,7 @@ const RAW: Omit<SeoPage, "canonical">[] = [
     title: "Concrete & Sewer Line Contractor Oklahoma City, OK | FDZ Construction LLC",
     description: "Concrete & sewer line contractor in Oklahoma City, OK — FDZ Construction LLC, based in Oklahoma City. Driveways, patios, slabs, foundations & sewer repair. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
     h1: "Oklahoma City Concrete & Sewer Line Contractor",
+    render: "react",
   },
   {
     path: "/edmond-concrete",
@@ -178,42 +190,50 @@ const RAW: Omit<SeoPage, "canonical">[] = [
     title: "Our Concrete Projects | FDZ Construction LLC",
     description: "Browse completed concrete projects across the OKC metro. Driveways, patios, foundations, commercial pours, and retaining walls by FDZ Construction LLC.",
     h1: "Our Concrete Work Across Oklahoma",
+    mustContain: PROJECT_TITLES,
+    render: "react",
   },
   {
     path: "/blog",
     title: "Concrete Tips & Guides for Oklahoma City | FDZ Construction LLC",
     description: "Expert concrete guides for Oklahoma City homeowners. Pricing, specifications, soil tips, and maintenance advice from FDZ Construction LLC.",
     h1: "Concrete Tips & Guides",
+    render: "react",
   },
   {
     path: "/blog/why-concrete-driveways-crack-oklahoma",
     title: "Why Concrete Driveways Crack in Oklahoma | FDZ Construction LLC",
     description: "Five real reasons concrete driveways crack in Oklahoma — clay soil, bad base prep, missing rebar — and how to prevent every one of them.",
     h1: "Why Concrete Driveways Crack in Oklahoma",
+    render: "react",
   },
   {
     path: "/blog/cost-of-concrete-oklahoma-city-2026",
     title: "Cost of Concrete in Oklahoma City 2026 | FDZ Construction LLC",
     description: "Typical 2026 concrete cost ranges in Oklahoma City — per square foot rates and example project totals for planning. A written estimate follows a site visit. Call (405) 458-4805.",
     h1: "Cost of Concrete in Oklahoma City (2026 Guide)",
+    render: "react",
   },
   {
     path: "/blog/rebar-vs-wire-mesh-concrete-slabs",
     title: "Rebar vs Wire Mesh for Concrete Slabs | FDZ Construction LLC",
     description: "Rebar vs wire mesh for concrete slabs in Oklahoma. Which your project actually needs on OKC clay soil — and why the choice matters long-term.",
     h1: "Rebar vs Wire Mesh for Concrete Slabs",
+    render: "react",
   },
   {
     path: "/blog/how-thick-should-driveway-be-oklahoma",
     title: "How Thick Should a Driveway Be in Oklahoma | FDZ Construction LLC",
     description: "How thick should a concrete driveway be in Oklahoma? 4 inches is standard — but not always right. Learn when you need 5–6 inches instead.",
     h1: "How Thick Should a Driveway Be in Oklahoma?",
+    render: "react",
   },
   {
     path: "/blog/best-time-of-year-to-pour-concrete-okc",
     title: "Best Time to Pour Concrete in OKC | FDZ Construction LLC",
     description: "Best time to pour concrete in Oklahoma City. Fall is ideal, but experienced OKC contractors work year-round with the right protocols.",
     h1: "Best Time of Year to Pour Concrete in OKC",
+    render: "react",
   },
   {
     path: "/driveways-edmond",
@@ -376,6 +396,7 @@ const RAW: Omit<SeoPage, "canonical">[] = [
     title: "ADA Concrete Ramps Oklahoma City | FDZ Construction",
     description: "ADA-compliant concrete ramps, curb cuts, and accessible routes in Oklahoma City. IBC and ADA Standards compliant. Licensed & insured. Call (405) 458-4805.",
     h1: "ADA Concrete Ramps in Oklahoma City",
+    render: "react",
   },
   {
     path: "/dumpster-pad-concrete-oklahoma-city",
@@ -483,10 +504,16 @@ const RAW: Omit<SeoPage, "canonical">[] = [
   },
 ];
 
-export const SEO_PAGES: SeoPage[] = RAW.map((page) => ({
-  ...page,
-  canonical: canonicalFromPath(page.path),
-}));
+export const SEO_PAGES: SeoPage[] = RAW.map((page) => {
+  const baseMust = page.mustContain ?? [];
+  const mustContain = [...new Set([page.h1, ...baseMust])];
+  return {
+    ...page,
+    canonical: canonicalFromPath(page.path),
+    render: page.render ?? "template",
+    mustContain,
+  };
+});
 
 export const SEO_PAGE_BY_PATH: Record<string, SeoPage> = Object.fromEntries(
   SEO_PAGES.map((page) => [page.path, page]),

@@ -224,6 +224,7 @@ export default function DrivewaysOklahomaCity() {
           titleAccent: "From FDZ.",
           content: [
             "<a href='/sewer-line-repair-oklahoma-city' class='text-orange no-underline font-medium'>Residential sewer line repair</a> — When a sewer trench cuts through a driveway, we restore that concrete as part of the same job.",
+            "<a href='/driveway-repair-oklahoma-city' class='text-orange no-underline font-medium'>Driveway repair</a> — Crack repair, leveling, joint sealing, and honest repair-vs-replace evaluation.",
             "<a href='/patios-oklahoma-city' class='text-orange no-underline font-medium'>Patios &amp; Stamped Concrete</a> — Backyard patios, decorative stamped surfaces, and outdoor living slabs to pair with your new driveway.",
             "<a href='/retaining-walls-oklahoma-city' class='text-orange no-underline font-medium'>Retaining Wall Construction</a> — Slope and drainage walls that often accompany driveway and grade changes.",
             "<a href='/sidewalks-oklahoma-city' class='text-orange no-underline font-medium'>Sidewalks &amp; Curb and Gutter</a> — Walkways, ADA curb ramps, and curb work to complete your property.",

@@ -68,7 +68,7 @@ function useEmergencySchema() {
       description:
         "Emergency concrete, HVAC, plumbing, and electrical service across the Oklahoma City metro — one company, one call, for every trade.",
       url: PAGE_URL,
-      provider: { "@id": "https://fdzconstruction.com/#organization" },
+      provider: { "@id": "https://fdzconstruction.com/#business" },
       areaServed: ["Oklahoma City", "Edmond", "Yukon"].map((name) => ({ "@type": "City", name, addressRegion: "OK" })),
     });
     document.getElementById("emergency-service-schema")?.remove();

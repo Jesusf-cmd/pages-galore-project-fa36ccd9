@@ -18,7 +18,7 @@ function useServiceSchema() {
       description:
         "Residential and commercial electrical repair and installation across the Oklahoma City metro — panel upgrades, wiring, lighting, generators, EV chargers, and emergency service.",
       url: PAGE_URL,
-      provider: { "@id": "https://fdzconstruction.com/#organization" },
+      provider: { "@id": "https://fdzconstruction.com/#business" },
       areaServed: AREAS_SERVED.map((name) => ({ "@type": "City", name, addressRegion: "OK" })),
     });
     document.getElementById("electrical-service-schema")?.remove();

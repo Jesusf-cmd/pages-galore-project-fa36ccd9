@@ -4,49 +4,77 @@
     "title": "Concrete & Sewer Line Contractor Oklahoma City | FDZ Construction LLC",
     "description": "Oklahoma City concrete & sewer line contractor. One crew self-performs every job — driveways, slabs, foundations & sewer repair. Call (405) 458-4805.",
     "h1": "One Crew. Concrete & Sewer Line Done Right.",
-    "canonical": "https://fdzconstruction.com/"
+    "render": "react",
+    "canonical": "https://fdzconstruction.com/",
+    "mustContain": [
+      "One Crew. Concrete & Sewer Line Done Right."
+    ]
   },
   {
     "path": "/driveways-oklahoma-city",
     "title": "Concrete Driveways Oklahoma City | FDZ Construction LLC",
     "description": "Professional concrete driveway installation in Oklahoma City. Licensed & insured. Broom finish, stamped, and reinforced driveways. Free estimates — call (405) 458-4805.",
     "h1": "Concrete Driveway Installation in Oklahoma City, OK",
-    "canonical": "https://fdzconstruction.com/driveways-oklahoma-city"
+    "render": "react",
+    "canonical": "https://fdzconstruction.com/driveways-oklahoma-city",
+    "mustContain": [
+      "Concrete Driveway Installation in Oklahoma City, OK"
+    ]
   },
   {
     "path": "/patios-oklahoma-city",
     "title": "Patios & Stamped Concrete Oklahoma City | FDZ Construction",
     "description": "Concrete patio, slab, and stamped concrete contractors in Oklahoma City. Broom, smooth, stamped finishes. Garage floors, shop slabs, decorative patios. Free estimate.",
     "h1": "Patios, Slabs & Stamped Concrete in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/patios-oklahoma-city"
+    "render": "react",
+    "canonical": "https://fdzconstruction.com/patios-oklahoma-city",
+    "mustContain": [
+      "Patios, Slabs & Stamped Concrete in Oklahoma City"
+    ]
   },
   {
     "path": "/foundations-oklahoma-city",
     "title": "Concrete Foundations Oklahoma City | FDZ Construction",
     "description": "Concrete foundation contractor in Oklahoma City. Slab-on-grade, stem walls, footings, garage pads, and commercial foundations engineered for clay soil. Free estimate: (405) 458-4805.",
     "h1": "Concrete Foundations in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/foundations-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/foundations-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Concrete Foundations in Oklahoma City"
+    ]
   },
   {
     "path": "/sewer-line-repair-oklahoma-city",
     "title": "Residential Sewer Line Repair Oklahoma City | FDZ Construction LLC",
     "description": "Residential sewer line repair in OKC. Camera inspection $200–$500. Job prices are estimates; the written quote sets the scope and price. Call (405) 458-4805.",
     "h1": "Residential Sewer Line Repair in Oklahoma City.",
-    "canonical": "https://fdzconstruction.com/sewer-line-repair-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/sewer-line-repair-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Residential Sewer Line Repair in Oklahoma City."
+    ]
   },
   {
     "path": "/skid-steer-services-oklahoma-city",
     "title": "Skid Steer Services Oklahoma City | FDZ Construction",
     "description": "Skid steer land clearing, dirt work, leveling, gravel grading, gravel driveways & brush hog mowing in OKC. Self-performed, no subcontractors. Free estimate: (405) 458-4805.",
     "h1": "Skid Steer Land Clearing & Site Work in Oklahoma City, OK",
-    "canonical": "https://fdzconstruction.com/skid-steer-services-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/skid-steer-services-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Skid Steer Land Clearing & Site Work in Oklahoma City, OK"
+    ]
   },
   {
     "path": "/excavator-services-oklahoma-city",
     "title": "Excavator Services Oklahoma City | FDZ Construction",
     "description": "Excavator land clearing, stump removal, deep grading, drainage work & larger gravel driveways/pads in OKC. Self-performed, no subcontractors. Free estimate: (405) 458-4805.",
     "h1": "Excavator Land Clearing & Heavy Site Work in Oklahoma City, OK",
-    "canonical": "https://fdzconstruction.com/excavator-services-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/excavator-services-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Excavator Land Clearing & Heavy Site Work in Oklahoma City, OK"
+    ]
   },
   {
     "path": "/hvac-oklahoma-city",
@@ -54,7 +82,11 @@
     "description": "HVAC repair, installation & emergency service in Oklahoma City. AC, furnace & heat pump specialists. Licensed & insured. Call (405) 458-4805.",
     "h1": "Oklahoma City HVAC Repair, Installation & Emergency Service",
     "noindex": true,
-    "canonical": "https://fdzconstruction.com/hvac-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/hvac-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Oklahoma City HVAC Repair, Installation & Emergency Service"
+    ]
   },
   {
     "path": "/plumbing-oklahoma-city",
@@ -62,7 +94,11 @@
     "description": "Plumbing repair, drain cleaning, water heaters, leak detection & sewer line service in Oklahoma City. Call (405) 458-4805.",
     "h1": "Oklahoma City Plumbing Services",
     "noindex": true,
-    "canonical": "https://fdzconstruction.com/plumbing-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/plumbing-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Oklahoma City Plumbing Services"
+    ]
   },
   {
     "path": "/electrical-oklahoma-city",
@@ -70,7 +106,11 @@
     "description": "Residential & commercial electrical services in Oklahoma City. Panel upgrades, wiring, lighting, generators & EV chargers. Licensed. Call (405) 458-4805.",
     "h1": "Oklahoma City Electrical Services",
     "noindex": true,
-    "canonical": "https://fdzconstruction.com/electrical-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/electrical-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Oklahoma City Electrical Services"
+    ]
   },
   {
     "path": "/emergency-services-oklahoma-city",
@@ -78,7 +118,11 @@
     "description": "24/7 emergency concrete, HVAC, plumbing & electrical service in Oklahoma City. One call handles every trade. Call (405) 458-4805.",
     "h1": "24/7 Emergency Services in Oklahoma City",
     "noindex": true,
-    "canonical": "https://fdzconstruction.com/emergency-services-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/emergency-services-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "24/7 Emergency Services in Oklahoma City"
+    ]
   },
   {
     "path": "/our-approach",
@@ -86,104 +130,175 @@
     "description": "FDZ self-performs all concrete work with our own crews. HVAC, plumbing & electrical are delivered as general contractor, managing licensed specialists under one invoice and warranty.",
     "h1": "Self-Performed Concrete. Managed Trades.",
     "noindex": true,
-    "canonical": "https://fdzconstruction.com/our-approach"
+    "canonical": "https://fdzconstruction.com/our-approach",
+    "render": "template",
+    "mustContain": [
+      "Self-Performed Concrete. Managed Trades."
+    ]
   },
   {
     "path": "/sidewalks-oklahoma-city",
     "title": "Concrete Sidewalks, Curb & Gutter Oklahoma City | FDZ Construction LLC",
     "description": "Concrete sidewalk and curb & gutter contractors in Oklahoma City. New construction, city right-of-way, ADA-compliant ramps, city-spec curb work. Free estimate.",
     "h1": "Sidewalks, Curb & Gutter in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/sidewalks-oklahoma-city"
+    "render": "react",
+    "canonical": "https://fdzconstruction.com/sidewalks-oklahoma-city",
+    "mustContain": [
+      "Sidewalks, Curb & Gutter in Oklahoma City"
+    ]
   },
   {
     "path": "/commercial-concrete-oklahoma-city",
     "title": "Commercial Concrete Contractor Oklahoma City | FDZ Construction",
     "description": "Commercial concrete contractor in Oklahoma City. Parking lots, loading docks, warehouse slabs, foundations, equipment pads, ADA, curb & gutter, and commercial repair. Free estimate: (405) 458-4805.",
     "h1": "Commercial Concrete Contractor in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/commercial-concrete-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/commercial-concrete-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Commercial Concrete Contractor in Oklahoma City"
+    ]
   },
   {
     "path": "/parking-lots-oklahoma-city",
     "title": "New Concrete Parking Lots in Oklahoma City | FDZ",
     "description": "New concrete parking lot construction and full replacement in Oklahoma City. ADA layouts, 4,000+ PSI pours, curb and gutter. Call (405) 458-4805.",
     "h1": "Concrete Parking Lot Construction in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/parking-lots-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/parking-lots-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Concrete Parking Lot Construction in Oklahoma City"
+    ]
   },
   {
     "path": "/retaining-walls-oklahoma-city",
     "title": "Concrete Retaining Walls Oklahoma City | FDZ Construction LLC",
     "description": "Concrete retaining wall installation and repair in Oklahoma City. Poured concrete and CMU block walls built for OKC's expansive clay soil — drainage-first design. Licensed, bonded, insured. Free estimates — (405) 458-4805.",
     "h1": "Concrete Retaining Wall Contractors in Oklahoma City, OK",
-    "canonical": "https://fdzconstruction.com/retaining-walls-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/retaining-walls-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Concrete Retaining Wall Contractors in Oklahoma City, OK"
+    ]
   },
   {
     "path": "/oklahoma-city-concrete",
     "title": "Concrete & Sewer Line Contractor Oklahoma City, OK | FDZ Construction LLC",
     "description": "Concrete & sewer line contractor in Oklahoma City, OK — FDZ Construction LLC, based in Oklahoma City. Driveways, patios, slabs, foundations & sewer repair. Licensed, bonded & insured. Free estimate: (405) 458-4805.",
     "h1": "Oklahoma City Concrete & Sewer Line Contractor",
-    "canonical": "https://fdzconstruction.com/oklahoma-city-concrete"
+    "render": "react",
+    "canonical": "https://fdzconstruction.com/oklahoma-city-concrete",
+    "mustContain": [
+      "Oklahoma City Concrete & Sewer Line Contractor"
+    ]
   },
   {
     "path": "/edmond-concrete",
     "title": "Concrete & Sewer Line Contractor Edmond, OK | FDZ Construction LLC",
     "description": "Concrete & sewer line contractor in Edmond, OK — driveways, patios, slabs, foundations & retaining walls. FDZ Construction LLC. Call (405) 458-4805.",
     "h1": "Edmond Concrete & Sewer Line Contractor",
-    "canonical": "https://fdzconstruction.com/edmond-concrete"
+    "canonical": "https://fdzconstruction.com/edmond-concrete",
+    "render": "template",
+    "mustContain": [
+      "Edmond Concrete & Sewer Line Contractor"
+    ]
   },
   {
     "path": "/norman-ok-concrete",
     "title": "Concrete & Sewer Line Contractor Norman, OK | FDZ Construction LLC",
     "description": "Concrete & sewer line contractor in Norman, OK serving Cleveland County. Driveways, patios, slabs, foundations & sewer repair. FDZ Construction LLC. (405) 458-4805.",
     "h1": "Norman Concrete & Sewer Line Contractor",
-    "canonical": "https://fdzconstruction.com/norman-ok-concrete"
+    "canonical": "https://fdzconstruction.com/norman-ok-concrete",
+    "render": "template",
+    "mustContain": [
+      "Norman Concrete & Sewer Line Contractor"
+    ]
   },
   {
     "path": "/yukon-oklahoma-concrete",
     "title": "Concrete Contractor Yukon, OK | FDZ Construction LLC",
     "description": "Concrete installation, replacement and repair in Yukon, OK. Driveways, foundations and commercial concrete. Request a free on-site estimate from FDZ Construction.",
     "h1": "Yukon Concrete Contractors.",
-    "canonical": "https://fdzconstruction.com/yukon-oklahoma-concrete"
+    "canonical": "https://fdzconstruction.com/yukon-oklahoma-concrete",
+    "render": "template",
+    "mustContain": [
+      "Yukon Concrete Contractors."
+    ]
   },
   {
     "path": "/mustang-oklahoma-concrete",
     "title": "Concrete & Sewer Line Contractor Mustang, OK | FDZ Construction LLC",
     "description": "Concrete & sewer line contractor in Mustang, OK — driveways, patios, slabs & foundations. FDZ Construction LLC. Call (405) 458-4805.",
     "h1": "Mustang Concrete Contractors.",
-    "canonical": "https://fdzconstruction.com/mustang-oklahoma-concrete"
+    "canonical": "https://fdzconstruction.com/mustang-oklahoma-concrete",
+    "render": "template",
+    "mustContain": [
+      "Mustang Concrete Contractors."
+    ]
   },
   {
     "path": "/moore-oklahoma-concrete",
     "title": "Concrete & Sewer Line Contractor Moore, OK | FDZ Construction LLC",
     "description": "Concrete & sewer line contractor in Moore, OK — driveways, patios, slabs, foundations & sidewalks in Cleveland County. FDZ Construction LLC. Free estimate: (405) 458-4805.",
     "h1": "Moore Concrete & Sewer Line Contractor",
-    "canonical": "https://fdzconstruction.com/moore-oklahoma-concrete"
+    "canonical": "https://fdzconstruction.com/moore-oklahoma-concrete",
+    "render": "template",
+    "mustContain": [
+      "Moore Concrete & Sewer Line Contractor"
+    ]
   },
   {
     "path": "/midwest-city-oklahoma-concrete",
     "title": "Concrete & Sewer Line Contractor Midwest City, OK | FDZ Construction LLC",
     "description": "Concrete & sewer line contractor in Midwest City, OK — driveways, patio slabs, sidewalks & foundation work in eastern Oklahoma County. FDZ Construction LLC. Call (405) 458-4805.",
     "h1": "Midwest City Concrete & Sewer Line Contractor",
-    "canonical": "https://fdzconstruction.com/midwest-city-oklahoma-concrete"
+    "canonical": "https://fdzconstruction.com/midwest-city-oklahoma-concrete",
+    "render": "template",
+    "mustContain": [
+      "Midwest City Concrete & Sewer Line Contractor"
+    ]
   },
   {
     "path": "/del-city-oklahoma-concrete",
     "title": "Concrete & Sewer Line Contractor Del City, OK | FDZ Construction LLC",
     "description": "Concrete & sewer line contractor in Del City, OK — driveways, patio slabs, sidewalks & retaining walls. FDZ Construction LLC. Call (405) 458-4805.",
     "h1": "Del City Concrete & Sewer Line Contractor",
-    "canonical": "https://fdzconstruction.com/del-city-oklahoma-concrete"
+    "canonical": "https://fdzconstruction.com/del-city-oklahoma-concrete",
+    "render": "template",
+    "mustContain": [
+      "Del City Concrete & Sewer Line Contractor"
+    ]
   },
   {
     "path": "/stillwater-oklahoma-concrete",
     "title": "Concrete & Sewer Line Contractor Stillwater, OK | FDZ Construction LLC",
     "description": "Concrete & sewer line contractor serving Stillwater, OK — driveways, patios, foundations, and sewer line repair & installation. FDZ Construction LLC. Call (405) 458-4805.",
     "h1": "Stillwater, OK Concrete & Sewer Line Contractor",
-    "canonical": "https://fdzconstruction.com/stillwater-oklahoma-concrete"
+    "canonical": "https://fdzconstruction.com/stillwater-oklahoma-concrete",
+    "render": "template",
+    "mustContain": [
+      "Stillwater, OK Concrete & Sewer Line Contractor"
+    ]
   },
   {
     "path": "/our-projects",
     "title": "Our Concrete Projects | FDZ Construction LLC",
     "description": "Browse completed concrete projects across the OKC metro. Driveways, patios, foundations, commercial pours, and retaining walls by FDZ Construction LLC.",
     "h1": "Our Concrete Work Across Oklahoma",
+    "mustContain": [
+      "Our Concrete Work Across Oklahoma",
+      "Star Spencer High School",
+      "Shop foundation pour",
+      "Pier foundation",
+      "Poured concrete retaining wall",
+      "Forklift ramp",
+      "Residential foundation",
+      "Driveway replacement",
+      "Stamped patio",
+      "Commercial parking lot",
+      "Backyard patio",
+      "City right-of-way sidewalk"
+    ],
+    "render": "react",
     "canonical": "https://fdzconstruction.com/our-projects"
   },
   {
@@ -191,308 +306,484 @@
     "title": "Concrete Tips & Guides for Oklahoma City | FDZ Construction LLC",
     "description": "Expert concrete guides for Oklahoma City homeowners. Pricing, specifications, soil tips, and maintenance advice from FDZ Construction LLC.",
     "h1": "Concrete Tips & Guides",
-    "canonical": "https://fdzconstruction.com/blog"
+    "render": "react",
+    "canonical": "https://fdzconstruction.com/blog",
+    "mustContain": [
+      "Concrete Tips & Guides"
+    ]
   },
   {
     "path": "/blog/why-concrete-driveways-crack-oklahoma",
     "title": "Why Concrete Driveways Crack in Oklahoma | FDZ Construction LLC",
     "description": "Five real reasons concrete driveways crack in Oklahoma — clay soil, bad base prep, missing rebar — and how to prevent every one of them.",
     "h1": "Why Concrete Driveways Crack in Oklahoma",
-    "canonical": "https://fdzconstruction.com/blog/why-concrete-driveways-crack-oklahoma"
+    "render": "react",
+    "canonical": "https://fdzconstruction.com/blog/why-concrete-driveways-crack-oklahoma",
+    "mustContain": [
+      "Why Concrete Driveways Crack in Oklahoma"
+    ]
   },
   {
     "path": "/blog/cost-of-concrete-oklahoma-city-2026",
     "title": "Cost of Concrete in Oklahoma City 2026 | FDZ Construction LLC",
     "description": "Typical 2026 concrete cost ranges in Oklahoma City — per square foot rates and example project totals for planning. A written estimate follows a site visit. Call (405) 458-4805.",
     "h1": "Cost of Concrete in Oklahoma City (2026 Guide)",
-    "canonical": "https://fdzconstruction.com/blog/cost-of-concrete-oklahoma-city-2026"
+    "render": "react",
+    "canonical": "https://fdzconstruction.com/blog/cost-of-concrete-oklahoma-city-2026",
+    "mustContain": [
+      "Cost of Concrete in Oklahoma City (2026 Guide)"
+    ]
   },
   {
     "path": "/blog/rebar-vs-wire-mesh-concrete-slabs",
     "title": "Rebar vs Wire Mesh for Concrete Slabs | FDZ Construction LLC",
     "description": "Rebar vs wire mesh for concrete slabs in Oklahoma. Which your project actually needs on OKC clay soil — and why the choice matters long-term.",
     "h1": "Rebar vs Wire Mesh for Concrete Slabs",
-    "canonical": "https://fdzconstruction.com/blog/rebar-vs-wire-mesh-concrete-slabs"
+    "render": "react",
+    "canonical": "https://fdzconstruction.com/blog/rebar-vs-wire-mesh-concrete-slabs",
+    "mustContain": [
+      "Rebar vs Wire Mesh for Concrete Slabs"
+    ]
   },
   {
     "path": "/blog/how-thick-should-driveway-be-oklahoma",
     "title": "How Thick Should a Driveway Be in Oklahoma | FDZ Construction LLC",
     "description": "How thick should a concrete driveway be in Oklahoma? 4 inches is standard — but not always right. Learn when you need 5–6 inches instead.",
     "h1": "How Thick Should a Driveway Be in Oklahoma?",
-    "canonical": "https://fdzconstruction.com/blog/how-thick-should-driveway-be-oklahoma"
+    "render": "react",
+    "canonical": "https://fdzconstruction.com/blog/how-thick-should-driveway-be-oklahoma",
+    "mustContain": [
+      "How Thick Should a Driveway Be in Oklahoma?"
+    ]
   },
   {
     "path": "/blog/best-time-of-year-to-pour-concrete-okc",
     "title": "Best Time to Pour Concrete in OKC | FDZ Construction LLC",
     "description": "Best time to pour concrete in Oklahoma City. Fall is ideal, but experienced OKC contractors work year-round with the right protocols.",
     "h1": "Best Time of Year to Pour Concrete in OKC",
-    "canonical": "https://fdzconstruction.com/blog/best-time-of-year-to-pour-concrete-okc"
+    "render": "react",
+    "canonical": "https://fdzconstruction.com/blog/best-time-of-year-to-pour-concrete-okc",
+    "mustContain": [
+      "Best Time of Year to Pour Concrete in OKC"
+    ]
   },
   {
     "path": "/driveways-edmond",
     "title": "Concrete Driveway Contractors in Edmond, OK | FDZ Construction LLC",
     "description": "Concrete driveway installation and replacement in Edmond, OK. Built for Edmond's mixed sandy and clay soil with proper base prep, 4,000 PSI mix, and rebar reinforcement. Free estimate: (405) 458-4805.",
     "h1": "Concrete Driveway Contractors in Edmond, OK",
-    "canonical": "https://fdzconstruction.com/driveways-edmond"
+    "canonical": "https://fdzconstruction.com/driveways-edmond",
+    "render": "template",
+    "mustContain": [
+      "Concrete Driveway Contractors in Edmond, OK"
+    ]
   },
   {
     "path": "/driveways-norman",
     "title": "Concrete Driveway Contractors in Norman, OK | FDZ Construction LLC",
     "description": "Concrete driveway installation and replacement in Norman, OK. Built for Norman's mixed river-influenced soil with proper base prep and rebar reinforcement. Free estimate: (405) 458-4805.",
     "h1": "Concrete Driveway Contractors in Norman, OK",
-    "canonical": "https://fdzconstruction.com/driveways-norman"
+    "canonical": "https://fdzconstruction.com/driveways-norman",
+    "render": "template",
+    "mustContain": [
+      "Concrete Driveway Contractors in Norman, OK"
+    ]
   },
   {
     "path": "/driveways-yukon",
     "title": "Concrete Driveway Contractors in Yukon, OK | FDZ Construction LLC",
     "description": "Concrete driveway installation and replacement in Yukon, OK. Built for Canadian County's clay base and new-subdivision graded fill. Free estimate: (405) 458-4805.",
     "h1": "Concrete Driveway Contractors in Yukon, OK",
-    "canonical": "https://fdzconstruction.com/driveways-yukon"
+    "canonical": "https://fdzconstruction.com/driveways-yukon",
+    "render": "template",
+    "mustContain": [
+      "Concrete Driveway Contractors in Yukon, OK"
+    ]
   },
   {
     "path": "/foundations-edmond",
     "title": "Concrete Foundation Contractors in Edmond, OK | FDZ Construction LLC",
     "description": "Concrete foundation contractors in Edmond, OK — slab-on-grade, stem walls, pier-and-thickened-slab on fill lots. Engineered for Edmond's mixed soil. Free estimate: (405) 458-4805.",
     "h1": "Concrete Foundation Contractors in Edmond, OK",
-    "canonical": "https://fdzconstruction.com/foundations-edmond"
+    "canonical": "https://fdzconstruction.com/foundations-edmond",
+    "render": "template",
+    "mustContain": [
+      "Concrete Foundation Contractors in Edmond, OK"
+    ]
   },
   {
     "path": "/retaining-walls-edmond",
     "title": "Retaining Wall Contractors in Edmond, OK | FDZ Construction LLC",
     "description": "Poured concrete and CMU retaining walls in Edmond, OK — drainage-first design for Edmond's rolling terrain and mixed soil. Repairs included. Free estimate: (405) 458-4805.",
     "h1": "Retaining Wall Contractors in Edmond, OK",
-    "canonical": "https://fdzconstruction.com/retaining-walls-edmond"
+    "canonical": "https://fdzconstruction.com/retaining-walls-edmond",
+    "render": "template",
+    "mustContain": [
+      "Retaining Wall Contractors in Edmond, OK"
+    ]
   },
   {
     "path": "/patios-norman",
     "title": "Concrete Patio Contractors in Norman, OK | FDZ Construction LLC",
     "description": "Concrete patios, slabs, and stamped concrete in Norman, OK. Built for Norman's river-influenced soil with proper drainage and reinforcement. Free estimate: (405) 458-4805.",
     "h1": "Concrete Patio Contractors in Norman, OK",
-    "canonical": "https://fdzconstruction.com/patios-norman"
+    "canonical": "https://fdzconstruction.com/patios-norman",
+    "render": "template",
+    "mustContain": [
+      "Concrete Patio Contractors in Norman, OK"
+    ]
   },
   {
     "path": "/patios-edmond",
     "title": "Concrete Patio Contractors in Edmond, OK | FDZ Construction LLC",
     "description": "Concrete patios, slabs, and stamped concrete in Edmond, OK. Built for Edmond's mixed soil and rolling grade with proper drainage. Free estimate: (405) 458-4805.",
     "h1": "Concrete Patio Contractors in Edmond, OK",
-    "canonical": "https://fdzconstruction.com/patios-edmond"
+    "canonical": "https://fdzconstruction.com/patios-edmond",
+    "render": "template",
+    "mustContain": [
+      "Concrete Patio Contractors in Edmond, OK"
+    ]
   },
   {
     "path": "/foundations-norman",
     "title": "Concrete Foundation Contractors in Norman, OK | FDZ Construction LLC",
     "description": "Concrete foundation contractors in Norman, OK — slab-on-grade, stem walls, pier foundations for Norman's river-influenced soil variability. Free estimate: (405) 458-4805.",
     "h1": "Concrete Foundation Contractors in Norman, OK",
-    "canonical": "https://fdzconstruction.com/foundations-norman"
+    "canonical": "https://fdzconstruction.com/foundations-norman",
+    "render": "template",
+    "mustContain": [
+      "Concrete Foundation Contractors in Norman, OK"
+    ]
   },
   {
     "path": "/foundations-yukon",
     "title": "Concrete Foundation Contractors in Yukon, OK | FDZ Construction LLC",
     "description": "Concrete foundation contractors in Yukon, OK — slab-on-grade and pier foundations for Canadian County's clay base and new-subdivision fill conditions. Free estimate: (405) 458-4805.",
     "h1": "Concrete Foundation Contractors in Yukon, OK",
-    "canonical": "https://fdzconstruction.com/foundations-yukon"
+    "canonical": "https://fdzconstruction.com/foundations-yukon",
+    "render": "template",
+    "mustContain": [
+      "Concrete Foundation Contractors in Yukon, OK"
+    ]
   },
   {
     "path": "/driveways-moore",
     "title": "Concrete Driveway Contractors in Moore, OK | FDZ Construction LLC",
     "description": "Concrete driveway installation and replacement in Moore, OK. Built for Moore's flat terrain, expansive clay, and drainage-critical low-lying areas. Free estimate: (405) 458-4805.",
     "h1": "Concrete Driveway Contractors in Moore, OK",
-    "canonical": "https://fdzconstruction.com/driveways-moore"
+    "canonical": "https://fdzconstruction.com/driveways-moore",
+    "render": "template",
+    "mustContain": [
+      "Concrete Driveway Contractors in Moore, OK"
+    ]
   },
   {
     "path": "/patios-moore",
     "title": "Concrete Patio Contractors in Moore, OK | FDZ Construction LLC",
     "description": "Concrete patios, slabs, and stamped concrete in Moore, OK. Drainage-first design for flat clay terrain. Free estimate: (405) 458-4805.",
     "h1": "Concrete Patio Contractors in Moore, OK",
-    "canonical": "https://fdzconstruction.com/patios-moore"
+    "canonical": "https://fdzconstruction.com/patios-moore",
+    "render": "template",
+    "mustContain": [
+      "Concrete Patio Contractors in Moore, OK"
+    ]
   },
   {
     "path": "/driveways-mustang",
     "title": "Concrete Driveway Contractors in Mustang, OK | FDZ Construction LLC",
     "description": "Concrete driveway installation and replacement in Mustang, OK. Built for Canadian County's clay base and new-subdivision fill. Free estimate: (405) 458-4805.",
     "h1": "Concrete Driveway Contractors in Mustang, OK",
-    "canonical": "https://fdzconstruction.com/driveways-mustang"
+    "canonical": "https://fdzconstruction.com/driveways-mustang",
+    "render": "template",
+    "mustContain": [
+      "Concrete Driveway Contractors in Mustang, OK"
+    ]
   },
   {
     "path": "/retaining-walls-norman",
     "title": "Retaining Wall Contractors in Norman, OK | FDZ Construction LLC",
     "description": "Poured concrete and CMU retaining walls in Norman, OK — drainage-first design for Norman's river-corridor soil. Repairs included. Free estimate: (405) 458-4805.",
     "h1": "Retaining Wall Contractors in Norman, OK",
-    "canonical": "https://fdzconstruction.com/retaining-walls-norman"
+    "canonical": "https://fdzconstruction.com/retaining-walls-norman",
+    "render": "template",
+    "mustContain": [
+      "Retaining Wall Contractors in Norman, OK"
+    ]
   },
   {
     "path": "/driveway-repair-oklahoma-city",
     "title": "Concrete Driveway Repair in Oklahoma City | FDZ Construction LLC",
     "description": "Concrete driveway repair, leveling, joint sealing, and replacement in Oklahoma City. Honest repair-vs-replace evaluation. Free on-site estimate: (405) 458-4805.",
     "h1": "Concrete Driveway Repair in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/driveway-repair-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/driveway-repair-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Concrete Driveway Repair in Oklahoma City"
+    ]
   },
   {
     "path": "/foundation-repair-oklahoma-city",
     "title": "Concrete Foundation Repair in Oklahoma City | FDZ Construction LLC",
     "description": "Concrete foundation repair, slab leveling, drainage correction, and partial replacement in Oklahoma City. Honest evaluation — repair vs replace. Free estimate: (405) 458-4805.",
     "h1": "Concrete Foundation Repair in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/foundation-repair-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/foundation-repair-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Concrete Foundation Repair in Oklahoma City"
+    ]
   },
   {
     "path": "/bollard-installation-oklahoma-city",
     "title": "Commercial Bollard Installation Oklahoma City | FDZ Construction",
     "description": "Commercial bollard installation in Oklahoma City — concrete-set bollards for storefronts, dumpster enclosures, dock areas, and drive-through lanes. Written estimate. Call (405) 458-4805.",
     "h1": "Bollard Installation in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/bollard-installation-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/bollard-installation-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Bollard Installation in Oklahoma City"
+    ]
   },
   {
     "path": "/crane-foundation-installation-oklahoma-city",
     "title": "Crane Foundation Installation OKC | FDZ Construction",
     "description": "Crane foundation installation in Oklahoma City — concrete crane pads, anchor bolt coordination, and reinforcement placed per engineered drawings. Licensed & insured. Call (405) 458-4805.",
     "h1": "Crane Foundation Installation in Oklahoma City, OK",
-    "canonical": "https://fdzconstruction.com/crane-foundation-installation-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/crane-foundation-installation-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Crane Foundation Installation in Oklahoma City, OK"
+    ]
   },
   {
     "path": "/loading-dock-concrete-repair-oklahoma-city",
     "title": "Loading Dock Concrete Repair Oklahoma City | FDZ Construction",
     "description": "Loading dock concrete repair in Oklahoma City — dock apron repair, dock face replacement, pit wall repair, approach slab patching. Licensed & insured. Call (405) 458-4805.",
     "h1": "Loading Dock Concrete Repair in Oklahoma City, OK",
-    "canonical": "https://fdzconstruction.com/loading-dock-concrete-repair-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/loading-dock-concrete-repair-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Loading Dock Concrete Repair in Oklahoma City, OK"
+    ]
   },
   {
     "path": "/loading-dock-construction-oklahoma-city",
     "title": "Loading Dock Construction Oklahoma City | FDZ Construction LLC",
     "description": "Commercial loading dock construction in Oklahoma City. Laser-level precision, 8\"+ reinforced concrete, dock leveler pit coordination. Free estimates — (405) 458-4805.",
     "h1": "Loading Dock Construction in Oklahoma City, OK",
-    "canonical": "https://fdzconstruction.com/loading-dock-construction-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/loading-dock-construction-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Loading Dock Construction in Oklahoma City, OK"
+    ]
   },
   {
     "path": "/loading-dock-replacement-oklahoma-city",
     "title": "Loading Dock Replacement Oklahoma City | FDZ Construction LLC",
     "description": "Full loading dock replacement in Oklahoma City. Failing docks, cracked aprons, settling concrete — we demolish and rebuild to correct specs. Free estimates — (405) 458-4805.",
     "h1": "Loading Dock Replacement in Oklahoma City, OK",
-    "canonical": "https://fdzconstruction.com/loading-dock-replacement-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/loading-dock-replacement-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Loading Dock Replacement in Oklahoma City, OK"
+    ]
   },
   {
     "path": "/dock-leveler-pit-concrete-oklahoma-city",
     "title": "Dock Leveler Pit Concrete Oklahoma City | FDZ Construction",
     "description": "Dock leveler pit concrete installation and repair in Oklahoma City. Exact dimensions, curb angles, anchor embedments coordinated with equipment suppliers. Call (405) 458-4805.",
     "h1": "Dock Leveler Pit Concrete in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/dock-leveler-pit-concrete-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/dock-leveler-pit-concrete-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Dock Leveler Pit Concrete in Oklahoma City"
+    ]
   },
   {
     "path": "/truck-court-concrete-oklahoma-city",
     "title": "Truck Court Concrete Oklahoma City | FDZ Construction",
     "description": "Concrete truck court construction in Oklahoma City. Industrial-grade flatwork engineered for semi-truck loads and daily heavy traffic. Free estimates — (405) 458-4805.",
     "h1": "Truck Court Concrete in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/truck-court-concrete-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/truck-court-concrete-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Truck Court Concrete in Oklahoma City"
+    ]
   },
   {
     "path": "/industrial-concrete-repair-oklahoma-city",
     "title": "Industrial Concrete Repair Oklahoma City | FDZ Construction LLC",
     "description": "Industrial concrete repair in Oklahoma City — forklift joints, spalls, cracks, and dock-face repair, scheduled around operations. Call (405) 458-4805.",
     "h1": "Industrial Concrete Repair in Oklahoma City, OK",
-    "canonical": "https://fdzconstruction.com/industrial-concrete-repair-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/industrial-concrete-repair-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Industrial Concrete Repair in Oklahoma City, OK"
+    ]
   },
   {
     "path": "/warehouse-slab-repair-oklahoma-city",
     "title": "Warehouse Slab Repair Oklahoma City | FDZ Construction",
     "description": "Warehouse slab repair and floor replacement in Oklahoma City. Phased pours, flatness tolerances for forklifts, 8\"+ reinforced concrete. Licensed commercial contractor. Call (405) 458-4805.",
     "h1": "Warehouse Slab Repair in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/warehouse-slab-repair-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/warehouse-slab-repair-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Warehouse Slab Repair in Oklahoma City"
+    ]
   },
   {
     "path": "/equipment-pad-concrete-oklahoma-city",
     "title": "Equipment Pad Concrete Oklahoma City | FDZ Construction",
     "description": "Concrete equipment pads in Oklahoma City — machine pads, generator pads, HVAC slabs, industrial equipment bases. Poured to manufacturer specs. Call (405) 458-4805.",
     "h1": "Equipment Pad Concrete in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/equipment-pad-concrete-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/equipment-pad-concrete-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Equipment Pad Concrete in Oklahoma City"
+    ]
   },
   {
     "path": "/pool-deck-oklahoma-city",
     "title": "Pool Deck Contractor Oklahoma City | FDZ Construction LLC",
     "description": "Concrete pool deck installation and resurfacing in Oklahoma City. Slip-resistant finishes, heat-reflective colors, and Oklahoma freeze-thaw rated concrete. Free estimate: (405) 458-4805.",
     "h1": "Concrete Pool Deck Contractor in Oklahoma City, OK.",
-    "canonical": "https://fdzconstruction.com/pool-deck-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/pool-deck-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Concrete Pool Deck Contractor in Oklahoma City, OK."
+    ]
   },
   {
     "path": "/ada-concrete-ramps-oklahoma-city",
     "title": "ADA Concrete Ramps Oklahoma City | FDZ Construction",
     "description": "ADA-compliant concrete ramps, curb cuts, and accessible routes in Oklahoma City. IBC and ADA Standards compliant. Licensed & insured. Call (405) 458-4805.",
     "h1": "ADA Concrete Ramps in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/ada-concrete-ramps-oklahoma-city"
+    "render": "react",
+    "canonical": "https://fdzconstruction.com/ada-concrete-ramps-oklahoma-city",
+    "mustContain": [
+      "ADA Concrete Ramps in Oklahoma City"
+    ]
   },
   {
     "path": "/dumpster-pad-concrete-oklahoma-city",
     "title": "Dumpster Pad Concrete Oklahoma City | FDZ Construction",
     "description": "Concrete dumpster pads in Oklahoma City — reinforced, properly sloped, built for collection truck loads. Commercial, industrial, and multifamily. Call (405) 458-4805.",
     "h1": "Dumpster Pad Concrete in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/dumpster-pad-concrete-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/dumpster-pad-concrete-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Dumpster Pad Concrete in Oklahoma City"
+    ]
   },
   {
     "path": "/concrete-parking-lot-repair-oklahoma-city",
     "title": "Concrete Parking Lot Repair OKC | FDZ Construction",
     "description": "Concrete parking lot repair in Oklahoma City — panel replacement, trip hazard grinding, joint sealing, crack repair. Sub-base evaluation on every panel replacement. Call (405) 458-4805.",
     "h1": "Concrete Parking Lot Repair in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/concrete-parking-lot-repair-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/concrete-parking-lot-repair-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Concrete Parking Lot Repair in Oklahoma City"
+    ]
   },
   {
     "path": "/commercial-concrete-repair-oklahoma-city",
     "title": "Commercial Concrete Repair Oklahoma City | FDZ Construction",
     "description": "Commercial concrete repair in Oklahoma City — cracked slabs, spalling, trip hazards, failed joints, parking lots, docks, and warehouse floors. On-site evaluation and written estimate. Call (405) 458-4805.",
     "h1": "Commercial Concrete Repair in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/commercial-concrete-repair-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/commercial-concrete-repair-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Commercial Concrete Repair in Oklahoma City"
+    ]
   },
   {
     "path": "/commercial-curb-and-gutter-oklahoma-city",
     "title": "Commercial Curb and Gutter Oklahoma City | FDZ Construction",
     "description": "Commercial concrete curb and gutter in Oklahoma City — parking lot curb, drive approaches, island curb, replacement. Licensed contractor. Call (405) 458-4805.",
     "h1": "Commercial Curb and Gutter in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/commercial-curb-and-gutter-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/commercial-curb-and-gutter-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Commercial Curb and Gutter in Oklahoma City"
+    ]
   },
   {
     "path": "/polished-concrete-oklahoma-city",
     "title": "Polished Concrete Floors Oklahoma City | FDZ Construction LLC",
     "description": "Commercial and industrial polished concrete floors in Oklahoma City. Matte to high-gloss, densified, dye options available. Warehouses, retail, offices. Call (405) 458-4805.",
     "h1": "Polished Concrete Floors in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/polished-concrete-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/polished-concrete-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Polished Concrete Floors in Oklahoma City"
+    ]
   },
   {
     "path": "/epoxy-floor-coatings-oklahoma-city",
     "title": "Epoxy Floor Coatings Oklahoma City | FDZ Construction LLC",
     "description": "Commercial & industrial epoxy floor coatings in Oklahoma City. Warehouses, garages, commercial kitchens & more. Chemical-resistant. Call (405) 458-4805.",
     "h1": "Epoxy Floor Coatings in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/epoxy-floor-coatings-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/epoxy-floor-coatings-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Epoxy Floor Coatings in Oklahoma City"
+    ]
   },
   {
     "path": "/retail-restaurant-concrete-oklahoma-city",
     "title": "Retail & Restaurant Concrete Oklahoma City | FDZ Construction LLC",
     "description": "Concrete for restaurants and retail in OKC — interior slabs, outdoor dining, drive-throughs, grease pads, ADA ramps. Health code compliant. Call (405) 458-4805.",
     "h1": "Retail & Restaurant Concrete in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/retail-restaurant-concrete-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/retail-restaurant-concrete-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Retail & Restaurant Concrete in Oklahoma City"
+    ]
   },
   {
     "path": "/tilt-wall-concrete-oklahoma-city",
     "title": "Tilt-Wall Concrete Oklahoma City | FDZ Construction LLC",
     "description": "Tilt-wall concrete construction in Oklahoma City — casting slabs, grade beams, panel pours, site concrete. Super-flat FF35+. Call (405) 458-4805.",
     "h1": "Tilt-Wall Concrete in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/tilt-wall-concrete-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/tilt-wall-concrete-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Tilt-Wall Concrete in Oklahoma City"
+    ]
   },
   {
     "path": "/soil-stabilization-oklahoma-city",
     "title": "Soil Stabilization Oklahoma City | FDZ Construction LLC",
     "description": "Soil stabilization for concrete subgrade in Oklahoma City — lime treatment, cement stabilization, geogrid, subgrade replacement. OKC clay experts. Call (405) 458-4805.",
     "h1": "Soil Stabilization in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/soil-stabilization-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/soil-stabilization-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Soil Stabilization in Oklahoma City"
+    ]
   },
   {
     "path": "/concrete-maintenance-oklahoma-city",
     "title": "Concrete Maintenance Oklahoma City | FDZ Construction LLC",
     "description": "Concrete maintenance programs for OKC commercial properties — crack sealing, joint sealing, surface sealing, trip hazard grinding. Call (405) 458-4805.",
     "h1": "Concrete Maintenance Programs in Oklahoma City",
-    "canonical": "https://fdzconstruction.com/concrete-maintenance-oklahoma-city"
+    "canonical": "https://fdzconstruction.com/concrete-maintenance-oklahoma-city",
+    "render": "template",
+    "mustContain": [
+      "Concrete Maintenance Programs in Oklahoma City"
+    ]
   },
   {
     "path": "/patios-yukon",
     "title": "Concrete Patio Contractors in Yukon, OK | FDZ Construction LLC",
     "description": "Concrete patios, slabs, and stamped concrete in Yukon, OK. Built for Canadian County's clay base and new-subdivision fill. Free estimate: (405) 458-4805.",
     "h1": "Concrete Patio Contractors in Yukon, OK",
-    "canonical": "https://fdzconstruction.com/patios-yukon"
+    "canonical": "https://fdzconstruction.com/patios-yukon",
+    "render": "template",
+    "mustContain": [
+      "Concrete Patio Contractors in Yukon, OK"
+    ]
   },
   {
     "path": "/builders",
@@ -500,7 +791,11 @@
     "description": "Gated builder pricing page — not for public distribution.",
     "h1": "FDZ Builder Rate Sheet",
     "noindex": true,
-    "canonical": "https://fdzconstruction.com/builders"
+    "canonical": "https://fdzconstruction.com/builders",
+    "render": "template",
+    "mustContain": [
+      "FDZ Builder Rate Sheet"
+    ]
   },
   {
     "path": "/quote",
@@ -508,34 +803,54 @@
     "description": "Private project quote from FDZ Construction LLC.",
     "h1": "Quote",
     "noindex": true,
-    "canonical": "https://fdzconstruction.com/quote"
+    "canonical": "https://fdzconstruction.com/quote",
+    "render": "template",
+    "mustContain": [
+      "Quote"
+    ]
   },
   {
     "path": "/commercial-concrete-wichita",
     "title": "Commercial Concrete Contractor Wichita KS | FDZ Construction",
     "description": "Commercial concrete contractor for Wichita, KS. Parking lots, paving, curb and gutter, sidewalks, and site slabs. Wichita-area crew. Call 316-531-9583.",
     "h1": "Commercial Concrete Contractor in Wichita, Kansas",
-    "canonical": "https://fdzconstruction.com/commercial-concrete-wichita"
+    "canonical": "https://fdzconstruction.com/commercial-concrete-wichita",
+    "render": "template",
+    "mustContain": [
+      "Commercial Concrete Contractor in Wichita, Kansas"
+    ]
   },
   {
     "path": "/industrial-concrete-wichita",
     "title": "Industrial Concrete Contractor Wichita KS | FDZ Construction",
     "description": "Industrial concrete contractor for Wichita, KS. Warehouse slabs, equipment pads, machine pads, loading docks, and heavy-use paving. Call 316-531-9583.",
     "h1": "Industrial Concrete Contractor in Wichita, Kansas",
-    "canonical": "https://fdzconstruction.com/industrial-concrete-wichita"
+    "canonical": "https://fdzconstruction.com/industrial-concrete-wichita",
+    "render": "template",
+    "mustContain": [
+      "Industrial Concrete Contractor in Wichita, Kansas"
+    ]
   },
   {
     "path": "/retaining-walls-wichita",
     "title": "Retaining Wall Contractor Wichita KS | FDZ Construction",
     "description": "Retaining wall contractor for Wichita, KS. Poured concrete and block walls for commercial grade changes, site walls, installation, and repair. Call 316-531-9583.",
     "h1": "Retaining Wall Contractor in Wichita, Kansas",
-    "canonical": "https://fdzconstruction.com/retaining-walls-wichita"
+    "canonical": "https://fdzconstruction.com/retaining-walls-wichita",
+    "render": "template",
+    "mustContain": [
+      "Retaining Wall Contractor in Wichita, Kansas"
+    ]
   },
   {
     "path": "/stamped-concrete-wichita",
     "title": "Stamped Concrete Contractor Wichita KS | FDZ Construction",
     "description": "Stamped concrete contractor for Wichita, KS. Decorative patios, driveways, walkways, entries, and courtyards for homes and commercial sites. Call 316-531-9583.",
     "h1": "Stamped Concrete Contractor in Wichita, Kansas",
-    "canonical": "https://fdzconstruction.com/stamped-concrete-wichita"
+    "canonical": "https://fdzconstruction.com/stamped-concrete-wichita",
+    "render": "template",
+    "mustContain": [
+      "Stamped Concrete Contractor in Wichita, Kansas"
+    ]
   }
 ]

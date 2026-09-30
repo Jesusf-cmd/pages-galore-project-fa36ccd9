@@ -5,12 +5,32 @@ import { withoutCrawlableEmail } from "./prerender-helpers";
 import { faqJsonLdScriptTag } from "../src/lib/faqJsonLd";
 import { stripWichitaStreetAddressHtml } from "../src/lib/organizationSchema";
 import {
-  LOCAL_BUSINESS_PATHS,
-  localBusinessJsonLdScriptTag,
+  FULL_BUSINESS_PATHS,
+  businessJsonLdScriptTag,
+  isLocalBusinessType,
 } from "../src/lib/localBusinessSchema";
 import { phoneForPath } from "../src/lib/phones";
+import { getSeoPage } from "../src/seo/pages";
 import * as fs from "fs";
 import * as path from "path";
+import { pathToFileURL } from "node:url";
+
+type ReactRenderFn = (url: string) => Promise<string>;
+
+let reactRender: ReactRenderFn | null = null;
+
+async function loadReactRenderer(): Promise<ReactRenderFn | null> {
+  const candidates = [
+    path.resolve(process.cwd(), "dist-ssr", "entry-server.js"),
+    path.resolve(process.cwd(), "dist-ssr", "entry-server.mjs"),
+  ];
+  for (const file of candidates) {
+    if (!fs.existsSync(file)) continue;
+    const mod = await import(pathToFileURL(file).href);
+    if (typeof mod.render === "function") return mod.render as ReactRenderFn;
+  }
+  return null;
+}
 
 interface LinkItem {
   href: string;
@@ -57,7 +77,7 @@ const serviceAreaLinks: LinkItem[] = [
   { href: "/commercial-concrete-wichita", label: "Wichita, KS" },
 ];
 
-function generateRouteHtml(template: string, route: PrerenderRoute): string {
+async function generateRouteHtml(template: string, route: PrerenderRoute): Promise<string> {
   const canonical = getCanonical(route.path);
   let html = template;
 
@@ -111,16 +131,33 @@ function generateRouteHtml(template: string, route: PrerenderRoute): string {
   // node, and a parser-inserted script in the container can prevent the SPA from
   // mounting — leaving only the clipped/empty beige page in the browser.
   html = stripWichitaStreetAddressHtml(html, route.path);
-  const { markup, headTags } = hoistJsonLdScripts(buildPrerenderMarkup(route));
+  // One business entity: full GeneralContractor#business only on / and OKC city page.
+  // Strip any LocalBusiness-type nodes that may have leaked from the SPA template.
+  html = stripLocalBusinessEntities(html);
+  const { markup, headTags } = hoistJsonLdScripts(await buildPrerenderMarkup(route));
   html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
-  const localBusinessTag = LOCAL_BUSINESS_PATHS.has(route.path)
-    ? localBusinessJsonLdScriptTag()
-    : "";
-  if (headTags || localBusinessTag) {
-    html = html.replace("</head>", `${headTags}${localBusinessTag}</head>`);
+  const businessTag = FULL_BUSINESS_PATHS.has(route.path) ? businessJsonLdScriptTag() : "";
+  if (headTags || businessTag) {
+    html = html.replace("</head>", `${headTags}${businessTag}</head>`);
   }
 
   return html;
+}
+
+/** Remove LocalBusiness / GeneralContractor / HomeAndConstructionBusiness entity scripts. */
+function stripLocalBusinessEntities(html: string): string {
+  return html.replace(
+    /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi,
+    (full, json: string) => {
+      try {
+        const data = JSON.parse(json);
+        if (isLocalBusinessType(data["@type"])) return "";
+        return full;
+      } catch {
+        return full;
+      }
+    },
+  );
 }
 
 function hoistJsonLdScripts(markup: string): { markup: string; headTags: string } {
@@ -135,7 +172,8 @@ function hoistJsonLdScripts(markup: string): { markup: string; headTags: string 
   return { markup: cleaned, headTags: tags.join("") };
 }
 
-function buildPrerenderMarkup(route: PrerenderRoute): string {
+/** Hand-written template body (Phase 2a). Exported for parity comparison. */
+export function buildTemplateMarkup(route: PrerenderRoute): string {
   const bodyHtml = getPrerenderBody(route.path);
   const skipFooterNav = getSkipFooterNav(route.path);
   const phone = phoneForPath(route.path);
@@ -178,6 +216,22 @@ function buildPrerenderMarkup(route: PrerenderRoute): string {
   `);
 }
 
+async function buildPrerenderMarkup(route: PrerenderRoute): Promise<string> {
+  const seo = getSeoPage(route.path);
+  const mode = seo?.render ?? "template";
+
+  if (mode === "react") {
+    if (!reactRender) {
+      throw new Error(
+        `[prerender] render:'react' for ${route.path} but dist-ssr/entry-server.js is missing. Run: npm run build:ssr`,
+      );
+    }
+    return withoutCrawlableEmail(await reactRender(route.path));
+  }
+
+  return buildTemplateMarkup(route);
+}
+
 function fallbackParagraphs(content: string): string {
   return content
     .split(/(?<=[.!?])\s+/)
@@ -205,12 +259,17 @@ function escapeAttr(str: string): string {
 }
 
 export function prerenderPlugin(): Plugin {
+  let isSsrBuild = false;
   return {
     name: "prerender-routes",
     apply: "build",
+    configResolved(config) {
+      isSsrBuild = !!config.build.ssr;
+    },
     closeBundle: {
       sequential: true,
       async handler() {
+        if (isSsrBuild) return;
         const distDir = path.resolve(process.cwd(), "dist");
         const templatePath = path.join(distDir, "index.html");
 
@@ -220,11 +279,18 @@ export function prerenderPlugin(): Plugin {
         }
 
         const template = fs.readFileSync(templatePath, "utf-8");
+        reactRender = await loadReactRenderer();
+        const reactRoutes = routes.filter((r) => getSeoPage(r.path)?.render === "react");
+        if (reactRoutes.length && !reactRender) {
+          throw new Error(
+            `[prerender] ${reactRoutes.length} route(s) use render:'react' but SSR bundle is missing. Run: npm run build:ssr`,
+          );
+        }
         let count = 0;
 
         for (const route of routes) {
           if (route.path === "/") {
-            fs.writeFileSync(templatePath, generateRouteHtml(template, route), "utf-8");
+            fs.writeFileSync(templatePath, await generateRouteHtml(template, route), "utf-8");
             count++;
             continue;
           }
@@ -233,7 +299,7 @@ export function prerenderPlugin(): Plugin {
           // from /page → /page/, which Search Console then lists as "Page with redirect".
           const htmlPath = path.join(distDir, `${route.path.replace(/^\//, "")}.html`);
           fs.mkdirSync(path.dirname(htmlPath), { recursive: true });
-          fs.writeFileSync(htmlPath, generateRouteHtml(template, route), "utf-8");
+          fs.writeFileSync(htmlPath, await generateRouteHtml(template, route), "utf-8");
           count++;
         }
 
