@@ -323,12 +323,14 @@ async function runLive(baseUrl) {
     "/emergency-services-oklahoma-city",
   ]) {
     probes.push({
-      label: `${retired} → 404`,
+      label: `${retired} → 404 or 410`,
       run: async () => {
         const chain = await follow(`${base}${retired}`);
         const last = chain[chain.length - 1];
         if (last.status === 200) return "soft 404 (200) — page still published";
-        if (last.status !== 404) return `expected 404, got ${JSON.stringify(chain)}`;
+        if (last.status !== 404 && last.status !== 410) {
+          return `expected 404 or 410, got ${JSON.stringify(chain)}`;
+        }
         return null;
       },
     });

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "include": [
+    "/hvac-oklahoma-city",
+    "/plumbing-oklahoma-city",
+    "/electrical-oklahoma-city",
+    "/emergency-services-oklahoma-city"
+  ],
+  "exclude": []
+}
