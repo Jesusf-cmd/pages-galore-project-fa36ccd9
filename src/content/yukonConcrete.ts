@@ -3,7 +3,7 @@ export const yukonConcrete = {
   title: "Concrete Contractor Yukon, OK | FDZ Construction LLC",
   description: "Concrete installation, replacement and repair in Yukon, OK. Driveways, foundations and commercial concrete. Request a free on-site estimate from FDZ Construction.",
   heading: "Yukon Concrete Contractors.",
-  intro: "FDZ Construction serves Yukon homeowners, builders and businesses with concrete installation, replacement and repair. From a driveway or patio to a foundation, commercial slab or parking lot, we review the existing surface, site access and drainage before recommending the scope of work.",
+  intro: "FDZ Construction serves Yukon homeowners, builders and businesses with concrete installation, replacement and repair. From a driveway or patio to a foundation, commercial slab or <a href=\"/parking-lots-oklahoma-city\" class=\"text-orange no-underline\">commercial parking lot in Yukon</a>, we review the existing surface, site access and drainage before recommending the scope of work.",
 };
 
 // Static, authored HTML only; never interpolate customer input into this section.

@@ -468,3 +468,85 @@ Then as quota allows:
 7. `/oklahoma-city-concrete`
 8. `/sidewalks-oklahoma-city`
 
+---
+
+# SEO Changelog — Phase 5 (Internal links, cost article, sidewalks)
+
+Date: 2026-09-30
+
+## Goal
+
+Strengthen the cost article as a hub to owner pages; protect sidewalk rankings with light proof/FAQ/form; add exact internal links from blogs, ADA, sidewalks, and Yukon.
+
+## Cost article (`/blog/cost-of-concrete-oklahoma-city-2026`)
+
+- Title / H1 unchanged.
+- Comparison table under intro (Driveway, Patio broom, Stamped patio, Sidewalk, Foundation, Commercial repair).
+- Kept existing estimate CTAs (`/?from=cost-of-concrete-oklahoma-city-2026#estimate`) — allowlisted origin already on site; did **not** add a second `<EstimateForm>` (brief’s `cost-article` alias not used).
+- Visible **Updated September 2026**; author line; Article JSON-LD with `dateModified`.
+- `<ProjectGrid ids={["edmond-driveway","norman-stamped-patio"]}>` under **Real projects behind these prices**.
+- All prior H2s kept.
+
+## Sidewalks / ADA
+
+- Sidewalks: one natural “cement sidewalk” synonym; FAQ + FAQPage JSON-LD for cement vs concrete; Recent sidewalk projects grid; ADA link anchor **ADA ramps and accessible routes**; on-page `<EstimateForm>` (replaced Get Started link-out).
+- Title / H1 / meta / existing H2s unchanged on sidewalks.
+- ADA: ProjectGrid `star-spencer-hs` + `edmond-row-sidewalk`; link anchor **sidewalk replacement**.
+
+## Yukon
+
+- `/yukon-oklahoma-concrete` stays `render: 'template'`.
+- Link **commercial parking lot in Yukon** added in shared `yukonConcrete.intro` (React CityPage + `scripts/prerender-bodies.ts` template body both use that string).
+
+## Internal links added/retargeted
+
+| From | Anchor | To |
+|------|--------|-----|
+| Cost article | concrete driveway contractors in OKC | `/driveways-oklahoma-city` |
+| Cost article | stamped concrete patios | `/patios-oklahoma-city` |
+| Cost article | concrete sidewalk replacement | `/sidewalks-oklahoma-city` |
+| Driveway-crack blog | concrete driveways in Oklahoma City | `/driveways-oklahoma-city` |
+| Rebar-vs-wire-mesh blog | concrete driveways in Oklahoma City | `/driveways-oklahoma-city` |
+| ADA ramps | sidewalk replacement | `/sidewalks-oklahoma-city` |
+| Sidewalks | ADA ramps and accessible routes | `/ada-concrete-ramps-oklahoma-city` |
+| Yukon (intro) | commercial parking lot in Yukon | `/parking-lots-oklahoma-city` |
+
+No source rows skipped.
+
+## Numbers in new copy (provenance)
+
+| Number / phrase | Already on site |
+|-----------------|-----------------|
+| $6–$10 / sq ft | Cost article short answer; homepage |
+| $15–$22 / sq ft | Cost article short answer; homepage FAQ |
+| $9–$14 / sq ft | Cost article short answer |
+| Priced on site visit (sidewalk, commercial repair) | Sidewalk/commercial pages have no single overview $/sq ft — `TODO(FDZ)` in table code |
+
+## Word counts (parity method)
+
+| path | before | after | limit |
+|------|--------|-------|-------|
+| Cost article | 740 | 891 | n/a (grew by table/proof/schema) |
+| `/sidewalks-oklahoma-city` | 2,000 | 2,104 | ≤ +10% (2,200) |
+| `/ada-concrete-ramps-oklahoma-city` | 1,918 | 1,964 | n/a |
+
+## Verify
+
+```
+npm run build
+npm run seo-check -- --dist
+→ 72/72 passed (0 failed)
+```
+
+## Request indexing (after deploy)
+
+1. `/blog/cost-of-concrete-oklahoma-city-2026`
+2. `/sidewalks-oklahoma-city`
+3. `/ada-concrete-ramps-oklahoma-city`
+4. `/driveways-oklahoma-city`
+5. `/patios-oklahoma-city`
+6. `/yukon-oklahoma-concrete`
+7. `/blog/why-concrete-driveways-crack-oklahoma`
+8. `/blog/rebar-vs-wire-mesh-concrete-slabs`
+9. `/parking-lots-oklahoma-city`
+

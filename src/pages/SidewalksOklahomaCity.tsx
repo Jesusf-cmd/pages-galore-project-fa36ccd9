@@ -4,7 +4,14 @@ export default function SidewalksOklahomaCity() {
   return (
     <ServicePage
       enriched
+      embedEstimateForm
+      estimateHref="#estimate"
       currentServiceSlug="sidewalks-oklahoma-city"
+      proof={{
+        eyebrow: "Proof",
+        title: "Recent sidewalk projects",
+        ids: ["star-spencer-hs", "edmond-row-sidewalk"],
+      }}
       localExpertiseNote="On Oklahoma clay, sidewalk panels heave and settle when the base is skipped. Proper subgrade compaction and an aggregate base — plus expansion joints where the walk meets driveways and structures — are what keep panels from cracking and lifting."
       subServices={{
         sectionEyebrow: "Service Types",
@@ -117,7 +124,7 @@ export default function SidewalksOklahomaCity() {
           title: "Safe, Clean &",
           titleAccent: "Built to Code.",
           content: [
-            "<strong>Concrete sidewalk contractors in Oklahoma City</strong> — FDZ Construction handles new construction, replacement, and city right-of-way sidewalks with proper base prep and ADA-compliant options.",
+            "<strong>Concrete sidewalk contractors in Oklahoma City</strong> — FDZ Construction handles new construction, replacement, and city right-of-way sidewalks with proper base prep and ADA-compliant options. When someone asks for a cement sidewalk, they mean a concrete walk — same pour, same specs.",
             "We handle city-required sidewalk repairs, new construction in subdivisions, and private walkway projects. Every sidewalk is broom-finished for traction and properly jointed. Our sidewalk work complements our <a href='/driveways-oklahoma-city'>driveway</a> and <a href='/patios-oklahoma-city'>patio</a> services for complete residential concrete projects.",
           ],
         },
@@ -157,31 +164,21 @@ export default function SidewalksOklahomaCity() {
           ],
         },
         {
-          eyebrow: "Get Started",
-          title: "Request a Free",
-          titleAccent: "Sidewalk Estimate.",
-          alt: true,
-          content: [
-            "We provide free on-site estimates for sidewalks and curb work across Oklahoma City, Edmond (~30–40 min north), Yukon (~20–25 min west), and the full OKC metro. Based in Oklahoma City.",
-          ],
-          // TODO: embed quote form here once document-upload feature ships
-          infoBlock: "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
-        },
-        {
           eyebrow: "Related Services",
           title: "Other Concrete Services",
           titleAccent: "From FDZ.",
           content: [
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial concrete services</a> — Parking lots, warehouse floors, site flatwork, and curb &amp; gutter for commercial developments.",
             "<a href='/commercial-curb-and-gutter-oklahoma-city' class='text-orange no-underline font-medium'>Commercial curb &amp; gutter</a> — Parking lot curbing, island curbs, and drive approach cuts.",
-            "<a href='/ada-concrete-ramps-oklahoma-city' class='text-orange no-underline font-medium'>ADA concrete ramps</a> — Accessible curb ramps and detectable warning surfaces.",
+            "We pour <a href='/ada-concrete-ramps-oklahoma-city' class='text-orange no-underline font-medium'>ADA ramps and accessible routes</a> with detectable warning surfaces where sidewalks meet parking lots and street crossings.",
             "<a href='/sewer-line-repair-oklahoma-city' class='text-orange no-underline font-medium'>Residential sewer line repair</a> — Sidewalk restoration after sewer line access, done by the same crew that did the digging.",
             "<a href='/parking-lots-oklahoma-city' class='text-orange no-underline font-medium'>Parking lot replacement</a> — New commercial lots where curb, gutter, and sidewalks are part of the same site package.",
           ],
         },
       ]}
       faq={[
-        { question: "How much does a concrete sidewalk cost in OKC?", answer: "Costs vary by linear footage, site conditions, and whether existing concrete needs removal. We provide free on-site estimates — call (405) 458-4805 or use the quote form above." },
+        { question: "Is a cement sidewalk the same as a concrete sidewalk?", answer: "Cement is an ingredient in concrete. Sidewalks are poured concrete — people often use the terms interchangeably when they mean a concrete sidewalk." },
+        { question: "How much does a concrete sidewalk cost in OKC?", answer: "Costs vary by linear footage, site conditions, and whether existing concrete needs removal. We provide free on-site estimates — call (405) 458-4805 or use the quote form on this page." },
         { question: "How much does curb and gutter cost in OKC?", answer: "Curb and gutter pricing depends on linear footage, curb profile type, and site conditions. We provide free on-site estimates." },
         { question: "Do you handle city-required sidewalk repairs?", answer: "Yes — we handle permitted city right-of-way sidewalk replacements including ADA curb ramps." },
         { question: "What types of curb profiles do you pour?", answer: "We handle standard barrier curb, mountable (rollover) curb, valley gutter, and combination curb and gutter sections." },

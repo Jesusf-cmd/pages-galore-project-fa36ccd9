@@ -9,7 +9,11 @@ export type BlogPost = {
   slug: string;
   title: string;
   date: string;
+  /** ISO date for Article dateModified (defaults to `date` when omitted). */
+  dateModified?: string;
   displayDate: string;
+  /** Visible "Updated Month YYYY" line; derived from dateModified/date when omitted. */
+  updatedLabel?: string;
   time: string;
   tags: string[];
   deck: string;
@@ -42,7 +46,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Cause #1: Inadequate Base Preparation",
         content: [
-          "This is the most common cause of <a href='/driveways-oklahoma-city' class='text-orange no-underline'>concrete driveway</a> failure in Oklahoma City. Proper base prep means excavating to the right depth, compacting the native subgrade, and installing 4–6 inches of compacted aggregate base. A lot of contractors cut corners here because it takes time and equipment.",
+          "This is the most common cause of <a href='/driveways-oklahoma-city' class='text-orange no-underline'>concrete driveways in Oklahoma City</a> failing. Proper base prep means excavating to the right depth, compacting the native subgrade, and installing 4–6 inches of compacted aggregate base. A lot of contractors cut corners here because it takes time and equipment.",
         ],
       },
       {
@@ -75,6 +79,8 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "cost-of-concrete-oklahoma-city-2026",
     title: "Cost of Concrete in Oklahoma City (2026 Guide)",
     date: "2026-03-10",
+    dateModified: "2026-09-30",
+    updatedLabel: "September 2026",
     displayDate: "March 10, 2026",
     time: "8 min read",
     tags: ["Concrete Cost OKC", "Pricing Guide", "2026"],
@@ -87,7 +93,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "The Short Answer: $6–$10 Per Square Foot",
         content: [
-          "These figures are planning ranges for typical Oklahoma City work — not a final proposal. Standard residential concrete in OKC — <a href='/driveways-oklahoma-city' class='text-orange no-underline'>driveways</a>, <a href='/patios-oklahoma-city' class='text-orange no-underline'>patios</a>, garage slabs — runs $6–$10 per square foot installed. Foundation work runs $9–$14. Stamped concrete runs $15–$22.",
+          "These figures are planning ranges for typical Oklahoma City work — not a final proposal. Standard residential concrete in OKC — work from <a href='/driveways-oklahoma-city' class='text-orange no-underline'>concrete driveway contractors in OKC</a>, broom patios, garage slabs — runs $6–$10 per square foot installed. Foundation work runs $9–$14. <a href='/patios-oklahoma-city' class='text-orange no-underline'>stamped concrete patios</a> run $15–$22.",
           "A written estimate is based on a site visit: soil, access, grade, thickness, and scope. The estimator on this site is a planning tool, not a commercial bid. <a href='/?from=cost-of-concrete-oklahoma-city-2026#estimate' class='text-orange no-underline'>Request a concrete estimate</a> or call <a href='tel:4054584805'>(405) 458-4805</a>.",
         ],
       },
@@ -107,8 +113,8 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Typical Project Costs in Oklahoma City (2026)",
         content: [
-          "Standard <a href='/driveways-oklahoma-city' class='text-orange no-underline'>driveway installation</a> in Oklahoma City (24×40): $5,760–$9,600. <a href='/patios-oklahoma-city' class='text-orange no-underline'>Patio slab OKC</a> (20×20): $2,400–$4,000. Stamped patio (400 sq ft): $6,000–$8,800. <a href='/foundations-oklahoma-city' class='text-orange no-underline'>Foundation work</a> in OKC (1,200 sq ft): $10,800–$16,800.",
-          "Commercial work is scoped from the site, not this residential average. See <a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline'>commercial concrete</a>, <a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline'>commercial concrete repair</a>, <a href='/parking-lots-oklahoma-city' class='text-orange no-underline'>parking lots</a>, and <a href='/sidewalks-oklahoma-city' class='text-orange no-underline'>sidewalks</a> for those scopes.",
+          "Standard driveway installation in Oklahoma City (24×40): $5,760–$9,600. Patio slab OKC (20×20): $2,400–$4,000. Stamped patio (400 sq ft): $6,000–$8,800. <a href='/foundations-oklahoma-city' class='text-orange no-underline'>Foundation work</a> in OKC (1,200 sq ft): $10,800–$16,800.",
+          "Commercial work is scoped from the site, not this residential average. See <a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline'>commercial concrete</a>, <a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline'>commercial concrete repair</a>, <a href='/parking-lots-oklahoma-city' class='text-orange no-underline'>parking lots</a>, and <a href='/sidewalks-oklahoma-city' class='text-orange no-underline'>concrete sidewalk replacement</a> for those scopes.",
         ],
       },
       {
@@ -147,7 +153,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Oklahoma Clay Soil: Why the Choice Matters More Here",
         content: [
-          "In a state with stable soil, wire mesh might be adequate for a patio. In Oklahoma, where clay swells and contracts dramatically, rebar is the right call for any <a href='/patios-oklahoma-city' class='text-orange no-underline'>concrete slab in OKC</a> that needs to last. This applies equally to <a href='/driveways-oklahoma-city' class='text-orange no-underline'>concrete driveways</a>, <a href='/foundations-oklahoma-city' class='text-orange no-underline'>foundations</a>, and <a href='/patios-oklahoma-city' class='text-orange no-underline'>patio slabs</a> across the Oklahoma City metro.",
+          "In a state with stable soil, wire mesh might be adequate for a patio. In Oklahoma, where clay swells and contracts dramatically, rebar is the right call for any <a href='/patios-oklahoma-city' class='text-orange no-underline'>concrete slab in OKC</a> that needs to last. This applies equally to <a href='/driveways-oklahoma-city' class='text-orange no-underline'>concrete driveways in Oklahoma City</a>, <a href='/foundations-oklahoma-city' class='text-orange no-underline'>foundations</a>, and <a href='/patios-oklahoma-city' class='text-orange no-underline'>patio slabs</a> across the Oklahoma City metro.",
         ],
       },
       {

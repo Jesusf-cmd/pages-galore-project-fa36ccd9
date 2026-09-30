@@ -167,7 +167,7 @@ export const adaRampsContent: ServicePageContent = {
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — Commercial pours, parking lots, docks, and site flatwork across the metro.",
             "<a href='/commercial-curb-and-gutter-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Curb & Gutter</a> — New curb and gutter construction, section replacement, parking island curbs, and drive approach cuts throughout OKC.",
             "<a href='/parking-lots-oklahoma-city' class='text-orange no-underline font-medium'>Parking Lot Concrete</a> — New commercial parking lot installation, repair, and full replacement with ADA-compliant layouts.",
-            "<a href='/sidewalks-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Sidewalks</a> — Sidewalk installation, replacement, and trip hazard repair for commercial properties.",
+            "Trip hazards and failed panels often need <a href='/sidewalks-oklahoma-city' class='text-orange no-underline font-medium'>sidewalk replacement</a> alongside new curb ramps — same crew for the walk and the accessible transition.",
             "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Crack repair, spalling, trip hazard removal, and joint sealing for commercial properties.",
           ],
         },
