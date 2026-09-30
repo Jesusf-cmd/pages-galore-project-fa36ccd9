@@ -136,3 +136,12 @@ npm run seo-check -- --live https://fdzconstruction.com
 ```
 
 Expects: path → 200; `path/` → one 301/308 to path; `path.html` → redirect or 404 (not 200 duplicate); blog cost article slash → no-slash; unknown path → 404.
+
+### Live run (2026-09-29, post-deploy `f8ad2ab`)
+
+```
+PASS  /blog/cost-of-concrete-oklahoma-city-2026/ → no-slash
+PASS  /this-page-should-not-exist-xyz → 404
+PASS  *.html → redirect or 404 (all registry paths)
+live probes done — 0 failed
+```
