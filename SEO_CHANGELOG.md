@@ -177,6 +177,17 @@ live probes done — 0 failed
 - Migration: `supabase/migrations/20260930010000_rejected_leads.sql`
 - Review weekly: `select * from rejected_leads order by created_at desc;`
 
+### Deploy / smoke (2026-09-29 evening)
+
+- Site pushed (`a61abd3`, city form embed `194ee46`); Cloudflare live.
+- `submit-quote` edge function redeployed.
+- `rejected_leads` migration **not applied** from CLI (needs `SUPABASE_DB_PASSWORD`) — run SQL in Dashboard → SQL Editor from `supabase/migrations/20260930010000_rejected_leads.sql`. Until then, rejections still appear in **function logs**.
+- Smoke:
+  - Homepage browser submit → quote `d7b4b30e-…` created.
+  - Legacy API payload (no spam fields) → quote **#3** (`accessToken` returned).
+  - New payload with honeypot empty + aged `formStartedAt` → quote **#4**.
+  - Too-fast `formStartedAt` → `{success:true}` **without** `accessToken` (silent reject).
+
 ## Verify
 
 ```
