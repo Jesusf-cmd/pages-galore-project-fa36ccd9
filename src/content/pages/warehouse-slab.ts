@@ -2,7 +2,7 @@ import type { ServicePageContent } from "../servicePageTypes";
 
 export const warehouseSlabContent: ServicePageContent = {
       currentServiceSlug: "warehouse-slab-repair-oklahoma-city",
-      metaTitle: "Warehouse Concrete & Slab-on-Grade Oklahoma City | FDZ",
+      metaTitle: "Warehouse Concrete & Slab-on-Grade OKC | FDZ Construction",
       metaDescription: "Warehouse concrete and slab-on-grade contractor in Oklahoma City. New industrial slabs, floor replacement, forklift flatness, sub-base prep. Call (405) 458-4805.",
       eyebrow: "OKC Metro · Warehouse Concrete · Licensed & Insured",
       title: "Warehouse Concrete and Slab-on-Grade in",

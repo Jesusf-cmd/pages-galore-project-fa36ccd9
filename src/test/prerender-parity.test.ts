@@ -498,6 +498,7 @@ describe("post-PR13 SEO cleanup", () => {
       { source: "/loading-dock-construction-oklahoma-city", dest: "/warehouse-slab-repair-oklahoma-city", anchor: "Warehouse Concrete" },
       { source: "/equipment-pad-concrete-oklahoma-city", dest: "/warehouse-slab-repair-oklahoma-city", anchor: "Warehouse Concrete" },
       { source: "/commercial-concrete-oklahoma-city", dest: "/warehouse-slab-repair-oklahoma-city", anchor: "Warehouse concrete &amp; slabs" },
+      { source: "/parking-lots-oklahoma-city", dest: "/warehouse-slab-repair-oklahoma-city", anchor: "Warehouse Concrete" },
     ];
 
     for (const { source, dest, anchor } of inbound) {
