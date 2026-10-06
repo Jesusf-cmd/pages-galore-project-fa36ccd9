@@ -152,7 +152,7 @@ export const loadingDockRepairContent: ServicePageContent = {
             "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Broader commercial repair for lots, docks, sidewalks, and warehouse floors.",
             "<a href='/dock-leveler-pit-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dock Leveler Pit Concrete</a> — New pit construction, pit retrofit, and pit repair coordinated with equipment suppliers.",
             "<a href='/truck-court-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Truck Court Concrete</a> — Industrial-grade truck maneuvering areas for warehouses and distribution centers.",
-            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Slab Repair</a> — Interior warehouse floor repair — forklift damage, joint failure, panel replacement.",
+            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Concrete &amp; Slabs</a> — Interior warehouse floors — new slab-on-grade, forklift flatness, and phased replacement.",
             "<a href='/bollard-installation-oklahoma-city' class='text-orange no-underline font-medium'>Bollard Installation</a> — Protective bollards for dock doors, overhead doors, and column protection in dock areas.",
           ],
         },

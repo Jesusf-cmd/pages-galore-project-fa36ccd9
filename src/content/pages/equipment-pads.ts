@@ -137,6 +137,7 @@ export const equipmentPadsContent: ServicePageContent = {
           titleAccent: "Foundations.",
           content: [
             "<a href='/crane-foundation-installation-oklahoma-city' class='text-orange no-underline font-medium'>Crane Foundation Installation</a> — Higher-load crane pads poured per engineered drawings with supplier shop-drawing bolt templates.",
+            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Concrete &amp; Slabs</a> — Full warehouse floors and industrial slab-on-grade when the scope is larger than a machine pad.",
             "<a href='/foundations-oklahoma-city' class='text-orange no-underline font-medium'>Concrete Foundations</a> — Building slabs, footings, and structural pads on the same Oklahoma clay.",
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Hub</a> — Full overview of FDZ commercial concrete services across OKC.",
           ],
