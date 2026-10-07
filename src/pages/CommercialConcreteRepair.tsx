@@ -170,7 +170,7 @@ export default function CommercialConcreteRepair() {
           titleAccent: "Cracked Concrete Evaluation.",
           content: [
             "Many commercial repair calls start the same way: a cracked slab, a failed panel, or surface breakout that is creating a trip hazard or traffic problem. On this page we evaluate commercial slab repair as part of the broader repair-vs-replace decision — not as a separate residential crack service.",
-            "<strong>Commercial slab repair</strong> can mean routing and sealing isolated cracks, patching spalls, resealing failed joints, grinding trip hazards, foam-lifting a settled panel when the base can be corrected, or saw-cutting and replacing a failed bay when adjacent concrete is still sound. The right method depends on crack pattern, displacement, drainage, traffic, and what the base is doing under the slab.",
+            "<strong>Commercial slab repair</strong> can mean routing and sealing isolated cracks, patching spalls, resealing failed joints, grinding trip hazards, or saw-cutting and replacing a failed bay when adjacent concrete is still sound. The right method depends on crack pattern, displacement, drainage, traffic, and what the base is doing under the slab.",
             "<strong>Cracked commercial concrete</strong> is not automatically a foundation problem. Shrinkage cracks, joint-related cracking, traffic wear, and clay-driven settlement under site slabs are common on OKC commercial properties. If the concern is structural foundation movement — slab tilt tied to the building foundation, cracks through brick or block, or an engineer already involved — that belongs on our <a href='/foundation-repair-oklahoma-city'>foundation repair</a> page. Residential driveway crack work stays on <a href='/driveway-repair-oklahoma-city'>driveway / concrete crack repair</a>.",
             "Heavy-use warehouse and manufacturing floors with forklift joint failure or operational aisle damage are usually a better fit for <a href='/industrial-concrete-repair-oklahoma-city'>industrial concrete repair</a>. This page stays focused on commercial property slabs, site concrete, parking areas, sidewalks, and mixed commercial flatwork.",
           ],
@@ -311,12 +311,12 @@ export default function CommercialConcreteRepair() {
         {
           question: "Can FDZ replace only the damaged section?",
           answer:
-            "Yes. Partial replacement is common on parking lots, docks, sidewalks, and warehouse floors. We saw-cut clean boundaries, address the sub-base where needed, and pour back the failed panel or bay when adjacent concrete is still serviceable.",
+            "Localized panel or bay replacement may be appropriate when damage is limited and surrounding concrete and base conditions are suitable. FDZ evaluates the affected area before recommending repair or replacement.",
         },
         {
           question: "Can concrete repairs be phased around facility operations?",
           answer:
-            "Yes. Many commercial repairs can be sequenced by aisle, dock, or parking bay — including early-morning, after-hours, or weekend work when the site has to stay open. We discuss access, traffic, and downtime before scheduling.",
+            "Repairs can be planned by aisle, dock, parking bay, or other work area when site conditions allow. Scheduling around occupied operations, including potential after-hours work, can be discussed for the specific project.",
         },
         {
           question: "Do you repair loading docks and parking lots?",
