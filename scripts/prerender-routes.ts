@@ -47,8 +47,9 @@ const rawRoutes: PrerenderRoute[] = [
     title: "Concrete Foundation Contractor OKC | FDZ Construction",
     description: "Concrete foundation contractor in Oklahoma City — residential and commercial slab-on-grade, footings, stem walls, plan/spec installs. Call (405) 458-4805.",
     h1: "Concrete Foundation Contractor in Oklahoma City",
-    content: "FDZ Construction LLC is a concrete foundation contractor for residential and commercial projects in Oklahoma City. Slab-on-grade foundation construction, stem walls, continuous and spread footings, garage and shop slabs, and retail pad footings — placed per approved plans, specifications, and Oklahoma site conditions. Call (405) 458-4805 for a free estimate.",
+    content: "FDZ Construction LLC is a concrete foundation contractor for residential and commercial projects in Oklahoma City. Slab-on-grade foundation construction, stem walls, continuous and spread footings, and garage and shop pads — placed per approved plans, specifications, and contracted scope. Oklahoma City-area sites can include expansive or moisture-sensitive soils; design requirements come from plans and geotechnical recommendations when provided. Call (405) 458-4805 for a free estimate.",
   },
+
 
   {
     path: "/sewer-line-repair-oklahoma-city",
@@ -344,8 +345,9 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
     title: "Foundation Repair Oklahoma City | Crack Repair | FDZ",
     description: "Foundation repair and foundation crack repair in Oklahoma City. On-site contractor evaluation of cracks, drainage, and concrete scope. (405) 458-4805.",
     h1: "Foundation Repair in Oklahoma City",
-    content: "Foundation repair and foundation crack repair for Oklahoma City homeowners and property owners. FDZ evaluates crack location, pattern, moisture involvement, and perimeter drainage, then scopes localized concrete repair, drainage correction, slab leveling, partial replacement, or basement waterproofing discussion when relevant. We are a concrete contractor — not a structural engineering firm or pier sales operation. Non-foundation commercial slab cracks belong on commercial concrete repair. Free on-site evaluation. Call (405) 458-4805.",
+    content: "Foundation repair and foundation crack repair for Oklahoma City homeowners and property owners. FDZ provides contractor evaluation of crack location, pattern, and moisture involvement, then scopes localized concrete repair, partial replacement, or basement waterproofing discussion when relevant. Pier and underpinning systems are not FDZ product offerings — those may require a foundation specialist or licensed design professional. Non-foundation commercial slab cracks belong on commercial concrete repair. Free on-site evaluation. Call (405) 458-4805.",
   },
+
 
   {
     path: "/bollard-installation-oklahoma-city",

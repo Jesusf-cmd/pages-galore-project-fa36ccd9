@@ -519,7 +519,7 @@ export const prerenderBodies: Record<string, string> = {
       <li>Footing layout and excavation for new homes and additions</li>
       <li>Rebar placement and forming when shown on approved plans</li>
       <li>Slab-on-grade and stem-wall foundation concrete placement</li>
-      <li>Perimeter drainage detailing coordinated with the build when in scope</li>
+      <li>Related site details only when included in FDZ's contracted concrete scope</li>
     </ul>
     <h3>Commercial Concrete Foundations</h3>
     <ul>
@@ -535,40 +535,28 @@ export const prerenderBodies: Record<string, string> = {
     </ul>
     <h3>Footings, Stem Walls &amp; Pads</h3>
     <ul>
-      <li>Continuous and spread footings sized per structural design</li>
+      <li>Continuous and spread footings as shown on approved plans</li>
       <li>Stem walls for crawl spaces, elevated structures, and additions</li>
-      <li>Garage, shop, retail, and equipment pads when within concrete scope</li>
+      <li>Garage and shop pads when within concrete scope</li>
     </ul>
-    <h3>Poured Concrete Retaining Walls</h3>
-    <ul>
-      <li>Monolithic poured walls for grade changes that pair with foundation work</li>
-      <li>Drainage planning behind the wall (gravel backfill, weep holes, French drain where needed)</li>
-      <li>Best for taller walls and higher-load applications when specified</li>
-    </ul>
-    <h3>CMU Block Retaining Walls</h3>
-    <ul>
-      <li>Faster build option on smaller or mid-height projects</li>
-      <li>Still requires proper drainage behind the wall</li>
-      <li>Used where poured concrete is not required by design</li>
-    </ul>
-    <h2>Building Foundations on Oklahoma Clay</h2>
-    <p>Oklahoma's expansive red clay swells and shrinks with moisture. Footing depth, reinforcement, drainage, and foundation type should account for site soil and approved plans — not a generic national default. FDZ places foundations as a concrete contractor per plans, specs, and site conditions.</p>
+    <h2>Building Foundations in the Oklahoma City Area</h2>
+    <p>Oklahoma City-area sites can include expansive or moisture-sensitive soils. Foundation design and preparation requirements depend on approved plans, site conditions, and geotechnical recommendations when provided. FDZ places foundation concrete as a concrete contractor per plans, specs, and contracted scope — we do not provide geotechnical evaluation or foundation engineering.</p>
     ${processSection("Foundation Installation Process", [
-      { title: "Layout & plan review", description: "We stake the foundation to the plan, review site drainage and soil conditions as they affect the concrete scope, and coordinate permits when included." },
-      { title: "Excavation & footings", description: "We excavate to grade and dig and pour footings as required by the approved design, code, and site conditions." },
+      { title: "Layout & plan review", description: "We stake the foundation to the approved plans, note site conditions that affect concrete placement, and coordinate permits when included in scope." },
+      { title: "Excavation & footings", description: "We excavate to grade and dig and pour footings as shown on the approved plans and required by the project documents." },
       { title: "Forming & reinforcement", description: "Forms are set to grade; rebar, grade beams, sleeves, and embeds are placed when shown on approved plans and included in FDZ scope." },
       { title: "Vapor barrier & base", description: "We prepare the subgrade/base and install under-slab vapor barrier when specified and included in scope." },
       { title: "Pour & finish", description: "We place the specified mix, screed and finish to grade, and set anchor bolts/hold-downs when shown before the concrete sets." },
       { title: "Cure & inspection", description: "The slab cures before it carries load per project requirements. We coordinate required inspections and walk the finished foundation with you." },
     ])}
     <h2>Commercial Concrete Foundation Contractor for GCs &amp; Builders</h2>
-    <p>Commercial foundation contractor Oklahoma City work is plan-driven: FDZ places commercial slab-on-grade foundations, footings, and pads for warehouses, retail buildings, shops, and developments when that concrete is in our contracted scope. Bid packages, inspection windows, and embeds/vapor barrier details come from approved drawings.</p>
+    <p>Commercial foundation contractor Oklahoma City work is plan-driven: FDZ places commercial slab-on-grade foundations, footings, and pads for commercial projects and new construction when that concrete is in our contracted scope. Bid packages, inspection windows, and embeds/vapor barrier details come from approved drawings.</p>
     <h2>Why Oklahoma City Homeowners and Businesses Choose FDZ</h2>
-    <p>Oklahoma's Permian-age clay is highly expansive. Foundation performance depends heavily on drainage, base prep, and building what the plans and soil conditions call for. We've been working in this soil for 8+ years.</p>
+    <p>Oklahoma City-area sites can include expansive or moisture-sensitive soils. Foundation performance depends on building what the approved plans and site requirements call for. We've been placing concrete foundations in this market for 8+ years.</p>
     <ul>
       <li>Licensed, bonded, and insured in Oklahoma</li>
       <li>8+ years serving the OKC metro</li>
-      <li>2-year workmanship warranty on all foundation and retaining wall work</li>
+      <li>2-year workmanship warranty on foundation work</li>
       <li>Based in Oklahoma City</li>
       <li>Free on-site or plan-based estimates</li>
       <li>COI and bonding documentation available for commercial bid process</li>
@@ -576,7 +564,7 @@ export const prerenderBodies: Record<string, string> = {
     <h2>How Much Do Foundations Cost in Oklahoma City?</h2>
     <p>Foundation pricing depends on project size, depth, reinforcement, site access, and excavation conditions. We provide free on-site or plan-based estimates — call <a href="tel:4054584805">(405) 458-4805</a>. Commercial foundations are quoted from drawings and bid documents whenever available.</p>
     <h2>Real Foundation Projects Across the OKC Metro</h2>
-    <p>A few recent foundation pours — from a pier-supported thickened slab in Edmond to residential slab-on-grade work in Piedmont. <a href="/our-projects">See more completed projects across the OKC metro</a>.</p>
+    <p>A few recent foundation pours — from a pier-supported thickened slab in Edmond to residential slab-on-grade work in Piedmont. FDZ placed the concrete scope; design details come from the project documents. <a href="/our-projects">See more completed projects across the OKC metro</a>.</p>
     <img src="/images/projects/pier-foundation-excavation-edmond-oklahoma-1.jpg" alt="Excavation and site grading for pier foundation in Edmond, Oklahoma — skid steer and excavator working red clay lot" loading="lazy" />
     <img src="/images/projects/pier-foundation-pour-edmond-oklahoma-concrete-truck.jpg" alt="Concrete truck on site during pier foundation slab pour in Edmond, Oklahoma — crew finishing fresh slab" loading="lazy" />
     <img src="/images/projects/pier-foundation-finished-edmond-oklahoma-curing.jpg" alt="Finished pier foundation thickened slab curing in Edmond, Oklahoma" loading="lazy" />
@@ -584,11 +572,11 @@ export const prerenderBodies: Record<string, string> = {
     <img src="/images/projects/residential-foundation-crew-piedmont-ok.jpg" alt="FDZ Construction crew finishing residential foundation slab in Piedmont, OK with power trowel" loading="lazy" />
     ${faqSection("Foundation FAQ", [
       { question: "What types of foundations do you install?", answer: "We handle slab-on-grade, stem wall, and continuous footing foundations for residential and commercial projects, placed per approved plans and site conditions." },
-      { question: "Do you build commercial foundations?", answer: "Yes — we pour commercial slab-on-grade for warehouses and shops, footings and pads for retail buildings, and structural foundation concrete for developments, coordinated with GCs and inspectors when those parties are on the project." },
+      { question: "Do you build commercial foundations?", answer: "Yes — we pour commercial slab-on-grade, footings, and pads for commercial projects and new construction, coordinated with GCs and inspectors when those parties are on the project." },
       { question: "How much does a foundation cost in OKC?", answer: "Foundation pricing depends on project size, depth, reinforcement, site access, and excavation conditions. We provide free on-site or plan-based estimates — call (405) 458-4805." },
-      { question: "How deep should footings be in Oklahoma?", answer: "Footing depth depends on code, structural design, frost considerations, and site/geotechnical requirements. We place footings as shown on approved plans." },
+      { question: "How deep should footings be in Oklahoma?", answer: "Footing depth is set by the approved plans, applicable code, and design documents for the project. We place footings as shown." },
       { question: "Do you place rebar and vapor barrier?", answer: "Yes, when shown on approved plans and included in FDZ's contracted concrete scope." },
-      { question: "Do you handle the engineering requirements for taller retaining walls?", answer: "Many jurisdictions require an engineer's stamp for walls over a certain height. We confirm what's required and can work with an engineer when needed. FDZ is the concrete contractor, not the design engineer." },
+      { question: "Do you engineer foundations?", answer: "No. FDZ is a concrete contractor. We place foundation concrete according to approved plans and specifications." },
       { question: "What concrete strength do you use for foundations?", answer: "Mix strength is set by the approved plans and specifications for the project." },
       { question: "Do you handle permits and inspections?", answer: "Yes — we coordinate necessary permits and inspections for foundation projects across the OKC metro when that coordination is part of our scope." },
       { question: "What if I need foundation crack repair instead of a new foundation?", answer: "Use our foundation repair page for existing foundation cracks and repair-vs-replace evaluation. This page is for new foundation construction and replacement pours." },
@@ -596,13 +584,13 @@ export const prerenderBodies: Record<string, string> = {
     <h2>Related Services</h2>
     <ul>
       <li><a href="/foundation-repair-oklahoma-city">Foundation repair</a> — Foundation crack repair and repair-vs-replace evaluation for existing foundations.</li>
+      <li><a href="/retaining-walls-oklahoma-city">Retaining wall construction</a> — Grade-change walls that sometimes accompany foundation work on sloped lots — dedicated retaining-wall page.</li>
       <li><a href="/commercial-concrete-repair-oklahoma-city">Commercial concrete repair</a> — Cracked commercial slabs, failed panels, and site concrete repair when the issue is not foundation movement.</li>
       <li><a href="/warehouse-slab-repair-oklahoma-city">warehouse concrete and slab-on-grade</a> — New warehouse floors and phased industrial floor replacement for forklift operations.</li>
-      <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete services</a> — Warehouse floors, retail pads, loading docks, and site concrete for commercial properties.</li>
-      <li><a href="/retaining-walls-oklahoma-city">Retaining wall construction</a> — Structural walls that often pair with foundation and grade work.</li>
-      <li><a href="/soil-stabilization-oklahoma-city">Soil stabilization</a> — Lime and cement treatment for Oklahoma clay before a foundation pour when specified.</li>
+      <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete services</a> — Site concrete for commercial properties and GC projects.</li>
+      <li><a href="/soil-stabilization-oklahoma-city">Soil stabilization</a> — Subgrade treatment before a foundation pour when specified for the project.</li>
       <li><a href="/crane-foundation-installation-oklahoma-city">Crane foundation installation</a> — Crane pads and anchor-bolt coordination installed per engineered drawings.</li>
-      <li>Helpful guide: <a href="/blog/rebar-vs-wire-mesh-concrete-slabs">rebar vs wire mesh for concrete slabs</a> on expansive clay.</li>
+      <li>Helpful guide: <a href="/blog/rebar-vs-wire-mesh-concrete-slabs">rebar vs wire mesh for concrete slabs</a>.</li>
       <li>Local foundation pages: <a href="/foundations-edmond">Edmond</a>, <a href="/foundations-norman">Norman</a>, <a href="/foundations-yukon">Yukon</a>.</li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
