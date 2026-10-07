@@ -13,7 +13,7 @@ export const loadingDockConstructionContent: ServicePageContent = {
   introText:
     "FDZ builds new loading dock concrete for warehouses, distribution centers, and industrial facilities across Oklahoma City — dock structures, approach slabs, and dock-leveler pit forming coordinated with your plans and equipment suppliers. This page is for new construction and major dock additions, not localized repair of an existing apron. For cracked or spalled dock concrete see <a href='/loading-dock-concrete-repair-oklahoma-city'>loading dock concrete repair</a>. For pit-specific concrete see <a href='/dock-leveler-pit-concrete-oklahoma-city'>dock leveler pit concrete</a>.",
   localExpertiseNote:
-    "Oklahoma clay under dock approaches and aprons needs proper base preparation before a new pour. Seasonal moisture movement is a common reason docks settle and crack early when the base is underbuilt. We evaluate grade, drainage, and base conditions on site and follow project plans and specifications when they are provided.",
+    "Oklahoma clay under dock approaches and aprons often needs proper base preparation before a new pour. Seasonal moisture movement can contribute to early settlement and cracking when the base is underbuilt. We evaluate grade, drainage, and base conditions on site and follow project plans and specifications when they are provided.",
   serviceLabel: "Dock Construction",
   serviceCards: [
     {
@@ -77,8 +77,8 @@ export const loadingDockConstructionContent: ServicePageContent = {
       {
         title: "Dock Leveler Pit Construction",
         bullets: [
-          "Pit dimensions, curb angles, and anchor layouts taken from the leveler supplier’s drawings",
-          "Utility conduit placement when hydraulic or electric levelers are specified",
+          "Pit dimensions, curb angles, and anchor layouts taken from the leveler supplier’s drawings when those items are part of FDZ’s concrete scope",
+          "Utility conduit placement when shown on approved drawings and included in FDZ’s concrete scope",
           "Dedicated pit detail on our <a href='/dock-leveler-pit-concrete-oklahoma-city'>dock leveler pit concrete</a> page",
         ],
       },
@@ -116,7 +116,7 @@ export const loadingDockConstructionContent: ServicePageContent = {
     {
       title: "Dock leveler pit coordination",
       description:
-        "When a pit is part of the job, dimensions, anchors, and conduit are verified against supplier shop drawings before the pour.",
+        "When a pit is part of the job, dimensions and any curb angles, anchors, or conduit shown on supplier shop drawings are verified before the pour when included in FDZ’s concrete scope.",
     },
     {
       title: "Pour, finish & cure coordination",
@@ -217,7 +217,7 @@ export const loadingDockConstructionContent: ServicePageContent = {
     {
       question: "Do you coordinate with dock leveler equipment suppliers?",
       answer:
-        "Yes for the concrete. FDZ forms pits and sets embeds from the equipment supplier’s shop drawings. The equipment company installs and services the mechanical leveler after the concrete is ready.",
+        "Yes for the concrete. FDZ forms pits and places curb angles, anchors, or conduit when shown on the equipment supplier’s shop drawings and included in FDZ’s concrete scope. FDZ does not manufacture, install, or service the mechanical dock leveler itself — the equipment company handles that after the concrete is ready.",
     },
     {
       question: "How much does it cost to build a loading dock in Oklahoma City?",

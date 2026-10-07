@@ -11,9 +11,9 @@ export const dockLevelerPitsContent: ServicePageContent = {
   description:
     'Dock leveler pit concrete construction, retrofit, and pit repair coordinated with your equipment supplier’s drawings. Call <a href="tel:4054584805">(405) 458-4805</a>.',
   introText:
-    "A dock leveler pit is the concrete cavity in a loading dock that houses the dock leveler. Pit dimensions, curb angles, anchor embeds, and conduit locations have to match the equipment — mistakes mean expensive rework. FDZ builds and repairs the concrete around dock-leveler equipment using the supplier’s shop drawings. We do not manufacture, install, or service the mechanical dock leveler itself. For apron, face, and approach repair outside the pit see <a href='/loading-dock-concrete-repair-oklahoma-city'>loading dock concrete repair</a>. For new full dock builds see <a href='/loading-dock-construction-oklahoma-city'>loading dock construction</a>.",
+    "A dock leveler pit is the concrete cavity in a loading dock that houses the dock leveler. Pit dimensions and related embeds — curb angles, anchors, and conduit when shown on approved drawings — need to match the equipment package. FDZ builds and repairs the concrete around dock-leveler equipment using the supplier’s shop drawings when those items are included in FDZ’s concrete scope. We do not manufacture, install, or service the mechanical dock leveler itself. For apron, face, and approach repair outside the pit see <a href='/loading-dock-concrete-repair-oklahoma-city'>loading dock concrete repair</a>. For new full dock builds see <a href='/loading-dock-construction-oklahoma-city'>loading dock construction</a>.",
   localExpertiseNote:
-    "Dock leveler pits in Oklahoma City need attention to moisture and base conditions. Clay movement and standing water in pits accelerate wall and floor deterioration. Drainage and base prep are part of scoping every new pit or pit repair we evaluate.",
+    "Dock leveler pits in Oklahoma City should be scoped with attention to moisture and base conditions. Standing water and base movement can contribute to wall and floor deterioration. Drainage and base prep are reviewed when evaluating a new pit or pit repair.",
   serviceLabel: "Pit Concrete",
   serviceCards: [
     {
@@ -32,7 +32,7 @@ export const dockLevelerPitsContent: ServicePageContent = {
       icon: "🔧",
       title: "Dock Leveler Pit Concrete Repair",
       description:
-        "Spalled pit walls, damaged curb angles, and deteriorated pit floors — repaired when the surrounding dock slab is still sound.",
+        "Spalled pit walls, damaged curb angles, and deteriorated pit floors — repaired when surrounding dock conditions appear suitable for a localized concrete repair during evaluation.",
     },
     {
       icon: "📐",
@@ -49,9 +49,9 @@ export const dockLevelerPitsContent: ServicePageContent = {
         title: "New Dock Leveler Pit Construction",
         bullets: [
           "Formed and poured to the equipment manufacturer’s pit dimensions",
-          "Steel curb angle or embedded frame at the pit lip when specified",
-          "Utility conduit for hydraulic or electric levelers when shown on drawings",
-          "Anchor bolt layout set from supplier shop drawings before the pour",
+          "Steel curb angle or embedded frame at the pit lip when specified and included in FDZ’s concrete scope",
+          "Utility conduit for hydraulic or electric levelers when shown on approved drawings and included in FDZ’s concrete scope",
+          "Anchor bolt layout set from supplier shop drawings before the pour when anchors are included in FDZ’s concrete scope",
         ],
       },
       {
@@ -66,9 +66,9 @@ export const dockLevelerPitsContent: ServicePageContent = {
         title: "Dock Leveler Pit Concrete Repair",
         bullets: [
           "Spalled pit walls restored with repair materials matched to conditions",
-          "Damaged or corroded steel curb angles removed and replaced when part of the concrete scope",
-          "Pit floor crack and surface repair when the surrounding dock slab remains serviceable",
-          "Standing-water / drainage issues at the pit reviewed as part of the repair recommendation",
+          "Damaged or corroded steel curb angles removed and replaced when specified and part of FDZ’s concrete scope",
+          "Pit floor crack and surface repair when surrounding dock conditions appear suitable during evaluation",
+          "Standing-water / drainage conditions at the pit reviewed as part of the repair recommendation",
         ],
       },
       {
@@ -90,7 +90,7 @@ export const dockLevelerPitsContent: ServicePageContent = {
     {
       title: "Collect equipment specs",
       description:
-        "Review the leveler supplier’s shop drawings for pit dimensions, curb angle type, anchor layout, and conduit requirements before any concrete work.",
+        "Review the leveler supplier’s shop drawings for pit dimensions and, when applicable, curb angle type, anchor layout, and conduit requirements before any concrete work.",
     },
     {
       title: "Verify dimensions & site conditions",
@@ -100,12 +100,12 @@ export const dockLevelerPitsContent: ServicePageContent = {
     {
       title: "Excavation, saw-cutting & forming",
       description:
-        "New pits are excavated and formed; retrofits and enlargements start with careful saw-cutting of the existing slab.",
+        "New pits are excavated and formed; retrofits and enlargements start with careful saw-cutting of the existing slab when that work is in scope.",
     },
     {
       title: "Anchors, conduit & pour",
       description:
-        "Templates and conduit placed from the drawings, then concrete placed for the walls and floor per the approved scope.",
+        "Anchor templates and conduit placed when shown on approved drawings and included in FDZ’s concrete scope, then concrete placed for the walls and floor per the approved scope.",
     },
     {
       title: "Cure & equipment coordination",
@@ -119,7 +119,7 @@ export const dockLevelerPitsContent: ServicePageContent = {
       title: "What FDZ Does — and",
       titleAccent: "Does Not Do.",
       content: [
-        "FDZ performs dock leveler pit concrete: new pits, retrofits, enlargements, and pit concrete repair (walls, floors, curb-angle areas).",
+        "FDZ performs dock leveler pit concrete: new pits, retrofits, enlargements, and pit concrete repair (walls, floors, curb-angle areas) when that work is in FDZ’s concrete scope.",
         "FDZ does not manufacture, install, adjust, or service mechanical, hydraulic, or air-powered dock levelers. Those stay with the equipment supplier or a qualified dock-equipment technician.",
         "General dock apron, face, and approach concrete repair lives on <a href='/loading-dock-concrete-repair-oklahoma-city'>loading dock concrete repair</a>. Full new docks live on <a href='/loading-dock-construction-oklahoma-city'>loading dock construction</a>.",
       ],
@@ -129,8 +129,8 @@ export const dockLevelerPitsContent: ServicePageContent = {
       title: "Inside a",
       titleAccent: "Dock Leveler Pit.",
       content: [
-        "A dock leveler pit is a precisely dimensioned concrete structure with embedded steel components. Width, depth, and length are set by the leveler manufacturer and the project drawings — not by a generic contractor template.",
-        "Typical components include pit geometry per manufacturer specs, curb angles or an embedded frame at the lip, reinforcement in the walls and floor, utility conduit when actuated levelers are specified, anchor layouts from shop drawings, and pit drainage where required. Exact numbers come from the equipment package for that job.",
+        "A dock leveler pit is a precisely dimensioned concrete structure. Width, depth, and length are set by the leveler manufacturer and the project drawings — not by a generic contractor template.",
+        "Drawings may call for curb angles or an embedded frame at the lip, reinforcement in the walls and floor, utility conduit for actuated levelers, anchor layouts, and pit drainage. Exact numbers come from the equipment package for that job. FDZ places only the concrete-scope items shown on the approved drawings and included in the contracted scope — coordinated with the equipment supplier or GC as needed.",
       ],
     },
     {
@@ -186,7 +186,7 @@ export const dockLevelerPitsContent: ServicePageContent = {
     {
       question: "Do you repair dock leveler pit concrete?",
       answer:
-        "Yes. Pit wall spalling, pit floor deterioration, and curb-angle concrete/steel issues are common repair scopes when the surrounding dock slab is still sound. Mechanical leveler repair is not part of FDZ’s scope.",
+        "Yes for concrete around the pit. Pit wall spalling, pit floor deterioration, and curb-angle concrete or steel issues can be repair scopes when surrounding dock conditions appear suitable during evaluation and when that work is included in FDZ’s concrete scope. FDZ does not manufacture, install, or service the mechanical dock leveler itself.",
     },
     {
       question: "How long does dock leveler pit construction take?",
@@ -196,12 +196,12 @@ export const dockLevelerPitsContent: ServicePageContent = {
     {
       question: "Can you retrofit a dock leveler pit into an existing dock?",
       answer:
-        "Yes, but it is more involved than a new pit. The process usually requires saw-cutting the existing slab, excavating, forming, and pouring around remaining structure — typically higher cost than a new-build pit.",
+        "Yes, but it is more involved than a new pit. The process usually requires saw-cutting the existing slab, excavating, forming, and pouring around remaining structure — typically higher cost than a new-build pit. Scope is confirmed from site conditions and supplier drawings.",
     },
     {
       question: "How much does dock leveler pit concrete cost in Oklahoma City?",
       answer:
-        "New pit construction and pit repairs vary with dimensions, conduit needs, and whether the work is a retrofit. Call (405) 458-4805 with supplier drawings for a written estimate.",
+        "New pit construction and pit repairs vary with dimensions, whether conduit or embeds are shown on drawings and included in scope, and whether the work is a retrofit. Call (405) 458-4805 with supplier drawings for a written estimate.",
     },
     {
       question: "What happens if the dock leveler pit dimensions are wrong?",

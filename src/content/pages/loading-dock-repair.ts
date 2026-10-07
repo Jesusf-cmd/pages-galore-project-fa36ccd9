@@ -13,32 +13,32 @@ export const loadingDockRepairContent: ServicePageContent = {
   introText:
     "A damaged loading dock is a safety hazard and an operational disruption. Cracked dock aprons create trip hazards for pallet jacks and forklifts. Spalled dock faces let water into the structure. Settled approach slabs and failed joints slow receiving and create liability. FDZ Construction repairs loading dock concrete for warehouses, distribution centers, cold storage, and manufacturing facilities across Oklahoma City — evaluating repair versus larger replacement based on what we see on site. For new dock builds see <a href='/loading-dock-construction-oklahoma-city'>loading dock construction</a>. For specialized pit concrete around dock-leveler equipment see <a href='/dock-leveler-pit-concrete-oklahoma-city'>dock leveler pit concrete</a>.",
   localExpertiseNote:
-    "OKC loading docks sit on expansive clay that moves seasonally. Dock aprons and approach slabs often fail at the joint where trailer impact meets differential settlement — not only from surface wear. We look at visible damage, joint condition, drainage, and how the apron feels under traffic before recommending a localized repair or a larger rebuild.",
+    "Loading dock apron and approach damage can be associated with settlement, drainage or moisture conditions, joint deterioration, repeated traffic or impact, or deterioration of the supporting base — especially on OKC sites with expansive clay. FDZ reviews visible damage and site conditions before recommending a repair approach.",
   serviceLabel: "Dock Repair",
   serviceCards: [
     {
       icon: "🔧",
       title: "Dock Apron Repair",
       description:
-        "Cracked, settled, or failing apron slabs at the dock door — localized panel work, joint repair, or apron replacement when adjacent concrete is still sound.",
+        "Cracked, settled, or failing apron slabs at the dock door — localized panel work, joint repair, or apron replacement when adjacent concrete and site conditions support that approach.",
     },
     {
       icon: "🏗️",
       title: "Dock Face & Edge Repair",
       description:
-        "Spalling, impact damage, and edge breakout at the dock face — repaired when the surrounding concrete still supports a lasting fix.",
+        "Spalling, impact damage, and edge breakout at the dock face — repaired when surrounding conditions support a lasting concrete fix.",
     },
     {
       icon: "📐",
       title: "Approach Slab Repair",
       description:
-        "Cracked or settled approach concrete between the dock apron and truck court — panel repair with base review where settlement shows.",
+        "Cracked or settled approach concrete between the dock apron and truck court — panel repair with base review where settlement is observed.",
     },
     {
       icon: "🔩",
       title: "Joint & Edge Failure",
       description:
-        "Failed sealant, open joints, and joint-edge breakout that let water into the base and accelerate apron and approach failure.",
+        "Failed sealant, open joints, and joint-edge breakout that can allow moisture into the base and contribute to further apron or approach deterioration.",
     },
     {
       icon: "⏱️",
@@ -61,18 +61,18 @@ export const loadingDockRepairContent: ServicePageContent = {
         title: "Dock Apron & Approach Slab",
         bullets: [
           "Dock apron — the concrete at dock-floor level immediately outside the dock door",
-          "Joint repair at the apron-to-approach transition, a common failure point under trailer traffic",
-          "Localized panel replacement when a section has failed and neighboring concrete is still serviceable",
-          "Approach slab repair between the apron and truck court where cracking or settlement shows",
-          "Full apron replacement when localized repair is no longer a lasting answer — see also <a href='/loading-dock-replacement-oklahoma-city'>loading dock replacement</a>",
+          "Joint repair at the apron-to-approach transition where traffic and movement often concentrate stress",
+          "Localized panel replacement when a section has failed and neighboring concrete and base conditions appear suitable",
+          "Approach slab repair between the apron and truck court where cracking or settlement is observed",
+          "Larger apron replacement may be considered when localized repair is impractical — see also <a href='/loading-dock-replacement-oklahoma-city'>loading dock replacement</a>",
         ],
       },
       {
         title: "Dock Face, Edges & Impact Damage",
         bullets: [
-          "Spalling and impact damage at the dock face from trailer and bumper contact",
-          "Edge breakout and surface failure where moisture and freeze-thaw enlarge cracks",
-          "Dock bumper anchor areas evaluated when anchors have pulled or surrounding concrete has failed",
+          "Spalling and impact damage at the dock face associated with trailer and bumper contact",
+          "Edge breakout and surface failure where moisture exposure appears to have worsened cracking",
+          "Dock bumper anchor areas reviewed when anchors have pulled or surrounding concrete has deteriorated, when that work is part of the concrete repair scope",
           "Mounting surfaces reviewed for dock seals/shelters when those are part of the concrete repair scope",
         ],
       },
@@ -80,8 +80,8 @@ export const loadingDockRepairContent: ServicePageContent = {
         title: "When Pit Concrete Is Involved",
         bullets: [
           "General dock apron/face/approach repair stays on this page",
-          "Dock-leveler pit walls, pit floors, curb angles, and pit retrofits belong on our <a href='/dock-leveler-pit-concrete-oklahoma-city'>dock leveler pit concrete</a> page",
-          "FDZ performs concrete work around dock equipment — we do not service mechanical dock levelers",
+          "Dock-leveler pit walls, pit floors, curb-angle concrete areas, and pit retrofits belong on our <a href='/dock-leveler-pit-concrete-oklahoma-city'>dock leveler pit concrete</a> page when that is the scope",
+          "FDZ performs concrete work around dock equipment — we do not manufacture, install, or service mechanical dock levelers",
         ],
       },
     ],
@@ -134,18 +134,18 @@ export const loadingDockRepairContent: ServicePageContent = {
       title: "Honest Assessment:",
       titleAccent: "Repair or Replace?",
       content: [
-        "Localized repair is often appropriate when damage is limited to surface spalling, isolated panels, failed joints, or a section of approach slab, and the surrounding dock concrete feels stable under traffic.",
-        "Larger replacement is usually the better call when cracking is widespread, settlement is ongoing across the apron, the base has failed broadly, or repeated patches would cost as much as doing the area once.",
+        "Localized repair may be appropriate when damage appears limited to surface spalling, isolated panels, failed joints, or a section of approach slab, and surrounding concrete feels stable under traffic during the contractor evaluation.",
+        "Larger replacement may be considered when deterioration is widespread, settlement appears ongoing across the apron, supporting base conditions make localized repair impractical, or repeated patches would approach the cost of doing the area once.",
         "FDZ recommends based on what we see on site and any plans or specifications you provide. We do not push full replacement when repair is the honest answer, and we do not certify structural design — that stays with your design professional when required.",
       ],
       table: {
         headers: ["What we look at", "Often leans toward"],
         rows: [
-          ["Localized spall or joint failure; stable surrounding apron", "Repair"],
-          ["Isolated failed panel with sound neighbors", "Partial panel replacement"],
-          ["Approach settlement limited to one bay", "Approach panel repair / replace"],
-          ["Widespread cracking, ongoing settlement, or failed base", "Replacement evaluation"],
-          ["Pit wall / curb-angle damage with sound dock slab", "Pit-focused concrete work"],
+          ["Localized spall or joint failure; surrounding apron feels stable", "Repair evaluation"],
+          ["Isolated failed panel; neighbors appear suitable", "Partial panel replacement evaluation"],
+          ["Approach settlement limited to one bay", "Approach panel repair / replace evaluation"],
+          ["Widespread cracking, ongoing settlement, or base concerns", "Replacement evaluation"],
+          ["Pit wall / curb-angle damage; surrounding dock appears suitable", "Pit-focused concrete evaluation"],
         ],
       },
     },
@@ -206,17 +206,17 @@ export const loadingDockRepairContent: ServicePageContent = {
     {
       question: "What causes loading dock aprons to fail in Oklahoma City?",
       answer:
-        "OKC dock aprons often fail from a combination of expansive-clay settlement, water through failed joints, freeze-thaw cycling, and repeated trailer impact at the apron-to-approach joint. Repairing the surface without reviewing base and drainage conditions usually shortens the next repair cycle.",
+        "Loading dock apron damage can be associated with settlement, drainage or moisture conditions, joint deterioration, repeated traffic/impact, or deterioration of the supporting base. FDZ reviews visible damage and site conditions before recommending a repair approach. Where settlement, drainage, or base conditions contribute to the damage, those conditions should be considered when developing the repair scope.",
     },
     {
       question: "When is repair better than full dock replacement?",
       answer:
-        "Repair is often appropriate for localized panel failures, surface spalling, failed joints, and limited approach damage when surrounding concrete is still sound. Full replacement is usually warranted when the base has failed across a large area or damage is widespread. FDZ evaluates honestly before recommending.",
+        "Localized repair may be appropriate for limited panel failures, surface spalling, failed joints, and limited approach damage when surrounding concrete and site conditions appear suitable during evaluation. Larger replacement may be considered when deterioration is widespread or supporting conditions make localized repair impractical. FDZ evaluates before recommending.",
     },
     {
       question: "Do you repair dock leveler pits?",
       answer:
-        "Yes for concrete around the pit — pit walls, pit floors, and curb-angle areas when that is the scope. Dedicated detail lives on our dock leveler pit concrete page. FDZ does not repair or service the mechanical dock-leveler equipment itself.",
+        "Yes for concrete around the pit — pit walls, pit floors, and curb-angle areas when that concrete work is included in the scope. Dedicated detail lives on our dock leveler pit concrete page. FDZ does not manufacture, install, or service the mechanical dock-leveler equipment itself.",
     },
     {
       question: "Is loading dock concrete repair different from industrial floor repair?",
