@@ -96,26 +96,12 @@ const rawRoutes: PrerenderRoute[] = [
   },
   {
     path: "/parking-lots-oklahoma-city",
-    title: "Concrete Parking Lot Contractors Oklahoma City | FDZ Construction LLC",
-    description: "Commercial concrete parking lot installation and repair in Oklahoma City. ADA-compliant layouts, reinforced slabs, curb and gutter, striping coordination. Licensed, bonded, insured. Call (405) 458-4805.",
+    title: "Concrete Parking Lot Contractor OKC | FDZ Construction",
+    description:
+      "Commercial concrete parking lot contractor in Oklahoma City — new lots, installation, and full replacement from plans. Call (405) 458-4805.",
     h1: "Concrete Parking Lot Contractors in Oklahoma City, OK",
-    content: `FDZ Construction LLC provides commercial concrete parking lot installation, repair, and replacement for businesses, property managers, retail centers, churches, warehouses, and general contractors across the Oklahoma City metro. Licensed, bonded, and insured in Oklahoma. Certificate of insurance and bonding documentation available as part of the bid process.
-
-Parking Lot Services: New parking lot installation — site grading for drainage and ADA-compliant slopes, 4,000+ PSI concrete mix standard for vehicle loads, reinforcement sized to expected traffic and load, expansion joint planning for large-area pours, ADA-accessible stall layout, curb and gutter installation. Parking lot repair and partial replacement — section removal and replacement for cracked or failed areas, joint sealing to prevent water intrusion, sub-base evaluation before recommending repair vs. replacement. Full parking lot replacement — full demolition and removal, sub-base re-evaluation and correction before new pour, re-grading for drainage improvements, new reinforced pour with updated ADA layout. Concrete curb and gutter — perimeter curb and gutter for drainage routing, ADA curb ramps and accessible routes, slipform for longer runs and hand-formed for custom sections. ADA compliance — accessible stall count and placement per ADA requirements, van-accessible stall dimensions, accessible route from parking to building entry, curb ramp slopes and landing dimensions. Commercial drives and approaches — entry and exit drives, service drives and loading dock approaches, reinforced for truck and equipment loads.
-
-Why Choose FDZ Construction: Licensed, bonded, and insured in Oklahoma with COI and bonding documentation available for the bid process. We coordinate with your project schedule and other trades on site — timeline changes are communicated before they happen. ADA compliance is built into every layout before we finalize design. OKC's expansive clay means parking lot failures often start below the slab — we evaluate sub-base conditions before recommending repair vs. replacement. Our proposals define exactly what's included: demolition, sub-base prep, reinforcement, concrete thickness, ADA layout, curb and gutter, and cleanup. Over 8 years of commercial concrete experience across the OKC metro, with a 2-year workmanship warranty on all parking lot work.
-
-Common Project Types: Retail and shopping center lots, warehouse and industrial yards, office and medical building lots, church and school parking, HOA and multifamily lots, restaurant and drive-thru lanes, loading docks and truck aprons, asphalt-to-concrete conversions.
-
-Oklahoma City Soil: Oklahoma's expansive clay and shale base moves significantly with moisture. If the sub-base wasn't properly compacted and the slab wasn't designed for that movement, the lot cracks and fails from below regardless of surface quality. Proper sub-base preparation — compacted aggregate base, drainage routing, and appropriate joint spacing for large-area pours — is what separates a parking lot that lasts 30+ years from one that needs patching within five.
-
-Cost: Costs vary by square footage, existing site conditions, sub-base preparation requirements, ADA layout complexity, curb and gutter scope, and schedule requirements. We provide free on-site estimates with a clear, itemized scope.
-
-Process: On-site assessment — we walk the property, evaluate existing conditions, sub-base, drainage, and ADA layout. Proposal — clear scope, defined deliverables, no hidden line items. Scheduling — coordinate around your operational needs and other trades. Site prep and grading — proper drainage grades set before any concrete is placed. Forming and reinforcement — forms set to ADA slopes and drainage grades; reinforcement placed per load requirements. Pour and finish — 4,000+ PSI mix, properly cured before opening to traffic. Curb, gutter, and ADA ramps — installed per layout plan. Cleanup and close-out — site left clean, job photos provided on completion.
-
-FAQ: We work as sub-contractors on GC-managed projects. Certificate of insurance and bonding documentation available as part of the bid process. ADA stall count, van-accessible placement, curb ramp slopes, and accessible route continuity are part of every parking lot layout. New concrete parking lots typically require 7 days minimum before light vehicle traffic and up to 28 days for full structural cure. OKC parking lot failures usually trace back to sub-base issues — Oklahoma's expansive clay soil moves significantly with moisture, and if the sub-base wasn't properly compacted, failure starts from below the slab surface.
-
-Serving Oklahoma City (home base — fastest response), Edmond (~30–40 min north), Yukon (~20–25 min west), Norman, Moore, Mustang, Midwest City, and Del City. Based in Oklahoma City. Call (405) 458-4805 or email jesus@fdzconstruction.com.`,
+    content:
+      "FDZ Construction LLC is a commercial concrete parking lot contractor for new lots, parking-lot installation, parking-lot additions, and full replacement across the Oklahoma City metro. Localized panel, joint, and trip-hazard repair lives on the concrete parking lot repair page. Mix, thickness, and reinforcement follow project plans and specifications when provided. Call (405) 458-4805.",
   },
   {
     path: "/retaining-walls-oklahoma-city",
@@ -453,9 +439,11 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
   {
     path: "/concrete-parking-lot-repair-oklahoma-city",
     title: "Concrete Parking Lot Repair OKC | FDZ Construction",
-    description: "Concrete parking lot repair in Oklahoma City — panel replacement, trip hazard grinding, joint sealing, crack repair. Sub-base evaluation on every panel replacement. Call (405) 458-4805.",
+    description:
+      "Commercial parking lot concrete repair in Oklahoma City — panels, joints, trip hazards, and repair-vs-replace evaluation. Call (405) 458-4805.",
     h1: "Concrete Parking Lot Repair in Oklahoma City",
-    content: "FDZ Construction LLC handles concrete parking lot repair for commercial and retail properties across Oklahoma City. Panel replacement with sub-base evaluation, joint sealing and re-sealing, trip hazard diamond grinding, crack injection and repair, partial slab replacement for areas with widespread failure. Root cause evaluation — honest assessment of repair vs. replacement. Single panel replacement $400–$1,500, joint sealing $1–$4 per linear foot, trip hazard grinding $75–$300. Call (405) 458-4805.",
+    content:
+      "FDZ Construction LLC handles commercial parking lot concrete repair for retail, office, church, multifamily, and industrial properties across Oklahoma City. Localized panel replacement, joint sealing, trip-hazard work, and repair-vs-replace evaluation based on site conditions. New lots and full replacement live on the parking lot construction page. Call (405) 458-4805.",
   },
   {
     path: "/commercial-concrete-repair-oklahoma-city",

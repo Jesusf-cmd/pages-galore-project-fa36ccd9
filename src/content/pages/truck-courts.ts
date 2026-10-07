@@ -117,6 +117,7 @@ export const truckCourtsContent: ServicePageContent = {
             "<a href='/industrial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Industrial Concrete Repair</a> — Forklift damage, joint failure, and heavy-use floor repairs inside the building your truck court serves.",
             "<a href='/loading-dock-construction-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Construction</a> — New docks and approach slabs that connect to the truck court.",
             "<a href='/loading-dock-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Concrete Repair</a> — Cracked aprons, spalled dock faces, and approach slab repairs at the receiving doors.",
+            "<a href='/parking-lots-oklahoma-city' class='text-orange no-underline font-medium'>Concrete Parking Lot Construction</a> — Standard commercial parking and site circulation (distinct from truck courts).",
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — Full commercial and industrial concrete service list.",
           ],
         },

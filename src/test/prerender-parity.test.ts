@@ -86,10 +86,17 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "href='/ada-concrete-ramps-oklahoma-city'",
   ],
   "/concrete-parking-lot-repair-oklahoma-city": [
-    "Parking Lot Repair Services in Oklahoma City",
+    "Commercial Parking Lot Concrete Repair We Handle",
     "href='/parking-lots-oklahoma-city'",
     "href='/commercial-concrete-repair-oklahoma-city'",
     "href='/concrete-maintenance-oklahoma-city'",
+  ],
+  "/parking-lots-oklahoma-city": [
+    "What We Build as a Concrete Parking Lot Contractor",
+    "href='/concrete-parking-lot-repair-oklahoma-city'",
+    "href='/truck-court-concrete-oklahoma-city'",
+    "href='/commercial-curb-and-gutter-oklahoma-city'",
+    "href='/ada-concrete-ramps-oklahoma-city'",
   ],
   "/loading-dock-concrete-repair-oklahoma-city": [
     "Warehouse Loading Dock Concrete Repair We Handle",
@@ -353,13 +360,15 @@ describe("prerender content parity for priority routes", () => {
 
   it("links parking lot construction repair copy to the dedicated repair page", () => {
     const body = getPrerenderBody("/parking-lots-oklahoma-city") ?? "";
-    const section = body.indexOf("Parking lot repair");
-    const repairLink = body.indexOf('href="/concrete-parking-lot-repair-oklahoma-city"');
-    const fullReplacement = body.indexOf("Full Parking Lot Replacement");
-    expect(section).toBeGreaterThan(-1);
-    expect(repairLink).toBeGreaterThan(section);
-    expect(fullReplacement).toBeGreaterThan(repairLink);
-    expect(body).toContain(">concrete parking lot repair</a>");
+    const constructionVsRepair = body.indexOf("New Parking Lot Concrete vs.");
+    const repairLink = body.indexOf("href='/concrete-parking-lot-repair-oklahoma-city'");
+    const fullReplacement = body.indexOf("Full Parking Lot Concrete Replacement");
+    expect(constructionVsRepair).toBeGreaterThan(-1);
+    expect(repairLink).toBeGreaterThan(-1);
+    expect(fullReplacement).toBeGreaterThan(-1);
+    expect(body).toContain("concrete parking lot repair");
+    expect(body).toContain("Parking Lots vs. Truck Courts");
+    expect(body).not.toContain("4,000+ PSI concrete mix standard");
     expect(body).not.toContain("Parking Lot Repair and Partial Replacement");
   });
 
