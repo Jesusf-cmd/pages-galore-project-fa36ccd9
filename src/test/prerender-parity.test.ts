@@ -94,6 +94,7 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
   "/loading-dock-concrete-repair-oklahoma-city": [
     "Loading Dock Concrete Repair Scope",
     "href='/dock-leveler-pit-concrete-oklahoma-city'",
+    "href='/industrial-concrete-repair-oklahoma-city'",
     "href='/warehouse-slab-repair-oklahoma-city'",
   ],
   "/dock-leveler-pit-concrete-oklahoma-city": [
@@ -109,8 +110,8 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "href='/soil-stabilization-oklahoma-city'",
   ],
   "/industrial-concrete-repair-oklahoma-city": [
-    "Industrial Floor and Dock Repairs We Handle",
-    "href='/commercial-concrete-oklahoma-city'",
+    "Industrial Floor and Dock-Area Repairs We Handle",
+    "href='/commercial-concrete-repair-oklahoma-city'",
     "href='/loading-dock-concrete-repair-oklahoma-city'",
     "href='/warehouse-slab-repair-oklahoma-city'",
     "href='/concrete-maintenance-oklahoma-city'",
@@ -124,6 +125,7 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
   "/truck-court-concrete-oklahoma-city": [
     "What Makes Truck Court Concrete Different",
     "href=\"/#estimate\"",
+    "href='/industrial-concrete-repair-oklahoma-city'",
   ],
   "/loading-dock-construction-oklahoma-city": [
     "Loading Dock Concrete Is Different",
@@ -267,6 +269,7 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
   "/concrete-maintenance-oklahoma-city": [
     "Concrete Maintenance We Provide",
     "href='/industrial-concrete-repair-oklahoma-city'",
+    "href='/commercial-concrete-repair-oklahoma-city'",
     "href='/driveway-repair-oklahoma-city'",
   ],
 };
@@ -488,6 +491,11 @@ describe("post-PR13 SEO cleanup", () => {
       { source: "/patios-oklahoma-city", dest: "/blog/best-time-of-year-to-pour-concrete-okc", anchor: "best time of year to pour concrete in OKC" },
       { source: "/industrial-concrete-repair-oklahoma-city", dest: "/concrete-maintenance-oklahoma-city", anchor: "Concrete Maintenance" },
       { source: "/commercial-concrete-repair-oklahoma-city", dest: "/concrete-maintenance-oklahoma-city", anchor: "Concrete maintenance" },
+      { source: "/truck-court-concrete-oklahoma-city", dest: "/industrial-concrete-repair-oklahoma-city", anchor: "Industrial Concrete Repair" },
+      { source: "/loading-dock-concrete-repair-oklahoma-city", dest: "/industrial-concrete-repair-oklahoma-city", anchor: "Industrial Concrete Repair" },
+      { source: "/foundations-oklahoma-city", dest: "/commercial-concrete-repair-oklahoma-city", anchor: "Commercial concrete repair" },
+      { source: "/sidewalks-oklahoma-city", dest: "/commercial-concrete-repair-oklahoma-city", anchor: "Commercial concrete repair" },
+      { source: "/commercial-concrete-repair-oklahoma-city", dest: "/foundation-repair-oklahoma-city", anchor: "Foundation repair" },
       { source: "/equipment-pad-concrete-oklahoma-city", dest: "/crane-foundation-installation-oklahoma-city", anchor: "Crane Foundation Installation" },
       { source: "/tilt-wall-concrete-oklahoma-city", dest: "/crane-foundation-installation-oklahoma-city", anchor: "Crane Foundation Installation" },
       { source: "/", dest: "/pool-deck-oklahoma-city", anchor: "Pool Deck Concrete" },

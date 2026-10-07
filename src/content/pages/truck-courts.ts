@@ -114,6 +114,7 @@ export const truckCourtsContent: ServicePageContent = {
           titleAccent: "Services.",
           content: [
             "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Concrete &amp; Slabs</a> — Interior warehouse floors and slab-on-grade work that pairs with truck court and dock packages.",
+            "<a href='/industrial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Industrial Concrete Repair</a> — Forklift damage, joint failure, and heavy-use floor repairs inside the building your truck court serves.",
             "<a href='/loading-dock-construction-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Construction</a> — New docks and approach slabs that connect to the truck court.",
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — Full commercial and industrial concrete service list.",
           ],

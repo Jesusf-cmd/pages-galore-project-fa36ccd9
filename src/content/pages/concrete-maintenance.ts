@@ -110,9 +110,9 @@ export const concreteMaintenanceContent: ServicePageContent = {
           title: "Concrete Repair",
           titleAccent: "Services.",
           content: [
-            "<a href='/industrial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Industrial Concrete Repair</a> — Forklift damage, spalling, joint failure — rapid return to service for industrial facilities.",
+            "<a href='/industrial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Industrial Concrete Repair</a> — Forklift damage, spalling, and joint failure on warehouse and manufacturing floors.",
             "<a href='/driveway-repair-oklahoma-city' class='text-orange no-underline font-medium'>Driveway Repair</a> — Residential and commercial driveway crack repair, panel replacement, and resurfacing.",
-            "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Parking lot panel replacement, trip hazard repair, and flatwork restoration.",
+            "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Cracked slabs, parking lot panel replacement, trip hazard repair, and commercial flatwork restoration.",
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>All Commercial Concrete</a> — Full range of commercial and industrial concrete services in OKC.",
           ],
         },

@@ -225,6 +225,7 @@ export const repairPages: Record<string, RepairData> = {
     ],
     parentService: { label: "All Concrete Foundations", to: "/foundations-oklahoma-city" },
     related: [
+      { label: "Commercial Concrete Repair", to: "/commercial-concrete-repair-oklahoma-city" },
       { label: "Driveway Repair", to: "/driveway-repair-oklahoma-city" },
       { label: "Foundations in Edmond", to: "/foundations-edmond" },
       { label: "Foundations in Norman", to: "/foundations-norman" },

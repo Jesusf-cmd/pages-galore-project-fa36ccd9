@@ -175,6 +175,7 @@ export default function FoundationsOklahomaCity() {
           titleAccent: "From FDZ.",
           content: [
             "<a href='/foundation-repair-oklahoma-city' class='text-orange no-underline font-medium'>Foundation Repair</a> — Honest repair-vs-replace evaluation when an existing foundation is cracking or settling.",
+            "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Cracked commercial slabs, failed panels, and site concrete repair when the issue is not foundation movement.",
             "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Concrete &amp; Slabs</a> — New warehouse slab-on-grade floors and phased industrial floor replacement for forklift operations.",
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete</a> — Warehouse floors, retail pads, loading docks, and site concrete for commercial properties and GC projects.",
             "<a href='/retaining-walls-oklahoma-city' class='text-orange no-underline font-medium'>Retaining Wall Construction</a> — Structural walls that often pair with foundation and grade work on sloped lots.",

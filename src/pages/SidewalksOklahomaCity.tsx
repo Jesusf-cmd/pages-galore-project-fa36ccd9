@@ -169,6 +169,7 @@ export default function SidewalksOklahomaCity() {
           titleAccent: "From FDZ.",
           content: [
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial concrete services</a> — Parking lots, warehouse floors, site flatwork, and curb &amp; gutter for commercial developments.",
+            "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial concrete repair</a> — Cracked slabs, trip hazards, and failed panels on commercial properties, including pedestrian areas.",
             "<a href='/commercial-curb-and-gutter-oklahoma-city' class='text-orange no-underline font-medium'>Commercial curb &amp; gutter</a> — Parking lot curbing, island curbs, and drive approach cuts.",
             "We pour <a href='/ada-concrete-ramps-oklahoma-city' class='text-orange no-underline font-medium'>ADA ramps and accessible routes</a> with detectable warning surfaces where sidewalks meet parking lots and street crossings.",
             "<a href='/sewer-line-repair-oklahoma-city' class='text-orange no-underline font-medium'>Residential sewer line repair</a> — Sidewalk restoration after sewer line access, done by the same crew that did the digging.",

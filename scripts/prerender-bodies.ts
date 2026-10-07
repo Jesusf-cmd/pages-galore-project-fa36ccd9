@@ -586,6 +586,7 @@ export const prerenderBodies: Record<string, string> = {
     <h2>Related Services</h2>
     <ul>
       <li><a href="/foundation-repair-oklahoma-city">Foundation repair</a> — Honest repair-vs-replace evaluation when an existing foundation is cracking or settling.</li>
+      <li><a href="/commercial-concrete-repair-oklahoma-city">Commercial concrete repair</a> — Cracked commercial slabs, failed panels, and site concrete repair when the issue is not foundation movement.</li>
       <li><a href="/warehouse-slab-repair-oklahoma-city">warehouse concrete and slab-on-grade</a> — New warehouse floors and phased industrial floor replacement for forklift operations.</li>
       <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete services</a> — Warehouse floors, retail pads, loading docks, and site concrete for commercial properties.</li>
       <li><a href="/retaining-walls-oklahoma-city">Retaining wall construction</a> — Structural walls that often pair with foundation and grade work.</li>
@@ -652,6 +653,7 @@ export const prerenderBodies: Record<string, string> = {
     <ul>
       <li><a href="/sewer-line-repair-oklahoma-city">Residential sewer line repair</a> — Sidewalk restoration after sewer line access, done by the same crew that did the digging.</li>
       <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Parking lots, warehouse floors, site flatwork, and curb &amp; gutter for commercial developments.</li>
+      <li><a href="/commercial-concrete-repair-oklahoma-city">Commercial concrete repair</a> — Cracked slabs, trip hazards, and failed panels on commercial properties, including pedestrian areas.</li>
       <li><a href="/driveways-oklahoma-city">Driveways</a> — Sidewalk work often pairs with new driveway installation or replacement.</li>
     </ul>
     <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
@@ -775,6 +777,9 @@ export const prerenderBodies: Record<string, string> = {
       { title: "Coordinate scheduling and access", description: "If you move forward, sequence the work around occupied areas, access, and downtime constraints." },
     ])}
     <p><strong>Occupied site?</strong> Include access limits, areas that must stay open, desired timing, and downtime constraints when you request an estimate. After-hours or weekend work can be discussed when a facility has to stay open — it is planned per project, not a promised response window.</p>
+    <h2>Commercial Slab Repair and Cracked Concrete Evaluation</h2>
+    <p>Many commercial repair calls start with a cracked slab, failed panel, or surface breakout creating a trip hazard or traffic problem. Commercial slab repair can mean sealing isolated cracks, patching spalls, resealing joints, grinding trip hazards, or replacing a failed bay when adjacent concrete is still sound.</p>
+    <p>Cracked commercial concrete is not automatically a foundation problem. Structural foundation movement belongs on <a href="/foundation-repair-oklahoma-city">foundation repair</a>. Residential driveway cracks belong on <a href="/driveway-repair-oklahoma-city">driveway / concrete crack repair</a>. Heavy-use industrial floors with forklift joint failure fit <a href="/industrial-concrete-repair-oklahoma-city">industrial concrete repair</a>.</p>
     <h2>When Concrete Can Be Repaired vs. When Replacement Makes More Sense</h2>
     <p>The right answer depends on cracking extent, settlement, base/subgrade condition, drainage, surface deterioration, traffic/loading, downtime, and access. FDZ does not certify structural adequacy — that stays with your design professional when required. We evaluate what we see on site and recommend repair, partial panel replacement, or larger replacement.</p>
     <ul>
@@ -796,12 +801,15 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/sidewalks-oklahoma-city">Sidewalks</a> · <a href="/ada-concrete-ramps-oklahoma-city">ADA ramps</a></li>
       <li><a href="/equipment-pad-concrete-oklahoma-city">Equipment pads</a> · <a href="/commercial-curb-and-gutter-oklahoma-city">Curb &amp; gutter</a></li>
       <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete contractor</a></li>
+      <li><a href="/foundation-repair-oklahoma-city">Foundation repair</a> — kept separate from general commercial slab repair</li>
     </ul>
     ${faqSection("Commercial Concrete Repair FAQ", [
       { question: "Can commercial concrete be repaired instead of replaced?", answer: "Often yes when damage is localized and the base is stable. Widespread cracking, ongoing settlement, slab flex, or failed subgrade usually push toward larger replacement." },
+      { question: "Do you repair cracked commercial concrete slabs in Oklahoma City?", answer: "Yes. We evaluate cracked commercial slabs for sealing, panel repair, or partial replacement. Foundation movement belongs on foundation repair; residential driveway cracks on driveway repair; heavy industrial floor traffic damage often fits industrial concrete repair." },
+      { question: "What is the difference between slab crack repair and foundation crack repair?", answer: "This page covers commercial flatwork cracks and failed panels. Foundation repair is for structural foundation movement or foundation-specific distress. FDZ does not treat every crack as a foundation job." },
       { question: "What causes commercial concrete slabs to crack or settle in Oklahoma City?", answer: "Expansive clay, poor base prep, thin slabs for the traffic, failed joint sealant, drainage problems, and heavy loading all accelerate cracking and settlement." },
-      { question: "Can FDZ replace only the damaged section?", answer: "Yes. Partial panel or bay replacement is common when adjacent concrete is still serviceable." },
-      { question: "Can concrete repairs be phased around facility operations?", answer: "Yes — by aisle, dock, or parking bay, including after-hours work when the site must stay open." },
+      { question: "Can FDZ replace only the damaged section?", answer: "Localized panel or bay replacement may be appropriate when damage is limited and surrounding concrete and base conditions are suitable. FDZ evaluates the affected area before recommending repair or replacement." },
+      { question: "Can concrete repairs be phased around facility operations?", answer: "Repairs can be planned by aisle, dock, parking bay, or other work area when site conditions allow. Scheduling around occupied operations, including potential after-hours work, can be discussed for the specific project." },
       { question: "Do you repair loading docks and parking lots?", answer: "Yes. See our loading dock concrete repair and concrete parking lot repair pages for dedicated detail." },
       { question: "How do you estimate commercial concrete repairs?", answer: "We review photos and problem details, typically walk the site, and provide a written estimate with the recommended method." },
       { question: "How do I schedule a commercial concrete repair estimate?", answer: "Call (405) 458-4805 or use the estimate form with facility type, location, affected area, problem description, photos, and desired timing." },
@@ -809,8 +817,9 @@ export const prerenderBodies: Record<string, string> = {
     ])}
     <h2>Related Services</h2>
     <ul>
-      <li><a href="/industrial-concrete-repair-oklahoma-city">Industrial concrete repair</a> — Heavy-use floors, dock-related damage, and industrial slab repair.</li>
+      <li><a href="/industrial-concrete-repair-oklahoma-city">Industrial concrete repair</a> — Heavy-use floors, forklift joint failure, and industrial slab repair.</li>
       <li><a href="/concrete-parking-lot-repair-oklahoma-city">Concrete parking lot repair</a> — Panel replacement, joint sealing, and trip hazard grinding.</li>
+      <li><a href="/foundation-repair-oklahoma-city">Foundation repair</a> — Structural foundation movement — kept separate from general commercial slab repair.</li>
       <li><a href="/concrete-maintenance-oklahoma-city">Concrete maintenance</a> — Joint sealing and ongoing commercial slab care that prevents small repairs from becoming replacements.</li>
       <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete contractor in Oklahoma City</a> — New pours and commercial site flatwork.</li>
     </ul>

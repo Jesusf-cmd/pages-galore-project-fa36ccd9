@@ -65,6 +65,19 @@ export function renderServicePageHtml(page: ServicePageContent, h1: string): str
     if (section.table) parts.push(tableHtml(section.table));
     if (section.infoBlock) parts.push(`<p>${section.infoBlock}</p>`);
   }
+  if (page.projectGallery?.photos?.length) {
+    const galleryHeading = heading(
+      page.projectGallery.title || "Related Project Evidence",
+      page.projectGallery.titleAccent || "",
+    );
+    parts.push(`<h2>${galleryHeading}</h2>`);
+    if (page.projectGallery.intro) parts.push(`<p>${page.projectGallery.intro}</p>`);
+    parts.push("<ul>");
+    for (const photo of page.projectGallery.photos) {
+      parts.push(`<li><img src="${photo.src}" alt="${photo.alt}" /></li>`);
+    }
+    parts.push("</ul>");
+  }
   if (page.faq.length) {
     parts.push(faqSection("Frequently Asked Questions", page.faq));
   }
