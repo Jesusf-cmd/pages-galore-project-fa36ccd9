@@ -1,202 +1,232 @@
 import type { ServicePageContent } from "../servicePageTypes";
 
 export const loadingDockRepairContent: ServicePageContent = {
-      currentServiceSlug: "loading-dock-concrete-repair-oklahoma-city",
-      metaTitle: "Loading Dock Concrete Repair Oklahoma City | FDZ Construction",
-      metaDescription: "Loading dock concrete repair in Oklahoma City — dock apron repair, dock face replacement, pit wall repair, approach slab patching. Licensed & insured. Call (405) 458-4805.",
-      eyebrow: "Commercial Concrete · Oklahoma City",
-      title: "Loading Dock Concrete Repair in",
-      titleAccent: "Oklahoma City.",
-      description: 'Loading dock concrete repair for warehouses and distribution facilities across the OKC metro — dock aprons, approach slabs, dock faces, pit walls, and impact damage. <a href="tel:4054584805">(405) 458-4805</a>.',
-      introText: "A damaged loading dock is a safety hazard and an operational disruption. Cracked dock aprons create trip hazards for pallet jacks and forklifts. Spalled dock faces let water intrude into the dock structure. Failing pit walls and curb angles prevent dock levelers from seating correctly. FDZ Construction repairs loading dock concrete for warehouses, distribution centers, cold storage, and manufacturing facilities across Oklahoma City. We work around your receiving schedule — after-hours, weekends, and phased sequences to minimize dock downtime. Call (405) 458-4805 to discuss your repair scope.",
-      localExpertiseNote: "OKC loading docks fail at a higher rate than most markets because dock aprons and approach slabs sit on expansive clay that moves seasonally. The slab-to-dock joint is the highest-stress point — daily trailer impact on a dock that has settled relative to the approach slab creates progressive failure at that joint. Most dock apron repairs we see in OKC trace back to differential settlement, not just surface wear.",
-      serviceLabel: "Commercial",
-      serviceCards: [
-        {
-          icon: "🔧",
-          title: "Dock Apron Repair & Replacement",
-          description:
-            "Cracked, settled, or failing dock apron slabs — partial panel repair, full apron replacement, and joint repair between apron and approach slab.",
-        },
-        {
-          icon: "🏗️",
-          title: "Dock Face Concrete Repair",
-          description:
-            "Spalling, impact damage, and structural cracking at the dock face — repair or replace dock face concrete, including dock bumper anchor replacement.",
-        },
-        {
-          icon: "🔩",
-          title: "Dock Leveler Pit Repair",
-          description:
-            "Spalled pit walls, crumbling pit floor, damaged curb angles — pit repair and curb angle replacement without full dock replacement if surrounding slab is sound.",
-        },
-        {
-          icon: "📐",
-          title: "Approach Slab Repair",
-          description:
-            "Cracked and settled concrete approach slabs leading to dock doors — panel replacement, joint sealing, and sub-base correction where settlement has occurred.",
-        },
-        {
-          icon: "⚡",
-          title: "Rapid-Set Dock Repairs",
-          description:
-            "Rapid-set concrete materials for dock repairs requiring same-day return to service. Surface repairs and partial-depth patches back in service in hours.",
-        },
-        {
-          icon: "🔍",
-          title: "Root Cause Evaluation",
-          description:
-            "Before we recommend repair vs. replacement, we evaluate why the dock is failing. Settlement, poor sub-base, drainage issues, and structural cracking require different approaches.",
-        },
-      ],
-      subServices: {
-        sectionEyebrow: "Repair Types",
-        sectionTitle: "Loading Dock Concrete Repair Scope",
-        items: [
-          {
-            title: "Dock Apron & Approach Slab",
-            bullets: [
-              "Dock apron — the concrete slab at dock floor level immediately outside the dock door",
-              "Joint repair at dock-apron-to-approach-slab transition — highest stress point from daily trailer bounce",
-              "Panel replacement for structurally failed apron sections — saw-cut to clean joint lines, sub-base evaluated and corrected",
-              "Approach slab repair for cracked or settled concrete between dock apron and truck court",
-              "Rapid-set materials available for same-day return to service where operationally required",
-              "Full apron replacement when repair is no longer viable — sub-base correction included",
-            ],
-          },
-          {
-            title: "Dock Face & Structural Concrete",
-            bullets: [
-              "Dock face spalling repair — grind loose material, apply structural repair mortar with bonding agent",
-              "Dock face replacement for sections with rebar corrosion, deep spalling, or impact damage",
-              "Dock bumper anchor replacement — core drill and re-anchor when original anchors are pulled or failing",
-              "Dock seal and shelter mounting surface repair — ensure level, sound substrate for seal installation",
-              "After-hours availability to avoid disrupting active receiving hours",
-            ],
-          },
-          {
-            title: "Dock Leveler Pit Repair",
-            bullets: [
-              "Pit wall spall repair — remove loose concrete, clean and bond repair material, restore pit wall surface",
-              "Steel curb angle replacement — cut out damaged angle, install new angle with anchor bolts",
-              "Pit floor crack injection and surface repair",
-              "Pit drainage correction — spalls at pit drains often cause standing water that accelerates pit deterioration",
-              "Pit enlargement if equipment upgrade requires larger pit — coordinate dimensions with new leveler supplier",
-            ],
-          },
+  currentServiceSlug: "loading-dock-concrete-repair-oklahoma-city",
+  metaTitle: "Loading Dock Concrete Repair OKC | FDZ Construction",
+  metaDescription:
+    "Warehouse loading dock concrete repair in Oklahoma City — cracked aprons, spalled dock faces, approach slabs, and localized panel work. Call (405) 458-4805.",
+  eyebrow: "OKC Metro · Loading Dock Concrete Repair · Licensed & Insured",
+  title: "Loading Dock Concrete Repair in",
+  titleAccent: "Oklahoma City.",
+  description:
+    'Loading dock concrete repair for warehouses and distribution facilities across the OKC metro — dock aprons, approach slabs, dock faces, and impact damage. Call <a href="tel:4054584805">(405) 458-4805</a>.',
+  introText:
+    "A damaged loading dock is a safety hazard and an operational disruption. Cracked dock aprons create trip hazards for pallet jacks and forklifts. Spalled dock faces let water into the structure. Settled approach slabs and failed joints slow receiving and create liability. FDZ Construction repairs loading dock concrete for warehouses, distribution centers, cold storage, and manufacturing facilities across Oklahoma City — evaluating repair versus larger replacement based on what we see on site. For new dock builds see <a href='/loading-dock-construction-oklahoma-city'>loading dock construction</a>. For specialized pit concrete around dock-leveler equipment see <a href='/dock-leveler-pit-concrete-oklahoma-city'>dock leveler pit concrete</a>.",
+  localExpertiseNote:
+    "Loading dock apron and approach damage can be associated with settlement, drainage or moisture conditions, joint deterioration, repeated traffic or impact, or deterioration of the supporting base — especially on OKC sites with expansive clay. FDZ reviews visible damage and site conditions before recommending a repair approach.",
+  serviceLabel: "Dock Repair",
+  serviceCards: [
+    {
+      icon: "🔧",
+      title: "Dock Apron Repair",
+      description:
+        "Cracked, settled, or failing apron slabs at the dock door — localized panel work, joint repair, or apron replacement when adjacent concrete and site conditions support that approach.",
+    },
+    {
+      icon: "🏗️",
+      title: "Dock Face & Edge Repair",
+      description:
+        "Spalling, impact damage, and edge breakout at the dock face — repaired when surrounding conditions support a lasting concrete fix.",
+    },
+    {
+      icon: "📐",
+      title: "Approach Slab Repair",
+      description:
+        "Cracked or settled approach concrete between the dock apron and truck court — panel repair with base review where settlement is observed.",
+    },
+    {
+      icon: "🔩",
+      title: "Joint & Edge Failure",
+      description:
+        "Failed sealant, open joints, and joint-edge breakout that can allow moisture into the base and contribute to further apron or approach deterioration.",
+    },
+    {
+      icon: "⏱️",
+      title: "Occupied-Facility Sequencing",
+      description:
+        "Work planned around receiving when site conditions allow — nights, weekends, or bay-by-bay sequences discussed for the project.",
+    },
+    {
+      icon: "🔍",
+      title: "Repair vs. Replace Evaluation",
+      description:
+        "Honest contractor assessment of whether localized dock concrete repair is enough, or whether replacement is the better call.",
+    },
+  ],
+  subServices: {
+    sectionEyebrow: "Repair Scope",
+    sectionTitle: "Warehouse Loading Dock Concrete Repair We Handle",
+    items: [
+      {
+        title: "Dock Apron & Approach Slab",
+        bullets: [
+          "Dock apron — the concrete at dock-floor level immediately outside the dock door",
+          "Joint repair at the apron-to-approach transition where traffic and movement often concentrate stress",
+          "Localized panel replacement when a section has failed and neighboring concrete and base conditions appear suitable",
+          "Approach slab repair between the apron and truck court where cracking or settlement is observed",
+          "Larger apron replacement may be considered when localized repair is impractical — see also <a href='/loading-dock-replacement-oklahoma-city'>loading dock replacement</a>",
         ],
       },
-      processSteps: [
-        {
-          title: "Scope Evaluation",
-          description:
-            "On-site evaluation of dock condition — surface vs. structural, repair vs. replacement assessment. Photos and scope review before any pricing.",
-        },
-        {
-          title: "Schedule Around Operations",
-          description:
-            "Most dock repairs are scheduled after-hours or on weekends to minimize receiving downtime. Phased sequences available for multi-dock facilities.",
-        },
-        {
-          title: "Demo & Sub-Base",
-          description:
-            "Saw-cut to clean panel boundaries, remove failed concrete, evaluate sub-base. Correct sub-base before new pour — skipping this repeats the original failure.",
-        },
-        {
-          title: "Form, Pour & Finish",
-          description:
-            "Form to dock height, pour per spec — standard or rapid-set per schedule requirements. Finish to proper slope and texture.",
-        },
-        {
-          title: "Return to Service",
-          description:
-            "Standard concrete: light foot traffic in 24 hours, fork traffic after 7 days. Rapid-set: dock operations typically resume same day.",
-        },
+      {
+        title: "Dock Face, Edges & Impact Damage",
+        bullets: [
+          "Spalling and impact damage at the dock face associated with trailer and bumper contact",
+          "Edge breakout and surface failure where moisture exposure appears to have worsened cracking",
+          "Dock bumper anchor areas reviewed when anchors have pulled or surrounding concrete has deteriorated, when that work is part of the concrete repair scope",
+          "Mounting surfaces reviewed for dock seals/shelters when those are part of the concrete repair scope",
+        ],
+      },
+      {
+        title: "When Pit Concrete Is Involved",
+        bullets: [
+          "General dock apron/face/approach repair stays on this page",
+          "Dock-leveler pit walls, pit floors, curb-angle concrete areas, and pit retrofits belong on our <a href='/dock-leveler-pit-concrete-oklahoma-city'>dock leveler pit concrete</a> page when that is the scope",
+          "FDZ performs concrete work around dock equipment — we do not manufacture, install, or service mechanical dock levelers",
+        ],
+      },
+    ],
+  },
+  processEyebrow: "How Repairs Run",
+  processTitle: "Dock Repair",
+  processTitleAccent: "Sequence.",
+  processIntro:
+    "Five steps from photos or a site walk to a written repair scope — built for warehouses and distribution facilities that still need to receive freight.",
+  processSteps: [
+    {
+      title: "Share photos or a repair scope",
+      description:
+        "Send facility type, location, which docks are affected, what you are seeing, and any access or downtime limits. Photos help. This is a contractor estimate request — not an engineering inspection.",
+    },
+    {
+      title: "Evaluate the dock concrete and site conditions",
+      description:
+        "We walk the apron, face, approach, and joints; note settlement, spalling, and traffic pattern; and talk through receiving constraints.",
+    },
+    {
+      title: "Repair vs. replace recommendation",
+      description:
+        "You get a written estimate with the recommended method — localized repair, partial panel work, or larger replacement when conditions require it.",
+    },
+    {
+      title: "Coordinate access and sequencing",
+      description:
+        "If you move forward, we plan around occupied docks when site conditions allow. After-hours or weekend work can be discussed for the specific project.",
+    },
+    {
+      title: "Demo, base review, pour-back & reopen coordination",
+      description:
+        "Saw-cut clean boundaries, remove failed concrete, review and correct the base where needed, then pour back. Return-to-service timing depends on method, materials, temperature, and the traffic you need to restore.",
+    },
+  ],
+  sections: [
+    {
+      eyebrow: "Repair vs. Construction",
+      title: "When This Page Fits vs.",
+      titleAccent: "New Dock Construction.",
+      content: [
+        "Use this page for existing warehouse and distribution loading docks that need concrete repair — cracked aprons, spalled faces, failed approach slabs, joint deterioration, and localized panel replacement.",
+        "Use <a href='/loading-dock-construction-oklahoma-city'>loading dock construction</a> when you need a new dock, a dock addition, or major new-build concrete coordinated with plans and equipment suppliers.",
+        "Use <a href='/loading-dock-replacement-oklahoma-city'>loading dock replacement</a> when the dock is beyond lasting repair and needs demolition and rebuild. Use <a href='/dock-leveler-pit-concrete-oklahoma-city'>dock leveler pit concrete</a> when the scope is the pit around the leveler equipment.",
       ],
-      processEyebrow: "How Repairs Run",
-      processTitle: "Dock Repair",
-      processTitleAccent: "Sequence.",
-      specs: [
-        { label: "Standard Repair Concrete", value: "4,000–5,000 PSI — same spec as original dock" },
-        { label: "Rapid-Set Option", value: "Same-day return to service for critical docks" },
-        { label: "Dock Face Repair", value: "Structural repair mortar with bonding agent" },
-        { label: "Pit Wall Repair", value: "Bond and rebuild — or full replacement if structural" },
-        { label: "Sub-Base Evaluation", value: "Required on every panel replacement — not optional" },
-        { label: "Scheduling", value: "After-hours and weekend availability" },
+    },
+    {
+      eyebrow: "Repair vs. Replacement",
+      title: "Honest Assessment:",
+      titleAccent: "Repair or Replace?",
+      content: [
+        "Localized repair may be appropriate when damage appears limited to surface spalling, isolated panels, failed joints, or a section of approach slab, and surrounding concrete feels stable under traffic during the contractor evaluation.",
+        "Larger replacement may be considered when deterioration is widespread, settlement appears ongoing across the apron, supporting base conditions make localized repair impractical, or repeated patches would approach the cost of doing the area once.",
+        "FDZ recommends based on what we see on site and any plans or specifications you provide. We do not push full replacement when repair is the honest answer, and we do not certify structural design — that stays with your design professional when required.",
       ],
-      sections: [
-        {
-          eyebrow: "Commercial Trust",
-          title: "Set Up to Work with",
-          titleAccent: "Facility Managers & GCs.",
-          content: [
-            "FDZ Construction LLC is set up to work with general contractors, facility managers, property managers, builders, and business owners. We can review plans, photos, repair scopes, access limitations, and scheduling before pricing.",
-            "• COI available upon request  • Bonding available for qualified projects  • Plan-based repair estimates  • Phased crew scheduling for active facilities  • After-hours and weekend repair options  • Demo, haul-off, forming, reinforcement, placement, and finish  • Subgrade and drainage review before placement  • Coordination with GCs, owners, managers, and other trades",
-          ],
-        },
-        {
-          eyebrow: "Repair vs. Replacement",
-          title: "Honest Assessment:",
-          titleAccent: "Repair or Replace?",
-          content: [
-            "Not every damaged loading dock needs full replacement. A dock with surface spalling, isolated panel failure, or a failing apron joint is almost always repairable. A dock with deep structural cracking, rebar corrosion through multiple panels, or failed sub-base under the full apron usually warrants full replacement.",
-            "FDZ evaluates both options honestly. We won't sell full dock replacement when repair is the right answer — and we won't sell a surface patch on a failing dock that will be back in the same condition in two years. See our dedicated pages for <a href='/loading-dock-construction-oklahoma-city' class='text-orange no-underline font-medium'>loading dock construction</a> and <a href='/loading-dock-replacement-oklahoma-city' class='text-orange no-underline font-medium'>loading dock replacement</a> for those scopes.",
-          ],
-        },
-        {
-          eyebrow: "Related Services",
-          title: "Other Commercial Concrete",
-          titleAccent: "Services.",
-          content: [
-            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — Parking lots, docks, warehouse slabs, and commercial site concrete.",
-            "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Broader commercial repair for lots, docks, sidewalks, and warehouse floors.",
-            "<a href='/industrial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Industrial Concrete Repair</a> — Forklift traffic damage, joint failure, and heavy-use floor repairs beyond the dock apron.",
-            "<a href='/dock-leveler-pit-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dock Leveler Pit Concrete</a> — New pit construction, pit retrofit, and pit repair coordinated with equipment suppliers.",
-            "<a href='/truck-court-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Truck Court Concrete</a> — Industrial-grade truck maneuvering areas for warehouses and distribution centers.",
-            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Concrete &amp; Slabs</a> — Interior warehouse floors — new slab-on-grade, forklift flatness, and phased replacement.",
-            "<a href='/bollard-installation-oklahoma-city' class='text-orange no-underline font-medium'>Bollard Installation</a> — Protective bollards for dock doors, overhead doors, and column protection in dock areas.",
-          ],
-        },
-        {
-          eyebrow: "Send Plans or Scope",
-          title: "Request a",
-          titleAccent: "Dock Repair Estimate.",
-          content: [
-            "Send us photos or a repair scope and we'll review it before the site visit. FDZ Construction can provide a clear estimate for dock apron, dock face, pit, and approach slab repairs. Call (405) 458-4805 or email jesus@fdzconstruction.com.",
-          ],
-          infoBlock: "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
-        },
+      table: {
+        headers: ["What we look at", "Often leans toward"],
+        rows: [
+          ["Localized spall or joint failure; surrounding apron feels stable", "Repair evaluation"],
+          ["Isolated failed panel; neighbors appear suitable", "Partial panel replacement evaluation"],
+          ["Approach settlement limited to one bay", "Approach panel repair / replace evaluation"],
+          ["Widespread cracking, ongoing settlement, or base concerns", "Replacement evaluation"],
+          ["Pit wall / curb-angle damage; surrounding dock appears suitable", "Pit-focused concrete evaluation"],
+        ],
+      },
+    },
+    {
+      eyebrow: "Occupied Facilities",
+      title: "Repair Around",
+      titleAccent: "Receiving Operations.",
+      content: [
+        "Most dock repairs happen where freight still has to move. Tell us which doors must stay open, what shifts matter, and whether after-hours or weekend work is required.",
+        "We can often sequence work by bay or zone when site conditions allow. Temporary closures and reopen timing are planned with your operations team — not assumed from a generic schedule.",
       ],
-      faq: [
-        {
-          question: "Can dock concrete repairs be done while the facility is operating?",
-          answer:
-            "Yes. FDZ schedules most dock repairs after-hours or on weekends to minimize receiving disruption. Rapid-set materials are available for repairs requiring same-day return to service. Phased sequences available for multi-dock facilities.",
-        },
-        {
-          question: "How long before a repaired dock is back in service?",
-          answer:
-            "With standard concrete, dock surfaces can take foot traffic in 24 hours and forklift/pallet jack traffic after 7 days. With rapid-set concrete, surface repairs can return to light service in as little as a few hours. We confirm return-to-service timeline at estimate.",
-        },
-        {
-          question: "What causes loading dock aprons to fail in Oklahoma City?",
-          answer:
-            "OKC dock aprons fail primarily from differential settlement — the dock structure settles differently from the approach slab on the expansive clay sub-base, and the joint between them takes repeated trailer impact. The sub-base failure comes first, the concrete failure follows. Repairing without correcting sub-base conditions just repeats the failure.",
-        },
-        {
-          question: "When is repair better than full dock replacement?",
-          answer:
-            "Repair is appropriate for isolated panel failures, surface spalling without rebar corrosion, failed joints, and pit wall damage where the surrounding dock slab is structurally sound. Full replacement is warranted when the sub-base has failed across the full apron, or when rebar corrosion is extensive. FDZ evaluates honestly.",
-        },
-        {
-          question: "Do you repair dock leveler pits?",
-          answer:
-            "Yes — pit wall spall repair, steel curb angle replacement, and pit floor repair. We coordinate with your equipment supplier to confirm dimensions if a leveler upgrade is also planned. See the dock leveler pit page for full details.",
-        },
-        {
-          question: "Do you provide COI for dock repair work?",
-          answer:
-            "Yes. Certificate of insurance and bonding documentation available as part of the bid process. FDZ works as a sub-contractor on GC-managed commercial facilities.",
-        },
+    },
+    {
+      eyebrow: "Related Services",
+      title: "Other Dock & Industrial",
+      titleAccent: "Concrete Services.",
+      content: [
+        "<a href='/loading-dock-construction-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Construction</a> — New docks, dock additions, and approach slabs for warehouses and distribution facilities.",
+        "<a href='/loading-dock-replacement-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Replacement</a> — Full demolition and rebuild when repair is no longer enough.",
+        "<a href='/dock-leveler-pit-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dock Leveler Pit Concrete</a> — Pit construction, retrofit, and pit concrete repair coordinated with equipment suppliers.",
+        "<a href='/truck-court-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Truck Court Concrete</a> — Exterior truck paving that often pairs with dock approaches.",
+        "<a href='/industrial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Industrial Concrete Repair</a> — Forklift damage and heavy-use floor repairs inside the building.",
+        "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Concrete &amp; Slabs</a> — Interior warehouse floors and slab-on-grade work.",
+        "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Broader commercial property repair beyond the dock.",
+        "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — Full commercial and industrial concrete service list.",
       ],
+    },
+    {
+      eyebrow: "Send Photos or Scope",
+      title: "Request a",
+      titleAccent: "Dock Repair Estimate.",
+      content: [
+        "Send photos or a repair scope and we will review before the site visit when photos are enough to start. Include facility type, which docks are affected, what you are seeing, and access limits. Call <a href='tel:4054584805'>(405) 458-4805</a> or <a href='/#estimate'>request an estimate</a>.",
+      ],
+      infoBlock:
+        "📞 <a href='tel:4054584805'>(405) 458-4805</a> &nbsp;·&nbsp; ✉️ <a href='mailto:jesus@fdzconstruction.com'>jesus@fdzconstruction.com</a>",
+    },
+  ],
+  ctaLabel: "Request a Loading Dock Repair Estimate →",
+  finalCta: {
+    heading: "Have Dock Concrete Damage?",
+    headingAccent: "Request a Repair Estimate.",
+    description:
+      "Use the estimate form. Include facility type, location, which docks are affected, what you are seeing (cracks, spalling, settlement, joint failure), and downtime or access limits. Upload photos when you can. This is a contractor evaluation — not an engineering inspection.",
+    buttonLabel: "Request a Loading Dock Repair Estimate →",
+  },
+  faq: [
+    {
+      question: "Can dock concrete repairs be done while the facility is operating?",
+      answer:
+        "Often yes. Repairs can be planned by bay or work area when site conditions allow. Scheduling around occupied receiving, including potential after-hours or weekend work, can be discussed for the specific project.",
+    },
+    {
+      question: "How long before a repaired dock is back in service?",
+      answer:
+        "Return-to-service timing depends on the repair method, materials, temperature, and the traffic you need to restore. We coordinate reopen timing with your operations after the method is selected — we do not promise a fixed hour window for every repair.",
+    },
+    {
+      question: "What causes loading dock aprons to fail in Oklahoma City?",
+      answer:
+        "Loading dock apron damage can be associated with settlement, drainage or moisture conditions, joint deterioration, repeated traffic/impact, or deterioration of the supporting base. FDZ reviews visible damage and site conditions before recommending a repair approach. Where settlement, drainage, or base conditions contribute to the damage, those conditions should be considered when developing the repair scope.",
+    },
+    {
+      question: "When is repair better than full dock replacement?",
+      answer:
+        "Localized repair may be appropriate for limited panel failures, surface spalling, failed joints, and limited approach damage when surrounding concrete and site conditions appear suitable during evaluation. Larger replacement may be considered when deterioration is widespread or supporting conditions make localized repair impractical. FDZ evaluates before recommending.",
+    },
+    {
+      question: "Do you repair dock leveler pits?",
+      answer:
+        "Yes for concrete around the pit — pit walls, pit floors, and curb-angle areas when that concrete work is included in the scope. Dedicated detail lives on our dock leveler pit concrete page. FDZ does not manufacture, install, or service the mechanical dock-leveler equipment itself.",
+    },
+    {
+      question: "Is loading dock concrete repair different from industrial floor repair?",
+      answer:
+        "Yes. This page is for dock aprons, faces, and approaches at the receiving doors. Industrial concrete repair covers forklift traffic damage and heavy-use floors inside the building. Both pages link when the scope crosses that line.",
+    },
+    {
+      question: "Do you provide COI for dock repair work?",
+      answer:
+        "Yes. Certificate of insurance and bonding documentation can be provided as part of the bid process for qualified commercial projects.",
+    },
+  ],
 };
