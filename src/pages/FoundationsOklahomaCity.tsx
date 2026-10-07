@@ -61,8 +61,8 @@ export default function FoundationsOklahomaCity() {
           },
         ],
       }}
-      metaTitle="Concrete Foundation Contractor Oklahoma City | FDZ"
-      metaDescription="Concrete foundation contractor in Oklahoma City for residential and commercial work — slab-on-grade, footings, stem walls, and plan/spec foundation installation. Call (405) 458-4805."
+      metaTitle="Concrete Foundation Contractor OKC | FDZ Construction"
+      metaDescription="Concrete foundation contractor in Oklahoma City — residential and commercial slab-on-grade, footings, stem walls, plan/spec installs. Call (405) 458-4805."
       eyebrow="OKC Metro · Concrete Foundation Contractor · Licensed & Insured"
       badge="self-performed"
       title="Concrete Foundation Contractor in"

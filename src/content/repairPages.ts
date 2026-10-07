@@ -142,7 +142,7 @@ export const repairPages: Record<string, RepairData> = {
     path: "/foundation-repair-oklahoma-city",
     metaTitle: "Foundation Repair Oklahoma City | Crack Repair | FDZ",
     metaDescription:
-      "Foundation repair and foundation crack repair in Oklahoma City. Contractor evaluation of cracks, drainage, and concrete scope — not a phone diagnosis. Call (405) 458-4805.",
+      "Foundation repair and foundation crack repair in Oklahoma City. On-site contractor evaluation of cracks, drainage, and concrete scope. (405) 458-4805.",
     eyebrow: "OKC Metro · Foundation Repair · Licensed & Insured",
     h1Lead: "Foundation Repair in",
     h1Accent: "Oklahoma City.",

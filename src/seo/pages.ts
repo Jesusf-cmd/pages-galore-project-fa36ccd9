@@ -49,8 +49,8 @@ const RAW: Omit<SeoPage, "canonical">[] = [
   },
   {
     path: "/foundations-oklahoma-city",
-    title: "Concrete Foundation Contractor Oklahoma City | FDZ",
-    description: "Concrete foundation contractor in Oklahoma City for residential and commercial work — slab-on-grade, footings, stem walls, and plan/spec foundation installation. Call (405) 458-4805.",
+    title: "Concrete Foundation Contractor OKC | FDZ Construction",
+    description: "Concrete foundation contractor in Oklahoma City — residential and commercial slab-on-grade, footings, stem walls, plan/spec installs. Call (405) 458-4805.",
     h1: "Concrete Foundation Contractor in Oklahoma City",
   },
 
@@ -299,7 +299,7 @@ const RAW: Omit<SeoPage, "canonical">[] = [
   {
     path: "/foundation-repair-oklahoma-city",
     title: "Foundation Repair Oklahoma City | Crack Repair | FDZ",
-    description: "Foundation repair and foundation crack repair in Oklahoma City. Contractor evaluation of cracks, drainage, and concrete scope — not a phone diagnosis. Call (405) 458-4805.",
+    description: "Foundation repair and foundation crack repair in Oklahoma City. On-site contractor evaluation of cracks, drainage, and concrete scope. (405) 458-4805.",
     h1: "Foundation Repair in Oklahoma City",
   },
 
