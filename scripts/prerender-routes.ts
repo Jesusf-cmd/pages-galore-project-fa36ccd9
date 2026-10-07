@@ -98,7 +98,7 @@ const rawRoutes: PrerenderRoute[] = [
     path: "/parking-lots-oklahoma-city",
     title: "Concrete Parking Lot Contractor OKC | FDZ Construction",
     description:
-      "Commercial concrete parking lot contractor in Oklahoma City — new lots, installation, and full replacement from plans. Call (405) 458-4805.",
+      "Commercial concrete parking lot contractor in Oklahoma City — new lots, installation, and full replacement from plans/specs. Call (405) 458-4805.",
     h1: "Concrete Parking Lot Contractors in Oklahoma City, OK",
     content:
       "FDZ Construction LLC is a commercial concrete parking lot contractor for new lots, parking-lot installation, parking-lot additions, and full replacement across the Oklahoma City metro. Localized panel, joint, and trip-hazard repair lives on the concrete parking lot repair page. Mix, thickness, and reinforcement follow project plans and specifications when provided. Call (405) 458-4805.",
