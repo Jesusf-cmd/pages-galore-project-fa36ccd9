@@ -2,162 +2,232 @@ import type { ServicePageContent } from "../servicePageTypes";
 
 export const loadingDockConstructionContent: ServicePageContent = {
   currentServiceSlug: "loading-dock-construction-oklahoma-city",
-  metaTitle: "Loading Dock Construction Oklahoma City | FDZ Construction LLC",
-  metaDescription: "Commercial loading dock construction in Oklahoma City. Laser-level precision, 8&quot;+ reinforced concrete, dock leveler pit coordination. Free estimates — (405) 458-4805.",
+  metaTitle: "Loading Dock Concrete Contractor OKC | FDZ Construction",
+  metaDescription:
+    "Loading dock concrete contractor in Oklahoma City — new warehouse docks, dock additions, approaches, and pit coordination from plans. Call (405) 458-4805.",
   eyebrow: "OKC Metro · Loading Dock Construction · Licensed & Insured",
   title: "Loading Dock Construction in",
   titleAccent: "Oklahoma City.",
-  description: 'FDZ builds commercial loading docks to industrial specs across the OKC metro. Free estimates — <a href="tel:4054584805">(405) 458-4805</a>.',
-  introText: "FDZ builds loading docks for warehouses, distribution centers, and industrial facilities across Oklahoma City. Standard dock height is 48–52 inches to match semi-trailer bed heights — getting that number right determines whether your dock seals or gaps. Our work along the I-40/I-35 industrial corridor means we understand the operational demands of active facilities: dock downtime costs money, and we plan accordingly. Every dock is poured to laser-level precision with 4,000–5,000 PSI concrete at 8-inch minimum thickness. Call (405) 458-4805 to schedule a free on-site estimate.",
-  localExpertiseNote: "Oklahoma's clay soil requires an engineered sub-base for dock construction — the soil expands and contracts seasonally, and a dock built on unmodified clay will settle and crack within a few years. FDZ proof-rolls and over-excavates before any aggregate goes in. This is standard practice for our commercial dock work, not an upgrade.",
-  serviceLabel: "Commercial",
+  description:
+    'FDZ is a loading dock concrete contractor for warehouses, distribution centers, and industrial facilities across the OKC metro. Call <a href="tel:4054584805">(405) 458-4805</a> for a written estimate.',
+  introText:
+    "FDZ builds new loading dock concrete for warehouses, distribution centers, and industrial facilities across Oklahoma City — dock structures, approach slabs, and dock-leveler pit forming coordinated with your plans and equipment suppliers. This page is for new construction and major dock additions, not localized repair of an existing apron. For cracked or spalled dock concrete see <a href='/loading-dock-concrete-repair-oklahoma-city'>loading dock concrete repair</a>. For pit-specific concrete see <a href='/dock-leveler-pit-concrete-oklahoma-city'>dock leveler pit concrete</a>.",
+  localExpertiseNote:
+    "Oklahoma clay under dock approaches and aprons needs proper base preparation before a new pour. Seasonal moisture movement is a common reason docks settle and crack early when the base is underbuilt. We evaluate grade, drainage, and base conditions on site and follow project plans and specifications when they are provided.",
+  serviceLabel: "Dock Construction",
   serviceCards: [
-        { icon: "🏭", title: "New Loading Dock Construction", description: "Full build including approach slab, dock pit, and equipment coordination. 4,000–5,000 PSI concrete at 8-inch minimum thickness." },
-        { icon: "➕", title: "Dock Additions to Existing Facilities", description: "Adding bays to occupied warehouses and distribution centers. Phased work to minimize operational downtime." },
-        { icon: "⚙️", title: "Dock Leveler Pit Construction", description: "Exact pit dimensions coordinated with your equipment supplier. Anchor bolt embedments, utility conduit, and drainage included." },
-        { icon: "🛣️", title: "Approach Slab Construction", description: "Reinforced apron minimum 60 feet deep for semi-truck maneuvering. Thickened edges at the dock face. 8-inch minimum concrete." },
-        { icon: "🔧", title: "Dock Bumper & Equipment Pad Integration", description: "Bumper block anchorage, dock door equipment pads, and related concrete work coordinated during the dock pour." },
-        { icon: "🌙", title: "After-Hours & Phased Work", description: "We schedule around your operations. Dock downtime costs money — FDZ works nights and weekends when needed to minimize disruption." },
-      ],
+    {
+      icon: "🏭",
+      title: "New Loading Dock Construction",
+      description:
+        "New dock concrete for warehouses and distribution facilities — apron, approach, and equipment coordination scoped from plans and site conditions.",
+    },
+    {
+      icon: "➕",
+      title: "Dock Additions to Existing Facilities",
+      description:
+        "Adding dock bays to occupied buildings when the project calls for new concrete — sequenced with operations when site conditions allow.",
+    },
+    {
+      icon: "⚙️",
+      title: "Dock Leveler Pit Forming",
+      description:
+        "Pit concrete formed and poured to dimensions from the equipment supplier’s shop drawings. FDZ does the concrete — not the mechanical leveler install.",
+    },
+    {
+      icon: "🛣️",
+      title: "Approach Slab Construction",
+      description:
+        "Reinforced approach slabs connecting the dock to the truck court or drive lane — thickness and reinforcement per plans/specs for the traffic expected.",
+    },
+    {
+      icon: "📋",
+      title: "GC & Plan Coordination",
+      description:
+        "Plan review, COI/bonding for qualified bids, and coordination with GCs, facility managers, and other trades on commercial schedules.",
+    },
+    {
+      icon: "🌙",
+      title: "Occupied-Site Sequencing",
+      description:
+        "Phased or after-hours pours can be discussed when the facility must stay open — planned per project, not promised as a fixed downtime window.",
+    },
+  ],
   subServices: {
-        sectionEyebrow: "Dock Services",
-        sectionTitle: "What We Build",
-        items: [
-          {
-            title: "New Loading Dock Construction",
-            bullets: [
-              "Full build including approach slab, dock pit, and equipment coordination",
-              "Standard dock height 48–52 inches from finished grade to match semi-trailer beds",
-              "4,000–5,000 PSI concrete mix minimum",
-              "8-inch minimum thickness with continuous rebar reinforcement",
-            ],
-          },
-          {
-            title: "Loading Dock Additions",
-            bullets: [
-              "Adding bays to existing occupied facilities",
-              "Phased work to minimize downtime — we coordinate with your operations manager",
-              "Match existing dock height and equipment type",
-            ],
-          },
-          {
-            title: "Dock Leveler Pit Construction",
-            bullets: [
-              "Exact pit dimensions coordinated with equipment supplier before pour",
-              "Anchor bolt embedments set from supplier shop drawings",
-              "Utility conduit placement for hydraulic or electric actuated levelers",
-            ],
-          },
-          {
-            title: "Approach Slab Construction",
-            bullets: [
-              "Reinforced apron minimum 60 feet deep for standard 53-foot semi-truck maneuvering",
-              "Thickened edges at dock face to handle repeated trailer impact",
-              "8-inch minimum concrete with continuous reinforcement",
-            ],
-          },
-          {
-            title: "After-Hours & Occupied Facility Work",
-            bullets: [
-              "Schedule constructed around your facility's operations",
-              "Nights and weekends available when needed",
-              "Dock downtime per bay often limited to 1–2 days during the pour itself",
-            ],
-          },
+    sectionEyebrow: "Construction Scope",
+    sectionTitle: "What We Build as a Loading Dock Concrete Contractor",
+    items: [
+      {
+        title: "New Loading Dock Construction",
+        bullets: [
+          "Full dock concrete scope including approach slab and pit forming when the project requires it",
+          "Dock height and geometry verified from plans, existing doors/equipment, and facility requirements — not guessed",
+          "Mix, thickness, and reinforcement follow project plans and specifications when provided",
+          "Base prep and drainage reviewed for OKC clay and site grade conditions",
         ],
       },
-  processSteps: [
-        { title: "Free Estimate & Site Evaluation", description: "On-site visit to assess the dock location, grade, soil conditions, equipment requirements, and approach slab scope." },
-        { title: "Sub-Base Investigation & Correction", description: "Proof-roll and over-excavate. Oklahoma clay requires engineered aggregate base before any concrete goes in." },
-        { title: "Heavy Reinforcement Forming", description: "8-inch minimum thickness forming with continuous rebar on engineered spacing — #5 bar on 12–18-inch centers both directions, thickened edges at dock face." },
-        { title: "Dock Leveler Pit Coordination", description: "Pit dimensions, anchor bolt templates, and utility conduit placement all verified against equipment supplier shop drawings before the pour." },
-        { title: "4,000–5,000 PSI Pour to Laser Level", description: "Industrial-grade concrete poured and finished to laser-level precision. Dock height verified to 48–52 inches from finished grade." },
-        { title: "Approach Slab Pour & Finishing", description: "60-foot minimum approach slab poured with proper drainage slope away from the building. Broom finish for wet-weather traction." },
-        { title: "Curing, Sealing & Final Inspection", description: "Proper curing period before loading. Sealing applied and final inspection completed. 2-year workmanship warranty provided." },
-      ],
+      {
+        title: "Loading Dock Additions",
+        bullets: [
+          "Adding bays to existing warehouses and distribution buildings",
+          "Matching existing dock height and layout where the addition must line up with current doors and equipment",
+          "Phased work discussed with operations when the facility stays occupied",
+        ],
+      },
+      {
+        title: "Dock Leveler Pit Construction",
+        bullets: [
+          "Pit dimensions, curb angles, and anchor layouts taken from the leveler supplier’s drawings",
+          "Utility conduit placement when hydraulic or electric levelers are specified",
+          "Dedicated pit detail on our <a href='/dock-leveler-pit-concrete-oklahoma-city'>dock leveler pit concrete</a> page",
+        ],
+      },
+      {
+        title: "Approach Slabs & Adjacent Concrete",
+        bullets: [
+          "Approach slabs sized and reinforced for the truck and equipment traffic on the drawings",
+          "Drainage slope planned away from the building where site conditions allow",
+          "Pairs with <a href='/truck-court-concrete-oklahoma-city'>truck court concrete</a> and <a href='/warehouse-slab-repair-oklahoma-city'>warehouse concrete</a> when the project includes those scopes",
+        ],
+      },
+    ],
+  },
   processEyebrow: "How We Build It",
   processTitle: "The Loading Dock",
   processTitleAccent: "Construction Process.",
+  processIntro:
+    "From plan review to a cured dock ready for equipment install — coordinated for GCs and facility operators.",
+  processSteps: [
+    {
+      title: "Estimate, plans & site evaluation",
+      description:
+        "Review drawings, photos, or a scope list; walk the dock location, grade, soil/base conditions, and equipment requirements. Written estimate — not a phone price for commercial dock work.",
+    },
+    {
+      title: "Base investigation & preparation",
+      description:
+        "Evaluate and prepare the subgrade/base for the dock and approach. OKC clay often needs correction before a durable pour — scope depends on what we find and what the plans require.",
+    },
+    {
+      title: "Forming & reinforcement",
+      description:
+        "Forms and reinforcement placed per project plans and specifications. Dock height and geometry verified before concrete.",
+    },
+    {
+      title: "Dock leveler pit coordination",
+      description:
+        "When a pit is part of the job, dimensions, anchors, and conduit are verified against supplier shop drawings before the pour.",
+    },
+    {
+      title: "Pour, finish & cure coordination",
+      description:
+        "Concrete placed and finished to the specified profile and texture. Cure and reopen timing depend on the mix, weather, and when equipment or traffic can return — confirmed during scheduling.",
+    },
+  ],
   sections: [
-        {
-          eyebrow: "Technical Specs",
-          title: "Loading Dock Concrete",
-          titleAccent: "Is Different.",
-          content: [
-            "Loading dock concrete is not standard flatwork. The slab must handle concentrated forklift loads up to 100,000 lbs, repeated trailer bumper impact, and constant heavy axle traffic. That means 8-inch minimum thickness, continuous rebar reinforcement, thickened edges, and a 4,000–5,000 PSI mix minimum.",
-            "Approach slabs need a minimum 60-foot depth for standard 53-foot semi-truck maneuvering. Drainage must slope away from the building. Joint spacing is engineered, not guessed.",
-          ],
-          table: {
-            headers: ["Application", "Minimum Thickness"],
-            rows: [
-              ["Residential driveway", "4\""],
-              ["Heavy-duty commercial", "6\""],
-              ["Loading dock / industrial slab", "8\"+"],
-              ["Forklift traffic areas", "8\"–10\"+"],
-              ["Truck courts", "8\"–10\"+"],
-            ],
-          },
-        },
-        {
-          eyebrow: "Pricing",
-          title: "Loading Dock",
-          titleAccent: "Cost Ranges.",
-          content: [
-            "Every loading dock project is site-specific. Pricing depends on the number of bays, dock leveler pit requirements, soil conditions, phasing complexity, and whether the facility is occupied during work.",
-            "Free on-site estimate always provided. Call (405) 458-4805.",
-          ],
-          table: {
-            headers: ["Service", "Typical Range"],
-            rows: [
-              ["New loading dock (single bay)", "$15,000 – $45,000+"],
-              ["Dock addition to existing facility", "$12,000 – $35,000+"],
-              ["Dock leveler pit only", "$3,000 – $8,000"],
-              ["Approach slab (per sq. ft.)", "$8 – $14"],
-              ["After-hours / phased work premium", "10–20%"],
-            ],
-          },
-        },
-        {
-          eyebrow: "Related Services",
-          title: "Other Commercial Concrete",
-          titleAccent: "Services.",
-          content: [
-            "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — Parking lots, warehouse slabs, foundations, and commercial site concrete.",
-            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Concrete &amp; Slabs</a> — Interior warehouse floors and slab-on-grade work that often pairs with new dock construction.",
-            "<a href='/loading-dock-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Concrete Repair</a> — Apron, face, and approach repairs when a full rebuild is not required.",
-            "<a href='/loading-dock-replacement-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Replacement</a> — Full demolition and replacement for failed docks.",
-            "<a href='/dock-leveler-pit-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dock Leveler Pit Concrete</a> — New pits and retrofits coordinated with equipment suppliers.",
-          ],
-        },
+    {
+      eyebrow: "Construction vs. Repair",
+      title: "New Dock Concrete vs.",
+      titleAccent: "Dock Repair.",
+      content: [
+        "This page is for loading dock concrete contractor scopes — new docks, dock additions, and major construction coordinated with plans, GCs, and equipment suppliers.",
+        "If you already have a dock with cracked aprons, spalled faces, or failed approach slabs, start with <a href='/loading-dock-concrete-repair-oklahoma-city'>loading dock concrete repair</a>. If the dock is beyond lasting repair, see <a href='/loading-dock-replacement-oklahoma-city'>loading dock replacement</a>.",
       ],
+    },
+    {
+      eyebrow: "Technical Approach",
+      title: "Loading Dock Concrete",
+      titleAccent: "Follows the Project Spec.",
+      content: [
+        "Loading dock concrete is heavier-duty than light commercial flatwork because it sees trailer impact, forklift traffic, and concentrated loads at the dock face. Exact thickness, reinforcement, mix, and dock height come from the project plans, engineering, equipment requirements, and existing conditions — FDZ does not invent a one-size structural design.",
+        "Approach slabs, drainage, and joint layout are scoped to the site and drawings. When plans are not yet complete, we walk the site with you and note what information is still needed before a final written scope.",
+      ],
+      table: {
+        headers: ["Project element", "How FDZ approaches it"],
+        rows: [
+          ["Dock height / geometry", "Verified from plans, existing doors, and equipment needs"],
+          ["Slab thickness & reinforcement", "Per plans/specs and operational loads on the drawings"],
+          ["Dock leveler pit", "Formed to supplier shop drawings"],
+          ["Approach slab", "Sized for truck traffic and site drainage"],
+          ["Occupied facility", "Phasing discussed with operations before pour"],
+        ],
+      },
+    },
+    {
+      eyebrow: "Pricing",
+      title: "Loading Dock",
+      titleAccent: "Cost Ranges.",
+      content: [
+        "Every loading dock project is site-specific. Pricing depends on bay count, pit requirements, soil/base conditions, access, phasing, and whether the facility is occupied. Ranges below are typical planning starting points — not bids.",
+        "Free on-site or plan-based estimate. Call <a href='tel:4054584805'>(405) 458-4805</a>.",
+      ],
+      table: {
+        headers: ["Service", "Typical Range"],
+        rows: [
+          ["New loading dock (single bay)", "$15,000 – $45,000+"],
+          ["Dock addition to existing facility", "$12,000 – $35,000+"],
+          ["Dock leveler pit concrete", "$3,000 – $8,000+"],
+          ["Approach slab (per sq. ft.)", "$8 – $14"],
+        ],
+      },
+    },
+    {
+      eyebrow: "Related Services",
+      title: "Other Commercial & Industrial",
+      titleAccent: "Concrete Services.",
+      content: [
+        "<a href='/loading-dock-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Concrete Repair</a> — Apron, face, and approach repairs when a full rebuild is not required.",
+        "<a href='/loading-dock-replacement-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Replacement</a> — Full demolition and replacement for failed docks.",
+        "<a href='/dock-leveler-pit-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dock Leveler Pit Concrete</a> — New pits and retrofits coordinated with equipment suppliers.",
+        "<a href='/truck-court-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Truck Court Concrete</a> — Heavy exterior paving that connects to dock approaches.",
+        "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Concrete &amp; Slabs</a> — Interior warehouse floors that often pair with new dock construction.",
+        "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — Parking lots, warehouse slabs, foundations, and commercial site concrete.",
+      ],
+    },
+  ],
+  ctaLabel: "Request a Loading Dock Construction Estimate →",
+  finalCta: {
+    heading: "Need a New Loading Dock?",
+    headingAccent: "Request a Construction Estimate.",
+    description:
+      "Use the estimate form. Include facility type, location, number of bays, drawings or photos if available, and any schedule or access limits. This is a contractor estimate from plans and site conditions — not an engineering design service.",
+    buttonLabel: "Request a Loading Dock Construction Estimate →",
+  },
   faq: [
-        {
-          question: "What is the correct height for a loading dock in Oklahoma?",
-          answer: "48–52 inches from finished grade to match standard semi-trailer bed heights. Exact height depends on whether you're matching existing dock doors and equipment. FDZ verifies with the facility before forming — getting this number wrong is an expensive mistake.",
-        },
-        {
-          question: "How thick should loading dock concrete be?",
-          answer: "8 inches minimum for standard loading docks. Forklift-heavy areas typically spec 8–10 inches or more. The approach slab at the dock face is often thickened further to handle repeated trailer impact and the heaviest axle loads.",
-        },
-        {
-          question: "How long does loading dock construction take?",
-          answer: "A single-bay dock typically takes 2–4 weeks from demolition or excavation through full cure. Multi-bay builds and occupied facilities take longer due to phasing. Concrete must cure to adequate strength before loading.",
-        },
-        {
-          question: "Can you build a loading dock at an occupied warehouse?",
-          answer: "Yes. FDZ coordinates phased construction and after-hours scheduling to keep your facility operational. Dock downtime can often be limited to 1–2 days per bay during the pour itself.",
-        },
-        {
-          question: "Do you coordinate with dock leveler equipment suppliers?",
-          answer: "Yes. FDZ gets equipment specs before any concrete is poured. Pit dimensions, anchor bolt locations, and utility conduit placement are all set from the equipment supplier's shop drawings — not estimated.",
-        },
-        {
-          question: "How much does it cost to build a loading dock in Oklahoma City?",
-          answer: "Single-bay new construction ranges $15,000–$45,000+ depending on site conditions, equipment coordination, and approach slab scope. Dock additions to existing facilities typically run $12,000–$35,000+. Free estimate provided — call (405) 458-4805.",
-        },
-        {
-          question: "What reinforcement is required for a loading dock?",
-          answer: "Continuous rebar on engineered spacing, typically #5 bar on 12–18-inch centers both directions, with thickened edges and additional rebar at the dock face. Specs are driven by forklift capacity and anticipated axle loads.",
-        },
-      ],
+    {
+      question: "What is the correct height for a loading dock?",
+      answer:
+        "Dock height must match the trailers and equipment the facility serves and any existing doors. Common industrial ranges are often around trailer-bed height, but the correct number comes from your plans, existing conditions, and equipment — FDZ verifies before forming rather than assuming one height for every site.",
+    },
+    {
+      question: "How thick should loading dock concrete be?",
+      answer:
+        "Thickness and reinforcement depend on project plans, engineering, soil/base conditions, and operational loads. Warehouse docks and approach slabs are typically heavier sections than light commercial flatwork. We follow the drawings and specs provided for the job.",
+    },
+    {
+      question: "How long does loading dock construction take?",
+      answer:
+        "Schedule depends on bay count, pit scope, base correction, weather, cure requirements, and whether the facility is occupied. We provide a project-specific sequence after the site or plan review — not a one-size calendar.",
+    },
+    {
+      question: "Can you build a loading dock at an occupied warehouse?",
+      answer:
+        "Yes. Phased construction and after-hours scheduling can be discussed so receiving can continue where practical. Downtime per bay depends on the scope and site conditions.",
+    },
+    {
+      question: "Do you coordinate with dock leveler equipment suppliers?",
+      answer:
+        "Yes for the concrete. FDZ forms pits and sets embeds from the equipment supplier’s shop drawings. The equipment company installs and services the mechanical leveler after the concrete is ready.",
+    },
+    {
+      question: "How much does it cost to build a loading dock in Oklahoma City?",
+      answer:
+        "Single-bay new construction often lands in a wide planning range depending on site conditions, pit scope, and approach slab size. Dock additions and multi-bay builds vary more. Call (405) 458-4805 for a written estimate after plans or a site visit.",
+    },
+    {
+      question: "Are you a loading dock concrete contractor or only a repair crew?",
+      answer:
+        "Both scopes exist as separate pages. This page covers new construction and dock additions. Existing-dock concrete repair is covered on the loading dock concrete repair page so search intent stays clear.",
+    },
+  ],
 };

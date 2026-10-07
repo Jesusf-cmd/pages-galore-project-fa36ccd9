@@ -314,14 +314,14 @@ const RAW: Omit<SeoPage, "canonical">[] = [
   },
   {
     path: "/loading-dock-concrete-repair-oklahoma-city",
-    title: "Loading Dock Concrete Repair Oklahoma City | FDZ",
-    description: "Loading dock concrete repair in Oklahoma City — dock apron repair, dock face replacement, pit wall repair, approach slab patching. Licensed & insured. Call (405) 458-4805.",
+    title: "Loading Dock Concrete Repair Oklahoma City | FDZ Construction",
+    description: "Warehouse loading dock concrete repair in Oklahoma City — cracked aprons, spalled dock faces, approach slabs, and localized panel work. Call (405) 458-4805.",
     h1: "Loading Dock Concrete Repair in Oklahoma City, OK",
   },
   {
     path: "/loading-dock-construction-oklahoma-city",
-    title: "Loading Dock Construction Oklahoma City | FDZ",
-    description: "Commercial loading dock construction in Oklahoma City. Laser-level precision, 8\"+ reinforced concrete, dock leveler pit coordination. Free estimates — (405) 458-4805.",
+    title: "Loading Dock Concrete Contractor OKC | FDZ Construction",
+    description: "Loading dock concrete contractor in Oklahoma City — new warehouse docks, dock additions, approaches, and pit coordination from plans. Call (405) 458-4805.",
     h1: "Loading Dock Construction in Oklahoma City, OK",
   },
   {
@@ -333,7 +333,7 @@ const RAW: Omit<SeoPage, "canonical">[] = [
   {
     path: "/dock-leveler-pit-concrete-oklahoma-city",
     title: "Dock Leveler Pit Concrete Oklahoma City | FDZ Construction",
-    description: "Dock leveler pit concrete installation and repair in Oklahoma City. Exact dimensions, curb angles, anchor embedments coordinated with equipment suppliers. Call (405) 458-4805.",
+    description: "Dock leveler pit concrete in Oklahoma City — new pits, retrofits, and pit concrete repair coordinated with equipment suppliers. Call (405) 458-4805.",
     h1: "Dock Leveler Pit Concrete in Oklahoma City",
   },
   {
