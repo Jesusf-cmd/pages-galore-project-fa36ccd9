@@ -345,7 +345,7 @@ const RAW: Omit<SeoPage, "canonical">[] = [
   {
     path: "/industrial-concrete-repair-oklahoma-city",
     title: "Industrial Concrete Repair Oklahoma City | FDZ Construction",
-    description: "Industrial concrete repair in Oklahoma City for warehouses, manufacturing, and distribution — forklift damage, joint failure, spalling, and phased floor repairs. Call (405) 458-4805.",
+    description: "Industrial concrete repair in Oklahoma City — forklift damage, joint failure, spalling, and phased warehouse floor repairs. Call (405) 458-4805.",
     h1: "Industrial Concrete Repair in Oklahoma City, OK",
   },
   {
@@ -388,7 +388,7 @@ const RAW: Omit<SeoPage, "canonical">[] = [
   {
     path: "/commercial-concrete-repair-oklahoma-city",
     title: "Commercial Concrete Repair Oklahoma City | FDZ Construction",
-    description: "Commercial concrete repair in Oklahoma City — cracked slabs, slab panel repair, spalling, trip hazards, failed joints, parking lots, and site concrete. On-site evaluation and written estimate. Call (405) 458-4805.",
+    description: "Commercial concrete repair in Oklahoma City — cracked slabs, panel repair, spalling, trip hazards, and failed joints. Written estimate. Call (405) 458-4805.",
     h1: "Commercial Concrete Repair in Oklahoma City",
   },
   {

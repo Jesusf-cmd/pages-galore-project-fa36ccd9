@@ -4,7 +4,7 @@ export const industrialRepairContent: ServicePageContent = {
   currentServiceSlug: "industrial-concrete-repair-oklahoma-city",
   metaTitle: "Industrial Concrete Repair Oklahoma City | FDZ Construction",
   metaDescription:
-    "Industrial concrete repair in Oklahoma City for warehouses, manufacturing, and distribution — forklift damage, joint failure, spalling, and phased floor repairs. Call (405) 458-4805.",
+    "Industrial concrete repair in Oklahoma City — forklift damage, joint failure, spalling, and phased warehouse floor repairs. Call (405) 458-4805.",
   eyebrow: "OKC Metro · Industrial Concrete Repair · Licensed & Insured",
   title: "Industrial Concrete Repair in",
   titleAccent: "Oklahoma City.",

@@ -10,7 +10,7 @@ export default function CommercialConcreteRepair() {
       currentServiceSlug="commercial-concrete-repair-oklahoma-city"
       estimateHref={ESTIMATE_HREF}
       metaTitle="Commercial Concrete Repair Oklahoma City | FDZ Construction"
-      metaDescription="Commercial concrete repair in Oklahoma City — cracked slabs, slab panel repair, spalling, trip hazards, failed joints, parking lots, and site concrete. On-site evaluation and written estimate. Call (405) 458-4805."
+      metaDescription="Commercial concrete repair in Oklahoma City — cracked slabs, panel repair, spalling, trip hazards, and failed joints. Written estimate. Call (405) 458-4805."
       eyebrow="OKC Metro · Commercial Concrete Repair · Licensed & Insured"
       badge="self-performed"
       title="Commercial Concrete Repair in"
