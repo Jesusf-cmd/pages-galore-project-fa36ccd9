@@ -11,16 +11,16 @@ export const parkingLotConstructionContent: ServicePageContent = {
   description:
     'FDZ is a commercial concrete parking lot contractor for new lots, parking-lot installation, and full replacement across the OKC metro. Call <a href="tel:4054584805">(405) 458-4805</a>.',
   introText:
-    "FDZ Construction builds new commercial concrete parking lots and full lot replacements for retail centers, office properties, warehouses, churches, schools, and multifamily sites across Oklahoma City. This page is for new construction, parking-lot installation, parking-lot additions, and larger replacement scopes coordinated with plans, GCs, and property managers — not localized panel repair. For cracked panels, joints, and trip hazards on an existing lot see <a href='/concrete-parking-lot-repair-oklahoma-city'>concrete parking lot repair</a>.",
+    "FDZ Construction builds new commercial concrete parking lots and full lot replacements for commercial and light-industrial projects across Oklahoma City. This page is for new construction, parking-lot installation, parking-lot additions, and larger replacement scopes coordinated with plans, GCs, and property managers — not localized panel repair. For cracked panels, joints, and trip hazards on an existing lot see <a href='/concrete-parking-lot-repair-oklahoma-city'>concrete parking lot repair</a>.",
   localExpertiseNote:
-    "Oklahoma clay under commercial parking lots often needs proper base preparation before a new pour. Seasonal moisture movement can contribute to early settlement and cracking when the base is underbuilt. FDZ evaluates grade, drainage, and base conditions on site and follows project plans and specifications when they are provided.",
+    "Oklahoma City sites can have expansive or moisture-sensitive soils. Base preparation requirements depend on site conditions, project plans/specifications, and geotechnical recommendations when provided. FDZ’s on-site review is a contractor observation of visible and project-stated conditions — not a geotechnical or engineering evaluation.",
   serviceLabel: "Parking Lot",
   serviceCards: [
     {
       icon: "🅿️",
       title: "New Parking Lot Construction",
       description:
-        "New commercial parking lots and parking-lot installation — stalls, drive aisles, drainage grading, and curb interfaces scoped from plans and site conditions.",
+        "New commercial parking lots and parking-lot installation — stalls, drive aisles, and curb interfaces scoped from plans and site conditions.",
     },
     {
       icon: "➕",
@@ -32,7 +32,7 @@ export const parkingLotConstructionContent: ServicePageContent = {
       icon: "♻️",
       title: "Full Parking Lot Replacement",
       description:
-        "Demolition and rebuild when localized repair is impractical — base and drainage reviewed before a larger replacement scope is recommended.",
+        "Demolition and rebuild when site conditions make localized repair impractical during evaluation — base and drainage conditions reviewed against plans/specs and visible site conditions before a larger replacement scope is recommended.",
     },
     {
       icon: "🛣️",
@@ -60,17 +60,17 @@ export const parkingLotConstructionContent: ServicePageContent = {
       {
         title: "New Commercial Parking Lot Installation",
         bullets: [
-          "New concrete parking areas, drive aisles, and parking-lot additions for commercial and light industrial sites",
+          "New concrete parking areas, drive aisles, and parking-lot additions for commercial and light-industrial sites",
           "Mix, thickness, and reinforcement follow project plans and specifications when provided",
-          "Base prep and drainage grade reviewed for OKC clay and site conditions before the pour",
+          "Base preparation and grade/drainage conditions reviewed against project plans/specifications and visible site conditions before the pour",
           "Stall and aisle layout coordinated from the drawings — not a one-size residential template",
         ],
       },
       {
         title: "Full Parking Lot Concrete Replacement",
         bullets: [
-          "Demolition of failed concrete or asphalt when a larger rebuild is the recommended approach",
-          "Base and drainage conditions reviewed before forming a replacement scope",
+          "Demolition of failed concrete or asphalt when a larger rebuild may be considered after evaluation",
+          "Base and drainage conditions reviewed against plans/specifications and visible site conditions before forming a replacement scope",
           "Phased replacement can be discussed when portions of the lot must stay open",
           "Localized panel work stays on our <a href='/concrete-parking-lot-repair-oklahoma-city'>concrete parking lot repair</a> page",
         ],
@@ -78,10 +78,10 @@ export const parkingLotConstructionContent: ServicePageContent = {
       {
         title: "Curb, Sidewalk & ADA Interfaces",
         bullets: [
-          "Curb and gutter interfaces when included in the parking-lot concrete scope — see also <a href='/commercial-curb-and-gutter-oklahoma-city'>commercial curb and gutter</a>",
+          "Curb and gutter interfaces when included in FDZ’s concrete scope — see also <a href='/commercial-curb-and-gutter-oklahoma-city'>commercial curb and gutter</a>",
           "Sidewalk connections when part of the same site package — see <a href='/sidewalks-oklahoma-city'>sidewalks</a>",
-          "Accessible routes and curb ramps when shown on plans — see <a href='/ada-concrete-ramps-oklahoma-city'>ADA concrete ramps</a>",
-          "FDZ does not guarantee code outcomes; plans and design requirements govern where applicable",
+          "Accessible routes and curb ramps when shown on approved plans and included in FDZ’s concrete scope — see <a href='/ada-concrete-ramps-oklahoma-city'>ADA concrete ramps</a>",
+          "Accessible layout is coordinated from project plans and design requirements; FDZ does not guarantee or certify ADA compliance",
         ],
       },
       {
@@ -98,22 +98,22 @@ export const parkingLotConstructionContent: ServicePageContent = {
   processTitle: "The Commercial Parking Lot",
   processTitleAccent: "Construction Process.",
   processIntro:
-    "From plan review to a cured commercial lot — coordinated for GCs, developers, and property managers.",
+    "From plan review to a cured commercial lot — coordinated for GCs, property managers, and other commercial stakeholders.",
   processSteps: [
     {
       title: "Estimate, plans & site evaluation",
       description:
-        "Review drawings, photos, or a scope list; walk grade, drainage, base conditions, and access limits. Written estimate — not a phone price for commercial lot work.",
+        "Review drawings, photos, or a scope list; walk visible grade, drainage, and base conditions against the project documents and access limits. Written contractor estimate — not a geotechnical or engineering inspection.",
     },
     {
       title: "Base investigation & preparation",
       description:
-        "Evaluate and prepare the subgrade/base for the lot and drive aisles. OKC clay often needs correction before a durable pour — scope depends on what we find and what the plans require.",
+        "Evaluate and prepare the subgrade/base for the lot and drive aisles per project plans/specifications and site conditions. Base correction scope depends on what is observed on site and what the plans or geotechnical recommendations require when provided.",
     },
     {
       title: "Forming, joints & reinforcement",
       description:
-        "Forms, joint layout, and reinforcement placed per project plans and specifications when provided. Drainage slopes verified before concrete.",
+        "Forms, joint layout, and reinforcement placed per project plans and specifications when provided. Grade and drainage conditions are reviewed against project plans/specifications and visible site conditions before concrete.",
     },
     {
       title: "Pour, finish & curb interfaces",
@@ -167,9 +167,9 @@ export const parkingLotConstructionContent: ServicePageContent = {
         headers: ["Project element", "How FDZ approaches it"],
         rows: [
           ["Slab thickness & reinforcement", "Per plans/specs and operational loads on the drawings"],
-          ["Base & drainage", "Reviewed on site; corrected per plans/conditions before pour"],
+          ["Base & drainage", "Reviewed against plans/specs and visible site conditions; corrected per those documents when in scope"],
           ["Joints", "Layout per plans/specs for the pour size and traffic pattern"],
-          ["ADA / curb / sidewalk interfaces", "When shown on plans and included in concrete scope"],
+          ["ADA / curb / sidewalk interfaces", "When shown on plans and included in FDZ’s concrete scope"],
           ["Occupied property", "Phasing discussed with operations before pour"],
         ],
       },
@@ -237,7 +237,7 @@ export const parkingLotConstructionContent: ServicePageContent = {
     {
       question: "Do you coordinate ADA, curb, and sidewalk work with the parking lot?",
       answer:
-        "When those items are shown on the plans and included in FDZ’s concrete scope, yes. Dedicated pages cover curb and gutter, sidewalks, and ADA ramps when they are separate scopes. Plans and design requirements govern accessible layout — FDZ does not certify legal compliance.",
+        "When those items are shown on the plans and included in FDZ’s concrete scope, yes. Dedicated pages cover curb and gutter, sidewalks, and ADA ramps when they are separate scopes. Accessible layout is coordinated from project plans and design requirements — FDZ does not guarantee or certify ADA compliance.",
     },
     {
       question: "How is a parking lot different from a truck court?",

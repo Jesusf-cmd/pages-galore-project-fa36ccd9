@@ -9,11 +9,11 @@ export const parkingLotRepairContent: ServicePageContent = {
   title: "Concrete Parking Lot Repair in",
   titleAccent: "Oklahoma City.",
   description:
-    'Commercial parking lot concrete repair for retail, office, church, multifamily, and industrial properties across the OKC metro — panels, joints, and trip hazards. Call <a href="tel:4054584805">(405) 458-4805</a>.',
+    'Commercial parking lot concrete repair for commercial and light-industrial properties across the OKC metro — panels, joints, and trip hazards. Call <a href="tel:4054584805">(405) 458-4805</a>.',
   introText:
     "A commercial parking lot with cracked panels, failed joints, or trip hazards creates liability exposure and a poor customer experience. FDZ Construction is a parking lot repair contractor for Oklahoma City commercial properties — evaluating localized panel work, joint sealing, and trip-hazard remediation based on what we see on site. This page is for existing-lot concrete repair, not new parking-lot installation. For new lots and full replacement see <a href='/parking-lots-oklahoma-city'>concrete parking lot construction</a>.",
   localExpertiseNote:
-    "Parking lot panel and joint damage can be associated with settlement, drainage or moisture conditions, joint deterioration, repeated traffic, or deterioration of the supporting base — especially on OKC sites with expansive clay. FDZ reviews visible damage and site conditions before recommending a repair approach.",
+    "Parking lot panel and joint damage can be associated with settlement, drainage or moisture conditions, joint deterioration, repeated traffic, or deterioration of the supporting base. Oklahoma City sites can have expansive or moisture-sensitive soils; base and drainage factors depend on site conditions and any plans/geotechnical recommendations provided. FDZ’s review is a contractor observation of visible damage and site conditions — not a geotechnical or engineering evaluation.",
   serviceLabel: "Lot Repair",
   serviceCards: [
     {
@@ -74,7 +74,7 @@ export const parkingLotRepairContent: ServicePageContent = {
           "Joint cleaning and resealing where sealant has failed",
           "Crack repair methods selected after evaluating crack pattern and movement",
           "Trip-hazard grinding or panel work when surrounding conditions support that approach",
-          "Accessible-route height changes reviewed when that work is part of the concrete repair scope",
+          "Accessible-route height changes reviewed when that work is included in FDZ’s concrete repair scope and shown on project plans/design requirements when applicable",
         ],
       },
       {
@@ -101,12 +101,12 @@ export const parkingLotRepairContent: ServicePageContent = {
     {
       title: "Evaluate the lot and site conditions",
       description:
-        "We walk panels, joints, trip hazards, and drainage patterns; note settlement and traffic use; and talk through operating constraints.",
+        "We walk panels, joints, trip hazards, and visible grade/drainage conditions; note settlement indicators and traffic use; and talk through operating constraints. This is a contractor evaluation — not a geotechnical or engineering inspection.",
     },
     {
       title: "Repair vs. replace recommendation",
       description:
-        "You get a written estimate with the recommended method — localized repair, partial section work, or larger replacement evaluation when conditions require it.",
+        "You get a written estimate with the recommended method — localized repair, partial section work, or larger replacement evaluation when site conditions support that recommendation.",
     },
     {
       title: "Coordinate access and sequencing",
@@ -116,7 +116,7 @@ export const parkingLotRepairContent: ServicePageContent = {
     {
       title: "Demo, base review, pour-back & reopen coordination",
       description:
-        "Saw-cut clean boundaries, remove failed concrete, review and correct the base where needed, then pour back. Return-to-service timing depends on method, materials, temperature, and the traffic you need to restore.",
+        "Saw-cut clean boundaries, remove failed concrete, review base conditions against the repair scope and any plans provided, then pour back. Return-to-service timing depends on method, materials, temperature, and the traffic you need to restore.",
     },
   ],
   sections: [
@@ -136,7 +136,7 @@ export const parkingLotRepairContent: ServicePageContent = {
       content: [
         "Localized repair may be appropriate when damage appears limited to isolated panels, failed joints, or trip hazards, and surrounding pavement feels suitable during the contractor evaluation.",
         "Larger replacement may be considered when deterioration is widespread, settlement appears ongoing across large areas, supporting base or drainage conditions make localized repair impractical, or repeated patches would approach the cost of doing the area once.",
-        "FDZ recommends based on what we see on site and any plans or specifications you provide. We do not push full replacement when repair is the honest answer, and we do not certify structural design — that stays with your design professional when required.",
+        "FDZ recommends based on what we see on site and any plans or specifications you provide. We do not push full replacement when repair is the honest answer, and we do not certify structural or geotechnical design — that stays with your design/geotechnical professional when required.",
       ],
       table: {
         headers: ["What we look at", "Often leans toward"],
