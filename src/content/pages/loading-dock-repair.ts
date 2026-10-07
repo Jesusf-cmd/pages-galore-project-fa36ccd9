@@ -150,6 +150,7 @@ export const loadingDockRepairContent: ServicePageContent = {
           content: [
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — Parking lots, docks, warehouse slabs, and commercial site concrete.",
             "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Broader commercial repair for lots, docks, sidewalks, and warehouse floors.",
+            "<a href='/industrial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Industrial Concrete Repair</a> — Forklift traffic damage, joint failure, and heavy-use floor repairs beyond the dock apron.",
             "<a href='/dock-leveler-pit-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dock Leveler Pit Concrete</a> — New pit construction, pit retrofit, and pit repair coordinated with equipment suppliers.",
             "<a href='/truck-court-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Truck Court Concrete</a> — Industrial-grade truck maneuvering areas for warehouses and distribution centers.",
             "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Concrete &amp; Slabs</a> — Interior warehouse floors — new slab-on-grade, forklift flatness, and phased replacement.",
