@@ -44,11 +44,13 @@ const rawRoutes: PrerenderRoute[] = [
   },
   {
     path: "/foundations-oklahoma-city",
-    title: "Concrete Foundations Oklahoma City | FDZ Construction",
-    description: "Concrete foundation contractor in Oklahoma City. Slab-on-grade, stem walls, footings, garage pads, and commercial foundations engineered for clay soil. Free estimate: (405) 458-4805.",
-    h1: "Concrete Foundations in Oklahoma City",
-    content: "FDZ Construction LLC builds residential and commercial concrete foundations in Oklahoma City. Slab-on-grade for homes and warehouses, stem walls, continuous and spread footings, garage and shop slabs, and retail pad footings — engineered for proper preparation, reinforcement, and long-term structural performance on Oklahoma's expansive clay soil. Call (405) 458-4805 for a free estimate.",
+    title: "Concrete Foundation Contractor OKC | FDZ Construction",
+    description: "Concrete foundation contractor in Oklahoma City — residential and commercial slab-on-grade, footings, stem walls, plan/spec installs. Call (405) 458-4805.",
+    h1: "Concrete Foundation Contractor in Oklahoma City",
+    content: "FDZ Construction LLC is a concrete foundation contractor for residential and commercial projects in Oklahoma City. Slab-on-grade foundation construction, stem walls, continuous and spread footings, and garage and shop pads — placed per approved plans, specifications, and contracted scope. Oklahoma City-area sites can include expansive or moisture-sensitive soils; design requirements come from plans and geotechnical recommendations when provided. Call (405) 458-4805 for a free estimate.",
   },
+
+
   {
     path: "/sewer-line-repair-oklahoma-city",
     title: "Residential Sewer Line Repair Oklahoma City | FDZ Construction LLC",
@@ -340,11 +342,13 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
   },
   {
     path: "/foundation-repair-oklahoma-city",
-    title: "Concrete Foundation Repair in Oklahoma City | FDZ Construction LLC",
-    description: "Concrete foundation repair, slab leveling, drainage correction, and partial replacement in Oklahoma City. Honest evaluation — repair vs replace. Free estimate: (405) 458-4805.",
-    h1: "Concrete Foundation Repair in Oklahoma City",
-    content: "Most foundation movement in OKC isn't a foundation problem — it's a drainage problem causing a foundation problem. We evaluate the actual cause of movement first: drainage correction (re-grading, gutter extensions, French drains), slab leveling where surrounding base is sound, partial slab replacement, and structural engineer coordination for cases where piers are genuinely required. We are not a pier sales operation — we won't push piers when drainage correction or slab leveling solves the problem. Drainage correction $500–$3,000, slab leveling $800–$2,500, partial replacement $1,500–$6,000, structural piers $3,500–$25,000+. Free on-site evaluation. Call (405) 458-4805.",
+    title: "Foundation Repair Oklahoma City | Crack Repair | FDZ",
+    description: "Foundation repair and foundation crack repair in Oklahoma City. On-site contractor evaluation of cracks, drainage, and concrete scope. (405) 458-4805.",
+    h1: "Foundation Repair in Oklahoma City",
+    content: "Foundation repair and foundation crack repair for Oklahoma City homeowners and property owners. FDZ provides contractor evaluation of crack location, pattern, and moisture involvement, then scopes localized concrete repair, partial replacement, or basement waterproofing discussion when relevant. Pier and underpinning systems are not FDZ product offerings — those may require a foundation specialist or licensed design professional. Non-foundation commercial slab cracks belong on commercial concrete repair. Free on-site evaluation. Call (405) 458-4805.",
   },
+
+
   {
     path: "/bollard-installation-oklahoma-city",
     title: "Commercial Bollard Installation Oklahoma City | FDZ Construction",
