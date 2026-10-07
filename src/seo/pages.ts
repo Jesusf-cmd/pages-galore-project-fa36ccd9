@@ -314,7 +314,7 @@ const RAW: Omit<SeoPage, "canonical">[] = [
   },
   {
     path: "/loading-dock-concrete-repair-oklahoma-city",
-    title: "Loading Dock Concrete Repair Oklahoma City | FDZ Construction",
+    title: "Loading Dock Concrete Repair OKC | FDZ Construction",
     description: "Warehouse loading dock concrete repair in Oklahoma City — cracked aprons, spalled dock faces, approach slabs, and localized panel work. Call (405) 458-4805.",
     h1: "Loading Dock Concrete Repair in Oklahoma City, OK",
   },
