@@ -33,7 +33,7 @@ export default function CommercialConcreteOklahomaCity() {
             bullets: [
               "New warehouse slab-on-grade floors for distribution and industrial buildings",
               "Phased interior slab replacement in occupied facilities",
-              "Laser-screed flatwork, sub-base prep, and joint systems for forklift operations",
+              "Flatwork, sub-base prep, and joint systems for forklift operations — per project plans",
               "<a href='/warehouse-slab-repair-oklahoma-city'>Warehouse concrete & slabs →</a>",
             ],
           },
@@ -130,7 +130,7 @@ export default function CommercialConcreteOklahomaCity() {
         {
           icon: "📐",
           title: "Warehouse Concrete",
-          description: "New warehouse slabs and phased floor replacement — slab-on-grade construction with laser-screed finish and joint systems for forklift traffic.",
+          description: "New warehouse slabs and phased floor replacement — slab-on-grade construction with flatwork and joint systems for forklift traffic.",
         },
         {
           icon: "🔧",

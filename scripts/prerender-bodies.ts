@@ -678,7 +678,7 @@ export const prerenderBodies: Record<string, string> = {
     <ul>
       <li>New warehouse slab-on-grade floors for distribution and industrial buildings</li>
       <li>Phased interior slab replacement in occupied facilities</li>
-      <li>Laser-screed flatwork, sub-base prep, and joint systems for forklift operations</li>
+      <li>Flatwork, sub-base prep, and joint systems for forklift operations — per project plans</li>
       <li><a href="/warehouse-slab-repair-oklahoma-city">Warehouse concrete &amp; slabs</a></li>
     </ul>
     <h3>Commercial &amp; Industrial Concrete Repair</h3>
