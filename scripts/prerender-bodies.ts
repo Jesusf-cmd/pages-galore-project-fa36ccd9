@@ -19,6 +19,7 @@ import { repairPages } from "../src/content/repairPages";
 import { adaRampsContent } from "../src/content/pages/ada-ramps";
 import { commercialCurbGutterContent } from "../src/content/pages/commercial-curb-gutter";
 import { parkingLotRepairContent } from "../src/content/pages/parking-lot-repair";
+import { parkingLotConstructionContent } from "../src/content/pages/parking-lot-construction";
 import { loadingDockRepairContent } from "../src/content/pages/loading-dock-repair";
 import { dockLevelerPitsContent } from "../src/content/pages/dock-leveler-pits";
 import { warehouseSlabContent } from "../src/content/pages/warehouse-slab";
@@ -1070,88 +1071,6 @@ export const prerenderBodies: Record<string, string> = {
     ${trustParagraph()}
   `,
 
-  "/parking-lots-oklahoma-city": `
-    <h1>Concrete Parking Lot Construction in Oklahoma City</h1>
-    <p>FDZ Construction LLC provides new concrete parking lot construction and full replacement for commercial properties across the Oklahoma City metro. We work directly with property managers, business owners, and general contractors — handling the full scope from grading and forming through ADA-compliant layout, curb and gutter, and striping coordination. Licensed, bonded, and insured in Oklahoma. Certificate of insurance and bonding documentation available as part of the bid process.</p>
-    <h2>Concrete Parking Lot Services in Oklahoma City</h2>
-    <h3>New Parking Lot Installation</h3>
-    <ul>
-      <li>Site grading for drainage and ADA-compliant slopes</li>
-      <li>4,000+ PSI concrete mix standard for vehicle loads</li>
-      <li>Reinforcement sized to expected traffic and load</li>
-      <li>Expansion joint planning for large-area pours</li>
-      <li>ADA-accessible parking stall layout</li>
-      <li>Curb and gutter installation</li>
-    </ul>
-    <h3>Parking lot repair</h3>
-    <p>Most cracked or settled panels on an existing lot belong on our dedicated repair page — not a full rebuild. For panel replacement, joint sealing, and trip hazards, see <a href="/concrete-parking-lot-repair-oklahoma-city">concrete parking lot repair</a>.</p>
-    <h3>Full Parking Lot Replacement</h3>
-    <ul>
-      <li>Full demolition and removal of existing concrete or asphalt</li>
-      <li>Sub-base re-evaluation and correction before new pour</li>
-      <li>Re-grading for drainage improvements if the original lot had pooling or drainage issues</li>
-      <li>New reinforced pour with updated ADA layout where required</li>
-    </ul>
-    <h3>Concrete Curb and Gutter</h3>
-    <ul>
-      <li>Perimeter curb and gutter for drainage routing</li>
-      <li>ADA curb ramps and accessible routes</li>
-      <li>Slipform for longer runs; hand-formed for custom sections</li>
-    </ul>
-    <h3>ADA Compliance</h3>
-    <ul>
-      <li>Accessible parking stall count and placement per ADA requirements</li>
-      <li>Van-accessible stall dimensions</li>
-      <li>Accessible route from parking to building entry</li>
-      <li>Curb ramp slopes and landing dimensions confirmed before design is finalized</li>
-    </ul>
-    <h2>What Property Managers and GCs Should Know</h2>
-    <p>Our proposals define exactly what's included — demolition, sub-base prep, reinforcement, concrete thickness, ADA layout, curb and gutter, and cleanup. We coordinate with your project schedule and other trades on site, communicate timeline changes before they happen, and are set up to work as a sub-contractor on GC-managed projects. COI and bonding documentation available for the bid process.</p>
-    <p>OKC's expansive clay soil means parking lot failures often originate below the slab. Before recommending a new pour or full replacement, we evaluate sub-base conditions. ADA compliance is confirmed before we finalize any layout.</p>
-    ${processSection("From Assessment to Finished Lot", [
-      { title: "On-site assessment", description: "We walk the property, evaluate existing conditions, sub-base, drainage, and ADA layout before providing a proposal." },
-      { title: "Proposal", description: "Clear scope, defined deliverables, no hidden line items." },
-      { title: "Site prep and grading", description: "Proper grading for drainage is set before any concrete is placed." },
-      { title: "Forming and reinforcement", description: "Forms set to ADA slopes and drainage grades; reinforcement placed per load requirements." },
-      { title: "Pour and finish", description: "4,000+ PSI mix, properly cured before opening to traffic." },
-      { title: "Curb, gutter, ADA ramps, and close-out", description: "Installed per layout plan. Site left clean. Job photos provided on completion." },
-    ])}
-    <h2>Oklahoma City Soil and Parking Lot Longevity</h2>
-    <p>Oklahoma's expansive clay and shale base creates a challenge that most parking lot failures trace back to: the sub-base moves with moisture, and if the concrete wasn't designed around that movement, the slab cracks and fails from below regardless of surface quality. Proper sub-base preparation — compacted aggregate base, drainage routing, and appropriate joint spacing for large-area pours — is what separates a parking lot that lasts 30 years from one that needs patching within five.</p>
-    <h2>Why Oklahoma City Businesses Choose FDZ for Parking Lot Work</h2>
-    <ul>
-      <li>Licensed, bonded, and insured in Oklahoma</li>
-      <li>8+ years of commercial concrete experience across the OKC metro</li>
-      <li>2-year workmanship warranty</li>
-      <li>COI and bonding documentation available for bid process</li>
-      <li>ADA-compliant layouts on every project</li>
-      <li>4,000+ PSI commercial mix standard</li>
-      <li>Sub-base evaluation before new pour or full replacement recommendations</li>
-    </ul>
-    <h2>How Much Does a Concrete Parking Lot Cost in Oklahoma City?</h2>
-    <p>Commercial parking lot costs depend on square footage, existing site conditions, sub-base preparation requirements, ADA layout complexity, curb and gutter scope, and schedule requirements. We provide competitive bids with a clear, itemized scope. Call <a href="tel:4054584805">(405) 458-4805</a> or use our contact form to discuss your project.</p>
-    ${faqSection("Parking Lot FAQ", [
-      { question: "Do you work as a sub-contractor on GC-managed projects?", answer: "Yes. We're set up to work within a GC's project schedule, coordinate with other trades on site, and provide required documentation — COI, bonding information — as part of the sub process." },
-      { question: "How quickly can you turn around a bid for a parking lot project?", answer: "Contact us with project details and we'll schedule an on-site assessment promptly. Bid turnaround depends on project complexity." },
-      { question: "Can you provide a certificate of insurance and bonding documentation?", answer: "Yes, as part of the bid process." },
-      { question: "Do you handle ADA compliance in the parking lot layout?", answer: "Yes. Stall count, van-accessible placement, curb ramp slopes, and accessible route continuity are part of every parking lot layout we design." },
-      { question: "How long before a new concrete parking lot can be opened to traffic?", answer: "Concrete parking lots typically require 7 days minimum before light vehicle traffic, and up to 28 days for full structural cure. We provide a specific timeline as part of the project schedule." },
-      { question: "Why do concrete parking lots fail in Oklahoma?", answer: "Most failures in OKC trace back to sub-base issues, not surface quality. Oklahoma's expansive clay soil moves significantly with moisture — if the sub-base wasn't properly compacted and the slab wasn't designed for that movement, failure can start from below the slab surface." },
-      { question: "What PSI concrete do you use for parking lots?", answer: "4,000+ PSI standard for commercial vehicle loads. Adjusted upward for heavy truck or equipment traffic where needed." },
-      { question: "What areas do you serve for parking lot work?", answer: "We serve the entire OKC metro — Oklahoma City (home base, fastest response), Edmond (~30–40 min north), Yukon (~20–25 min west), Norman, Moore, Mustang, Midwest City, and Del City." },
-    ])}
-    <h2>Related Services</h2>
-    <ul>
-      <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Warehouse slabs, dock pads, retail site concrete, and equipment pads.</li>
-      <li><a href="/warehouse-slab-repair-oklahoma-city">Warehouse Concrete &amp; Slabs</a> — Interior warehouse floors and slab-on-grade work for the building your lot serves.</li>
-      <li><a href="/concrete-parking-lot-repair-oklahoma-city">Concrete Parking Lot Repair</a> — Panel replacement, joint sealing, and trip hazard grinding for existing lots.</li>
-      <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; Curb and Gutter</a> — Often part of the same commercial site scope as parking lot work.</li>
-      <li><a href="/foundations-oklahoma-city">Foundations</a> — Commercial foundation work for the buildings your parking lot serves.</li>
-    </ul>
-    <p><strong>Free estimate:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="/#contact">Email FDZ Construction</a></p>
-    ${trustParagraph()}
-  `,
-
   "/retaining-walls-oklahoma-city": `
     <h1>Concrete Retaining Wall Contractors in Oklahoma City, OK</h1>
     <p>FDZ Construction LLC builds and repairs concrete retaining walls across the Oklahoma City metro. Whether you need a wall to control a sloped yard, protect a foundation from soil movement, create usable outdoor space, or manage drainage, we design each wall around your specific site conditions — not a one-size template. Licensed, bonded, and insured in Oklahoma, and every wall is backed by a 2-year workmanship warranty.</p>
@@ -1350,6 +1269,10 @@ export const prerenderBodies: Record<string, string> = {
   "/commercial-curb-and-gutter-oklahoma-city": renderServicePageHtml(
     commercialCurbGutterContent,
     prerenderH1("/commercial-curb-and-gutter-oklahoma-city"),
+  ),
+  "/parking-lots-oklahoma-city": renderServicePageHtml(
+    parkingLotConstructionContent,
+    prerenderH1("/parking-lots-oklahoma-city"),
   ),
   "/concrete-parking-lot-repair-oklahoma-city": renderServicePageHtml(
     parkingLotRepairContent,

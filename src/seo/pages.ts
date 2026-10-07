@@ -94,9 +94,10 @@ const RAW: Omit<SeoPage, "canonical">[] = [
   },
   {
     path: "/parking-lots-oklahoma-city",
-    title: "New Concrete Parking Lots in Oklahoma City | FDZ",
-    description: "New concrete parking lot construction and full replacement in Oklahoma City. ADA layouts, 4,000+ PSI pours, curb and gutter. Call (405) 458-4805.",
-    h1: "Concrete Parking Lot Construction in Oklahoma City",
+    title: "Concrete Parking Lot Contractor OKC | FDZ Construction",
+    description:
+      "Commercial concrete parking lot contractor in Oklahoma City — new lots, installation, and full replacement from plans/specs. Call (405) 458-4805.",
+    h1: "Concrete Parking Lot Contractors in Oklahoma City, OK",
   },
   {
     path: "/retaining-walls-oklahoma-city",
@@ -382,7 +383,8 @@ const RAW: Omit<SeoPage, "canonical">[] = [
   {
     path: "/concrete-parking-lot-repair-oklahoma-city",
     title: "Concrete Parking Lot Repair OKC | FDZ Construction",
-    description: "Concrete parking lot repair in Oklahoma City — panel replacement, trip hazard grinding, joint sealing, crack repair. Sub-base evaluation on every panel replacement. Call (405) 458-4805.",
+    description:
+      "Commercial parking lot concrete repair in Oklahoma City — panels, joints, trip hazards, and repair-vs-replace evaluation. Call (405) 458-4805.",
     h1: "Concrete Parking Lot Repair in Oklahoma City",
   },
   {
