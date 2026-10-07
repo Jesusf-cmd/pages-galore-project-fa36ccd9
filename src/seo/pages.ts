@@ -49,10 +49,11 @@ const RAW: Omit<SeoPage, "canonical">[] = [
   },
   {
     path: "/foundations-oklahoma-city",
-    title: "Concrete Foundations Oklahoma City | FDZ Construction",
-    description: "Concrete foundation contractor in Oklahoma City. Slab-on-grade, stem walls, footings, garage pads, and commercial foundations engineered for clay soil. Free estimate: (405) 458-4805.",
-    h1: "Concrete Foundations in Oklahoma City",
+    title: "Concrete Foundation Contractor Oklahoma City | FDZ",
+    description: "Concrete foundation contractor in Oklahoma City for residential and commercial work — slab-on-grade, footings, stem walls, and plan/spec foundation installation. Call (405) 458-4805.",
+    h1: "Concrete Foundation Contractor in Oklahoma City",
   },
+
   {
     path: "/sewer-line-repair-oklahoma-city",
     title: "Residential Sewer Line Repair Oklahoma City | FDZ",
@@ -297,10 +298,11 @@ const RAW: Omit<SeoPage, "canonical">[] = [
   },
   {
     path: "/foundation-repair-oklahoma-city",
-    title: "Concrete Foundation Repair in Oklahoma City | FDZ",
-    description: "Concrete foundation repair, slab leveling, drainage correction, and partial replacement in Oklahoma City. Honest evaluation — repair vs replace. Free estimate: (405) 458-4805.",
-    h1: "Concrete Foundation Repair in Oklahoma City",
+    title: "Foundation Repair Oklahoma City | Crack Repair | FDZ",
+    description: "Foundation repair and foundation crack repair in Oklahoma City. Contractor evaluation of cracks, drainage, and concrete scope — not a phone diagnosis. Call (405) 458-4805.",
+    h1: "Foundation Repair in Oklahoma City",
   },
+
   {
     path: "/bollard-installation-oklahoma-city",
     title: "Commercial Bollard Installation Oklahoma City | FDZ",

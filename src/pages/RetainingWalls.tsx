@@ -164,6 +164,7 @@ export default function RetainingWalls() {
           titleAccent: "From FDZ.",
           content: [
             "<a href='/foundations-oklahoma-city' class='text-orange no-underline font-medium'>Concrete foundations</a> — Retaining walls and foundations often go hand-in-hand on sloped lots.",
+            "<a href='/foundation-repair-oklahoma-city' class='text-orange no-underline font-medium'>Foundation repair</a> — When grade and drainage issues show up as foundation cracks rather than a failing wall.",
             "<a href='/patios-oklahoma-city' class='text-orange no-underline font-medium'>Patios &amp; stamped concrete</a> — Landscape walls frequently paired with patio or outdoor living projects.",
             "<a href='/driveways-oklahoma-city' class='text-orange no-underline font-medium'>Concrete driveway installation</a> — Grade changes at driveways often need a wall and a new pour together.",
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial concrete services</a> — Retaining walls for commercial site development and parking lot projects.",

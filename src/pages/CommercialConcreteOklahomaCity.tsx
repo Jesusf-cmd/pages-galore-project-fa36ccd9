@@ -276,6 +276,7 @@ export default function CommercialConcreteOklahomaCity() {
             "<a href='/concrete-maintenance-oklahoma-city' class='text-orange no-underline font-medium'>Concrete Maintenance</a> — Joint sealing, resurfacing, and ongoing commercial slab care.",
             "<a href='/pool-deck-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Pool Decks</a> — Slip-resistant concrete pool decks for HOAs, hotels, and commercial properties.",
             "<a href='/foundations-oklahoma-city' class='text-orange no-underline font-medium'>Foundations</a> — Commercial slab-on-grade and structural foundations.",
+            "<a href='/foundation-repair-oklahoma-city' class='text-orange no-underline font-medium'>Foundation Repair</a> — Foundation-related cracks and movement — kept separate from general commercial slab repair.",
             "<a href='/sidewalks-oklahoma-city' class='text-orange no-underline font-medium'>Sidewalks</a> — Commercial sidewalks and site flatwork coordinated with ADA and curb work.",
           ],
         },
