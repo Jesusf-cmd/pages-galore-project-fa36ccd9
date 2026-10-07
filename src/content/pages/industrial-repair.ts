@@ -114,7 +114,7 @@ export const industrialRepairContent: ServicePageContent = {
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — New pours, replacements, and commercial site flatwork.",
             "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Crack sealing, spalling, trip hazards, and panel repair for commercial properties.",
             "<a href='/loading-dock-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Concrete Repair</a> — Dock apron, face, and approach slab repairs.",
-            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Slab Repair</a> — Phased interior floor repair and replacement.",
+            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Concrete &amp; Slabs</a> — New warehouse floors and phased interior slab replacement when repair is not enough.",
             "<a href='/concrete-maintenance-oklahoma-city' class='text-orange no-underline font-medium'>Concrete Maintenance</a> — Annual joint sealing, trip-hazard grinding, and slab care that keeps industrial floors from cycling back into emergency repairs.",
           ],
         },

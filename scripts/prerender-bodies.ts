@@ -575,7 +575,7 @@ export const prerenderBodies: Record<string, string> = {
     <img src="/images/projects/residential-foundation-crew-piedmont-ok.jpg" alt="FDZ Construction crew finishing residential foundation slab in Piedmont, OK with power trowel" loading="lazy" />
     ${faqSection("Foundation FAQ", [
       { question: "What types of foundations do you install?", answer: "We handle slab-on-grade, stem wall, and continuous footing foundations for residential and commercial projects." },
-      { question: "Do you build commercial foundations?", answer: "Yes — we pour commercial slab-on-grade for warehouses, footings and pads for retail buildings, and structural foundations for developments." },
+      { question: "Do you build commercial foundations?", answer: "Yes — we pour commercial slab-on-grade for warehouses, footings and pads for retail buildings, and structural foundations for developments. For dedicated warehouse floor scope, see our warehouse concrete and slab-on-grade page." },
       { question: "How much does a foundation cost in OKC?", answer: "Foundation pricing depends on project size, depth, reinforcement, site access, and excavation conditions. We provide free on-site estimates — call (405) 458-4805 or use the quote form above." },
       { question: "How deep should footings be in Oklahoma?", answer: "Oklahoma code requires footings below the frost line — typically 18–24 inches deep." },
       { question: "How do I know if my retaining wall needs repair or full replacement?", answer: "If the wall is leaning significantly, has visible cracking through the structure, or has lost its footing, replacement is usually the right call. Minor surface cracking without structural movement is often repairable. We evaluate this on-site at no charge." },
@@ -586,6 +586,7 @@ export const prerenderBodies: Record<string, string> = {
     <h2>Related Services</h2>
     <ul>
       <li><a href="/foundation-repair-oklahoma-city">Foundation repair</a> — Honest repair-vs-replace evaluation when an existing foundation is cracking or settling.</li>
+      <li><a href="/warehouse-slab-repair-oklahoma-city">warehouse concrete and slab-on-grade</a> — New warehouse floors and phased industrial floor replacement for forklift operations.</li>
       <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete services</a> — Warehouse floors, retail pads, loading docks, and site concrete for commercial properties.</li>
       <li><a href="/retaining-walls-oklahoma-city">Retaining wall construction</a> — Structural walls that often pair with foundation and grade work.</li>
       <li><a href="/soil-stabilization-oklahoma-city">Soil stabilization</a> — Lime and cement treatment for Oklahoma clay before a foundation pour.</li>
@@ -675,9 +676,10 @@ export const prerenderBodies: Record<string, string> = {
     </ul>
     <h3>Warehouse Concrete</h3>
     <ul>
+      <li>New warehouse slab-on-grade floors for distribution and industrial buildings</li>
       <li>Phased interior slab replacement in occupied facilities</li>
-      <li>Laser-screed flatwork for forklift operations</li>
-      <li><a href="/warehouse-slab-repair-oklahoma-city">Warehouse slab repair</a></li>
+      <li>Flatwork, sub-base prep, and joint systems for forklift operations — per project plans</li>
+      <li><a href="/warehouse-slab-repair-oklahoma-city">Warehouse concrete &amp; slabs</a></li>
     </ul>
     <h3>Commercial &amp; Industrial Concrete Repair</h3>
     <ul>
@@ -727,10 +729,10 @@ export const prerenderBodies: Record<string, string> = {
     <img src="/images/projects/forklift-ramp-pour-guthrie-oklahoma-2.jpg" alt="Crew troweling concrete forklift ramp in Guthrie, OK warehouse — forms and fresh pour visible" loading="lazy" />
     <img src="/images/projects/forklift-ramp-finished-guthrie-oklahoma.jpg" alt="Finished concrete forklift ramp in Guthrie, Oklahoma — smooth trowel finish flush with warehouse floor" loading="lazy" />
     ${faqSection("Commercial Concrete FAQ", [
-      { question: "How thick should a commercial concrete slab be?", answer: "Most commercial slabs require 5–6 inches minimum. Warehouse floors with forklift traffic may require more, with engineered rebar schedules. We specify per your load requirements." },
+      { question: "How thick should a commercial concrete slab be?", answer: "Commercial slab thickness depends on the project plans, engineering, soil/base conditions, and operational loads. Warehouse floors carrying forklifts, racking, or heavy equipment may require different sections and reinforcement. For warehouse-specific slab-on-grade and replacement scope, see our warehouse concrete and slabs page." },
       { question: "How much does commercial concrete cost in OKC?", answer: "Commercial concrete pricing depends on scope, square footage, PSI requirements, site access, and schedule coordination. We provide competitive bids with clear line items — call (405) 458-4805 or email jesus@fdzconstruction.com to discuss your project." },
-      { question: "What PSI concrete do you use for commercial work?", answer: "We specify 4,000 PSI minimum for commercial slabs and 5,000+ PSI for heavy industrial applications." },
-      { question: "How long before we can use a new commercial slab?", answer: "Foot traffic is usually fine in 24–48 hours and light equipment after about 7 days. The slab reaches full design strength at around 28 days. We can phase pours to keep part of your operation running." },
+      { question: "What PSI concrete do you use for commercial work?", answer: "Concrete strength follows the project plans, specifications, and load requirements. FDZ places the mix required for the approved commercial or industrial scope." },
+      { question: "How long before we can use a new commercial slab?", answer: "Return-to-service timing depends on the mix design, project specifications, curing conditions, and anticipated loads. We can phase pours to keep part of your operation running when the schedule requires it." },
       { question: "How quickly can you turn around a bid for a commercial project?", answer: "Contact us with project details and we'll schedule an on-site visit promptly. Bid turnaround depends on project complexity." },
       { question: "Do you work as a sub-contractor on GC-managed projects?", answer: "Yes. We're set up to work within a GC's project schedule, coordinate with other trades on site, and provide required documentation (COI, bonding) as part of the sub process." },
       { question: "Can you pour commercial concrete year-round in Oklahoma?", answer: "Yes — with proper cold-weather or hot-weather protocols. We adjust mix designs and curing methods by season." },
@@ -738,6 +740,7 @@ export const prerenderBodies: Record<string, string> = {
     ])}
     <h2>Related Services</h2>
     <ul>
+      <li><a href="/warehouse-slab-repair-oklahoma-city">Warehouse concrete &amp; slabs</a> — New warehouse slab-on-grade floors and phased replacement with flatness tolerances for forklift operations.</li>
       <li><a href="/parking-lots-oklahoma-city">Parking lot replacement</a> — Dedicated page for commercial parking lot design, layout, and construction.</li>
       <li><a href="/foundations-oklahoma-city">Concrete foundations</a> — Commercial slab-on-grade and structural foundations.</li>
       <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; curb and gutter</a> — Site sidewalks, ADA ramps, and curb work for commercial developments.</li>
@@ -789,7 +792,7 @@ export const prerenderBodies: Record<string, string> = {
     <ul>
       <li><a href="/concrete-parking-lot-repair-oklahoma-city">Parking lot repair</a> · <a href="/parking-lots-oklahoma-city">Parking lot construction</a></li>
       <li><a href="/loading-dock-concrete-repair-oklahoma-city">Loading dock concrete repair</a></li>
-      <li><a href="/warehouse-slab-repair-oklahoma-city">Warehouse slab repair</a> · <a href="/industrial-concrete-repair-oklahoma-city">Industrial concrete repair</a></li>
+      <li><a href="/warehouse-slab-repair-oklahoma-city">Warehouse concrete &amp; slabs</a> · <a href="/industrial-concrete-repair-oklahoma-city">Industrial concrete repair</a></li>
       <li><a href="/sidewalks-oklahoma-city">Sidewalks</a> · <a href="/ada-concrete-ramps-oklahoma-city">ADA ramps</a></li>
       <li><a href="/equipment-pad-concrete-oklahoma-city">Equipment pads</a> · <a href="/commercial-curb-and-gutter-oklahoma-city">Curb &amp; gutter</a></li>
       <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete contractor</a></li>
@@ -1131,6 +1134,7 @@ export const prerenderBodies: Record<string, string> = {
     <h2>Related Services</h2>
     <ul>
       <li><a href="/commercial-concrete-oklahoma-city">Commercial Concrete</a> — Warehouse slabs, dock pads, retail site concrete, and equipment pads.</li>
+      <li><a href="/warehouse-slab-repair-oklahoma-city">Warehouse Concrete &amp; Slabs</a> — Interior warehouse floors and slab-on-grade work for the building your lot serves.</li>
       <li><a href="/concrete-parking-lot-repair-oklahoma-city">Concrete Parking Lot Repair</a> — Panel replacement, joint sealing, and trip hazard grinding for existing lots.</li>
       <li><a href="/sidewalks-oklahoma-city">Sidewalks &amp; Curb and Gutter</a> — Often part of the same commercial site scope as parking lot work.</li>
       <li><a href="/foundations-oklahoma-city">Foundations</a> — Commercial foundation work for the buildings your parking lot serves.</li>

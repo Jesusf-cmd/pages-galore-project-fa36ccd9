@@ -129,7 +129,7 @@ export default function FoundationsOklahomaCity() {
           titleAccent: "Heavy Loads.",
           content: [
             "<strong>Commercial foundation contractors in Oklahoma City</strong> — FDZ Construction pours slab-on-grade foundations for warehouses, footings and pads for retail buildings, and structural foundations for commercial developments across the OKC metro.",
-            "Commercial slab-on-grade for warehouses requires thicker pours, engineered rebar schedules, and 6+ inch compacted aggregate base to carry forklift traffic, racking loads, and equipment without cracking. Retail pad footings are sized and reinforced per engineered plans and coordinated with your general contractor and city inspectors. For complete commercial site builds, we also handle <a href='/commercial-concrete-oklahoma-city'>commercial concrete</a> and <a href='/parking-lots-oklahoma-city'>parking lots</a>.",
+            "Commercial slab-on-grade for warehouses may require heavier slab sections, reinforcement, and prepared aggregate base depending on the project plans, engineering, subgrade conditions, forklift traffic, racking loads, and equipment. For dedicated warehouse floor scope — new industrial slabs, flatness targets, and phased floor replacement — see our <a href='/warehouse-slab-repair-oklahoma-city'>warehouse concrete and slab-on-grade</a> page. Retail pad footings are sized and reinforced per engineered plans and coordinated with your general contractor and city inspectors. For complete commercial site builds, we also handle <a href='/commercial-concrete-oklahoma-city'>commercial concrete</a> and <a href='/parking-lots-oklahoma-city'>parking lots</a>.",
           ],
           stats: [
             { value: "5,000+", label: "PSI available" },
@@ -175,6 +175,7 @@ export default function FoundationsOklahomaCity() {
           titleAccent: "From FDZ.",
           content: [
             "<a href='/foundation-repair-oklahoma-city' class='text-orange no-underline font-medium'>Foundation Repair</a> — Honest repair-vs-replace evaluation when an existing foundation is cracking or settling.",
+            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Concrete &amp; Slabs</a> — New warehouse slab-on-grade floors and phased industrial floor replacement for forklift operations.",
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete</a> — Warehouse floors, retail pads, loading docks, and site concrete for commercial properties and GC projects.",
             "<a href='/retaining-walls-oklahoma-city' class='text-orange no-underline font-medium'>Retaining Wall Construction</a> — Structural walls that often pair with foundation and grade work on sloped lots.",
             "<a href='/patios-oklahoma-city' class='text-orange no-underline font-medium'>Patios &amp; Stamped Concrete</a> — Outdoor living slabs on sloped lots often pair with foundation or retaining work.",

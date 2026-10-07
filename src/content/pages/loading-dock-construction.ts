@@ -123,6 +123,7 @@ export const loadingDockConstructionContent: ServicePageContent = {
           titleAccent: "Services.",
           content: [
             "<a href='/commercial-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Contractor in Oklahoma City</a> — Parking lots, warehouse slabs, foundations, and commercial site concrete.",
+            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Concrete &amp; Slabs</a> — Interior warehouse floors and slab-on-grade work that often pairs with new dock construction.",
             "<a href='/loading-dock-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Concrete Repair</a> — Apron, face, and approach repairs when a full rebuild is not required.",
             "<a href='/loading-dock-replacement-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Replacement</a> — Full demolition and replacement for failed docks.",
             "<a href='/dock-leveler-pit-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dock Leveler Pit Concrete</a> — New pits and retrofits coordinated with equipment suppliers.",

@@ -101,9 +101,11 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "Dock Leveler Pit",
   ],
   "/warehouse-slab-repair-oklahoma-city": [
+    "Warehouse Slab-on-Grade",
     "Floor Flatness & Levelness (FF/FL)",
     "href='/industrial-concrete-repair-oklahoma-city'",
     "href='/loading-dock-concrete-repair-oklahoma-city'",
+    "href='/foundations-oklahoma-city'",
     "href='/soil-stabilization-oklahoma-city'",
   ],
   "/industrial-concrete-repair-oklahoma-city": [
@@ -492,6 +494,11 @@ describe("post-PR13 SEO cleanup", () => {
       { source: "/commercial-concrete-oklahoma-city", dest: "/pool-deck-oklahoma-city", anchor: "Pool deck concrete" },
       { source: "/foundations-oklahoma-city", dest: "/soil-stabilization-oklahoma-city", anchor: "Soil stabilization" },
       { source: "/warehouse-slab-repair-oklahoma-city", dest: "/soil-stabilization-oklahoma-city", anchor: "Soil Stabilization" },
+      { source: "/foundations-oklahoma-city", dest: "/warehouse-slab-repair-oklahoma-city", anchor: "warehouse concrete and slab-on-grade" },
+      { source: "/loading-dock-construction-oklahoma-city", dest: "/warehouse-slab-repair-oklahoma-city", anchor: "Warehouse Concrete" },
+      { source: "/equipment-pad-concrete-oklahoma-city", dest: "/warehouse-slab-repair-oklahoma-city", anchor: "Warehouse Concrete" },
+      { source: "/commercial-concrete-oklahoma-city", dest: "/warehouse-slab-repair-oklahoma-city", anchor: "Warehouse concrete &amp; slabs" },
+      { source: "/parking-lots-oklahoma-city", dest: "/warehouse-slab-repair-oklahoma-city", anchor: "Warehouse Concrete" },
     ];
 
     for (const { source, dest, anchor } of inbound) {

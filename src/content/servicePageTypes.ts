@@ -60,9 +60,23 @@ export type ServicePageContent = {
   processEyebrow?: string;
   processTitle?: string;
   processTitleAccent?: string;
+  processIntro?: string;
   processSteps?: ProcessStep[];
   specs?: SpecItem[];
   sections: ServiceSection[];
   faq: FaqItem[];
   ctaLabel?: string;
+  finalCta?: {
+    heading?: string;
+    headingAccent?: string;
+    description?: string;
+    buttonLabel?: string;
+  };
+  projectGallery?: {
+    eyebrow?: string;
+    title: string;
+    titleAccent?: string;
+    intro?: string;
+    photos: { src: string; alt: string }[];
+  };
 };

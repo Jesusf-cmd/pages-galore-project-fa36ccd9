@@ -31,10 +31,10 @@ export default function CommercialConcreteOklahomaCity() {
           {
             title: "Warehouse Concrete",
             bullets: [
+              "New warehouse slab-on-grade floors for distribution and industrial buildings",
               "Phased interior slab replacement in occupied facilities",
-              "Laser-screed flatwork for forklift operations",
-              "Sub-base investigation and correction before every pour",
-              "<a href='/warehouse-slab-repair-oklahoma-city'>Warehouse slab repair →</a>",
+              "Flatwork, sub-base prep, and joint systems for forklift operations — per project plans",
+              "<a href='/warehouse-slab-repair-oklahoma-city'>Warehouse concrete & slabs →</a>",
             ],
           },
           {
@@ -130,7 +130,7 @@ export default function CommercialConcreteOklahomaCity() {
         {
           icon: "📐",
           title: "Warehouse Concrete",
-          description: "Phased slab replacement and flatwork inside occupied facilities — laser-screed finish and joint systems for forklift traffic.",
+          description: "New warehouse slabs and phased floor replacement — slab-on-grade construction with flatwork and joint systems for forklift traffic.",
         },
         {
           icon: "🔧",
@@ -259,7 +259,7 @@ export default function CommercialConcreteOklahomaCity() {
             "<a href='/loading-dock-replacement-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Replacement</a> — Full demolition and replacement for failed docks.",
             "<a href='/dock-leveler-pit-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dock Leveler Pit Concrete</a> — New pits, retrofits, and pit repair coordinated with equipment suppliers.",
             "<a href='/truck-court-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Truck Court Concrete</a> — Industrial-grade truck maneuvering areas for distribution facilities.",
-            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Slab Repair</a> — Phased replacement with flatness tolerances for forklift operations.",
+            "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Concrete &amp; Slabs</a> — New warehouse slab-on-grade floors and phased replacement with flatness tolerances for forklift operations.",
             "<a href='/equipment-pad-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Equipment Pad Concrete</a> — Machine pads, generator pads, HVAC slabs, transformer pads.",
             "<a href='/dumpster-pad-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Dumpster Pad Concrete</a> — Reinforced dumpster enclosure pads properly sloped and detailed.",
             "<a href='/ada-concrete-ramps-oklahoma-city' class='text-orange no-underline font-medium'>ADA Concrete Ramps</a> — ADA-compliant curb ramps, accessible routes, and detectable warning surfaces.",
@@ -319,10 +319,10 @@ export default function CommercialConcreteOklahomaCity() {
       }}
       cityBlockIntro={`We provide commercial concrete throughout the Oklahoma City metro — warehouses, retail, and industrial sites in <a href="/oklahoma-city-concrete" class="text-orange no-underline">Oklahoma City</a>, <a href="/edmond-concrete" class="text-orange no-underline">Edmond</a>, <a href="/norman-ok-concrete" class="text-orange no-underline">Norman</a>, <a href="/moore-oklahoma-concrete" class="text-orange no-underline">Moore</a>, <a href="/yukon-oklahoma-concrete" class="text-orange no-underline">Yukon</a>, <a href="/mustang-oklahoma-concrete" class="text-orange no-underline">Mustang</a>, <a href="/midwest-city-oklahoma-concrete" class="text-orange no-underline">Midwest City</a>, and <a href="/del-city-oklahoma-concrete" class="text-orange no-underline">Del City</a>.`}
       faq={[
-        { question: "How thick should a commercial concrete slab be?", answer: "Most commercial slabs require 5–6 inches minimum. Warehouse floors with forklift traffic or heavy equipment may require more, with engineered rebar schedules. We specify per your load requirements." },
+        { question: "How thick should a commercial concrete slab be?", answer: "Commercial slab thickness depends on the project plans, engineering, soil/base conditions, and operational loads. Warehouse floors carrying forklifts, racking, or heavy equipment may require different sections and reinforcement. For warehouse-specific slab-on-grade and replacement scope, see our <a href='/warehouse-slab-repair-oklahoma-city'>warehouse concrete and slabs</a> page." },
         { question: "How much does commercial concrete cost in OKC?", answer: "Commercial concrete pricing depends on scope, square footage, PSI requirements, site access, and schedule coordination. We provide competitive bids with clear line items — call (405) 458-4805 or email jesus@fdzconstruction.com to discuss your project." },
-        { question: "What PSI concrete do you use for commercial work?", answer: "We specify 4,000 PSI minimum for commercial slabs and 5,000+ PSI for heavy industrial applications." },
-        { question: "How long before we can use a new commercial slab?", answer: "Foot traffic is usually fine in 24–48 hours and light equipment after about 7 days. The slab reaches full design strength at around 28 days. We can phase pours to keep part of your operation running." },
+        { question: "What PSI concrete do you use for commercial work?", answer: "Concrete strength follows the project plans, specifications, and load requirements. FDZ places the mix required for the approved commercial or industrial scope." },
+        { question: "How long before we can use a new commercial slab?", answer: "Return-to-service timing depends on the mix design, project specifications, curing conditions, and anticipated loads. We can phase pours to keep part of your operation running when the schedule requires it." },
         { question: "How quickly can you turn around a bid for a commercial project?", answer: "Contact us with project details and we'll schedule an on-site visit promptly. Bid turnaround depends on project complexity." },
         { question: "Do you work as a sub-contractor on GC-managed projects?", answer: "Yes. We're set up to work within a GC's project schedule, coordinate with other trades on site, and provide required documentation (COI, bonding) as part of the sub process." },
         { question: "Can you pour commercial concrete year-round in Oklahoma?", answer: "Yes — with proper cold-weather or hot-weather protocols. We adjust mix designs, curing methods, and scheduling to ensure quality in all seasons." },

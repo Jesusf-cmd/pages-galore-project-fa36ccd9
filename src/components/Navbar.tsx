@@ -26,7 +26,7 @@ const commercialLinks = [
   { to: "/dock-leveler-pit-concrete-oklahoma-city", label: "Dock Leveler Pits" },
   { to: "/truck-court-concrete-oklahoma-city", label: "Truck Courts" },
   { to: "/industrial-concrete-repair-oklahoma-city", label: "Industrial Concrete Repair" },
-  { to: "/warehouse-slab-repair-oklahoma-city", label: "Warehouse Slab Repair" },
+  { to: "/warehouse-slab-repair-oklahoma-city", label: "Warehouse Concrete & Slabs" },
   { to: "/equipment-pad-concrete-oklahoma-city", label: "Equipment Pads" },
   { to: "/dumpster-pad-concrete-oklahoma-city", label: "Dumpster Pads" },
   { to: "/ada-concrete-ramps-oklahoma-city", label: "ADA Concrete Ramps" },

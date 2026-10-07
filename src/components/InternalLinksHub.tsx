@@ -11,6 +11,7 @@ const ALL_SERVICES = [
   { slug: "skid-steer-services-oklahoma-city", anchor: "skid steer services for land clearing & site work", blurb: "Land clearing, dirt work, leveling, gravel driveways, and brush hog mowing — self-performed on residential-scale lots up to about 2 acres." },
   { slug: "excavator-services-oklahoma-city", anchor: "excavator services for heavy digging & larger acreage", blurb: "Heavier land clearing with stump removal, deep grading and cut-fill, drainage work, and larger driveways or pads — self-performed, no subcontractors." },
   { slug: "commercial-concrete-oklahoma-city", anchor: "commercial concrete services", blurb: "Warehouse floors, commercial slabs, and site work for OKC businesses." },
+  { slug: "warehouse-slab-repair-oklahoma-city", anchor: "warehouse concrete and slabs", blurb: "New warehouse slab-on-grade floors and phased industrial floor replacement." },
   { slug: "parking-lots-oklahoma-city", anchor: "concrete parking lots", blurb: "New construction, replacement, and ADA-compliant commercial parking lots." },
 ];
 
