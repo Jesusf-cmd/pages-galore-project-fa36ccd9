@@ -375,7 +375,8 @@ export default function OurProjects() {
           return (
             <div
               key={id}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08] ${
+              id={id}
+              className={`scroll-mt-24 grid grid-cols-1 lg:grid-cols-2 gap-px bg-concrete/[0.08] ${
                 isLast ? "" : "mb-8"
               }`}
               style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}
@@ -411,7 +412,7 @@ export default function OurProjects() {
           style={{ border: "1px solid hsl(var(--concrete) / 0.08)" }}
         >
           {moreProjects.map((p) => (
-            <div key={p.id} className="bg-stone p-6">
+            <div key={p.id} id={p.id} className="scroll-mt-24 bg-stone p-6">
               {p.images.length >= 3 && (
                 <div className="mb-4 -mx-6 -mt-6 grid grid-cols-3 grid-rows-2 gap-px aspect-[16/10] overflow-hidden bg-concrete/[0.08]">
                   {p.images.slice(0, 3).map((img, i) => (
@@ -453,9 +454,11 @@ export default function OurProjects() {
               </div>
               <Link
                 to={p.ownerPath}
-                className="inline-block mt-4 text-orange no-underline text-[0.78rem] font-semibold"
+                className="flex w-fit items-center min-h-[44px] mt-[6px] -mb-[14px] text-orange no-underline text-[0.78rem] font-semibold"
               >
-                Related service →
+                <span>
+                  {p.serviceLinkLabel} <span aria-hidden="true">→</span>
+                </span>
               </Link>
             </div>
           ))}

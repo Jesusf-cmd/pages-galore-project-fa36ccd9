@@ -10,6 +10,7 @@ export default function SidewalksOklahomaCity() {
       proof={{
         eyebrow: "Proof",
         title: "Recent sidewalk projects",
+        intro: 'Explore our <a href="/our-projects#star-spencer-hs" class="text-orange no-underline">Star Spencer High School concrete sidewalk, stair, and accessible ramp project</a> in Spencer, Oklahoma.',
         ids: ["star-spencer-hs", "edmond-row-sidewalk"],
       }}
       localExpertiseNote="On Oklahoma clay, sidewalk panels heave and settle when the base is skipped. Proper subgrade compaction and an aggregate base — plus expansion joints where the walk meets driveways and structures — are what keep panels from cracking and lifting."

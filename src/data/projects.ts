@@ -18,6 +18,8 @@ export type Project = {
   service: string;
   /** Owner service page path. */
   ownerPath: string;
+  /** Descriptive anchor text for the ownerPath link; must describe that destination page. */
+  serviceLinkLabel: string;
   details: string;
   images: ProjectImage[];
   sqft: number | null;
@@ -46,6 +48,7 @@ export const PROJECTS: Project[] = [
     city: "Spencer, OK",
     service: "sidewalks + ADA",
     ownerPath: "/sidewalks-oklahoma-city",
+    serviceLinkLabel: "Explore concrete sidewalk construction",
     details: "New concrete stairs and sidewalks with ADA-compliant ramps",
     images: [
       {
@@ -67,6 +70,7 @@ export const PROJECTS: Project[] = [
     city: "Rosedale, OK",
     service: "foundations",
     ownerPath: "/foundations-oklahoma-city",
+    serviceLinkLabel: "Explore concrete foundation services",
     details: "Self-performed; video of forming, reinforcement, placement",
     images: [
       {
@@ -89,6 +93,7 @@ export const PROJECTS: Project[] = [
     city: "Edmond, OK",
     service: "foundations",
     ownerPath: "/foundations-oklahoma-city",
+    serviceLinkLabel: "Explore pier and slab foundations",
     details: "Piers to undisturbed soil; thickened slab",
     images: [
       {
@@ -120,6 +125,7 @@ export const PROJECTS: Project[] = [
     city: "Oklahoma City, OK",
     service: "retaining walls",
     ownerPath: "/retaining-walls-oklahoma-city",
+    serviceLinkLabel: "Explore poured concrete retaining walls",
     details:
       "120 linear ft, 5 ft tall poured concrete retaining wall with an 18-inch footing, drainage, and backfill for Oklahoma City clay soil",
     images: [
@@ -150,6 +156,7 @@ export const PROJECTS: Project[] = [
     city: "Guthrie, OK",
     service: "commercial / industrial",
     ownerPath: "/commercial-concrete-repair-oklahoma-city",
+    serviceLinkLabel: "Explore commercial concrete repair",
     details:
       "Existing concrete demolished and removed, then a new forklift ramp poured back and power-trowel finished inside an operating warehouse",
     images: [
@@ -188,6 +195,7 @@ export const PROJECTS: Project[] = [
     city: "Piedmont, OK",
     service: "foundations",
     ownerPath: "/foundations-oklahoma-city",
+    serviceLinkLabel: "Explore residential slab foundations",
     details: "Slab-on-grade with compacted base",
     images: [
       {
@@ -211,6 +219,7 @@ export const PROJECTS: Project[] = [
     city: "Edmond, OK",
     service: "driveways",
     ownerPath: "/driveways-oklahoma-city",
+    serviceLinkLabel: "Explore concrete driveway installation",
     details: `6" thick, 24' wide concrete drive with new approach`,
     images: [
       {
@@ -230,6 +239,7 @@ export const PROJECTS: Project[] = [
     city: "Oklahoma City, OK",
     service: "patios",
     ownerPath: "/patios-oklahoma-city",
+    serviceLinkLabel: "Explore stamped concrete patios",
     details:
       "420 sq ft stamped concrete patio with an Ashlar slate pattern that creates the appearance of natural stone",
     // TODO(FDZ): replace the AI illustration with the owner's completed stamped patio photos
@@ -259,6 +269,7 @@ export const PROJECTS: Project[] = [
     city: "Norman, OK",
     service: "patios",
     ownerPath: "/patios-oklahoma-city",
+    serviceLinkLabel: "Explore concrete patio installation",
     details:
       "Broom-finish patio slab and concrete paver walkway with picture-frame borders, set in decorative river rock",
     images: [
@@ -293,6 +304,7 @@ export const PROJECTS: Project[] = [
     city: "Mustang, OK",
     service: "foundations",
     ownerPath: "/foundations-oklahoma-city",
+    serviceLinkLabel: "Explore new-build slab foundations",
     details: "Slab-on-grade for new build",
     images: [], // TODO(FDZ): photo
     sqft: null, // TODO(FDZ): confirm 1,800 sq ft
@@ -307,6 +319,7 @@ export const PROJECTS: Project[] = [
     city: "Moore, OK",
     service: "patios",
     ownerPath: "/patios-oklahoma-city",
+    serviceLinkLabel: "Explore broom-finish backyard patios",
     details: "Broom finish, graded away from structure",
     images: [], // TODO(FDZ): photo
     sqft: null, // TODO(FDZ): confirm 480 sq ft
@@ -321,6 +334,7 @@ export const PROJECTS: Project[] = [
     city: "Edmond, OK",
     service: "sidewalks",
     ownerPath: "/sidewalks-oklahoma-city",
+    serviceLinkLabel: "Explore sidewalk and curb replacement",
     details: "Permitted replacement with ADA curb ramp",
     images: [], // TODO(FDZ): photo
     sqft: null, // TODO(FDZ)

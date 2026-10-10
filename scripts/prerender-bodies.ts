@@ -791,7 +791,7 @@ export const prerenderBodies: Record<string, string> = {
       <li>Facility type, project location, approximate affected area, what you are seeing, desired timing, and photos of the damage</li>
     </ul>
     <h2>Related Project Evidence</h2>
-    <p>A concrete forklift ramp poured inside a live warehouse in Guthrie, Oklahoma — occupied-site warehouse work. <a href="/our-projects">See completed projects</a>, including the Guthrie ramp and Star Spencer High School ADA sidewalks.</p>
+    <p>See our <a href="/our-projects#guthrie-forklift-ramp">completed warehouse forklift ramp replacement in Guthrie, Oklahoma</a>, including concrete demolition, wire mesh reinforcement, graded forklift transitions, and power-trowel finishing — occupied-site warehouse work. Photos of our <a href="/our-projects#star-spencer-hs">Star Spencer High School ADA sidewalk project</a> are on the same page. <a href="/our-projects">See more completed projects across the OKC metro</a>.</p>
     <h2>Commercial Concrete Repair Use Cases</h2>
     <ul>
       <li><a href="/concrete-parking-lot-repair-oklahoma-city">Parking lot repair</a> · <a href="/parking-lots-oklahoma-city">Parking lot construction</a></li>
@@ -1133,7 +1133,7 @@ export const prerenderBodies: Record<string, string> = {
     <h2>How Much Does a Retaining Wall Cost in Oklahoma City?</h2>
     <p>Cost depends on wall height and length, material choice (poured concrete vs. CMU block), site drainage requirements, soil conditions, equipment access, and whether engineering is required. We provide free on-site estimates with a clear scope before any work begins. Call <a href="tel:4054584805">(405) 458-4805</a> or email <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a>.</p>
     <h2>Real Retaining Wall Projects in the OKC Metro</h2>
-    <p>A 120-linear-foot, five-foot-tall poured concrete retaining wall we completed in Oklahoma City — 18-inch footing, excavation and earthwork, site preparation, drainage installation, and backfilling, with the construction scope addressing local clay soil conditions. <a href="/our-projects">See more completed projects across the OKC metro</a>.</p>
+    <p>View our <a href="/our-projects#okc-retaining-wall">completed 120-linear-foot poured concrete retaining wall project in Oklahoma City</a>, including site preparation, drainage installation, and backfilling — a five-foot-tall wall on an 18-inch footing, with excavation and earthwork and a construction scope addressing local clay soil conditions. <a href="/our-projects">See more completed projects across the OKC metro</a>.</p>
     <img src="/images/projects/poured-concrete-retaining-wall-oklahoma-city.jpg" alt="Poured concrete retaining wall with forms stripped beside a new home under construction in Oklahoma City, OK, with the next wall section still formed" loading="lazy" />
     ${faqSection("Retaining Wall FAQ", [
       { question: "Why do retaining walls fail?", answer: "Almost always drainage — not the wall material or age. Water pressure builds up in the soil behind a wall with inadequate drainage and pushes it out of place over time." },

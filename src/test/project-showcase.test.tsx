@@ -1,4 +1,5 @@
-﻿import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
+﻿import type { ComponentType } from "react";
+import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import ProjectGrid from "@/components/ProjectGrid";
@@ -7,8 +8,11 @@ import PatiosOklahomaCity from "@/pages/PatiosOklahomaCity";
 import RetainingWalls from "@/pages/RetainingWalls";
 import CommercialConcreteOklahomaCity from "@/pages/CommercialConcreteOklahomaCity";
 import CommercialConcreteRepair from "@/pages/CommercialConcreteRepair";
+import DrivewaysOklahomaCity from "@/pages/DrivewaysOklahomaCity";
+import SidewalksOklahomaCity from "@/pages/SidewalksOklahomaCity";
 import { COMPLETED_COST_NOTE, PROJECTS, getProjectById, type Project } from "@/data/projects";
 import { getPrerenderBody } from "../../scripts/prerender-bodies";
+import { routes } from "../../scripts/prerender-routes";
 
 const NEW_ID = "norman-patio-paver-walkway";
 const GUTHRIE_ID = "guthrie-forklift-ramp";
@@ -404,9 +408,9 @@ describe("Oklahoma City poured concrete retaining wall", () => {
     const visible = container.textContent ?? "";
     const crawler = getPrerenderBody("/retaining-walls-oklahoma-city") ?? "";
     const sentence =
-      "A 120-linear-foot, five-foot-tall poured concrete retaining wall we completed in Oklahoma City — 18-inch footing, excavation and earthwork, site preparation, drainage installation, and backfilling, with the construction scope addressing local clay soil conditions.";
+      "View our completed 120-linear-foot poured concrete retaining wall project in Oklahoma City, including site preparation, drainage installation, and backfilling — a five-foot-tall wall on an 18-inch footing, with excavation and earthwork and a construction scope addressing local clay soil conditions.";
     expect(visible).toContain(sentence);
-    expect(crawler).toContain(sentence);
+    expect(crawler.replace(/<[^>]+>/g, "")).toContain(sentence);
     expect(visible).not.toContain("$21,000");
     expect(crawler).not.toContain("$21,000");
     expect(container.querySelector('a[href="/our-projects"]')).not.toBeNull();
@@ -440,5 +444,139 @@ describe("/our-projects crawler HTML matches the visible project details", () =>
     expect(body()).toContain("Completed Project Cost: $7,500");
     expect(body()).not.toMatch(/Stamped patio — Norman/);
     expect(body()).toContain("Completed Project Cost: $8,200");
+  });
+
+  it("never pairs the Guthrie ramp with the old $3,200 price on any crawler page", () => {
+    for (const { path } of routes) {
+      expect(getPrerenderBody(path) ?? "", path).not.toMatch(/Guthrie[^<]{0,400}\$3,200|\$3,200[^<]{0,400}Guthrie/);
+    }
+  });
+});
+
+describe("project-to-service internal links", () => {
+  const HOME_SHOWCASE: [id: string, label: string, href: string][] = [
+    [GUTHRIE_ID, "Explore commercial concrete repair", "/commercial-concrete-repair-oklahoma-city"],
+    [NEW_ID, "Explore concrete patio installation", "/patios-oklahoma-city"],
+    ["star-spencer-hs", "Explore concrete sidewalk construction", "/sidewalks-oklahoma-city"],
+    ["edmond-driveway", "Explore concrete driveway installation", "/driveways-oklahoma-city"],
+    [STAMPED_ID, "Explore stamped concrete patios", "/patios-oklahoma-city"],
+    [RETAINING_ID, "Explore poured concrete retaining walls", "/retaining-walls-oklahoma-city"],
+  ];
+  const GENERIC_CTA = /related service/i;
+
+  it("gives each homepage showcase card a descriptive, crawlable service link", () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={["/"]}>
+        <ProjectGrid ids={HOME_SHOWCASE.map(([id]) => id)} />
+      </MemoryRouter>,
+    );
+    for (const [id, label, href] of HOME_SHOWCASE) {
+      const card = screen.getByRole("heading", { name: getProjectById(id)!.title }).closest("article")!;
+      const link = within(card).getByRole("link", { name: label });
+      expect(link.getAttribute("href")).toBe(href);
+      expect(link.textContent).toBe(`${label} →`);
+      expect(link.className).toContain("min-h-[44px]");
+      expect(link.getAttribute("rel")).toBeNull();
+      expect(link.getAttribute("target")).toBeNull();
+    }
+    expect(container.textContent).not.toMatch(GENERIC_CTA);
+  });
+
+  it("gives every project a distinct anchor label within its destination", () => {
+    for (const p of PROJECTS) expect(p.serviceLinkLabel, p.id).toMatch(/^Explore /);
+    expect(new Set(PROJECTS.map((p) => p.serviceLinkLabel)).size).toBe(PROJECTS.length);
+  });
+
+  it("drops the service link on a card whose service page is the current page", () => {
+    render(
+      <MemoryRouter initialEntries={["/patios-oklahoma-city"]}>
+        <ProjectGrid ids={[STAMPED_ID, GUTHRIE_ID]} />
+      </MemoryRouter>,
+    );
+    expect(screen.queryByRole("link", { name: "Explore stamped concrete patios" })).toBeNull();
+    expect(screen.getByRole("link", { name: "Explore commercial concrete repair" })).toBeTruthy();
+  });
+
+  it("gives every project a unique, scroll-offset anchor on /our-projects and no generic CTA", () => {
+    const { container } = renderOurProjects();
+    for (const p of PROJECTS) {
+      const targets = container.querySelectorAll(`[id="${p.id}"]`);
+      expect(targets, p.id).toHaveLength(1);
+      expect(targets[0].className).toContain("scroll-mt-24");
+      expect(targets[0].textContent).toContain(p.title);
+    }
+    expect(container.textContent).not.toMatch(GENERIC_CTA);
+    for (const p of PROJECTS.filter((x) => !x.featured)) {
+      const link = within(container.querySelector<HTMLElement>(`[id="${p.id}"]`)!).getByRole("link", {
+        name: p.serviceLinkLabel,
+      });
+      expect(link.getAttribute("href")).toBe(p.ownerPath);
+      expect(link.textContent).toBe(`${p.serviceLinkLabel} →`);
+      expect(link.className).toContain("min-h-[44px]");
+    }
+  });
+
+  const REVERSE_LINKS: [path: string, Page: ComponentType, fragment: string, anchor: string][] = [
+    [
+      "/commercial-concrete-repair-oklahoma-city",
+      CommercialConcreteRepair,
+      GUTHRIE_ID,
+      "completed warehouse forklift ramp replacement in Guthrie, Oklahoma",
+    ],
+    [
+      "/retaining-walls-oklahoma-city",
+      RetainingWalls,
+      RETAINING_ID,
+      "completed 120-linear-foot poured concrete retaining wall project in Oklahoma City",
+    ],
+    ["/patios-oklahoma-city", PatiosOklahomaCity, NEW_ID, "Norman concrete patio and decorative paver walkway"],
+    ["/patios-oklahoma-city", PatiosOklahomaCity, STAMPED_ID, "Oklahoma City Ashlar slate stamped concrete patio project"],
+    [
+      "/driveways-oklahoma-city",
+      DrivewaysOklahomaCity,
+      "edmond-driveway",
+      "completed concrete driveway and approach project in Edmond, Oklahoma",
+    ],
+    [
+      "/sidewalks-oklahoma-city",
+      SidewalksOklahomaCity,
+      "star-spencer-hs",
+      "Star Spencer High School concrete sidewalk, stair, and accessible ramp project",
+    ],
+  ];
+
+  it.each(REVERSE_LINKS)("%s links once to /our-projects#%s in the rendered page", (path, Page, fragment, anchor) => {
+    expect(getProjectById(fragment)).toBeDefined();
+    const { container, unmount } = render(
+      <MemoryRouter initialEntries={[path]}>
+        <Page />
+      </MemoryRouter>,
+    );
+    const links = container.querySelectorAll(`a[href="/our-projects#${fragment}"]`);
+    expect(links).toHaveLength(1);
+    expect(links[0].textContent).toBe(anchor);
+    expect(links[0].getAttribute("rel")).toBeNull();
+    expect(links[0].getAttribute("target")).toBeNull();
+    unmount();
+  });
+
+  it.each(REVERSE_LINKS.filter(([path]) => path.startsWith("/commercial") || path.startsWith("/retaining")))(
+    "%s crawler HTML carries the same /our-projects#%s link",
+    (path, _Page, fragment, anchor) => {
+      const body = getPrerenderBody(path) ?? "";
+      expect(body).toContain(`<a href="/our-projects#${fragment}">${anchor}</a>`);
+    },
+  );
+
+  it("keeps the driveway proof copy consistent with the approved Edmond project description", () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={["/driveways-oklahoma-city"]}>
+        <DrivewaysOklahomaCity />
+      </MemoryRouter>,
+    );
+    const text = container.textContent ?? "";
+    expect(getProjectById("edmond-driveway")!.details).toBe(`6" thick, 24' wide concrete drive with new approach`);
+    expect(text).toContain(`a 6" thick, 24' wide concrete drive with a new approach`);
+    expect(text).not.toContain(`4" reinforced broom finish`);
   });
 });
