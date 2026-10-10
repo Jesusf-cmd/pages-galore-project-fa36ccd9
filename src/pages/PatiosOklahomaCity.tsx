@@ -93,7 +93,7 @@ export default function PatiosOklahomaCity() {
       proof={{
         eyebrow: "Proof",
         title: "Recent patio projects",
-        intro: 'Oklahoma City stamped patio (Ashlar Slate) and Moore broom-finish patio — contrast finishes, same base-prep standards. More at <a href="/our-projects" class="text-orange no-underline">our projects</a>.',
+        intro: 'Oklahoma City stamped patio (Ashlar Slate) and Moore broom-finish patio — contrast finishes, same base-prep standards. See our <a href="/our-projects#okc-stamped-patio" class="text-orange no-underline">Oklahoma City Ashlar slate stamped concrete patio project</a>, featuring a 420-square-foot decorative concrete installation. Explore our completed <a href="/our-projects#norman-patio-paver-walkway" class="text-orange no-underline">Norman concrete patio and decorative paver walkway</a>, featuring a broom-finished slab, picture-frame borders, and decorative river rock.',
         service: "patios",
         ids: ["okc-stamped-patio", "moore-patio"],
         badgeById: {

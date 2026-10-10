@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import type { Project } from "@/data/projects";
 import ProjectSpecs from "@/components/ProjectSpecs";
 
@@ -10,6 +10,8 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project, badge }: ProjectCardProps) {
   const image = project.images[0];
+  const { pathname } = useLocation();
+  const isOwnerPage = pathname.replace(/\/+$/, "") === project.ownerPath;
 
   return (
     <article className="bg-stone p-6 flex flex-col h-full">
@@ -51,9 +53,16 @@ export default function ProjectCard({ project, badge }: ProjectCardProps) {
         <p className="text-[0.82rem] text-muted-text leading-relaxed mb-4">{project.details}</p>
         <ProjectSpecs project={project} />
       </div>
-      <Link to={project.ownerPath} className="text-orange no-underline text-[0.78rem] font-semibold">
-        View related service →
-      </Link>
+      {!isOwnerPage && (
+        <Link
+          to={project.ownerPath}
+          className="inline-flex items-center min-h-[44px] -mt-[10px] -mb-[14px] text-orange no-underline text-[0.78rem] font-semibold"
+        >
+          <span>
+            {project.serviceLinkLabel} <span aria-hidden="true">→</span>
+          </span>
+        </Link>
+      )}
     </article>
   );
 }
