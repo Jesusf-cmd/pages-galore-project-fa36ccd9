@@ -201,7 +201,7 @@ function BlogPostBody({ path }: { path: string }) {
           {isCost && (
             <div className="mb-10">
               <h2 className="mb-4 text-xl">Real projects behind these prices</h2>
-              <ProjectGrid ids={["edmond-driveway", "norman-stamped-patio"]} />
+              <ProjectGrid ids={["edmond-driveway", "okc-stamped-patio"]} />
             </div>
           )}
 

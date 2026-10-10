@@ -137,35 +137,24 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "guthrie-forklift-ramp",
-    title: "Forklift ramp",
+    title: "Warehouse forklift ramp — concrete demolition & replacement",
     city: "Guthrie, OK",
     service: "commercial / industrial",
-    ownerPath: "/commercial-concrete-oklahoma-city",
-    details: "Power-trowel finish; poured inside a live warehouse",
+    ownerPath: "/commercial-concrete-repair-oklahoma-city",
+    details:
+      "Existing concrete demolished and removed, then a new forklift ramp poured back and power-trowel finished inside an operating warehouse",
     images: [
       {
         src: "/images/projects/forklift-ramp-pour-guthrie-oklahoma-1.webp",
-        alt: alt(
-          "Power-trowel finish; poured inside a live warehouse",
-          "Forklift ramp",
-          "Guthrie, OK",
-        ),
+        alt: "Crew leveling freshly placed concrete for a forklift ramp replacement inside an active warehouse in Guthrie, OK, with a power trowel staged beside the forms",
       },
       {
         src: "/images/projects/forklift-ramp-pour-guthrie-oklahoma-2.webp",
-        alt: alt(
-          "Power-trowel finish; poured inside a live warehouse",
-          "Forklift ramp",
-          "Guthrie, OK",
-        ),
+        alt: "Formed concrete pour-back for a warehouse forklift ramp in Guthrie, OK, with a power trowel ready for finishing",
       },
       {
         src: "/images/projects/forklift-ramp-finished-guthrie-oklahoma.webp",
-        alt: alt(
-          "Power-trowel finish; poured inside a live warehouse",
-          "Forklift ramp",
-          "Guthrie, OK",
-        ),
+        alt: "Finished power-trowel concrete forklift ramp replacement inside an active warehouse in Guthrie, OK",
       },
     ],
     sqft: null, // TODO(FDZ)
@@ -173,6 +162,14 @@ export const PROJECTS: Project[] = [
     featured: true,
     sizeLabel: "Commercial",
     timeLabel: "1 day pour",
+    specs: [
+      "Demolition and removal of existing concrete",
+      "Concrete ramp replacement and pour-back",
+      "Concrete placed with a line pump",
+      "Power-trowel finish",
+      "Work performed inside an active warehouse",
+    ],
+    completedCost: "$3,200",
   },
   {
     id: "piedmont-foundation",
@@ -217,18 +214,26 @@ export const PROJECTS: Project[] = [
     timeLabel: "2 days",
   },
   {
-    id: "norman-stamped-patio",
-    title: "Stamped patio",
-    city: "Norman, OK",
+    id: "okc-stamped-patio",
+    title: "Ashlar slate stamped concrete patio",
+    city: "Oklahoma City, OK",
     service: "patios",
     ownerPath: "/patios-oklahoma-city",
-    details: "Ashlar slate pattern",
-    images: [], // TODO(FDZ): photo
-    sqft: null, // TODO(FDZ): confirm 580 sq ft
+    details:
+      "420 sq ft stamped concrete patio with an Ashlar slate pattern that creates the appearance of natural stone",
+    images: [], // TODO(FDZ): add the owner's completed stamped patio photos
+    sqft: 420,
     year: null, // TODO(FDZ)
     featured: false,
-    sizeLabel: "580 sq ft",
-    timeLabel: "3 days",
+    sizeLabel: "420 sq ft",
+    specs: [
+      `30' × 14' (420 sq ft)`,
+      "Site grading and preparation",
+      "Concrete placed with a line pump",
+      "Ashlar slate stamped pattern",
+      "Decorative stamped concrete patio finish",
+    ],
+    completedCost: "$7,500",
   },
   {
     id: "norman-patio-paver-walkway",

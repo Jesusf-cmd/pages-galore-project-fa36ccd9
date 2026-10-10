@@ -1232,10 +1232,10 @@ export const prerenderBodies: Record<string, string> = {
     <ul>
       <li><strong>Pier foundation — Edmond, OK</strong> — Piers drilled to undisturbed soil on a fill lot, tied to a thickened slab.</li>
       <li><strong>Poured concrete retaining wall — Oklahoma City</strong> — Monolithic wall engineered for OKC clay lateral pressure with drainage behind the wall.</li>
-      <li><strong>Forklift ramp — Guthrie, OK</strong> — Reinforced warehouse ramp poured inside a live facility, power-trowel finished flush with the existing floor.</li>
+      <li><strong>Warehouse forklift ramp — concrete demolition &amp; replacement — Guthrie, OK</strong> — Existing concrete demolished and removed, new ramp poured back with a line pump, and a power-trowel finish, all inside an operating warehouse. Completed Project Cost: $3,200 — actual contract price for this completed project. Pricing for similar work varies based on site conditions, accessibility, materials, and project specifications.</li>
       <li><strong>Residential foundation — Piedmont, OK</strong> — Slab-on-grade on Oklahoma red clay with compacted aggregate base and engineered rebar.</li>
       <li><strong>New driveway &amp; approach — Edmond, OK</strong> — 6" thick, 24' wide concrete drive with a new approach.</li>
-      <li><strong>Stamped patio — Norman, OK</strong> — Ashlar slate pattern with custom release and matte sealer.</li>
+      <li><strong>Ashlar slate stamped concrete patio — Oklahoma City, OK</strong> — 30' × 14' (420 sq ft) patio with site grading and preparation, concrete placed with a line pump, and an Ashlar slate stamped pattern that creates the appearance of natural stone. Completed Project Cost: $7,500 — actual contract price for this completed project. Pricing for similar work varies based on site conditions, accessibility, materials, and project specifications.</li>
       <li><strong>Concrete patio &amp; decorative paver walkway — Norman, OK</strong> — 12' × 12' broom-finish slab, 8" thick, with six 36" × 24" concrete pavers, picture-frame borders, and decorative river rock. Completed Project Cost: $8,200 — actual contract price for this completed project. Pricing for similar work varies based on site conditions, accessibility, materials, and project specifications.</li>
       <li><strong>Residential foundation — Mustang, OK</strong> — Slab-on-grade for a new residential build.</li>
       <li><strong>Backyard patio — Moore, OK</strong> — Broom-finish patio graded away from the structure.</li>
