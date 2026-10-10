@@ -1305,7 +1305,7 @@ export const prerenderBodies: Record<string, string> = {
       <li><strong>Residential foundation — Piedmont, OK</strong> — Slab-on-grade on Oklahoma red clay with compacted aggregate base and engineered rebar.</li>
       <li><strong>Driveway replacement — Edmond, OK</strong> — Full tear-out and 4" reinforced broom-finish pour.</li>
       <li><strong>Stamped patio — Norman, OK</strong> — Ashlar slate pattern with custom release and matte sealer.</li>
-      <li><strong>Commercial parking lot — Yukon, OK</strong> — 5" reinforced commercial lot graded for drainage.</li>
+      <li><strong>Concrete patio &amp; decorative paver walkway — Norman, OK</strong> — 12' × 12' broom-finish slab, 8" thick, with six 36" × 24" concrete pavers, picture-frame borders, and decorative river rock. Example project budget: $8,200 (not a quote; your written estimate sets the final scope and price).</li>
       <li><strong>Residential foundation — Mustang, OK</strong> — Slab-on-grade for a new residential build.</li>
       <li><strong>Backyard patio — Moore, OK</strong> — Broom-finish patio graded away from the structure.</li>
       <li><strong>City ROW sidewalk — Edmond, OK</strong> — Permitted sidewalk replacement with ADA curb ramp.</li>
