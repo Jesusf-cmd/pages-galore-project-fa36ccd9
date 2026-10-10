@@ -180,7 +180,7 @@ export const PROJECTS: Project[] = [
       "Power-trowel finish",
       "Work performed inside an active warehouse",
     ],
-    completedCost: "$3,200",
+    completedCost: "$6,500",
   },
   {
     id: "piedmont-foundation",

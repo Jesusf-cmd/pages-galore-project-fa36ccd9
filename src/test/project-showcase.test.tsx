@@ -150,7 +150,7 @@ describe("Guthrie warehouse forklift ramp", () => {
       title: "Warehouse forklift ramp — concrete demolition & replacement",
       city: "Guthrie, OK",
       ownerPath: "/commercial-concrete-repair-oklahoma-city",
-      completedCost: "$3,200",
+      completedCost: "$6,500",
       featured: true,
     });
     expect(guthrie().specs).toEqual([
@@ -180,7 +180,7 @@ describe("Guthrie warehouse forklift ramp", () => {
       </MemoryRouter>,
     );
     const card = screen.getByRole("article");
-    expect(within(card).getByText("$3,200")).toBeTruthy();
+    expect(within(card).getByText("$6,500")).toBeTruthy();
     expect(within(card).getByText("Completed Project Cost:")).toBeTruthy();
     expect(within(card).getByText(COMPLETED_COST_NOTE)).toBeTruthy();
     expect(within(card).getByText("Concrete placed with a line pump")).toBeTruthy();
@@ -199,7 +199,7 @@ describe("Guthrie warehouse forklift ramp", () => {
     expect(text).toContain("Concrete ramp replacement and pour-back");
     expect(text).toContain("Reinforced with wire mesh");
     expect(text).toContain("Graded slope for forklift transitions");
-    expect(within(block).getByText("$3,200")).toBeTruthy();
+    expect(within(block).getByText("$6,500")).toBeTruthy();
     expect(within(block).getByText(COMPLETED_COST_NOTE)).toBeTruthy();
     const hrefs = within(block).getAllByRole("link").map((a) => a.getAttribute("href"));
     expect(hrefs).toContain("/commercial-concrete-repair-oklahoma-city");
@@ -314,7 +314,7 @@ describe("Oklahoma City Ashlar slate stamped patio", () => {
     const priced = PROJECTS.filter((p) => p.completedCost).map((p) => [p.id, p.completedCost]);
     expect(priced).toEqual([
       [RETAINING_ID, "$21,000"],
-      [GUTHRIE_ID, "$3,200"],
+      [GUTHRIE_ID, "$6,500"],
       [STAMPED_ID, "$7,500"],
       [NEW_ID, "$8,200"],
     ]);
@@ -423,7 +423,8 @@ describe("/our-projects crawler HTML matches the visible project details", () =>
     expect(body()).toContain("Warehouse forklift ramp — concrete demolition &amp; replacement — Guthrie, OK");
     expect(body()).toContain("line pump");
     expect(body()).toContain("reinforced with wire mesh, graded for forklift transitions");
-    expect(body()).toContain("Completed Project Cost: $3,200");
+    expect(body()).toContain("Completed Project Cost: $6,500");
+    expect(body()).not.toContain("$3,200");
   });
 
   it("lists the retaining wall with its confirmed scope and cost", () => {
