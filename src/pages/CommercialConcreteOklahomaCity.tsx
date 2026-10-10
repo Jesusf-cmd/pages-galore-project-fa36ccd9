@@ -229,7 +229,7 @@ export default function CommercialConcreteOklahomaCity() {
           title: "Verified Commercial Concrete Work",
           titleAccent: "Across the OKC Metro.",
           content: [
-            "<strong>Guthrie — warehouse forklift ramp.</strong> Reinforced commercial ramp poured inside a live warehouse with active racking and inventory on site. Precise slope for forklift transitions, power-trowel finish flush with the existing floor, sized for repeated heavy equipment loads. Photos below.",
+            "<strong>Guthrie — warehouse forklift ramp.</strong> Demolition and concrete replacement inside a live warehouse with active racking and inventory on site. New concrete placed with a line pump, reinforced with wire mesh, graded for forklift transitions, and power-trowel finished — designed for repeated heavy forklift loads. Photos below.",
             "<strong>Rosedale — 10,000 sq ft shop foundation.</strong> Large-scale commercial foundation pour on expansive clay with engineered rebar and coordinated placement across the full slab footprint in a single pour. Power trowel finish throughout. Video on our <a href='/our-projects'>completed projects</a> page.",
             "<strong>Spencer — Star Spencer High School.</strong> New concrete stairs and ADA-compliant sidewalks and ramps for a public school project, completed on the district schedule. Related: <a href='/ada-concrete-ramps-oklahoma-city'>ADA ramps</a>, <a href='/sidewalks-oklahoma-city'>sidewalks</a>, and <a href='/commercial-curb-and-gutter-oklahoma-city'>curb &amp; gutter</a>.",
           ],
@@ -310,7 +310,7 @@ export default function CommercialConcreteOklahomaCity() {
         eyebrow: "Recent Commercial Work",
         title: "Real Commercial Concrete Projects",
         titleAccent: "in the OKC Metro.",
-        intro: "A concrete forklift ramp we built inside a live warehouse in Guthrie, Oklahoma — poured around active racking and inventory, with a reinforced slab sized for repeated heavy equipment loads and a power trowel finish flush with the existing floor. More verified commercial work — including the Rosedale shop foundation video and Star Spencer High School ADA sidewalks — is on our <a href='/our-projects'>projects and case studies</a> page.",
+        intro: "A warehouse forklift ramp we demolished and replaced inside a live warehouse in Guthrie, Oklahoma. The existing concrete was removed, and the new ramp was placed with a line pump, reinforced with wire mesh, graded for forklift transitions, and power-trowel finished — designed for repeated heavy forklift loads and completed around active racking and inventory. More verified commercial work — including the Rosedale shop foundation video and Star Spencer High School ADA sidewalks — is on our <a href='/our-projects'>projects and case studies</a> page.",
         photos: [
           { src: "/images/projects/forklift-ramp-pour-guthrie-oklahoma-1.webp", alt: "Power trowel finishing a concrete forklift ramp pour inside a warehouse in Guthrie, Oklahoma" },
           { src: "/images/projects/forklift-ramp-pour-guthrie-oklahoma-2.webp", alt: "Crew troweling concrete forklift ramp in Guthrie, OK warehouse — forms and fresh pour visible" },
