@@ -222,6 +222,38 @@ describe("Oklahoma City Ashlar slate stamped patio", () => {
     expect(JSON.stringify(stamped())).not.toMatch(/norman/i);
   });
 
+  it("uses a single image that is labeled as an AI illustration, not a project photo", () => {
+    expect(stamped().images).toEqual([
+      {
+        src: "/images/projects/ashlar-slate-stamped-concrete-patio-ai-illustration-oklahoma-city.webp",
+        alt: expect.stringMatching(/^AI-generated illustration .*not a photo of the completed Oklahoma City project$/),
+        illustration: true,
+      },
+    ]);
+    expect(PROJECTS.filter((p) => p.id !== STAMPED_ID).flatMap((p) => p.images).some((i) => i.illustration)).toBe(false);
+  });
+
+  it("shows the visible AI illustration label on the home card", () => {
+    render(
+      <MemoryRouter>
+        <ProjectGrid ids={[STAMPED_ID]} />
+      </MemoryRouter>,
+    );
+    const card = screen.getByRole("article");
+    expect(within(card).getByRole("img").getAttribute("alt")).toMatch(/AI-generated illustration/);
+    expect(within(card).getByText("AI illustration — not a project photo")).toBeTruthy();
+    expect(within(card).getByText("$7,500")).toBeTruthy();
+  });
+
+  it("does not label real project photos as illustrations", () => {
+    render(
+      <MemoryRouter>
+        <ProjectGrid ids={[GUTHRIE_ID, NEW_ID]} />
+      </MemoryRouter>,
+    );
+    expect(screen.queryByText("AI illustration — not a project photo")).toBeNull();
+  });
+
   it("shows Oklahoma City, 420 sq ft, and $7,500 on the /our-projects card", () => {
     renderOurProjects();
     const card = ourProjectsBlock(stamped());

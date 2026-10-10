@@ -13,14 +13,21 @@ export default function ProjectCard({ project, badge }: ProjectCardProps) {
 
   return (
     <article className="bg-stone p-6 flex flex-col h-full">
-      <div className="mb-4 -mx-6 -mt-6 overflow-hidden bg-concrete/[0.06] aspect-[16/10]">
+      <div className="relative mb-4 -mx-6 -mt-6 overflow-hidden bg-concrete/[0.06] aspect-[16/10]">
         {image ? (
-          <img
-            src={image.src}
-            alt={image.alt}
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
+          <>
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+            {image.illustration && (
+              <span className="absolute left-2 bottom-2 bg-black/75 text-white px-2 py-1 text-[0.6rem] tracking-[0.1em] uppercase font-bold">
+                AI illustration — not a project photo
+              </span>
+            )}
+          </>
         ) : (
           // TODO(FDZ): photo
           <div

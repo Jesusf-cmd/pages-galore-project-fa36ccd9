@@ -6,6 +6,8 @@
 export type ProjectImage = {
   src: string;
   alt: string;
+  /** AI-generated or rendered image, not a job-site photo; always shown with a visible label. */
+  illustration?: boolean;
 };
 
 export type Project = {
@@ -221,7 +223,14 @@ export const PROJECTS: Project[] = [
     ownerPath: "/patios-oklahoma-city",
     details:
       "420 sq ft stamped concrete patio with an Ashlar slate pattern that creates the appearance of natural stone",
-    images: [], // TODO(FDZ): add the owner's completed stamped patio photos
+    // TODO(FDZ): replace the AI illustration with the owner's completed stamped patio photos
+    images: [
+      {
+        src: "/images/projects/ashlar-slate-stamped-concrete-patio-ai-illustration-oklahoma-city.webp",
+        alt: "AI-generated illustration of an Ashlar slate stamped concrete patio, not a photo of the completed Oklahoma City project",
+        illustration: true,
+      },
+    ],
     sqft: 420,
     year: null, // TODO(FDZ)
     featured: false,
