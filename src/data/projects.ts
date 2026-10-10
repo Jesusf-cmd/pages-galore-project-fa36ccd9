@@ -24,7 +24,14 @@ export type Project = {
   /** Optional UI labels preserved from /our-projects "More Projects" cards. */
   sizeLabel?: string | null;
   timeLabel?: string | null;
+  /** Optional owner-confirmed specification bullets. */
+  specs?: string[];
+  /** Optional owner-confirmed contract price; always rendered with COMPLETED_COST_NOTE. */
+  completedCost?: string | null;
 };
+
+export const COMPLETED_COST_NOTE =
+  "Actual contract price for this completed project. Pricing for similar work varies based on site conditions, accessibility, materials, and project specifications.";
 
 function alt(details: string, title: string, city: string): string {
   return `${details} — ${title}, ${city}`;
@@ -224,18 +231,38 @@ export const PROJECTS: Project[] = [
     timeLabel: "3 days",
   },
   {
-    id: "yukon-parking-lot",
-    title: "Commercial parking lot",
-    city: "Yukon, OK",
-    service: "parking lots",
-    ownerPath: "/parking-lots-oklahoma-city",
-    details: '5" reinforced, drainage-graded',
-    images: [], // TODO(FDZ): photo
-    sqft: null, // TODO(FDZ): confirm 4,200 sq ft
+    id: "norman-patio-paver-walkway",
+    title: "Concrete patio & decorative paver walkway",
+    city: "Norman, OK",
+    service: "patios",
+    ownerPath: "/patios-oklahoma-city",
+    details:
+      "Broom-finish patio slab and concrete paver walkway with picture-frame borders, set in decorative river rock",
+    images: [
+      {
+        src: "/images/projects/concrete-paver-walkway-river-rock-norman-oklahoma.webp",
+        alt: "Broom-finish concrete pavers with picture-frame borders set in decorative river rock leading to a new concrete patio in Norman, OK",
+      },
+      {
+        src: "/images/projects/concrete-patio-slab-broom-finish-norman-oklahoma.webp",
+        alt: "New 12 × 12 ft, 8-inch broom-finish concrete patio slab in a Norman, OK backyard",
+      },
+      {
+        src: "/images/projects/concrete-patio-paver-walkway-norman-oklahoma.webp",
+        alt: "Concrete paver walkway in river rock running from the covered porch to a new concrete patio in Norman, OK",
+      },
+    ],
+    sqft: 144,
     year: null, // TODO(FDZ)
     featured: false,
-    sizeLabel: "4,200 sq ft",
-    timeLabel: "5 days",
+    sizeLabel: "12×12",
+    specs: [
+      `12' × 12' concrete slab, 8" thick`,
+      `Six 36" × 24" concrete pavers`,
+      "Broom finish with picture-frame borders",
+      "Decorative river rock installation",
+    ],
+    completedCost: "$8,200",
   },
   {
     id: "mustang-foundation",

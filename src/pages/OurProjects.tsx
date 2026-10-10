@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
 import TrustBar from "@/components/TrustBar";
 import FinalCTA from "@/components/FinalCTA";
+import ProjectSpecs from "@/components/ProjectSpecs";
 import { usePageSEO } from "@/hooks/useSEO";
 import {
   PROJECTS,
@@ -406,6 +407,21 @@ export default function OurProjects() {
         >
           {moreProjects.map((p) => (
             <div key={p.id} className="bg-stone p-6">
+              {p.images.length >= 3 && (
+                <div className="mb-4 -mx-6 -mt-6 grid grid-cols-3 grid-rows-2 gap-px aspect-[16/10] overflow-hidden bg-concrete/[0.08]">
+                  {p.images.slice(0, 3).map((img, i) => (
+                    <img
+                      key={img.src}
+                      src={img.src}
+                      alt={img.alt}
+                      className={`w-full h-full min-h-0 object-cover ${
+                        i === 0 ? "col-span-2 row-span-2" : ""
+                      }`}
+                      loading="lazy"
+                    />
+                  ))}
+                </div>
+              )}
               <div className="font-display text-base font-extrabold uppercase tracking-[0.04em] mb-1">
                 {p.title}
               </div>
@@ -413,6 +429,7 @@ export default function OurProjects() {
                 {p.city}
               </div>
               <p className="text-[0.82rem] text-muted-text leading-relaxed mb-4">{p.details}</p>
+              <ProjectSpecs project={p} />
               <div className="flex gap-6">
                 {p.sizeLabel && (
                   <div>

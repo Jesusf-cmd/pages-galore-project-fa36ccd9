@@ -711,7 +711,6 @@ export const prerenderBodies: Record<string, string> = {
     <ul>
       <li><strong>Guthrie warehouse forklift ramp</strong> — Reinforced ramp poured inside a live warehouse with active racking and inventory; power-trowel finish flush with the existing floor.</li>
       <li><strong>Rosedale 10,000 sq ft shop foundation</strong> — Commercial foundation pour on expansive clay with engineered rebar and a single coordinated pour. Video on <a href="/our-projects">our projects page</a>.</li>
-      <li><strong>Yukon commercial parking lot</strong> — 4,200 sq ft, 5&quot; reinforced concrete for a retail strip, completed in 5 days. <a href="/parking-lots-oklahoma-city">Commercial parking lot construction</a>.</li>
       <li><strong>Star Spencer High School (Spencer)</strong> — Stairs and ADA-compliant sidewalks/ramps for a public school project. <a href="/ada-concrete-ramps-oklahoma-city">ADA ramps</a> · <a href="/sidewalks-oklahoma-city">sidewalks</a>.</li>
     </ul>
     ${processSection("From Plans to Sealed Slab", [
@@ -792,7 +791,7 @@ export const prerenderBodies: Record<string, string> = {
       <li>Facility type, project location, approximate affected area, what you are seeing, desired timing, and photos of the damage</li>
     </ul>
     <h2>Related Project Evidence</h2>
-    <p>A concrete forklift ramp poured inside a live warehouse in Guthrie, Oklahoma — occupied-site warehouse work. Other verified commercial work includes a Yukon parking lot and Star Spencer High School ADA sidewalks. <a href="/our-projects">See completed projects</a>.</p>
+    <p>A concrete forklift ramp poured inside a live warehouse in Guthrie, Oklahoma — occupied-site warehouse work. <a href="/our-projects">See completed projects</a>, including the Guthrie ramp and Star Spencer High School ADA sidewalks.</p>
     <h2>Commercial Concrete Repair Use Cases</h2>
     <ul>
       <li><a href="/concrete-parking-lot-repair-oklahoma-city">Parking lot repair</a> · <a href="/parking-lots-oklahoma-city">Parking lot construction</a></li>
@@ -1237,7 +1236,7 @@ export const prerenderBodies: Record<string, string> = {
       <li><strong>Residential foundation — Piedmont, OK</strong> — Slab-on-grade on Oklahoma red clay with compacted aggregate base and engineered rebar.</li>
       <li><strong>New driveway &amp; approach — Edmond, OK</strong> — 6" thick, 24' wide concrete drive with a new approach.</li>
       <li><strong>Stamped patio — Norman, OK</strong> — Ashlar slate pattern with custom release and matte sealer.</li>
-      <li><strong>Commercial parking lot — Yukon, OK</strong> — 5" reinforced commercial lot graded for drainage.</li>
+      <li><strong>Concrete patio &amp; decorative paver walkway — Norman, OK</strong> — 12' × 12' broom-finish slab, 8" thick, with six 36" × 24" concrete pavers, picture-frame borders, and decorative river rock. Completed Project Cost: $8,200 — actual contract price for this completed project. Pricing for similar work varies based on site conditions, accessibility, materials, and project specifications.</li>
       <li><strong>Residential foundation — Mustang, OK</strong> — Slab-on-grade for a new residential build.</li>
       <li><strong>Backyard patio — Moore, OK</strong> — Broom-finish patio graded away from the structure.</li>
       <li><strong>City ROW sidewalk — Edmond, OK</strong> — Permitted sidewalk replacement with ADA curb ramp.</li>
