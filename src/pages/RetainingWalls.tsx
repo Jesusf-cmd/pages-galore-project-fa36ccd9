@@ -202,7 +202,7 @@ export default function RetainingWalls() {
         eyebrow: "Recent Retaining Walls",
         title: "Real Retaining Wall Projects",
         titleAccent: "in the OKC Metro.",
-        intro: "A 120-linear-foot, five-foot-tall poured concrete retaining wall we completed in Oklahoma City — 18-inch footing, excavation and earthwork, site preparation, drainage installation, and backfilling, with the construction scope addressing local clay soil conditions.",
+        intro: "View our <a href='/our-projects#okc-retaining-wall'>completed 120-linear-foot poured concrete retaining wall project in Oklahoma City</a>, including site preparation, drainage installation, and backfilling — a five-foot-tall wall on an 18-inch footing, with excavation and earthwork and a construction scope addressing local clay soil conditions.",
         photos: [
           { src: "/images/projects/poured-concrete-retaining-wall-oklahoma-city.webp", alt: "Poured concrete retaining wall with forms stripped beside a new home under construction in Oklahoma City, OK, with the next wall section still formed" },
         ],

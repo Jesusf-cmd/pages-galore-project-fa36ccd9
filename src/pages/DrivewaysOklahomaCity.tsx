@@ -104,7 +104,7 @@ export default function DrivewaysOklahomaCity() {
       proof={{
         eyebrow: "Proof",
         title: "Recent driveway projects",
-        intro: 'Featured: Edmond driveway replacement — 4" reinforced broom finish. More work across the metro on <a href="/our-projects" class="text-orange no-underline">our projects</a> page.',
+        intro: 'See our <a href="/our-projects#edmond-driveway" class="text-orange no-underline">completed concrete driveway and approach project in Edmond, Oklahoma</a> — a 6" thick, 24\' wide concrete drive with a new approach.',
         service: "driveways",
         ids: ["edmond-driveway"],
       }}
