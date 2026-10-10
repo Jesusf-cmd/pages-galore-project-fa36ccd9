@@ -18,7 +18,7 @@ const HOME_PROJECT_IDS = [
   "norman-patio-paver-walkway",
   "star-spencer-hs",
   "edmond-driveway",
-  "norman-stamped-patio",
+  "okc-stamped-patio",
   "okc-retaining-wall",
 ] as const;
 

@@ -93,11 +93,11 @@ export default function PatiosOklahomaCity() {
       proof={{
         eyebrow: "Proof",
         title: "Recent patio projects",
-        intro: 'Norman stamped patio (Ashlar Slate) and Moore broom-finish patio — contrast finishes, same base-prep standards. More at <a href="/our-projects" class="text-orange no-underline">our projects</a>.',
+        intro: 'Oklahoma City stamped patio (Ashlar Slate) and Moore broom-finish patio — contrast finishes, same base-prep standards. More at <a href="/our-projects" class="text-orange no-underline">our projects</a>.',
         service: "patios",
-        ids: ["norman-stamped-patio", "moore-patio"],
+        ids: ["okc-stamped-patio", "moore-patio"],
         badgeById: {
-          "norman-stamped-patio": "Stamped",
+          "okc-stamped-patio": "Stamped",
           "moore-patio": "Broom finish",
         },
       }}
@@ -108,7 +108,7 @@ export default function PatiosOklahomaCity() {
           titleAccent: "in OKC",
           content: [
             "Stamped concrete is applied during the pour while the slab is still plastic — color hardener and release agent first, then texture mats for crisp pattern detail. After cure we pressure-wash the release and apply sealer.",
-            "Patterns we pour (named only where we already document them): ashlar slate (including our Norman Ashlar Slate patio), random flagstone, herringbone brick, running bond, cobblestone, and wood plank. Combine a patio with a <a href='/driveways-oklahoma-city' class='text-orange no-underline font-medium'>concrete driveways</a> project or a retaining wall for a full outdoor rebuild.",
+            "Patterns we pour (named only where we already document them): ashlar slate (including our Oklahoma City Ashlar Slate patio), random flagstone, herringbone brick, running bond, cobblestone, and wood plank. Combine a patio with a <a href='/driveways-oklahoma-city' class='text-orange no-underline font-medium'>concrete driveways</a> project or a retaining wall for a full outdoor rebuild.",
           ],
         },
         {

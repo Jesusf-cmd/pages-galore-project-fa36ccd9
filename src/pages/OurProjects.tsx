@@ -137,24 +137,28 @@ const FEATURED_COPY: Record<
       <>
         Forklift Ramp
         <br />
-        Warehouse Concrete
+        Demolition &amp; Replacement
       </>
     ),
     body: (
       <>
-        <Link to="/commercial-concrete-oklahoma-city" className="text-orange no-underline">
-          Commercial concrete ramp
+        FDZ Construction completed a{" "}
+        <Link to="/commercial-concrete-repair-oklahoma-city" className="text-orange no-underline">
+          warehouse forklift ramp demolition and concrete replacement
         </Link>{" "}
-        built for forklift traffic inside a warehouse in Guthrie, Oklahoma. The ramp required precise
-        slope grading for smooth forklift transitions, a reinforced slab thickness to handle repeated
-        heavy equipment loads, and a power trowel finish flush with the surrounding warehouse floor.
-        Formed and poured in a live warehouse environment with active racking and inventory on site.
+        project in Guthrie, Oklahoma. The project involved removing existing concrete, preparing the
+        area for replacement, placing new concrete with a line pump, and applying a power-trowel
+        finish. Work was performed inside an operating warehouse — see our{" "}
+        <Link to="/industrial-concrete-repair-oklahoma-city" className="text-orange no-underline">
+          industrial concrete repair
+        </Link>{" "}
+        services.
       </>
     ),
     stats: [
-      { value: "Heavy", label: "Equipment loads" },
-      { value: "Trowel", label: "Smooth finish" },
-      { value: "Live", label: "Warehouse pour" },
+      { value: "Demo", label: "& pour-back" },
+      { value: "Line", label: "Pump placement" },
+      { value: "Live", label: "Warehouse" },
     ],
     media: "grid",
   },
@@ -338,6 +342,7 @@ export default function OurProjects() {
               <p className="text-[0.88rem] text-muted-text leading-[1.8] font-light mb-5">
                 {copy.body}
               </p>
+              <ProjectSpecs project={project} />
               <div
                 className="flex gap-8 pt-4"
                 style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}
