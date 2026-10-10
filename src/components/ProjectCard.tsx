@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Project } from "@/data/projects";
+import ProjectSpecs from "@/components/ProjectSpecs";
 
 type ProjectCardProps = {
   project: Project;
@@ -39,7 +40,10 @@ export default function ProjectCard({ project, badge }: ProjectCardProps) {
       <div className="text-[0.66rem] text-orange tracking-[0.1em] uppercase font-bold mb-3">
         {project.city}
       </div>
-      <p className="text-[0.82rem] text-muted-text leading-relaxed mb-4 flex-1">{project.details}</p>
+      <div className="flex-1">
+        <p className="text-[0.82rem] text-muted-text leading-relaxed mb-4">{project.details}</p>
+        <ProjectSpecs project={project} />
+      </div>
       <Link to={project.ownerPath} className="text-orange no-underline text-[0.78rem] font-semibold">
         View related service →
       </Link>
