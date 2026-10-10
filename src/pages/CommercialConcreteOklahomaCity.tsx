@@ -311,7 +311,7 @@ export default function CommercialConcreteOklahomaCity() {
         eyebrow: "Recent Commercial Work",
         title: "Real Commercial Concrete Projects",
         titleAccent: "in the OKC Metro.",
-        intro: "A concrete forklift ramp we built inside a live warehouse in Guthrie, Oklahoma — poured around active racking and inventory, with a reinforced slab sized for repeated heavy equipment loads and a power trowel finish flush with the existing floor. More verified commercial work — including the Rosedale shop foundation video and Yukon parking lot — is on our <a href='/our-projects'>projects and case studies</a> page.",
+        intro: "A concrete forklift ramp we built inside a live warehouse in Guthrie, Oklahoma — poured around active racking and inventory, with a reinforced slab sized for repeated heavy equipment loads and a power trowel finish flush with the existing floor. More verified commercial work — including the Rosedale shop foundation video and Star Spencer High School ADA sidewalks — is on our <a href='/our-projects'>projects and case studies</a> page.",
         photos: [
           { src: "/images/projects/forklift-ramp-pour-guthrie-oklahoma-1.webp", alt: "Power trowel finishing a concrete forklift ramp pour inside a warehouse in Guthrie, Oklahoma" },
           { src: "/images/projects/forklift-ramp-pour-guthrie-oklahoma-2.webp", alt: "Crew troweling concrete forklift ramp in Guthrie, OK warehouse — forms and fresh pour visible" },

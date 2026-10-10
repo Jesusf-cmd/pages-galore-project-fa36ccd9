@@ -1,9 +1,12 @@
-import { describe, expect, it } from "vitest";
+import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import ProjectGrid from "@/components/ProjectGrid";
 import OurProjects from "@/pages/OurProjects";
+import CommercialConcreteOklahomaCity from "@/pages/CommercialConcreteOklahomaCity";
+import CommercialConcreteRepair from "@/pages/CommercialConcreteRepair";
 import { EXAMPLE_BUDGET_DISCLAIMER, PROJECTS, getProjectById } from "@/data/projects";
+import { getPrerenderBody } from "../../scripts/prerender-bodies";
 
 const NEW_ID = "norman-patio-paver-walkway";
 
@@ -68,6 +71,69 @@ describe("Norman patio & paver walkway project", () => {
       .getAllByRole("img")
       .filter((img) => img.getAttribute("src")?.includes("norman-oklahoma"));
     expect(photos).toHaveLength(3);
+  });
+
+  describe("commercial pages no longer send visitors to /our-projects for the Yukon parking lot", () => {
+    const sentenceWith = (text: string, needle: string) =>
+      text.split(/(?<=\.)\s+/).filter((s) => s.includes(needle));
+    const SHOWN_ON_OUR_PROJECTS = /Guthrie|Star Spencer|Rosedale/;
+
+    /** A pointer next to a Yukon mention must name what /our-projects actually shows. */
+    const expectNoYukonPointer = (block: string, needle: string) => {
+      for (const sentence of sentenceWith(block, needle)) {
+        expect(sentence).not.toMatch(/yukon/i);
+        if (/yukon/i.test(block)) expect(sentence).toMatch(SHOWN_ON_OUR_PROJECTS);
+      }
+    };
+
+    const COMMERCIAL_PATHS = [
+      "/commercial-concrete-oklahoma-city",
+      "/commercial-concrete-repair-oklahoma-city",
+    ] as const;
+
+    it.each(COMMERCIAL_PATHS)("crawler HTML for %s", (path) => {
+      const body = getPrerenderBody(path) ?? "";
+      expect(body).toContain("Yukon");
+      const blocks = body.match(/<(p|li)>[\s\S]*?<\/\1>/g) ?? [];
+      const pointerBlocks = blocks.filter((b) => b.includes('href="/our-projects"'));
+      expect(pointerBlocks.length).toBeGreaterThan(0);
+      for (const block of pointerBlocks) expectNoYukonPointer(block, 'href="/our-projects"');
+    });
+
+    beforeAll(() => {
+      vi.stubGlobal(
+        "IntersectionObserver",
+        class {
+          observe() {}
+          unobserve() {}
+          disconnect() {}
+          takeRecords() {
+            return [];
+          }
+        },
+      );
+    });
+    afterAll(() => {
+      vi.unstubAllGlobals();
+    });
+
+    it.each([
+      ["/commercial-concrete-oklahoma-city", CommercialConcreteOklahomaCity],
+      ["/commercial-concrete-repair-oklahoma-city", CommercialConcreteRepair],
+    ] as const)("rendered React page for %s", (path, Page) => {
+      const { container, unmount } = render(
+        <MemoryRouter initialEntries={[path]}>
+          <Page />
+        </MemoryRouter>,
+      );
+      expect(container.textContent).toMatch(/Yukon parking lot|Yukon — commercial parking lot/);
+      const links = [...container.querySelectorAll('a[href="/our-projects"]')];
+      expect(links.length).toBeGreaterThan(0);
+      for (const link of links) {
+        expectNoYukonPointer(link.closest("p, li")?.textContent ?? "", link.textContent ?? "");
+      }
+      unmount();
+    });
   });
 
   it("does not add photos to other /our-projects More Projects cards", () => {

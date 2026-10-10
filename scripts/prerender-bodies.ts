@@ -792,7 +792,7 @@ export const prerenderBodies: Record<string, string> = {
       <li>Facility type, project location, approximate affected area, what you are seeing, desired timing, and photos of the damage</li>
     </ul>
     <h2>Related Project Evidence</h2>
-    <p>A concrete forklift ramp poured inside a live warehouse in Guthrie, Oklahoma — occupied-site warehouse work. Other verified commercial work includes a Yukon parking lot and Star Spencer High School ADA sidewalks. <a href="/our-projects">See completed projects</a>.</p>
+    <p>A concrete forklift ramp poured inside a live warehouse in Guthrie, Oklahoma — occupied-site warehouse work. Other verified commercial work includes a Yukon parking lot. <a href="/our-projects">See completed projects</a>, including the Guthrie ramp and Star Spencer High School ADA sidewalks.</p>
     <h2>Commercial Concrete Repair Use Cases</h2>
     <ul>
       <li><a href="/concrete-parking-lot-repair-oklahoma-city">Parking lot repair</a> · <a href="/parking-lots-oklahoma-city">Parking lot construction</a></li>
