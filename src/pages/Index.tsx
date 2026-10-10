@@ -15,7 +15,7 @@ import ProjectGrid from "@/components/ProjectGrid";
 
 const HOME_PROJECT_IDS = [
   "guthrie-forklift-ramp",
-  "yukon-parking-lot",
+  "norman-patio-paver-walkway",
   "star-spencer-hs",
   "edmond-driveway",
   "norman-stamped-patio",

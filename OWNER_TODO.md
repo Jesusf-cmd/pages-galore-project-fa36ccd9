@@ -11,7 +11,6 @@ Items marked `TODO(FDZ)` in source. None of this text appears in built HTML (ver
 | `src/pages/OurProjects.tsx` | 258 | Project photo placeholder |
 | `src/components/ProjectCard.tsx` | 24 | Fallback when a project has no images |
 | `src/data/projects.ts` | 216 | `norman-stamped-patio` — photos |
-| `src/data/projects.ts` | 230 | `yukon-parking-lot` — photos |
 | `src/data/projects.ts` | 244 | `mustang-foundation` — photos |
 | `src/data/projects.ts` | 258 | `moore-patio` — photos |
 | `src/data/projects.ts` | 272 | `edmond-row-sidewalk` — photos |
