@@ -54,8 +54,13 @@ export default function ProjectCard({ project, badge }: ProjectCardProps) {
         <ProjectSpecs project={project} />
       </div>
       {!isOwnerPage && (
-        <Link to={project.ownerPath} className="text-orange no-underline text-[0.78rem] font-semibold">
-          {project.serviceLinkLabel} <span aria-hidden="true">→</span>
+        <Link
+          to={project.ownerPath}
+          className="inline-flex items-center min-h-[44px] -mt-[10px] -mb-[14px] text-orange no-underline text-[0.78rem] font-semibold"
+        >
+          <span>
+            {project.serviceLinkLabel} <span aria-hidden="true">→</span>
+          </span>
         </Link>
       )}
     </article>

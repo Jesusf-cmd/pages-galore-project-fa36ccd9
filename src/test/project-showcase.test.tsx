@@ -474,6 +474,8 @@ describe("project-to-service internal links", () => {
       const card = screen.getByRole("heading", { name: getProjectById(id)!.title }).closest("article")!;
       const link = within(card).getByRole("link", { name: label });
       expect(link.getAttribute("href")).toBe(href);
+      expect(link.textContent).toBe(`${label} →`);
+      expect(link.className).toContain("min-h-[44px]");
       expect(link.getAttribute("rel")).toBeNull();
       expect(link.getAttribute("target")).toBeNull();
     }
@@ -509,6 +511,8 @@ describe("project-to-service internal links", () => {
         name: p.serviceLinkLabel,
       });
       expect(link.getAttribute("href")).toBe(p.ownerPath);
+      expect(link.textContent).toBe(`${p.serviceLinkLabel} →`);
+      expect(link.className).toContain("min-h-[44px]");
     }
   });
 

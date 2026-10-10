@@ -454,9 +454,11 @@ export default function OurProjects() {
               </div>
               <Link
                 to={p.ownerPath}
-                className="inline-block mt-4 text-orange no-underline text-[0.78rem] font-semibold"
+                className="flex w-fit items-center min-h-[44px] mt-[6px] -mb-[14px] text-orange no-underline text-[0.78rem] font-semibold"
               >
-                {p.serviceLinkLabel} <span aria-hidden="true">→</span>
+                <span>
+                  {p.serviceLinkLabel} <span aria-hidden="true">→</span>
+                </span>
               </Link>
             </div>
           ))}
