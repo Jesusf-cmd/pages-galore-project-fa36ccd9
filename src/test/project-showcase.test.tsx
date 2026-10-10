@@ -4,6 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import ProjectGrid from "@/components/ProjectGrid";
 import OurProjects from "@/pages/OurProjects";
 import PatiosOklahomaCity from "@/pages/PatiosOklahomaCity";
+import RetainingWalls from "@/pages/RetainingWalls";
 import CommercialConcreteOklahomaCity from "@/pages/CommercialConcreteOklahomaCity";
 import CommercialConcreteRepair from "@/pages/CommercialConcreteRepair";
 import { COMPLETED_COST_NOTE, PROJECTS, getProjectById, type Project } from "@/data/projects";
@@ -12,6 +13,7 @@ import { getPrerenderBody } from "../../scripts/prerender-bodies";
 const NEW_ID = "norman-patio-paver-walkway";
 const GUTHRIE_ID = "guthrie-forklift-ramp";
 const STAMPED_ID = "okc-stamped-patio";
+const RETAINING_ID = "okc-retaining-wall";
 
 beforeAll(() => {
   vi.stubGlobal(
@@ -308,9 +310,10 @@ describe("Oklahoma City Ashlar slate stamped patio", () => {
     expect(getProjectById(NEW_ID)!.completedCost).toBe("$8,200");
   });
 
-  it("uses the same completed-cost presentation for all three priced projects", () => {
+  it("uses the same completed-cost presentation for all four priced projects", () => {
     const priced = PROJECTS.filter((p) => p.completedCost).map((p) => [p.id, p.completedCost]);
     expect(priced).toEqual([
+      [RETAINING_ID, "$21,000"],
       [GUTHRIE_ID, "$3,200"],
       [STAMPED_ID, "$7,500"],
       [NEW_ID, "$8,200"],
@@ -329,6 +332,90 @@ describe("Oklahoma City Ashlar slate stamped patio", () => {
   });
 });
 
+describe("Oklahoma City poured concrete retaining wall", () => {
+  const wall = () => getProjectById(RETAINING_ID)!;
+  const UNSUPPORTED = /engineer|monolithic|lateral pressure|PSI|rebar|stamped by|hydrostatic/i;
+  const SCOPE = [
+    "120 linear ft poured concrete retaining wall",
+    "5 ft wall height",
+    "18-inch footing",
+    "Excavation and earthwork",
+    "Site grading and preparation",
+    "Drainage installed per project specifications",
+    "Backfilling",
+    "Construction designed to address Oklahoma City clay soil conditions",
+  ];
+
+  it("updates the existing entry with the confirmed scope and cost", () => {
+    expect(PROJECTS.filter((p) => /retaining wall/i.test(p.title))).toHaveLength(1);
+    expect(wall()).toMatchObject({
+      title: "Poured concrete retaining wall",
+      city: "Oklahoma City, OK",
+      ownerPath: "/retaining-walls-oklahoma-city",
+      completedCost: "$21,000",
+      featured: true,
+    });
+    expect(wall().specs).toEqual(SCOPE);
+    expect(wall().timeLabel).toBeUndefined();
+    expect(JSON.stringify(wall())).not.toMatch(UNSUPPORTED);
+  });
+
+  it("keeps the existing authentic photo with descriptive Oklahoma City alt text", () => {
+    expect(wall().images).toHaveLength(1);
+    expect(wall().images[0].src).toBe("/images/projects/poured-concrete-retaining-wall-oklahoma-city.webp");
+    expect(wall().images[0].alt).toMatch(/Oklahoma City, OK/);
+    expect(wall().images[0].illustration).toBeUndefined();
+  });
+
+  it("shows the scope, $21,000 cost, and note on the home card", () => {
+    render(
+      <MemoryRouter>
+        <ProjectGrid ids={[RETAINING_ID]} />
+      </MemoryRouter>,
+    );
+    const card = screen.getByRole("article");
+    for (const item of SCOPE) expect(within(card).getByText(item)).toBeTruthy();
+    expect(within(card).getByText("$21,000")).toBeTruthy();
+    expect(within(card).getByText(COMPLETED_COST_NOTE)).toBeTruthy();
+    expect(within(card).getByRole("link").getAttribute("href")).toBe("/retaining-walls-oklahoma-city");
+  });
+
+  it("uses the confirmed description, specs, and cost in the /our-projects featured block", () => {
+    renderOurProjects();
+    const block = ourProjectsBlock(wall()).parentElement!;
+    const text = block.textContent ?? "";
+    expect(text).toContain("FDZ Construction completed a 120-linear-foot poured concrete retaining wall in Oklahoma City");
+    expect(text).toContain("The five-foot-tall retaining wall project included an 18-inch footing");
+    expect(text).toContain("drainage and backfill completed according to project specifications");
+    for (const item of SCOPE) expect(within(block).getByText(item)).toBeTruthy();
+    expect(within(block).getByText("$21,000")).toBeTruthy();
+    expect(within(block).getByText(COMPLETED_COST_NOTE)).toBeTruthy();
+    expect(text).not.toMatch(UNSUPPORTED);
+    const hrefs = within(block).getAllByRole("link").map((a) => a.getAttribute("href"));
+    expect(hrefs).toContain("/retaining-walls-oklahoma-city");
+  });
+
+  it("describes the same project on the retaining wall service page, visible and crawler, without a price", () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={["/retaining-walls-oklahoma-city"]}>
+        <RetainingWalls />
+      </MemoryRouter>,
+    );
+    const visible = container.textContent ?? "";
+    const crawler = getPrerenderBody("/retaining-walls-oklahoma-city") ?? "";
+    const sentence =
+      "A 120-linear-foot, five-foot-tall poured concrete retaining wall we completed in Oklahoma City — 18-inch footing, excavation and earthwork, site preparation, drainage installation, and backfilling, with the construction scope addressing local clay soil conditions.";
+    expect(visible).toContain(sentence);
+    expect(crawler).toContain(sentence);
+    expect(visible).not.toContain("$21,000");
+    expect(crawler).not.toContain("$21,000");
+    expect(container.querySelector('a[href="/our-projects"]')).not.toBeNull();
+    expect(crawler).toContain('href="/our-projects"');
+    expect(visible).not.toMatch(/lateral pressure of OKC/);
+    expect(crawler).not.toMatch(/engineered for the lateral pressure/);
+  });
+});
+
 describe("/our-projects crawler HTML matches the visible project details", () => {
   const body = () => getPrerenderBody("/our-projects") ?? "";
 
@@ -337,6 +424,13 @@ describe("/our-projects crawler HTML matches the visible project details", () =>
     expect(body()).toContain("line pump");
     expect(body()).toContain("reinforced with wire mesh, graded for forklift transitions");
     expect(body()).toContain("Completed Project Cost: $3,200");
+  });
+
+  it("lists the retaining wall with its confirmed scope and cost", () => {
+    expect(body()).toContain("Poured concrete retaining wall — Oklahoma City, OK");
+    expect(body()).toContain("120 linear ft, 5 ft tall poured concrete retaining wall with an 18-inch footing");
+    expect(body()).toContain("Completed Project Cost: $21,000");
+    expect(body()).not.toMatch(/Monolithic wall engineered/);
   });
 
   it("lists the stamped patio in Oklahoma City, not Norman", () => {

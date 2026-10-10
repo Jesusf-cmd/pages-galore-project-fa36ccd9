@@ -120,22 +120,29 @@ export const PROJECTS: Project[] = [
     city: "Oklahoma City, OK",
     service: "retaining walls",
     ownerPath: "/retaining-walls-oklahoma-city",
-    details: "Engineered for OKC clay with drainage",
+    details:
+      "120 linear ft, 5 ft tall poured concrete retaining wall with an 18-inch footing, drainage, and backfill for Oklahoma City clay soil",
     images: [
       {
         src: "/images/projects/poured-concrete-retaining-wall-oklahoma-city.webp",
-        alt: alt(
-          "Engineered for OKC clay with drainage",
-          "Poured concrete retaining wall",
-          "Oklahoma City, OK",
-        ),
+        alt: "Poured concrete retaining wall with forms stripped beside a new home under construction in Oklahoma City, OK, with the next wall section still formed",
       },
     ],
     sqft: null, // TODO(FDZ)
     year: null, // TODO(FDZ)
     featured: true,
-    sizeLabel: "Residential",
-    timeLabel: "Multi-day",
+    sizeLabel: "120 linear ft",
+    specs: [
+      "120 linear ft poured concrete retaining wall",
+      "5 ft wall height",
+      "18-inch footing",
+      "Excavation and earthwork",
+      "Site grading and preparation",
+      "Drainage installed per project specifications",
+      "Backfilling",
+      "Construction designed to address Oklahoma City clay soil conditions",
+    ],
+    completedCost: "$21,000",
   },
   {
     id: "guthrie-forklift-ramp",
