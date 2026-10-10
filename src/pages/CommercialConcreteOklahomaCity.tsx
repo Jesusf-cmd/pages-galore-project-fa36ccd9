@@ -231,7 +231,6 @@ export default function CommercialConcreteOklahomaCity() {
           content: [
             "<strong>Guthrie — warehouse forklift ramp.</strong> Reinforced commercial ramp poured inside a live warehouse with active racking and inventory on site. Precise slope for forklift transitions, power-trowel finish flush with the existing floor, sized for repeated heavy equipment loads. Photos below.",
             "<strong>Rosedale — 10,000 sq ft shop foundation.</strong> Large-scale commercial foundation pour on expansive clay with engineered rebar and coordinated placement across the full slab footprint in a single pour. Power trowel finish throughout. Video on our <a href='/our-projects'>completed projects</a> page.",
-            "<strong>Yukon — commercial parking lot.</strong> 4,200 sq ft, 5\" reinforced concrete for a retail strip — graded for drainage and completed in 5 days. Related: <a href='/parking-lots-oklahoma-city'>commercial parking lot construction</a>.",
             "<strong>Spencer — Star Spencer High School.</strong> New concrete stairs and ADA-compliant sidewalks and ramps for a public school project, completed on the district schedule. Related: <a href='/ada-concrete-ramps-oklahoma-city'>ADA ramps</a>, <a href='/sidewalks-oklahoma-city'>sidewalks</a>, and <a href='/commercial-curb-and-gutter-oklahoma-city'>curb &amp; gutter</a>.",
           ],
         },

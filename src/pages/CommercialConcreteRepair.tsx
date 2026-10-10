@@ -280,7 +280,7 @@ export default function CommercialConcreteRepair() {
         title: "Related Project Evidence",
         titleAccent: "in the OKC Metro.",
         intro:
-          "A concrete forklift ramp poured inside a live warehouse in Guthrie, Oklahoma — the same occupied-site conditions that show up on warehouse slab and dock repairs. Other verified commercial work includes a Yukon parking lot. Photos of the Guthrie ramp and Star Spencer High School ADA sidewalks are on our <a href='/our-projects'>projects page</a>.",
+          "A concrete forklift ramp poured inside a live warehouse in Guthrie, Oklahoma — the same occupied-site conditions that show up on warehouse slab and dock repairs. Photos of the Guthrie ramp and Star Spencer High School ADA sidewalks are on our <a href='/our-projects'>projects page</a>.",
         photos: [
           { src: "/images/projects/forklift-ramp-pour-guthrie-oklahoma-1.webp", alt: "Power trowel finishing a concrete forklift ramp pour inside a warehouse in Guthrie, Oklahoma" },
           { src: "/images/projects/forklift-ramp-pour-guthrie-oklahoma-2.webp", alt: "Crew troweling concrete forklift ramp in Guthrie, OK warehouse — forms and fresh pour visible" },

@@ -1,8 +1,8 @@
-import { EXAMPLE_BUDGET_DISCLAIMER, type Project } from "@/data/projects";
+import { COMPLETED_COST_NOTE, type Project } from "@/data/projects";
 
 export default function ProjectSpecs({ project }: { project: Project }) {
   const hasSpecs = Boolean(project.specs?.length);
-  if (!hasSpecs && !project.exampleBudget) return null;
+  if (!hasSpecs && !project.completedCost) return null;
 
   return (
     <div className="mb-4">
@@ -22,11 +22,15 @@ export default function ProjectSpecs({ project }: { project: Project }) {
           ))}
         </ul>
       )}
-      {project.exampleBudget && (
+      {project.completedCost && (
         <div className="pt-3" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
-          <div className="font-display text-lg font-black text-orange">{project.exampleBudget}</div>
-          <div className="text-[0.6rem] text-muted-text uppercase tracking-wider">Example project budget</div>
-          <p className="text-[0.66rem] text-muted-text leading-relaxed mt-2">{EXAMPLE_BUDGET_DISCLAIMER}</p>
+          <p className="flex flex-wrap items-baseline gap-x-2">
+            <span className="text-[0.66rem] text-muted-text uppercase tracking-wider font-bold">
+              Completed Project Cost:
+            </span>{" "}
+            <span className="font-display text-lg font-black text-orange">{project.completedCost}</span>
+          </p>
+          <p className="text-[0.66rem] text-muted-text leading-relaxed mt-2">{COMPLETED_COST_NOTE}</p>
         </div>
       )}
     </div>

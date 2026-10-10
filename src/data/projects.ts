@@ -26,12 +26,12 @@ export type Project = {
   timeLabel?: string | null;
   /** Optional owner-confirmed specification bullets. */
   specs?: string[];
-  /** Optional example budget label; always rendered with EXAMPLE_BUDGET_DISCLAIMER. */
-  exampleBudget?: string | null;
+  /** Optional owner-confirmed contract price; always rendered with COMPLETED_COST_NOTE. */
+  completedCost?: string | null;
 };
 
-export const EXAMPLE_BUDGET_DISCLAIMER =
-  "Example budget from this completed project — not a quote. Pricing varies with size, site conditions, access, finish, and material costs; your written estimate sets the final scope and price.";
+export const COMPLETED_COST_NOTE =
+  "Actual contract price for this completed project. Pricing for similar work varies based on site conditions, accessibility, materials, and project specifications.";
 
 function alt(details: string, title: string, city: string): string {
   return `${details} — ${title}, ${city}`;
@@ -262,7 +262,7 @@ export const PROJECTS: Project[] = [
       "Broom finish with picture-frame borders",
       "Decorative river rock installation",
     ],
-    exampleBudget: "$8,200",
+    completedCost: "$8,200",
   },
   {
     id: "mustang-foundation",

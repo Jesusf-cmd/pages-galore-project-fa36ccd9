@@ -1,11 +1,11 @@
-import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
+﻿import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import ProjectGrid from "@/components/ProjectGrid";
 import OurProjects from "@/pages/OurProjects";
 import CommercialConcreteOklahomaCity from "@/pages/CommercialConcreteOklahomaCity";
 import CommercialConcreteRepair from "@/pages/CommercialConcreteRepair";
-import { EXAMPLE_BUDGET_DISCLAIMER, PROJECTS, getProjectById } from "@/data/projects";
+import { COMPLETED_COST_NOTE, PROJECTS, getProjectById } from "@/data/projects";
 import { getPrerenderBody } from "../../scripts/prerender-bodies";
 
 const NEW_ID = "norman-patio-paver-walkway";
@@ -38,7 +38,7 @@ describe("Norman patio & paver walkway project", () => {
     });
   });
 
-  it("renders specs, the example budget, and the disclaimer on the project card", () => {
+  it("renders specs, the completed project cost, and the contract-price note on the project card", () => {
     render(
       <MemoryRouter>
         <ProjectGrid ids={[NEW_ID]} />
@@ -51,7 +51,9 @@ describe("Norman patio & paver walkway project", () => {
     expect(within(card).getByText("Broom finish with picture-frame borders")).toBeTruthy();
     expect(within(card).getByText("Decorative river rock installation")).toBeTruthy();
     expect(within(card).getByText("$8,200")).toBeTruthy();
-    expect(within(card).getByText(EXAMPLE_BUDGET_DISCLAIMER)).toBeTruthy();
+    expect(within(card).getByText("Completed Project Cost:")).toBeTruthy();
+    expect(within(card).getByText(COMPLETED_COST_NOTE)).toBeTruthy();
+    expect(card.textContent).not.toMatch(/example (project )?budget|not a quote/i);
     expect(within(card).getByRole("img").getAttribute("src")).toContain("paver-walkway-river-rock");
     expect(within(card).getByRole("link").getAttribute("href")).toBe("/patios-oklahoma-city");
   });
@@ -66,25 +68,17 @@ describe("Norman patio & paver walkway project", () => {
     expect(screen.getByText("Concrete patio & decorative paver walkway")).toBeTruthy();
     expect(screen.getByText("Stamped patio")).toBeTruthy();
     expect(screen.getByText("$8,200")).toBeTruthy();
-    expect(screen.getByText(EXAMPLE_BUDGET_DISCLAIMER)).toBeTruthy();
+    expect(screen.getByText("Completed Project Cost:")).toBeTruthy();
+    expect(screen.getByText(COMPLETED_COST_NOTE)).toBeTruthy();
     const photos = screen
       .getAllByRole("img")
       .filter((img) => img.getAttribute("src")?.includes("norman-oklahoma"));
     expect(photos).toHaveLength(3);
   });
 
-  describe("commercial pages no longer send visitors to /our-projects for the Yukon parking lot", () => {
-    const sentenceWith = (text: string, needle: string) =>
-      text.split(/(?<=\.)\s+/).filter((s) => s.includes(needle));
-    const SHOWN_ON_OUR_PROJECTS = /Guthrie|Star Spencer|Rosedale/;
-
-    /** A pointer next to a Yukon mention must name what /our-projects actually shows. */
-    const expectNoYukonPointer = (block: string, needle: string) => {
-      for (const sentence of sentenceWith(block, needle)) {
-        expect(sentence).not.toMatch(/yukon/i);
-        if (/yukon/i.test(block)) expect(sentence).toMatch(SHOWN_ON_OUR_PROJECTS);
-      }
-    };
+  describe("commercial pages make no unverified Yukon parking lot project claims", () => {
+    const YUKON_LOT_CLAIM = /Yukon[^.]{0,80}parking lot|parking lot[^.]{0,40}Yukon|4,200 sq ft|retail strip/i;
+    const VERIFIED_PROJECTS = ["Guthrie", "Star Spencer"];
 
     const COMMERCIAL_PATHS = [
       "/commercial-concrete-oklahoma-city",
@@ -93,11 +87,10 @@ describe("Norman patio & paver walkway project", () => {
 
     it.each(COMMERCIAL_PATHS)("crawler HTML for %s", (path) => {
       const body = getPrerenderBody(path) ?? "";
-      expect(body).toContain("Yukon");
-      const blocks = body.match(/<(p|li)>[\s\S]*?<\/\1>/g) ?? [];
-      const pointerBlocks = blocks.filter((b) => b.includes('href="/our-projects"'));
-      expect(pointerBlocks.length).toBeGreaterThan(0);
-      for (const block of pointerBlocks) expectNoYukonPointer(block, 'href="/our-projects"');
+      expect(body).not.toMatch(YUKON_LOT_CLAIM);
+      expect(body).toMatch(/href=["']\/parking-lots-oklahoma-city["']/);
+      expect(body).toMatch(/href=["']\/our-projects["']/);
+      for (const name of VERIFIED_PROJECTS) expect(body).toContain(name);
     });
 
     beforeAll(() => {
@@ -126,12 +119,11 @@ describe("Norman patio & paver walkway project", () => {
           <Page />
         </MemoryRouter>,
       );
-      expect(container.textContent).toMatch(/Yukon parking lot|Yukon — commercial parking lot/);
-      const links = [...container.querySelectorAll('a[href="/our-projects"]')];
-      expect(links.length).toBeGreaterThan(0);
-      for (const link of links) {
-        expectNoYukonPointer(link.closest("p, li")?.textContent ?? "", link.textContent ?? "");
-      }
+      const text = container.textContent ?? "";
+      expect(text).not.toMatch(YUKON_LOT_CLAIM);
+      expect(container.querySelector('a[href="/parking-lots-oklahoma-city"]')).not.toBeNull();
+      expect(container.querySelector('a[href="/our-projects"]')).not.toBeNull();
+      for (const name of VERIFIED_PROJECTS) expect(text).toContain(name);
       unmount();
     });
   });
