@@ -23,8 +23,8 @@ export default function ProjectCard({ project, badge }: ProjectCardProps) {
               loading="lazy"
             />
             {image.illustration && (
-              <span className="absolute left-2 bottom-2 bg-black/75 text-white px-2 py-1 text-[0.6rem] tracking-[0.1em] uppercase font-bold">
-                AI illustration — not a project photo
+              <span className="absolute right-2 top-2 bg-black/60 text-white px-1.5 py-0.5 text-[0.55rem] tracking-[0.1em] uppercase font-semibold">
+                Illustration
               </span>
             )}
           </>

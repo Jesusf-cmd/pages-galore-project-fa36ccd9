@@ -272,7 +272,7 @@ describe("Oklahoma City Ashlar slate stamped patio", () => {
     expect(PROJECTS.filter((p) => p.id !== STAMPED_ID).flatMap((p) => p.images).some((i) => i.illustration)).toBe(false);
   });
 
-  it("shows the visible AI illustration label on the home card", () => {
+  it("shows a visible Illustration tag on the home card", () => {
     render(
       <MemoryRouter>
         <ProjectGrid ids={[STAMPED_ID]} />
@@ -280,7 +280,7 @@ describe("Oklahoma City Ashlar slate stamped patio", () => {
     );
     const card = screen.getByRole("article");
     expect(within(card).getByRole("img").getAttribute("alt")).toMatch(/AI-generated illustration/);
-    expect(within(card).getByText("AI illustration — not a project photo")).toBeTruthy();
+    expect(within(card).getByText("Illustration")).toBeTruthy();
     expect(within(card).getByText("$7,500")).toBeTruthy();
   });
 
@@ -290,7 +290,7 @@ describe("Oklahoma City Ashlar slate stamped patio", () => {
         <ProjectGrid ids={[GUTHRIE_ID, NEW_ID]} />
       </MemoryRouter>,
     );
-    expect(screen.queryByText("AI illustration — not a project photo")).toBeNull();
+    expect(screen.queryByText("Illustration")).toBeNull();
   });
 
   it("shows Oklahoma City, 420 sq ft, and $7,500 on the /our-projects card", () => {
