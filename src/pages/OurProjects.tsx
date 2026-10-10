@@ -114,20 +114,20 @@ const FEATURED_COPY: Record<
     ),
     body: (
       <>
-        Tall{" "}
+        FDZ Construction completed a 120-linear-foot{" "}
         <Link to="/retaining-walls-oklahoma-city" className="text-orange no-underline">
           poured concrete retaining wall
         </Link>{" "}
-        built alongside a new residential construction project in Oklahoma City. Forms stripped to
-        reveal a clean monolithic structure — no block joints to shift or crack over time. Wall was
-        designed for the lateral pressure of OKC&apos;s expansive clay soil with proper drainage
-        behind the wall to prevent hydrostatic buildup.
+        in Oklahoma City, Oklahoma. The five-foot-tall retaining wall project included an 18-inch
+        footing, excavation, earthwork, site preparation, drainage installation, and backfilling. The
+        construction scope addressed local clay soil conditions, with drainage and backfill completed
+        according to project specifications.
       </>
     ),
     stats: [
-      { value: "Poured", label: "Concrete wall" },
-      { value: "Mono", label: "lithic structure" },
-      { value: "Clay", label: "Soil engineered" },
+      { value: "120 ft", label: "Linear wall" },
+      { value: "5 ft", label: "Wall height" },
+      { value: "18 in", label: "Footing" },
     ],
     media: "single",
   },
@@ -255,7 +255,7 @@ function FeaturedMedia({
 
   const img = project.images[0];
   return (
-    <div className="bg-darker relative overflow-hidden min-h-[320px]">
+    <div className="bg-darker relative overflow-hidden min-h-[320px] h-full">
       {img ? (
         <img src={img.src} alt={img.alt} className="w-full h-full object-cover" loading="lazy" />
       ) : (
