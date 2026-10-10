@@ -168,6 +168,8 @@ export const PROJECTS: Project[] = [
       "Demolition and removal of existing concrete",
       "Concrete ramp replacement and pour-back",
       "Concrete placed with a line pump",
+      "Reinforced with wire mesh",
+      "Graded slope for forklift transitions",
       "Power-trowel finish",
       "Work performed inside an active warehouse",
     ],

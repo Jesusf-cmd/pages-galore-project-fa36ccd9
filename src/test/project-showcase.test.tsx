@@ -155,6 +155,8 @@ describe("Guthrie warehouse forklift ramp", () => {
       "Demolition and removal of existing concrete",
       "Concrete ramp replacement and pour-back",
       "Concrete placed with a line pump",
+      "Reinforced with wire mesh",
+      "Graded slope for forklift transitions",
       "Power-trowel finish",
       "Work performed inside an active warehouse",
     ]);
@@ -180,6 +182,8 @@ describe("Guthrie warehouse forklift ramp", () => {
     expect(within(card).getByText("Completed Project Cost:")).toBeTruthy();
     expect(within(card).getByText(COMPLETED_COST_NOTE)).toBeTruthy();
     expect(within(card).getByText("Concrete placed with a line pump")).toBeTruthy();
+    expect(within(card).getByText("Reinforced with wire mesh")).toBeTruthy();
+    expect(within(card).getByText("Graded slope for forklift transitions")).toBeTruthy();
     expect(within(card).getByRole("link").getAttribute("href")).toBe("/commercial-concrete-repair-oklahoma-city");
   });
 
@@ -191,13 +195,46 @@ describe("Guthrie warehouse forklift ramp", () => {
     expect(text).toContain("placing new concrete with a line pump");
     expect(text).toContain("power-trowel finish");
     expect(text).toContain("Concrete ramp replacement and pour-back");
-    expect(text).not.toMatch(/reinforced slab|slope grading|heavy equipment loads/i);
+    expect(text).toContain("Reinforced with wire mesh");
+    expect(text).toContain("Graded slope for forklift transitions");
     expect(within(block).getByText("$3,200")).toBeTruthy();
     expect(within(block).getByText(COMPLETED_COST_NOTE)).toBeTruthy();
     const hrefs = within(block).getAllByRole("link").map((a) => a.getAttribute("href"));
     expect(hrefs).toContain("/commercial-concrete-repair-oklahoma-city");
     expect(hrefs).toContain("/industrial-concrete-repair-oklahoma-city");
     expect(within(block).getAllByRole("img")).toHaveLength(3);
+  });
+
+  describe("/commercial-concrete-oklahoma-city describes the ramp as demolition and replacement", () => {
+    const GENERIC_REINFORCEMENT = /Reinforced (commercial )?ramp|reinforced slab/i;
+    const NEW_BUILD = /forklift ramp we built|ramp poured inside/i;
+
+    it("in the rendered page", () => {
+      const { container } = render(
+        <MemoryRouter initialEntries={["/commercial-concrete-oklahoma-city"]}>
+          <CommercialConcreteOklahomaCity />
+        </MemoryRouter>,
+      );
+      const text = container.textContent ?? "";
+      expect(text).toContain("Demolition and concrete replacement inside a live warehouse");
+      expect(text).toContain("forklift ramp we demolished and replaced inside a live warehouse in Guthrie");
+      expect(text.match(/reinforced with wire mesh/g)).toHaveLength(2);
+      expect(text).toContain("graded for forklift transitions");
+      expect(text).toContain("designed for repeated heavy forklift loads");
+      expect(text).not.toMatch(GENERIC_REINFORCEMENT);
+      expect(text).not.toMatch(NEW_BUILD);
+    });
+
+    it("in the crawler HTML, matching the visible copy", () => {
+      const body = getPrerenderBody("/commercial-concrete-oklahoma-city") ?? "";
+      expect(body).toContain("Demolition and concrete replacement inside a live warehouse");
+      expect(body).toContain("forklift ramp we demolished and replaced inside a live warehouse in Guthrie");
+      expect(body.match(/reinforced with wire mesh/g)).toHaveLength(2);
+      expect(body).toContain("graded for forklift transitions");
+      expect(body).toContain("designed for repeated heavy forklift loads");
+      expect(body).not.toMatch(GENERIC_REINFORCEMENT);
+      expect(body).not.toMatch(NEW_BUILD);
+    });
   });
 });
 
@@ -298,6 +335,7 @@ describe("/our-projects crawler HTML matches the visible project details", () =>
   it("lists the Guthrie ramp with its confirmed scope and cost", () => {
     expect(body()).toContain("Warehouse forklift ramp — concrete demolition &amp; replacement — Guthrie, OK");
     expect(body()).toContain("line pump");
+    expect(body()).toContain("reinforced with wire mesh, graded for forklift transitions");
     expect(body()).toContain("Completed Project Cost: $3,200");
   });
 
