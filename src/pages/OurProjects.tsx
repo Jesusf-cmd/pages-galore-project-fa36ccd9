@@ -407,7 +407,7 @@ export default function OurProjects() {
         >
           {moreProjects.map((p) => (
             <div key={p.id} className="bg-stone p-6">
-              {p.images.length > 0 && (
+              {p.images.length >= 3 && (
                 <div className="mb-4 -mx-6 -mt-6 grid grid-cols-3 grid-rows-2 gap-px aspect-[16/10] overflow-hidden bg-concrete/[0.08]">
                   {p.images.slice(0, 3).map((img, i) => (
                     <img

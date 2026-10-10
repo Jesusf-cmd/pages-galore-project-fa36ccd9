@@ -69,4 +69,16 @@ describe("Norman patio & paver walkway project", () => {
       .filter((img) => img.getAttribute("src")?.includes("norman-oklahoma"));
     expect(photos).toHaveLength(3);
   });
+
+  it("does not add photos to other /our-projects More Projects cards", () => {
+    render(
+      <MemoryRouter>
+        <OurProjects />
+      </MemoryRouter>,
+    );
+    const others = PROJECTS.filter((p) => !p.featured && p.id !== NEW_ID).flatMap((p) => p.images);
+    for (const img of others) {
+      expect(document.querySelector(`img[src="${img.src}"]`)).toBeNull();
+    }
+  });
 });
