@@ -10,6 +10,9 @@ export function getMailtoHref(): string {
   return `mailto:${getContactEmail()}`;
 }
 
+/** FDZ Construction LLC Google Business Profile on Google Maps. */
+export const GOOGLE_MAPS_PROFILE_URL = "https://www.google.com/maps?cid=15880952529720273707";
+
 /** Safe crawlable fallback — no email address in HTML for Cloudflare obfuscation. */
 export const CONTACT_FALLBACK_HREF = "/#contact";
 export const CONTACT_FALLBACK_LABEL = "Email FDZ Construction";

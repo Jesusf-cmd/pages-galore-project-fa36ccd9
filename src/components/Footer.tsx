@@ -4,6 +4,7 @@ import MailtoLink from "./MailtoLink";
 import { useRegionalPhone } from "@/hooks/useRegionalPhone";
 import { isKansasPath, normalizePath } from "@/lib/phones";
 import { estimatePath } from "@/lib/estimatePath";
+import { GOOGLE_MAPS_PROFILE_URL } from "@/lib/contact";
 
 export default function Footer() {
   const phone = useRegionalPhone();
@@ -32,6 +33,14 @@ export default function Footer() {
           {!isKansasPath(location.pathname) && (
             <p className="text-[0.74rem] text-muted-text mt-2">Based in Oklahoma City</p>
           )}
+          <a
+            href={GOOGLE_MAPS_PROFILE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center min-h-[44px] md:min-h-0 md:mt-2 text-[0.74rem] text-muted-text underline underline-offset-2 hover:text-concrete transition-colors"
+          >
+            View FDZ Construction on Google Maps
+          </a>
         </div>
       </div>
       {/* Licensing / trust section */}
