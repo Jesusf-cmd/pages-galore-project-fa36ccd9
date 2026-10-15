@@ -434,7 +434,11 @@ export default function QuotePage() {
           {/* Footer */}
           <div className="bg-[#1a1a1a] px-8 sm:px-10 py-6 text-center">
             <div className="text-white text-sm font-bold tracking-wide">FDZ Construction LLC</div>
-            <div className="text-[#888] text-xs mt-2">{COMPANY.phone} · {COMPANY.email}</div>
+            <div className="text-[#888] text-xs mt-2">
+              <a href={`tel:${followUpPhone.tel}`} className="text-[#c45c26] no-underline">{followUpPhone.display}</a>
+              {" · "}
+              {COMPANY.email}
+            </div>
             <div className="text-[#888] text-xs mt-1">{COMPANY.siteUrl}</div>
           </div>
         </div>

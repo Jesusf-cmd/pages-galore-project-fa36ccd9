@@ -9,6 +9,28 @@ import { GOOGLE_MAPS_PROFILE_URL } from "@/lib/contact";
 export default function Footer() {
   const phone = useRegionalPhone();
   const location = useLocation();
+  const kansasRoute = isKansasPath(location.pathname);
+  const oklahomaAreaLinks = [
+    { to: "/oklahoma-city-concrete", label: "Concrete Contractor Oklahoma City" },
+    { to: "/edmond-concrete", label: "Concrete Contractor Edmond OK" },
+    { to: "/norman-ok-concrete", label: "Concrete Contractor Norman OK" },
+    { to: "/yukon-oklahoma-concrete", label: "Concrete Contractor Yukon OK" },
+    { to: "/mustang-oklahoma-concrete", label: "Concrete Contractor Mustang OK" },
+    { to: "/moore-oklahoma-concrete", label: "Concrete Contractor Moore OK" },
+    { to: "/midwest-city-oklahoma-concrete", label: "Concrete Contractor Midwest City" },
+    { to: "/del-city-oklahoma-concrete", label: "Concrete Contractor Del City OK" },
+    { to: "/stillwater-oklahoma-concrete", label: "Concrete & Sewer Contractor Stillwater OK" },
+  ];
+  const wichitaAreaLinks = [
+    { to: "/concrete-contractors-wichita-ks", label: "Concrete Contractors Wichita KS" },
+    { to: "/commercial-concrete-wichita", label: "Commercial Concrete Wichita KS" },
+    { to: "/industrial-concrete-wichita", label: "Industrial Concrete Wichita KS" },
+    { to: "/retaining-walls-wichita", label: "Retaining Walls Wichita KS" },
+    { to: "/stamped-concrete-wichita", label: "Stamped Concrete Wichita KS" },
+  ];
+  const areaLinks = kansasRoute
+    ? [...wichitaAreaLinks, ...oklahomaAreaLinks]
+    : [...oklahomaAreaLinks, ...wichitaAreaLinks];
   return (
     <footer className="bg-darker px-4 md:px-12 py-8" style={{ borderTop: "1px solid hsl(var(--concrete) / 0.08)" }}>
       {/* Direct contact and the existing estimate form */}
@@ -16,7 +38,7 @@ export default function Footer() {
         <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3">Get In Touch</div>
         <p className="text-sm text-muted-text mb-5">Tell us about your project and we’ll follow up with an estimate.</p>
         <Link
-          to={isKansasPath(location.pathname) ? estimatePath(normalizePath(location.pathname).slice(1)) : "/#estimate"}
+          to={kansasRoute ? estimatePath(normalizePath(location.pathname).slice(1)) : "/#estimate"}
           className="btn-primary inline-block"
         >
           Request an Estimate →
@@ -30,7 +52,7 @@ export default function Footer() {
             <MailtoLink className="text-orange text-sm font-medium no-underline hover:underline" />
             <a href={`tel:${phone.tel}`} className="text-orange text-sm font-medium no-underline hover:underline">{phone.display}</a>
           </div>
-          {!isKansasPath(location.pathname) && (
+          {!kansasRoute && (
             <p className="text-[0.74rem] text-muted-text mt-2">Based in Oklahoma City</p>
           )}
           <a
@@ -45,12 +67,12 @@ export default function Footer() {
       </div>
       {/* Licensing / trust section */}
       <div className="max-w-3xl mx-auto mb-8 text-center">
-        <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-2">{isKansasPath(location.pathname) ? "Wichita-area concrete crew" : "Licensed, Bonded &amp; Insured in Oklahoma"}</div>
+        <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-2">{kansasRoute ? "Wichita-area concrete crew" : "Licensed, Bonded &amp; Insured in Oklahoma"}</div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-start">
         <div className="col-span-2 md:col-span-1">
           <Logo className="h-12 w-auto opacity-90 mb-3" />
-          <p className="text-[0.74rem] text-muted-text">{isKansasPath(location.pathname) ? "Concrete work in Wichita and nearby Sedgwick County." : "Oklahoma City's concrete & sewer line contractor. Licensed & insured in Oklahoma."}</p>
+          <p className="text-[0.74rem] text-muted-text">{kansasRoute ? "Concrete work in Wichita and nearby Sedgwick County." : "Oklahoma City's concrete & sewer line contractor. Licensed & insured in Oklahoma."}</p>
           <p className="text-[0.74rem] text-muted-text mt-2">© {new Date().getFullYear()} FDZ Construction LLC. All rights reserved.</p>
         </div>
         <div>
@@ -78,19 +100,9 @@ export default function Footer() {
         <div>
           <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3">Service Areas</div>
           <div className="flex flex-col gap-1.5">
-            <Link to="/oklahoma-city-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Oklahoma City</Link>
-            <Link to="/edmond-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Edmond OK</Link>
-            <Link to="/norman-ok-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Norman OK</Link>
-            <Link to="/yukon-oklahoma-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Yukon OK</Link>
-            <Link to="/mustang-oklahoma-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Mustang OK</Link>
-            <Link to="/moore-oklahoma-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Moore OK</Link>
-            <Link to="/midwest-city-oklahoma-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Midwest City</Link>
-            <Link to="/del-city-oklahoma-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Contractor Del City OK</Link>
-            <Link to="/stillwater-oklahoma-concrete" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete & Sewer Contractor Stillwater OK</Link>
-            <Link to="/commercial-concrete-wichita" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Commercial Concrete Wichita KS</Link>
-            <Link to="/industrial-concrete-wichita" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Industrial Concrete Wichita KS</Link>
-            <Link to="/retaining-walls-wichita" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Retaining Walls Wichita KS</Link>
-            <Link to="/stamped-concrete-wichita" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Stamped Concrete Wichita KS</Link>
+            {areaLinks.map((link) => (
+              <Link key={link.to} to={link.to} className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">{link.label}</Link>
+            ))}
           </div>
         </div>
         <div>

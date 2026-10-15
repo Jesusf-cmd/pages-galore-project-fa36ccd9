@@ -384,6 +384,14 @@ function ServiceAreaSection() {
           details.
         </p>
         <CityGrid />
+        <p className="prose-muted mt-8 max-w-[820px]">
+          FDZ also has a Wichita-area concrete crew for commercial and industrial projects in Wichita and nearby
+          Sedgwick County. See{" "}
+          <Link to="/concrete-contractors-wichita-ks" className="text-orange no-underline">
+            concrete contractors in Wichita, Kansas
+          </Link>
+          .
+        </p>
         <p className="prose-muted mt-8 text-[0.85rem] max-w-[820px]">
           Looking for a specific service? See{" "}
           <Link to="/driveways-oklahoma-city" className="text-orange no-underline">

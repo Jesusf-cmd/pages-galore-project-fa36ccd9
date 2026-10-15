@@ -42,7 +42,7 @@ const commercialLinks = [
   { to: "/concrete-maintenance-oklahoma-city", label: "Concrete Maintenance" },
 ];
 
-const areaLinks = [
+const oklahomaAreaLinks = [
   { to: "/oklahoma-city-concrete", label: "Oklahoma City" },
   { to: "/edmond-concrete", label: "Edmond" },
   { to: "/norman-ok-concrete", label: "Norman" },
@@ -52,6 +52,10 @@ const areaLinks = [
   { to: "/midwest-city-oklahoma-concrete", label: "Midwest City" },
   { to: "/del-city-oklahoma-concrete", label: "Del City" },
   { to: "/stillwater-oklahoma-concrete", label: "Stillwater" },
+];
+
+const wichitaAreaLinks = [
+  { to: "/concrete-contractors-wichita-ks", label: "Wichita Concrete Contractors" },
   { to: "/commercial-concrete-wichita", label: "Wichita Commercial Concrete" },
   { to: "/industrial-concrete-wichita", label: "Wichita Industrial Concrete" },
   { to: "/retaining-walls-wichita", label: "Wichita Retaining Walls" },
@@ -63,10 +67,8 @@ const concreteGroups = [
   { heading: "Commercial", links: commercialLinks },
 ];
 
-const mobileSections = [
-  { title: "Concrete", links: [...serviceLinks, ...commercialLinks] },
-  { title: "Service Areas", links: areaLinks },
-];
+const oklahomaAreaGroup = { heading: "Oklahoma", links: oklahomaAreaLinks };
+const wichitaAreaGroup = { heading: "Wichita, Kansas", links: wichitaAreaLinks };
 
 const mobilePrimaryLinks = [
   { to: "/", label: "Home" },
@@ -83,6 +85,31 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const phone = useRegionalPhone();
+  const kansasRoute = isKansasPath(location.pathname);
+  const areaGroups = kansasRoute
+    ? [wichitaAreaGroup, oklahomaAreaGroup]
+    : [oklahomaAreaGroup, wichitaAreaGroup];
+  const concreteMenu = kansasRoute
+    ? [
+        { heading: "Residential — Oklahoma City", links: serviceLinks },
+        { heading: "Commercial — Oklahoma City", links: commercialLinks },
+      ]
+    : concreteGroups;
+  const mobileSections = [
+    {
+      title: kansasRoute ? "Concrete — Oklahoma City" : "Concrete",
+      links: [...serviceLinks, ...commercialLinks],
+    },
+    ...(kansasRoute
+      ? [
+          { title: "Wichita, Kansas", links: wichitaAreaLinks },
+          { title: "Oklahoma", links: oklahomaAreaLinks },
+        ]
+      : [
+          { title: "Oklahoma", links: oklahomaAreaLinks },
+          { title: "Wichita, Kansas", links: wichitaAreaLinks },
+        ]),
+  ];
   const estimateTo = isKansasPath(location.pathname)
     ? estimatePath(normalizePath(location.pathname).replace(/^\//, ""))
     : "/#estimate";
@@ -122,7 +149,7 @@ export default function Navbar() {
               Home
             </Link>
           </li>
-          <NavDropdown label="Concrete" groups={concreteGroups} />
+          <NavDropdown label="Concrete" groups={concreteMenu} />
           <li>
             <Link to="/sewer-line-repair-oklahoma-city" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete whitespace-nowrap">
               Sewer Line
@@ -138,7 +165,7 @@ export default function Navbar() {
               Excavator
             </Link>
           </li>
-          <NavDropdown label="Service Areas" items={areaLinks} />
+          <NavDropdown label="Service Areas" groups={areaGroups} />
           <li>
             <Link to="/our-projects" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete">
               Projects
@@ -185,7 +212,13 @@ export default function Navbar() {
 
       {mobileOpen && typeof document !== "undefined"
         ? createPortal(
-            <MobileMenuOverlay onClose={() => setMobileOpen(false)} phoneDisplay={phone.display} phoneTel={phone.tel} estimateTo={estimateTo} />,
+            <MobileMenuOverlay
+              onClose={() => setMobileOpen(false)}
+              phoneDisplay={phone.display}
+              phoneTel={phone.tel}
+              estimateTo={estimateTo}
+              sections={mobileSections}
+            />,
             document.body,
           )
         : null}
@@ -198,11 +231,13 @@ function MobileMenuOverlay({
   phoneDisplay,
   phoneTel,
   estimateTo,
+  sections,
 }: {
   onClose: () => void;
   phoneDisplay: string;
   phoneTel: string;
   estimateTo: string;
+  sections: { title: string; links: { to: string; label: string }[] }[];
 }) {
   return (
     <div
@@ -231,7 +266,7 @@ function MobileMenuOverlay({
 
         <div className="flex-1 overflow-y-auto overscroll-contain px-6 pb-10 pt-6">
           <div className="space-y-8">
-            {mobileSections.map((section) => (
+            {sections.map((section) => (
               <MobileSection key={section.title} title={section.title} links={section.links} onClose={onClose} />
             ))}
 

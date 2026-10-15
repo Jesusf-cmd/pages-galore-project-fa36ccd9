@@ -27,6 +27,13 @@ export const ESTIMATE_ORIGINS = {
       "Project type (driveway, patio, foundation, or commercial), address, approximate size, and site access notes...",
     detailsPrefix: "Requested from /blog/cost-of-concrete-oklahoma-city-2026 (concrete cost guide).",
   },
+  "concrete-contractors-wichita-ks": {
+    formLabel: "Wichita concrete",
+    placeholder:
+      "Wichita-area address, commercial or industrial scope, and any plans or schedule limits...",
+    addressPlaceholder: "Job address in Wichita, KS",
+    detailsPrefix: "Requested from /concrete-contractors-wichita-ks (concrete contractors, Wichita KS).",
+  },
   "commercial-concrete-wichita": {
     formLabel: "Wichita commercial concrete",
     placeholder:
@@ -111,7 +118,7 @@ export const UPLOAD_SUBMIT_CALL_PREFIX =
   "Something went wrong uploading your files. Please try again or call";
 
 export function isServerPhoneError(message: string): boolean {
-  return /\(405\)\s*458-4805|4054584805|316-531-9583|3165319583/.test(message);
+  return /\(405\)\s*458-4805|4054584805|316-365-8342|3163658342|316-531-9583|3165319583/.test(message);
 }
 
 export function quoteSubmitCallFailure(from: string | null | undefined) {

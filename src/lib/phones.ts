@@ -5,13 +5,14 @@ export const OKLAHOMA_PHONE = {
   tel: "4054584805",
 } as const;
 
-/** Dedicated Kansas CallRail number. Wichita/Kansas pages only. */
+/** Public Kansas number for Wichita pages and Kansas-origin estimate follow-up. */
 export const KANSAS_PHONE = {
-  display: "316-531-9583",
-  tel: "3165319583",
+  display: "316-365-8342",
+  tel: "3163658342",
 } as const;
 
 export const WICHITA_PATHS = [
+  "/concrete-contractors-wichita-ks",
   "/commercial-concrete-wichita",
   "/industrial-concrete-wichita",
   "/retaining-walls-wichita",
