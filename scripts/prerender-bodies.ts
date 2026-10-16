@@ -89,6 +89,7 @@ export const prerenderBodies: Record<string, string> = {
     <p>The OKC metro sits on Permian-age clay and shale that expands when wet and shrinks in drought. That movement stresses driveways, foundations, and buried sewer pipe alike — which is why proper sub-base compaction, reinforcement, and drainage grading matter on every job.</p>
     <h2>Service Areas</h2>
     ${linkList(CITY_LINKS)}
+    <p>FDZ also has a Wichita-area concrete crew for commercial and industrial projects in Wichita and nearby Sedgwick County. See <a href="/concrete-contractors-wichita-ks">concrete contractors in Wichita, Kansas</a>.</p>
     ${renderEstimateFormHtml({ fromPath: "/" })}
     <p><strong>Contact:</strong> <a href="tel:4054584805">(405) 458-4805</a> · <a href="mailto:jesus@fdzconstruction.com">jesus@fdzconstruction.com</a></p>
   `,

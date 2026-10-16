@@ -70,7 +70,7 @@ export const commercialConcreteWichita: WichitaPageContent = {
   path: "/commercial-concrete-wichita",
   metaTitle: "Commercial Concrete Contractor Wichita KS | FDZ Construction",
   metaDescription:
-    "Commercial concrete contractor for Wichita, KS. Parking lots, paving, curb and gutter, sidewalks, and site slabs. Wichita-area crew. Call 316-531-9583.",
+    "Commercial concrete contractor for Wichita, KS. Parking lots, paving, curb and gutter, sidewalks, and site slabs. Wichita-area crew. Call 316-365-8342.",
   h1: "Commercial Concrete Contractor in Wichita, Kansas",
   eyebrow: "Wichita, Kansas · Commercial Concrete",
   title: "Commercial Concrete Contractor in",
@@ -83,7 +83,7 @@ export const commercialConcreteWichita: WichitaPageContent = {
   serviceSchema: {
     serviceType: "Commercial concrete construction",
     name: "Commercial Concrete Contractor in Wichita, Kansas",
-    telephone: "+13165319583",
+    telephone: `+1${KANSAS_PHONE.tel}`,
   },
   serviceCardsTitle: "Commercial Scopes for",
   serviceCardsTitleAccent: "Wichita Sites.",
@@ -203,6 +203,7 @@ export const commercialConcreteWichita: WichitaPageContent = {
       titleAccent: "in Wichita.",
       alt: true,
       content: [
+        "<a href='/concrete-contractors-wichita-ks'>Concrete contractors in Wichita</a> — commercial, industrial, retaining walls, and stamped concrete.",
         "<a href='/industrial-concrete-wichita'>Industrial concrete in Wichita</a> — warehouse slabs, equipment and machine pads, loading docks, and heavy-use paving.",
         "<a href='/retaining-walls-wichita'>Retaining walls in Wichita</a> — poured concrete and block walls for grade changes and commercial sites.",
         "<a href='/stamped-concrete-wichita'>Stamped and decorative concrete in Wichita</a> — patios, drives, walks, entries, and courtyards.",
@@ -278,7 +279,7 @@ export const commercialConcreteWichita: WichitaPageContent = {
     {
       question: "Does FDZ have a crew in Wichita?",
       answer:
-        "Yes. FDZ has a concrete crew in the Wichita area. Call 316-531-9583 to discuss a Kansas project.",
+        "Yes. FDZ has a concrete crew in the Wichita area. Call 316-365-8342 to discuss a Kansas project.",
     },
     {
       question: "What commercial concrete work do you take in Wichita?",
@@ -298,12 +299,12 @@ export const commercialConcreteWichita: WichitaPageContent = {
     {
       question: "How do I request a commercial estimate for Wichita?",
       answer:
-        "Use the estimate form on this site or call 316-531-9583. Include the address, approximate size, schedule limits, and any plans or photos. The quote is written after a site visit or a plan review.",
+        "Use the estimate form on this site or call 316-365-8342. Include the address, approximate size, schedule limits, and any plans or photos. The quote is written after a site visit or a plan review.",
     },
     {
       question: "Which number should Oklahoma City projects use?",
       answer:
-        "Oklahoma City work stays on (405) 458-4805. Use 316-531-9583 for Wichita and other Kansas project calls.",
+        "Oklahoma City work stays on (405) 458-4805. Use 316-365-8342 for Wichita and other Kansas project calls.",
     },
   ],
   serviceArea: {
@@ -327,7 +328,7 @@ export const industrialConcreteWichita: WichitaPageContent = {
   path: "/industrial-concrete-wichita",
   metaTitle: "Industrial Concrete Contractor Wichita KS | FDZ Construction",
   metaDescription:
-    "Industrial concrete contractor for Wichita, KS. Warehouse slabs, equipment pads, machine pads, loading docks, and heavy-use paving. Call 316-531-9583.",
+    "Industrial concrete contractor for Wichita, KS. Warehouse slabs, equipment pads, machine pads, loading docks, and heavy-use paving. Call 316-365-8342.",
   h1: "Industrial Concrete Contractor in Wichita, Kansas",
   eyebrow: "Wichita, Kansas · Industrial Concrete",
   title: "Industrial Concrete Contractor in",
@@ -340,7 +341,7 @@ export const industrialConcreteWichita: WichitaPageContent = {
   serviceSchema: {
     serviceType: "Industrial concrete construction",
     name: "Industrial Concrete Contractor in Wichita, Kansas",
-    telephone: "+13165319583",
+    telephone: `+1${KANSAS_PHONE.tel}`,
   },
   serviceCardsTitle: "Industrial Scopes for",
   serviceCardsTitleAccent: "Wichita Facilities.",
@@ -459,6 +460,7 @@ export const industrialConcreteWichita: WichitaPageContent = {
       title: "Connect the industrial scope",
       titleAccent: "to the rest of the site.",
       content: [
+        "<a href='/concrete-contractors-wichita-ks'>Concrete contractors in Wichita</a> — commercial, industrial, retaining walls, and stamped concrete.",
         "<a href='/commercial-concrete-wichita'>Wichita commercial concrete</a> — parking, curb, sidewalks, and lighter site slabs around the same property.",
         "<a href='/retaining-walls-wichita'>Wichita retaining walls</a> — grade walls at yards, docks, and building pads.",
         "Company pages for the same kinds of work in Oklahoma City: <a href='/industrial-concrete-repair-oklahoma-city'>industrial concrete repair</a>, <a href='/warehouse-slab-repair-oklahoma-city'>warehouse slabs</a>, <a href='/equipment-pad-concrete-oklahoma-city'>equipment pads</a>, <a href='/loading-dock-construction-oklahoma-city'>loading docks</a>, and <a href='/truck-court-concrete-oklahoma-city'>truck courts</a>.",
@@ -536,9 +538,9 @@ export const industrialConcreteWichita: WichitaPageContent = {
         "Warehouse and industrial slabs, equipment foundations, machine pads, loading docks and aprons, industrial foundations, and paving built for truck traffic. Standard commercial parking is on the commercial concrete page.",
     },
     {
-      question: "Do you build separate pages for machine pads and warehouse slabs?",
+      question: "Where do warehouse slabs and machine pads fit?",
       answer:
-        "Not for Wichita. Those scopes belong on this industrial page so the estimate covers the whole facility package.",
+        "Both are part of industrial concrete on this page. Include the slab, the equipment, and any dock work in one estimate so the facility package stays together. Parking lots and site paving are on the commercial concrete page.",
     },
     {
       question: "Can you match flatness numbers for forklift floors?",
@@ -553,7 +555,7 @@ export const industrialConcreteWichita: WichitaPageContent = {
     {
       question: "How do I start a Wichita industrial estimate?",
       answer:
-        "Call 316-531-9583 or use the estimate form. Send the address, area, equipment or dock type, and the drawings you have.",
+        "Call 316-365-8342 or use the estimate form. Send the address, area, equipment or dock type, and the drawings you have.",
     },
     {
       question: "Does FDZ have a Wichita concrete crew?",
@@ -582,7 +584,7 @@ export const retainingWallsWichita: WichitaPageContent = {
   path: "/retaining-walls-wichita",
   metaTitle: "Retaining Wall Contractor Wichita KS | FDZ Construction",
   metaDescription:
-    "Retaining wall contractor for Wichita, KS. Poured concrete and block walls for commercial grade changes, site walls, installation, and repair. Call 316-531-9583.",
+    "Retaining wall contractor for Wichita, KS. Poured concrete and block walls for commercial grade changes, site walls, installation, and repair. Call 316-365-8342.",
   h1: "Retaining Wall Contractor in Wichita, Kansas",
   eyebrow: "Wichita, Kansas · Retaining Walls",
   title: "Retaining Wall Contractor in",
@@ -595,7 +597,7 @@ export const retainingWallsWichita: WichitaPageContent = {
   serviceSchema: {
     serviceType: "Concrete retaining wall construction",
     name: "Retaining Wall Contractor in Wichita, Kansas",
-    telephone: "+13165319583",
+    telephone: `+1${KANSAS_PHONE.tel}`,
   },
   serviceCardsTitle: "Wall Work for",
   serviceCardsTitleAccent: "Wichita Sites.",
@@ -710,7 +712,8 @@ export const retainingWallsWichita: WichitaPageContent = {
       title: "Walls next to other",
       titleAccent: "Wichita concrete.",
       content: [
-        "<a href='/commercial-concrete-wichita'>Wichita commercial concrete</a> — the hub for parking, paving, curb, and site slabs that often sit above a wall.",
+        "<a href='/concrete-contractors-wichita-ks'>Concrete contractors in Wichita</a> — commercial, industrial, retaining walls, and stamped concrete.",
+        "<a href='/commercial-concrete-wichita'>Wichita commercial concrete</a> — parking, paving, curb, and site slabs that often sit above a wall.",
         "<a href='/industrial-concrete-wichita'>Wichita industrial concrete</a> — docks and yards where a wall holds the grade.",
         "<a href='/stamped-concrete-wichita'>Stamped concrete in Wichita</a> — decorative flatwork that sometimes lands on a retained grade.",
         "For the wall types FDZ already builds, see <a href='/retaining-walls-oklahoma-city'>retaining walls</a>. That page is Oklahoma City work, not a Wichita portfolio.",
@@ -810,7 +813,7 @@ export const retainingWallsWichita: WichitaPageContent = {
     {
       question: "How do I request a Wichita retaining wall estimate?",
       answer:
-        "Call 316-531-9583 or use the estimate form. Send the address, approximate wall length and height, photos, and any drawings.",
+        "Call 316-365-8342 or use the estimate form. Send the address, approximate wall length and height, photos, and any drawings.",
     },
   ],
   serviceArea: {
@@ -834,7 +837,7 @@ export const stampedConcreteWichita: WichitaPageContent = {
   path: "/stamped-concrete-wichita",
   metaTitle: "Stamped Concrete Contractor Wichita KS | FDZ Construction",
   metaDescription:
-    "Stamped concrete contractor for Wichita, KS. Decorative patios, driveways, walkways, entries, and courtyards for homes and commercial sites. Call 316-531-9583.",
+    "Stamped concrete contractor for Wichita, KS. Decorative patios, driveways, walkways, entries, and courtyards for homes and commercial sites. Call 316-365-8342.",
   h1: "Stamped Concrete Contractor in Wichita, Kansas",
   eyebrow: "Wichita, Kansas · Stamped & Decorative Concrete",
   title: "Stamped Concrete Contractor in",
@@ -847,7 +850,7 @@ export const stampedConcreteWichita: WichitaPageContent = {
   serviceSchema: {
     serviceType: "Stamped and decorative concrete",
     name: "Stamped Concrete Contractor in Wichita, Kansas",
-    telephone: "+13165319583",
+    telephone: `+1${KANSAS_PHONE.tel}`,
   },
   serviceCardsTitle: "Decorative Concrete for",
   serviceCardsTitleAccent: "Wichita Properties.",
@@ -962,7 +965,8 @@ export const stampedConcreteWichita: WichitaPageContent = {
       title: "Decorative concrete next to",
       titleAccent: "the rest of the site.",
       content: [
-        "<a href='/commercial-concrete-wichita'>Wichita commercial concrete</a> — the hub for parking, paving, curb, and structural site slabs.",
+        "<a href='/concrete-contractors-wichita-ks'>Concrete contractors in Wichita</a> — commercial, industrial, retaining walls, and stamped concrete.",
+        "<a href='/commercial-concrete-wichita'>Wichita commercial concrete</a> — parking, paving, curb, and structural site slabs.",
         "<a href='/retaining-walls-wichita'>Wichita retaining walls</a> — when a patio or entry needs a grade wall.",
         "<a href='/industrial-concrete-wichita'>Wichita industrial concrete</a> — not a decorative scope; linked so facility projects do not land on the wrong page.",
       ],
@@ -1061,7 +1065,7 @@ export const stampedConcreteWichita: WichitaPageContent = {
     {
       question: "How do I request a stamped concrete estimate in Wichita?",
       answer:
-        "Call 316-531-9583 or use the estimate form. Include the address, the areas to stamp, and any pattern direction you already have.",
+        "Call 316-365-8342 or use the estimate form. Include the address, the areas to stamp, and any pattern direction you already have.",
     },
   ],
   serviceArea: {
@@ -1081,7 +1085,198 @@ export const stampedConcreteWichita: WichitaPageContent = {
   },
 };
 
+export const concreteContractorsWichita: WichitaPageContent = {
+  path: "/concrete-contractors-wichita-ks",
+  metaTitle: "Concrete Contractors Wichita KS | FDZ Construction",
+  metaDescription:
+    "Concrete contractors in Wichita, KS for commercial and industrial work, retaining walls, and stamped concrete. Wichita-area crew. Call 316-365-8342.",
+  h1: "Concrete Contractors in Wichita, Kansas",
+  eyebrow: "Wichita, Kansas · Concrete Contractors",
+  title: "Concrete Contractors in",
+  titleAccent: "Wichita, Kansas.",
+  description: `Commercial and industrial concrete for Wichita and nearby Sedgwick County, handled by FDZ's Wichita-area crew. Call ${ksCall}.`,
+  modelNote:
+    "FDZ's Wichita-area concrete crew handles local projects. Scope and schedule are confirmed during estimating.",
+  introText: `FDZ Construction LLC takes concrete work in Wichita through its Wichita-area crew. Commercial site work and industrial slabs are the primary scopes for general contractors, property owners, and facility managers. Retaining walls and stamped concrete are available when the site needs them. Call ${ksCall} or send the project location, scope, and any drawings or photos. The written estimate follows a review of the plans or the site.`,
+  ctaLabel: "Request a Wichita Estimate →",
+  serviceSchema: {
+    serviceType: "Concrete construction",
+    name: "Concrete Contractors in Wichita, Kansas",
+    telephone: `+1${KANSAS_PHONE.tel}`,
+  },
+  serviceCardsTitle: "Wichita concrete",
+  serviceCardsTitleAccent: "for the job.",
+  serviceCards: [
+    {
+      icon: "🏗️",
+      title: "Commercial Concrete",
+      description:
+        "Parking lots, site paving, curb and gutter, sidewalks, and site slabs for commercial properties.",
+    },
+    {
+      icon: "🏭",
+      title: "Industrial Concrete",
+      description:
+        "Warehouse slabs, equipment foundations and machine pads, loading dock concrete, and heavy-use paving.",
+    },
+    {
+      icon: "🧱",
+      title: "Retaining Walls",
+      description:
+        "Poured concrete and block walls for commercial grade changes, site walls, installation, and repair.",
+    },
+    {
+      icon: "🪨",
+      title: "Stamped Concrete",
+      description:
+        "Decorative patios, driveways, walkways, entries, and courtyards for homes and commercial sites.",
+    },
+  ],
+  subServices: {
+    sectionEyebrow: "Primary scopes",
+    sectionTitle: "Commercial and industrial concrete in Wichita",
+    items: [
+      {
+        title: "Commercial site concrete",
+        bullets: [
+          "Parking lots and drive lanes",
+          "Site paving",
+          "Curb and gutter",
+          "Sidewalks",
+          "Site slabs poured to the project drawings",
+          "Parking lots, paving, curb, sidewalks, and site slabs are covered under <a href='/commercial-concrete-wichita'>commercial concrete in Wichita</a>.",
+        ],
+      },
+      {
+        title: "Industrial concrete",
+        bullets: [
+          "Warehouse slabs",
+          "Equipment foundations and machine pads",
+          "Loading dock concrete",
+          "Heavy-use paving",
+          "Strength, thickness, reinforcement, and flatness follow the project plans and specifications",
+          "Warehouse slabs, equipment pads, and dock concrete are covered under <a href='/industrial-concrete-wichita'>industrial concrete in Wichita</a>.",
+        ],
+      },
+    ],
+  },
+  sections: [
+    {
+      eyebrow: "Also available",
+      title: "Retaining walls and",
+      titleAccent: "stamped concrete.",
+      content: [
+        "Grade changes at a lot, pad, or dock are a separate scope from the flatwork. <a href='/retaining-walls-wichita'>Retaining walls in Wichita</a> covers poured concrete and block walls, including installation and repair.",
+        "Decorative entries, patios, driveways, walkways, and courtyards are on the <a href='/stamped-concrete-wichita'>stamped concrete in Wichita</a> page. Pattern and color are confirmed when that work is estimated.",
+      ],
+    },
+    {
+      eyebrow: "Project documents",
+      title: "Slab requirements follow",
+      titleAccent: "the project plans.",
+      alt: true,
+      content: [
+        "FDZ does not publish a universal Wichita slab specification. Strength, thickness, reinforcement, flatness, and related requirements follow the plans and specifications for that project when they apply.",
+        "Send the drawings, a site plan, or photos of the existing concrete with the estimate request. If a detail is not on the documents, it is confirmed during the plan review or site visit.",
+      ],
+    },
+  ],
+  specs: [],
+  processEyebrow: "Estimating",
+  processTitle: "How a Wichita estimate",
+  processTitleAccent: "is written.",
+  processIntro:
+    "Send your project location, scope, and available drawings or photos. FDZ reviews the plans or site conditions before preparing a written estimate.",
+  processSteps: [
+    {
+      title: "Share the scope and documents",
+      description:
+        "Send the Wichita-area address, the type of concrete, the approximate size, and any plans, photos, or schedule limits.",
+    },
+    {
+      title: "Review plans and site conditions",
+      description:
+        "FDZ reviews the drawings, access, site conditions, and schedule requirements to confirm the concrete scope.",
+    },
+    {
+      title: "Receive a written estimate",
+      description:
+        "Receive a written estimate describing the reviewed scope and applicable project requirements.",
+    },
+  ],
+  projectTypesEyebrow: "Who this is for",
+  projectTypesTitle: "Concrete work for Wichita contractors,",
+  projectTypesTitleAccent: "property owners, and facility managers.",
+  projectTypesIntro:
+    "Commercial and industrial projects in Wichita and nearby Sedgwick County, plus retaining walls and stamped concrete when the site needs them.",
+  projectTypes: [
+    {
+      title: "General contractors",
+      description: "Site packages that need parking, paving, curb, sidewalks, or a building slab bid as a subcontract.",
+    },
+    {
+      title: "Commercial property owners",
+      description: "Lots, walks, and site slabs at an existing building or a new commercial property.",
+    },
+    {
+      title: "Facility managers",
+      description: "Warehouse floors, equipment pads, dock concrete, and the paving trucks use around the building.",
+    },
+  ],
+  faqTitle: 'Questions About<br/><em class="h2-accent">Wichita Concrete.</em>',
+  faq: [
+    {
+      question: "Does FDZ have a crew in Wichita?",
+      answer: `Yes. FDZ has a concrete crew in the Wichita area. Call ${KANSAS_PHONE.display} to discuss a Kansas project.`,
+    },
+    {
+      question: "Who handles a parking lot or site paving?",
+      answer:
+        "Parking lots, site paving, curb and gutter, sidewalks, and site slabs are commercial concrete work for the Wichita-area crew.",
+    },
+    {
+      question: "Who handles a warehouse, machine pad, or loading dock?",
+      answer:
+        "Warehouse slabs, equipment foundations, machine pads, loading dock concrete, and heavy-use paving are industrial concrete work for the Wichita-area crew.",
+    },
+    {
+      question: "Do you build retaining walls and stamped concrete in Wichita?",
+      answer:
+        "Yes. Retaining walls and stamped concrete each have their own Wichita page so the estimate matches that scope.",
+    },
+    {
+      question: "What area does this page cover?",
+      answer:
+        "Wichita and nearby Sedgwick County. FDZ's Wichita-area crew handles these local projects.",
+    },
+    {
+      question: "How do I request a Wichita estimate?",
+      answer: `Use the estimate form or call ${KANSAS_PHONE.display}. Include the address, the scope, and any plans or photos. The quote is written after a plan review or a site visit.`,
+    },
+    {
+      question: "Which number is for Oklahoma City work?",
+      answer: `Oklahoma City work stays on ${OKLAHOMA_PHONE.display}. Use ${KANSAS_PHONE.display} for Wichita and nearby Sedgwick County projects.`,
+    },
+  ],
+  serviceArea: {
+    eyebrow: "Service area",
+    title: "Wichita and nearby",
+    titleAccent: "Sedgwick County.",
+    introHtml:
+      "Calls from this page are for concrete in Wichita and nearby Sedgwick County. FDZ's Wichita-area crew handles the local work. Oklahoma City projects stay on the Oklahoma City line.",
+    footnoteHtml: `Kansas project line ${ksCall}. Oklahoma City line ${okCall}.`,
+  },
+  finalCta: {
+    heading: "Have a Wichita concrete",
+    headingAccent: "project to estimate?",
+    description:
+      "Send the address, the scope, and the plans or photos you have. Commercial and industrial work can be estimated together when they are on the same site.",
+    buttonLabel: "Request a Wichita Estimate →",
+  },
+};
+
 export const WICHITA_PAGES: WichitaPageContent[] = [
+  concreteContractorsWichita,
   commercialConcreteWichita,
   industrialConcreteWichita,
   retainingWallsWichita,

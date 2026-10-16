@@ -49,11 +49,13 @@ export function renderWichitaPageHtml(page: WichitaPageContent, h1: string): str
     for (const paragraph of section.content) parts.push(`<p>${paragraph}</p>`);
     if (section.infoBlock) parts.push(`<p>${section.infoBlock}</p>`);
   }
-  parts.push("<h2>Build notes</h2><ul>");
-  for (const spec of page.specs) {
-    parts.push(`<li><strong>${spec.label}:</strong> ${spec.value}</li>`);
+  if (page.specs.length > 0) {
+    parts.push("<h2>Build notes</h2><ul>");
+    for (const spec of page.specs) {
+      parts.push(`<li><strong>${spec.label}:</strong> ${spec.value}</li>`);
+    }
+    parts.push("</ul>");
   }
-  parts.push("</ul>");
   parts.push(
     processSection(heading(page.processTitle, page.processTitleAccent), page.processSteps),
   );

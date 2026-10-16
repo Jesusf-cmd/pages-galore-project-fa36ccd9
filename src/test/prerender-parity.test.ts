@@ -288,8 +288,8 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
 };
 
 describe("prerender content parity for priority routes", () => {
-  it("prerenders 76 routes", () => {
-    expect(routes).toHaveLength(76);
+  it("prerenders 73 routes", () => {
+    expect(routes).toHaveLength(73);
   });
 
   it("exposes page-specific sections and crawlable links in generated bodies", () => {

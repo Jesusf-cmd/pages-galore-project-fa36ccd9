@@ -98,6 +98,37 @@ describe("Phase 6 form + tracking", () => {
     },
   );
 
+  it("keeps the Wichita hub origin on a mocked submit-quote payload", async () => {
+    render(
+      <MemoryRouter initialEntries={["/?from=concrete-contractors-wichita-ks#estimate"]}>
+        <EstimateForm />
+      </MemoryRouter>,
+    );
+    expect(screen.getByText(/Wichita concrete/i)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /next: enter dimensions/i }));
+    fireEvent.click(screen.getByRole("button", { name: /next: your info/i }));
+    fireEvent.change(screen.getByPlaceholderText("Full name"), { target: { value: "Hub QA" } });
+    fireEvent.change(screen.getByPlaceholderText("(405) 000-0000"), { target: { value: "3165550100" } });
+    fireEvent.change(screen.getByPlaceholderText("email@example.com"), {
+      target: { value: "hub-qa@example.com" },
+    });
+    fireEvent.change(screen.getByPlaceholderText("Job address in Wichita, KS"), {
+      target: { value: "100 Douglas Ave, Wichita, KS" },
+    });
+    fireEvent.change(screen.getByPlaceholderText(/Wichita-area address/i), {
+      target: { value: "Parking lot and dock apron." },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /get your quote/i }));
+    await waitFor(() => expect(invoke).toHaveBeenCalled());
+    const body = invoke.mock.calls[0][1]?.body as Record<string, string>;
+    expect(invoke.mock.calls[0][0]).toBe("submit-quote");
+    expect(body.from).toBe("concrete-contractors-wichita-ks");
+    expect(body.details).toContain(
+      "Requested from /concrete-contractors-wichita-ks (concrete contractors, Wichita KS).",
+    );
+    expect(body.details).toContain("Parking lot and dock apron.");
+  });
+
   it("phone_click reaches dataLayer", () => {
     window.dataLayer = [];
     trackPhoneClick("/driveways-oklahoma-city");

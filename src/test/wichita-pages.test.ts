@@ -19,12 +19,14 @@ describe("Wichita phone scoping", () => {
     expect(phoneForPath("/patios-oklahoma-city")).toEqual(OKLAHOMA_PHONE);
   });
 
-  it("keeps 316-531-9583 out of Oklahoma prerender bodies", () => {
+  it("keeps the Kansas number out of Oklahoma prerender bodies", () => {
     for (const route of routes) {
       const body = getPrerenderBody(route.path) ?? "";
       if (isKansasPath(route.path)) {
         expect(body).toContain(KANSAS_PHONE.display);
         expect(body).toContain(`tel:${KANSAS_PHONE.tel}`);
+        expect(body).not.toContain("316-531-9583");
+        expect(body).not.toContain("3165319583");
         expect(body).toContain(`<h1>${route.h1}</h1>`);
         expect(body).toContain('"@type":"Service"');
         expect(body).toContain('"addressRegion":"KS"');
@@ -35,6 +37,8 @@ describe("Wichita phone scoping", () => {
         expect(body).not.toContain("7004 S Indiana");
         expect(body.toLowerCase()).not.toContain("from oklahoma");
       } else {
+        expect(body).not.toContain(KANSAS_PHONE.display);
+        expect(body).not.toContain(KANSAS_PHONE.tel);
         expect(body).not.toContain("316-531-9583");
         expect(body).not.toContain("3165319583");
       }
@@ -45,18 +49,53 @@ describe("Wichita phone scoping", () => {
     const titles = WICHITA_PAGES.map((page) => page.metaTitle);
     const descriptions = WICHITA_PAGES.map((page) => page.metaDescription);
     const h1s = WICHITA_PAGES.map((page) => page.h1);
-    expect(new Set(titles).size).toBe(4);
-    expect(new Set(descriptions).size).toBe(4);
-    expect(new Set(h1s).size).toBe(4);
+    expect(new Set(titles).size).toBe(5);
+    expect(new Set(descriptions).size).toBe(5);
+    expect(new Set(h1s).size).toBe(5);
     expect(titles).not.toContain("Commercial Concrete Contractor Oklahoma City | FDZ Construction");
     for (const page of WICHITA_PAGES) {
       expect(page.metaDescription.length).toBeLessThanOrEqual(170);
-      expect(page.metaDescription).toContain("316-531-9583");
+      expect(page.metaDescription).toContain(KANSAS_PHONE.display);
+      expect(page.metaDescription).not.toContain("316-531-9583");
       const route = routes.find((entry) => entry.path === page.path);
       expect(route?.title).toBe(page.metaTitle);
       expect(route?.h1).toBe(page.h1);
       expect(route?.noindex).toBeUndefined();
     }
+  });
+
+  it("links the hub to every Wichita service page and back again", () => {
+    const hub = WICHITA_PAGES.find((page) => page.path === "/concrete-contractors-wichita-ks");
+    const hubText = JSON.stringify(hub);
+    const servicePaths = [
+      "/commercial-concrete-wichita",
+      "/industrial-concrete-wichita",
+      "/retaining-walls-wichita",
+      "/stamped-concrete-wichita",
+    ];
+    for (const path of servicePaths) {
+      expect(hubText).toContain(path);
+      const service = WICHITA_PAGES.find((page) => page.path === path);
+      expect(JSON.stringify(service)).toContain("/concrete-contractors-wichita-ks");
+      expect(service?.path).not.toBe("/concrete-contractors-wichita-ks");
+    }
+    expect(hubText).not.toContain("Do you build separate pages");
+    for (const phrase of [
+      "The crew confirms which service page matches the work.",
+      "People who start on this page.",
+      "The same estimate form used for the rest of FDZ's work",
+      "It is not a price taken from a statewide rate sheet.",
+      "can start here, then open the service page",
+      "covers this scope in detail",
+    ]) {
+      expect(hubText).not.toContain(phrase);
+    }
+    expect(hubText).toContain("Concrete work for Wichita contractors,");
+    expect(hubText).toContain("property owners, and facility managers.");
+    const hubBody = getPrerenderBody("/concrete-contractors-wichita-ks") ?? "";
+    expect(hubBody).toContain("FDZ reviews the drawings, access, site conditions, and schedule requirements");
+    expect(hubBody).not.toContain("which service page matches the work");
+    expect(hubBody).not.toContain("statewide rate sheet");
   });
 
   it("omits the street address and coordinates on every public path", () => {
@@ -79,6 +118,9 @@ describe("Wichita phone scoping", () => {
     expect(strippedOk).not.toContain("7004");
     expect(strippedOk).not.toContain("35.4676");
     expect(strippedOk).not.toContain("streetAddress");
+    const strippedHub = stripWichitaStreetAddressHtml(html, "/concrete-contractors-wichita-ks");
+    expect(strippedHub).not.toContain("7004");
+    expect(strippedHub).not.toContain("addressLocality");
     const strippedKs = stripWichitaStreetAddressHtml(html, "/stamped-concrete-wichita");
     expect(strippedKs).not.toContain("7004");
     expect(strippedKs).not.toContain("addressLocality");

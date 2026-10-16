@@ -49,6 +49,7 @@ describe("residential sewer page", () => {
     expect(body).toContain("href=\"/#estimate\"");
     expect(body).toContain("tel:4054584805");
     expect(body).toContain("(405) 458-4805");
+    expect(body).not.toContain("316-365-8342");
     expect(body).not.toContain("316-531-9583");
   });
 

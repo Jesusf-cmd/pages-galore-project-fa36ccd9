@@ -458,27 +458,34 @@ const RAW: Omit<SeoPage, "canonical">[] = [
     noindex: true,
   },
   {
+    path: "/concrete-contractors-wichita-ks",
+    title: "Concrete Contractors Wichita KS | FDZ Construction",
+    description:
+      "Concrete contractors in Wichita, KS for commercial and industrial work, retaining walls, and stamped concrete. Wichita-area crew. Call 316-365-8342.",
+    h1: "Concrete Contractors in Wichita, Kansas",
+  },
+  {
     path: "/commercial-concrete-wichita",
     title: "Commercial Concrete Contractor Wichita KS | FDZ Construction",
-    description: "Commercial concrete contractor for Wichita, KS. Parking lots, paving, curb and gutter, sidewalks, and site slabs. Wichita-area crew. Call 316-531-9583.",
+    description: "Commercial concrete contractor for Wichita, KS. Parking lots, paving, curb and gutter, sidewalks, and site slabs. Wichita-area crew. Call 316-365-8342.",
     h1: "Commercial Concrete Contractor in Wichita, Kansas",
   },
   {
     path: "/industrial-concrete-wichita",
     title: "Industrial Concrete Contractor Wichita KS | FDZ Construction",
-    description: "Industrial concrete contractor for Wichita, KS. Warehouse slabs, equipment pads, machine pads, loading docks, and heavy-use paving. Call 316-531-9583.",
+    description: "Industrial concrete contractor for Wichita, KS. Warehouse slabs, equipment pads, machine pads, loading docks, and heavy-use paving. Call 316-365-8342.",
     h1: "Industrial Concrete Contractor in Wichita, Kansas",
   },
   {
     path: "/retaining-walls-wichita",
     title: "Retaining Wall Contractor Wichita KS | FDZ Construction",
-    description: "Retaining wall contractor for Wichita, KS. Poured concrete and block walls for commercial grade changes, site walls, installation, and repair. Call 316-531-9583.",
+    description: "Retaining wall contractor for Wichita, KS. Poured concrete and block walls for commercial grade changes, site walls, installation, and repair. Call 316-365-8342.",
     h1: "Retaining Wall Contractor in Wichita, Kansas",
   },
   {
     path: "/stamped-concrete-wichita",
     title: "Stamped Concrete Contractor Wichita KS | FDZ Construction",
-    description: "Stamped concrete contractor for Wichita, KS. Decorative patios, driveways, walkways, entries, and courtyards for homes and commercial sites. Call 316-531-9583.",
+    description: "Stamped concrete contractor for Wichita, KS. Decorative patios, driveways, walkways, entries, and courtyards for homes and commercial sites. Call 316-365-8342.",
     h1: "Stamped Concrete Contractor in Wichita, Kansas",
   },
 ];

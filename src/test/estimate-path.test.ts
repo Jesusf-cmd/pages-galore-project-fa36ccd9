@@ -33,6 +33,7 @@ describe("estimatePath", () => {
 
   it("retains Wichita route and service on the existing /#estimate destination", () => {
     const origins = [
+      ["concrete-contractors-wichita-ks", "concrete contractors, Wichita KS"],
       ["commercial-concrete-wichita", "commercial concrete, Wichita KS"],
       ["industrial-concrete-wichita", "industrial concrete, Wichita KS"],
       ["retaining-walls-wichita", "retaining walls, Wichita KS"],
@@ -145,6 +146,7 @@ describe("origin allowlist own properties", () => {
 
 describe("phoneForEstimateOrigin and call messages", () => {
   const wichita = [
+    "concrete-contractors-wichita-ks",
     "commercial-concrete-wichita",
     "industrial-concrete-wichita",
     "retaining-walls-wichita",
@@ -156,14 +158,14 @@ describe("phoneForEstimateOrigin and call messages", () => {
     "cost-of-concrete-oklahoma-city-2026",
   ] as const;
 
-  it("uses 316-531-9583 for every recognized Wichita from value", () => {
+  it("uses 316-365-8342 for every recognized Wichita from value", () => {
     for (const from of wichita) {
       expect(phoneForEstimateOrigin(from)).toEqual(KANSAS_PHONE);
       const quote = quoteSubmitCallFailure(from);
       expect(quote.prefix).toContain("Please call us at");
       expect(quote.phone).toEqual(KANSAS_PHONE);
-      expect(quote.phone.display).toBe("316-531-9583");
-      expect(quote.phone.tel).toBe("3165319583");
+      expect(quote.phone.display).toBe("316-365-8342");
+      expect(quote.phone.tel).toBe("3163658342");
       const upload = uploadSubmitCallFailure(from);
       expect(upload.phone).toEqual(KANSAS_PHONE);
       const remapped = uploadSubmitCallFailure(
@@ -172,6 +174,12 @@ describe("phoneForEstimateOrigin and call messages", () => {
       );
       expect(remapped.phone).toEqual(KANSAS_PHONE);
       expect(remapped.prefix).not.toContain("405");
+      const previousKansasNumber = uploadSubmitCallFailure(
+        from,
+        "Something went wrong. Please try again or call 316-531-9583.",
+      );
+      expect(previousKansasNumber.phone).toEqual(KANSAS_PHONE);
+      expect(previousKansasNumber.prefix).not.toContain("316-531-9583");
     }
   });
 
@@ -199,6 +207,9 @@ describe("phoneForEstimateOrigin and call messages", () => {
   });
 
   it("keeps Wichita origin on the quote follow-up URL without changing storage", () => {
+    expect(quoteFollowUpPath("token-1", "concrete-contractors-wichita-ks")).toBe(
+      "/quote/token-1?from=concrete-contractors-wichita-ks",
+    );
     expect(quoteFollowUpPath("token-1", "commercial-concrete-wichita")).toBe(
       "/quote/token-1?from=commercial-concrete-wichita",
     );
