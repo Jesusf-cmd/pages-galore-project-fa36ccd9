@@ -1,6 +1,6 @@
 /** Homepage estimate form destination. Query `from` is an allowlisted originating page. */
 
-import { KANSAS_PHONE, OKLAHOMA_PHONE, WICHITA_PATHS } from "./phones";
+import { KANSAS_PHONE, OKLAHOMA_PHONE, WICHITA_PATHS } from "./phones.ts";
 
 export const ESTIMATE_HASH = "estimate";
 export const ESTIMATE_PATH = "/#estimate";
@@ -76,7 +76,7 @@ export function detailsLimitError(details: string): string | null {
 }
 
 export function estimatePath(from?: string | null): string {
-  if (!parseEstimateOrigin(from)) return ESTIMATE_PATH;
+  if (!from || !parseEstimateOrigin(from)) return ESTIMATE_PATH;
   return `/?from=${encodeURIComponent(from)}#${ESTIMATE_HASH}`;
 }
 
@@ -134,7 +134,7 @@ export function uploadSubmitCallFailure(from: string | null | undefined, serverM
 
 export function quoteFollowUpPath(accessToken: string, from: string | null | undefined): string {
   const path = `/quote/${accessToken}`;
-  if (!parseEstimateOrigin(from)) return path;
+  if (!from || !parseEstimateOrigin(from)) return path;
   return `${path}?from=${encodeURIComponent(from)}`;
 }
 

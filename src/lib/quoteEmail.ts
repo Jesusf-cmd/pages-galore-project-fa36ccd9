@@ -1,4 +1,4 @@
-import { phoneForEstimateOrigin, type EstimateOriginId } from "./estimatePath";
+import { phoneForEstimateOrigin, type EstimateOriginId } from "./estimatePath.ts";
 
 export const DEFAULT_NOTIFICATION_EMAIL = "jesus@fdzconstruction.com";
 export const BUSINESS_EMAIL = "jesus@fdzconstruction.com";
