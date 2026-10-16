@@ -1097,15 +1097,15 @@ export const concreteContractorsWichita: WichitaPageContent = {
   description: `Commercial and industrial concrete for Wichita and nearby Sedgwick County, handled by FDZ's Wichita-area crew. Call ${ksCall}.`,
   modelNote:
     "FDZ's Wichita-area concrete crew handles local projects. Scope and schedule are confirmed during estimating.",
-  introText: `FDZ Construction LLC takes concrete work in Wichita through its Wichita-area crew. General contractors, commercial property owners, and facility managers can start here, then open the service page that matches the job. Commercial site work and industrial slabs are the primary scopes. Retaining walls and stamped concrete are available when the site needs them. Call ${ksCall} or use the estimate form. The written estimate follows a review of the plans or the site.`,
+  introText: `FDZ Construction LLC takes concrete work in Wichita through its Wichita-area crew. Commercial site work and industrial slabs are the primary scopes for general contractors, property owners, and facility managers. Retaining walls and stamped concrete are available when the site needs them. Call ${ksCall} or send the project location, scope, and any drawings or photos. The written estimate follows a review of the plans or the site.`,
   ctaLabel: "Request a Wichita Estimate →",
   serviceSchema: {
     serviceType: "Concrete construction",
     name: "Concrete Contractors in Wichita, Kansas",
     telephone: `+1${KANSAS_PHONE.tel}`,
   },
-  serviceCardsTitle: "Choose the Wichita",
-  serviceCardsTitleAccent: "concrete scope.",
+  serviceCardsTitle: "Wichita concrete",
+  serviceCardsTitleAccent: "for the job.",
   serviceCards: [
     {
       icon: "🏗️",
@@ -1144,7 +1144,7 @@ export const concreteContractorsWichita: WichitaPageContent = {
           "Curb and gutter",
           "Sidewalks",
           "Site slabs poured to the project drawings",
-          "<a href='/commercial-concrete-wichita'>Commercial concrete in Wichita</a> covers this scope in detail.",
+          "Parking lots, paving, curb, sidewalks, and site slabs are covered under <a href='/commercial-concrete-wichita'>commercial concrete in Wichita</a>.",
         ],
       },
       {
@@ -1155,7 +1155,7 @@ export const concreteContractorsWichita: WichitaPageContent = {
           "Loading dock concrete",
           "Heavy-use paving",
           "Strength, thickness, reinforcement, and flatness follow the project plans and specifications",
-          "<a href='/industrial-concrete-wichita'>Industrial concrete in Wichita</a> covers warehouse, equipment, and dock work in detail.",
+          "Warehouse slabs, equipment pads, and dock concrete are covered under <a href='/industrial-concrete-wichita'>industrial concrete in Wichita</a>.",
         ],
       },
     ],
@@ -1186,7 +1186,7 @@ export const concreteContractorsWichita: WichitaPageContent = {
   processTitle: "How a Wichita estimate",
   processTitleAccent: "is written.",
   processIntro:
-    "The same estimate form used for the rest of FDZ's work collects the Wichita request. A written estimate follows the review below.",
+    "Send your project location, scope, and available drawings or photos. FDZ reviews the plans or site conditions before preparing a written estimate.",
   processSteps: [
     {
       title: "Share the scope and documents",
@@ -1196,19 +1196,19 @@ export const concreteContractorsWichita: WichitaPageContent = {
     {
       title: "Review plans and site conditions",
       description:
-        "FDZ reviews the drawings or the site before writing a number. The crew confirms which service page matches the work.",
+        "FDZ reviews the drawings, access, site conditions, and schedule requirements to confirm the concrete scope.",
     },
     {
       title: "Receive a written estimate",
       description:
-        "The quote is written after that plan review or site visit. It is not a price taken from a statewide rate sheet.",
+        "Receive a written estimate describing the reviewed scope and applicable project requirements.",
     },
   ],
   projectTypesEyebrow: "Who this is for",
-  projectTypesTitle: "People who start",
-  projectTypesTitleAccent: "on this page.",
+  projectTypesTitle: "Concrete work for Wichita contractors,",
+  projectTypesTitleAccent: "property owners, and facility managers.",
   projectTypesIntro:
-    "Use this page to pick the Wichita service, then request an estimate with the address and the documents you already have.",
+    "Commercial and industrial projects in Wichita and nearby Sedgwick County, plus retaining walls and stamped concrete when the site needs them.",
   projectTypes: [
     {
       title: "General contractors",
@@ -1230,14 +1230,14 @@ export const concreteContractorsWichita: WichitaPageContent = {
       answer: `Yes. FDZ has a concrete crew in the Wichita area. Call ${KANSAS_PHONE.display} to discuss a Kansas project.`,
     },
     {
-      question: "Which page should I use for a parking lot or site paving?",
+      question: "Who handles a parking lot or site paving?",
       answer:
-        "Start with commercial concrete in Wichita for parking lots, site paving, curb and gutter, sidewalks, and site slabs.",
+        "Parking lots, site paving, curb and gutter, sidewalks, and site slabs are commercial concrete work for the Wichita-area crew.",
     },
     {
-      question: "Which page should I use for a warehouse, machine pad, or loading dock?",
+      question: "Who handles a warehouse, machine pad, or loading dock?",
       answer:
-        "Use industrial concrete in Wichita. Warehouse slabs, equipment foundations, machine pads, loading dock concrete, and heavy-use paving are scoped there.",
+        "Warehouse slabs, equipment foundations, machine pads, loading dock concrete, and heavy-use paving are industrial concrete work for the Wichita-area crew.",
     },
     {
       question: "Do you build retaining walls and stamped concrete in Wichita?",

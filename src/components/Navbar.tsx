@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
-import { useRegionalPhone } from "@/hooks/useRegionalPhone";
+import { useBusinessPhone } from "@/hooks/quoteContact";
 import { estimatePath } from "@/lib/estimatePath";
 import { isKansasPath, normalizePath } from "@/lib/phones";
 
@@ -84,7 +84,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const phone = useRegionalPhone();
+  const phone = useBusinessPhone();
   const kansasRoute = isKansasPath(location.pathname);
   const areaGroups = kansasRoute
     ? [wichitaAreaGroup, oklahomaAreaGroup]
@@ -186,7 +186,11 @@ export default function Navbar() {
         <div className="hidden nav:flex items-center gap-5 flex-shrink-0">
           <div className="flex flex-col items-end">
             <span className="text-[0.56rem] tracking-[0.14em] uppercase text-muted-text">Free Estimate</span>
-            <a href={`tel:${phone.tel}`} className="font-display text-lg font-extrabold text-orange no-underline leading-tight">{phone.display}</a>
+            {phone ? (
+              <a href={`tel:${phone.tel}`} className="font-display text-lg font-extrabold text-orange no-underline leading-tight">{phone.display}</a>
+            ) : (
+              <span className="font-display text-lg font-extrabold text-muted-text leading-tight">Call</span>
+            )}
           </div>
           <Link to={estimateTo} className="bg-orange text-white px-5 py-2 font-display text-[0.8rem] font-extrabold tracking-[0.08em] uppercase no-underline transition-colors hover:bg-orange-light whitespace-nowrap">
             Get Quote →
@@ -194,9 +198,11 @@ export default function Navbar() {
         </div>
 
         <div className="flex nav:hidden items-center gap-2">
-          <a href={`tel:${phone.tel}`} className="bg-orange text-white px-3 py-2 font-display text-[0.72rem] font-extrabold tracking-[0.06em] uppercase no-underline whitespace-nowrap">
-            📞 Call
-          </a>
+          {phone ? (
+            <a href={`tel:${phone.tel}`} className="bg-orange text-white px-3 py-2 font-display text-[0.72rem] font-extrabold tracking-[0.06em] uppercase no-underline whitespace-nowrap">
+              📞 Call
+            </a>
+          ) : null}
           <button
             type="button"
             onClick={() => setMobileOpen(true)}
@@ -214,8 +220,8 @@ export default function Navbar() {
         ? createPortal(
             <MobileMenuOverlay
               onClose={() => setMobileOpen(false)}
-              phoneDisplay={phone.display}
-              phoneTel={phone.tel}
+              phoneDisplay={phone?.display ?? ""}
+              phoneTel={phone?.tel ?? ""}
               estimateTo={estimateTo}
               sections={mobileSections}
             />,
@@ -285,9 +291,11 @@ function MobileMenuOverlay({
             </div>
 
             <div className="space-y-3 pt-2">
-              <a href={`tel:${phoneTel}`} className="btn-primary w-full py-4 text-center text-base">
-                📞 {phoneDisplay}
-              </a>
+              {phoneTel ? (
+                <a href={`tel:${phoneTel}`} className="btn-primary w-full py-4 text-center text-base">
+                  📞 {phoneDisplay}
+                </a>
+              ) : null}
               <Link to={estimateTo} onClick={onClose} className="btn-outline w-full py-4 text-center text-base">
                 Get Free Estimate →
               </Link>

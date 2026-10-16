@@ -137,3 +137,65 @@ export function quoteFollowUpPath(accessToken: string, from: string | null | und
   if (!parseEstimateOrigin(from)) return path;
   return `${path}?from=${encodeURIComponent(from)}`;
 }
+
+export function supportedEstimateOrigin(from: unknown): EstimateOriginId | null {
+  if (typeof from !== "string" || !parseEstimateOrigin(from)) return null;
+  return from as EstimateOriginId;
+}
+
+function stripKnownOriginPrefixes(details: string): string {
+  let body = details;
+  for (const id of Object.keys(ESTIMATE_ORIGINS) as EstimateOriginId[]) {
+    body = body.split(ESTIMATE_ORIGINS[id].detailsPrefix).join(" ");
+  }
+  return body.replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+}
+
+/**
+ * Persist the validated `from` value inside project_details.
+ * The structured prefix stays at the front so a 2,000-character cap cannot drop it.
+ * Free-form notes that mention a city are not treated as an origin.
+ * An explicit unsupported `from` strips any pasted prefix so notes cannot spoof a region.
+ * A missing `from` leaves an already stored prefix in place for older clients.
+ */
+export function projectDetailsForStorage(
+  from: unknown,
+  details: string | null | undefined,
+): string | null {
+  const raw = details ? String(details).trim() : "";
+  const validated = supportedEstimateOrigin(from);
+  const fromWasSent = from !== undefined && from !== null && String(from).trim() !== "";
+  let body = validated || fromWasSent ? stripKnownOriginPrefixes(raw) : raw;
+  if (validated) {
+    const prefix = ESTIMATE_ORIGINS[validated].detailsPrefix;
+    body = body ? `${prefix}\n${body}` : prefix;
+  }
+  const stored = body.slice(0, DETAILS_MAX_LENGTH).trim();
+  return stored.length ? stored : null;
+}
+
+/** Exactly one structured origin prefix. City names in notes do not count. */
+export function originIdFromProjectDetails(details: string | null | undefined): EstimateOriginId | undefined {
+  if (!details) return undefined;
+  const matches = (Object.keys(ESTIMATE_ORIGINS) as EstimateOriginId[]).filter((id) =>
+    details.includes(ESTIMATE_ORIGINS[id].detailsPrefix),
+  );
+  return matches.length === 1 ? matches[0] : undefined;
+}
+
+/** Stored project details win over a conflicting URL `from`. */
+export function resolveQuoteOrigin(
+  projectDetails: string | null | undefined,
+  urlFrom: string | null | undefined,
+): EstimateOriginId | null {
+  return originIdFromProjectDetails(projectDetails) ?? supportedEstimateOrigin(urlFrom);
+}
+
+export function absoluteQuoteUrl(
+  siteUrl: string | null | undefined,
+  accessToken: string,
+  from: string | null | undefined,
+): string {
+  const base = (siteUrl || "https://fdzconstruction.com").replace(/\/+$/, "");
+  return `${base}${quoteFollowUpPath(accessToken, supportedEstimateOrigin(from))}`;
+}

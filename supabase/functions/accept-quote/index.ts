@@ -1,5 +1,7 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { NOTIFICATION_EMAIL, sendEmail } from "../_shared/email.ts";
+import { absoluteQuoteUrl, originIdFromProjectDetails } from "../../../src/lib/estimatePath.ts";
+import { customerAcceptanceEmailHtml } from "../../../src/lib/quoteEmail.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -153,7 +155,8 @@ Deno.serve(async (req) => {
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     const quoteNumber = `#${String(quote.quote_number).padStart(4, "0")}`;
     const siteUrl = Deno.env.get("SITE_URL") || "https://fdzconstruction.com";
-    const quoteUrl = `${siteUrl}/quote/${quote.access_token}`;
+    const quoteOrigin = originIdFromProjectDetails(quote.project_details) ?? null;
+    const quoteUrl = absoluteQuoteUrl(siteUrl, quote.access_token, quoteOrigin);
     const acceptedDateStr = new Date(acceptedAt).toLocaleDateString("en-US", {
       year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit",
     });
@@ -169,41 +172,15 @@ Deno.serve(async (req) => {
         </div>
       `).join("");
 
-      const customerHtml = `
-<!DOCTYPE html>
-<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#f5f1eb;font-family:Arial,Helvetica,sans-serif;">
-  <div style="max-width:600px;margin:0 auto;background:#ffffff;">
-    <div style="background:#1a1a1a;padding:24px 32px;text-align:center;">
-      <div style="color:#c45c26;font-size:10px;letter-spacing:3px;font-weight:bold;margin-bottom:4px;">LICENSED & INSURED</div>
-      <div style="color:#ffffff;font-size:22px;font-weight:800;letter-spacing:1px;">FDZ CONSTRUCTION</div>
-    </div>
-    <div style="padding:32px;">
-      <div style="background:#dcfce7;border-left:4px solid #16a34a;padding:16px 20px;margin:0 0 24px;">
-        <div style="color:#16a34a;font-size:16px;font-weight:800;">✓ QUOTE ACCEPTED</div>
-        <div style="color:#555;font-size:13px;margin-top:4px;">Quote ${quoteNumber}</div>
-      </div>
-      <h1 style="color:#1a1a1a;font-size:20px;margin:0 0 16px;">Hi ${firstName},</h1>
-      <p style="color:#555;font-size:14px;line-height:1.6;margin:0 0 20px;">Your quote ${quoteNumber} has been accepted. We'll be in touch within 24 hours to schedule your project.</p>
-      <div style="background:#1a1a1a;border-radius:8px;padding:20px;text-align:center;margin:0 0 24px;">
-        <div style="color:#888;font-size:11px;letter-spacing:2px;font-weight:bold;margin-bottom:8px;">TOTAL ESTIMATE</div>
-        <div style="color:#c45c26;font-size:28px;font-weight:800;">$${quote.estimate_low.toLocaleString()} – $${quote.estimate_high.toLocaleString()}</div>
-      </div>
-      <div style="background:#f5f1eb;border-radius:8px;padding:14px 20px;margin:0 0 24px;text-align:center;">
-        <div style="color:#888;font-size:11px;letter-spacing:2px;font-weight:bold;margin-bottom:4px;">ACCEPTED ON</div>
-        <div style="color:#1a1a1a;font-size:14px;font-weight:bold;">${acceptedDateStr}</div>
-      </div>
-      <div style="text-align:center;margin:0 0 32px;">
-        <a href="${quoteUrl}" style="display:inline-block;background:#c45c26;color:#ffffff;text-decoration:none;padding:14px 36px;font-size:14px;font-weight:bold;letter-spacing:1px;border-radius:4px;">VIEW YOUR QUOTE</a>
-      </div>
-    </div>
-    <div style="background:#1a1a1a;padding:20px 32px;text-align:center;">
-      <div style="color:#ffffff;font-size:13px;font-weight:bold;">FDZ Construction LLC</div>
-      <div style="color:#888;font-size:12px;margin-top:4px;">(405) 458-4805 · jesus@fdzconstruction.com</div>
-      <div style="color:#666;font-size:11px;margin-top:4px;">fdzconstruction.com</div>
-    </div>
-  </div>
-</body></html>`;
+      const customerHtml = customerAcceptanceEmailHtml({
+        firstName,
+        quoteNumber,
+        estimateLow: quote.estimate_low,
+        estimateHigh: quote.estimate_high,
+        acceptedDate: acceptedDateStr,
+        quoteUrl,
+        origin: quoteOrigin,
+      });
 
       const internalHtml = `
 <!DOCTYPE html>

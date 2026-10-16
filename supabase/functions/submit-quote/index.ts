@@ -1,5 +1,11 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { NOTIFICATION_EMAIL, sendEmail } from "../_shared/email.ts";
+import {
+  absoluteQuoteUrl,
+  originIdFromProjectDetails,
+  projectDetailsForStorage,
+} from "../../../src/lib/estimatePath.ts";
+import { customerQuoteEmailHtml } from "../../../src/lib/quoteEmail.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -175,6 +181,8 @@ Deno.serve(async (req) => {
         : leadMeta && !details
           ? leadMeta
           : details;
+    const storedDetails = projectDetailsForStorage(body.from, detailsWithMeta);
+    const quoteOrigin = originIdFromProjectDetails(storedDetails) ?? null;
 
     const { data: quote, error: dbError } = await supabase
       .from("quotes")
@@ -183,7 +191,7 @@ Deno.serve(async (req) => {
         customer_email: email.trim().slice(0, 255),
         customer_phone: phone.trim().slice(0, 20),
         customer_address: (address || "").trim().slice(0, 500),
-        project_details: detailsWithMeta ? String(detailsWithMeta).trim().slice(0, 2000) : null,
+        project_details: storedDetails,
         project_type: projectType,
         finish_type: finishType || null,
         length_ft: lengthFt,
@@ -207,7 +215,7 @@ Deno.serve(async (req) => {
     const quoteNumber = `#${String(quote.quote_number).padStart(4, "0")}`;
     const baseUrl = siteUrl || "https://fdzconstruction.com";
     // Public-facing link uses the unguessable access token, NOT the primary id.
-    const quoteUrl = `${baseUrl}/quote/${quote.access_token}`;
+    const quoteUrl = absoluteQuoteUrl(baseUrl, quote.access_token, quoteOrigin);
     const firstName = name.trim().split(" ")[0];
     const expiresDate = new Date(quote.valid_until).toLocaleDateString("en-US", {
       year: "numeric", month: "long", day: "numeric",
@@ -216,44 +224,15 @@ Deno.serve(async (req) => {
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
     if (RESEND_API_KEY) {
-      const customerHtml = `
-<!DOCTYPE html>
-<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#f5f1eb;font-family:Arial,Helvetica,sans-serif;">
-  <div style="max-width:600px;margin:0 auto;background:#ffffff;">
-    <div style="background:#1a1a1a;padding:24px 32px;text-align:center;">
-      <div style="color:#c45c26;font-size:10px;letter-spacing:3px;font-weight:bold;margin-bottom:4px;">LICENSED & INSURED</div>
-      <div style="color:#ffffff;font-size:22px;font-weight:800;letter-spacing:1px;">FDZ CONSTRUCTION</div>
-    </div>
-    <div style="padding:32px;">
-      <h1 style="color:#1a1a1a;font-size:20px;margin:0 0 16px;">Hi ${firstName},</h1>
-      <p style="color:#555;font-size:14px;line-height:1.6;margin:0 0 20px;">Thank you for requesting a quote! Here's a summary of your estimate:</p>
-      <div style="background:#f5f1eb;border-left:4px solid #c45c26;padding:16px 20px;margin:0 0 24px;">
-        <div style="color:#888;font-size:11px;letter-spacing:2px;font-weight:bold;margin-bottom:4px;">QUOTE NUMBER</div>
-        <div style="color:#1a1a1a;font-size:24px;font-weight:800;">${quoteNumber}</div>
-      </div>
-      <div style="background:#1a1a1a;border-radius:8px;padding:20px;text-align:center;margin:0 0 24px;">
-        <div style="color:#888;font-size:11px;letter-spacing:2px;font-weight:bold;margin-bottom:8px;">TOTAL ESTIMATE</div>
-        <div style="color:#c45c26;font-size:28px;font-weight:800;">$${estimateLow.toLocaleString()} – $${estimateHigh.toLocaleString()}</div>
-      </div>
-      <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:14px 20px;margin:0 0 24px;text-align:center;">
-        <div style="color:#c45c26;font-size:13px;font-weight:bold;">⏳ Valid for 30 days</div>
-        <div style="color:#888;font-size:12px;margin-top:4px;">Expires on <strong style="color:#1a1a1a;">${expiresDate}</strong></div>
-      </div>
-      <div style="text-align:center;margin:0 0 16px;">
-        <a href="${quoteUrl}" style="display:inline-block;background:#c45c26;color:#ffffff;text-decoration:none;padding:14px 36px;font-size:14px;font-weight:bold;letter-spacing:1px;border-radius:4px;">VIEW YOUR QUOTE</a>
-      </div>
-      <div style="text-align:center;margin:0 0 32px;">
-        <a href="${quoteUrl}" style="display:inline-block;background:#1a1a1a;color:#ffffff;text-decoration:none;padding:12px 28px;font-size:13px;font-weight:bold;letter-spacing:1px;border-radius:4px;">ACCEPT QUOTE NOW →</a>
-      </div>
-    </div>
-    <div style="background:#1a1a1a;padding:20px 32px;text-align:center;">
-      <div style="color:#ffffff;font-size:13px;font-weight:bold;">FDZ Construction LLC</div>
-      <div style="color:#888;font-size:12px;margin-top:4px;">(405) 458-4805 · jesus@fdzconstruction.com</div>
-      <div style="color:#666;font-size:11px;margin-top:4px;">fdzconstruction.com</div>
-    </div>
-  </div>
-</body></html>`;
+      const customerHtml = customerQuoteEmailHtml({
+        firstName,
+        quoteNumber,
+        estimateLow,
+        estimateHigh,
+        expiresDate,
+        quoteUrl,
+        origin: quoteOrigin,
+      });
 
       const includesHtml = (lineItems || []).map((item: any) => `
         <div style="margin-bottom:16px;">
@@ -291,7 +270,7 @@ Deno.serve(async (req) => {
       <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:4px;padding:10px 16px;margin:0 0 24px;">
         <div style="color:#c45c26;font-size:12px;font-weight:bold;">Expires: ${expiresDate}</div>
       </div>
-      ${detailsWithMeta ? `<h2 style="color:#1a1a1a;font-size:16px;margin:0 0 8px;border-bottom:2px solid #c45c26;padding-bottom:8px;">Project Notes</h2><p style="color:#555;font-size:14px;line-height:1.6;white-space:pre-wrap;">${detailsWithMeta}</p>` : ""}
+      ${storedDetails ? `<h2 style="color:#1a1a1a;font-size:16px;margin:0 0 8px;border-bottom:2px solid #c45c26;padding-bottom:8px;">Project Notes</h2><p style="color:#555;font-size:14px;line-height:1.6;white-space:pre-wrap;">${storedDetails}</p>` : ""}
       <div style="text-align:center;margin-top:24px;">
         <a href="${quoteUrl}" style="display:inline-block;background:#c45c26;color:#fff;text-decoration:none;padding:12px 28px;font-size:13px;font-weight:bold;border-radius:4px;margin-right:8px;">VIEW QUOTE</a>
         <a href="${baseUrl}/admin" style="display:inline-block;background:#1a1a1a;color:#fff;text-decoration:none;padding:12px 28px;font-size:13px;font-weight:bold;border-radius:4px;">ADMIN DASHBOARD</a>

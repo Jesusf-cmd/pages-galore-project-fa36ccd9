@@ -2,7 +2,7 @@ import { Component, type ReactNode, Suspense, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { phoneForPath } from "@/lib/phones";
+import { QuoteContactProvider, useBusinessPhone } from "@/hooks/quoteContact";
 import { trackPhoneClick } from "@/lib/dataLayer";
 import { syncLocalBusinessJsonLd } from "@/lib/localBusinessSchema";
 
@@ -26,11 +26,16 @@ class RouteErrorBoundary extends Component<{ children: ReactNode; phoneDisplay: 
       return (
         <div className="min-h-[40vh] flex items-center justify-center p-8 text-center">
           <p className="text-muted-text">
-            This page failed to load. Call{" "}
-            <a href={`tel:${this.props.phoneTel}`} className="text-orange no-underline">
-              {this.props.phoneDisplay}
-            </a>{" "}
-            for a free estimate.
+            This page failed to load.
+            {this.props.phoneTel ? (
+              <>
+                {" "}Call{" "}
+                <a href={`tel:${this.props.phoneTel}`} className="text-orange no-underline">
+                  {this.props.phoneDisplay}
+                </a>{" "}
+                for a free estimate.
+              </>
+            ) : null}
           </p>
         </div>
       );
@@ -40,8 +45,16 @@ class RouteErrorBoundary extends Component<{ children: ReactNode; phoneDisplay: 
 }
 
 export default function Layout() {
+  return (
+    <QuoteContactProvider>
+      <LayoutChrome />
+    </QuoteContactProvider>
+  );
+}
+
+function LayoutChrome() {
   const { pathname } = useLocation();
-  const phone = phoneForPath(pathname);
+  const phone = useBusinessPhone();
   useEffect(() => {
     // Single GeneralContractor#business on / and /oklahoma-city-concrete; omit elsewhere.
     syncLocalBusinessJsonLd(pathname);
@@ -63,25 +76,27 @@ export default function Layout() {
     <>
       <Navbar />
       <div className="pb-14 nav:pb-0">
-        <RouteErrorBoundary key={pathname} phoneDisplay={phone.display} phoneTel={phone.tel}>
+        <RouteErrorBoundary key={pathname} phoneDisplay={phone?.display ?? ""} phoneTel={phone?.tel ?? ""}>
           <Suspense fallback={<ContentLoader />}>
             <Outlet />
           </Suspense>
         </RouteErrorBoundary>
       </div>
       {/* Sticky mobile call button — hidden on desktop */}
-      <a
-        href={`tel:${phone.tel}`}
-        className="fixed bottom-0 left-0 right-0 z-[90] flex items-center justify-center gap-2 py-4 text-white font-display text-base font-extrabold tracking-[0.06em] uppercase nav:hidden"
-        style={{
-          background: "hsl(var(--orange))",
-          borderTop: "2px solid rgba(255,255,255,0.2)",
-          minHeight: "56px",
-        }}
-        aria-label="Call FDZ Construction LLC"
-      >
-        📞 Call {phone.display} — Free Estimate
-      </a>
+      {phone ? (
+        <a
+          href={`tel:${phone.tel}`}
+          className="fixed bottom-0 left-0 right-0 z-[90] flex items-center justify-center gap-2 py-4 text-white font-display text-base font-extrabold tracking-[0.06em] uppercase nav:hidden"
+          style={{
+            background: "hsl(var(--orange))",
+            borderTop: "2px solid rgba(255,255,255,0.2)",
+            minHeight: "56px",
+          }}
+          aria-label="Call FDZ Construction LLC"
+        >
+          📞 Call {phone.display} — Free Estimate
+        </a>
+      ) : null}
       <Footer />
     </>
   );

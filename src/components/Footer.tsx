@@ -1,13 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import MailtoLink from "./MailtoLink";
-import { useRegionalPhone } from "@/hooks/useRegionalPhone";
+import { useBusinessPhone } from "@/hooks/quoteContact";
 import { isKansasPath, normalizePath } from "@/lib/phones";
 import { estimatePath } from "@/lib/estimatePath";
 import { GOOGLE_MAPS_PROFILE_URL } from "@/lib/contact";
 
 export default function Footer() {
-  const phone = useRegionalPhone();
+  const phone = useBusinessPhone();
   const location = useLocation();
   const kansasRoute = isKansasPath(location.pathname);
   const oklahomaAreaLinks = [
@@ -50,7 +50,9 @@ export default function Footer() {
           <div className="text-[0.6rem] tracking-[0.14em] uppercase text-muted-text font-semibold mb-1">Contact FDZ Construction directly</div>
           <div className="flex flex-wrap gap-4 justify-center">
             <MailtoLink className="text-orange text-sm font-medium no-underline hover:underline" />
-            <a href={`tel:${phone.tel}`} className="text-orange text-sm font-medium no-underline hover:underline">{phone.display}</a>
+            {phone ? (
+              <a href={`tel:${phone.tel}`} className="text-orange text-sm font-medium no-underline hover:underline">{phone.display}</a>
+            ) : null}
           </div>
           {!kansasRoute && (
             <p className="text-[0.74rem] text-muted-text mt-2">Based in Oklahoma City</p>
@@ -111,7 +113,9 @@ export default function Footer() {
             <Link to="/our-projects" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Projects</Link>
             <Link to="/blog" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Concrete Tips Blog</Link>
             <Link to="/sewer-line-repair-oklahoma-city#warranty" className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">Workmanship Warranty</Link>
-            <a href={`tel:${phone.tel}`} className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">{phone.display}</a>
+            {phone ? (
+              <a href={`tel:${phone.tel}`} className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors">{phone.display}</a>
+            ) : null}
             <MailtoLink className="text-[0.74rem] text-muted-text no-underline hover:text-concrete transition-colors" />
           </div>
         </div>

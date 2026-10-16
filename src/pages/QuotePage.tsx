@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import { phoneForEstimateOrigin } from "@/lib/estimatePath";
+import { phoneForEstimateOrigin, resolveQuoteOrigin } from "@/lib/estimatePath";
+import { useQuoteContact } from "@/hooks/quoteContact";
 import SignatureCanvas from "react-signature-canvas";
 import { supabase } from "@/integrations/supabase/client";
 import { useSEO } from "@/hooks/useSEO";
@@ -65,8 +66,11 @@ export default function QuotePage() {
   // The :id route param now carries the unguessable access token, not the quote's primary id.
   const { id: accessToken } = useParams<{ id: string }>();
   const [searchParams] = useSearchParams();
-  const followUpPhone = phoneForEstimateOrigin(searchParams.get("from"));
+  const { reportPhone } = useQuoteContact();
   const [quote, setQuote] = useState<Quote | null>(null);
+  const followUpPhone = phoneForEstimateOrigin(
+    resolveQuoteOrigin(quote?.project_details, searchParams.get("from")),
+  );
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [downloading, setDownloading] = useState(false);
@@ -78,6 +82,11 @@ export default function QuotePage() {
   const [signerEmail, setSignerEmail] = useState("");
   const contentRef = useRef<HTMLDivElement>(null);
   const sigRef = useRef<SignatureCanvas | null>(null);
+
+  useEffect(() => {
+    if (loading) return;
+    reportPhone(followUpPhone);
+  }, [loading, followUpPhone, reportPhone]);
 
   useEffect(() => {
     if (!accessToken) return;

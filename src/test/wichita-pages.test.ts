@@ -80,6 +80,22 @@ describe("Wichita phone scoping", () => {
       expect(service?.path).not.toBe("/concrete-contractors-wichita-ks");
     }
     expect(hubText).not.toContain("Do you build separate pages");
+    for (const phrase of [
+      "The crew confirms which service page matches the work.",
+      "People who start on this page.",
+      "The same estimate form used for the rest of FDZ's work",
+      "It is not a price taken from a statewide rate sheet.",
+      "can start here, then open the service page",
+      "covers this scope in detail",
+    ]) {
+      expect(hubText).not.toContain(phrase);
+    }
+    expect(hubText).toContain("Concrete work for Wichita contractors,");
+    expect(hubText).toContain("property owners, and facility managers.");
+    const hubBody = getPrerenderBody("/concrete-contractors-wichita-ks") ?? "";
+    expect(hubBody).toContain("FDZ reviews the drawings, access, site conditions, and schedule requirements");
+    expect(hubBody).not.toContain("which service page matches the work");
+    expect(hubBody).not.toContain("statewide rate sheet");
   });
 
   it("omits the street address and coordinates on every public path", () => {
