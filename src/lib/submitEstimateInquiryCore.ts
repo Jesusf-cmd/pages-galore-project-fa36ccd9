@@ -1,6 +1,6 @@
 /**
- * Testable core for submit-estimate-inquiry (and shared Turnstile/notification helpers).
- * Edge function wraps this with Deno.env and the Supabase JS client.
+ * Testable core for submit-estimate-inquiry / notification claim+retry.
+ * Edge functions wrap this with Deno.env and the Supabase JS client.
  */
 import {
   buildEstimateInquiryRow,
@@ -16,6 +16,14 @@ export const INQUIRY_CORS_HEADERS = {
 };
 
 export const MIN_FILL_MS = 3000;
+/** Abandoned sending claims may be recovered after this many ms (matches DB default TTL). */
+export const NOTIFICATION_CLAIM_TTL_MS = 120_000;
+
+/**
+ * Resend Idempotency-Key retention is 24 hours (docs). Same key+payload returns the
+ * original response without another send within that window — not unconditional exactly-once.
+ */
+export const RESEND_IDEMPOTENCY_RETENTION = "24 hours (Resend documented retention)";
 
 export type TurnstileVerdict = "ok" | "fail" | "skip" | "missing";
 
@@ -26,9 +34,13 @@ export type SendEmailResult = {
   providerMessageId?: string;
 };
 
+export type SendEmailOptions = {
+  idempotencyKey?: string;
+};
+
 export type NotificationRecipientKind = "customer" | "internal";
 
-export type NotificationStatus = "pending" | "provider_accepted" | "failed";
+export type NotificationStatus = "pending" | "sending" | "provider_accepted" | "failed";
 
 export type InquiryNotificationRow = {
   id: string;
@@ -39,6 +51,15 @@ export type InquiryNotificationRow = {
   attempt_count: number;
   last_error: string | null;
   provider_message_id: string | null;
+  claim_token?: string | null;
+  claimed_at?: string | null;
+  claim_expires_at?: string | null;
+};
+
+export type CreatedInquiryBundle = {
+  inquiryId: string;
+  customerNotificationId: string;
+  internalNotificationId: string;
 };
 
 export type InquiryDb = {
@@ -48,22 +69,35 @@ export type InquiryDb = {
     clientIp: string | null;
     userAgent: string | null;
   }) => Promise<{ error: unknown }>;
-  insertInquiry: (
+  /** Atomic inquiry + both pending notification rows. */
+  createInquiryWithNotifications: (
     row: EstimateInquiryRow,
-  ) => Promise<{ data: { id: string } | null; error: unknown }>;
-  insertNotificationPending: (entry: {
-    inquiry_id: string;
-    recipient_kind: NotificationRecipientKind;
-    recipient_email: string;
-  }) => Promise<{ data: { id: string } | null; error: unknown }>;
-  updateNotificationOutcome: (entry: {
-    id: string;
-    status: NotificationStatus;
-    attempt_count: number;
-    last_error: string | null;
-    provider_message_id: string | null;
-  }) => Promise<{ error: unknown }>;
+    internalEmail: string,
+  ) => Promise<{ data: CreatedInquiryBundle | null; error: unknown }>;
+  claimNotification: (entry: {
+    notificationId: string;
+    claimToken: string;
+    claimTtlSeconds?: number;
+  }) => Promise<{ data: InquiryNotificationRow | null; error: unknown }>;
+  recordProviderAcceptance: (entry: {
+    notificationId: string;
+    claimToken: string;
+    expectedAttempt: number;
+    providerMessageId: string | null;
+  }) => Promise<{ ok: boolean; error: unknown }>;
+  finalizeNotification: (entry: {
+    notificationId: string;
+    claimToken: string;
+    expectedAttempt: number;
+    status: "provider_accepted" | "failed";
+    lastError: string | null;
+    providerMessageId: string | null;
+  }) => Promise<{ ok: boolean; error: unknown }>;
   listRetryableNotifications: (inquiryId?: string) => Promise<{
+    data: InquiryNotificationRow[] | null;
+    error: unknown;
+  }>;
+  listNotificationsForInquiry: (inquiryId: string) => Promise<{
     data: InquiryNotificationRow[] | null;
     error: unknown;
   }>;
@@ -71,6 +105,11 @@ export type InquiryDb = {
     data: (EstimateInquiryRow & { id: string }) | null;
     error: unknown;
   }>;
+  /** Inserts missing pending rows only; never sends mail. */
+  reconcileMissingNotifications: (entry: {
+    internalEmail: string;
+    inquiryId?: string;
+  }) => Promise<{ data: { created: number } | null; error: unknown }>;
 };
 
 export type InquiryEnv = {
@@ -82,12 +121,22 @@ export type InquiryClock = {
 };
 
 export type InquiryMailer = {
-  sendEmail: (to: string, subject: string, html: string) => Promise<SendEmailResult>;
+  sendEmail: (
+    to: string,
+    subject: string,
+    html: string,
+    options?: SendEmailOptions,
+  ) => Promise<SendEmailResult>;
   notificationEmail: string;
 };
 
 export type InquiryFetcher = {
   fetch: typeof fetch;
+};
+
+export type InquiryIdFactory = {
+  /** UUID v4 string for claim tokens. */
+  randomUUID: () => string;
 };
 
 function jsonResponse(
@@ -121,6 +170,10 @@ export function rejectPayload(body: Record<string, unknown>): Record<string, unk
       typeof body.company_website === "string" && String(body.company_website).trim().length > 0,
     hasTurnstileToken: Boolean(body.turnstileToken),
   };
+}
+
+export function notificationIdempotencyKey(notificationId: string, attemptCount: number): string {
+  return `fdz-inq-notify/${notificationId}/a${attemptCount}`;
 }
 
 /**
@@ -175,37 +228,143 @@ async function logRejection(
   }
 }
 
-async function recordAndSendNotification(opts: {
+function buildNotificationContent(
+  inquiry: EstimateInquiryRow,
+  kind: NotificationRecipientKind,
+): { subject: string; html: string } {
+  const firstName = inquiry.customer_name.split(" ")[0] || inquiry.customer_name;
+  if (kind === "customer") {
+    return {
+      subject: "We received your estimate request — FDZ Construction",
+      html: customerInquiryEmailHtml({ firstName, origin: inquiry.origin }),
+    };
+  }
+  return {
+    subject: `New Estimate Inquiry - ${inquiry.customer_name}`,
+    html: internalInquiryEmailHtml({
+      name: inquiry.customer_name,
+      email: inquiry.customer_email,
+      phone: inquiry.customer_phone,
+      address: inquiry.customer_address,
+      projectType: inquiry.project_type,
+      propertyType: inquiry.property_type,
+      customerRole: inquiry.customer_role,
+      approxSize: inquiry.approx_size,
+      biddingStatus: inquiry.bidding_status,
+      projectDetails: inquiry.project_details,
+      origin: inquiry.origin,
+    }),
+  };
+}
+
+/**
+ * Claim → send (or recover prior provider acceptance) → finalize.
+ * Only the claim owner may finalize; stale claim tokens are rejected.
+ */
+export async function deliverClaimedNotification(opts: {
   db: InquiryDb;
   mailer: InquiryMailer;
+  notification: InquiryNotificationRow;
+  inquiry: EstimateInquiryRow;
+  ids: InquiryIdFactory;
+  claimTtlSeconds?: number;
+}): Promise<{
+  id: string;
   inquiryId: string;
-  kind: NotificationRecipientKind;
-  to: string;
-  subject: string;
-  html: string;
-}): Promise<void> {
-  const pending = await opts.db.insertNotificationPending({
-    inquiry_id: opts.inquiryId,
-    recipient_kind: opts.kind,
-    recipient_email: opts.to,
+  recipientKind: NotificationRecipientKind;
+  status: NotificationStatus;
+  error?: string;
+  claimed: boolean;
+  sent: boolean;
+}> {
+  const claimToken = opts.ids.randomUUID();
+  const claimed = await opts.db.claimNotification({
+    notificationId: opts.notification.id,
+    claimToken,
+    claimTtlSeconds: opts.claimTtlSeconds ?? Math.floor(NOTIFICATION_CLAIM_TTL_MS / 1000),
   });
-  if (pending.error || !pending.data) {
-    console.error("[submit-estimate-inquiry] notification pending insert failed:", pending.error);
-    return;
+  if (claimed.error || !claimed.data) {
+    return {
+      id: opts.notification.id,
+      inquiryId: opts.notification.inquiry_id,
+      recipientKind: opts.notification.recipient_kind,
+      status: opts.notification.status,
+      error: "not_claimed",
+      claimed: false,
+      sent: false,
+    };
   }
 
-  const result = await opts.mailer.sendEmail(opts.to, opts.subject, opts.html);
-  const status: NotificationStatus = result.ok ? "provider_accepted" : "failed";
-  const { error } = await opts.db.updateNotificationOutcome({
-    id: pending.data.id,
-    status,
-    attempt_count: 1,
-    last_error: result.ok ? null : result.error ?? "send failed",
-    provider_message_id: result.providerMessageId ?? null,
-  });
-  if (error) {
-    console.error("[submit-estimate-inquiry] notification outcome update failed:", error);
+  const row = claimed.data;
+  const expectedAttempt = row.attempt_count;
+
+  // Prior send accepted by provider but finalize failed — do not casually resend.
+  if (row.provider_message_id && row.last_error === "provider_accepted_finalize_pending") {
+    const fin = await opts.db.finalizeNotification({
+      notificationId: row.id,
+      claimToken,
+      expectedAttempt,
+      status: "provider_accepted",
+      lastError: null,
+      providerMessageId: row.provider_message_id,
+    });
+    return {
+      id: row.id,
+      inquiryId: row.inquiry_id,
+      recipientKind: row.recipient_kind,
+      status: fin.ok ? "provider_accepted" : "sending",
+      error: fin.ok ? undefined : "finalize_failed_after_prior_accept",
+      claimed: true,
+      sent: false,
+    };
   }
+
+  const content = buildNotificationContent(opts.inquiry, row.recipient_kind);
+  const idempotencyKey = notificationIdempotencyKey(row.id, expectedAttempt);
+  const send = await opts.mailer.sendEmail(row.recipient_email, content.subject, content.html, {
+    idempotencyKey,
+  });
+
+  if (send.ok) {
+    await opts.db.recordProviderAcceptance({
+      notificationId: row.id,
+      claimToken,
+      expectedAttempt,
+      providerMessageId: send.providerMessageId ?? null,
+    });
+  }
+
+  const status: "provider_accepted" | "failed" = send.ok ? "provider_accepted" : "failed";
+  const fin = await opts.db.finalizeNotification({
+    notificationId: row.id,
+    claimToken,
+    expectedAttempt,
+    status,
+    lastError: send.ok ? null : send.error ?? "send failed",
+    providerMessageId: send.providerMessageId ?? null,
+  });
+
+  if (send.ok && !fin.ok) {
+    return {
+      id: row.id,
+      inquiryId: row.inquiry_id,
+      recipientKind: row.recipient_kind,
+      status: "sending",
+      error: "provider_accepted_finalize_pending",
+      claimed: true,
+      sent: true,
+    };
+  }
+
+  return {
+    id: row.id,
+    inquiryId: row.inquiry_id,
+    recipientKind: row.recipient_kind,
+    status: fin.ok ? status : row.status,
+    error: fin.ok ? (send.ok ? undefined : send.error) : "finalize_rejected_stale_or_failed",
+    claimed: true,
+    sent: true,
+  };
 }
 
 export async function handleSubmitEstimateInquiry(opts: {
@@ -217,8 +376,10 @@ export async function handleSubmitEstimateInquiry(opts: {
   clock: InquiryClock;
   fetcher: InquiryFetcher;
   mailer: InquiryMailer;
+  ids?: InquiryIdFactory;
 }): Promise<Response> {
   const { body, db, env, clock, fetcher, mailer } = opts;
+  const ids = opts.ids ?? { randomUUID: () => crypto.randomUUID() };
   const honeypot = body.company_website;
   const formStartedAt = body.formStartedAt;
   const turnstileToken = body.turnstileToken;
@@ -288,57 +449,64 @@ export async function handleSubmitEstimateInquiry(opts: {
     return jsonResponse({ error: built.error }, 400);
   }
 
-  const { data: inquiry, error: dbError } = await db.insertInquiry(built.row);
-  if (dbError || !inquiry) {
-    console.error("estimate_inquiries insert error:", dbError);
+  const created = await db.createInquiryWithNotifications(
+    built.row,
+    mailer.notificationEmail,
+  );
+  if (created.error || !created.data) {
+    console.error("estimate inquiry transactional create failed:", created.error);
     return jsonResponse({ error: "Failed to save inquiry" }, 500);
   }
 
-  const firstName = built.row.customer_name.split(" ")[0] || built.row.customer_name;
-  const customerHtml = customerInquiryEmailHtml({
-    firstName,
-    origin: built.row.origin,
-  });
-  const internalHtml = internalInquiryEmailHtml({
-    name: built.row.customer_name,
-    email: built.row.customer_email,
-    phone: built.row.customer_phone,
-    address: built.row.customer_address,
-    projectType: built.row.project_type,
-    propertyType: built.row.property_type,
-    customerRole: built.row.customer_role,
-    approxSize: built.row.approx_size,
-    biddingStatus: built.row.bidding_status,
-    projectDetails: built.row.project_details,
-    origin: built.row.origin,
-  });
+  const inquiryWithId = { ...built.row, id: created.data.inquiryId };
+  const listed = await db.listNotificationsForInquiry(created.data.inquiryId);
+  const notifications = listed.data ?? [];
 
-  // Persist pending work before delivery attempts so interruption remains visible.
-  await Promise.all([
-    recordAndSendNotification({
-      db,
-      mailer,
-      inquiryId: inquiry.id,
-      kind: "customer",
-      to: built.row.customer_email,
-      subject: "We received your estimate request — FDZ Construction",
-      html: customerHtml,
+  // Delivery attempts after durable storage; email failure does not undo the inquiry.
+  await Promise.all(
+    notifications.map(async (n) => {
+      await deliverClaimedNotification({
+        db,
+        mailer,
+        notification: n,
+        inquiry: inquiryWithId,
+        ids,
+      });
     }),
-    recordAndSendNotification({
-      db,
-      mailer,
-      inquiryId: inquiry.id,
-      kind: "internal",
-      to: mailer.notificationEmail,
-      subject: `New Estimate Inquiry - ${built.row.customer_name}`,
-      html: internalHtml,
-    }),
-  ]);
+  );
 
-  return jsonResponse({ success: true, inquiryId: inquiry.id }, 200);
+  return jsonResponse({ success: true, inquiryId: created.data.inquiryId }, 200);
 }
 
-export async function handleRetryInquiryNotifications(opts: {
+export async function handleInspectInquiryNotifications(opts: {
+  body: Record<string, unknown>;
+  db: InquiryDb;
+  authorized: boolean;
+}): Promise<Response> {
+  if (!opts.authorized) {
+    return jsonResponse({ error: "Unauthorized" }, 401);
+  }
+  const inquiryId =
+    typeof opts.body.inquiryId === "string" && opts.body.inquiryId.trim()
+      ? opts.body.inquiryId.trim()
+      : undefined;
+  const listed = inquiryId
+    ? await opts.db.listNotificationsForInquiry(inquiryId)
+    : await opts.db.listRetryableNotifications();
+  if (listed.error) {
+    return jsonResponse({ error: "Failed to list notifications" }, 500);
+  }
+  return jsonResponse(
+    {
+      success: true,
+      notifications: listed.data ?? [],
+      idempotencyRetention: RESEND_IDEMPOTENCY_RETENTION,
+    },
+    200,
+  );
+}
+
+export async function handleReconcileInquiryNotifications(opts: {
   body: Record<string, unknown>;
   db: InquiryDb;
   mailer: InquiryMailer;
@@ -347,7 +515,32 @@ export async function handleRetryInquiryNotifications(opts: {
   if (!opts.authorized) {
     return jsonResponse({ error: "Unauthorized" }, 401);
   }
+  const inquiryId =
+    typeof opts.body.inquiryId === "string" && opts.body.inquiryId.trim()
+      ? opts.body.inquiryId.trim()
+      : undefined;
+  const result = await opts.db.reconcileMissingNotifications({
+    internalEmail: opts.mailer.notificationEmail,
+    inquiryId,
+  });
+  if (result.error || !result.data) {
+    return jsonResponse({ error: "Reconciliation failed" }, 500);
+  }
+  return jsonResponse({ success: true, created: result.data.created }, 200);
+}
 
+export async function handleRetryInquiryNotifications(opts: {
+  body: Record<string, unknown>;
+  db: InquiryDb;
+  mailer: InquiryMailer;
+  authorized: boolean;
+  ids?: InquiryIdFactory;
+}): Promise<Response> {
+  if (!opts.authorized) {
+    return jsonResponse({ error: "Unauthorized" }, 401);
+  }
+
+  const ids = opts.ids ?? { randomUUID: () => crypto.randomUUID() };
   const inquiryId =
     typeof opts.body.inquiryId === "string" && opts.body.inquiryId.trim()
       ? opts.body.inquiryId.trim()
@@ -364,6 +557,8 @@ export async function handleRetryInquiryNotifications(opts: {
     recipientKind: NotificationRecipientKind;
     status: NotificationStatus;
     error?: string;
+    claimed?: boolean;
+    sent?: boolean;
   }> = [];
 
   for (const row of rows) {
@@ -373,6 +568,8 @@ export async function handleRetryInquiryNotifications(opts: {
         inquiryId: row.inquiry_id,
         recipientKind: row.recipient_kind,
         status: "provider_accepted",
+        claimed: false,
+        sent: false,
       });
       continue;
     }
@@ -385,48 +582,20 @@ export async function handleRetryInquiryNotifications(opts: {
         recipientKind: row.recipient_kind,
         status: "failed",
         error: "Inquiry not found",
+        claimed: false,
+        sent: false,
       });
       continue;
     }
 
-    const firstName = inquiry.data.customer_name.split(" ")[0] || inquiry.data.customer_name;
-    const html =
-      row.recipient_kind === "customer"
-        ? customerInquiryEmailHtml({ firstName, origin: inquiry.data.origin })
-        : internalInquiryEmailHtml({
-            name: inquiry.data.customer_name,
-            email: inquiry.data.customer_email,
-            phone: inquiry.data.customer_phone,
-            address: inquiry.data.customer_address,
-            projectType: inquiry.data.project_type,
-            propertyType: inquiry.data.property_type,
-            customerRole: inquiry.data.customer_role,
-            approxSize: inquiry.data.approx_size,
-            biddingStatus: inquiry.data.bidding_status,
-            projectDetails: inquiry.data.project_details,
-            origin: inquiry.data.origin,
-          });
-    const subject =
-      row.recipient_kind === "customer"
-        ? "We received your estimate request — FDZ Construction"
-        : `New Estimate Inquiry - ${inquiry.data.customer_name}`;
-
-    const send = await opts.mailer.sendEmail(row.recipient_email, subject, html);
-    const status: NotificationStatus = send.ok ? "provider_accepted" : "failed";
-    await opts.db.updateNotificationOutcome({
-      id: row.id,
-      status,
-      attempt_count: row.attempt_count + 1,
-      last_error: send.ok ? null : send.error ?? "send failed",
-      provider_message_id: send.providerMessageId ?? row.provider_message_id,
+    const delivered = await deliverClaimedNotification({
+      db: opts.db,
+      mailer: opts.mailer,
+      notification: row,
+      inquiry: inquiry.data,
+      ids,
     });
-    results.push({
-      id: row.id,
-      inquiryId: row.inquiry_id,
-      recipientKind: row.recipient_kind,
-      status,
-      error: send.ok ? undefined : send.error,
-    });
+    results.push(delivered);
   }
 
   return jsonResponse({ success: true, retried: results.length, results }, 200);

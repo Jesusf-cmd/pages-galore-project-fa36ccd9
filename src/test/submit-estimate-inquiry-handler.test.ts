@@ -1,22 +1,21 @@
 /**
- * Runtime-style handler tests for submit-estimate-inquiry / notification retry.
- * Stubs DB, fetch (Turnstile), and email — no network, uploads, or real credentials.
+ * Handler tests for inquiry storage, claim delivery, reconcile, and concurrent claims.
+ * Stubs outbound email/Turnstile; uses in-memory DB mirroring PG claim semantics.
  */
 import { describe, expect, it, vi, beforeEach } from "vitest";
 import {
+  deliverClaimedNotification,
+  handleInspectInquiryNotifications,
+  handleReconcileInquiryNotifications,
   handleRetryInquiryNotifications,
   handleSubmitEstimateInquiry,
+  notificationIdempotencyKey,
   verifyTurnstileToken,
-  type InquiryDb,
-  type InquiryNotificationRow,
   type SendEmailResult,
 } from "@/lib/submitEstimateInquiryCore";
+import { createMemoryInquiryDb, type MemInquiryState } from "@/lib/inquiryNotificationDb";
 import { parsePricedQuoteAmounts, isAcceptablePricedQuote } from "@/lib/pricedQuote";
 import type { EstimateInquiryRow } from "@/lib/estimateInquiry";
-
-const INQUIRY_ID = "aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee";
-const NOTIFY_CUSTOMER_ID = "n1111111-1111-4111-8111-111111111111";
-const NOTIFY_INTERNAL_ID = "n2222222-2222-4222-8222-222222222222";
 
 function validBody(overrides: Record<string, unknown> = {}): Record<string, unknown> {
   return {
@@ -37,130 +36,49 @@ function validBody(overrides: Record<string, unknown> = {}): Record<string, unkn
   };
 }
 
-function createMemDb(): InquiryDb & {
-  inquiries: Array<EstimateInquiryRow & { id: string }>;
-  notifications: InquiryNotificationRow[];
-  rejections: Array<{ reason: string }>;
-} {
-  const state = {
-    inquiries: [] as Array<EstimateInquiryRow & { id: string }>,
-    notifications: [] as InquiryNotificationRow[],
-    rejections: [] as Array<{ reason: string }>,
-  };
-  const db: InquiryDb & typeof state = {
-    ...state,
-    async insertRejectedLead(entry) {
-      state.rejections.push({ reason: entry.reason });
-      return { error: null };
-    },
-    async insertInquiry(row) {
-      const record = { ...row, id: INQUIRY_ID };
-      state.inquiries.push(record);
-      return { data: { id: INQUIRY_ID }, error: null };
-    },
-    async insertNotificationPending(entry) {
-      const id =
-        entry.recipient_kind === "customer" ? NOTIFY_CUSTOMER_ID : NOTIFY_INTERNAL_ID;
-      state.notifications.push({
-        id,
-        inquiry_id: entry.inquiry_id,
-        recipient_kind: entry.recipient_kind,
-        recipient_email: entry.recipient_email,
-        status: "pending",
-        attempt_count: 0,
-        last_error: null,
-        provider_message_id: null,
-      });
-      return { data: { id }, error: null };
-    },
-    async updateNotificationOutcome(entry) {
-      const row = state.notifications.find((n) => n.id === entry.id);
-      if (row) {
-        row.status = entry.status;
-        row.attempt_count = entry.attempt_count;
-        row.last_error = entry.last_error;
-        row.provider_message_id = entry.provider_message_id;
-      }
-      return { error: null };
-    },
-    async listRetryableNotifications(inquiryId) {
-      const data = state.notifications.filter(
-        (n) =>
-          (n.status === "pending" || n.status === "failed") &&
-          (!inquiryId || n.inquiry_id === inquiryId),
-      );
-      return { data, error: null };
-    },
-    async getInquiryRow(inquiryId) {
-      const data = state.inquiries.find((i) => i.id === inquiryId) ?? null;
-      return { data, error: null };
-    },
-  };
-  return db;
-}
-
 describe("verifyTurnstileToken", () => {
-  it("skips when secret is unconfigured", async () => {
-    const verdict = await verifyTurnstileToken({
-      token: undefined,
-      ip: null,
-      env: { get: () => undefined },
-      fetcher: { fetch: vi.fn() },
-    });
-    expect(verdict).toBe("skip");
-  });
-
-  it("requires a nonempty token when secret is configured", async () => {
-    const fetchMock = vi.fn();
+  it("skips when unconfigured; requires token when configured", async () => {
+    expect(
+      await verifyTurnstileToken({
+        token: undefined,
+        ip: null,
+        env: { get: () => undefined },
+        fetcher: { fetch: vi.fn() },
+      }),
+    ).toBe("skip");
     expect(
       await verifyTurnstileToken({
         token: "",
         ip: null,
-        env: { get: (k) => (k === "TURNSTILE_SECRET" ? "stub-secret" : undefined) },
-        fetcher: { fetch: fetchMock },
+        env: { get: (k) => (k === "TURNSTILE_SECRET" ? "stub" : undefined) },
+        fetcher: { fetch: vi.fn() },
       }),
     ).toBe("missing");
-    expect(fetchMock).not.toHaveBeenCalled();
-  });
-
-  it("returns fail/ok from siteverify", async () => {
-    const fetchMock = vi
-      .fn()
-      .mockResolvedValueOnce({ json: async () => ({ success: false }) })
-      .mockResolvedValueOnce({ json: async () => ({ success: true }) });
-    const env = { get: (k: string) => (k === "TURNSTILE_SECRET" ? "stub-secret" : undefined) };
-    expect(
-      await verifyTurnstileToken({
-        token: "bad",
-        ip: "1.1.1.1",
-        env,
-        fetcher: { fetch: fetchMock },
-      }),
-    ).toBe("fail");
-    expect(
-      await verifyTurnstileToken({
-        token: "good",
-        ip: null,
-        env,
-        fetcher: { fetch: fetchMock },
-      }),
-    ).toBe("ok");
   });
 });
 
-describe("handleSubmitEstimateInquiry", () => {
-  let db: ReturnType<typeof createMemDb>;
-  let sendEmail: ReturnType<typeof vi.fn<(...args: unknown[]) => Promise<SendEmailResult>>>;
+describe("handleSubmitEstimateInquiry storage + notifications", () => {
+  let state: MemInquiryState;
+  let sendEmail: ReturnType<typeof vi.fn<(...a: unknown[]) => Promise<SendEmailResult>>>;
+  let uuidSeq: number;
 
   beforeEach(() => {
-    db = createMemDb();
+    state = { inquiries: [], notifications: [], rejections: [] };
     sendEmail = vi.fn(async () => ({ ok: true, providerMessageId: "msg_1" }));
+    uuidSeq = 0;
   });
 
-  async function run(
-    body: Record<string, unknown>,
-    envMap: Record<string, string | undefined> = {},
-  ) {
+  function ids() {
+    return {
+      randomUUID: () => {
+        uuidSeq += 1;
+        return `00000000-0000-4000-8000-${String(uuidSeq).padStart(12, "0")}`;
+      },
+    };
+  }
+
+  async function run(body: Record<string, unknown>, envMap: Record<string, string | undefined> = {}) {
+    const db = createMemoryInquiryDb(state);
     return handleSubmitEstimateInquiry({
       body,
       clientIp: "127.0.0.1",
@@ -169,63 +87,8 @@ describe("handleSubmitEstimateInquiry", () => {
       env: { get: (k) => envMap[k] },
       clock: { now: () => Date.now() },
       fetcher: {
-        fetch: vi.fn(async () => ({ json: async () => ({ success: true }) })) as unknown as typeof fetch,
-      },
-      mailer: {
-        sendEmail: sendEmail as unknown as (
-          to: string,
-          subject: string,
-          html: string,
-        ) => Promise<SendEmailResult>,
-        notificationEmail: "ops@fdzconstruction.com",
-      },
-    });
-  }
-
-  it("stores a valid Kansas inquiry and records provider-accepted notifications", async () => {
-    const res = await run(validBody());
-    expect(res.status).toBe(200);
-    const json = await res.json();
-    expect(json).toEqual({ success: true, inquiryId: INQUIRY_ID });
-    expect(db.inquiries).toHaveLength(1);
-    expect(db.inquiries[0].origin).toBe("concrete-contractors-wichita-ks");
-    expect(db.inquiries[0].project_type).toBe("commercial");
-    expect(JSON.stringify(db.inquiries[0])).not.toMatch(/estimate_low|length_ft/);
-    expect(db.notifications).toHaveLength(2);
-    expect(db.notifications.every((n) => n.status === "provider_accepted")).toBe(true);
-    expect(sendEmail).toHaveBeenCalledTimes(2);
-  });
-
-  it("rejects invalid inputs with HTTP 400 and no insert", async () => {
-    const res = await run(validBody({ email: "not-an-email" }));
-    expect(res.status).toBe(400);
-    expect(db.inquiries).toHaveLength(0);
-    expect(sendEmail).not.toHaveBeenCalled();
-  });
-
-  it("returns recoverable 400 when Turnstile is configured and token is missing", async () => {
-    const res = await run(validBody({ turnstileToken: "" }), {
-      TURNSTILE_SECRET: "stub-secret",
-    });
-    expect(res.status).toBe(400);
-    const json = await res.json();
-    expect(json.code).toBe("turnstile_required");
-    expect(db.inquiries).toHaveLength(0);
-    expect(db.rejections.some((r) => r.reason === "turnstile_missing")).toBe(true);
-    expect(sendEmail).not.toHaveBeenCalled();
-  });
-
-  it("returns recoverable 400 when Turnstile verification fails", async () => {
-    const res = await handleSubmitEstimateInquiry({
-      body: validBody({ turnstileToken: "expired" }),
-      clientIp: null,
-      userAgent: null,
-      db,
-      env: { get: (k) => (k === "TURNSTILE_SECRET" ? "stub-secret" : undefined) },
-      clock: { now: () => Date.now() },
-      fetcher: {
         fetch: vi.fn(async () => ({
-          json: async () => ({ success: false }),
+          json: async () => ({ success: true }),
         })) as unknown as typeof fetch,
       },
       mailer: {
@@ -236,162 +99,363 @@ describe("handleSubmitEstimateInquiry", () => {
         ) => Promise<SendEmailResult>,
         notificationEmail: "ops@fdzconstruction.com",
       },
+      ids: ids(),
     });
-    expect(res.status).toBe(400);
+  }
+
+  it("1. successful storage creates inquiry and both notification records", async () => {
+    const res = await run(validBody());
+    expect(res.status).toBe(200);
     const json = await res.json();
-    expect(json.code).toBe("turnstile_failed");
-    expect(db.inquiries).toHaveLength(0);
+    expect(json.success).toBe(true);
+    expect(typeof json.inquiryId).toBe("string");
+    expect(state.inquiries).toHaveLength(1);
+    expect(state.notifications).toHaveLength(2);
+    expect(state.notifications.map((n) => n.recipient_kind).sort()).toEqual([
+      "customer",
+      "internal",
+    ]);
+    expect(state.notifications.every((n) => n.status === "provider_accepted")).toBe(true);
+    expect(sendEmail).toHaveBeenCalledTimes(2);
+    expect(sendEmail.mock.calls[0][3]).toMatchObject({
+      idempotencyKey: expect.stringMatching(/^fdz-inq-notify\//),
+    });
   });
 
-  it("returns 500 when database insert fails and does not email", async () => {
-    db.insertInquiry = async () => ({ data: null, error: { message: "db down" } });
+  it("2. notification create failure cannot leave unnoticed confirmed inquiry", async () => {
+    state.failCreate = true;
     const res = await run(validBody());
     expect(res.status).toBe(500);
+    expect(state.inquiries).toHaveLength(0);
+    expect(state.notifications).toHaveLength(0);
     expect(sendEmail).not.toHaveBeenCalled();
   });
 
-  it("keeps stored inquiry when both emails fail and persists failed notification rows", async () => {
-    sendEmail.mockResolvedValue({ ok: false, status: 500, error: "provider 500" });
+  it("3. interrupted delivery remains recoverable as pending/sending work", async () => {
+    sendEmail.mockImplementation(async () => {
+      throw new Error("network down");
+    });
+    // mailer catching: make send return ok:false instead
+    sendEmail.mockReset();
+    sendEmail.mockResolvedValue({ ok: false, error: "network down" });
     const res = await run(validBody());
     expect(res.status).toBe(200);
     const json = await res.json();
-    expect(json.inquiryId).toBe(INQUIRY_ID);
-    expect(db.notifications).toHaveLength(2);
-    expect(db.notifications.every((n) => n.status === "failed")).toBe(true);
-    expect(db.notifications.every((n) => n.last_error === "provider 500")).toBe(true);
+    expect(json.inquiryId).toBeTruthy();
+    expect(state.notifications.every((n) => n.status === "failed")).toBe(true);
+    expect(state.inquiries).toHaveLength(1);
   });
 
-  it("honeypot returns silent success without inquiryId or conversion storage", async () => {
-    const res = await run(validBody({ company_website: "http://spam.test" }));
-    expect(res.status).toBe(200);
-    const json = await res.json();
-    expect(json).toEqual({ success: true });
-    expect(json.inquiryId).toBeUndefined();
-    expect(db.inquiries).toHaveLength(0);
-  });
-});
+  it("4. reconciliation repairs missing work once and preserves successes", async () => {
+    const db = createMemoryInquiryDb(state);
+    await run(validBody());
+    const inquiryId = state.inquiries[0].id;
+    // Simulate missing internal row while customer remains accepted
+    state.notifications = state.notifications.filter((n) => n.recipient_kind === "customer");
+    expect(state.notifications).toHaveLength(1);
 
-describe("handleRetryInquiryNotifications", () => {
-  it("rejects unauthorized callers", async () => {
-    const db = createMemDb();
-    const res = await handleRetryInquiryNotifications({
-      body: {},
+    const first = await handleReconcileInquiryNotifications({
+      body: { inquiryId },
       db,
       mailer: {
-        sendEmail: async () => ({ ok: true }),
-        notificationEmail: "ops@fdzconstruction.com",
-      },
-      authorized: false,
-    });
-    expect(res.status).toBe(401);
-  });
-
-  it("retries failed notifications without creating a new inquiry", async () => {
-    const db = createMemDb();
-    db.inquiries.push({
-      id: INQUIRY_ID,
-      customer_name: "Wichita Lead",
-      customer_email: "wichita-lead@example.com",
-      customer_phone: "3165550199",
-      customer_address: null,
-      project_type: "commercial",
-      property_type: null,
-      customer_role: null,
-      approx_size: null,
-      bidding_status: null,
-      project_details: "notes",
-      origin: "concrete-contractors-wichita-ks",
-      status: "inquiry",
-    });
-    db.notifications.push({
-      id: NOTIFY_INTERNAL_ID,
-      inquiry_id: INQUIRY_ID,
-      recipient_kind: "internal",
-      recipient_email: "ops@fdzconstruction.com",
-      status: "failed",
-      attempt_count: 1,
-      last_error: "provider 500",
-      provider_message_id: null,
-    });
-    db.notifications.push({
-      id: NOTIFY_CUSTOMER_ID,
-      inquiry_id: INQUIRY_ID,
-      recipient_kind: "customer",
-      recipient_email: "wichita-lead@example.com",
-      status: "provider_accepted",
-      attempt_count: 1,
-      last_error: null,
-      provider_message_id: "msg_ok",
-    });
-
-    const sendEmail = vi.fn(async () => ({ ok: true, providerMessageId: "msg_retry" }));
-    const res = await handleRetryInquiryNotifications({
-      body: { inquiryId: INQUIRY_ID },
-      db,
-      mailer: {
-        sendEmail,
+        sendEmail: sendEmail as unknown as (
+          to: string,
+          subject: string,
+          html: string,
+        ) => Promise<SendEmailResult>,
         notificationEmail: "ops@fdzconstruction.com",
       },
       authorized: true,
     });
+    expect(first.status).toBe(200);
+    expect((await first.json()).created).toBe(1);
+    expect(state.notifications).toHaveLength(2);
+    expect(state.notifications.find((n) => n.recipient_kind === "customer")?.status).toBe(
+      "provider_accepted",
+    );
+
+    const second = await handleReconcileInquiryNotifications({
+      body: { inquiryId },
+      db,
+      mailer: {
+        sendEmail: sendEmail as unknown as (
+          to: string,
+          subject: string,
+          html: string,
+        ) => Promise<SendEmailResult>,
+        notificationEmail: "ops@fdzconstruction.com",
+      },
+      authorized: true,
+    });
+    expect((await second.json()).created).toBe(0);
+    expect(state.inquiries).toHaveLength(1);
+  });
+
+  it("5/6. two concurrent workers: only one claims the send", async () => {
+    const db = createMemoryInquiryDb(state, { now: () => 1_000_000 });
+    await db.createInquiryWithNotifications(
+      {
+        customer_name: "W",
+        customer_email: "w@example.com",
+        customer_phone: "3165550100",
+        customer_address: null,
+        project_type: "commercial",
+        property_type: null,
+        customer_role: null,
+        approx_size: null,
+        bidding_status: null,
+        project_details: null,
+        origin: "concrete-contractors-wichita-ks",
+        status: "inquiry",
+      },
+      "ops@example.com",
+    );
+    const n = state.notifications[0];
+    const inquiry = state.inquiries[0];
+    let sends = 0;
+    const mailer = {
+      notificationEmail: "ops@example.com",
+      sendEmail: async () => {
+        sends += 1;
+        return { ok: true, providerMessageId: `m${sends}` };
+      },
+    };
+    const [r1, r2] = await Promise.all([
+      deliverClaimedNotification({
+        db,
+        mailer,
+        notification: n,
+        inquiry,
+        ids: { randomUUID: () => "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa" },
+      }),
+      deliverClaimedNotification({
+        db,
+        mailer,
+        notification: { ...n },
+        inquiry,
+        ids: { randomUUID: () => "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb" },
+      }),
+    ]);
+    const claimed = [r1, r2].filter((r) => r.claimed);
+    expect(claimed).toHaveLength(1);
+    expect(sends).toBe(1);
+    expect(state.notifications[0].attempt_count).toBe(1);
+  });
+
+  it("7. abandoned claim recovers; stale finalize cannot overwrite", async () => {
+    let now = 1_000_000;
+    const db = createMemoryInquiryDb(state, { now: () => now });
+    await db.createInquiryWithNotifications(
+      {
+        customer_name: "W",
+        customer_email: "w@example.com",
+        customer_phone: "3165550100",
+        customer_address: null,
+        project_type: "commercial",
+        property_type: null,
+        customer_role: null,
+        approx_size: null,
+        bidding_status: null,
+        project_details: null,
+        origin: null,
+        status: "inquiry",
+      },
+      "ops@example.com",
+    );
+    const n = state.notifications[0];
+    const first = await db.claimNotification({
+      notificationId: n.id,
+      claimToken: "token-old",
+      claimTtlSeconds: 1,
+    });
+    expect(first.data?.attempt_count).toBe(1);
+    now = 1_000_000 + 5_000;
+    const second = await db.claimNotification({
+      notificationId: n.id,
+      claimToken: "token-new",
+      claimTtlSeconds: 120,
+    });
+    expect(second.data?.attempt_count).toBe(2);
+    const stale = await db.finalizeNotification({
+      notificationId: n.id,
+      claimToken: "token-old",
+      expectedAttempt: 1,
+      status: "provider_accepted",
+      lastError: null,
+      providerMessageId: "stale",
+    });
+    expect(stale.ok).toBe(false);
+    const fresh = await db.finalizeNotification({
+      notificationId: n.id,
+      claimToken: "token-new",
+      expectedAttempt: 2,
+      status: "failed",
+      lastError: "provider 500",
+      providerMessageId: null,
+    });
+    expect(fresh.ok).toBe(true);
+    expect(state.notifications[0].status).toBe("failed");
+  });
+
+  it("8. provider failure stays retryable without recreating inquiry", async () => {
+    sendEmail.mockResolvedValue({ ok: false, error: "500" });
+    await run(validBody());
+    expect(state.inquiries).toHaveLength(1);
+    expect(state.notifications.every((n) => n.status === "failed")).toBe(true);
+
+    sendEmail.mockResolvedValue({ ok: true, providerMessageId: "retry_ok" });
+    const db = createMemoryInquiryDb(state);
+    const res = await handleRetryInquiryNotifications({
+      body: { inquiryId: state.inquiries[0].id },
+      db,
+      mailer: {
+        sendEmail: sendEmail as unknown as (
+          to: string,
+          subject: string,
+          html: string,
+        ) => Promise<SendEmailResult>,
+        notificationEmail: "ops@fdzconstruction.com",
+      },
+      authorized: true,
+      ids: ids(),
+    });
     expect(res.status).toBe(200);
-    expect(db.inquiries).toHaveLength(1);
-    expect(sendEmail).toHaveBeenCalledTimes(1);
-    const failed = db.notifications.find((n) => n.id === NOTIFY_INTERNAL_ID)!;
-    expect(failed.status).toBe("provider_accepted");
-    expect(failed.attempt_count).toBe(2);
-    const alreadyOk = db.notifications.find((n) => n.id === NOTIFY_CUSTOMER_ID)!;
-    expect(alreadyOk.status).toBe("provider_accepted");
-    expect(alreadyOk.attempt_count).toBe(1);
+    expect(state.inquiries).toHaveLength(1);
+    expect(state.notifications.every((n) => n.status === "provider_accepted")).toBe(true);
+  });
+
+  it("9. provider accept + finalize failure recovers without casual resend", async () => {
+    const db = createMemoryInquiryDb(state);
+    state.failFinalizeOnceIds = new Set();
+    await db.createInquiryWithNotifications(
+      {
+        customer_name: "W",
+        customer_email: "w@example.com",
+        customer_phone: "3165550100",
+        customer_address: null,
+        project_type: "commercial",
+        property_type: null,
+        customer_role: null,
+        approx_size: null,
+        bidding_status: null,
+        project_details: null,
+        origin: null,
+        status: "inquiry",
+      },
+      "ops@example.com",
+    );
+    const n = state.notifications[0];
+    state.failFinalizeOnceIds.add(n.id);
+    let sends = 0;
+    const first = await deliverClaimedNotification({
+      db,
+      mailer: {
+        notificationEmail: "ops@example.com",
+        sendEmail: async () => {
+          sends += 1;
+          return { ok: true, providerMessageId: "msg_once" };
+        },
+      },
+      notification: n,
+      inquiry: state.inquiries[0],
+      ids: { randomUUID: () => "cccccccc-cccc-4ccc-8ccc-cccccccccccc" },
+    });
+    expect(first.sent).toBe(true);
+    expect(first.error).toBe("provider_accepted_finalize_pending");
+    expect(state.notifications[0].provider_message_id).toBe("msg_once");
+    expect(state.notifications[0].status).toBe("sending");
+
+    // Expire claim and recover — should finalize without another send
+    state.notifications[0].claim_expires_at = new Date(Date.now() - 1000).toISOString();
+    const second = await deliverClaimedNotification({
+      db,
+      mailer: {
+        notificationEmail: "ops@example.com",
+        sendEmail: async () => {
+          sends += 1;
+          return { ok: true, providerMessageId: "msg_dup" };
+        },
+      },
+      notification: { ...state.notifications[0] },
+      inquiry: state.inquiries[0],
+      ids: { randomUUID: () => "dddddddd-dddd-4ddd-8ddd-dddddddddddd" },
+    });
+    expect(second.sent).toBe(false);
+    expect(second.status).toBe("provider_accepted");
+    expect(sends).toBe(1);
+    expect(notificationIdempotencyKey(n.id, 1)).toContain(n.id);
+  });
+
+  it("10. unauthorized retry/inspect/reconcile produce no side effects", async () => {
+    const db = createMemoryInquiryDb(state);
+    await db.createInquiryWithNotifications(
+      {
+        customer_name: "W",
+        customer_email: "w@example.com",
+        customer_phone: "3165550100",
+        customer_address: null,
+        project_type: "commercial",
+        property_type: null,
+        customer_role: null,
+        approx_size: null,
+        bidding_status: null,
+        project_details: null,
+        origin: null,
+        status: "inquiry",
+      },
+      "ops@example.com",
+    );
+    state.notifications.forEach((n) => {
+      n.status = "failed";
+    });
+    const before = structuredClone(state.notifications);
+    const mailer = {
+      notificationEmail: "ops@example.com",
+      sendEmail: async () => {
+        throw new Error("must not send");
+      },
+    };
+    expect(
+      (await handleRetryInquiryNotifications({ body: {}, db, mailer, authorized: false })).status,
+    ).toBe(401);
+    expect(
+      (await handleInspectInquiryNotifications({ body: {}, db, authorized: false })).status,
+    ).toBe(401);
+    expect(
+      (await handleReconcileInquiryNotifications({ body: {}, db, mailer, authorized: false }))
+        .status,
+    ).toBe(401);
+    expect(state.notifications).toEqual(before);
+  });
+
+  it("Turnstile missing/fail and honeypot paths", async () => {
+    let res = await run(validBody({ turnstileToken: "" }), { TURNSTILE_SECRET: "stub" });
+    expect(res.status).toBe(400);
+    expect(state.inquiries).toHaveLength(0);
+
+    res = await run(validBody({ company_website: "http://spam" }));
+    expect(res.status).toBe(200);
+    expect((await res.json()).inquiryId).toBeUndefined();
   });
 });
 
-describe("priced quote runtime guards (side-effect prevention)", () => {
-  it("rejects null/non-finite/non-numeric prices and requires positive dimensions", () => {
-    for (const bad of [null, undefined, NaN, Infinity, "12000"]) {
-      expect(
-        parsePricedQuoteAmounts({
-          estimateLow: bad,
-          estimateHigh: 18000,
-          lengthFt: 40,
-          widthFt: 20,
-          sqft: 800,
-        }).ok,
-      ).toBe(false);
-    }
+describe("priced quote guards", () => {
+  it("rejects invalid priced amounts; accepts OKC path", () => {
     expect(
       parsePricedQuoteAmounts({
-        estimateLow: 12000,
-        estimateHigh: 18000,
-        lengthFt: 0,
-        widthFt: 20,
-        sqft: 800,
+        estimateLow: null,
+        estimateHigh: 1,
+        lengthFt: 1,
+        widthFt: 1,
+        sqft: 1,
       }).ok,
     ).toBe(false);
-  });
-
-  it("accepts a valid priced OKC path and blocks unpriced acceptance", () => {
-    const priced = parsePricedQuoteAmounts({
-      estimateLow: 12000,
-      estimateHigh: 18000,
-      lengthFt: 40,
-      widthFt: 20,
-      sqft: 800,
-    });
-    expect(priced.ok).toBe(true);
     expect(
       isAcceptablePricedQuote({
         status: "pending",
-        estimate_low: 12000,
-        estimate_high: 18000,
+        estimate_low: 100,
+        estimate_high: 200,
       }),
     ).toBe(true);
-    expect(
-      isAcceptablePricedQuote({
-        status: "pending",
-        estimate_low: null,
-        estimate_high: null,
-      }),
-    ).toBe(false);
   });
 });

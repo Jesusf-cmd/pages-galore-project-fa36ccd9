@@ -149,6 +149,9 @@ export type Database = {
       estimate_inquiry_notifications: {
         Row: {
           attempt_count: number
+          claim_expires_at: string | null
+          claim_token: string | null
+          claimed_at: string | null
           created_at: string
           id: string
           inquiry_id: string
@@ -162,6 +165,9 @@ export type Database = {
         }
         Insert: {
           attempt_count?: number
+          claim_expires_at?: string | null
+          claim_token?: string | null
+          claimed_at?: string | null
           created_at?: string
           id?: string
           inquiry_id: string
@@ -175,6 +181,9 @@ export type Database = {
         }
         Update: {
           attempt_count?: number
+          claim_expires_at?: string | null
+          claim_token?: string | null
+          claimed_at?: string | null
           created_at?: string
           id?: string
           inquiry_id?: string

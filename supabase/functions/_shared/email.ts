@@ -14,10 +14,20 @@ export interface SendEmailResult {
   providerMessageId?: string;
 }
 
+export type SendEmailOptions = {
+  /**
+   * Resend Idempotency-Key (optional). Documented retention: 24 hours.
+   * Same key + payload within that window returns the original response without
+   * another send — not unconditional exactly-once delivery.
+   */
+  idempotencyKey?: string;
+};
+
 export async function sendEmail(
   to: string | string[],
   subject: string,
   html: string,
+  options?: SendEmailOptions,
 ): Promise<SendEmailResult> {
   const apiKey = Deno.env.get("RESEND_API_KEY");
   if (!apiKey) {
@@ -26,12 +36,17 @@ export async function sendEmail(
   }
 
   try {
+    const headers: Record<string, string> = {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    };
+    if (options?.idempotencyKey) {
+      headers["Idempotency-Key"] = options.idempotencyKey.slice(0, 256);
+    }
+
     const res = await fetch(RESEND_API_URL, {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
+      headers,
       body: JSON.stringify({
         from: FROM_EMAIL,
         to: Array.isArray(to) ? to : [to],
