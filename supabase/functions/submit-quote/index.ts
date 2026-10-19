@@ -265,7 +265,11 @@ Deno.serve(async (req) => {
       ${includesHtml}
       <div style="background:#1a1a1a;padding:16px 20px;margin:24px 0;border-radius:4px;">
         <div style="color:#888;font-size:11px;letter-spacing:2px;margin-bottom:4px;">TOTAL ESTIMATE</div>
-        <div style="color:#c45c26;font-size:24px;font-weight:800;">$${estimateLow.toLocaleString()} – $${estimateHigh.toLocaleString()}</div>
+        <div style="color:#c45c26;font-size:24px;font-weight:800;">${
+          typeof estimateLow === "number" && typeof estimateHigh === "number"
+            ? `$${Number(estimateLow).toLocaleString()} – $${Number(estimateHigh).toLocaleString()}`
+            : "Written estimate after plan review or site visit"
+        }</div>
       </div>
       <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:4px;padding:10px 16px;margin:0 0 24px;">
         <div style="color:#c45c26;font-size:12px;font-weight:bold;">Expires: ${expiresDate}</div>

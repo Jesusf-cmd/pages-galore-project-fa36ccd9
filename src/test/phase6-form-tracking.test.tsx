@@ -104,11 +104,11 @@ describe("Phase 6 form + tracking", () => {
         <EstimateForm />
       </MemoryRouter>,
     );
-    expect(screen.getByText(/Wichita concrete/i)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: /next: enter dimensions/i }));
-    fireEvent.click(screen.getByRole("button", { name: /next: your info/i }));
+    expect(screen.getAllByText(/Wichita concrete/i).length).toBeGreaterThan(0);
+    expect(screen.getByText("Request Estimate")).toBeInTheDocument();
+    expect(screen.queryByText("Instant Estimate")).not.toBeInTheDocument();
     fireEvent.change(screen.getByPlaceholderText("Full name"), { target: { value: "Hub QA" } });
-    fireEvent.change(screen.getByPlaceholderText("(405) 000-0000"), { target: { value: "3165550100" } });
+    fireEvent.change(screen.getByPlaceholderText("316-365-8342"), { target: { value: "3165550100" } });
     fireEvent.change(screen.getByPlaceholderText("email@example.com"), {
       target: { value: "hub-qa@example.com" },
     });
@@ -118,15 +118,18 @@ describe("Phase 6 form + tracking", () => {
     fireEvent.change(screen.getByPlaceholderText(/Wichita-area address/i), {
       target: { value: "Parking lot and dock apron." },
     });
-    fireEvent.click(screen.getByRole("button", { name: /get your quote/i }));
+    fireEvent.click(screen.getByRole("button", { name: /request wichita estimate/i }));
     await waitFor(() => expect(invoke).toHaveBeenCalled());
-    const body = invoke.mock.calls[0][1]?.body as Record<string, string>;
+    const body = invoke.mock.calls[0][1]?.body as Record<string, unknown>;
     expect(invoke.mock.calls[0][0]).toBe("submit-quote");
     expect(body.from).toBe("concrete-contractors-wichita-ks");
-    expect(body.details).toContain(
+    expect(String(body.details)).toContain(
       "Requested from /concrete-contractors-wichita-ks (concrete contractors, Wichita KS).",
     );
-    expect(body.details).toContain("Parking lot and dock apron.");
+    expect(String(body.details)).toContain("Parking lot and dock apron.");
+    expect(String(body.details)).toContain("Kansas rates not configured");
+    expect(body.estimateLow).toBeNull();
+    expect(body.estimateHigh).toBeNull();
   });
 
   it("phone_click reaches dataLayer", () => {

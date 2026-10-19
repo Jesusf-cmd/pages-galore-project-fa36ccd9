@@ -4,9 +4,11 @@ import {
   applyEstimateOriginToDetails,
   estimateAddressPlaceholder,
   detailsLimitError,
+  hasInstantEstimateRates,
   parseEstimateOrigin,
   quoteFollowUpPath,
   quoteSubmitCallFailure,
+  resolveEstimateOriginFrom,
 } from "@/lib/estimatePath";
 import { EstimateCallError, EstimateCallFollowUp } from "@/components/EstimateCallLink";
 import {
@@ -29,6 +31,15 @@ export const OWNER_PROJECT_TYPES = [
   { id: "commercial", label: "Commercial concrete", path: "/commercial-concrete-oklahoma-city" },
   { id: "sewer", label: "Sewer line", path: "/sewer-line-repair-oklahoma-city" },
   { id: "other", label: "Other", path: "/" },
+] as const;
+
+/** Wichita hub / Kansas-origin project types — commercial and industrial first. */
+export const WICHITA_OWNER_PROJECT_TYPES = [
+  { id: "commercial", label: "Commercial concrete", path: "/commercial-concrete-wichita" },
+  { id: "industrial", label: "Industrial concrete", path: "/industrial-concrete-wichita" },
+  { id: "retaining-walls", label: "Retaining walls", path: "/retaining-walls-wichita" },
+  { id: "stamped", label: "Stamped concrete", path: "/stamped-concrete-wichita" },
+  { id: "other", label: "Other Wichita concrete", path: "/concrete-contractors-wichita-ks" },
 ] as const;
 
 const PROPERTY_TYPES = ["Residential", "Commercial", "Other"] as const;
@@ -56,12 +67,18 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
   const pathFrom = fromPath ?? location.pathname;
   const autoFrom = fromSlug(pathFrom);
   const queryFrom = searchParams.get("from");
-  const originFrom = queryFrom || autoFrom;
-  const origin = parseEstimateOrigin(queryFrom || (autoFrom !== "home" ? autoFrom : null));
+  const originFrom =
+    resolveEstimateOriginFrom(queryFrom, pathFrom) ||
+    (queryFrom || autoFrom);
+  const origin = parseEstimateOrigin(originFrom);
+  const instantRates = hasInstantEstimateRates(originFrom);
+  const ownerTypeOptions = instantRates ? OWNER_PROJECT_TYPES : WICHITA_OWNER_PROJECT_TYPES;
 
   const [step, setStep] = useState(1);
   const [projectType, setProjectType] = useState("slab");
-  const [ownerProjectType, setOwnerProjectType] = useState("driveways");
+  const [ownerProjectType, setOwnerProjectType] = useState(
+    instantRates ? "driveways" : "commercial",
+  );
   const [propertyType, setPropertyType] = useState("");
   const [customerRole, setCustomerRole] = useState("");
   const [approxSize, setApproxSize] = useState("");
@@ -124,7 +141,7 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
   }, [step]);
 
   const sqft = length * width;
-  const range = calculateRange(projectType, finish, sqft);
+  const range = instantRates ? calculateRange(projectType, finish, sqft) : { low: 0, high: 0, perFtLow: 0, perFtHigh: 0 };
   const types = Object.values(SERVICE_TYPES).map((s) => ({
     id: s.id,
     name: s.name,
@@ -133,6 +150,7 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
 
   const appendLeadFields = (base: string) => {
     const extras = [
+      !instantRates && "Kansas estimate request — no instant planning range (Kansas rates not configured).",
       propertyType && `Property type: ${propertyType}`,
       customerRole && `Role: ${customerRole}`,
       ownerProjectType && `Owner project type: ${ownerProjectType}`,
@@ -167,11 +185,16 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
     setSubmitting(true);
 
     try {
-      const lineItems = buildLineItems(projectType, finish, sqft);
+      const lineItems = instantRates ? buildLineItems(projectType, finish, sqft) : [];
       const siteUrl = window.location.origin;
       const enrichedDetails = appendLeadFields(
         applyEstimateOriginToDetails(originFrom, details),
       );
+      // Request-only Kansas submits still satisfy submit-quote required dimension fields
+      // without inventing a dollar range from Oklahoma calculator rates.
+      const submitLength = instantRates ? length : Math.max(1, length || 20);
+      const submitWidth = instantRates ? width : Math.max(1, width || 20);
+      const submitSqft = submitLength * submitWidth;
 
       const { data, error: fnError } = await supabase.functions.invoke("submit-quote", {
         body: {
@@ -180,13 +203,13 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
           phone,
           address,
           details: enrichedDetails,
-          projectType,
-          finishType: finish,
-          lengthFt: length,
-          widthFt: width,
-          sqft,
-          estimateLow: range.low,
-          estimateHigh: range.high,
+          projectType: instantRates ? projectType : "slab",
+          finishType: instantRates ? finish : null,
+          lengthFt: submitLength,
+          widthFt: submitWidth,
+          sqft: submitSqft,
+          estimateLow: instantRates ? range.low : null,
+          estimateHigh: instantRates ? range.high : null,
           lineItems,
           siteUrl,
           propertyType: propertyType || null,
@@ -241,6 +264,228 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
             Your quote has been created. Check your email for details.
           </p>
           <EstimateCallFollowUp from={originFrom} />
+        </div>
+      </div>
+    );
+  }
+
+  if (!instantRates) {
+    return (
+      <div className="bg-stone" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}>
+        <div className="bg-orange p-4 flex justify-between items-center">
+          <span className="font-display text-base font-extrabold tracking-[0.1em] uppercase text-white">
+            Request Estimate
+          </span>
+          <span className="bg-white/20 text-white text-[0.63rem] tracking-[0.1em] uppercase px-2.5 py-1 font-bold">
+            Wichita
+          </span>
+        </div>
+        {origin && (
+          <div
+            className="px-4 md:px-5 py-3 bg-concrete/[0.04]"
+            style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.1)" }}
+          >
+            <p className="text-[0.78rem] text-concrete leading-relaxed">
+              You&apos;re requesting a <strong>{origin.formLabel}</strong> estimate. Kansas planning
+              rates are not published yet — describe the scope below for a written quote after plan
+              review or a site visit. No instant dollar range is calculated from Oklahoma rates.
+            </p>
+          </div>
+        )}
+        <div className="p-4 md:p-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+            <div>
+              <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
+                Property type
+              </label>
+              <select
+                value={propertyType}
+                onChange={(e) => setPropertyType(e.target.value)}
+                className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none cursor-pointer min-h-[48px]"
+                style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}
+              >
+                <option value="">Select…</option>
+                {PROPERTY_TYPES.map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
+                Your role
+              </label>
+              <select
+                value={customerRole}
+                onChange={(e) => setCustomerRole(e.target.value)}
+                className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none cursor-pointer min-h-[48px]"
+                style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}
+              >
+                <option value="">Select…</option>
+                {CUSTOMER_ROLES.map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div className="mb-3">
+            <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
+              Project type
+            </label>
+            <select
+              value={ownerProjectType}
+              onChange={(e) => setOwnerProjectType(e.target.value)}
+              className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none cursor-pointer min-h-[48px]"
+              style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}
+            >
+              {ownerTypeOptions.map((opt) => (
+                <option key={opt.id} value={opt.id}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="mb-3">
+            <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
+              Approximate size
+            </label>
+            <input
+              value={approxSize}
+              onChange={(e) => setApproxSize(e.target.value)}
+              placeholder="e.g. parking area, slab size, wall length"
+              className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]"
+              style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}
+            />
+          </div>
+          {customerRole === "General contractor" && (
+            <div className="mb-3">
+              <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
+                Bidding or awarded
+              </label>
+              <select
+                value={biddingStatus}
+                onChange={(e) => setBiddingStatus(e.target.value)}
+                className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none cursor-pointer min-h-[48px]"
+                style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}
+              >
+                <option value="">Select…</option>
+                {BIDDING_OPTIONS.map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+          <div className="mb-3">
+            <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
+              Your Name
+            </label>
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Full name"
+              autoComplete="name"
+              className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]"
+              style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}
+            />
+          </div>
+          <div className="mb-3">
+            <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
+              Phone
+            </label>
+            <input
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="316-365-8342"
+              type="tel"
+              autoComplete="tel"
+              className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]"
+              style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}
+            />
+          </div>
+          <div className="mb-3">
+            <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
+              Email
+            </label>
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="email@example.com"
+              type="email"
+              autoComplete="email"
+              className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]"
+              style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}
+            />
+          </div>
+          <div className="mb-3">
+            <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
+              Project Address
+            </label>
+            <input
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              placeholder={
+                estimateAddressPlaceholder(originFrom) || "Job address in Wichita, KS"
+              }
+              className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]"
+              style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}
+            />
+          </div>
+          <div className="mb-4">
+            <label className="text-[0.66rem] tracking-[0.1em] uppercase text-muted-text font-semibold block mb-1">
+              Project Details
+            </label>
+            <textarea
+              value={details}
+              onChange={(e) => setDetails(e.target.value)}
+              placeholder={
+                origin?.placeholder ||
+                "Wichita-area address, commercial or industrial scope, and any plans or schedule limits..."
+              }
+              rows={3}
+              className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none resize-y min-h-[48px]"
+              style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}
+            />
+          </div>
+          <label
+            className="absolute left-[-9999px] h-px w-px overflow-hidden"
+            aria-hidden="true"
+          >
+            Company website
+            <input
+              type="text"
+              name="company_website"
+              tabIndex={-1}
+              autoComplete="off"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+            />
+          </label>
+          {TURNSTILE_ENABLED && (
+            <div className="mb-4">
+              <div ref={turnstileRef} />
+            </div>
+          )}
+          {error && (
+            <div
+              className="bg-destructive/20 text-destructive text-sm p-3 mb-4"
+              style={{ border: "1px solid hsl(0 60% 40% / 0.3)" }}
+            >
+              {errorCallsPhone ? <EstimateCallError prefix={error} from={originFrom} /> : error}
+            </div>
+          )}
+          <button
+            type="button"
+            onClick={handleSubmit}
+            disabled={submitting}
+            className="btn-primary w-full text-sm py-3.5 min-h-[48px] disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {submitting ? "Sending Request..." : "Request Wichita Estimate →"}
+          </button>
         </div>
       </div>
     );
@@ -442,7 +687,7 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
               className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none cursor-pointer min-h-[48px]"
               style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}
             >
-              {OWNER_PROJECT_TYPES.map((opt) => (
+              {ownerTypeOptions.map((opt) => (
                 <option key={opt.id} value={opt.id}>
                   {opt.label}
                 </option>

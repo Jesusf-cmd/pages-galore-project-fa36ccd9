@@ -1,17 +1,27 @@
 import { Link, useLocation } from "react-router-dom";
 import type { Project } from "@/data/projects";
 import ProjectSpecs from "@/components/ProjectSpecs";
+import { isKansasPath } from "@/lib/phones";
 
 type ProjectCardProps = {
   project: Project;
   /** Optional finish/type label (e.g. "Stamped" vs "Broom finish"). */
   badge?: string;
+  /** Force Kansas pricing presentation (Wichita hub). Defaults from the current route. */
+  kansasPresentation?: boolean;
+  estimateHref?: string;
 };
 
-export default function ProjectCard({ project, badge }: ProjectCardProps) {
+export default function ProjectCard({
+  project,
+  badge,
+  kansasPresentation,
+  estimateHref = "#estimate",
+}: ProjectCardProps) {
   const image = project.images[0];
   const { pathname } = useLocation();
   const isOwnerPage = pathname.replace(/\/+$/, "") === project.ownerPath;
+  const kansas = kansasPresentation ?? isKansasPath(pathname);
 
   return (
     <article className="bg-stone p-6 flex flex-col h-full">
@@ -49,9 +59,18 @@ export default function ProjectCard({ project, badge }: ProjectCardProps) {
       <div className="text-[0.66rem] text-orange tracking-[0.1em] uppercase font-bold mb-3">
         {project.city}
       </div>
+      {kansas && (
+        <p className="text-[0.7rem] text-muted-text leading-relaxed mb-3">
+          Example of FDZ work completed in {project.city} — not a Wichita job site.
+        </p>
+      )}
       <div className="flex-1">
         <p className="text-[0.82rem] text-muted-text leading-relaxed mb-4">{project.details}</p>
-        <ProjectSpecs project={project} />
+        <ProjectSpecs
+          project={project}
+          kansasPresentation={kansas}
+          estimateHref={estimateHref}
+        />
       </div>
       {!isOwnerPage && (
         <Link

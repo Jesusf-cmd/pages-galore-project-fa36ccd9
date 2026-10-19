@@ -32,10 +32,24 @@ export type Project = {
   specs?: string[];
   /** Optional owner-confirmed contract price; always rendered with COMPLETED_COST_NOTE. */
   completedCost?: string | null;
+  /**
+   * Optional owner-approved planning budget for similar work in Wichita.
+   * Omit until approved Kansas values exist — never invent or copy Oklahoma costs here.
+   */
+  wichitaEstimatedBudget?: string | null;
 };
 
 export const COMPLETED_COST_NOTE =
   "Actual contract price for this completed project. Pricing for similar work varies based on site conditions, accessibility, materials, and project specifications.";
+
+/** Shown when a completed Oklahoma cost appears on a Kansas page. */
+export const COMPLETED_COST_NOTE_ON_KANSAS =
+  "Actual historical contract price for this completed Oklahoma project. It is not a Wichita quote.";
+
+export const WICHITA_BUDGET_LABEL = "Estimated budget for similar work in Wichita";
+
+export const WICHITA_BUDGET_NOTE =
+  "This is a planning estimate for similar work in Wichita. The written quote depends on scope, quantities, access, site conditions, and specifications.";
 
 function alt(details: string, title: string, city: string): string {
   return `${details} — ${title}, ${city}`;
