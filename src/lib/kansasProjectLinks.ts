@@ -4,7 +4,6 @@
  */
 
 import { estimatePath } from "./estimatePath.ts";
-import { WICHITA_HOME_PATH } from "./phones.ts";
 import type { Project } from "../data/projects.ts";
 
 export type ProjectServiceLink = {
@@ -12,10 +11,12 @@ export type ProjectServiceLink = {
   label: string;
 };
 
-const WICHITA_INQUIRY: ProjectServiceLink = {
-  href: estimatePath("concrete-contractors-wichita-ks"),
-  label: "Request a Wichita estimate",
-};
+const INQUIRY_LABEL = "Request a Wichita estimate";
+
+/** Default inquiry when no location-aware href is supplied (direct hub / unit tests). */
+function defaultInquiryHref(): string {
+  return estimatePath("concrete-contractors-wichita-ks");
+}
 
 /** Explicit matches only — do not relabel scopes that lack a Wichita service page. */
 const BY_PROJECT_ID: Record<string, ProjectServiceLink> = {
@@ -31,21 +32,30 @@ const BY_PROJECT_ID: Record<string, ProjectServiceLink> = {
     href: "/stamped-concrete-wichita",
     label: "Explore stamped concrete in Wichita",
   },
-  // Sidewalks, broom patios, and driveways have no dedicated Wichita service page.
-  "star-spencer-hs": WICHITA_INQUIRY,
-  "norman-patio-paver-walkway": WICHITA_INQUIRY,
-  "edmond-driveway": WICHITA_INQUIRY,
 };
+
+const INQUIRY_PROJECT_IDS = new Set([
+  // Sidewalks, broom patios, and driveways have no dedicated Wichita service page.
+  "star-spencer-hs",
+  "norman-patio-paver-walkway",
+  "edmond-driveway",
+]);
 
 /**
  * Service-exploration link for a project card under Kansas presentation.
- * Falls back to the Wichita hub inquiry when no honest Kansas service match exists.
+ * Inquiry fallbacks use `inquiryHref` when provided (location-aware hub estimate path)
+ * so a valid Kansas `?from=` on the hub is preserved.
  */
-export function kansasProjectServiceLink(project: Project): ProjectServiceLink {
-  return (
-    BY_PROJECT_ID[project.id] ?? {
-      href: WICHITA_HOME_PATH,
-      label: "Request a Wichita estimate",
-    }
-  );
+export function kansasProjectServiceLink(
+  project: Project,
+  inquiryHref?: string,
+): ProjectServiceLink {
+  const matched = BY_PROJECT_ID[project.id];
+  if (matched) return matched;
+
+  const href = inquiryHref ?? defaultInquiryHref();
+  if (INQUIRY_PROJECT_IDS.has(project.id)) {
+    return { href, label: INQUIRY_LABEL };
+  }
+  return { href, label: INQUIRY_LABEL };
 }

@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import type { Project } from "@/data/projects";
 import ProjectSpecs from "@/components/ProjectSpecs";
+import { estimatePathForLocation } from "@/lib/estimatePath";
 import { kansasProjectServiceLink } from "@/lib/kansasProjectLinks";
 import { isKansasPath } from "@/lib/phones";
 
@@ -10,6 +11,7 @@ type ProjectCardProps = {
   badge?: string;
   /** Force Kansas pricing presentation (Wichita hub). Defaults from the current route. */
   kansasPresentation?: boolean;
+  /** Override estimate CTA. Defaults to the location-aware estimate destination. */
   estimateHref?: string;
 };
 
@@ -17,14 +19,16 @@ export default function ProjectCard({
   project,
   badge,
   kansasPresentation,
-  estimateHref = "#estimate",
+  estimateHref,
 }: ProjectCardProps) {
   const image = project.images[0];
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
   const isOwnerPage = pathname.replace(/\/+$/, "") === project.ownerPath;
   const kansas = kansasPresentation ?? isKansasPath(pathname);
+  const locationEstimateHref = estimatePathForLocation(pathname, search);
+  const resolvedEstimateHref = estimateHref ?? locationEstimateHref;
   const serviceLink = kansas
-    ? kansasProjectServiceLink(project)
+    ? kansasProjectServiceLink(project, locationEstimateHref)
     : { href: project.ownerPath, label: project.serviceLinkLabel };
 
   return (
@@ -73,7 +77,7 @@ export default function ProjectCard({
         <ProjectSpecs
           project={project}
           kansasPresentation={kansas}
-          estimateHref={estimateHref}
+          estimateHref={resolvedEstimateHref}
         />
       </div>
       {(!isOwnerPage || kansas) && (

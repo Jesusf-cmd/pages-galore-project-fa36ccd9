@@ -1,5 +1,5 @@
 import commercialFoundationImg from "@/assets/commercial-concrete-foundation-okc.webp";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import EstimateForm from "@/components/EstimateForm";
@@ -10,6 +10,7 @@ import { concreteContractorsWichita } from "@/content/wichitaPages";
 import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
 import { usePageSEO } from "@/hooks/useSEO";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
+import { estimatePathForLocation } from "@/lib/estimatePath";
 import { KANSAS_PHONE, OKLAHOMA_PHONE, WICHITA_HOME_PATH } from "@/lib/phones";
 
 const WICHITA_HUB_PATH = WICHITA_HOME_PATH;
@@ -59,11 +60,13 @@ const page = concreteContractorsWichita;
 
 export default function ConcreteContractorsWichita() {
   const seo = usePageSEO(WICHITA_HUB_PATH);
+  const location = useLocation();
+  const estimateHref = estimatePathForLocation(location.pathname, location.search);
   useFaqJsonLd(page.faq);
 
   return (
     <main>
-      <HeroSection h1={seo.h1} />
+      <HeroSection h1={seo.h1} estimateHref={estimateHref} />
       <ServiceCardsSection />
       <HowEstimatesWorkSection />
       <ProjectProofSection />
@@ -85,13 +88,12 @@ export default function ConcreteContractorsWichita() {
         headingAccent={page.finalCta.headingAccent}
         description={page.finalCta.description}
         buttonLabel={page.finalCta.buttonLabel}
-        to="#estimate"
       />
     </main>
   );
 }
 
-function HeroSection({ h1 }: { h1: string }) {
+function HeroSection({ h1, estimateHref }: { h1: string; estimateHref: string }) {
   return (
     <section
       className="grid grid-cols-1 nav:grid-cols-[1.15fr_0.85fr] gap-6 nav:gap-12 px-4 md:px-12 pt-20 pb-8 md:pt-32 md:pb-16 relative overflow-hidden"
@@ -131,9 +133,9 @@ function HeroSection({ h1 }: { h1: string }) {
           <a href={`tel:${KANSAS_PHONE.tel}`} className="btn-outline text-center w-full sm:w-auto">
             📞 {KANSAS_PHONE.display}
           </a>
-          <a href="#estimate" className="btn-primary text-center w-full sm:w-auto">
+          <Link to={estimateHref} className="btn-primary text-center w-full sm:w-auto">
             Request a Wichita Estimate →
-          </a>
+          </Link>
         </div>
       </div>
       <div id="estimate" className="pt-2 nav:pt-0 relative z-[2] scroll-mt-24">
@@ -242,7 +244,6 @@ function ProjectProofSection() {
         <ProjectGrid
           ids={[...WICHITA_HOME_PROJECT_IDS]}
           kansasPresentation
-          estimateHref="#estimate"
         />
         <div className="mt-6 text-center">
           <Link to="/our-projects" className="btn-outline text-sm py-3 px-8">
