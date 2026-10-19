@@ -9,7 +9,7 @@ import {
   businessJsonLdScriptTag,
   isLocalBusinessType,
 } from "../src/lib/localBusinessSchema";
-import { phoneForPath } from "../src/lib/phones";
+import { phoneForPath, regionalHomePath } from "../src/lib/phones";
 import { getSeoPage } from "../src/seo/pages";
 import * as fs from "fs";
 import * as path from "path";
@@ -37,8 +37,7 @@ interface LinkItem {
   label: string;
 }
 
-const primaryNavLinks: LinkItem[] = [
-  { href: "/", label: "Home" },
+const primaryNavLinkRest: LinkItem[] = [
   { href: "/driveways-oklahoma-city", label: "Driveways" },
   { href: "/patios-oklahoma-city", label: "Patios & Slabs" },
   { href: "/foundations-oklahoma-city", label: "Foundations" },
@@ -50,6 +49,10 @@ const primaryNavLinks: LinkItem[] = [
   { href: "/our-projects", label: "Projects" },
   { href: "/blog", label: "Blog" },
 ];
+
+function primaryNavLinksFor(pathname: string): LinkItem[] {
+  return [{ href: regionalHomePath(pathname), label: "Home" }, ...primaryNavLinkRest];
+}
 
 const serviceLinks: LinkItem[] = [
   { href: "/driveways-oklahoma-city", label: "Concrete Driveways" },
@@ -206,7 +209,7 @@ export function buildTemplateMarkup(route: PrerenderRoute): string {
     <header>
       <p>FDZ Construction LLC</p>
       <nav aria-label="Primary navigation">
-        ${renderLinks(primaryNavLinks)}
+        ${renderLinks(primaryNavLinksFor(route.path))}
       </nav>
     </header>
     <main>

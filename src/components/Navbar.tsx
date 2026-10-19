@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
 import { useBusinessPhone } from "@/hooks/quoteContact";
 import { estimatePath } from "@/lib/estimatePath";
-import { isKansasPath, normalizePath } from "@/lib/phones";
+import { isKansasPath, normalizePath, regionalHomePath } from "@/lib/phones";
 
 const serviceLinks = [
   { to: "/driveways-oklahoma-city", label: "Concrete Driveways" },
@@ -71,7 +71,6 @@ const oklahomaAreaGroup = { heading: "Oklahoma", links: oklahomaAreaLinks };
 const wichitaAreaGroup = { heading: "Wichita, Kansas", links: wichitaAreaLinks };
 
 const mobilePrimaryLinks = [
-  { to: "/", label: "Home" },
   { to: "/sewer-line-repair-oklahoma-city", label: "Sewer Line Repair" },
   { to: "/skid-steer-services-oklahoma-city", label: "Skid Steer Services" },
   { to: "/excavator-services-oklahoma-city", label: "Excavator Services" },
@@ -86,6 +85,7 @@ export default function Navbar() {
   const location = useLocation();
   const phone = useBusinessPhone();
   const kansasRoute = isKansasPath(location.pathname);
+  const homeTo = regionalHomePath(location.pathname);
   const areaGroups = kansasRoute
     ? [wichitaAreaGroup, oklahomaAreaGroup]
     : [oklahomaAreaGroup, wichitaAreaGroup];
@@ -110,6 +110,7 @@ export default function Navbar() {
           { title: "Wichita, Kansas", links: wichitaAreaLinks },
         ]),
   ];
+  const mobileMenuPrimaryLinks = [{ to: homeTo, label: "Home" }, ...mobilePrimaryLinks];
   const estimateTo = isKansasPath(location.pathname)
     ? estimatePath(normalizePath(location.pathname).replace(/^\//, ""))
     : "/#estimate";
@@ -139,13 +140,13 @@ export default function Navbar() {
         }`}
         style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}
       >
-        <Link to="/" className="flex flex-col gap-0.5" aria-label="FDZ Construction LLC home">
+        <Link to={homeTo} className="flex flex-col gap-0.5" aria-label="FDZ Construction LLC home">
           <Logo className="h-[40px] md:h-[50px] w-auto" />
         </Link>
 
         <ul className="hidden nav:flex gap-0 list-none">
           <li>
-            <Link to="/" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete">
+            <Link to={homeTo} className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete">
               Home
             </Link>
           </li>
@@ -223,6 +224,8 @@ export default function Navbar() {
               phoneDisplay={phone?.display ?? ""}
               phoneTel={phone?.tel ?? ""}
               estimateTo={estimateTo}
+              homeTo={homeTo}
+              primaryLinks={mobileMenuPrimaryLinks}
               sections={mobileSections}
             />,
             document.body,
@@ -237,12 +240,16 @@ function MobileMenuOverlay({
   phoneDisplay,
   phoneTel,
   estimateTo,
+  homeTo,
+  primaryLinks,
   sections,
 }: {
   onClose: () => void;
   phoneDisplay: string;
   phoneTel: string;
   estimateTo: string;
+  homeTo: string;
+  primaryLinks: { to: string; label: string }[];
   sections: { title: string; links: { to: string; label: string }[] }[];
 }) {
   return (
@@ -257,7 +264,7 @@ function MobileMenuOverlay({
           className="flex items-center justify-between px-5 py-4"
           style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.1)" }}
         >
-          <Link to="/" onClick={onClose} className="flex items-center" aria-label="FDZ Construction LLC home">
+          <Link to={homeTo} onClick={onClose} className="flex items-center" aria-label="FDZ Construction LLC home">
             <Logo className="h-[38px] w-auto" />
           </Link>
           <button
@@ -277,7 +284,7 @@ function MobileMenuOverlay({
             ))}
 
             <div className="space-y-2">
-              {mobilePrimaryLinks.map((link) => (
+              {primaryLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
