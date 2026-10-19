@@ -164,12 +164,14 @@ describe("quote function wiring", () => {
     expect(submit).toContain("sendQuoteEmail(email, `Your Quote ${quoteNumber} from FDZ Construction`, customerHtml)");
     expect(submit).toContain("sendQuoteEmail(NOTIFICATION_EMAIL, `New Quote ${quoteNumber} - ${name}`, internalHtml)");
     expect(submit).toContain("tel:${phone}");
+    expect(submit).toContain("parsePricedQuoteAmounts");
     expect(submit).not.toContain(KANSAS_PHONE.display);
     expect(submit).not.toContain(OKLAHOMA_PHONE.display);
     expect(accept).toContain("sendAcceptEmail(quote.customer_email, `Quote ${quoteNumber} Accepted - FDZ Construction`, customerHtml)");
     expect(accept).toContain("sendAcceptEmail(NOTIFICATION_EMAIL, `ACCEPTED: Quote ${quoteNumber} - ${quote.customer_name}`, internalHtml)");
     expect(accept).toContain("tel:${quote.customer_phone}");
     expect(accept).toContain("originIdFromProjectDetails(quote.project_details)");
+    expect(accept).toContain("isAcceptablePricedQuote");
     expect(accept).not.toContain("body.from");
   });
 

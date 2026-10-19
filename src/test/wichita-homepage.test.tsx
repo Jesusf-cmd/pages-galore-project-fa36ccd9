@@ -82,8 +82,14 @@ describe("Wichita homepage redesign", () => {
     expect(document.querySelector('a[href="/stamped-concrete-wichita"]')).toBeTruthy();
     expect(screen.getByText("Request Estimate")).toBeInTheDocument();
     expect(screen.queryByText("Instant Estimate")).not.toBeInTheDocument();
-    expect(screen.getByText(/calculated from Oklahoma rates/i)).toBeInTheDocument();
+    expect(
+      screen.getAllByText(/Send your project details for a written estimate after plan review or a site visit/i)
+        .length,
+    ).toBeGreaterThan(0);
+    expect(screen.queryByText(/calculated from Oklahoma rates/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/owner approval/i)).not.toBeInTheDocument();
     expect(screen.getAllByText(/Example of FDZ work completed in/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/AI illustration/i)).toBeInTheDocument();
   });
 
   it("derives estimate origin from the Wichita route when from is absent", () => {
@@ -144,7 +150,11 @@ describe("Wichita homepage redesign", () => {
     expect(hubBody).toContain('href="/stamped-concrete-wichita"');
     expect(hubBody).toContain("FDZ reviews the drawings, access, site conditions, and schedule requirements");
     expect(hubBody).toContain("Examples of FDZ concrete work");
-    expect(hubBody).toContain("Estimated budget for similar work in Wichita");
+    expect(hubBody).toContain(
+      "Send your project details for a written estimate after plan review or a site visit",
+    );
+    expect(hubBody).toContain("AI illustration");
+    expect(hubBody).not.toContain("owner approval");
     expect(hubBody).toContain(`tel:${KANSAS_PHONE.tel}`);
     expect(hubBody).toContain('data-from="concrete-contractors-wichita-ks"');
     expect(hubBody).toContain("Request a Wichita Estimate");

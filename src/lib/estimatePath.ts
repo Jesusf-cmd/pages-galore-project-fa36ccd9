@@ -106,8 +106,8 @@ export function resolveEstimateOriginFrom(
 }
 
 /**
- * Instant calculator rates are Oklahoma-only until owner-approved Kansas rates exist.
- * Kansas origins use the request panel instead of OKC $/sq ft ranges.
+ * Instant calculator rates are Oklahoma-only.
+ * Kansas origins use the unpriced inquiry panel (submit-estimate-inquiry).
  */
 export function hasInstantEstimateRates(from: string | null | undefined): boolean {
   return !isKansasEstimateOrigin(from);

@@ -126,4 +126,30 @@ describe("QuotePage regional phone", () => {
     });
     expect(screen.getByTestId("business-phone")).toHaveTextContent(OKLAHOMA_PHONE.display);
   });
+
+  it("hides Accept Quote controls when estimate amounts are not numeric", async () => {
+    const details = projectDetailsForStorage("concrete-contractors-wichita-ks", "Inquiry only.");
+    invoke.mockResolvedValue({
+      data: {
+        quote: {
+          ...quote(details),
+          estimate_low: null,
+          estimate_high: null,
+          total_estimate: null,
+          length_ft: null,
+          width_ft: null,
+          square_feet: null,
+        },
+      },
+      error: null,
+    });
+    renderQuote("/quote/unpriced-token");
+    await waitFor(() => {
+      expect(screen.getByText("Awaiting written estimate")).toBeInTheDocument();
+    });
+    expect(screen.queryByRole("button", { name: /accept quote/i })).toBeNull();
+    expect(screen.queryByRole("button", { name: /accept this quote/i })).toBeNull();
+    expect(screen.getByText(/not a priced quote/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Written estimate after plan review/i).length).toBeGreaterThan(0);
+  });
 });

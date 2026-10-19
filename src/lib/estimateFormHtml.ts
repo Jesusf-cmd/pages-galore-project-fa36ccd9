@@ -11,7 +11,7 @@ export function renderEstimateFormHtml(opts?: { fromPath?: string }): string {
   const phone = kansas ? KANSAS_PHONE : OKLAHOMA_PHONE;
   const addressPlaceholder = kansas ? "Job address in Wichita, KS" : "123 Main St, Oklahoma City, OK";
   const intro = kansas
-    ? `Fill out the form for a written Wichita estimate after plan review or a site visit. Kansas instant planning rates are not published yet. Call <a href="tel:${phone.tel}">${phone.display}</a>.`
+    ? `Send your project details for a written estimate after plan review or a site visit. Call <a href="tel:${phone.tel}">${phone.display}</a>.`
     : `Fill out the form for a planning range. A written estimate follows an on-site visit. Call <a href="tel:${phone.tel}">${phone.display}</a>.`;
 
   const projectTypeOptions = kansas

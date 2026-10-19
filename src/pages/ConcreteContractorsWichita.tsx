@@ -11,7 +11,6 @@ import { useFaqJsonLd } from "@/hooks/useFaqJsonLd";
 import { usePageSEO } from "@/hooks/useSEO";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { KANSAS_PHONE, OKLAHOMA_PHONE, WICHITA_HOME_PATH } from "@/lib/phones";
-import { WICHITA_BUDGET_NOTE } from "@/data/projects";
 
 const WICHITA_HUB_PATH = WICHITA_HOME_PATH;
 const WICHITA_ORIGIN = "concrete-contractors-wichita-ks";
@@ -143,9 +142,9 @@ function HeroSection({ h1 }: { h1: string }) {
           style={{ border: "1px solid hsl(var(--concrete) / 0.1)", borderBottom: "none" }}
         >
           <p className="text-[0.75rem] md:text-[0.78rem] text-muted-text leading-[1.7] font-light">
-            Qualified commercial and industrial inquiries are the priority for this page. Send the Wichita-area
-            address, scope, and any drawings or photos — the written quote follows a plan review or site visit.{" "}
-            {WICHITA_BUDGET_NOTE}
+            Qualified commercial and industrial inquiries are the priority for this page. Send your project
+            details for a written estimate after plan review or a site visit — include the Wichita-area
+            address, scope, and any drawings or photos.
           </p>
         </div>
         <EstimateForm fromPath={WICHITA_HUB_PATH} />
@@ -232,12 +231,13 @@ function ProjectProofSection() {
         <div className="section-eye">FDZ project examples</div>
         <h2 className="mb-3">Examples of FDZ concrete work</h2>
         <p className="prose-muted mb-4 max-w-[760px]">
-          These photos are real FDZ projects. Each card shows the actual city and state where the work was completed.
-          They are examples of crew capability — not claims that the same jobs were poured in Wichita.
+          Most images below are photos of completed FDZ projects. Each card shows the city and state where that
+          work was done. One stamped patio card uses an AI illustration (labeled on the image) — not a job-site
+          photo. These are capability examples, not claims that the same jobs were poured in Wichita.
         </p>
         <p className="prose-muted mb-8 max-w-[760px] text-[0.85rem]">
-          {WICHITA_BUDGET_NOTE} Owner-approved Wichita planning budgets will appear on cards when supplied; until then,
-          use the estimate form on this page.
+          Send your project details for a written estimate after plan review or a site visit. Historical Oklahoma
+          contract prices on cards are not Wichita quotes.
         </p>
         <ProjectGrid
           ids={[...WICHITA_HOME_PROJECT_IDS]}

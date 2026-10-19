@@ -150,10 +150,9 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
 
   const appendLeadFields = (base: string) => {
     const extras = [
-      !instantRates && "Kansas estimate request — no instant planning range (Kansas rates not configured).",
       propertyType && `Property type: ${propertyType}`,
       customerRole && `Role: ${customerRole}`,
-      ownerProjectType && `Owner project type: ${ownerProjectType}`,
+      ownerProjectType && `Project type: ${ownerProjectType}`,
       approxSize && `Approximate size: ${approxSize}`,
       customerRole === "General contractor" && biddingStatus && `Bidding status: ${biddingStatus}`,
     ]
@@ -185,17 +184,53 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
     setSubmitting(true);
 
     try {
-      const lineItems = instantRates ? buildLineItems(projectType, finish, sqft) : [];
       const siteUrl = window.location.origin;
       const enrichedDetails = appendLeadFields(
         applyEstimateOriginToDetails(originFrom, details),
       );
-      // Request-only Kansas submits still satisfy submit-quote required dimension fields
-      // without inventing a dollar range from Oklahoma calculator rates.
-      const submitLength = instantRates ? length : Math.max(1, length || 20);
-      const submitWidth = instantRates ? width : Math.max(1, width || 20);
-      const submitSqft = submitLength * submitWidth;
+      const spamFields = {
+        company_website: honeypot,
+        formStartedAt: startedAtRef.current,
+        turnstileToken: TURNSTILE_ENABLED ? turnstileToken : undefined,
+        from: originFrom,
+      };
 
+      if (!instantRates) {
+        // Kansas / unpriced path — no invented prices, dimensions, or slab project type.
+        const { data, error: fnError } = await supabase.functions.invoke(
+          "submit-estimate-inquiry",
+          {
+            body: {
+              name,
+              email,
+              phone,
+              address,
+              details: enrichedDetails,
+              projectType: ownerProjectType,
+              ownerProjectType: ownerProjectType || null,
+              propertyType: propertyType || null,
+              customerRole: customerRole || null,
+              approxSize: approxSize || null,
+              biddingStatus:
+                customerRole === "General contractor" ? biddingStatus || null : null,
+              siteUrl,
+              ...spamFields,
+            },
+          },
+        );
+        if (fnError) throw fnError;
+        if (data?.error) throw new Error(String(data.error));
+
+        trackGenerateLead({
+          formLocation: pathFrom.startsWith("/") ? pathFrom : `/${pathFrom}`,
+          propertyType: propertyType || undefined,
+          projectType: ownerProjectType,
+        });
+        setSubmitted(true);
+        return;
+      }
+
+      const lineItems = buildLineItems(projectType, finish, sqft);
       const { data, error: fnError } = await supabase.functions.invoke("submit-quote", {
         body: {
           name,
@@ -203,13 +238,13 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
           phone,
           address,
           details: enrichedDetails,
-          projectType: instantRates ? projectType : "slab",
-          finishType: instantRates ? finish : null,
-          lengthFt: submitLength,
-          widthFt: submitWidth,
-          sqft: submitSqft,
-          estimateLow: instantRates ? range.low : null,
-          estimateHigh: instantRates ? range.high : null,
+          projectType,
+          finishType: finish,
+          lengthFt: length,
+          widthFt: width,
+          sqft,
+          estimateLow: range.low,
+          estimateHigh: range.high,
           lineItems,
           siteUrl,
           propertyType: propertyType || null,
@@ -218,12 +253,7 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
           approxSize: approxSize || null,
           biddingStatus:
             customerRole === "General contractor" ? biddingStatus || null : null,
-          // Honeypot + timing (server-enforced)
-          company_website: honeypot,
-          formStartedAt: startedAtRef.current,
-          // TODO(FDZ): TURNSTILE_SITE_KEY / TURNSTILE_SECRET
-          turnstileToken: TURNSTILE_ENABLED ? turnstileToken : undefined,
-          from: originFrom,
+          ...spamFields,
         },
       });
 
@@ -250,18 +280,21 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
   };
 
   if (submitted) {
+    const inquiryConfirm = !instantRates;
     return (
       <div className="bg-stone" style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}>
         <div className="bg-orange p-4 flex justify-between items-center">
           <span className="font-display text-base font-extrabold tracking-[0.1em] uppercase text-white">
-            Quote Submitted
+            {inquiryConfirm ? "Request Received" : "Quote Submitted"}
           </span>
         </div>
         <div className="p-6 text-center">
           <div className="text-4xl mb-4">✅</div>
           <h3 className="text-concrete mb-2">Thank You, {name}!</h3>
           <p className="text-muted-text text-sm mb-3">
-            Your quote has been created. Check your email for details.
+            {inquiryConfirm
+              ? "We received your project details. You will get a written estimate after a plan review or a site visit — this is not a priced quote and does not need to be accepted online."
+              : "Your quote has been created. Check your email for details."}
           </p>
           <EstimateCallFollowUp from={originFrom} />
         </div>
@@ -286,9 +319,8 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
             style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.1)" }}
           >
             <p className="text-[0.78rem] text-concrete leading-relaxed">
-              You&apos;re requesting a <strong>{origin.formLabel}</strong> estimate. Kansas planning
-              rates are not published yet — describe the scope below for a written quote after plan
-              review or a site visit. No instant dollar range is calculated from Oklahoma rates.
+              You&apos;re requesting a <strong>{origin.formLabel}</strong> estimate. Send your
+              project details for a written estimate after plan review or a site visit.
             </p>
           </div>
         )}

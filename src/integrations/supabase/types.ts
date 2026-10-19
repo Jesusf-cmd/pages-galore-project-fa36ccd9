@@ -95,6 +95,57 @@ export type Database = {
         }
         Relationships: []
       }
+      estimate_inquiries: {
+        Row: {
+          approx_size: string | null
+          bidding_status: string | null
+          created_at: string
+          customer_address: string | null
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          customer_role: string | null
+          id: string
+          origin: string | null
+          project_details: string | null
+          project_type: string
+          property_type: string | null
+          status: string
+        }
+        Insert: {
+          approx_size?: string | null
+          bidding_status?: string | null
+          created_at?: string
+          customer_address?: string | null
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          customer_role?: string | null
+          id?: string
+          origin?: string | null
+          project_details?: string | null
+          project_type: string
+          property_type?: string | null
+          status?: string
+        }
+        Update: {
+          approx_size?: string | null
+          bidding_status?: string | null
+          created_at?: string
+          customer_address?: string | null
+          customer_email?: string
+          customer_name?: string
+          customer_phone?: string
+          customer_role?: string | null
+          id?: string
+          origin?: string | null
+          project_details?: string | null
+          project_type?: string
+          property_type?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
       quotes: {
         Row: {
           accepted_at: string | null

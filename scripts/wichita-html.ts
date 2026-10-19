@@ -86,10 +86,10 @@ function renderWichitaHubHtml(page: WichitaPageContent, h1: string): string {
   );
   parts.push(`<h2>Examples of FDZ concrete work</h2>`);
   parts.push(
-    `<p>Project photos on this page are real FDZ work. Each example shows the actual city and state where it was completed. They are capability examples — not claims that the same jobs were poured in Wichita.</p>`,
+    `<p>Most images on this page are photos of completed FDZ projects. Each example shows the city and state where that work was done. One stamped patio example uses an AI illustration (labeled on the image) — not a job-site photo. These are capability examples — not claims that the same jobs were poured in Wichita.</p>`,
   );
   parts.push(
-    `<p>Estimated budget for similar work in Wichita is a planning figure published only after owner approval. The written quote depends on scope, quantities, access, site conditions, and specifications.</p>`,
+    `<p>Send your project details for a written estimate after plan review or a site visit. Historical Oklahoma contract prices are not Wichita quotes.</p>`,
   );
   parts.push(`<h2>${heading(page.projectTypesTitle, page.projectTypesTitleAccent)}</h2>`);
   parts.push(`<p>${page.projectTypesIntro}</p><ul>`);

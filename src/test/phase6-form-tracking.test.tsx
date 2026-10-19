@@ -98,7 +98,7 @@ describe("Phase 6 form + tracking", () => {
     },
   );
 
-  it("keeps the Wichita hub origin on a mocked submit-quote payload", async () => {
+  it("routes Wichita hub requests to submit-estimate-inquiry without invented prices or dims", async () => {
     render(
       <MemoryRouter initialEntries={["/?from=concrete-contractors-wichita-ks#estimate"]}>
         <EstimateForm />
@@ -118,18 +118,30 @@ describe("Phase 6 form + tracking", () => {
     fireEvent.change(screen.getByPlaceholderText(/Wichita-area address/i), {
       target: { value: "Parking lot and dock apron." },
     });
+    fireEvent.change(screen.getByPlaceholderText(/parking area|slab size|wall length/i), {
+      target: { value: "about 8,000 sq ft parking" },
+    });
     fireEvent.click(screen.getByRole("button", { name: /request wichita estimate/i }));
     await waitFor(() => expect(invoke).toHaveBeenCalled());
     const body = invoke.mock.calls[0][1]?.body as Record<string, unknown>;
-    expect(invoke.mock.calls[0][0]).toBe("submit-quote");
+    expect(invoke.mock.calls[0][0]).toBe("submit-estimate-inquiry");
     expect(body.from).toBe("concrete-contractors-wichita-ks");
+    expect(body.projectType).toBe("commercial");
+    expect(body.approxSize).toBe("about 8,000 sq ft parking");
     expect(String(body.details)).toContain(
       "Requested from /concrete-contractors-wichita-ks (concrete contractors, Wichita KS).",
     );
     expect(String(body.details)).toContain("Parking lot and dock apron.");
-    expect(String(body.details)).toContain("Kansas rates not configured");
-    expect(body.estimateLow).toBeNull();
-    expect(body.estimateHigh).toBeNull();
+    expect(String(body.details)).not.toContain("Kansas rates not configured");
+    expect(body).not.toHaveProperty("estimateLow");
+    expect(body).not.toHaveProperty("estimateHigh");
+    expect(body).not.toHaveProperty("lengthFt");
+    expect(body).not.toHaveProperty("widthFt");
+    expect(body).not.toHaveProperty("sqft");
+    await waitFor(() => {
+      expect(screen.getByText("Request Received")).toBeInTheDocument();
+      expect(screen.getByText(/written estimate after a plan review/i)).toBeInTheDocument();
+    });
   });
 
   it("phone_click reaches dataLayer", () => {

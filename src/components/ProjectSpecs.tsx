@@ -80,8 +80,7 @@ export default function ProjectSpecs({
                 {WICHITA_BUDGET_LABEL}
               </p>
               <p className="text-[0.78rem] text-muted-text leading-relaxed mb-2">
-                Request a written Wichita estimate for similar scope. Planning budgets are published here only after
-                owner approval.
+                Send your project details for a written estimate after plan review or a site visit.
               </p>
               <a href={estimateHref} className="text-orange no-underline text-[0.78rem] font-semibold">
                 Request a Wichita estimate →

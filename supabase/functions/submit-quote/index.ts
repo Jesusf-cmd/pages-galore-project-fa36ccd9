@@ -5,6 +5,7 @@ import {
   originIdFromProjectDetails,
   projectDetailsForStorage,
 } from "../../../src/lib/estimatePath.ts";
+import { parsePricedQuoteAmounts } from "../../../src/lib/pricedQuote.ts";
 import { customerQuoteEmailHtml } from "../../../src/lib/quoteEmail.ts";
 
 const corsHeaders = {
@@ -155,7 +156,7 @@ Deno.serve(async (req) => {
       return await reject("turnstile_failed");
     }
 
-    if (!name || !email || !phone || !projectType || !lengthFt || !widthFt) {
+    if (!name || !email || !phone || !projectType) {
       return new Response(JSON.stringify({ error: "Missing required fields" }), {
         status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
@@ -165,6 +166,28 @@ Deno.serve(async (req) => {
         status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
+
+    // quotes columns estimate_low/high, total_estimate, length_ft, width_ft, square_feet are NOT NULL.
+    // Refuse null/NaN prices and fabricated zero dims — unpriced Kansas requests use submit-estimate-inquiry.
+    const priced = parsePricedQuoteAmounts({
+      estimateLow,
+      estimateHigh,
+      lengthFt,
+      widthFt,
+      sqft,
+    });
+    if (!priced.ok) {
+      return new Response(JSON.stringify({ error: priced.error }), {
+        status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const {
+      estimateLow: pricedLow,
+      estimateHigh: pricedHigh,
+      lengthFt: pricedLength,
+      widthFt: pricedWidth,
+      sqft: pricedSqft,
+    } = priced.amounts;
 
     const leadMeta = [
       propertyType && `Property type: ${propertyType}`,
@@ -194,13 +217,13 @@ Deno.serve(async (req) => {
         project_details: storedDetails,
         project_type: projectType,
         finish_type: finishType || null,
-        length_ft: lengthFt,
-        width_ft: widthFt,
-        square_feet: sqft,
-        estimate_low: estimateLow,
-        estimate_high: estimateHigh,
+        length_ft: pricedLength,
+        width_ft: pricedWidth,
+        square_feet: pricedSqft,
+        estimate_low: pricedLow,
+        estimate_high: pricedHigh,
         line_items: lineItems || [],
-        total_estimate: estimateHigh,
+        total_estimate: pricedHigh,
       })
       .select("id, quote_number, valid_until, access_token")
       .single();
@@ -227,8 +250,8 @@ Deno.serve(async (req) => {
       const customerHtml = customerQuoteEmailHtml({
         firstName,
         quoteNumber,
-        estimateLow,
-        estimateHigh,
+        estimateLow: pricedLow,
+        estimateHigh: pricedHigh,
         expiresDate,
         quoteUrl,
         origin: quoteOrigin,
@@ -237,7 +260,7 @@ Deno.serve(async (req) => {
       const includesHtml = (lineItems || []).map((item: any) => `
         <div style="margin-bottom:16px;">
           <div style="font-weight:bold;color:#1a1a1a;font-size:14px;margin-bottom:4px;">ITEM ${String(item.number).padStart(2, "0")}: ${item.title}</div>
-          <div style="color:#c45c26;font-weight:bold;font-size:14px;margin-bottom:4px;">$${item.priceLow.toLocaleString()} – $${item.priceHigh.toLocaleString()}</div>
+          <div style="color:#c45c26;font-weight:bold;font-size:14px;margin-bottom:4px;">$${Number(item.priceLow).toLocaleString()} – $${Number(item.priceHigh).toLocaleString()}</div>
           <ul style="margin:0;padding-left:20px;color:#555;font-size:13px;">
             ${(item.includes || []).map((inc: string) => `<li style="margin-bottom:2px;">${inc}</li>`).join("")}
           </ul>
@@ -265,11 +288,7 @@ Deno.serve(async (req) => {
       ${includesHtml}
       <div style="background:#1a1a1a;padding:16px 20px;margin:24px 0;border-radius:4px;">
         <div style="color:#888;font-size:11px;letter-spacing:2px;margin-bottom:4px;">TOTAL ESTIMATE</div>
-        <div style="color:#c45c26;font-size:24px;font-weight:800;">${
-          typeof estimateLow === "number" && typeof estimateHigh === "number"
-            ? `$${Number(estimateLow).toLocaleString()} – $${Number(estimateHigh).toLocaleString()}`
-            : "Written estimate after plan review or site visit"
-        }</div>
+        <div style="color:#c45c26;font-size:24px;font-weight:800;">$${pricedLow.toLocaleString()} – $${pricedHigh.toLocaleString()}</div>
       </div>
       <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:4px;padding:10px 16px;margin:0 0 24px;">
         <div style="color:#c45c26;font-size:12px;font-weight:bold;">Expires: ${expiresDate}</div>
