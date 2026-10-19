@@ -30,13 +30,18 @@ describe("Wichita Phase 2 service content", () => {
     }
 
     expect(JSON.stringify(commercialConcreteWichita.specs)).toContain(
-      "not a blanket site-wide strength",
+      "Specified by the civil or structural drawings for the project.",
     );
     expect(JSON.stringify(industrialConcreteWichita.specs)).toContain("Per project plans");
-    expect(JSON.stringify(retainingWallsWichita.specs)).toContain("not a blanket wall default");
-    expect(JSON.stringify(stampedConcreteWichita.specs)).toContain(
-      "not a decorative default number",
+    expect(JSON.stringify(retainingWallsWichita.specs)).toContain(
+      "Concrete mix and strength follow the applicable wall plans and project requirements.",
     );
+    expect(JSON.stringify(stampedConcreteWichita.specs)).toContain(
+      "Concrete mix and reinforcement follow the intended use and applicable project requirements.",
+    );
+    expect(JSON.stringify(commercialConcreteWichita.specs)).not.toMatch(/\d,\d{3} PSI/);
+    expect(JSON.stringify(retainingWallsWichita.specs)).not.toMatch(/\d,\d{3} PSI/);
+    expect(JSON.stringify(stampedConcreteWichita.specs)).not.toMatch(/\d,\d{3} PSI/);
   });
 
   it("keeps distinct estimating guidance for each service", () => {
@@ -51,7 +56,14 @@ describe("Wichita Phase 2 service content", () => {
     expect(industrial).toContain("possible phasing");
     expect(industrial).toContain("Concrete bases for generators, compressors");
     expect(retaining).toContain("Approximate wall length, height, and the grade change");
-    expect(retaining).toContain("without diagnosing every leaning wall from symptoms alone");
+    expect(retaining).toContain(
+      "Whether you need a new wall, repair, or replacement, and any movement or cracking you have observed.",
+    );
+    expect(retaining).toContain(
+      "FDZ reviews the available drawings and site conditions before recommending repair or replacement.",
+    );
+    expect(retaining).not.toContain("without diagnosing every leaning wall");
+    expect(retaining).not.toContain("A wall that has tilted is usually telling you");
     expect(stamped).toContain("Intended use and approximate area");
     expect(stamped).toContain("A full structural engineering package is not assumed");
   });
@@ -61,7 +73,7 @@ describe("Wichita Phase 2 service content", () => {
       [
         commercialConcreteWichita,
         "Approximate quantities for parking, paving, walks, curb",
-        "not a blanket site-wide strength",
+        "Specified by the civil or structural drawings for the project.",
       ],
       [
         industrialConcreteWichita,
@@ -71,12 +83,12 @@ describe("Wichita Phase 2 service content", () => {
       [
         retainingWallsWichita,
         "Approximate wall length, height, and the grade change",
-        "not a blanket wall default",
+        "Concrete mix and strength follow the applicable wall plans and project requirements.",
       ],
       [
         stampedConcreteWichita,
         "Intended use and approximate area",
-        "not a decorative default number",
+        "Concrete mix and reinforcement follow the intended use and applicable project requirements.",
       ],
     ] as const;
 

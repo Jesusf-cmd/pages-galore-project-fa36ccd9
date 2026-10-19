@@ -218,7 +218,7 @@ export const commercialConcreteWichita: WichitaPageContent = {
     },
   ],
   specs: [
-    { label: "Concrete strength", value: "Per the civil or structural drawings for that Wichita commercial site — not a blanket site-wide strength" },
+    { label: "Concrete strength", value: "Specified by the civil or structural drawings for the project." },
     { label: "Thickness", value: "Set by the project drawings for the use of each slab, panel, or curb section" },
     { label: "Base & subgrade", value: "Excavation, aggregate base, and compaction as required by the plans and site conditions" },
     { label: "Reinforcement", value: "Rebar or mesh placed to the schedule on the drawings" },
@@ -764,17 +764,17 @@ export const retainingWallsWichita: WichitaPageContent = {
         "Approximate wall length, height, and the grade change the wall has to hold.",
         "Photos of the existing wall or the proposed location, and notes on nearby buildings, drives, or other surcharge conditions.",
         "Access for excavation and concrete, drainage information you already have, and any engineered wall drawings.",
-        "Whether the request is a new wall, a repair, or a rebuild — without diagnosing every leaning wall from symptoms alone before a review.",
+        "Whether you need a new wall, repair, or replacement, and any movement or cracking you have observed.",
         estimateNote,
       ],
       infoBlock: `Wichita and Kansas project line: ${ksCall}. Oklahoma City projects stay on ${okCall}.`,
     },
     {
       eyebrow: "Repair",
-      title: "Leaning walls start with",
-      titleAccent: "a cause, not a price.",
+      title: "Repair starts with a",
+      titleAccent: "review of conditions.",
       content: [
-        "A wall that has tilted is usually telling you the drainage or the footing is wrong, not that the face needs a cosmetic coat. FDZ looks at how far it has moved and whether water is trapped behind it before recommending a repair or a replacement. A written estimate follows that look, or a review of photos and any existing plans when a trip has to be justified first.",
+        "Send photos of leaning, cracking, and drainage conditions, along with information about nearby buildings or traffic. FDZ reviews the available drawings and site conditions before recommending repair or replacement. A written estimate follows that review.",
       ],
     },
     {
@@ -794,7 +794,7 @@ export const retainingWallsWichita: WichitaPageContent = {
     { label: "Wall types", value: "Cast-in-place concrete or CMU on a reinforced footing" },
     { label: "Drainage", value: "Free-draining backfill with weep holes or a drain line behind the wall" },
     { label: "Reinforcement", value: "Placed to the wall plan, including grouted CMU cores when specified" },
-    { label: "Concrete", value: "Mix and strength per the wall plan and the project's engineer — not a blanket wall default" },
+    { label: "Concrete", value: "Concrete mix and strength follow the applicable wall plans and project requirements." },
     { label: "Design", value: "Stamped engineering, when required, is provided by the project's engineer" },
     { label: "Backfill", value: "Placed in lifts after the wall has cured enough to take the load" },
   ],
@@ -1057,7 +1057,7 @@ export const stampedConcreteWichita: WichitaPageContent = {
   ],
   specs: [
     { label: "Base", value: "Compacted aggregate under exterior decorative slabs" },
-    { label: "Concrete & reinforcement", value: "Mix and reinforcement matched to the intended use and the project's construction requirements — not a decorative default number" },
+    { label: "Concrete & reinforcement", value: "Concrete mix and reinforcement follow the intended use and applicable project requirements." },
     { label: "Stamp timing", value: "Color, release, and mats applied while the surface is plastic" },
     { label: "Patterns", value: "Ashlar slate, random flagstone, herringbone brick, and wood plank are existing FDZ pattern families" },
     { label: "Joints", value: "Planned with the pattern layout" },
