@@ -273,6 +273,36 @@ BEGIN
   );
 END $$;
 
+-- Privilege catalog proof under production-style default grants:
+-- anon/authenticated must lack EXECUTE; service_role must retain it.
+DO $$
+DECLARE
+  r record;
+  anon_ok boolean;
+  auth_ok boolean;
+  svc_ok boolean;
+BEGIN
+  FOR r IN
+    SELECT *
+    FROM (VALUES
+      ('public.create_estimate_inquiry_with_notifications(jsonb,text)'::regprocedure),
+      ('public.claim_estimate_inquiry_notification(uuid,uuid,integer)'::regprocedure),
+      ('public.finalize_estimate_inquiry_notification(uuid,uuid,integer,text,text,text)'::regprocedure),
+      ('public.record_notification_provider_acceptance(uuid,uuid,integer,text)'::regprocedure),
+      ('public.reconcile_estimate_inquiry_notifications(text,uuid)'::regprocedure)
+    ) AS t(fn)
+  LOOP
+    anon_ok := has_function_privilege('anon', r.fn, 'execute');
+    auth_ok := has_function_privilege('authenticated', r.fn, 'execute');
+    svc_ok := has_function_privilege('service_role', r.fn, 'execute');
+    INSERT INTO rls_results VALUES (
+      format('privilege %s', r.fn),
+      (NOT anon_ok) AND (NOT auth_ok) AND svc_ok,
+      format('anon=%s authenticated=%s service_role=%s', anon_ok, auth_ok, svc_ok)
+    );
+  END LOOP;
+END $$;
+
 SELECT CASE WHEN pass THEN 'PASS' ELSE 'FAIL' END AS status, name, detail
 FROM rls_results
 ORDER BY name;

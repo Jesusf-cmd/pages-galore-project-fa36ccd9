@@ -101,6 +101,7 @@ END;
 $$;
 
 REVOKE ALL ON FUNCTION public.create_estimate_inquiry_with_notifications(jsonb, text) FROM PUBLIC;
+REVOKE ALL ON FUNCTION public.create_estimate_inquiry_with_notifications(jsonb, text) FROM anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.create_estimate_inquiry_with_notifications(jsonb, text) TO service_role;
 
 -- ---------------------------------------------------------------------------
@@ -149,6 +150,7 @@ END;
 $$;
 
 REVOKE ALL ON FUNCTION public.claim_estimate_inquiry_notification(uuid, uuid, integer) FROM PUBLIC;
+REVOKE ALL ON FUNCTION public.claim_estimate_inquiry_notification(uuid, uuid, integer) FROM anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.claim_estimate_inquiry_notification(uuid, uuid, integer) TO service_role;
 
 -- ---------------------------------------------------------------------------
@@ -196,6 +198,7 @@ END;
 $$;
 
 REVOKE ALL ON FUNCTION public.finalize_estimate_inquiry_notification(uuid, uuid, integer, text, text, text) FROM PUBLIC;
+REVOKE ALL ON FUNCTION public.finalize_estimate_inquiry_notification(uuid, uuid, integer, text, text, text) FROM anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.finalize_estimate_inquiry_notification(uuid, uuid, integer, text, text, text) TO service_role;
 
 -- ---------------------------------------------------------------------------
@@ -232,6 +235,7 @@ END;
 $$;
 
 REVOKE ALL ON FUNCTION public.record_notification_provider_acceptance(uuid, uuid, integer, text) FROM PUBLIC;
+REVOKE ALL ON FUNCTION public.record_notification_provider_acceptance(uuid, uuid, integer, text) FROM anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.record_notification_provider_acceptance(uuid, uuid, integer, text) TO service_role;
 
 -- ---------------------------------------------------------------------------
@@ -286,4 +290,5 @@ END;
 $$;
 
 REVOKE ALL ON FUNCTION public.reconcile_estimate_inquiry_notifications(text, uuid) FROM PUBLIC;
+REVOKE ALL ON FUNCTION public.reconcile_estimate_inquiry_notifications(text, uuid) FROM anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.reconcile_estimate_inquiry_notifications(text, uuid) TO service_role;
