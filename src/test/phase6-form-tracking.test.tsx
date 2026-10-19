@@ -25,7 +25,10 @@ vi.mock("react-router-dom", async () => {
 describe("Phase 6 form + tracking", () => {
   beforeEach(() => {
     invoke.mockReset();
-    invoke.mockResolvedValue({ data: { ok: true }, error: null });
+    invoke.mockResolvedValue({
+      data: { success: true, inquiryId: "11111111-1111-4111-8111-111111111111", ok: true },
+      error: null,
+    });
     window.dataLayer = [];
   });
 
@@ -98,17 +101,17 @@ describe("Phase 6 form + tracking", () => {
     },
   );
 
-  it("keeps the Wichita hub origin on a mocked submit-quote payload", async () => {
+  it("routes Wichita hub requests to submit-estimate-inquiry without invented prices or dims", async () => {
     render(
       <MemoryRouter initialEntries={["/?from=concrete-contractors-wichita-ks#estimate"]}>
         <EstimateForm />
       </MemoryRouter>,
     );
-    expect(screen.getByText(/Wichita concrete/i)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: /next: enter dimensions/i }));
-    fireEvent.click(screen.getByRole("button", { name: /next: your info/i }));
+    expect(screen.getAllByText(/Wichita concrete/i).length).toBeGreaterThan(0);
+    expect(screen.getByText("Request Estimate")).toBeInTheDocument();
+    expect(screen.queryByText("Instant Estimate")).not.toBeInTheDocument();
     fireEvent.change(screen.getByPlaceholderText("Full name"), { target: { value: "Hub QA" } });
-    fireEvent.change(screen.getByPlaceholderText("(405) 000-0000"), { target: { value: "3165550100" } });
+    fireEvent.change(screen.getByPlaceholderText("316-365-8342"), { target: { value: "3165550100" } });
     fireEvent.change(screen.getByPlaceholderText("email@example.com"), {
       target: { value: "hub-qa@example.com" },
     });
@@ -118,15 +121,91 @@ describe("Phase 6 form + tracking", () => {
     fireEvent.change(screen.getByPlaceholderText(/Wichita-area address/i), {
       target: { value: "Parking lot and dock apron." },
     });
-    fireEvent.click(screen.getByRole("button", { name: /get your quote/i }));
+    fireEvent.change(screen.getByPlaceholderText(/parking area|slab size|wall length/i), {
+      target: { value: "about 8,000 sq ft parking" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /request wichita estimate/i }));
     await waitFor(() => expect(invoke).toHaveBeenCalled());
-    const body = invoke.mock.calls[0][1]?.body as Record<string, string>;
-    expect(invoke.mock.calls[0][0]).toBe("submit-quote");
+    const body = invoke.mock.calls[0][1]?.body as Record<string, unknown>;
+    expect(invoke.mock.calls[0][0]).toBe("submit-estimate-inquiry");
     expect(body.from).toBe("concrete-contractors-wichita-ks");
-    expect(body.details).toContain(
+    expect(body.projectType).toBe("commercial");
+    expect(body.approxSize).toBe("about 8,000 sq ft parking");
+    expect(String(body.details)).toContain(
       "Requested from /concrete-contractors-wichita-ks (concrete contractors, Wichita KS).",
     );
-    expect(body.details).toContain("Parking lot and dock apron.");
+    expect(String(body.details)).toContain("Parking lot and dock apron.");
+    expect(String(body.details)).not.toContain("Kansas rates not configured");
+    expect(body).not.toHaveProperty("estimateLow");
+    expect(body).not.toHaveProperty("estimateHigh");
+    expect(body).not.toHaveProperty("lengthFt");
+    expect(body).not.toHaveProperty("widthFt");
+    expect(body).not.toHaveProperty("sqft");
+    await waitFor(() => {
+      expect(screen.getByText("Request Received")).toBeInTheDocument();
+      expect(screen.getByText(/written estimate after a plan review/i)).toBeInTheDocument();
+    });
+    expect(window.dataLayer?.some((e) => e.event === "generate_lead")).toBe(true);
+  });
+
+  it("does not confirm or convert Kansas leads without a saved inquiryId", async () => {
+    invoke.mockResolvedValue({ data: { success: true }, error: null });
+    window.dataLayer = [];
+    render(
+      <MemoryRouter initialEntries={["/?from=concrete-contractors-wichita-ks#estimate"]}>
+        <EstimateForm />
+      </MemoryRouter>,
+    );
+    fireEvent.change(screen.getByPlaceholderText("Full name"), { target: { value: "Hub QA" } });
+    fireEvent.change(screen.getByPlaceholderText("316-365-8342"), { target: { value: "3165550100" } });
+    fireEvent.change(screen.getByPlaceholderText("email@example.com"), {
+      target: { value: "hub-qa@example.com" },
+    });
+    fireEvent.change(screen.getByPlaceholderText("Job address in Wichita, KS"), {
+      target: { value: "100 Douglas Ave, Wichita, KS" },
+    });
+    fireEvent.change(screen.getByPlaceholderText(/Wichita-area address/i), {
+      target: { value: "Parking lot and dock apron." },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /request wichita estimate/i }));
+    await waitFor(() => expect(invoke).toHaveBeenCalled());
+    await waitFor(() => {
+      expect(screen.queryByText("Request Received")).not.toBeInTheDocument();
+      expect(screen.getByPlaceholderText("Full name")).toHaveValue("Hub QA");
+    });
+    expect(window.dataLayer?.some((e) => e.event === "generate_lead")).toBe(false);
+  });
+
+  it("shows recoverable Turnstile errors without converting", async () => {
+    invoke.mockResolvedValue({
+      data: { error: "Please complete the security check and try again.", code: "turnstile_failed" },
+      error: { message: "Edge Function returned a non-2xx status code" },
+    });
+    window.dataLayer = [];
+    render(
+      <MemoryRouter initialEntries={["/?from=concrete-contractors-wichita-ks#estimate"]}>
+        <EstimateForm />
+      </MemoryRouter>,
+    );
+    fireEvent.change(screen.getByPlaceholderText("Full name"), { target: { value: "Hub QA" } });
+    fireEvent.change(screen.getByPlaceholderText("316-365-8342"), { target: { value: "3165550100" } });
+    fireEvent.change(screen.getByPlaceholderText("email@example.com"), {
+      target: { value: "hub-qa@example.com" },
+    });
+    fireEvent.change(screen.getByPlaceholderText("Job address in Wichita, KS"), {
+      target: { value: "100 Douglas Ave, Wichita, KS" },
+    });
+    fireEvent.change(screen.getByPlaceholderText(/Wichita-area address/i), {
+      target: { value: "Retry me." },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /request wichita estimate/i }));
+    await waitFor(() => expect(invoke).toHaveBeenCalled());
+    await waitFor(() => {
+      expect(screen.queryByText("Request Received")).not.toBeInTheDocument();
+      expect(screen.getByPlaceholderText("Full name")).toHaveValue("Hub QA");
+      expect(screen.getByPlaceholderText(/Wichita-area address/i)).toHaveValue("Retry me.");
+    });
+    expect(window.dataLayer?.some((e) => e.event === "generate_lead")).toBe(false);
   });
 
   it("phone_click reaches dataLayer", () => {

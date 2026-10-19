@@ -208,7 +208,10 @@ export function formatQuoteNumber(num: number): string {
   return `#${String(num).padStart(4, "0")}`;
 }
 
-export function formatCurrency(amount: number): string {
+export function formatCurrency(amount: number | null | undefined): string {
+  if (typeof amount !== "number" || !Number.isFinite(amount)) {
+    return "Written estimate after plan review";
+  }
   return `$${amount.toLocaleString()}`;
 }
 

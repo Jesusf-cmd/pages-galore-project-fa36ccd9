@@ -1,7 +1,14 @@
 import { useCallback, useRef, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { Upload, X } from "lucide-react";
-import { applyEstimateOriginToDetails, detailsLimitError, estimateAddressPlaceholder, parseEstimateOrigin, uploadSubmitCallFailure } from "@/lib/estimatePath";
+import {
+  applyEstimateOriginToDetails,
+  detailsLimitError,
+  estimateAddressPlaceholder,
+  parseEstimateOrigin,
+  resolveEstimateOriginFrom,
+  uploadSubmitCallFailure,
+} from "@/lib/estimatePath";
 import { EstimateCallError, EstimateCallFollowUp } from "@/components/EstimateCallLink";
 
 const MAX_FILES = 5;
@@ -45,9 +52,17 @@ function validateClientFile(file: File, existingCount: number): string | null {
   return null;
 }
 
-export default function ProjectDocumentUpload() {
+type ProjectDocumentUploadProps = {
+  /** Override route used for origin when `?from=` is absent (e.g. embedded Wichita hub). */
+  fromPath?: string;
+};
+
+export default function ProjectDocumentUpload({ fromPath }: ProjectDocumentUploadProps) {
+  const location = useLocation();
   const [searchParams] = useSearchParams();
-  const origin = parseEstimateOrigin(searchParams.get("from"));
+  const pathForOrigin = fromPath ?? location.pathname;
+  const originFrom = resolveEstimateOriginFrom(searchParams.get("from"), pathForOrigin);
+  const origin = parseEstimateOrigin(originFrom);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [files, setFiles] = useState<File[]>([]);
   const [dragActive, setDragActive] = useState(false);
@@ -61,7 +76,6 @@ export default function ProjectDocumentUpload() {
   const [errorCallsPhone, setErrorCallsPhone] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const originFrom = searchParams.get("from");
 
   const addFiles = useCallback((incoming: FileList | File[]) => {
     setError("");
@@ -124,8 +138,9 @@ export default function ProjectDocumentUpload() {
       formData.append("phone", phone.trim());
       formData.append("email", email.trim());
       formData.append("address", address.trim());
-      formData.append("details", applyEstimateOriginToDetails(searchParams.get("from"), details));
+      formData.append("details", applyEstimateOriginToDetails(originFrom, details));
       formData.append("company_website", honeypot);
+      if (originFrom) formData.append("from", originFrom);
       files.forEach((file) => formData.append("files", file));
 
       const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
@@ -312,7 +327,9 @@ export default function ProjectDocumentUpload() {
               <input
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                placeholder={estimateAddressPlaceholder(searchParams.get("from")) || "123 Main St, Oklahoma City, OK"}
+                placeholder={
+                  estimateAddressPlaceholder(originFrom) || "123 Main St, Oklahoma City, OK"
+                }
                 className={inputClass}
                 style={inputStyle}
               />

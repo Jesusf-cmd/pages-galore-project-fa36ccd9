@@ -11,6 +11,7 @@ import {
   formatCurrency,
   formatDate,
 } from "@/lib/pricingConfig";
+import { hasPricedEstimateAmounts, isAcceptablePricedQuote } from "@/lib/pricedQuote";
 
 interface QuoteLineItem {
   number: number;
@@ -223,6 +224,8 @@ export default function QuotePage() {
   const isPending = displayStatus.label === "PENDING";
   const isExpired = displayStatus.label === "EXPIRED";
   const isAccepted = displayStatus.label === "ACCEPTED";
+  const isPriced = hasPricedEstimateAmounts(quote);
+  const canAccept = isAcceptablePricedQuote(quote) && !isExpired;
 
   return (
     <div className="min-h-screen bg-[#f5f1eb] print:bg-white">
@@ -233,7 +236,7 @@ export default function QuotePage() {
             {formatQuoteNumber(quote.quote_number)}
           </span>
           <div className="flex items-center gap-2">
-            {isPending && (
+            {canAccept && (
               <button
                 onClick={() => setShowAcceptModal(true)}
                 className="bg-[#c45c26] hover:bg-[#a84d1f] text-white px-5 py-2 text-sm font-bold tracking-wider uppercase transition-colors"
@@ -300,10 +303,18 @@ export default function QuotePage() {
             </div>
             <div className="px-8 sm:px-10 py-5">
               <div className="text-[#999] text-[10px] tracking-[2px] font-bold mb-1">
-                {isAccepted ? "ACCEPTED ON" : isExpired ? "EXPIRED ON" : "EXPIRES IN"}
+                {isAccepted
+                  ? "ACCEPTED ON"
+                  : !isPriced
+                    ? "STATUS"
+                    : isExpired
+                      ? "EXPIRED ON"
+                      : "EXPIRES IN"}
               </div>
               {isAccepted && quote.accepted_at ? (
                 <div className="text-[#16a34a] text-sm font-bold">{formatDate(quote.accepted_at)}</div>
+              ) : !isPriced ? (
+                <div className="text-[#1a1a1a] text-sm font-bold">Awaiting written estimate</div>
               ) : isExpired ? (
                 <div className="text-[#dc2626] text-sm font-bold">{formatDate(quote.valid_until)}</div>
               ) : (
@@ -427,8 +438,8 @@ export default function QuotePage() {
             </div>
           </div>
 
-          {/* Accept CTA for pending quotes */}
-          {isPending && (
+          {/* Accept CTA only for priced pending quotes */}
+          {canAccept && (
             <div className="px-8 sm:px-10 py-6 border-t border-[#e5e5e5] text-center print:hidden">
               <button
                 onClick={() => setShowAcceptModal(true)}
@@ -437,6 +448,17 @@ export default function QuotePage() {
                 Accept This Quote
               </button>
               <p className="text-[#888] text-xs mt-3">By accepting, you agree to the terms and conditions above.</p>
+            </div>
+          )}
+          {isPending && !isPriced && (
+            <div className="px-8 sm:px-10 py-6 border-t border-[#e5e5e5] text-center print:hidden">
+              <p className="text-[#555] text-sm leading-relaxed max-w-md mx-auto">
+                This page is not a priced quote. Call{" "}
+                <a href={`tel:${followUpPhone.tel}`} className="text-[#c45c26] font-bold">
+                  {followUpPhone.display}
+                </a>{" "}
+                or wait for a written estimate after plan review or a site visit.
+              </p>
             </div>
           )}
 
@@ -453,8 +475,8 @@ export default function QuotePage() {
         </div>
       </div>
 
-      {/* Accept Modal */}
-      {showAcceptModal && (
+      {/* Accept Modal — only opened when canAccept */}
+      {showAcceptModal && canAccept && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4 print:hidden">
           <div className="bg-white rounded-lg shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
             <div className="bg-[#1a1a1a] px-6 py-4 rounded-t-lg flex items-center justify-between">

@@ -95,6 +95,116 @@ export type Database = {
         }
         Relationships: []
       }
+      estimate_inquiries: {
+        Row: {
+          approx_size: string | null
+          bidding_status: string | null
+          created_at: string
+          customer_address: string | null
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          customer_role: string | null
+          id: string
+          origin: string | null
+          project_details: string | null
+          project_type: string
+          property_type: string | null
+          status: string
+        }
+        Insert: {
+          approx_size?: string | null
+          bidding_status?: string | null
+          created_at?: string
+          customer_address?: string | null
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          customer_role?: string | null
+          id?: string
+          origin?: string | null
+          project_details?: string | null
+          project_type: string
+          property_type?: string | null
+          status?: string
+        }
+        Update: {
+          approx_size?: string | null
+          bidding_status?: string | null
+          created_at?: string
+          customer_address?: string | null
+          customer_email?: string
+          customer_name?: string
+          customer_phone?: string
+          customer_role?: string | null
+          id?: string
+          origin?: string | null
+          project_details?: string | null
+          project_type?: string
+          property_type?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
+      estimate_inquiry_notifications: {
+        Row: {
+          attempt_count: number
+          claim_expires_at: string | null
+          claim_token: string | null
+          claimed_at: string | null
+          created_at: string
+          id: string
+          inquiry_id: string
+          last_attempt_at: string | null
+          last_error: string | null
+          provider_message_id: string | null
+          recipient_email: string
+          recipient_kind: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          attempt_count?: number
+          claim_expires_at?: string | null
+          claim_token?: string | null
+          claimed_at?: string | null
+          created_at?: string
+          id?: string
+          inquiry_id: string
+          last_attempt_at?: string | null
+          last_error?: string | null
+          provider_message_id?: string | null
+          recipient_email: string
+          recipient_kind: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          attempt_count?: number
+          claim_expires_at?: string | null
+          claim_token?: string | null
+          claimed_at?: string | null
+          created_at?: string
+          id?: string
+          inquiry_id?: string
+          last_attempt_at?: string | null
+          last_error?: string | null
+          provider_message_id?: string | null
+          recipient_email?: string
+          recipient_kind?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "estimate_inquiry_notifications_inquiry_id_fkey"
+            columns: ["inquiry_id"]
+            isOneToOne: false
+            referencedRelation: "estimate_inquiries"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       quotes: {
         Row: {
           accepted_at: string | null

@@ -1,6 +1,7 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { NOTIFICATION_EMAIL, sendEmail } from "../_shared/email.ts";
 import { absoluteQuoteUrl, originIdFromProjectDetails } from "../../../src/lib/estimatePath.ts";
+import { isAcceptablePricedQuote } from "../../../src/lib/pricedQuote.ts";
 import { customerAcceptanceEmailHtml } from "../../../src/lib/quoteEmail.ts";
 
 const corsHeaders = {
@@ -74,6 +75,14 @@ Deno.serve(async (req) => {
 
     if (quote.status !== "pending") {
       return new Response(JSON.stringify({ error: "Quote is not pending" }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    // Unpriced / non-numeric rows must never enter acceptance or signature collection.
+    if (!isAcceptablePricedQuote(quote)) {
+      return new Response(JSON.stringify({ error: "Quote is not available for acceptance" }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });

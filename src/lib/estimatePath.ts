@@ -85,6 +85,34 @@ export function parseEstimateOrigin(from: string | null | undefined) {
   return ESTIMATE_ORIGINS[from as EstimateOriginId];
 }
 
+/** Pathname slug used as `from` when the query string is absent (direct page visits). */
+export function estimateOriginFromPathname(pathname: string | null | undefined): string | null {
+  if (!pathname) return null;
+  const slug = pathname.split("?")[0].split("#")[0].replace(/^\//, "").replace(/\/+$/, "");
+  if (!slug || slug === "home") return null;
+  return parseEstimateOrigin(slug) ? slug : null;
+}
+
+/**
+ * Prefer an allowlisted `?from=` query, otherwise the current route when it is an allowlisted origin.
+ * Direct Wichita hub visits therefore keep Kansas attribution without requiring a query param.
+ */
+export function resolveEstimateOriginFrom(
+  queryFrom: string | null | undefined,
+  pathname?: string | null,
+): string | null {
+  if (queryFrom && parseEstimateOrigin(queryFrom)) return queryFrom;
+  return estimateOriginFromPathname(pathname);
+}
+
+/**
+ * Instant calculator rates are Oklahoma-only.
+ * Kansas origins use the unpriced inquiry panel (submit-estimate-inquiry).
+ */
+export function hasInstantEstimateRates(from: string | null | undefined): boolean {
+  return !isKansasEstimateOrigin(from);
+}
+
 export function estimateAddressPlaceholder(from: string | null | undefined): string | undefined {
   const origin = parseEstimateOrigin(from);
   if (!origin || !("addressPlaceholder" in origin)) return undefined;

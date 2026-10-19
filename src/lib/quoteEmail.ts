@@ -8,16 +8,29 @@ export function businessContactHtml(from: string | null | undefined): string {
   return `<a href="tel:${phone.tel}" style="color:#888;text-decoration:none;">${phone.display}</a> · ${BUSINESS_EMAIL}`;
 }
 
+function estimateRangeHtml(estimateLow: number | null | undefined, estimateHigh: number | null | undefined): string {
+  if (
+    typeof estimateLow === "number" &&
+    typeof estimateHigh === "number" &&
+    Number.isFinite(estimateLow) &&
+    Number.isFinite(estimateHigh)
+  ) {
+    return `$${estimateLow.toLocaleString()} – $${estimateHigh.toLocaleString()}`;
+  }
+  return "Written estimate after plan review or site visit";
+}
+
 export function customerQuoteEmailHtml(input: {
   firstName: string;
   quoteNumber: string;
-  estimateLow: number;
-  estimateHigh: number;
+  estimateLow: number | null | undefined;
+  estimateHigh: number | null | undefined;
   expiresDate: string;
   quoteUrl: string;
   origin: EstimateOriginId | null;
 }): string {
   const contact = businessContactHtml(input.origin);
+  const rangeLabel = estimateRangeHtml(input.estimateLow, input.estimateHigh);
   return `
 <!DOCTYPE html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
@@ -36,7 +49,7 @@ export function customerQuoteEmailHtml(input: {
       </div>
       <div style="background:#1a1a1a;border-radius:8px;padding:20px;text-align:center;margin:0 0 24px;">
         <div style="color:#888;font-size:11px;letter-spacing:2px;font-weight:bold;margin-bottom:8px;">TOTAL ESTIMATE</div>
-        <div style="color:#c45c26;font-size:28px;font-weight:800;">$${input.estimateLow.toLocaleString()} – $${input.estimateHigh.toLocaleString()}</div>
+        <div style="color:#c45c26;font-size:28px;font-weight:800;">${rangeLabel}</div>
       </div>
       <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:14px 20px;margin:0 0 24px;text-align:center;">
         <div style="color:#c45c26;font-size:13px;font-weight:bold;">⏳ Valid for 30 days</div>
@@ -61,13 +74,14 @@ export function customerQuoteEmailHtml(input: {
 export function customerAcceptanceEmailHtml(input: {
   firstName: string;
   quoteNumber: string;
-  estimateLow: number;
-  estimateHigh: number;
+  estimateLow: number | null | undefined;
+  estimateHigh: number | null | undefined;
   acceptedDate: string;
   quoteUrl: string;
   origin: EstimateOriginId | null;
 }): string {
   const contact = businessContactHtml(input.origin);
+  const rangeLabel = estimateRangeHtml(input.estimateLow, input.estimateHigh);
   return `
 <!DOCTYPE html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
@@ -86,7 +100,7 @@ export function customerAcceptanceEmailHtml(input: {
       <p style="color:#555;font-size:14px;line-height:1.6;margin:0 0 20px;">Your quote ${input.quoteNumber} has been accepted. We'll be in touch within 24 hours to schedule your project.</p>
       <div style="background:#1a1a1a;border-radius:8px;padding:20px;text-align:center;margin:0 0 24px;">
         <div style="color:#888;font-size:11px;letter-spacing:2px;font-weight:bold;margin-bottom:8px;">TOTAL ESTIMATE</div>
-        <div style="color:#c45c26;font-size:28px;font-weight:800;">$${input.estimateLow.toLocaleString()} – $${input.estimateHigh.toLocaleString()}</div>
+        <div style="color:#c45c26;font-size:28px;font-weight:800;">${rangeLabel}</div>
       </div>
       <div style="background:#f5f1eb;border-radius:8px;padding:14px 20px;margin:0 0 24px;text-align:center;">
         <div style="color:#888;font-size:11px;letter-spacing:2px;font-weight:bold;margin-bottom:4px;">ACCEPTED ON</div>

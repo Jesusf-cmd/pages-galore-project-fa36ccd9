@@ -2,13 +2,41 @@
  * Static HTML for the estimate form so crawlers see fields without JS.
  * Mirrors the visible field set in EstimateForm (submission still needs JS).
  */
+import { isKansasEstimateOrigin } from "./estimatePath.ts";
+import { KANSAS_PHONE, OKLAHOMA_PHONE } from "./phones.ts";
+
 export function renderEstimateFormHtml(opts?: { fromPath?: string }): string {
   const from = opts?.fromPath ? opts.fromPath.replace(/^\//, "") || "home" : "home";
+  const kansas = isKansasEstimateOrigin(from);
+  const phone = kansas ? KANSAS_PHONE : OKLAHOMA_PHONE;
+  const addressPlaceholder = kansas ? "Job address in Wichita, KS" : "123 Main St, Oklahoma City, OK";
+  const intro = kansas
+    ? `Send your project details for a written estimate after plan review or a site visit. Call <a href="tel:${phone.tel}">${phone.display}</a>.`
+    : `Fill out the form for a planning range. A written estimate follows an on-site visit. Call <a href="tel:${phone.tel}">${phone.display}</a>.`;
+
+  const projectTypeOptions = kansas
+    ? `
+              <option value="commercial">Commercial concrete</option>
+              <option value="industrial">Industrial concrete</option>
+              <option value="retaining-walls">Retaining walls</option>
+              <option value="stamped">Stamped concrete</option>
+              <option value="other">Other Wichita concrete</option>`
+    : `
+              <option value="driveways">Driveways</option>
+              <option value="patios">Patios &amp; slabs</option>
+              <option value="foundations">Foundations</option>
+              <option value="sidewalks">Sidewalks</option>
+              <option value="retaining-walls">Retaining walls</option>
+              <option value="parking-lots">Parking lots</option>
+              <option value="commercial">Commercial concrete</option>
+              <option value="sewer">Sewer line</option>
+              <option value="other">Other</option>`;
+
   return `
     <section id="estimate" aria-labelledby="estimate-heading">
-      <h2 id="estimate-heading">Request a Free Estimate</h2>
-      <p>Fill out the form for a planning range. A written estimate follows an on-site visit. Call <a href="tel:4054584805">(405) 458-4805</a>.</p>
-      <form method="post" action="/#estimate" data-estimate-form data-from="${from}">
+      <h2 id="estimate-heading">${kansas ? "Request a Wichita Estimate" : "Request a Free Estimate"}</h2>
+      <p>${intro}</p>
+      <form method="post" action="${kansas ? "/concrete-contractors-wichita-ks#estimate" : "/#estimate"}" data-estimate-form data-from="${from}">
         <fieldset>
           <legend>Project</legend>
           <label>Property type
@@ -29,27 +57,22 @@ export function renderEstimateFormHtml(opts?: { fromPath?: string }): string {
             </select>
           </label>
           <label>Project type
-            <select name="ownerProjectType" required>
-              <option value="driveways">Driveways</option>
-              <option value="patios">Patios &amp; slabs</option>
-              <option value="foundations">Foundations</option>
-              <option value="sidewalks">Sidewalks</option>
-              <option value="retaining-walls">Retaining walls</option>
-              <option value="parking-lots">Parking lots</option>
-              <option value="commercial">Commercial concrete</option>
-              <option value="sewer">Sewer line</option>
-              <option value="other">Other</option>
+            <select name="ownerProjectType" required>${projectTypeOptions}
             </select>
           </label>
           <label>Approximate size
-            <input type="text" name="approxSize" placeholder="e.g. 20×24 ft" />
+            <input type="text" name="approxSize" placeholder="${kansas ? "e.g. parking area, slab size, wall length" : "e.g. 20×24 ft"}" />
           </label>
-          <label>Length (ft)
+          ${
+            kansas
+              ? ""
+              : `<label>Length (ft)
             <input type="number" name="lengthFt" min="1" value="20" />
           </label>
           <label>Width (ft)
             <input type="number" name="widthFt" min="1" value="20" />
-          </label>
+          </label>`
+          }
         </fieldset>
         <fieldset>
           <legend>Contact</legend>
@@ -63,7 +86,7 @@ export function renderEstimateFormHtml(opts?: { fromPath?: string }): string {
             <input type="email" name="email" required autocomplete="email" />
           </label>
           <label>Project address
-            <input type="text" name="address" autocomplete="street-address" />
+            <input type="text" name="address" autocomplete="street-address" placeholder="${addressPlaceholder}" />
           </label>
           <label>Project details
             <textarea name="details" rows="3"></textarea>
@@ -76,7 +99,7 @@ export function renderEstimateFormHtml(opts?: { fromPath?: string }): string {
         </label>
         <input type="hidden" name="from" value="${from}" />
         <input type="hidden" name="form_started_at" value="" />
-        <button type="submit">Get Your Quote</button>
+        <button type="submit">${kansas ? "Request Wichita Estimate" : "Get Your Quote"}</button>
       </form>
     </section>
   `;
