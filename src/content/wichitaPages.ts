@@ -192,8 +192,14 @@ export const commercialConcreteWichita: WichitaPageContent = {
       title: "What to include for a",
       titleAccent: "Wichita commercial bid.",
       content: [
+        "Use this checklist when you call or send the estimate form:",
+        "Wichita-area site location, project contact, and desired schedule.",
+        "Approximate quantities for parking, paving, walks, curb, and building-slab scope — mark them approximate when not measured.",
+        "Whether the work is new construction, panel replacement, or a mix of both.",
+        "Available civil or structural drawings, site photos, and any existing concrete that must be removed.",
+        "Access, traffic control, occupied-site constraints, and when drives or stalls can be closed.",
         estimateNote,
-        "Useful attachments are a site plan, a structural slab schedule if there is a building, photos of existing concrete if this is a replacement, and any limits on when the lot or drive can be closed. FDZ coordinates pour days with the general contractor when the concrete is a subcontract. Certificate of insurance paperwork can be requested with the bid; it is part of the existing commercial process, not a Wichita-specific offer.",
+        "FDZ coordinates pour days with the general contractor when the concrete is a subcontract. Certificate of insurance paperwork can be requested with the bid; it is part of the existing commercial process, not a Wichita-specific offer.",
       ],
       infoBlock: `Wichita and Kansas project line: ${ksCall}. Oklahoma City projects stay on ${okCall}.`,
     },
@@ -212,11 +218,11 @@ export const commercialConcreteWichita: WichitaPageContent = {
     },
   ],
   specs: [
-    { label: "Mix", value: "4,000 PSI minimum on commercial flatwork; higher when the drawings call for it" },
-    { label: "Thickness", value: "Set by the structural or civil drawings, commonly in the 5–8 inch range for site slabs" },
-    { label: "Base", value: "Compacted aggregate under commercial paving, proof-rolled before concrete" },
-    { label: "Reinforcement", value: "Rebar placed to the schedule on the drawings" },
-    { label: "Joints", value: "Saw-cut on the joint plan, typically within 24 hours of the pour" },
+    { label: "Concrete strength", value: "Per the civil or structural drawings for that Wichita commercial site — not a blanket site-wide strength" },
+    { label: "Thickness", value: "Set by the project drawings for the use of each slab, panel, or curb section" },
+    { label: "Base & subgrade", value: "Excavation, aggregate base, and compaction as required by the plans and site conditions" },
+    { label: "Reinforcement", value: "Rebar or mesh placed to the schedule on the drawings" },
+    { label: "Joints & drainage", value: "Saw-cut and formed to the joint plan and the drainage arrows on the civil set" },
     { label: "Finish", value: "Broom, trowel, or as specified for the traffic on that slab" },
   ],
   processEyebrow: "Sequence",
@@ -336,7 +342,7 @@ export const industrialConcreteWichita: WichitaPageContent = {
   description: `Industrial slabs, equipment pads, loading docks, and heavy-use paving for Wichita facilities. FDZ's Wichita-area concrete crew handles this work. Call ${ksCall}.`,
   modelNote:
     "FDZ's Wichita-area concrete crew handles local industrial projects to the project drawings.",
-  introText: `Wichita's manufacturing and distribution buildings need concrete that carries forklifts, racking, trucks, and fixed equipment — not a standard parking-lot section. FDZ Construction LLC handles that industrial scope in Wichita with its Wichita-area concrete crew. One page covers the related work: warehouse and industrial slabs, equipment foundations and machine pads, loading areas and docks, and heavy-use paving. Separate thin pages for each pad type are not part of this expansion. Commercial parking, curb, and sidewalk packages live on the <a href="/commercial-concrete-wichita">Wichita commercial concrete</a> page. Call ${ksCall}.`,
+  introText: `FDZ Construction LLC handles industrial concrete for Wichita-area manufacturing, warehouse, and distribution facilities. The scope includes new warehouse slabs, replacement floor sections, equipment foundations and machine pads, loading docks, and heavy-use paving. Share the related work in one request so slab loads, equipment drawings, access, and construction phases can be reviewed together. Parking lots, curb, and sidewalks are covered on our <a href="/commercial-concrete-wichita">Wichita commercial concrete</a> page. Call the Kansas project line at ${ksCall} to discuss your facility.`,
   ctaLabel: "Request an Industrial Estimate →",
   serviceSchema: {
     serviceType: "Industrial concrete construction",
@@ -350,13 +356,13 @@ export const industrialConcreteWichita: WichitaPageContent = {
       icon: "🏭",
       title: "Warehouse Slabs",
       description:
-        "Interior slabs and replacements poured for forklift traffic, with thickness and joints taken from the facility drawings.",
+        "New slab-on-grade warehouse floors and replacement sections poured to the facility drawings for forklift travel, racking, and material handling.",
     },
     {
       icon: "⚙️",
       title: "Equipment Foundations",
       description:
-        "Pads and foundations for fixed equipment, placed to the supplier's shop drawings and the project engineer's plan.",
+        "Equipment foundations and machine pads placed from the project engineer's details and the equipment supplier's shop drawings.",
     },
     {
       icon: "🔩",
@@ -385,24 +391,27 @@ export const industrialConcreteWichita: WichitaPageContent = {
   ],
   subServices: {
     sectionEyebrow: "Applications",
-    sectionTitle: "High-value industrial concrete, kept on one page",
+    sectionTitle: "Warehouse, equipment, dock, and heavy-use concrete",
     items: [
       {
-        title: "Warehouse and industrial slabs",
+        title: "Warehouse slabs and industrial floors",
         bullets: [
-          "New interior slabs and section replacements in warehouse and production buildings",
-          "Flatness and joint layout follow the facility spec and the equipment that will run on the floor",
-          "Phased placements when part of the building has to stay in use",
-          "Company reference: <a href='/warehouse-slab-repair-oklahoma-city'>warehouse slab work</a>",
+          "New slab-on-grade warehouse and distribution floors",
+          "Full or phased floor replacement where the drawings and access allow",
+          "Base preparation and vapor-retarder work when the plans require them",
+          "Joints and specified FF/FL targets poured toward the facility documents — not a residential slab detail",
+          "Return-to-service coordination with the strength or curing requirements on the project",
+          "Company reference: <a href='/warehouse-slab-repair-oklahoma-city'>warehouse slab work</a> (Oklahoma examples)",
         ],
       },
       {
         title: "Equipment foundations and machine pads",
         bullets: [
-          "Generator, compressor, process, and machine bases",
-          "Anchor bolts set from the equipment supplier's shop drawings",
-          "Thickness and steel follow the load on that piece of equipment, not a generic pad detail",
-          "Company reference: <a href='/equipment-pad-concrete-oklahoma-city'>equipment pad concrete</a>",
+          "Concrete bases for generators, compressors, process equipment, and production machinery.",
+          "Anchor bolts, embeds, and openings set from the supplier's shop drawings",
+          "Thickness and reinforcement follow the equipment loads on the foundation drawings",
+          "Isolation and leveling provisions only when the project documents call for them",
+          "Company reference: <a href='/equipment-pad-concrete-oklahoma-city'>equipment pad concrete</a> (Oklahoma examples)",
         ],
       },
       {
@@ -427,22 +436,33 @@ export const industrialConcreteWichita: WichitaPageContent = {
   },
   sections: [
     {
-      eyebrow: "Why one page",
+      eyebrow: "Related scopes",
       title: "Pads, slabs, and docks are",
-      titleAccent: "one industrial scope.",
+      titleAccent: "one industrial package.",
       content: [
-        "A Wichita plant or warehouse rarely needs only one of these items. The floor, the dock, and the equipment pads are bid together, scheduled together, and they fail together if the base is wrong. Sending the complete scope helps the crew plan the work and give a useful estimate. Send the full industrial package — slab, pads, dock, and paving — in one estimate request.",
+        "A Wichita plant or warehouse rarely needs only one of these items. The floor, the dock, and the equipment pads are often bid and scheduled together. Share the related work in one request so loads, access, and phases can be reviewed as a package.",
         "If the project is mostly a parking lot, curb, and public sidewalk, use the <a href='/commercial-concrete-wichita'>commercial concrete page</a>. If a grade wall holds the yard or the dock approach, add <a href='/retaining-walls-wichita'>retaining walls</a>.",
       ],
     },
     {
-      eyebrow: "Drawings",
-      title: "Loads and anchor layout",
-      titleAccent: "come from the project documents.",
+      eyebrow: "Warehouse floors",
+      title: "Warehouse slabs and floor replacement",
+      titleAccent: "in Wichita.",
+      content: [
+        "Warehouse floors must support the operation above them: forklift travel, racking, storage, and material handling. FDZ places new slab-on-grade floors and replacement sections to the project drawings. Slab thickness, reinforcement, concrete mix, and joint layout follow the specified loads and floor use rather than a standard residential detail.",
+        "For a new floor, send the slab plan, approximate area, load requirements, and any specified flatness and levelness targets. Include subgrade, aggregate base, and vapor-retarder requirements when they are part of the plans. Subgrade preparation and base requirements are reviewed for the conditions at your Wichita site.",
+        "For replacement work, identify the failed areas, provide photos, and explain which aisles, rooms, or loading routes must stay available. The estimate should account for demolition, removal, base correction where required, placement phases, and the strength or curing requirements before the area returns to service. Access and shutdown windows are confirmed for each project.",
+      ],
+    },
+    {
+      eyebrow: "Equipment bases",
+      title: "Equipment foundations and machine pads",
+      titleAccent: "in Wichita.",
       alt: true,
       content: [
-        "Industrial concrete is only as good as the information behind it. FDZ needs the structural slab notes, the equipment shop drawings, and the dock or pit details before the crew is locked in. Anchor bolts, block-outs, and embed locations are set from those sheets. FDZ does not originate the structural design and does not certify equipment anchorage.",
-        "On occupied buildings, say which aisles, docks, or rooms have to stay open. Phased placements are planned around that constraint. They are scheduled per project, not offered as a standing after-hours promise.",
+        "Equipment concrete starts with the machine and its foundation requirements. FDZ places equipment foundations and machine pads from the project engineer's details and the equipment supplier's shop drawings. The equipment's weight, footprint, operating loads, anchor layout, and installation requirements determine the concrete scope.",
+        "Send the equipment make and model, foundation drawings, anchor-bolt plan, and any specified isolation, embeds, conduit openings, or leveling requirements. Tell us whether the base is inside an existing building, whether concrete must be removed, and how crews and equipment can reach the work area. Generator, compressor, process-equipment, and machine-base requests should include the supplier's installation information.",
+        "FDZ reviews the concrete construction scope with the project team. Structural design, vibration-isolation design, anchorage design, and equipment installation remain with the responsible engineer, supplier, or installing trade. Equipment is set only when the project's specified concrete strength and installation requirements are met.",
       ],
     },
     {
@@ -450,8 +470,15 @@ export const industrialConcreteWichita: WichitaPageContent = {
       title: "What an industrial estimate",
       titleAccent: "needs from you.",
       content: [
-        "Include the facility address in or near Wichita, the approximate slab or paving area, the equipment or dock that the concrete has to support, and the drawings you already have. Photos of cracked slabs, settled docks, or existing pads help when the work is a replacement.",
-        estimateNote,
+        "Use this checklist when you call or send the estimate form:",
+        "Wichita-area facility location, operating conditions, project contact, and desired schedule.",
+        "Warehouse slab or replacement area, equipment base, dock work, or combined scope.",
+        "Approximate dimensions or square footage, marked as approximate when not measured.",
+        "Slab/structural plans, equipment foundation drawings, loads, anchor layouts, embeds, block-outs, and available site photos.",
+        "Forklift, racking, equipment, or truck requirements documented by the project team.",
+        "Dock/pit details and equipment-vendor coordination notes when docks are in scope.",
+        "Demolition needs, access limits, occupied areas, shutdown windows, and possible phasing.",
+        `Your written estimate follows a review of the scope, available plans, and site conditions. If you do not have all the drawings yet, explain what is available so FDZ can identify the next information needed. Call ${ksCall} for Wichita and Kansas projects.`,
       ],
       infoBlock: `Wichita and Kansas project line: ${ksCall}. Oklahoma City projects stay on ${okCall}.`,
     },
@@ -468,12 +495,38 @@ export const industrialConcreteWichita: WichitaPageContent = {
     },
   ],
   specs: [
-    { label: "Mix", value: "4,000 PSI minimum; 5,000 PSI or higher when the industrial spec requires it" },
-    { label: "Slab depth", value: "Driven by forklift, racking, or equipment loads on the drawings" },
-    { label: "Equipment pads", value: "Anchor layout from supplier shop drawings, not a field guess" },
-    { label: "Docks", value: "Pit and apron dimensions from the leveler drawings" },
-    { label: "Base", value: "Compacted aggregate confirmed before steel and concrete" },
-    { label: "Joints", value: "Cut to the joint plan for the slab thickness and the traffic" },
+    {
+      label: "Concrete strength",
+      value: "Per project plans and the specified industrial or equipment requirements",
+    },
+    {
+      label: "Slab thickness",
+      value: "Per project drawings for forklift, racking, or equipment loads — not a residential default",
+    },
+    {
+      label: "Reinforcement & joints",
+      value: "Installed per the structural or slab notes for that facility",
+    },
+    {
+      label: "Flatness / levelness",
+      value: "Poured toward FF/FL or equipment targets when the project documents specify them",
+    },
+    {
+      label: "Equipment pads",
+      value: "Anchor layout, embeds, and isolation from supplier shop drawings and the project engineer",
+    },
+    {
+      label: "Docks",
+      value: "Pit and apron dimensions from the leveler drawings",
+    },
+    {
+      label: "Base & vapor retarder",
+      value: "Subgrade, aggregate base, and vapor retarder as required by the plans for the Wichita site",
+    },
+    {
+      label: "Cure / return to service",
+      value: "Per mix design and the strength or curing requirements on the project",
+    },
   ],
   processEyebrow: "Sequence",
   processTitle: "How industrial concrete",
@@ -489,7 +542,7 @@ export const industrialConcreteWichita: WichitaPageContent = {
     {
       title: "Base preparation",
       description:
-        "Subgrade is cut and aggregate is compacted for the load the slab or pad has to carry.",
+        "Subgrade and aggregate base are prepared as required by the plans for the loads the slab or pad must carry.",
     },
     {
       title: "Steel and embeds",
@@ -499,12 +552,12 @@ export const industrialConcreteWichita: WichitaPageContent = {
     {
       title: "Placement",
       description:
-        "Concrete is placed to the specified strength. Large floor areas can be laser-screeded when the spec calls for that flatness.",
+        "Concrete is placed to the specified strength. Large floor areas can be laser-screeded when the project documents call for that flatness.",
     },
     {
       title: "Joints, cure, and turnover",
       description:
-        "Joints are cut on time and the area stays closed until the cure the spec requires is met.",
+        "Joints are cut per the joint plan, and the area returns to service only after the project's strength or curing requirements are met.",
     },
   ],
   projectTypesEyebrow: "Use cases",
@@ -515,11 +568,11 @@ export const industrialConcreteWichita: WichitaPageContent = {
   projectTypes: [
     {
       title: "Warehouse floors",
-      description: "New slabs and replacements under racking and forklift aisles.",
+      description: "New slab-on-grade floors and replacements under racking and forklift aisles.",
     },
     {
       title: "Production equipment",
-      description: "Machine pads and foundations tied to a specific piece of equipment.",
+      description: "Machine pads and equipment foundations tied to a specific piece of equipment.",
     },
     {
       title: "Shipping docks",
@@ -538,24 +591,29 @@ export const industrialConcreteWichita: WichitaPageContent = {
         "Warehouse and industrial slabs, equipment foundations, machine pads, loading docks and aprons, industrial foundations, and paving built for truck traffic. Standard commercial parking is on the commercial concrete page.",
     },
     {
-      question: "Where do warehouse slabs and machine pads fit?",
+      question: "Do you pour new warehouse slabs as well as replace existing floors?",
       answer:
-        "Both are part of industrial concrete on this page. Include the slab, the equipment, and any dock work in one estimate so the facility package stays together. Parking lots and site paving are on the commercial concrete page.",
+        "Yes. FDZ places new slab-on-grade warehouse floors and replacement sections to the project drawings. Thickness, reinforcement, mix, and joints follow the specified loads and floor use for that facility.",
     },
     {
-      question: "Can you match flatness numbers for forklift floors?",
+      question: "Can floor replacement be planned in phases?",
       answer:
-        "Flatness targets come from the facility specification. FDZ can laser-screed large slabs when that spec calls for it. FDZ does not invent a flatness number that is not on the drawings.",
+        "When access and schedule allow, replacement can be planned in phases. Identify which aisles, rooms, or loading routes must stay available. Phasing and shutdown windows are reviewed for each project — FDZ does not promise uninterrupted operation for every occupied facility.",
     },
     {
-      question: "Who engineers the equipment foundation?",
+      question: "What drawings are needed for a machine pad or equipment foundation?",
       answer:
-        "The project engineer and the equipment supplier. FDZ sets anchors and places concrete from their drawings.",
+        "Send the equipment make and model, foundation drawings, anchor-bolt plan, and any specified isolation, embeds, conduit openings, or leveling requirements. Include access notes and whether existing concrete must be removed.",
     },
     {
-      question: "How do I start a Wichita industrial estimate?",
+      question: "Who determines slab thickness, reinforcement, anchors, and flatness targets?",
       answer:
-        "Call 316-365-8342 or use the estimate form. Send the address, area, equipment or dock type, and the drawings you have.",
+        "The responsible project documents and design professionals govern. FDZ constructs to those drawings. Structural design, anchorage design, vibration-isolation design, and equipment installation stay with the engineer, supplier, or installing trade.",
+    },
+    {
+      question: "How is a Wichita industrial concrete estimate prepared?",
+      answer:
+        "The written estimate follows a review of the scope, available plans, and site conditions. If drawings are incomplete, explain what you have so FDZ can identify the next information needed. Call 316-365-8342 or use the estimate form.",
     },
     {
       question: "Does FDZ have a Wichita concrete crew?",
@@ -568,14 +626,14 @@ export const industrialConcreteWichita: WichitaPageContent = {
     title: "Wichita industrial sites,",
     titleAccent: "served by a Wichita-area crew.",
     introHtml:
-      "Industrial calls for this page are facilities in Wichita and the surrounding Sedgwick County area — manufacturing, distribution, and yard concrete where slab, dock, and equipment pads are the job. FDZ's Wichita-area crew handles these projects. Call the Kansas project line for local work.",
+      "Industrial calls for this page are facilities in Wichita and the surrounding Sedgwick County area — manufacturing, distribution, and yard concrete where slab, dock, and equipment pads are the job. FDZ's Wichita-area crew handles these projects. Site location and scope are reviewed when estimating. Call the Kansas project line for local work.",
     footnoteHtml: `Kansas project line ${ksCall}. Oklahoma City line ${okCall}.`,
   },
   finalCta: {
     heading: "Have an industrial slab,",
     headingAccent: "dock, or equipment pad?",
     description:
-      "Send the Wichita facility address, the drawings you have, and which areas have to stay open.",
+      "Send the Wichita facility address, scope, and the drawings or photos you have. Your written estimate follows a review of the plans and site conditions.",
     buttonLabel: "Request an Industrial Estimate →",
   },
 };
@@ -695,8 +753,21 @@ export const retainingWallsWichita: WichitaPageContent = {
       alt: true,
       content: [
         "Some walls need a stamped design because of height, surcharge from a drive or a building, or the soil the geotechnical report describes. That design is the project engineer's work. FDZ does not stamp drawings and does not offer itself as the designer of record. If you already have a plan, the crew builds to it. If you do not, the estimate can identify that an engineer has to be engaged before construction.",
-        "Footing depth and reinforcement follow that plan and the requirements of the jurisdiction for the site. This page does not publish a Wichita frost depth or a height limit, because those are set by the project and the authority having jurisdiction, not by a statewide guess.",
+        "Footing depth, wall thickness, reinforcement, drainage details, and concrete requirements follow that plan and the requirements of the jurisdiction for the site. This page does not publish a Wichita frost depth, a universal wall height, or a blanket mix strength, because those are set by the project and the authority having jurisdiction — not by a statewide guess.",
       ],
+    },
+    {
+      eyebrow: "Estimate",
+      title: "What a Wichita retaining-wall",
+      titleAccent: "estimate needs from you.",
+      content: [
+        "Approximate wall length, height, and the grade change the wall has to hold.",
+        "Photos of the existing wall or the proposed location, and notes on nearby buildings, drives, or other surcharge conditions.",
+        "Access for excavation and concrete, drainage information you already have, and any engineered wall drawings.",
+        "Whether the request is a new wall, a repair, or a rebuild — without diagnosing every leaning wall from symptoms alone before a review.",
+        estimateNote,
+      ],
+      infoBlock: `Wichita and Kansas project line: ${ksCall}. Oklahoma City projects stay on ${okCall}.`,
     },
     {
       eyebrow: "Repair",
@@ -705,7 +776,6 @@ export const retainingWallsWichita: WichitaPageContent = {
       content: [
         "A wall that has tilted is usually telling you the drainage or the footing is wrong, not that the face needs a cosmetic coat. FDZ looks at how far it has moved and whether water is trapped behind it before recommending a repair or a replacement. A written estimate follows that look, or a review of photos and any existing plans when a trip has to be justified first.",
       ],
-      infoBlock: `Wichita and Kansas project line: ${ksCall}. Oklahoma City projects stay on ${okCall}.`,
     },
     {
       eyebrow: "Related work",
@@ -724,7 +794,7 @@ export const retainingWallsWichita: WichitaPageContent = {
     { label: "Wall types", value: "Cast-in-place concrete or CMU on a reinforced footing" },
     { label: "Drainage", value: "Free-draining backfill with weep holes or a drain line behind the wall" },
     { label: "Reinforcement", value: "Placed to the wall plan, including grouted CMU cores when specified" },
-    { label: "Concrete", value: "4,000 PSI for cast-in-place retaining walls" },
+    { label: "Concrete", value: "Mix and strength per the wall plan and the project's engineer — not a blanket wall default" },
     { label: "Design", value: "Stamped engineering, when required, is provided by the project's engineer" },
     { label: "Backfill", value: "Placed in lifts after the wall has cured enough to take the load" },
   ],
@@ -951,6 +1021,20 @@ export const stampedConcreteWichita: WichitaPageContent = {
       ],
     },
     {
+      eyebrow: "Estimate",
+      title: "What a stamped-concrete",
+      titleAccent: "estimate needs from you.",
+      content: [
+        "Intended use and approximate area — patio, driveway, walkway, entry, or courtyard.",
+        "Whether the work is a new installation or a replacement of existing concrete.",
+        "Pattern and color preferences, plus photos of the site, access notes, and drainage concerns.",
+        "Scheduling constraints and any site-specific preparation the property already requires.",
+        "Ordinary residential decorative projects are estimated from use, access, and finish choice. A full structural engineering package is not assumed unless the project documents call for one.",
+        estimateNote,
+      ],
+      infoBlock: `Wichita and Kansas project line: ${ksCall}. Oklahoma City projects stay on ${okCall}.`,
+    },
+    {
       eyebrow: "What we will not invent",
       title: "Patterns are chosen",
       titleAccent: "for the project.",
@@ -958,7 +1042,6 @@ export const stampedConcreteWichita: WichitaPageContent = {
         "FDZ's existing decorative work uses pattern families such as ashlar slate, random flagstone, herringbone brick, and wood plank. Those are examples of stamps the crew already runs, not a Wichita showroom list and not a promise that every pattern is in stock for every date. Color is part of the estimate conversation. There is no proprietary finish name and no project list of Wichita patios on this site.",
         "Company background for the same finish is on <a href='/patios-oklahoma-city'>patios and stamped concrete</a>. That page describes Oklahoma City work.",
       ],
-      infoBlock: `Wichita and Kansas project line: ${ksCall}. Oklahoma City projects stay on ${okCall}.`,
     },
     {
       eyebrow: "Related work",
@@ -974,7 +1057,7 @@ export const stampedConcreteWichita: WichitaPageContent = {
   ],
   specs: [
     { label: "Base", value: "Compacted aggregate under exterior decorative slabs" },
-    { label: "Concrete", value: "4,000 PSI flatwork, reinforced for the use (foot traffic or vehicles)" },
+    { label: "Concrete & reinforcement", value: "Mix and reinforcement matched to the intended use and the project's construction requirements — not a decorative default number" },
     { label: "Stamp timing", value: "Color, release, and mats applied while the surface is plastic" },
     { label: "Patterns", value: "Ashlar slate, random flagstone, herringbone brick, and wood plank are existing FDZ pattern families" },
     { label: "Joints", value: "Planned with the pattern layout" },
