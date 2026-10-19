@@ -21,6 +21,9 @@ export const WICHITA_PATHS = [
 
 export type WichitaPath = (typeof WICHITA_PATHS)[number];
 
+/** Wichita/Kansas regional homepage used for Home and logo navigation. */
+export const WICHITA_HOME_PATH = "/concrete-contractors-wichita-ks" as const;
+
 export function normalizePath(pathname: string): string {
   const path = pathname.split("?")[0].split("#")[0];
   if (path.length > 1 && path.endsWith("/")) return path.replace(/\/+$/, "");
@@ -29,6 +32,11 @@ export function normalizePath(pathname: string): string {
 
 export function isKansasPath(pathname: string): boolean {
   return (WICHITA_PATHS as readonly string[]).includes(normalizePath(pathname));
+}
+
+/** Home/logo destination for the current route. Kansas pages use the Wichita hub. */
+export function regionalHomePath(pathname: string): string {
+  return isKansasPath(pathname) ? WICHITA_HOME_PATH : "/";
 }
 
 export function phoneForPath(pathname: string) {
