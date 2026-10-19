@@ -448,8 +448,9 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
             <input
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="316-365-8342"
+              placeholder="Your phone number"
               type="tel"
+              inputMode="tel"
               autoComplete="tel"
               className="w-full bg-concrete/[0.05] px-3 py-3 md:py-2.5 text-concrete font-body text-base md:text-sm outline-none min-h-[48px]"
               style={{ border: "1px solid hsl(var(--concrete) / 0.1)" }}

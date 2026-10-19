@@ -102,10 +102,12 @@ describe("Wichita homepage redesign", () => {
       </MemoryRouter>,
     );
     expect(screen.getByPlaceholderText("Job address in Wichita, KS")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("Your phone number")).toBeInTheDocument();
+    expect(screen.queryByPlaceholderText("316-365-8342")).not.toBeInTheDocument();
     expect(screen.getByText("Request Estimate")).toBeInTheDocument();
   });
 
-  it("uses request-only EstimateForm for Kansas origins on the OKC homepage query", () => {
+  it("uses request-only EstimateForm for legacy Kansas origins on the OKC homepage query", () => {
     render(
       <MemoryRouter initialEntries={["/?from=industrial-concrete-wichita#estimate"]}>
         <EstimateForm />
@@ -114,6 +116,24 @@ describe("Wichita homepage redesign", () => {
     expect(screen.getByText("Request Estimate")).toBeInTheDocument();
     expect(screen.queryByText("Instant Estimate")).not.toBeInTheDocument();
     expect(screen.getByPlaceholderText("Facility address in Wichita, KS")).toBeInTheDocument();
+  });
+
+  it("keeps commercial service origin when the hub is opened with from=", () => {
+    render(
+      <MemoryRouter
+        initialEntries={[
+          "/concrete-contractors-wichita-ks?from=commercial-concrete-wichita#estimate",
+        ]}
+      >
+        <EstimateForm fromPath="/concrete-contractors-wichita-ks" />
+      </MemoryRouter>,
+    );
+    expect(screen.getByPlaceholderText("Job address in Wichita, KS")).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText(
+        /Wichita-area address, approximate area, parking or paving scope/i,
+      ),
+    ).toBeInTheDocument();
   });
 
   it("separates Oklahoma completed cost from Wichita budget CTA on Kansas cards", () => {

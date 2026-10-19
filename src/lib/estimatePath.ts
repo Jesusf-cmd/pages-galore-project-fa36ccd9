@@ -1,9 +1,16 @@
 /** Homepage estimate form destination. Query `from` is an allowlisted originating page. */
 
-import { KANSAS_PHONE, OKLAHOMA_PHONE, WICHITA_PATHS } from "./phones.ts";
+import {
+  KANSAS_PHONE,
+  OKLAHOMA_PHONE,
+  WICHITA_HOME_PATH,
+  WICHITA_PATHS,
+} from "./phones.ts";
 
 export const ESTIMATE_HASH = "estimate";
 export const ESTIMATE_PATH = "/#estimate";
+/** Wichita hub form destination (Kansas origins). */
+export const WICHITA_ESTIMATE_BASE = WICHITA_HOME_PATH;
 
 const KANSAS_ORIGIN_IDS = new Set(WICHITA_PATHS.map((path) => path.slice(1)));
 
@@ -75,9 +82,40 @@ export function detailsLimitError(details: string): string | null {
   return details.trim().length > DETAILS_MAX_LENGTH ? DETAILS_LIMIT_ERROR : null;
 }
 
+/**
+ * Build an estimate form deep link.
+ * Kansas origins land on the Wichita hub so chrome stays Kansas-focused.
+ * Oklahoma / unknown origins keep the OKC homepage form.
+ * Legacy `/?from=<Kansas-origin>#estimate` links remain functional via the form's
+ * origin allowlist when the root page still mounts EstimateForm.
+ */
 export function estimatePath(from?: string | null): string {
   if (!from || !parseEstimateOrigin(from)) return ESTIMATE_PATH;
+  if (isKansasEstimateOrigin(from)) {
+    return `${WICHITA_HOME_PATH}?from=${encodeURIComponent(from)}#${ESTIMATE_HASH}`;
+  }
   return `/?from=${encodeURIComponent(from)}#${ESTIMATE_HASH}`;
+}
+
+/**
+ * Prefer an allowlisted `?from=` on the current URL, otherwise the route slug when
+ * it is an allowlisted origin. Used by nav/footer CTAs so hub visits with a service
+ * `from` keep that origin on subsequent estimate actions.
+ */
+export function estimateOriginForLocation(
+  pathname: string | null | undefined,
+  search?: string | null,
+): string | null {
+  const raw = search?.startsWith("?") ? search.slice(1) : search ?? "";
+  const queryFrom = new URLSearchParams(raw).get("from");
+  return resolveEstimateOriginFrom(queryFrom, pathname);
+}
+
+export function estimatePathForLocation(
+  pathname: string | null | undefined,
+  search?: string | null,
+): string {
+  return estimatePath(estimateOriginForLocation(pathname, search));
 }
 
 export function parseEstimateOrigin(from: string | null | undefined) {

@@ -2,14 +2,15 @@ import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import MailtoLink from "./MailtoLink";
 import { useBusinessPhone } from "@/hooks/quoteContact";
-import { isKansasPath, normalizePath } from "@/lib/phones";
-import { estimatePath } from "@/lib/estimatePath";
+import { isKansasPath } from "@/lib/phones";
+import { estimatePathForLocation } from "@/lib/estimatePath";
 import { GOOGLE_MAPS_PROFILE_URL } from "@/lib/contact";
 
 export default function Footer() {
   const phone = useBusinessPhone();
   const location = useLocation();
   const kansasRoute = isKansasPath(location.pathname);
+  const estimateTo = estimatePathForLocation(location.pathname, location.search);
   const oklahomaAreaLinks = [
     { to: "/oklahoma-city-concrete", label: "Concrete Contractor Oklahoma City" },
     { to: "/edmond-concrete", label: "Concrete Contractor Edmond OK" },
@@ -37,10 +38,7 @@ export default function Footer() {
       <div id="contact" className="max-w-xl mx-auto mb-8 scroll-mt-24 text-center">
         <div className="text-[0.66rem] tracking-[0.12em] uppercase text-concrete font-semibold mb-3">Get In Touch</div>
         <p className="text-sm text-muted-text mb-5">Tell us about your project and we’ll follow up with an estimate.</p>
-        <Link
-          to={kansasRoute ? estimatePath(normalizePath(location.pathname).slice(1)) : "/#estimate"}
-          className="btn-primary inline-block"
-        >
+        <Link to={estimateTo} className="btn-primary inline-block">
           Request an Estimate →
         </Link>
       </div>
@@ -73,7 +71,10 @@ export default function Footer() {
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-start">
         <div className="col-span-2 md:col-span-1">
-          <Logo className="h-12 w-auto opacity-90 mb-3" />
+          <Logo
+            className="h-12 w-auto max-w-[280px] opacity-90 mb-3"
+            region={kansasRoute ? "kansas" : "oklahoma"}
+          />
           <p className="text-[0.74rem] text-muted-text">{kansasRoute ? "Concrete work in Wichita and nearby Sedgwick County." : "Oklahoma City's concrete & sewer line contractor. Licensed & insured in Oklahoma."}</p>
           <p className="text-[0.74rem] text-muted-text mt-2">© {new Date().getFullYear()} FDZ Construction LLC. All rights reserved.</p>
         </div>
