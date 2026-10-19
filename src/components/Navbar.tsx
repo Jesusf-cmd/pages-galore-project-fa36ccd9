@@ -4,8 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
 import { useBusinessPhone } from "@/hooks/quoteContact";
-import { estimatePath } from "@/lib/estimatePath";
-import { isKansasPath, normalizePath, regionalHomePath } from "@/lib/phones";
+import { estimatePathForLocation } from "@/lib/estimatePath";
+import { isKansasPath, regionalHomePath } from "@/lib/phones";
 
 const serviceLinks = [
   { to: "/driveways-oklahoma-city", label: "Concrete Driveways" },
@@ -62,6 +62,12 @@ const wichitaAreaLinks = [
   { to: "/stamped-concrete-wichita", label: "Wichita Stamped Concrete" },
 ];
 
+const oklahomaSiteWorkLinks = [
+  { to: "/sewer-line-repair-oklahoma-city", label: "Sewer Line Repair" },
+  { to: "/skid-steer-services-oklahoma-city", label: "Skid Steer Services" },
+  { to: "/excavator-services-oklahoma-city", label: "Excavator Services" },
+];
+
 const concreteGroups = [
   { heading: "Residential", links: serviceLinks },
   { heading: "Commercial", links: commercialLinks },
@@ -70,10 +76,14 @@ const concreteGroups = [
 const oklahomaAreaGroup = { heading: "Oklahoma", links: oklahomaAreaLinks };
 const wichitaAreaGroup = { heading: "Wichita, Kansas", links: wichitaAreaLinks };
 
-const mobilePrimaryLinks = [
-  { to: "/sewer-line-repair-oklahoma-city", label: "Sewer Line Repair" },
-  { to: "/skid-steer-services-oklahoma-city", label: "Skid Steer Services" },
-  { to: "/excavator-services-oklahoma-city", label: "Excavator Services" },
+const mobilePrimaryLinksOk = [
+  ...oklahomaSiteWorkLinks,
+  { to: "/our-projects", label: "Projects" },
+  { to: "/blog", label: "Blog" },
+  { to: "/#contact", label: "Contact" },
+];
+
+const mobilePrimaryLinksKs = [
   { to: "/our-projects", label: "Projects" },
   { to: "/blog", label: "Blog" },
   { to: "/#contact", label: "Contact" },
@@ -86,34 +96,41 @@ export default function Navbar() {
   const phone = useBusinessPhone();
   const kansasRoute = isKansasPath(location.pathname);
   const homeTo = regionalHomePath(location.pathname);
+  const logoAria = kansasRoute
+    ? "FDZ Construction LLC — Serving Wichita, KS"
+    : "FDZ Construction LLC home";
   const areaGroups = kansasRoute
     ? [wichitaAreaGroup, oklahomaAreaGroup]
     : [oklahomaAreaGroup, wichitaAreaGroup];
   const concreteMenu = kansasRoute
     ? [
-        { heading: "Residential — Oklahoma City", links: serviceLinks },
-        { heading: "Commercial — Oklahoma City", links: commercialLinks },
+        { heading: "Wichita services", links: wichitaAreaLinks },
+        { heading: "Oklahoma City — Residential", links: serviceLinks },
+        { heading: "Oklahoma City — Commercial", links: commercialLinks },
       ]
     : concreteGroups;
-  const mobileSections = [
-    {
-      title: kansasRoute ? "Concrete — Oklahoma City" : "Concrete",
-      links: [...serviceLinks, ...commercialLinks],
-    },
-    ...(kansasRoute
-      ? [
-          { title: "Wichita, Kansas", links: wichitaAreaLinks },
-          { title: "Oklahoma", links: oklahomaAreaLinks },
-        ]
-      : [
-          { title: "Oklahoma", links: oklahomaAreaLinks },
-          { title: "Wichita, Kansas", links: wichitaAreaLinks },
-        ]),
+  const mobileSections = kansasRoute
+    ? [
+        { title: "Wichita, Kansas", links: wichitaAreaLinks },
+        {
+          title: "Oklahoma services",
+          links: [...serviceLinks, ...commercialLinks, ...oklahomaSiteWorkLinks],
+        },
+        { title: "Oklahoma cities", links: oklahomaAreaLinks },
+      ]
+    : [
+        {
+          title: "Concrete",
+          links: [...serviceLinks, ...commercialLinks],
+        },
+        { title: "Oklahoma", links: oklahomaAreaLinks },
+        { title: "Wichita, Kansas", links: wichitaAreaLinks },
+      ];
+  const mobileMenuPrimaryLinks = [
+    { to: homeTo, label: "Home" },
+    ...(kansasRoute ? mobilePrimaryLinksKs : mobilePrimaryLinksOk),
   ];
-  const mobileMenuPrimaryLinks = [{ to: homeTo, label: "Home" }, ...mobilePrimaryLinks];
-  const estimateTo = isKansasPath(location.pathname)
-    ? estimatePath(normalizePath(location.pathname).replace(/^\//, ""))
-    : "/#estimate";
+  const estimateTo = estimatePathForLocation(location.pathname, location.search);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -140,45 +157,73 @@ export default function Navbar() {
         }`}
         style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.08)" }}
       >
-        <Link to={homeTo} className="flex flex-col gap-0.5" aria-label="FDZ Construction LLC home">
-          <Logo className="h-[40px] md:h-[50px] w-auto" />
+        <Link to={homeTo} className="flex flex-col gap-0.5 min-w-0" aria-label={logoAria}>
+          <Logo
+            className="h-[40px] md:h-[50px] w-auto max-w-[min(100%,280px)]"
+            region={kansasRoute ? "kansas" : "oklahoma"}
+          />
         </Link>
 
         <ul className="hidden nav:flex gap-0 list-none">
           <li>
-            <Link to={homeTo} className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete">
+            <Link
+              to={homeTo}
+              className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete"
+            >
               Home
             </Link>
           </li>
           <NavDropdown label="Concrete" groups={concreteMenu} />
-          <li>
-            <Link to="/sewer-line-repair-oklahoma-city" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete whitespace-nowrap">
-              Sewer Line
-            </Link>
-          </li>
-          <li>
-            <Link to="/skid-steer-services-oklahoma-city" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete whitespace-nowrap">
-              Skid Steer
-            </Link>
-          </li>
-          <li>
-            <Link to="/excavator-services-oklahoma-city" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete whitespace-nowrap">
-              Excavator
-            </Link>
-          </li>
+          {!kansasRoute && (
+            <>
+              <li>
+                <Link
+                  to="/sewer-line-repair-oklahoma-city"
+                  className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete whitespace-nowrap"
+                >
+                  Sewer Line
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/skid-steer-services-oklahoma-city"
+                  className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete whitespace-nowrap"
+                >
+                  Skid Steer
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/excavator-services-oklahoma-city"
+                  className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete whitespace-nowrap"
+                >
+                  Excavator
+                </Link>
+              </li>
+            </>
+          )}
           <NavDropdown label="Service Areas" groups={areaGroups} />
           <li>
-            <Link to="/our-projects" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete">
+            <Link
+              to="/our-projects"
+              className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete"
+            >
               Projects
             </Link>
           </li>
           <li>
-            <Link to="/blog" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete">
+            <Link
+              to="/blog"
+              className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete"
+            >
               Blog
             </Link>
           </li>
           <li>
-            <Link to="/#contact" className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete">
+            <Link
+              to="/#contact"
+              className="block text-muted-text no-underline text-[0.76rem] tracking-[0.05em] uppercase font-medium px-3.5 py-2 transition-colors hover:text-concrete"
+            >
               Contact
             </Link>
           </li>
@@ -186,21 +231,36 @@ export default function Navbar() {
 
         <div className="hidden nav:flex items-center gap-5 flex-shrink-0">
           <div className="flex flex-col items-end">
-            <span className="text-[0.56rem] tracking-[0.14em] uppercase text-muted-text">Free Estimate</span>
+            <span className="text-[0.56rem] tracking-[0.14em] uppercase text-muted-text">
+              Free Estimate
+            </span>
             {phone ? (
-              <a href={`tel:${phone.tel}`} className="font-display text-lg font-extrabold text-orange no-underline leading-tight">{phone.display}</a>
+              <a
+                href={`tel:${phone.tel}`}
+                className="font-display text-lg font-extrabold text-orange no-underline leading-tight"
+              >
+                {phone.display}
+              </a>
             ) : (
-              <span className="font-display text-lg font-extrabold text-muted-text leading-tight">Call</span>
+              <span className="font-display text-lg font-extrabold text-muted-text leading-tight">
+                Call
+              </span>
             )}
           </div>
-          <Link to={estimateTo} className="bg-orange text-white px-5 py-2 font-display text-[0.8rem] font-extrabold tracking-[0.08em] uppercase no-underline transition-colors hover:bg-orange-light whitespace-nowrap">
+          <Link
+            to={estimateTo}
+            className="bg-orange text-white px-5 py-2 font-display text-[0.8rem] font-extrabold tracking-[0.08em] uppercase no-underline transition-colors hover:bg-orange-light whitespace-nowrap"
+          >
             Get Quote →
           </Link>
         </div>
 
         <div className="flex nav:hidden items-center gap-2">
           {phone ? (
-            <a href={`tel:${phone.tel}`} className="bg-orange text-white px-3 py-2 font-display text-[0.72rem] font-extrabold tracking-[0.06em] uppercase no-underline whitespace-nowrap">
+            <a
+              href={`tel:${phone.tel}`}
+              className="bg-orange text-white px-3 py-2 font-display text-[0.72rem] font-extrabold tracking-[0.06em] uppercase no-underline whitespace-nowrap"
+            >
               📞 Call
             </a>
           ) : null}
@@ -225,6 +285,8 @@ export default function Navbar() {
               phoneTel={phone?.tel ?? ""}
               estimateTo={estimateTo}
               homeTo={homeTo}
+              logoRegion={kansasRoute ? "kansas" : "oklahoma"}
+              logoAria={logoAria}
               primaryLinks={mobileMenuPrimaryLinks}
               sections={mobileSections}
             />,
@@ -241,6 +303,8 @@ function MobileMenuOverlay({
   phoneTel,
   estimateTo,
   homeTo,
+  logoRegion,
+  logoAria,
   primaryLinks,
   sections,
 }: {
@@ -249,6 +313,8 @@ function MobileMenuOverlay({
   phoneTel: string;
   estimateTo: string;
   homeTo: string;
+  logoRegion: "oklahoma" | "kansas";
+  logoAria: string;
   primaryLinks: { to: string; label: string }[];
   sections: { title: string; links: { to: string; label: string }[] }[];
 }) {
@@ -261,16 +327,16 @@ function MobileMenuOverlay({
     >
       <div className="flex h-full flex-col bg-darker text-concrete">
         <div
-          className="flex items-center justify-between px-5 py-4"
+          className="flex items-center justify-between gap-3 px-5 py-4"
           style={{ borderBottom: "1px solid hsl(var(--concrete) / 0.1)" }}
         >
-          <Link to={homeTo} onClick={onClose} className="flex items-center" aria-label="FDZ Construction LLC home">
-            <Logo className="h-[38px] w-auto" />
+          <Link to={homeTo} onClick={onClose} className="flex min-w-0 items-center" aria-label={logoAria}>
+            <Logo className="h-[38px] w-auto max-w-[min(100%,240px)]" region={logoRegion} />
           </Link>
           <button
             type="button"
             onClick={onClose}
-            className="flex min-h-[48px] min-w-[48px] items-center justify-center text-concrete"
+            className="flex min-h-[48px] min-w-[48px] flex-shrink-0 items-center justify-center text-concrete"
             aria-label="Close menu"
           >
             <X size={28} />
@@ -286,7 +352,7 @@ function MobileMenuOverlay({
             <div className="space-y-2">
               {primaryLinks.map((link) => (
                 <Link
-                  key={link.to}
+                  key={`${link.label}-${link.to}`}
                   to={link.to}
                   onClick={onClose}
                   className="block w-full rounded-sm px-4 py-4 text-[1.02rem] font-semibold leading-7 text-concrete no-underline transition-colors active:bg-stone"
@@ -325,9 +391,7 @@ function MobileSection({
 }) {
   return (
     <section className="space-y-3">
-      <div className="text-[0.82rem] font-bold uppercase tracking-[0.14em] text-orange">
-        {title}
-      </div>
+      <div className="text-[0.82rem] font-bold uppercase tracking-[0.14em] text-orange">{title}</div>
       <div className="space-y-2">
         {links.map((link) => (
           <Link
@@ -389,7 +453,9 @@ function NavDropdown({
                   key={item.to}
                   to={item.to}
                   className="block px-4 py-2.5 text-[0.76rem] text-muted-text no-underline transition-colors hover:text-concrete hover:bg-concrete/[0.04]"
-                  style={{ borderBottom: i < items.length - 1 ? "1px solid hsl(var(--concrete) / 0.08)" : "none" }}
+                  style={{
+                    borderBottom: i < items.length - 1 ? "1px solid hsl(var(--concrete) / 0.08)" : "none",
+                  }}
                 >
                   {item.label}
                 </Link>
@@ -399,4 +465,3 @@ function NavDropdown({
     </li>
   );
 }
-

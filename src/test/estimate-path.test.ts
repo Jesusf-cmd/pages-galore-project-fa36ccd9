@@ -5,14 +5,16 @@ import {
   DETAILS_MAX_LENGTH,
   detailsLimitError,
   ESTIMATE_PATH,
+  estimateOriginForLocation,
   estimatePath,
+  estimatePathForLocation,
   parseEstimateOrigin,
   phoneForEstimateOrigin,
   quoteFollowUpPath,
   quoteSubmitCallFailure,
   uploadSubmitCallFailure,
 } from "@/lib/estimatePath";
-import { KANSAS_PHONE, OKLAHOMA_PHONE } from "@/lib/phones";
+import { KANSAS_PHONE, OKLAHOMA_PHONE, WICHITA_HOME_PATH } from "@/lib/phones";
 
 const REPAIR = "commercial-concrete-repair-oklahoma-city";
 const BOLLARD = "bollard-installation-oklahoma-city";
@@ -31,7 +33,7 @@ describe("estimatePath", () => {
     expect(estimatePath("not-a-page")).toBe(ESTIMATE_PATH);
   });
 
-  it("retains Wichita route and service on the existing /#estimate destination", () => {
+  it("routes Wichita origins to the hub estimate form while retaining service context", () => {
     const origins = [
       ["concrete-contractors-wichita-ks", "concrete contractors, Wichita KS"],
       ["commercial-concrete-wichita", "commercial concrete, Wichita KS"],
@@ -40,7 +42,7 @@ describe("estimatePath", () => {
       ["stamped-concrete-wichita", "stamped concrete, Wichita KS"],
     ] as const;
     for (const [slug, service] of origins) {
-      expect(estimatePath(slug)).toBe(`/?from=${slug}#estimate`);
+      expect(estimatePath(slug)).toBe(`${WICHITA_HOME_PATH}?from=${slug}#estimate`);
       const origin = parseEstimateOrigin(slug);
       expect(origin?.formLabel.toLowerCase()).toContain("wichita");
       const details = applyEstimateOriginToDetails(slug, "site notes");
@@ -49,11 +51,24 @@ describe("estimatePath", () => {
     }
   });
 
-  it("retains allowlisted originating pages on the existing /#estimate destination", () => {
+  it("keeps Oklahoma origins on the OKC homepage estimate destination", () => {
     expect(estimatePath(REPAIR)).toBe(`/?from=${REPAIR}#estimate`);
     expect(estimatePath(BOLLARD)).toBe(`/?from=${BOLLARD}#estimate`);
     expect(estimatePath("cost-of-concrete-oklahoma-city-2026")).toBe(
       "/?from=cost-of-concrete-oklahoma-city-2026#estimate",
+    );
+  });
+
+  it("preserves hub query origins for subsequent estimate actions", () => {
+    expect(
+      estimateOriginForLocation(WICHITA_HOME_PATH, "?from=commercial-concrete-wichita"),
+    ).toBe("commercial-concrete-wichita");
+    expect(
+      estimatePathForLocation(WICHITA_HOME_PATH, "?from=industrial-concrete-wichita"),
+    ).toBe(`${WICHITA_HOME_PATH}?from=industrial-concrete-wichita#estimate`);
+    expect(estimateOriginForLocation(WICHITA_HOME_PATH, "")).toBe("concrete-contractors-wichita-ks");
+    expect(estimatePathForLocation(WICHITA_HOME_PATH, "")).toBe(
+      `${WICHITA_HOME_PATH}?from=concrete-contractors-wichita-ks#estimate`,
     );
   });
 });

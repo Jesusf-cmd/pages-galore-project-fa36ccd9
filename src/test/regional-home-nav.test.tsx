@@ -33,8 +33,12 @@ function renderNavbar(initialPath: string) {
   );
 }
 
-function headerLogo() {
-  return screen.getAllByRole("link", { name: "FDZ Construction LLC home" })[0];
+function headerLogo(kansas = false) {
+  return screen.getAllByRole("link", {
+    name: kansas
+      ? "FDZ Construction LLC — Serving Wichita, KS"
+      : "FDZ Construction LLC home",
+  })[0];
 }
 
 function desktopHome() {
@@ -62,7 +66,7 @@ describe("regionalHomePath", () => {
 describe("Navbar regional Home and logo", () => {
   it.each(KANSAS_ROUTES)("points desktop Home and header logo to the Wichita hub on %s", (path) => {
     renderNavbar(path);
-    expect(headerLogo()).toHaveAttribute("href", WICHITA_HOME_PATH);
+    expect(headerLogo(true)).toHaveAttribute("href", WICHITA_HOME_PATH);
     expect(desktopHome()).toHaveAttribute("href", WICHITA_HOME_PATH);
   });
 
@@ -79,10 +83,9 @@ describe("Navbar regional Home and logo", () => {
     renderNavbar("/retaining-walls-wichita");
     fireEvent.click(screen.getByRole("button", { name: "Open menu" }));
     const overlay = screen.getByRole("dialog");
-    expect(within(overlay).getByRole("link", { name: "FDZ Construction LLC home" })).toHaveAttribute(
-      "href",
-      WICHITA_HOME_PATH,
-    );
+    expect(
+      within(overlay).getByRole("link", { name: "FDZ Construction LLC — Serving Wichita, KS" }),
+    ).toHaveAttribute("href", WICHITA_HOME_PATH);
     expect(within(overlay).getByRole("link", { name: "Home" })).toHaveAttribute("href", WICHITA_HOME_PATH);
   });
 
@@ -95,6 +98,38 @@ describe("Navbar regional Home and logo", () => {
       "/",
     );
     expect(within(overlay).getByRole("link", { name: "Home" })).toHaveAttribute("href", "/");
+  });
+
+  it("closes the mobile menu after navigation", () => {
+    render(
+      <MemoryRouter initialEntries={["/commercial-concrete-wichita"]}>
+        <Routes>
+          <Route
+            path="/commercial-concrete-wichita"
+            element={
+              <>
+                <Navbar />
+                <div>Commercial</div>
+              </>
+            }
+          />
+          <Route
+            path="/industrial-concrete-wichita"
+            element={
+              <>
+                <Navbar />
+                <div>Industrial</div>
+              </>
+            }
+          />
+        </Routes>
+      </MemoryRouter>,
+    );
+    fireEvent.click(screen.getByRole("button", { name: "Open menu" }));
+    expect(screen.getByRole("dialog")).toBeInTheDocument();
+    fireEvent.click(within(screen.getByRole("dialog")).getByRole("link", { name: "Wichita Industrial Concrete" }));
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(screen.getByText("Industrial")).toBeInTheDocument();
   });
 
   it("updates Home/logo after client-side navigation between Kansas and Oklahoma", () => {
@@ -132,7 +167,7 @@ describe("Navbar regional Home and logo", () => {
       </MemoryRouter>,
     );
 
-    expect(headerLogo()).toHaveAttribute("href", WICHITA_HOME_PATH);
+    expect(headerLogo(true)).toHaveAttribute("href", WICHITA_HOME_PATH);
     expect(desktopHome()).toHaveAttribute("href", WICHITA_HOME_PATH);
 
     fireEvent.click(screen.getByRole("link", { name: "Go Oklahoma" }));
@@ -140,17 +175,40 @@ describe("Navbar regional Home and logo", () => {
     expect(desktopHome()).toHaveAttribute("href", "/");
 
     fireEvent.click(screen.getByRole("link", { name: "Go Kansas" }));
-    expect(headerLogo()).toHaveAttribute("href", WICHITA_HOME_PATH);
+    expect(headerLogo(true)).toHaveAttribute("href", WICHITA_HOME_PATH);
     expect(desktopHome()).toHaveAttribute("href", WICHITA_HOME_PATH);
   });
 
-  it("preserves Kansas phone and estimate targets on Wichita routes", () => {
+  it("preserves Kansas phone and hub estimate targets on Wichita routes", () => {
     renderNavbar("/industrial-concrete-wichita");
     expect(screen.getByRole("link", { name: "316-365-8342" })).toHaveAttribute("href", "tel:3163658342");
     expect(screen.getByRole("link", { name: /Get Quote/ })).toHaveAttribute(
       "href",
-      "/?from=industrial-concrete-wichita#estimate",
+      `${WICHITA_HOME_PATH}?from=industrial-concrete-wichita#estimate`,
     );
+  });
+
+  it("keeps a hub query origin when Get Quote is clicked again", () => {
+    renderNavbar(`${WICHITA_HOME_PATH}?from=stamped-concrete-wichita`);
+    expect(screen.getByRole("link", { name: /Get Quote/ })).toHaveAttribute(
+      "href",
+      `${WICHITA_HOME_PATH}?from=stamped-concrete-wichita#estimate`,
+    );
+  });
+
+  it("puts Wichita services ahead of Oklahoma services in the Kansas mobile menu", () => {
+    renderNavbar("/concrete-contractors-wichita-ks");
+    fireEvent.click(screen.getByRole("button", { name: "Open menu" }));
+    const overlay = screen.getByRole("dialog");
+    const text = overlay.textContent || "";
+    expect(text.indexOf("Wichita, Kansas")).toBeLessThan(text.indexOf("Oklahoma services"));
+    expect(within(overlay).getByRole("link", { name: "Sewer Line Repair" })).toBeTruthy();
+    expect(within(overlay).getByRole("link", { name: "Wichita Commercial Concrete" })).toBeTruthy();
+  });
+
+  it("does not show Oklahoma sewer as a top-level Kansas desktop nav item", () => {
+    renderNavbar("/concrete-contractors-wichita-ks");
+    expect(screen.queryByRole("link", { name: "Sewer Line" })).toBeNull();
   });
 });
 

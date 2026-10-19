@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useRegionalPhone } from "@/hooks/useRegionalPhone";
+import { estimatePathForLocation } from "@/lib/estimatePath";
 
 type FinalCTAProps = {
   heading?: string;
   headingAccent?: string;
   description?: string;
   buttonLabel?: string;
-  /** Same homepage estimator; optional originating-page query. */
+  /**
+   * Explicit estimate destination. When omitted, uses the location-aware helper so
+   * Kansas hub visits with a valid `?from=` keep that originating service.
+   */
   to?: string;
 };
 
@@ -15,9 +19,11 @@ export default function FinalCTA({
   headingAccent = "Get Your Free Estimate.",
   description = "Respond within one business day. No phone estimates — we visit your property before quoting.",
   buttonLabel = "Get Free Estimate →",
-  to = "/#estimate",
+  to,
 }: FinalCTAProps = {}) {
   const phone = useRegionalPhone();
+  const location = useLocation();
+  const resolvedTo = to ?? estimatePathForLocation(location.pathname, location.search);
   return (
     <div className="bg-orange px-4 md:px-12 py-16 md:py-20 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-center">
       <div>
@@ -30,7 +36,7 @@ export default function FinalCTA({
         </p>
       </div>
       <div className="flex flex-col gap-3 md:items-end">
-        <Link to={to} className="btn-white text-center">{buttonLabel}</Link>
+        <Link to={resolvedTo} className="btn-white text-center">{buttonLabel}</Link>
         <div className="text-[0.75rem] text-white/70 text-center">
           or call <a href={`tel:${phone.tel}`} className="text-white font-bold no-underline">{phone.display}</a>
         </div>

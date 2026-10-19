@@ -111,7 +111,7 @@ describe("Phase 6 form + tracking", () => {
     expect(screen.getByText("Request Estimate")).toBeInTheDocument();
     expect(screen.queryByText("Instant Estimate")).not.toBeInTheDocument();
     fireEvent.change(screen.getByPlaceholderText("Full name"), { target: { value: "Hub QA" } });
-    fireEvent.change(screen.getByPlaceholderText("316-365-8342"), { target: { value: "3165550100" } });
+    fireEvent.change(screen.getByPlaceholderText("Your phone number"), { target: { value: "3165550100" } });
     fireEvent.change(screen.getByPlaceholderText("email@example.com"), {
       target: { value: "hub-qa@example.com" },
     });
@@ -157,7 +157,7 @@ describe("Phase 6 form + tracking", () => {
       </MemoryRouter>,
     );
     fireEvent.change(screen.getByPlaceholderText("Full name"), { target: { value: "Hub QA" } });
-    fireEvent.change(screen.getByPlaceholderText("316-365-8342"), { target: { value: "3165550100" } });
+    fireEvent.change(screen.getByPlaceholderText("Your phone number"), { target: { value: "3165550100" } });
     fireEvent.change(screen.getByPlaceholderText("email@example.com"), {
       target: { value: "hub-qa@example.com" },
     });
@@ -188,7 +188,7 @@ describe("Phase 6 form + tracking", () => {
       </MemoryRouter>,
     );
     fireEvent.change(screen.getByPlaceholderText("Full name"), { target: { value: "Hub QA" } });
-    fireEvent.change(screen.getByPlaceholderText("316-365-8342"), { target: { value: "3165550100" } });
+    fireEvent.change(screen.getByPlaceholderText("Your phone number"), { target: { value: "3165550100" } });
     fireEvent.change(screen.getByPlaceholderText("email@example.com"), {
       target: { value: "hub-qa@example.com" },
     });

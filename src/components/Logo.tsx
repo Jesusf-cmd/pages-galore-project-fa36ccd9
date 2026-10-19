@@ -1,5 +1,7 @@
 interface LogoProps {
   className?: string;
+  /** Regional descriptor under the wordmark. Defaults to Oklahoma City. */
+  region?: "oklahoma" | "kansas";
 }
 
 /**
@@ -7,14 +9,20 @@ interface LogoProps {
  * Uses the brand-kit colors as specified: charcoal text on the light UI,
  * with badge rings in the brand burnt orange (#D85A30).
  */
-export default function Logo({ className }: LogoProps) {
+export default function Logo({ className, region = "oklahoma" }: LogoProps) {
+  const kansas = region === "kansas";
+  const descriptor = kansas ? "SERVING WICHITA, KS." : "OKLAHOMA CITY, OK · LLC";
+  const ariaLabel = kansas
+    ? "FDZ Construction LLC — Serving Wichita, KS"
+    : "FDZ Construction LLC — Concrete Contractors, Oklahoma City";
+
   return (
     <svg
-      viewBox="0 0 260 100"
+      viewBox="0 0 280 100"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       role="img"
-      aria-label="FDZ Construction LLC — Concrete Contractors, Oklahoma City"
+      aria-label={ariaLabel}
     >
       <circle cx="50" cy="50" r="42" fill="none" stroke="#D85A30" strokeWidth="2" />
       <circle cx="50" cy="50" r="35" fill="none" stroke="#D85A30" strokeWidth="0.5" />
@@ -42,7 +50,7 @@ export default function Logo({ className }: LogoProps) {
       >
         FDZ CONSTRUCTION
       </text>
-      <rect x="102" y="44" width="150" height="1" fill="#B4B2A9" />
+      <rect x="102" y="44" width={kansas ? 168 : 150} height="1" fill="#B4B2A9" />
       <text
         x="102"
         y="58"
@@ -60,10 +68,10 @@ export default function Logo({ className }: LogoProps) {
         fontFamily="Arial, sans-serif"
         fontSize="7"
         fontWeight="400"
-        letterSpacing="2.5"
+        letterSpacing={kansas ? 1.6 : 2.5}
         fill="#B4B2A9"
       >
-        OKLAHOMA CITY, OK · LLC
+        {descriptor}
       </text>
     </svg>
   );

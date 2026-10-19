@@ -9,7 +9,8 @@ import {
   businessJsonLdScriptTag,
   isLocalBusinessType,
 } from "../src/lib/localBusinessSchema";
-import { phoneForPath, regionalHomePath } from "../src/lib/phones";
+import { estimatePath } from "../src/lib/estimatePath";
+import { isKansasPath, phoneForPath, regionalHomePath, WICHITA_HOME_PATH } from "../src/lib/phones";
 import { getSeoPage } from "../src/seo/pages";
 import * as fs from "fs";
 import * as path from "path";
@@ -37,7 +38,7 @@ interface LinkItem {
   label: string;
 }
 
-const primaryNavLinkRest: LinkItem[] = [
+const oklahomaPrimaryNavRest: LinkItem[] = [
   { href: "/driveways-oklahoma-city", label: "Driveways" },
   { href: "/patios-oklahoma-city", label: "Patios & Slabs" },
   { href: "/foundations-oklahoma-city", label: "Foundations" },
@@ -50,8 +51,26 @@ const primaryNavLinkRest: LinkItem[] = [
   { href: "/blog", label: "Blog" },
 ];
 
+const wichitaPrimaryNavRest: LinkItem[] = [
+  { href: "/commercial-concrete-wichita", label: "Commercial" },
+  { href: "/industrial-concrete-wichita", label: "Industrial" },
+  { href: "/retaining-walls-wichita", label: "Retaining Walls" },
+  { href: "/stamped-concrete-wichita", label: "Stamped Concrete" },
+  { href: "/our-projects", label: "Projects" },
+  { href: "/blog", label: "Blog" },
+];
+
 function primaryNavLinksFor(pathname: string): LinkItem[] {
-  return [{ href: regionalHomePath(pathname), label: "Home" }, ...primaryNavLinkRest];
+  const home = { href: regionalHomePath(pathname), label: "Home" };
+  if (isKansasPath(pathname)) {
+    const origin = pathname.replace(/^\//, "").replace(/\/+$/, "");
+    return [
+      home,
+      ...wichitaPrimaryNavRest,
+      { href: estimatePath(origin), label: "Get Quote" },
+    ];
+  }
+  return [home, ...oklahomaPrimaryNavRest];
 }
 
 const serviceLinks: LinkItem[] = [
@@ -77,7 +96,7 @@ const serviceAreaLinks: LinkItem[] = [
   { href: "/midwest-city-oklahoma-concrete", label: "Midwest City" },
   { href: "/del-city-oklahoma-concrete", label: "Del City" },
   { href: "/stillwater-oklahoma-concrete", label: "Stillwater" },
-  { href: "/commercial-concrete-wichita", label: "Wichita, KS" },
+  { href: WICHITA_HOME_PATH, label: "Wichita, KS" },
 ];
 
 async function generateRouteHtml(template: string, route: PrerenderRoute): Promise<string> {
