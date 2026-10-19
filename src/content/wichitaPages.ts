@@ -401,7 +401,7 @@ export const industrialConcreteWichita: WichitaPageContent = {
       {
         title: "Equipment foundations and machine pads",
         bullets: [
-          "Generator, compressor, process-equipment, and machine bases already supported on this page",
+          "Concrete bases for generators, compressors, process equipment, and production machinery.",
           "Anchor bolts, embeds, and openings set from the supplier's shop drawings",
           "Thickness and reinforcement follow the equipment loads on the foundation drawings",
           "Isolation and leveling provisions only when the project documents call for them",
@@ -444,7 +444,7 @@ export const industrialConcreteWichita: WichitaPageContent = {
       titleAccent: "in Wichita.",
       content: [
         "Warehouse floors must support the operation above them: forklift travel, racking, storage, and material handling. FDZ places new slab-on-grade floors and replacement sections to the project drawings. Slab thickness, reinforcement, concrete mix, and joint layout follow the specified loads and floor use rather than a standard residential detail.",
-        "For a new floor, send the slab plan, approximate area, load requirements, and any specified flatness and levelness targets. Include subgrade, aggregate base, and vapor-retarder requirements when they are part of the plans. Site conditions and preparation requirements are reviewed for the actual Wichita property; Oklahoma soil assumptions do not determine the Kansas scope.",
+        "For a new floor, send the slab plan, approximate area, load requirements, and any specified flatness and levelness targets. Include subgrade, aggregate base, and vapor-retarder requirements when they are part of the plans. Subgrade preparation and base requirements are reviewed for the conditions at your Wichita site.",
         "For replacement work, identify the failed areas, provide photos, and explain which aisles, rooms, or loading routes must stay available. The estimate should account for demolition, removal, base correction where required, placement phases, and the strength or curing requirements before the area returns to service. Access and shutdown windows are confirmed for each project.",
       ],
     },
@@ -606,7 +606,7 @@ export const industrialConcreteWichita: WichitaPageContent = {
     {
       question: "How is a Wichita industrial concrete estimate prepared?",
       answer:
-        "The written estimate follows a review of the scope, available plans, and site conditions. There is no blanket Kansas rate sheet. If drawings are incomplete, explain what you have so FDZ can identify the next information needed. Call 316-365-8342 or use the estimate form.",
+        "The written estimate follows a review of the scope, available plans, and site conditions. If drawings are incomplete, explain what you have so FDZ can identify the next information needed. Call 316-365-8342 or use the estimate form.",
     },
     {
       question: "Does FDZ have a Wichita concrete crew?",

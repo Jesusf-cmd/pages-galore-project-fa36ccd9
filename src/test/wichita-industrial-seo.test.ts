@@ -24,7 +24,12 @@ describe("Wichita industrial SEO content expansion", () => {
     expect(text).toContain("Warehouse slabs and floor replacement");
     expect(text).toContain("Equipment foundations and machine pads");
     expect(text).toContain("slab-on-grade");
-    expect(text).toContain("Oklahoma soil assumptions do not determine the Kansas scope");
+    expect(text).toContain(
+      "Subgrade preparation and base requirements are reviewed for the conditions at your Wichita site",
+    );
+    expect(text).not.toContain("Oklahoma soil assumptions do not determine the Kansas scope");
+    expect(text).not.toContain("already supported on this page");
+    expect(text).not.toContain("There is no blanket Kansas rate sheet");
     expect(text).toMatch(/FF\/FL/);
     expect(text).toContain("Loading Docks");
     expect(text).toContain("Dock aprons, approach slabs, and pit concrete");
