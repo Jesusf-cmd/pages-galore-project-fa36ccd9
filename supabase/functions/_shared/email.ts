@@ -10,6 +10,8 @@ export interface SendEmailResult {
   ok: boolean;
   status?: number;
   error?: string;
+  /** Provider-assigned id when the API accepted the message (not inbox delivery proof). */
+  providerMessageId?: string;
 }
 
 export async function sendEmail(
@@ -39,7 +41,7 @@ export async function sendEmail(
     });
 
     const bodyText = await res.text();
-    let parsed: { message?: string; name?: string } | null = null;
+    let parsed: { message?: string; name?: string; id?: string } | null = null;
     try {
       parsed = bodyText ? JSON.parse(bodyText) : null;
     } catch {
@@ -52,7 +54,11 @@ export async function sendEmail(
       return { ok: false, status: res.status, error: detail };
     }
 
-    return { ok: true, status: res.status };
+    return {
+      ok: true,
+      status: res.status,
+      providerMessageId: typeof parsed?.id === "string" ? parsed.id : undefined,
+    };
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     console.error("Resend request failed:", message);

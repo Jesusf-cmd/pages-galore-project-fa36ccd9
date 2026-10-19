@@ -146,6 +146,56 @@ export type Database = {
         }
         Relationships: []
       }
+      estimate_inquiry_notifications: {
+        Row: {
+          attempt_count: number
+          created_at: string
+          id: string
+          inquiry_id: string
+          last_attempt_at: string | null
+          last_error: string | null
+          provider_message_id: string | null
+          recipient_email: string
+          recipient_kind: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          attempt_count?: number
+          created_at?: string
+          id?: string
+          inquiry_id: string
+          last_attempt_at?: string | null
+          last_error?: string | null
+          provider_message_id?: string | null
+          recipient_email: string
+          recipient_kind: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          attempt_count?: number
+          created_at?: string
+          id?: string
+          inquiry_id?: string
+          last_attempt_at?: string | null
+          last_error?: string | null
+          provider_message_id?: string | null
+          recipient_email?: string
+          recipient_kind?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "estimate_inquiry_notifications_inquiry_id_fkey"
+            columns: ["inquiry_id"]
+            isOneToOne: false
+            referencedRelation: "estimate_inquiries"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       quotes: {
         Row: {
           accepted_at: string | null

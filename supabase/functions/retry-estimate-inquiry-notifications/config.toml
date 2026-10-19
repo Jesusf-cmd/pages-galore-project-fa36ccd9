@@ -1,0 +1,2 @@
+# Service-role or INQUIRY_NOTIFY_RETRY_SECRET only; never expose to the public browser client.
+verify_jwt = true

@@ -228,6 +228,49 @@ describe("estimate_inquiries path", () => {
     expect(internal).not.toMatch(/ACCEPT QUOTE|VIEW QUOTE|Expires/i);
   });
 
+  it("escapes hostile markup and preserves ordinary punctuation in inquiry emails", () => {
+    const customer = customerInquiryEmailHtml({
+      firstName: '<b>FIXTURE</b> & "O\'Neil"',
+      origin: "concrete-contractors-wichita-ks",
+    });
+    expect(customer).toContain("&lt;b&gt;FIXTURE&lt;/b&gt; &amp; &quot;O&#39;Neil&quot;");
+    expect(customer).not.toContain("<b>FIXTURE</b>");
+
+    const internal = internalInquiryEmailHtml({
+      name: '<b>FIXTURE</b>',
+      email: 'safe@example.com',
+      phone: "316-555-0199",
+      address: '100 Douglas & Main',
+      projectType: "commercial",
+      propertyType: "Commercial",
+      customerRole: "Owner",
+      approxSize: '8,000 sq ft — "approx"',
+      biddingStatus: null,
+      projectDetails: "<strong>FIXTURE-NOTES</strong>\nLine 2 & more",
+      origin: "concrete-contractors-wichita-ks",
+    });
+    expect(internal).toContain("&lt;b&gt;FIXTURE&lt;/b&gt;");
+    expect(internal).not.toContain("<b>FIXTURE</b>");
+    expect(internal).toContain("&lt;strong&gt;FIXTURE-NOTES&lt;/strong&gt;");
+    expect(internal).not.toContain("<strong>FIXTURE-NOTES</strong>");
+    expect(internal).toContain("100 Douglas &amp; Main");
+    expect(internal).toContain("mailto:safe%40example.com");
+    expect(internal).toContain("tel:3165550199");
+    expect(internal).toContain("8,000 sq ft — &quot;approx&quot;");
+  });
+
+  it("rejects non-string inquiry fields instead of coercing objects", () => {
+    const bad = buildEstimateInquiryRow({
+      name: { toString: () => "Nope" },
+      email: "ok@example.com",
+      phone: "3165550100",
+      projectType: "commercial",
+      from: "concrete-contractors-wichita-ks",
+    });
+    expect(bad.ok).toBe(false);
+    if (!bad.ok) expect(bad.error).toMatch(/must be text/i);
+  });
+
   it("does not treat unpriced quote-like rows as acceptable", () => {
     expect(
       isAcceptablePricedQuote({

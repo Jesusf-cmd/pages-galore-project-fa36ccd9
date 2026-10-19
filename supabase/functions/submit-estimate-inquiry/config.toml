@@ -1,0 +1,4 @@
+# Browser public client invokes this function; gateway JWT verification stays on.
+# Do not disable authentication globally. Confirm the deployed key pattern
+# (legacy anon JWT vs publishable key) in a nonproduction environment.
+verify_jwt = true

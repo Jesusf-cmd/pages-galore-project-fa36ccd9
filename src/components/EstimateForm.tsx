@@ -218,16 +218,32 @@ export default function EstimateForm({ fromPath }: EstimateFormProps) {
             },
           },
         );
-        if (fnError) throw fnError;
+        // Prefer structured API errors (e.g. recoverable Turnstile) over opaque invoke errors.
         if (data?.error) throw new Error(String(data.error));
-
-        trackGenerateLead({
-          formLocation: pathFrom.startsWith("/") ? pathFrom : `/${pathFrom}`,
-          propertyType: propertyType || undefined,
-          projectType: ownerProjectType,
-        });
-        setSubmitted(true);
-        return;
+        const inquiryId =
+          data && typeof data === "object" && "inquiryId" in data
+            ? (data as { inquiryId?: unknown }).inquiryId
+            : undefined;
+        if (
+          data &&
+          typeof data === "object" &&
+          (data as { success?: unknown }).success === true &&
+          typeof inquiryId === "string" &&
+          inquiryId.trim().length > 0
+        ) {
+          trackGenerateLead({
+            formLocation: pathFrom.startsWith("/") ? pathFrom : `/${pathFrom}`,
+            propertyType: propertyType || undefined,
+            projectType: ownerProjectType,
+          });
+          setSubmitted(true);
+          return;
+        }
+        if (fnError) throw fnError;
+        // Decoy / malformed / empty — never claim a stored lead or fire conversion.
+        throw new Error(
+          "We could not confirm your estimate request was saved. Please try again or call us.",
+        );
       }
 
       const lineItems = buildLineItems(projectType, finish, sqft);
