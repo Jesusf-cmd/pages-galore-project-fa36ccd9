@@ -22,6 +22,13 @@ export const ESTIMATE_ORIGINS = {
     detailsPrefix:
       "Requested from /commercial-concrete-repair-oklahoma-city (commercial concrete repair).",
   },
+  "concrete-crack-repair-oklahoma-city": {
+    formLabel: "Concrete crack repair",
+    placeholder:
+      "City, concrete surface (driveway, patio, sidewalk, garage floor, parking lot, commercial/warehouse slab, or other), approximate size of the damage, and timing...",
+    detailsPrefix:
+      "Requested from /concrete-crack-repair-oklahoma-city (concrete crack repair).",
+  },
   "bollard-installation-oklahoma-city": {
     formLabel: "Bollard installation",
     placeholder:

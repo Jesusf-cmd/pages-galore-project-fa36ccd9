@@ -8,8 +8,8 @@ import {
   processSection,
   trustParagraph,
 } from "./prerender-helpers";
-import { renderPoolDeckHtml, renderRepairServiceHtml, renderServiceInCityHtml, renderServicePageHtml } from "./service-page-html";
-import { routes } from "./prerender-routes";
+import { renderCrackRepairHtml, renderPoolDeckHtml, renderRepairServiceHtml, renderServiceInCityHtml, renderServicePageHtml } from "./service-page-html";
+import { getCanonical, routes } from "./prerender-routes";
 import {
   BLOG_POSTS,
   renderBlogIndexHtml,
@@ -56,6 +56,7 @@ const SERVICE_LINKS = [
   { href: "/pool-deck-oklahoma-city", label: "Pool Deck Concrete" },
   { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
   { href: "/commercial-concrete-oklahoma-city", label: "Commercial Concrete" },
+  { href: "/concrete-crack-repair-oklahoma-city", label: "Concrete Crack Repair" },
   { href: "/parking-lots-oklahoma-city", label: "Parking Lots" },
 ];
 
@@ -779,7 +780,7 @@ export const prerenderBodies: Record<string, string> = {
     <p><strong>Occupied site?</strong> Include access limits, areas that must stay open, desired timing, and downtime constraints when you request an estimate. After-hours or weekend work can be discussed when a facility has to stay open — it is planned per project, not a promised response window.</p>
     <h2>Commercial Slab Repair and Cracked Concrete Evaluation</h2>
     <p>Many commercial repair calls start with a cracked slab, failed panel, or surface breakout creating a trip hazard or traffic problem. Commercial slab repair can mean sealing isolated cracks, patching spalls, resealing joints, grinding trip hazards, or replacing a failed bay when adjacent concrete is still sound.</p>
-    <p>Cracked commercial concrete is not automatically a foundation problem. Structural foundation movement belongs on <a href="/foundation-repair-oklahoma-city">foundation repair</a>. Residential driveway cracks belong on <a href="/driveway-repair-oklahoma-city">driveway / concrete crack repair</a>. Heavy-use industrial floors with forklift joint failure fit <a href="/industrial-concrete-repair-oklahoma-city">industrial concrete repair</a>.</p>
+    <p>Cracked commercial concrete is not automatically a foundation problem. Structural foundation movement belongs on <a href="/foundation-repair-oklahoma-city">foundation repair</a>. Residential crack work on any surface belongs on <a href="/concrete-crack-repair-oklahoma-city">concrete crack repair</a>. Driveway settlement, aprons, and replacement stay on <a href="/driveway-repair-oklahoma-city">driveway repair</a>. Heavy-use industrial floors with forklift joint failure fit <a href="/industrial-concrete-repair-oklahoma-city">industrial concrete repair</a>.</p>
     <h2>When Concrete Can Be Repaired vs. When Replacement Makes More Sense</h2>
     <p>The right answer depends on cracking extent, settlement, base/subgrade condition, drainage, surface deterioration, traffic/loading, downtime, and access. FDZ does not certify structural adequacy — that stays with your design professional when required. We evaluate what we see on site and recommend repair, partial panel replacement, or larger replacement.</p>
     <ul>
@@ -820,6 +821,7 @@ export const prerenderBodies: Record<string, string> = {
       <li><a href="/industrial-concrete-repair-oklahoma-city">Industrial concrete repair</a> — Heavy-use floors, forklift joint failure, and industrial slab repair.</li>
       <li><a href="/concrete-parking-lot-repair-oklahoma-city">Concrete parking lot repair</a> — Panel replacement, joint sealing, and trip hazard grinding.</li>
       <li><a href="/foundation-repair-oklahoma-city">Foundation repair</a> — Structural foundation movement — kept separate from general commercial slab repair.</li>
+      <li><a href="/concrete-crack-repair-oklahoma-city">Related: concrete crack repair</a> — Crack-specific evaluation across any concrete surface.</li>
       <li><a href="/concrete-maintenance-oklahoma-city">Concrete maintenance</a> — Joint sealing and ongoing commercial slab care that prevents small repairs from becoming replacements.</li>
       <li><a href="/commercial-concrete-oklahoma-city">Commercial concrete contractor in Oklahoma City</a> — New pours and commercial site flatwork.</li>
     </ul>
@@ -1321,6 +1323,10 @@ export const prerenderBodies: Record<string, string> = {
   "/foundation-repair-oklahoma-city": renderRepairServiceHtml(
     repairPages["foundation-repair-oklahoma-city"],
     prerenderH1("/foundation-repair-oklahoma-city"),
+  ),
+  "/concrete-crack-repair-oklahoma-city": renderCrackRepairHtml(
+    prerenderH1("/concrete-crack-repair-oklahoma-city"),
+    getCanonical("/concrete-crack-repair-oklahoma-city"),
   ),
   "/soil-stabilization-oklahoma-city": renderServicePageHtml(
     soilStabilizationContent,

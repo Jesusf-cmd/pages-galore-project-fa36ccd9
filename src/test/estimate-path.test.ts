@@ -169,6 +169,7 @@ describe("phoneForEstimateOrigin and call messages", () => {
   ] as const;
   const oklahoma = [
     "commercial-concrete-repair-oklahoma-city",
+    "concrete-crack-repair-oklahoma-city",
     "bollard-installation-oklahoma-city",
     "cost-of-concrete-oklahoma-city-2026",
   ] as const;

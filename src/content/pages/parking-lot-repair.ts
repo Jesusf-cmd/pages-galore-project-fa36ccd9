@@ -164,6 +164,7 @@ export const parkingLotRepairContent: ServicePageContent = {
       content: [
         "<a href='/parking-lots-oklahoma-city' class='text-orange no-underline font-medium'>Concrete Parking Lot Construction</a> — New lots, installation, and full replacement.",
         "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Broader commercial property repair beyond the parking lot.",
+        "<a href='/concrete-crack-repair-oklahoma-city' class='text-orange no-underline font-medium'>Related: concrete crack repair</a> — Crack-specific evaluation and sealing across any concrete surface.",
         "<a href='/commercial-curb-and-gutter-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Curb and Gutter</a> — Curb repair and replacement at lot edges and islands.",
         "<a href='/ada-concrete-ramps-oklahoma-city' class='text-orange no-underline font-medium'>ADA Concrete Ramps</a> — Curb ramps and accessible-route concrete when that is the scope.",
         "<a href='/truck-court-concrete-oklahoma-city' class='text-orange no-underline font-medium'>Truck Court Concrete</a> — Heavier truck maneuvering pavement adjacent to some commercial sites.",

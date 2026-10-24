@@ -302,6 +302,13 @@ const RAW: Omit<SeoPage, "canonical">[] = [
     description: "Foundation repair and foundation crack repair in Oklahoma City. On-site contractor evaluation of cracks, drainage, and concrete scope. (405) 458-4805.",
     h1: "Foundation Repair in Oklahoma City",
   },
+  {
+    path: "/concrete-crack-repair-oklahoma-city",
+    title: "Concrete Crack Repair in Oklahoma City | FDZ",
+    description:
+      "Concrete crack repair in Oklahoma City for driveways, patios, sidewalks, parking lots and slabs. Honest repair options. Free on-site estimate: (405) 458-4805.",
+    h1: "Concrete Crack Repair in Oklahoma City",
+  },
 
   {
     path: "/bollard-installation-oklahoma-city",

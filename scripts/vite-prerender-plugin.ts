@@ -79,6 +79,7 @@ const serviceLinks: LinkItem[] = [
   { href: "/foundations-oklahoma-city", label: "Concrete Foundations" },
   { href: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
   { href: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
+  { href: "/concrete-crack-repair-oklahoma-city", label: "Concrete Crack Repair" },
   { href: "/sewer-line-repair-oklahoma-city", label: "Sewer Line Repair & Installation" },
   { href: "/skid-steer-services-oklahoma-city", label: "Skid Steer Services" },
   { href: "/excavator-services-oklahoma-city", label: "Excavator Services" },
