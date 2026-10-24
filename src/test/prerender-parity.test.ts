@@ -25,6 +25,7 @@ const PRIORITY_ROUTES = [
   "/crane-foundation-installation-oklahoma-city",
   "/driveway-repair-oklahoma-city",
   "/foundation-repair-oklahoma-city",
+  "/concrete-crack-repair-oklahoma-city",
   "/soil-stabilization-oklahoma-city",
   "/retail-restaurant-concrete-oklahoma-city",
   "/driveways-edmond",
@@ -90,6 +91,7 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "href='/parking-lots-oklahoma-city'",
     "href='/commercial-concrete-repair-oklahoma-city'",
     "href='/concrete-maintenance-oklahoma-city'",
+    "href='/concrete-crack-repair-oklahoma-city'",
   ],
   "/parking-lots-oklahoma-city": [
     "What We Build as a Concrete Parking Lot Contractor",
@@ -125,6 +127,7 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "href='/loading-dock-concrete-repair-oklahoma-city'",
     "href='/warehouse-slab-repair-oklahoma-city'",
     "href='/concrete-maintenance-oklahoma-city'",
+    "href='/concrete-crack-repair-oklahoma-city'",
   ],
   "/equipment-pad-concrete-oklahoma-city": [
     "What We Pour",
@@ -161,11 +164,22 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
     "href='/driveways-oklahoma-city'",
     'href="/foundation-repair-oklahoma-city"',
     "href='/blog/why-concrete-driveways-crack-oklahoma'",
+    "href='/concrete-crack-repair-oklahoma-city'",
   ],
   "/foundation-repair-oklahoma-city": [
     "Our Repair Scope",
     "href='/foundations-oklahoma-city'",
     'href="/driveway-repair-oklahoma-city"',
+    'href="/concrete-crack-repair-oklahoma-city"',
+  ],
+  "/concrete-crack-repair-oklahoma-city": [
+    "What We Repair",
+    "Repair or Replace? How We Decide",
+    "How We Repair Cracks",
+    'href="/driveway-repair-oklahoma-city"',
+    'href="/commercial-concrete-repair-oklahoma-city"',
+    'href="/foundation-repair-oklahoma-city"',
+    'href="/blog/cost-of-concrete-oklahoma-city-2026"',
   ],
   "/soil-stabilization-oklahoma-city": [
     "Soil Stabilization Methods We Use",
@@ -288,8 +302,8 @@ const EXPECTED_SECTIONS: Record<(typeof PRIORITY_ROUTES)[number], string[]> = {
 };
 
 describe("prerender content parity for priority routes", () => {
-  it("prerenders 73 routes", () => {
-    expect(routes).toHaveLength(73);
+  it("prerenders 74 routes", () => {
+    expect(routes).toHaveLength(74);
   });
 
   it("exposes page-specific sections and crawlable links in generated bodies", () => {

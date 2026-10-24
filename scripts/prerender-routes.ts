@@ -347,6 +347,15 @@ Serving Oklahoma City, Edmond, Norman, Moore, Yukon, Mustang, Midwest City, and 
     h1: "Foundation Repair in Oklahoma City",
     content: "Foundation repair and foundation crack repair for Oklahoma City homeowners and property owners. FDZ provides contractor evaluation of crack location, pattern, and moisture involvement, then scopes localized concrete repair, partial replacement, or basement waterproofing discussion when relevant. Pier and underpinning systems are not FDZ product offerings — those may require a foundation specialist or licensed design professional. Non-foundation commercial slab cracks belong on commercial concrete repair. Free on-site evaluation. Call (405) 458-4805.",
   },
+  {
+    path: "/concrete-crack-repair-oklahoma-city",
+    title: "Concrete Crack Repair in Oklahoma City | FDZ",
+    description:
+      "Concrete crack repair in Oklahoma City for driveways, patios, sidewalks, parking lots and slabs. Honest repair options. Free on-site estimate: (405) 458-4805.",
+    h1: "Concrete Crack Repair in Oklahoma City",
+    content:
+      "FDZ Construction repairs cracked concrete across the Oklahoma City metro for homeowners and businesses: driveways, patios, sidewalks, garage floors, parking lots and commercial slabs. We look at what's causing the crack before recommending a fix. Joint sealing $300–$800, single-panel replacement $400–$1,200. Free on-site evaluation. Call (405) 458-4805.",
+  },
 
 
   {

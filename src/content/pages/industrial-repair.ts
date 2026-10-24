@@ -206,6 +206,7 @@ export const industrialRepairContent: ServicePageContent = {
       titleAccent: "Concrete Services.",
       content: [
         "<a href='/commercial-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Commercial Concrete Repair</a> — Cracked slabs, spalling, trip hazards, and panel repair for commercial properties more broadly.",
+        "<a href='/concrete-crack-repair-oklahoma-city' class='text-orange no-underline font-medium'>Related: concrete crack repair</a> — Crack-specific evaluation and sealing across any concrete surface.",
         "<a href='/warehouse-slab-repair-oklahoma-city' class='text-orange no-underline font-medium'>Warehouse Concrete &amp; Slabs</a> — New warehouse floors and phased interior slab replacement when repair is not enough.",
         "<a href='/loading-dock-concrete-repair-oklahoma-city' class='text-orange no-underline font-medium'>Loading Dock Concrete Repair</a> — Dock apron, face, and approach slab repairs.",
         "<a href='/concrete-parking-lot-repair-oklahoma-city' class='text-orange no-underline font-medium'>Concrete Parking Lot Repair</a> — Exterior lot panel, joint, and trip-hazard work.",

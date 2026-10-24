@@ -7,6 +7,7 @@ const ALL_SERVICES = [
   { slug: "foundations-oklahoma-city", anchor: "garage and home foundations", blurb: "Slab-on-grade foundations, footings, stem walls, and commercial pads." },
   { slug: "retaining-walls-oklahoma-city", anchor: "retaining walls in Oklahoma City", blurb: "Poured concrete, CMU block, and interlocking walls with proper drainage." },
   { slug: "sidewalks-oklahoma-city", anchor: "sidewalks and walkways", blurb: "ADA-compliant sidewalks, curb & gutter, and city right-of-way work." },
+  { slug: "concrete-crack-repair-oklahoma-city", anchor: "concrete crack repair", blurb: "Crack-specific evaluation, sealing, and repair options across driveways, patios, sidewalks, and commercial slabs." },
   { slug: "sewer-line-repair-oklahoma-city", anchor: "sewer line repair and installation", blurb: "Sewer line repair, replacement, and new installation — plus the concrete restoration it requires, done by the same crew." },
   { slug: "skid-steer-services-oklahoma-city", anchor: "skid steer services for land clearing & site work", blurb: "Land clearing, dirt work, leveling, gravel driveways, and brush hog mowing — self-performed on residential-scale lots up to about 2 acres." },
   { slug: "excavator-services-oklahoma-city", anchor: "excavator services for heavy digging & larger acreage", blurb: "Heavier land clearing with stump removal, deep grading and cut-fill, drainage work, and larger driveways or pads — self-performed, no subcontractors." },

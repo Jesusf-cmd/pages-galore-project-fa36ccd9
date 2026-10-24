@@ -158,10 +158,12 @@ function BuyerPathsSection() {
     { to: "/sidewalks-oklahoma-city", label: "sidewalks, curb & gutter" },
     { to: "/foundations-oklahoma-city", label: "concrete foundations" },
     { to: "/retaining-walls-oklahoma-city", label: "retaining walls" },
+    { to: "/concrete-crack-repair-oklahoma-city", label: "concrete crack repair" },
   ];
   const commercial = [
     { to: "/commercial-concrete-oklahoma-city", label: "commercial concrete" },
     { to: "/parking-lots-oklahoma-city", label: "concrete parking lots" },
+    { to: "/concrete-crack-repair-oklahoma-city", label: "concrete crack repair" },
     { to: "/commercial-concrete-repair-oklahoma-city", label: "commercial concrete repair" },
     { to: "/industrial-concrete-repair-oklahoma-city", label: "industrial concrete repair" },
     { to: "/loading-dock-concrete-repair-oklahoma-city", label: "loading dock concrete repair" },

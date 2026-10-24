@@ -6,6 +6,7 @@ const services = [
   { tag: "Structural", name: "Foundations", to: "/foundations-oklahoma-city" },
   { tag: "Structural", name: "Retaining Walls", to: "/retaining-walls-oklahoma-city" },
   { tag: "Residential", name: "Sidewalks, Curb & Gutter", to: "/sidewalks-oklahoma-city" },
+  { tag: "Repair", name: "Concrete Crack Repair", to: "/concrete-crack-repair-oklahoma-city" },
   { tag: "Residential", name: "Sewer Line Repair", to: "/sewer-line-repair-oklahoma-city" },
   { tag: "Site Work", name: "Skid Steer Services", to: "/skid-steer-services-oklahoma-city" },
   { tag: "Site Work", name: "Excavator Services", to: "/excavator-services-oklahoma-city" },

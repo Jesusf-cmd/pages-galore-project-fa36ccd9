@@ -76,7 +76,7 @@ export const repairPages: Record<string, RepairData> = {
     scopeBullets: [
       { title: "On-site evaluation", body: "Free, honest read on whether repair makes sense or replacement is the cheaper long-term answer. We tell you straight." },
       { title: "Joint sealing", body: "Clean, prep, and seal control joints and isolation joints with proper sealant. Stops water entry before it widens the crack." },
-      { title: "Crack repair", body: "Routed, cleaned, and filled with structural epoxy or flexible sealant — depending on whether the crack is structural or movement." },
+      { title: "Crack repair", body: "Routed, cleaned, and filled with structural epoxy or flexible sealant — depending on whether the crack is structural or movement. For cracks in patios, sidewalks, garage floors, parking lots and other slabs, see <a href='/concrete-crack-repair-oklahoma-city' class='text-orange no-underline'>concrete crack repair</a>." },
       { title: "Section replacement", body: "Saw-cut, remove, re-base, and re-pour individual panels where the rest of the slab is sound. Cheaper than full replacement when it works." },
       { title: "Apron replacement", body: "Pulled-away or cracked aprons replaced and tied properly to the existing slab and the garage or street." },
       { title: "Full replacement", body: "When repair isn't the right answer, we tear out, re-base properly, and pour a driveway built to last. See our <a href='/driveways-oklahoma-city' class='text-orange no-underline'>main driveway page</a>." },
@@ -235,6 +235,7 @@ export const repairPages: Record<string, RepairData> = {
       { label: "Concrete Foundations (New Construction)", to: "/foundations-oklahoma-city" },
       { label: "Commercial Concrete Repair", to: "/commercial-concrete-repair-oklahoma-city" },
       { label: "Driveway Repair", to: "/driveway-repair-oklahoma-city" },
+      { label: "Concrete Crack Repair", to: "/concrete-crack-repair-oklahoma-city" },
       { label: "Soil Stabilization", to: "/soil-stabilization-oklahoma-city" },
       { label: "Retaining Walls", to: "/retaining-walls-oklahoma-city" },
       { label: "Foundations in Edmond", to: "/foundations-edmond" },

@@ -3,6 +3,14 @@ import type { RepairData } from "../src/content/repairPages";
 import type { ServiceInCityData } from "../src/content/serviceInCityPages";
 import type { PoolDeckContent } from "../src/content/pages/pool-deck";
 import type { ServicePageContent } from "../src/content/servicePageTypes";
+import {
+  CRACK_REPAIR_TOWNS,
+  buildCrackRepairServiceJsonLd,
+  crackRepairFaq,
+  crackRepairPhoneHref,
+  crackRepairPhoneLabel,
+  crackRepairRelated,
+} from "../src/content/pages/crack-repair";
 
 function heading(title: string, accent: string): string {
   const combined = `${title} ${accent}`.replace(/\s+/g, " ").trim();
@@ -259,4 +267,105 @@ export function renderPoolDeckHtml(page: PoolDeckContent, h1: string): string {
   );
   parts.push(trustParagraph());
   return parts.join("\n");
+}
+
+/** Crawler HTML for /concrete-crack-repair-oklahoma-city. */
+export function renderCrackRepairHtml(h1: string, canonical: string): string {
+  const phone = crackRepairPhoneLabel();
+  const tel = crackRepairPhoneHref();
+  const towns = CRACK_REPAIR_TOWNS.map(
+    (town) => `<a href="${town.to}">${town.name}</a>`,
+  ).join(", ");
+  const related = crackRepairRelated
+    .map((item) => `<li><a href="${item.to}">${item.label}</a></li>`)
+    .join("");
+  const serviceJson = JSON.stringify(buildCrackRepairServiceJsonLd(canonical));
+
+  return [
+    `<script type="application/ld+json">${serviceJson}</script>`,
+    `<h1>${h1}</h1>`,
+    `<p>FDZ Construction repairs cracked concrete across the Oklahoma City metro for homeowners and businesses: driveways, patios, sidewalks, garage floors, parking lots and commercial slabs. We look at what's causing the crack before recommending a fix, so you pay for a repair that fits the problem.</p>`,
+    `<p><a href="#estimate">Request Free On-Site Evaluation →</a> · <a href="${tel}">${phone}</a></p>`,
+    `<p>Licensed, bonded &amp; insured · 2-year workmanship warranty · 8+ years in the OKC metro.</p>`,
+    `<!-- TODO(owner): add 3–4 before/after crack repair photos with captions like "Driveway crack sealing, Yukon" and descriptive alt text -->`,
+    `<p><a href="/our-projects">See more of our work →</a></p>`,
+    `<h2>What We Repair</h2>`,
+    `<h3>At home</h3>`,
+    `<ul>`,
+    `<li>Driveway cracks and failed joints (<a href="/driveway-repair-oklahoma-city">driveway repair</a> for settlement, aprons and replacement)</li>`,
+    `<li>Patio and pool deck cracks</li>`,
+    `<li>Sidewalk and walkway cracks, including trip hazards (<a href="/sidewalks-oklahoma-city">sidewalks</a>)</li>`,
+    `<li>Garage floor and slab cracks</li>`,
+    `<li>Cracks in foundations: see <a href="/foundation-repair-oklahoma-city">foundation repair</a> for signs of movement</li>`,
+    `</ul>`,
+    `<h3>For businesses</h3>`,
+    `<ul>`,
+    `<li>Parking lot cracks and failed joints (<a href="/concrete-parking-lot-repair-oklahoma-city">parking lot repair</a>)</li>`,
+    `<li>Cracked commercial slabs and sidewalks (<a href="/commercial-concrete-repair-oklahoma-city">commercial concrete repair</a>)</li>`,
+    `<li>Warehouse and industrial floor cracks: forklift-traffic joints usually need a rigid joint filler or a slab repair, not just a flexible sealant (<a href="/industrial-concrete-repair-oklahoma-city">industrial concrete repair</a> and <a href="/warehouse-slab-repair-oklahoma-city">warehouse slab repair</a>)</li>`,
+    `<li>Loading dock and dock-edge cracking (<a href="/loading-dock-concrete-repair-oklahoma-city">loading dock concrete repair</a>)</li>`,
+    `<li>Repairing trip hazards on walkways and ramps (<a href="/ada-concrete-ramps-oklahoma-city">ADA ramps</a>)</li>`,
+    `</ul>`,
+    `<h2>Repair or Replace? How We Decide</h2>`,
+    `<p>Whether a crack can be repaired depends on more than its width. On-site, we look at four things:</p>`,
+    `<ul>`,
+    `<li><strong>Is it still moving?</strong> A dormant crack can usually be sealed or filled. An active crack, still opening or shifting, needs a flexible repair or a fix to whatever is moving it.</li>`,
+    `<li><strong>What's underneath?</strong> Settlement or a washed-out base means sealing the surface alone won't hold.</li>`,
+    `<li><strong>How's the surrounding concrete?</strong> A few cracks in sound concrete are repairable. Widespread cracking, crumbling or panels that have sunk or heaved often point to section replacement.</li>`,
+    `<li><strong>What does the slab carry?</strong> A patio, a driveway and a forklift aisle each need a different repair.</li>`,
+    `</ul>`,
+    `<p>Often the best value is in between: replace the worst panels and repair the rest. If a crack suggests structural or foundation movement, we'll tell you, and recommend a structural engineer's assessment where it's warranted. Our evaluation is a contractor's estimate, not an engineering report.</p>`,
+    `<h2>Common Crack Types We See</h2>`,
+    `<ul>`,
+    `<li><strong>Hairline / shrinkage:</strong> thin, random lines from curing. Usually cosmetic. Sealing can help keep water out.</li>`,
+    `<li><strong>Along a control joint:</strong> the slab cracking where it was designed to. Usually handled by joint sealing.</li>`,
+    `<li><strong>Settlement:</strong> one side lower than the other. The support underneath needs attention.</li>`,
+    `<li><strong>Heave:</strong> raised edges, often from clay soil swelling or roots. Often a trip hazard.</li>`,
+    `<li><strong>Spalling / scaling:</strong> flaking or pitted surface rather than a line. Surface repair or resurfacing.</li>`,
+    `<li><strong>Wide, growing or through a foundation:</strong> get it evaluated. May need a structural assessment.</li>`,
+    `</ul>`,
+    `<h2>How We Repair Cracks</h2>`,
+    `<ul>`,
+    `<li><strong>Rout, clean and seal:</strong> opens the crack into a clean channel, filled with a flexible sealant that can move with the slab</li>`,
+    `<li><strong>Structural epoxy fill:</strong> for dormant cracks where the two sides need to be bonded</li>`,
+    `<li><strong>Joint sealing and resealing:</strong> replaces failed joint sealant to reduce water and debris getting under the slab</li>`,
+    `<li><strong>Spall patching and resurfacing:</strong> rebuilds damaged surfaces</li>`,
+    `<li><strong>Trip-hazard grinding:</strong> removes small lips between panels</li>`,
+    `<li><strong>Foam lifting / mudjacking:</strong> raises settled panels back toward level</li>`,
+    `<li><strong>Section replacement:</strong> saw-cut and replace only the panels that can't be repaired</li>`,
+    `</ul>`,
+    `<!-- TODO(owner): confirm each method above; add or remove before publishing -->`,
+    `<p>Sealing helps reduce water and debris getting into a crack. It doesn't stop the slab from moving. When movement continues, the repair may need maintenance over time.</p>`,
+    `<h2>What Crack Repair Costs</h2>`,
+    `<p>Cost depends on the total length of cracking, the repair method, access, whether panels need lifting or replacing, and the surface (residential flatwork vs. commercial slab).</p>`,
+    `<ul>`,
+    `<li>Joint sealing (typical driveway): $300–$800</li>`,
+    `<li>Single-panel replacement: $400–$1,200 per panel</li>`,
+    `</ul>`,
+    `<!-- TODO(owner): add a minimum service charge and per-linear-foot crack sealing range if FDZ wants to publish them -->`,
+    `<p>For broader pricing, see our <a href="/blog/cost-of-concrete-oklahoma-city-2026">2026 Oklahoma City concrete cost guide</a>.</p>`,
+    `<h3>How the Estimate Works</h3>`,
+    `<ol>`,
+    `<li>Send a few details and photos (form below)</li>`,
+    `<li>We visit, check the crack, the support underneath and drainage</li>`,
+    `<li>You get a written estimate with the recommended repair and any alternatives</li>`,
+    `</ol>`,
+    `<h2 id="estimate">Get Your Cracked Concrete Looked At</h2>`,
+    `<p>Send us a few photos or call <a href="${tel}">${phone}</a>. We'll come out, check what's causing the crack and give you a written estimate with straight answers.</p>`,
+    `<p><a href="/?from=concrete-crack-repair-oklahoma-city#estimate">Request Free On-Site Evaluation →</a> · <a href="${tel}">${phone}</a></p>`,
+    `<h2>Why Concrete Cracks in Oklahoma</h2>`,
+    `<ul>`,
+    `<li>Expansive clay soil that swells and shrinks with moisture</li>`,
+    `<li>Repeated freeze-thaw cycles in winter</li>`,
+    `<li>Heavy spring rain and drainage running toward slabs</li>`,
+    `</ul>`,
+    `<p>That's why we look at drainage and the base, not just the crack.</p>`,
+    `<h3>Areas We Serve</h3>`,
+    `<p>${towns}.</p>`,
+    faqSection("Concrete Crack Repair FAQ", crackRepairFaq),
+    `<h2>More From FDZ Construction</h2>`,
+    `<ul>${related}</ul>`,
+    `<p><strong>Free estimate:</strong> <a href="/?from=concrete-crack-repair-oklahoma-city#estimate">Estimate form</a> · <a href="${tel}">${phone}</a> · <a href="/#contact">Email FDZ Construction</a></p>`,
+    trustParagraph(),
+  ].join("\n");
 }

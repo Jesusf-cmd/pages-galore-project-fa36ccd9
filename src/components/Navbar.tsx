@@ -14,6 +14,7 @@ const serviceLinks = [
   { to: "/retaining-walls-oklahoma-city", label: "Retaining Walls" },
   { to: "/pool-deck-oklahoma-city", label: "Pool Decks" },
   { to: "/sidewalks-oklahoma-city", label: "Sidewalks, Curb & Gutter" },
+  { to: "/concrete-crack-repair-oklahoma-city", label: "Concrete Crack Repair" },
 ];
 
 const commercialLinks = [
@@ -36,6 +37,7 @@ const commercialLinks = [
   { to: "/polished-concrete-oklahoma-city", label: "Polished Concrete" },
   { to: "/epoxy-floor-coatings-oklahoma-city", label: "Epoxy Floor Coatings" },
   { to: "/retail-restaurant-concrete-oklahoma-city", label: "Retail & Restaurant Concrete" },
+  { to: "/concrete-crack-repair-oklahoma-city", label: "Concrete Crack Repair" },
   { to: "/commercial-concrete-repair-oklahoma-city", label: "Commercial Concrete Repair" },
   { to: "/tilt-wall-concrete-oklahoma-city", label: "Tilt-Wall Concrete" },
   { to: "/soil-stabilization-oklahoma-city", label: "Soil Stabilization" },
@@ -114,14 +116,18 @@ export default function Navbar() {
         { title: "Wichita, Kansas", links: wichitaAreaLinks },
         {
           title: "Oklahoma services",
-          links: [...serviceLinks, ...commercialLinks, ...oklahomaSiteWorkLinks],
+          links: [...serviceLinks, ...commercialLinks, ...oklahomaSiteWorkLinks].filter(
+            (link, index, all) => all.findIndex((item) => item.to === link.to) === index,
+          ),
         },
         { title: "Oklahoma cities", links: oklahomaAreaLinks },
       ]
     : [
         {
           title: "Concrete",
-          links: [...serviceLinks, ...commercialLinks],
+          links: [...serviceLinks, ...commercialLinks].filter(
+            (link, index, all) => all.findIndex((item) => item.to === link.to) === index,
+          ),
         },
         { title: "Oklahoma", links: oklahomaAreaLinks },
         { title: "Wichita, Kansas", links: wichitaAreaLinks },

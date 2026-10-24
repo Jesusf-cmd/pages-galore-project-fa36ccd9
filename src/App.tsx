@@ -51,6 +51,7 @@ const EquipmentFoundations = lazy(() => import("./pages/EquipmentFoundations"));
 const ADACompliance = lazy(() => import("./pages/ADACompliance"));
 const DumpsterPads = lazy(() => import("./pages/DumpsterPads"));
 const CommercialConcreteRepair = lazy(() => import("./pages/CommercialConcreteRepair"));
+const ConcreteCrackRepair = lazy(() => import("./pages/ConcreteCrackRepair"));
 const CommercialCurbGutter = lazy(() => import("./pages/CommercialCurbGutter"));
 const PolishedConcrete = lazy(() => import("./pages/PolishedConcrete"));
 const EpoxyFloorCoatings = lazy(() => import("./pages/EpoxyFloorCoatings"));
@@ -137,6 +138,7 @@ function AppRoutes() {
         <Route path="/dumpster-pad-concrete-oklahoma-city" element={<DumpsterPads />} />
         <Route path="/concrete-parking-lot-repair-oklahoma-city" element={<ConcreteParkinglotRepair />} />
         <Route path="/commercial-concrete-repair-oklahoma-city" element={<CommercialConcreteRepair />} />
+        <Route path="/concrete-crack-repair-oklahoma-city" element={<ConcreteCrackRepair />} />
         <Route path="/commercial-curb-and-gutter-oklahoma-city" element={<CommercialCurbGutter />} />
         <Route path="/dock-leveler-pits-oklahoma-city" element={<Navigate to="/dock-leveler-pit-concrete-oklahoma-city" replace />} />
         <Route path="/truck-courts-oklahoma-city" element={<Navigate to="/truck-court-concrete-oklahoma-city" replace />} />
